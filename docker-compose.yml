@@ -1,0 +1,34 @@
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: fishdict-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: fishdict
+      POSTGRES_PASSWORD: fishdict
+      POSTGRES_DB: fishdict
+    ports:
+      - "5432:5432"
+    volumes:
+      - fishdict-pgdata:/var/lib/postgresql/data
+      - ./db/dump.sql:/docker-entrypoint-initdb.d/dump.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fishdict -d fishdict"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  pgweb:
+    image: sosedoff/pgweb
+    container_name: fishdict-pgweb
+    restart: unless-stopped
+    environment:
+      PGWEB_DATABASE_URL: postgres://fishdict:fishdict@db:5432/fishdict?sslmode=disable
+    ports:
+      - "8081:8081"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  fishdict-pgdata:

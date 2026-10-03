@@ -1,0 +1,33 @@
+{
+  "name": "fishdict",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:reset": "docker compose down -v && docker compose up -d",
+    "db:psql": "docker compose exec db psql -U fishdict -d fishdict",
+    "db:web": "docker compose up -d pgweb",
+    "db:dump": "docker compose exec -T db pg_dump -U fishdict -d fishdict --clean --if-exists --no-owner --no-privileges > db/dump.sql",
+    "db:restore": "docker compose exec -T db psql -U fishdict -d fishdict -v ON_ERROR_STOP=1 < db/dump.sql",
+    "db:logs": "docker compose logs -f db"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.81.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  }
+}
