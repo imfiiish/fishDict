@@ -8,6 +8,13 @@ const DEFAULT_LIMIT = 30
 const MAX_LIMIT = 100
 
 type Sense = { en: string[] }
+type KoreanSense = {
+  en: string
+  ko: string
+  zh: string
+  en_def: string
+  zh_def: string
+}
 
 /** Escape LIKE wildcards so user input is matched literally. */
 function escapeLike(value: string): string {
@@ -51,9 +58,13 @@ app.get('/api/search', async (c) => {
     categories: string[]
     senses: Sense[] | null
     classifiers: string[] | null
+    origin: string | null
+    sound: string | null
+    ko_senses: KoreanSense[] | null
     total: string
   }>(
     `SELECT w.lang, w.word, w.categories, h.senses, h.classifiers,
+            k.origin, k.sound, k.senses AS ko_senses,
             count(*) OVER () AS total
        FROM words w
        LEFT JOIN LATERAL (
@@ -61,6 +72,11 @@ app.get('/api/search', async (c) => {
           WHERE w.lang = 'zh' AND hsk.word = w.word
           LIMIT 1
        ) h ON true
+       LEFT JOIN LATERAL (
+         SELECT origin, sound, senses FROM korean
+          WHERE w.lang = 'ko' AND korean.word = w.word
+          LIMIT 1
+       ) k ON true
       WHERE ($1::text IS NULL OR w.lang = $1)
         AND w.word ILIKE $2 ESCAPE '\\'
       ORDER BY
@@ -85,6 +101,9 @@ app.get('/api/search', async (c) => {
       categories: r.categories,
       senses: r.senses,
       classifiers: r.classifiers ?? [],
+      korean: r.ko_senses
+        ? { origin: r.origin, sound: r.sound, senses: r.ko_senses }
+        : null,
     })),
   })
 })

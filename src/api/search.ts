@@ -2,12 +2,27 @@ export type Sense = {
   en: string[]
 }
 
+export type KoreanSense = {
+  en: string
+  ko: string
+  zh: string
+  en_def: string
+  zh_def: string
+}
+
+export type KoreanEntry = {
+  origin: string | null
+  sound: string | null
+  senses: KoreanSense[]
+}
+
 export type SearchItem = {
   lang: string
   word: string
   categories: string[]
   senses: Sense[] | null
   classifiers: string[]
+  korean: KoreanEntry | null
 }
 
 export type SearchResponse = {

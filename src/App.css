@@ -154,6 +154,26 @@ body {
   letter-spacing: 0.02em;
 }
 
+.result__homonym {
+  margin-left: 1px;
+  color: var(--muted);
+  font-size: 0.6em;
+  font-weight: 400;
+}
+
+.result__origin {
+  flex: none;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.result__sound {
+  flex: none;
+  font-size: 0.9rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
 .senses {
   margin: 0.35rem 0 0;
   padding: 0;
@@ -187,6 +207,24 @@ body {
   color: var(--muted);
   font-size: 0.78rem;
   white-space: nowrap;
+}
+
+.sense--ko {
+  display: block;
+}
+
+.sense__gloss {
+  margin-left: 0.5rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.sense__note {
+  display: block;
+  margin-top: 0.1rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.45;
 }
 
 .hl {

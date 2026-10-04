@@ -8,6 +8,7 @@ const LANGUAGES = [
   { code: 'zh', label: '中文' },
   { code: 'en', label: 'English' },
   { code: 'ja', label: '日本語' },
+  { code: 'ko', label: '한국어' },
 ]
 
 const LIMIT = 30
@@ -108,7 +109,7 @@ function App() {
     <main className="app">
       <header className="app__header">
         <h1>fishDict</h1>
-        <p className="app__sub">多语言词典 · 中文 / English / 日本語</p>
+        <p className="app__sub">多语言词典 · 中文 / English / 日本語 / 한국어</p>
       </header>
 
       <input
