@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict 2YjNMmPmehpexhgpdqVYnBaRaMNih0nqX8m88C74TK4TWCEtuHd0xmyVcw5KeGt
+\restrict 3VUn8EDzBttn0nERH3CUhCSNNEXfqKywYssv7Qz4YTWWddBuQWka4IkMOxhDMah
 
 -- Dumped from database version 17.11
 -- Dumped by pg_dump version 17.11
@@ -998,7 +998,6 @@ confuse	{confusion}	{}	30176e6d08.mp3
 congratulate	{congratulation,congratulatory}	{}	0504be94f6.mp3
 congress	{congressional}	{}	f5257ccce9.mp3
 conjunction	{}	{}	7a2f064eec.mp3
-connect	{connection,connecxion}	{}	a13823e976.mp3
 conquer	{conqueror,conquest}	{}	cb247d809a.mp3
 conscience	{}	{}	07205ddf63.mp3
 conscientious	{}	{}	949410eadd.mp3
@@ -1999,7 +1998,6 @@ homosexual	{}	{homo}	25f2290479.mp3
 honest	{honesty}	{}	46873cdcf4.mp3
 honey	{}	{}	eed49e55e7.mp3
 honeymoon	{}	{}	45ab04fdf2.mp3
-honor	{honorable,honourable,honorary,honourary}	{honour}	e3e7d2650b.mp3
 hook	{}	{}	9bc8acf864.mp3
 hope	{hopeful,hopeless}	{}	87aa303994.mp3
 horizon	{horizontal}	{}	71b65e6060.mp3
@@ -2126,7 +2124,6 @@ insight	{insightful}	{}	c8a3d33f41.mp3
 insist	{insistence,insistent}	{}	c0a8666879.mp3
 inspect	{inspection,inspector}	{}	71e0b170e1.mp3
 inspire	{inspiration,inspirational}	{}	1001961db1.mp3
-instal	{instalation,installation}	{install}	31b79633f0.mp3
 instalment	{}	{installment}	56f311ce09.mp3
 instance	{}	{}	3386f57b8c.mp3
 instant	{instantaneous}	{}	b4b901940f.mp3
@@ -4456,7 +4453,6 @@ clearance	{}	{}	b4652db386.mp3
 clearing	{}	{}	b412474b05.mp3
 clench	{}	{}	ef63f81a9e.mp3
 clergy	{}	{}	fc5c891a47.mp3
-cliché	{}	{}	7825115f60.mp3
 cloak	{}	{}	21c316c8b7.mp3
 clog	{}	{}	d9a939e426.mp3
 closet	{}	{}	2c6e38a7b1.mp3
@@ -5504,6 +5500,10 @@ zeal	{zealous}	{}	6dbfc61117.mp3
 zigzag	{}	{}	92e7d19e18.mp3
 zip	{zipper}	{}	4cfa18391d.mp3
 zoom	{}	{}	0512868499.mp3
+connect	{connection}	{}	a13823e976.mp3
+honor	{honorable,honourable,honorary}	{honour}	e3e7d2650b.mp3
+instal	{installation}	{install}	31b79633f0.mp3
+cliche	{}	{}	68b0b0cc93.mp3
 \.
 
 
@@ -6449,7 +6449,6 @@ number	{}	{}	5e726ce1b8.mp3
 nurse	{}	{}	1e2ff40542.mp3
 object	{}	{}	b5f10289f0.mp3
 ocean	{}	{}	da4dd29a10.mp3
-o’clock	{}	{}	05bf603dd6.mp3
 of	{}	{}	b689cc12ae.mp3
 off	{}	{}	3e204cd423.mp3
 offer	{}	{}	bb9b4633d4.mp3
@@ -7172,7 +7171,6 @@ broad	{}	{}	f33b657938.mp3
 brochure	{}	{}	96da92c670.mp3
 burst	{}	{}	db289d91bd.mp3
 button	{}	{}	b374dc96f9.mp3
-café	{}	{}	194ee03bc5.mp3
 campus	{}	{}	8fa46eff13.mp3
 capable	{}	{}	dd68f6d0b6.mp3
 capture	{}	{}	cbe121a8a8.mp3
@@ -8611,6 +8609,8 @@ wrist	{}	{}	515b8fc7b3.mp3
 yield	{}	{}	20a8c52650.mp3
 zone	{}	{}	c200e1f70d.mp3
 yoghurt	{}	{yogurt}	1a5b6cf211.mp3
+o'clock	{}	{}	368f35f265.mp3
+cafe	{}	{}	f006f02033.mp3
 \.
 
 
@@ -33650,6 +33650,7 @@ ko
 --
 
 COPY public.oxford (word, cefr, pos, region, sense, sound) FROM stdin;
+o'clock	A1	adv.			368f35f265.mp3
 AIDS	B2	n.			eab6bfc78a.mp3
 April	A1	n.			82877be910.mp3
 August	A1	n.			18a58946da.mp3
@@ -33680,7 +33681,6 @@ TV	A1	n.			40ccb03121.mp3
 Thursday	A1	n.			214e08afb3.mp3
 Tuesday	A1	n.			5847546560.mp3
 Wednesday	A1	n.			ab6d81cb39.mp3
-a, an	A1	indefinite article			4ecb96937f.mp3
 abandon	B2	v.			6dd01c1be6.mp3
 ability	A2	n.			07f6fe6059.mp3
 able	A2	adj.			97809870cc.mp3
@@ -37547,7 +37547,6 @@ own	A2	v.			2523ada328.mp3
 owner	A2	n.			e463a92790.mp3
 ownership	B2	n.			ab7d035a1f.mp3
 oxygen	B2	n.			f99898d1fa.mp3
-o’clock	A1	adv.			05bf603dd6.mp3
 pace	B2	n.			0e485e5160.mp3
 pace	B2	v.			0e485e5160.mp3
 pack	A2	v.			350f39acaa.mp3
@@ -51754,9 +51753,7 @@ en	cabbage	{初中,CET4}
 en	cabin	{CET4}
 en	cabinet	{CET4}
 en	cable	{CET4}
-en	cafe	{CET4}
 en	cafeteria	{选择性必修,CET4}
-en	café	{必修}
 en	cage	{选择性必修,CET4}
 en	cake	{小学,CET4}
 en	calcium	{CET6}
@@ -52024,7 +52021,6 @@ en	clergy	{CET6}
 en	clerical	{}
 en	clerk	{选择性必修,CET4}
 en	clever	{小学,CET4}
-en	cliché	{CET6}
 en	click	{初中,CET4}
 en	client	{选择性必修,CET4}
 en	cliff	{CET4}
@@ -52288,7 +52284,6 @@ en	congressional	{}
 en	conjunction	{CET4}
 en	connect	{初中,CET4}
 en	connection	{}
-en	connecxion	{}
 en	connotation	{CET6}
 en	conquer	{CET4}
 en	conqueror	{}
@@ -54311,7 +54306,6 @@ en	honorable	{}
 en	honorary	{}
 en	honour	{初中}
 en	honourable	{}
-en	honourary	{}
 en	hook	{CET4}
 en	hop	{CET6}
 en	hope	{初中,CET4}
@@ -54638,7 +54632,6 @@ en	inspiration	{}
 en	inspirational	{}
 en	inspire	{必修,CET4}
 en	instal	{CET4}
-en	instalation	{}
 en	installation	{}
 en	instalment	{CET4}
 en	instance	{选择性必修,CET4}
@@ -55695,7 +55688,6 @@ en	nurture	{CET6}
 en	nut	{必修,CET4}
 en	nutrient	{}
 en	nutrition	{选择性必修,CET4}
-en	o'clock	{CET4}
 en	oak	{CET6}
 en	oar	{CET6}
 en	oath	{CET6}
@@ -55916,7 +55908,6 @@ en	ox	{CET4}
 en	oxide	{CET6}
 en	oxygen	{必修,CET4}
 en	ozone	{CET4}
-en	o’clock	{小学}
 en	p.m.	{初中}
 en	pace	{选择性必修,CET4}
 en	Pacific	{必修}
@@ -57678,7 +57669,6 @@ en	statutory	{}
 en	stay	{初中,CET4}
 en	steadily	{}
 en	steady	{必修,CET4}
-en	a, an	{A1}
 en	steak	{选择性必修,CET4}
 en	steal	{初中,CET4}
 en	steam	{选择性必修,CET4}
@@ -72981,6 +72971,9 @@ en	working	{A2}
 en	workplace	{B2}
 en	wow	{A2}
 en	written	{B1}
+en	o'clock	{CET4,小学}
+en	cafe	{CET4,必修}
+en	cliche	{CET6}
 \.
 
 
@@ -73060,5 +73053,5 @@ ALTER TABLE ONLY public.words
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 2YjNMmPmehpexhgpdqVYnBaRaMNih0nqX8m88C74TK4TWCEtuHd0xmyVcw5KeGt
+\unrestrict 3VUn8EDzBttn0nERH3CUhCSNNEXfqKywYssv7Qz4YTWWddBuQWka4IkMOxhDMah
 
