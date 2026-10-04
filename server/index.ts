@@ -95,19 +95,35 @@ app.get('/api/search', async (c) => {
     classifiers: string[] | null
     romanization: string | null
     origin: string | null
+    ko_sound: string | null
     sound: string | null
     ko_senses: KoreanSense[] | null
     total: string
   }>(
     `SELECT w.lang, w.word, w.categories, h.senses, h.classifiers,
-            k.romanization, k.origin, k.sound, k.senses AS ko_senses,
+            k.romanization, k.origin, k.sound AS ko_sound, k.senses AS ko_senses,
+            COALESCE(h.sound, e.sound, j.sound, k.sound) AS sound,
             count(*) OVER () AS total
        FROM words w
        LEFT JOIN LATERAL (
-         SELECT senses, classifiers FROM hsk
+         SELECT senses, classifiers, sound FROM hsk
           WHERE w.lang = 'zh' AND hsk.word = w.word
           LIMIT 1
        ) h ON true
+       LEFT JOIN LATERAL (
+         SELECT sound FROM (
+           SELECT sound FROM cet WHERE word = w.word
+           UNION ALL
+           SELECT sound FROM gaokao WHERE word = w.word
+         ) s
+          WHERE w.lang = 'en' AND sound IS NOT NULL
+          LIMIT 1
+       ) e ON true
+       LEFT JOIN LATERAL (
+         SELECT sound FROM jlpt
+          WHERE w.lang = 'ja' AND jlpt.word = w.word
+          LIMIT 1
+       ) j ON true
        LEFT JOIN LATERAL (
          SELECT romanization, origin, sound, senses FROM korean
           WHERE w.lang = 'ko' AND korean.word = w.word
@@ -137,11 +153,12 @@ app.get('/api/search', async (c) => {
       categories: r.categories,
       senses: r.senses,
       classifiers: r.classifiers ?? [],
+      sound: r.sound,
       korean: r.ko_senses
         ? {
             romanization: r.romanization,
             origin: r.origin,
-            sound: r.sound,
+            sound: r.ko_sound,
             senses: r.ko_senses,
           }
         : null,

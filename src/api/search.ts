@@ -23,6 +23,7 @@ export type SearchItem = {
   categories: string[]
   senses: Sense[] | null
   classifiers: string[]
+  sound: string | null
   korean: KoreanEntry | null
 }
 

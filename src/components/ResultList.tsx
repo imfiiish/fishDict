@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import type { SearchItem } from '../api/search'
+import { audioSources } from '../lib/audio'
 import { Highlight } from './Highlight'
 import { SoundButton } from './SoundButton'
 
@@ -55,8 +56,8 @@ export function ResultList({
               {korean?.origin && (
                 <span className="result__origin">{korean.origin}</span>
               )}
-              {korean?.sound && (
-                <SoundButton src={`/audio/ko/${korean.sound}`} />
+              {item.sound && (
+                <SoundButton sources={audioSources(item.lang, item.sound)} />
               )}
               {item.categories.length > 0 && (
                 <span className="result__cats">{item.categories.join(' · ')}</span>

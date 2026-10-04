@@ -3,7 +3,21 @@ import { useEffect, useRef, useState } from 'react'
 // Only one pronunciation plays at a time.
 let current: HTMLAudioElement | null = null
 
-export function SoundButton({ src }: { src: string }) {
+function shuffled<T>(items: T[]): T[] {
+  const out = [...items]
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[out[i], out[j]] = [out[j], out[i]]
+  }
+  return out
+}
+
+/**
+ * Plays a random one of `sources` on every click. If a voice is missing the
+ * word it falls through to the next candidate, so we always play the ones
+ * that exist.
+ */
+export function SoundButton({ sources }: { sources: string[] }) {
   const [playing, setPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
@@ -14,31 +28,42 @@ export function SoundButton({ src }: { src: string }) {
     }
   }, [])
 
-  function getAudio() {
-    if (!audioRef.current) {
-      const audio = new Audio(src)
+  function playFrom(order: string[]) {
+    let i = 0
+    const attempt = () => {
+      if (i >= order.length) {
+        setPlaying(false)
+        return
+      }
+      const audio = new Audio(order[i++])
+      audioRef.current = audio
+      if (current && current !== audio) {
+        current.pause()
+        current.currentTime = 0
+      }
+      current = audio
+      let advanced = false
+      const advance = () => {
+        if (advanced) return
+        advanced = true
+        attempt()
+      }
       audio.addEventListener('play', () => setPlaying(true))
       audio.addEventListener('pause', () => setPlaying(false))
       audio.addEventListener('ended', () => setPlaying(false))
-      audio.addEventListener('error', () => setPlaying(false))
-      audioRef.current = audio
+      audio.addEventListener('error', advance)
+      void audio.play().catch(advance)
     }
-    return audioRef.current
+    attempt()
   }
 
   function toggle() {
-    const audio = getAudio()
-    if (!audio.paused) {
+    const audio = audioRef.current
+    if (audio && !audio.paused) {
       audio.pause()
       return
     }
-    if (current && current !== audio) {
-      current.pause()
-      current.currentTime = 0
-    }
-    current = audio
-    if (audio.ended) audio.currentTime = 0
-    void audio.play().catch(() => setPlaying(false))
+    if (sources.length > 0) playFrom(shuffled(sources))
   }
 
   return (
