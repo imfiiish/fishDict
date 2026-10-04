@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict EULFq5iosrJejsuP4JMYR1CfQNcfDn1j8P5XwaTgPv8VMvZRUFxMzeeKhFd2GOF
+\restrict X5lPvdv1Jfojf5QI5Tja4sja2z0nefhzDHxl05dnTJez6lCIpkcnCIrXPRCdbLk
 
 -- Dumped from database version 17.11
 -- Dumped by pg_dump version 17.11
@@ -21,6 +21,7 @@ SET row_security = off;
 
 ALTER TABLE IF EXISTS ONLY public.words DROP CONSTRAINT IF EXISTS words_lang_fkey;
 ALTER TABLE IF EXISTS ONLY public.words DROP CONSTRAINT IF EXISTS words_pkey;
+ALTER TABLE IF EXISTS ONLY public.oxford DROP CONSTRAINT IF EXISTS oxford_pkey;
 ALTER TABLE IF EXISTS ONLY public.languages DROP CONSTRAINT IF EXISTS languages_pkey;
 ALTER TABLE IF EXISTS ONLY public.korean DROP CONSTRAINT IF EXISTS korean_pkey;
 ALTER TABLE IF EXISTS ONLY public.jlpt DROP CONSTRAINT IF EXISTS jlpt_pkey;
@@ -28,6 +29,7 @@ ALTER TABLE IF EXISTS ONLY public.hsk DROP CONSTRAINT IF EXISTS hsk_pkey;
 ALTER TABLE IF EXISTS ONLY public.gaokao DROP CONSTRAINT IF EXISTS gaokao_pkey;
 ALTER TABLE IF EXISTS ONLY public.cet DROP CONSTRAINT IF EXISTS cet_pkey;
 DROP TABLE IF EXISTS public.words;
+DROP TABLE IF EXISTS public.oxford;
 DROP TABLE IF EXISTS public.languages;
 DROP TABLE IF EXISTS public.korean;
 DROP TABLE IF EXISTS public.jlpt;
@@ -124,6 +126,19 @@ CREATE TABLE public.korean (
 
 CREATE TABLE public.languages (
     code text NOT NULL
+);
+
+
+--
+-- Name: oxford; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.oxford (
+    word text NOT NULL,
+    cefr text NOT NULL,
+    pos text NOT NULL,
+    region text DEFAULT ''::text NOT NULL,
+    sense text DEFAULT ''::text NOT NULL
 );
 
 
@@ -1051,6 +1066,7 @@ cornerstone	{}	{}	48ebd83dde.mp3
 corporation	{corporate}	{}	3530eb45b1.mp3
 corps	{}	{}	9c7db1eac4.mp3
 correct	{correction,corrective}	{}	ba51aea4a0.mp3
+dance	{}	{}	d8a0bd465f.mp3
 correspond	{correspondence,correspondent,corresponding}	{}	f285db7125.mp3
 corridor	{}	{}	3731df85dc.mp3
 corrupt	{corruption}	{}	9ceb638e59.mp3
@@ -1143,7 +1159,6 @@ dam	{}	{}	817ca8cb7e.mp3
 damage	{}	{}	117f771377.mp3
 damn	{}	{}	864f1b03c5.mp3
 damp	{dampen}	{}	86453c5934.mp3
-dance	{}	{}	d8a0bd465f.mp3
 danger	{dangerous}	{}	97014f7634.mp3
 dare	{daring}	{}	a62277327e.mp3
 dark	{darkness,darken}	{}	08bde6e958.mp3
@@ -2035,6 +2050,7 @@ ignore	{}	{}	0916a180ba.mp3
 ill	{illness}	{}	8324a80062.mp3
 illegal	{}	{}	4c32957138.mp3
 illusion	{illusory}	{}	9e8cb13165.mp3
+just	{}	{}	279ea75675.mp3
 illustrate	{illustration,illustrative}	{}	4f293d34f0.mp3
 image	{imaging}	{}	7ad26db55e.mp3
 imagine	{imagination,imaginative,imaginary}	{}	6f48140cbc.mp3
@@ -2198,7 +2214,6 @@ jungle	{}	{}	562d8d85dc.mp3
 junior	{}	{}	16a5537916.mp3
 junk	{}	{}	dffd2eec70.mp3
 jury	{juror}	{}	c60073aa51.mp3
-just	{}	{}	279ea75675.mp3
 justice	{}	{}	48f3d0f086.mp3
 justify	{justification}	{}	7d17f8bb44.mp3
 keen	{}	{}	efae310e79.mp3
@@ -3176,6 +3191,7 @@ remind	{reminder}	{}	779a0dcb7e.mp3
 remote	{}	{}	60e448148f.mp3
 remove	{removal}	{}	5fe8a2c6dc.mp3
 render	{rendering}	{}	35540ae818.mp3
+allude	{allusion}	{}	9635df8572.mp3
 renew	{renewal,renewable}	{}	b9d560a9a7.mp3
 renovate	{renovation}	{}	f64941f024.mp3
 rent	{rental}	{}	4ded011e80.mp3
@@ -4276,7 +4292,6 @@ alleviate	{alleviation}	{}	1e5cfd4d2e.mp3
 allocate	{allocation}	{}	dd971b9cb9.mp3
 allot	{allotment}	{}	f788714e17.mp3
 alloy	{}	{}	5c4ed6a342.mp3
-allude	{allusion}	{}	9635df8572.mp3
 allure	{allurement}	{}	7abe87bd9e.mp3
 almighty	{}	{}	b53fabe7d2.mp3
 aloft	{}	{}	9bb246185c.mp3
@@ -9193,6 +9208,7 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 5	带	dài	[{"en": ["band", "belt", "girdle", "ribbon", "tire", "area", "zone", "region", "to wear", "to carry", "to take along", "to bear (i.e. to have)", "to lead", "to bring", "to look after", "to raise"]}]	{条}	c5b347b8ab.mp3
 5	电	diàn	[{"en": ["lightning", "electricity", "electric (bound form)", "to get (or give) an electric shock", "phone call or telegram etc", "to send via telephone or telegram etc"]}]	{}	9ba59457cd.mp3
 5	关	guān	[{"en": ["mountain pass", "to close; to shut; to turn off", "to confine; to lock (sb) up; to shut (sb in a room, a bird in a cage etc)", "to concern; to involve", "surname Guan"]}]	{}	d5a2892a16.mp3
+5	近期	jìnqī	[{"en": ["near in time", "in the near future", "very soon", "recent"]}]	{}	7fe480c05d.mp3
 5	可	kě	[{"en": ["(prefix) can; may; able to; -able", "to approve; to permit", "to suit", "(particle used for emphasis) certainly; very", "but; however"]}]	{}	7f141927a9.mp3
 5	刻	kè	[{"en": ["quarter (hour)", "moment", "to carve", "to engrave", "to cut", "oppressive", "classifier for short time intervals"]}]	{}	806be4f95b.mp3
 5	保质期	bǎozhìqī	[{"en": ["shelf life", "expiration date"]}]	{}	40a2565fdc.mp3
@@ -9452,6 +9468,7 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 5	导演	dǎoyǎn	[{"en": ["to direct", "director (film etc)"]}]	{}	78f31f4f9b.mp3
 5	导致	dǎozhì	[{"en": ["to lead to; to create; to cause; to bring about"]}]	{}	a8f7249035.mp3
 5	道理	dàolǐ	[{"en": ["reason", "argument", "sense", "principle", "basis", "justification"]}]	{个}	c4117fda42.mp3
+5	近日	jìnrì	[{"en": ["(in) the past few days", "recently", "(within) the next few days"]}]	{}	712cd3b913.mp3
 5	登	dēng	[{"en": ["to scale (a height)", "to ascend", "to mount", "to publish or record", "to enter (e.g. in a register)", "to press down with the foot", "to step or tread on", "to put on (shoes or trousers) (dialect)", "to be gathered and taken to the threshing ground (old)"]}]	{}	dada89eb51.mp3
 5	登记	dēngjì	[{"en": ["to register (one's name)"]}]	{}	3e170deb75.mp3
 5	登录	dēnglù	[{"en": ["to register", "to log in"]}]	{}	be66d57c09.mp3
@@ -9773,8 +9790,6 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 5	进口	jìnkǒu	[{"en": ["to import", "imported", "entrance", "inlet (for the intake of air, water etc)"]}]	{}	27fb749f53.mp3
 5	尽力	jìnlì	[{"en": ["to strive one's hardest; to spare no effort"]}]	{}	8fd5270d1d.mp3
 5	近年来	jìnnián lái	[{"en": ["for the past few years"]}]	{}	8243236e62.mp3
-5	近期	jìnqī	[{"en": ["near in time", "in the near future", "very soon", "recent"]}]	{}	7fe480c05d.mp3
-5	近日	jìnrì	[{"en": ["(in) the past few days", "recently", "(within) the next few days"]}]	{}	712cd3b913.mp3
 3	牙刷	yáshuā	[{"en": ["toothbrush"]}]	{把}	672817a42c.mp3
 4	老	lǎo	[{"en": ["prefix used before the surname of a person or a numeral indicating the order of birth of the children in a family or to indicate affection or familiarity", "old (of people)", "venerable (person)", "experienced", "of long standing", "always", "all the time", "of the past", "very", "outdated", "(of meat etc) tough"]}]	{}	d6abbea510.mp3
 5	进一步	jìnyíbù	[{"en": ["to go a step further", "(develop, understand, improve etc) more; further"]}]	{}	9f1b95f479.mp3
@@ -9821,6 +9836,7 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 5	克服	kèfú	[{"en": ["(try to) overcome (hardships etc)", "to conquer", "to put up with", "to endure"]}]	{}	a3174bdc20.mp3
 5	客观	kèguān	[{"en": ["objective", "impartial"]}]	{}	9b7c97a061.mp3
 5	客户	kèhù	[{"en": ["client; customer"]}]	{}	e2f79f9f05.mp3
+7	温馨	wēnxīn	[{"en": ["comfort", "soft and fragrant", "warm"]}]	{}	9dc420fc75.mp3
 5	空间	kōngjiān	[{"en": ["space; room", "(fig.) scope; leeway", "(astronomy) outer space", "(physics, math.) space"]}]	{}	23a7f14282.mp3
 5	空中	kōngzhōng	[{"en": ["in the sky", "in the air"]}]	{}	9847857a70.mp3
 5	控制	kòngzhì	[{"en": ["to control"]}]	{}	23a6d8ecfe.mp3
@@ -10103,6 +10119,7 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 5	生产	shēngchǎn	[{"en": ["to produce; to manufacture", "to give birth to a child"]}]	{}	f3e6efb8f3.mp3
 5	生动	shēngdòng	[{"en": ["(of descriptions, writing etc) vivid; lively"]}]	{}	5af2818561.mp3
 5	升级	shēngjí	[{"en": ["to go up by one grade; to be promoted", "to escalate (in intensity)", "(computing) to upgrade"]}]	{}	054a953d7e.mp3
+6	发动	fādòng	[{"en": ["to start", "to launch", "to unleash", "to mobilize", "to arouse"]}]	{}	030e9feba2.mp3
 5	升温	shēngwēn	[{"en": ["to become hot", "temperature rise", "(fig.) to intensify", "to hot up", "to escalate", "to get a boost"]}]	{}	9a67f45aeb.mp3
 5	宠物	chǒngwù	[{"en": ["house pet"]}]	{}	d66b516c5c.mp3
 5	立刻	lìkè	[{"en": ["immediately; at once; right away"]}]	{}	5a44ab5919.mp3
@@ -10152,6 +10169,7 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 5	事件	shìjiàn	[{"en": ["incident; event"]}]	{}	836d4d9b85.mp3
 5	试卷	shìjuàn	[{"en": ["examination paper", "test paper"]}]	{份,张}	2991f82941.mp3
 5	市民	shìmín	[{"en": ["city resident; townspeople"]}]	{}	ac55c23d7a.mp3
+7	瘟疫	wēnyì	[{"en": ["plague; pestilence"]}]	{}	f9aaba9cc2.mp3
 5	视为	shìwéi	[{"en": ["to view as", "to see as", "to consider to be", "to deem"]}]	{}	b2adf2f5e5.mp3
 5	事物	shìwù	[{"en": ["thing; object"]}]	{}	364d54ef1a.mp3
 5	事先	shìxiān	[{"en": ["in advance", "before the event", "beforehand", "prior"]}]	{}	6a96749205.mp3
@@ -10981,7 +10999,6 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 6	大师	dàshī	[{"en": ["great master", "master"]}]	{}	4864c65cfd.mp3
 6	大致	dàzhì	[{"en": ["more or less; roughly; approximately"]}]	{}	c8f7126d54.mp3
 6	呆	dāi	[{"en": ["foolish; stupid", "expressionless; blank", "to stay; to remain", "foolish; stupid (variant of 呆)", "expressionless; blank (variant of 呆)"]}]	{}	78136bada5.mp3
-6	发动	fādòng	[{"en": ["to start", "to launch", "to unleash", "to mobilize", "to arouse"]}]	{}	030e9feba2.mp3
 6	待	dài	[{"en": ["to wait", "to treat", "to deal with", "to need", "going to (do sth)", "about to", "intending to"]}]	{}	3c1fcacc2d.mp3
 6	代价	dàijià	[{"en": ["price", "cost", "consideration (in share dealing)"]}]	{}	7185f93ee2.mp3
 1	再	zài	[{"en": ["again; once more; re-", "further; beyond this point of time", "(before an adjective) more", "then (after sth, and not until then)", "no matter how ... (followed by an adjective or verb, and then (usually) 也 or 都 for emphasis)", "(used to introduce additional information, as in 再则, 再就是 etc)", "(literary) to reappear; to reoccur"]}]	{}	b0f92add1d.mp3
@@ -11729,6 +11746,7 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 6	泼	pō	[{"en": ["to splash", "to spill", "rough and coarse", "brutish"]}]	{}	f83930f153.mp3
 6	破产	pòchǎn	[{"en": ["to go bankrupt", "to become impoverished", "bankruptcy"]}]	{}	9310033881.mp3
 6	认错	rèncuò	[{"en": ["to admit an error", "to acknowledge one's mistake"]}]	{}	12cfd9b934.mp3
+7	未知数	wèizhīshù	[{"en": ["unknown number", "(fig.) an unknown; an uncertainty"]}]	{}	78b4fa0d8b.mp3
 6	扑	pū	[{"en": ["to throw oneself at", "to pounce on", "to devote one's energies", "to flap", "to flutter", "to dab", "to pat", "to bend over"]}]	{}	054affdd73.mp3
 6	铺	pū	[{"en": ["to spread", "to display", "to set up", "(old) holder for door-knocker"]}]	{}	0c4bb2010b.mp3
 6	扑灭	pūmiè	[{"en": ["to eradicate", "to extinguish"]}]	{}	db86736ba1.mp3
@@ -12164,6 +12182,7 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 6	消除	xiāochú	[{"en": ["to eliminate", "to remove"]}]	{}	29a66ddef3.mp3
 6	消防	xiāofáng	[{"en": ["firefighting", "fire control"]}]	{}	168f31bf07.mp3
 6	消耗	xiāohào	[{"en": ["to consume; to use up", "to deplete; to expend", "(old) news; mail; message"]}]	{}	9e3eeafbbb.mp3
+7	温差	wēnchà	[{"en": ["difference in temperature"]}]	{}	dbbeb7ec1b.mp3
 6	消灭	xiāomiè	[{"en": ["to put an end to", "to annihilate", "to cause to perish", "to perish", "annihilation (in quantum field theory)"]}]	{}	78c160d2a5.mp3
 6	小麦	xiǎomài	[{"en": ["wheat"]}]	{粒}	333046c5e2.mp3
 6	笑容	xiàoróng	[{"en": ["smile", "smiling expression"]}]	{副}	f69df2a1a4.mp3
@@ -12400,6 +12419,7 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 6	支撑	zhīchēng	[{"en": ["to prop up", "to support", "strut", "brace"]}]	{}	97a9078d9c.mp3
 6	支出	zhīchū	[{"en": ["to spend; to pay out", "expenses; expenditure"]}]	{}	b4fdb4878a.mp3
 6	脂肪	zhīfáng	[{"en": ["fat (in the body, in a plant, or in food)"]}]	{}	2bd99ea45f.mp3
+7	温带	wēndài	[{"en": ["temperate zone"]}]	{}	e7e1d052f1.mp3
 6	之所以	zhīsuǒyǐ	[{"en": ["(after a noun N and before a predicate P) the reason why N P", "Example: 我之所以讨厌他 \\"the reason why I dislike him (is ...)\\""]}]	{}	037a73159e.mp3
 4	戴	dài	[{"en": ["to put on or wear (glasses, hat, gloves etc)", "to respect", "to bear", "to support", "surname Dai"]}]	{}	69e9f5bf6a.mp3
 4	袋子	dàizi	[{"en": ["bag"]}]	{}	f6acc7e384.mp3
@@ -12495,6 +12515,7 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 6	祖国	zǔguó	[{"en": ["motherland"]}]	{}	e255a3532a.mp3
 6	水流	shuǐliú	[{"en": ["river", "stream"]}]	{}	b60d263342.mp3
 6	钻	zuān	[{"en": ["to drill", "to bore", "to get into", "to make one's way into", "to enter (a hole)", "to thread one's way through", "to study intensively", "to dig into", "to curry favor for personal gain"]}]	{}	ef233ed8c2.mp3
+7	温度计	wēndùjì	[{"en": ["thermometer", "thermograph"]}]	{}	862be3b62e.mp3
 7	次	cì	[{"en": ["next in sequence", "second", "the second (day, time etc)", "secondary", "vice-", "sub-", "infra-", "inferior quality", "substandard", "order", "sequence", "hypo- (chemistry)", "classifier for enumerated events: time"]}]	{}	4613f1cb44.mp3
 7	但	dàn	[{"en": ["but; yet; however; still", "merely; only; just"]}]	{}	b18f7f6dcd.mp3
 4	当时	dāngshí	[{"en": ["then; at that time"]}]	{}	302b19c135.mp3
@@ -12525,6 +12546,7 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 6	细胞	xìbāo	[{"en": ["cell (biology)"]}]	{}	83ecb22dd2.mp3
 6	特长	tècháng	[{"en": ["personal strength", "one's special ability or strong points"]}]	{}	46fadeacd1.mp3
 7	盘	pán	[{"en": ["tray; plate; dish", "(finance) (bound form) market prices", "(computing) (bound form) disk", "to coil (a rope, pigtail etc)", "to check; to examine; to investigate", "to transfer; to sell (property)", "to shift; to move (sth big and heavy)", "classifier for things resembling a plate or dish", "classifier for coils", "classifier for games or matches (chess, table tennis etc)"]}]	{}	23b2cc23bb.mp3
+7	对联	duìlián	[{"en": ["rhyming couplet", "pair of lines of verse written vertically down the sides of a doorway"]}]	{副,幅}	9a098687f4.mp3
 7	则	zé	[{"en": ["(literary) (conjunction used to express contrast with a previous clause) but; then", "(bound form) standard; norm", "(bound form) principle", "(literary) to imitate; to follow", "classifier for written items"]}]	{}	e99f319d80.mp3
 7	挨	ái	[{"en": ["to suffer; to endure", "to pull through (hard times)", "to delay; to stall; to play for time; to dawdle"]}]	{}	cbc7b6786e.mp3
 7	哀求	āiqiú	[{"en": ["to entreat", "to implore", "to plead"]}]	{}	b349cff4ac.mp3
@@ -12712,6 +12734,7 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 7	鞭炮	biānpào	[{"en": ["firecrackers", "string of small firecrackers"]}]	{枚}	12845bed98.mp3
 7	边缘	biānyuán	[{"en": ["edge; fringe; verge; brink; periphery", "marginal; borderline"]}]	{}	cbb013e073.mp3
 7	边远	biānyuǎn	[{"en": ["far from the center", "remote", "outlying"]}]	{}	d987ff40bd.mp3
+7	对流	duìliú	[{"en": ["convection"]}]	{}	e083a80cbe.mp3
 7	编造	biānzào	[{"en": ["to compile", "to draw up", "to fabricate", "to invent", "to concoct", "to make up", "to cook up"]}]	{}	d5537fefa4.mp3
 7	编制	biānzhì	[{"en": ["to establish (a unit or department)", "authorized staffing allocation in government or public institutions (excluding temporary or contract staff)", "to weave; to plait", "to compile; to put together (a lesson plan, budget etc)"]}]	{}	f30b5d296d.mp3
 7	编织	biānzhī	[{"en": ["to weave; to knit; to plait; to braid", "(fig.) to create (sth abstract, e.g. a dream, a lie etc)"]}]	{}	1e7ce2fd0a.mp3
@@ -13432,8 +13455,6 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 7	对策	duìcè	[{"en": ["countermeasure for dealing with a situation"]}]	{}	93a197391d.mp3
 7	对付	duìfu	[{"en": ["to handle; to deal with; to tackle", "to get by with; to make do", "(dialect) (usu. used in the negative) to get along with (sb)"]}]	{}	a6f7deecbc.mp3
 7	兑换	duìhuàn	[{"en": ["to convert", "to exchange"]}]	{}	ee0a594219.mp3
-7	对联	duìlián	[{"en": ["rhyming couplet", "pair of lines of verse written vertically down the sides of a doorway"]}]	{副,幅}	9a098687f4.mp3
-7	对流	duìliú	[{"en": ["convection"]}]	{}	e083a80cbe.mp3
 7	对牛弹琴	duìniú-tánqín	[{"en": ["lit. to play the lute to a cow (idiom)", "fig. offering a treat to an unappreciative audience", "to cast pearls before swine", "caviar to the general", "to preach to deaf ears", "to talk over sb's head"]}]	{}	a2f9445fc4.mp3
 7	兑现	duìxiàn	[{"en": ["(of a check etc) to cash", "to honor a commitment"]}]	{}	3232fb0e67.mp3
 7	队形	duìxíng	[{"en": ["formation"]}]	{}	f8b9a232d5.mp3
@@ -14112,6 +14133,7 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 7	华侨	huáqiáo	[{"en": ["overseas Chinese", "(in a restricted sense) Chinese emigrant who still retains Chinese nationality"]}]	{个,位,名}	a5995684cc.mp3
 7	哗然	huárán	[{"en": ["in uproar", "commotion", "causing a storm of protest", "tumultuous"]}]	{}	90e0b5b021.mp3
 7	华人	huárén	[{"en": ["ethnic Chinese person or people"]}]	{}	e26ef55ca4.mp3
+7	黑客	hēikè	[{"en": ["(computing) (loanword) hacker"]}]	{}	4ee11b6c4f.mp3
 7	划算	huásuàn	[{"en": ["to calculate", "to weigh (pros and cons)", "to view as profitable", "worthwhile", "value for money", "cost-effective"]}]	{}	2325559048.mp3
 7	滑梯	huátī	[{"en": ["(children's) sliding board", "a slide"]}]	{}	1dd717db4c.mp3
 7	华裔	huáyì	[{"en": ["ethnic Chinese", "non-Chinese citizen of Chinese ancestry"]}]	{}	11316c7c55.mp3
@@ -14593,6 +14615,7 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 7	酒楼	jiǔlóu	[{"en": ["restaurant"]}]	{}	c46f6f5519.mp3
 7	非法	fēifǎ	[{"en": ["illegal"]}]	{}	e6ce782bf7.mp3
 7	久违	jiǔwéi	[{"en": ["(haven't done sth) for a long time", "a long time since we last met"]}]	{}	a1be16348b.mp3
+7	温室	wēnshì	[{"en": ["greenhouse"]}]	{}	14095d9ad9.mp3
 7	就此	jiùcǐ	[{"en": ["at this point", "thus", "from then on"]}]	{}	7f57a0eb00.mp3
 7	就地	jiùdì	[{"en": ["locally", "on the spot"]}]	{}	fe763525a2.mp3
 7	救济	jiùjì	[{"en": ["emergency relief", "to help the needy with cash or goods"]}]	{}	84eac6b424.mp3
@@ -14744,6 +14767,7 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 3	病人	bìngrén	[{"en": ["sick person", "patient", "invalid"]}]	{个}	b478ef63f1.mp3
 7	赌博	dǔbó	[{"en": ["to gamble"]}]	{}	380c60eda2.mp3
 7	款待	kuǎndài	[{"en": ["to entertain", "to be hospitable to"]}]	{}	0ad3557494.mp3
+7	温习	wēnxí	[{"en": ["to review (a lesson etc)"]}]	{}	51b8bd01b0.mp3
 7	抠	kōu	[{"en": ["to dig; to pick; to scratch (with a finger or sth pointed)", "to carve; to cut", "to study meticulously", "stingy; miserly", "to lift up (esp. the hem of a robe)"]}]	{}	64cedb36c4.mp3
 7	口岸	kǒu’àn	[{"en": ["a port for external trade", "a trading or transit post on border between countries"]}]	{}	a11df9a2ac.mp3
 7	口碑	kǒubēi	[{"en": ["public praise", "public reputation", "commonly held opinions", "current idiom"]}]	{}	08f5adfba1.mp3
@@ -16541,15 +16565,6 @@ COPY public.hsk (level, word, pinyin, senses, classifiers, sound) FROM stdin;
 7	畏缩	wèisuō	[{"en": ["to cower; to flinch; to quail; to recoil"]}]	{}	9addd92bc5.mp3
 7	慰问	wèiwèn	[{"en": ["to express sympathy, greetings, consolation etc"]}]	{}	211fb56566.mp3
 7	卫星	wèixīng	[{"en": ["(aerospace) satellite", "(astronomy) satellite; moon"]}]	{颗}	e0201a8c53.mp3
-7	未知数	wèizhīshù	[{"en": ["unknown number", "(fig.) an unknown; an uncertainty"]}]	{}	78b4fa0d8b.mp3
-7	温差	wēnchà	[{"en": ["difference in temperature"]}]	{}	dbbeb7ec1b.mp3
-7	温带	wēndài	[{"en": ["temperate zone"]}]	{}	e7e1d052f1.mp3
-7	温度计	wēndùjì	[{"en": ["thermometer", "thermograph"]}]	{}	862be3b62e.mp3
-7	黑客	hēikè	[{"en": ["(computing) (loanword) hacker"]}]	{}	4ee11b6c4f.mp3
-7	温室	wēnshì	[{"en": ["greenhouse"]}]	{}	14095d9ad9.mp3
-7	温习	wēnxí	[{"en": ["to review (a lesson etc)"]}]	{}	51b8bd01b0.mp3
-7	温馨	wēnxīn	[{"en": ["comfort", "soft and fragrant", "warm"]}]	{}	9dc420fc75.mp3
-7	瘟疫	wēnyì	[{"en": ["plague; pestilence"]}]	{}	f9aaba9cc2.mp3
 3	像	xiàng	[{"en": ["to resemble", "to be like", "to look as if", "such as", "appearance", "image", "portrait", "image under a mapping (math.)"]}]	{}	8d951c3dc7.mp3
 5	顺	shùn	[{"en": ["to obey", "to follow", "to arrange", "to make reasonable", "along", "favorable"]}]	{}	73736f1910.mp3
 7	文凭	wénpíng	[{"en": ["diploma"]}]	{}	0793f2d264.mp3
@@ -19946,6 +19961,7 @@ COPY public.jlpt (level, word, reading, meaning, accent, variants, sound) FROM s
 0	アワー	アワー	时间、时刻	1	{}	e5f77cc6e7.mp3
 1	合わす	あわす	合并、配合、调准、比较	2	{}	3d3f9228be.mp3
 1	合わせ	あわせ	合	3	{}	0b90542123.mp3
+1	画	が〜	图画	1	{}	b4f4d138f3.mp3
 2	合わせる	あわせる	合并、配合、调准、比较//把…合而为一	3	{併せる}	db741ef03a.mp3
 2	慌しい	あわただしい	慌忙的	5	{}	51fa5061c6.mp3
 2	慌てる	あわてる	惊慌	0	{}	84b438ff1e.mp3
@@ -20758,7 +20774,6 @@ COPY public.jlpt (level, word, reading, meaning, accent, variants, sound) FROM s
 2	日	か	日数		{}	2bc23216ff.mp3
 2	歌	か	歌曲		{}	8483bb5640.mp3
 1	画	が	绘画		{}	b4f4d138f3.mp3
-1	画	が〜	图画	1	{}	b4f4d138f3.mp3
 2	カー	カー	汽车、车辆	1	{}	f0f99564e6.mp3
 3	カーテン	カーテン	窗帘、幕	1	{}	41b1ad3d75.mp3
 2	カード	カード	卡片	1	{}	9394d9aaa6.mp3
@@ -27856,6 +27871,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 디자인	\N	design	[{"en": "design", "ko": "의상, 공업 제품, 건축 등의 실용적인 목적을 가진 작품의 설계나 도안.", "zh": "设计", "en_def": "The plan or sketch of a work with a practical purpose in fashion, industrial goods, architecture, etc.", "zh_def": "服装、工业产品、建筑等具有实用目的的作品设计或图案。"}]	\N
 잊혀지다	\N	\N	\N	\N
 유머	\N	humor	[{"en": "humor; joke", "ko": "남을 웃기는 행동이나 말.", "zh": "幽默", "en_def": "An act or remark that makes people laugh.", "zh_def": "让人发笑的言行。"}]	\N
+메일	\N	mail	[{"en": "e-mail; electronic mail", "ko": "인터넷이나 통신망으로 주고받는 편지.", "zh": "电邮，电子邮件，电子函件", "en_def": "A letter sent and received through the Internet or other forms of computer networks.", "zh_def": "通过互联网或通信网收发的信件。"}]	\N
 라디오	\N	radio	[{"en": "radio", "ko": "방송국에서 음성을 전파로 내보내 수신 장치를 갖춘 사람들이 듣게 하는 일. 또는 그런 방송.", "zh": "电台广播", "en_def": "In a broadcasting station, the act of sending sounds through a radio wave to enable a person with a receiving device to listen to them; or such a broadcast.", "zh_def": "广播局以电波形式把声音发出，让有收讯装置的人们收听；或指那种广播。"}, {"en": "radio", "ko": "방송국에서 보내는 전파를 받아 음성으로 바꿔 주는 기계.", "zh": "收音机", "en_def": "A machine that receives radio waves from a broadcasting station, and then converts them into sounds.", "zh_def": "可以接收广播局发送的电波并把电波转换为音声的机械。"}]	\N
 라면01	\N	←râmen	[{"en": "ramen; instant noodles", "ko": "기름에 튀겨 말린 국수와 가루 스프가 들어 있어서 물에 끓이기만 하면 간편하게 먹을 수 있는 음식.", "zh": "方便面", "en_def": "An easy-to-cook instant noodle dish made by just boiling previously-fried dry noodles and adding powdered soup to them.", "zh_def": "装有油炸干面和粉末状调味料，经水一煮即可方便食用的食物。"}]	\N
 라운드	\N	round	[{"en": "round", "ko": "권투 경기에서 3분 동안 계속되는 각 회.", "zh": "回合", "en_def": "Each period in a boxing match, which lasts 3 minutes.", "zh_def": "在拳击比赛中，以三分钟为单位划分的一个周期。"}, {"en": "round", "ko": "골프에서 경기자가 각 홀을 한 바퀴 도는 일.", "zh": "一轮", "en_def": "The activity of playing all holes in a golf game.", "zh_def": "指在高尔夫比赛中，每个运动员按照顺序连续打完每一个洞。"}]	\N
@@ -27871,6 +27887,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 레이저	\N	laser	[{"en": "laser", "ko": "의료, 통신 분야에서 물질의 원자를 세게 운동시켜 에너지를 내게 함으로써 그 빛을 강하게 내쏘는 장치.", "zh": "激光", "en_def": "A device used in medical treatment or communication that produces energy by exciting the atoms of a form of matter to a higher energy level and then shooting strong light created by this energy.", "zh_def": "在医疗、通信领域中，通过强力激发物质中的原子而使其跃迁为高能级原子，最终放射强光的装置。"}]	\N
 렌즈	\N	lens	[{"en": "lens", "ko": "유리나 수정을 볼록하거나 오목하게 깎아서 물체가 크거나 작게 보이도록 만든 물건.", "zh": "镜头，透镜", "en_def": "A product designed to make an object look larger or smaller by cutting a glass or crystal concave or convex.", "zh_def": "把玻璃或水晶切割成凹面或凸面制成的，能放大或缩小观看物体的东西。"}, {"en": "lens", "ko": "안경 대신에 눈의 각막에 직접 붙이는 얇은 물건.", "zh": "隐形眼镜", "en_def": "A thinly layered product directly attached to the cornea of eyes instead of glasses. ", "zh_def": "一种直接贴在眼球角膜上的镜片。"}]	\N
 로봇	\N	robot	[{"en": "robot", "ko": "사람의 전체 모습이나 몸의 한 부위와 비슷하게 만들어서 사람이 하는 행동이나 작업 등을 할 수 있도록 만든 기계.", "zh": "机器人", "en_def": "A machine shaped like the entire human figure or part of the body to act as humans do or do what they do. ", "zh_def": "模仿人的整体或某个身体部位而制成的，能够模仿人类活动或工作的机器。"}, {"en": "robot", "ko": "(비유적으로) 줏대 없이 남이 시키는 대로 움직이는 사람.", "zh": "机器人，傀儡", "en_def": "(figurative) A person who acts only as told to by others instead of acting on his own will.", "zh_def": "(喻义)没有主见，只是听从别人指挥的人。"}]	\N
+미팅	\N	meeting	[{"en": "group blind date", "ko": "사교를 목적으로 남녀 여러 명이 함께 하는 모임.", "zh": "集体约会，集体相亲", "en_def": "A gathering of several men and women for social purposes.", "zh_def": "以交际为目的的，多名男女参加的聚会。"}]	\N
 로터리	\N	rotary	[{"en": "traffic circle", "ko": "교통이 복잡한 네거리의 중심에 교통의 흐름을 원활히 하기 위해서 원형으로 만들어 놓은 길.", "zh": "环岛，环形路", "en_def": "A circular road constructed in the middle of a busy intersection in order to ease traffic flow.", "zh_def": "为了缓解交通复杂的十字路口的交通阻塞问题而建造的圆形道路。"}]	\N
 리그01	\N	league	[{"en": "league", "ko": "야구, 축구 등에서 우승을 가리기 위해 경기를 벌이는 각 스포츠 팀.", "zh": "球队，社团", "en_def": "In a tournament of baseball, soccer, etc., each team playing in a game to win a victory. ", "zh_def": "指在棒球、足球等运动中，为决出胜负而展开比赛的各队。"}, {"en": "league", "ko": "야구, 축구 등의 경기 단체의 연맹이 주관하여 모든 팀이 서로 한 번씩 경기를 하여 가장 우수한 팀을 가리는 경기 방식.", "zh": "联赛", "en_def": "In a competition hosted by a sports association in such games as baseball, soccer, etc., in which the winner is decided on the basis of the results of all the participating teams playing a game against one another.", "zh_def": "由棒球、足球等体育联盟主办，所有参赛队通过循环赛，最后按成绩计算名次的比赛方式。"}]	\N
 리듬	\N	rhythm	[{"en": "rhythm", "ko": "소리의 높낮이, 길이, 세기 등이 일정하게 반복되는 것.", "zh": "节奏，节拍，韵律", "en_def": "A regularly repeated pattern of the length, stress, etc., of a sound.", "zh_def": "声音的高低、长短、强度等以一定的规律重复。"}, {"en": "rhythm", "ko": "생활 등이 일정하게 규칙적으로 반복되는 것.", "zh": "节奏", "en_def": "A regularly repeated pattern of life, etc.", "zh_def": "生活等按一定规律重复。"}]	\N
@@ -27885,6 +27902,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 매스컴	\N	←mass communication	[{"en": "mass communication", "ko": "신문이나 방송으로 많은 정보를 많은 사람들에게 전달하는 일 또는 기관.", "zh": "新闻媒体，传媒", "en_def": "The act of relaying a large amount of information to many people through the newspaper or broadcast, or such an institution.", "zh_def": "指通过报刊或广播等向大众提供庞大信息的事宜或其机构。"}]	\N
 메뉴	\N	menu	[{"en": "menu", "ko": "음식점에서 파는 음식의 종류와 가격을 적은 판.", "zh": "菜单，菜谱", "en_def": "A board on which the kinds of food and their prices that a restaurant offers are written.", "zh_def": "饭店里写着饭菜种类和价格的板。"}, {"en": "menu", "ko": "식사의 요리 종류.", "zh": "菜品", "en_def": "The types of dishes comprising a meal.", "zh_def": "料理的种类。"}, {"en": "menu", "ko": "컴퓨터나 휴대전화 등의 기계에서 명령이나 기능을 선택할 수 있도록 한 조작 순서표.", "zh": "菜单，控制键盘", "en_def": "In a machine like a computer or mobile phone, etc., a list of operational options which enables one to select a command or function. ", "zh_def": "电脑或手机等机器中用于选择命令或功能的操作列表。"}]	\N
 메모	\N	memo	[{"en": "memo", "ko": "잊지 않거나 다른 사람에게 전하기 위해 어떤 내용을 간단하게 글로 적음. 또는 그렇게 적은 글.", "zh": "记录，留言，备忘录，便条", "en_def": "The act of writing down in simple words something that one should not forget or deliver to another person, or such a writing.", "zh_def": "为了防止遗忘或转达给别人而把某种内容用文字简单写下来；或指那么写下来的文字。"}]	\N
+샌드위치	\N	sandwich	[{"en": "sandwich", "ko": "두 조각의 빵 사이에 채소나 고기, 달걀, 치즈 등을 넣어 만든 음식.", "zh": "三明治", "en_def": "Food made by putting vegetables, meat, egg, cheese, etc., between two pieces of bread. ", "zh_def": "两片面包之间夹入蔬菜、 肉类、 鸡蛋及芝士等而做成的食物。"}, {"en": "sandwich", "ko": "(비유적으로) 사람이나 사물 등의 사이에 끼어 꼼짝하지 못하는 상태.", "zh": "腹背受压", "en_def": "(figurative) A state of being stuck between persons or things, etc., unable to move. ", "zh_def": "(喻义)被夹在人或事物中间而不能动弹的状态。"}]	\N
 메시지	\N	message	[{"en": "message", "ko": "어떤 사실을 알리거나 주장하거나 경고하기 위해 특별히 전하는 말.", "zh": "信息，通告，寄语", "en_def": "One's special words delivered to announce, assert, or warn of a certain thing. ", "zh_def": "为了通知、主张或警告某件事情而特地传达的消息。"}, {"en": "message; lesson", "ko": "문학이나 예술 작품에서 나타내고자 하는 사상이나 교훈.", "zh": "寓意，宗旨，思想，启示", "en_def": "Ideas or lessons expressed in literary or art works, ", "zh_def": "文学或艺术作品中作者想要表达的思想或训诫。"}, {"en": "message", "ko": "언어나 기호에 의하여 전해지는 정보 내용.", "zh": "信息，内涵", "en_def": "Information delivered through language or signs. ", "zh_def": "用语言或符号传达的内容。"}]	\N
 모니터	\N	monitor	[{"en": "monitor; screen", "ko": "컴퓨터나 텔레비전, 카메라 등의 화면.", "zh": "显示器，荧屏", "en_def": "The screen of a computer, television, camera, etc. ", "zh_def": "电脑、电视、摄像机等的画面。"}, {"en": "monitoring; monitor", "ko": "방송이나 신문, 잡지 등을 보고 의견을 내놓거나 평가하는 일. 또는 그런 일을 하는 사람.", "zh": "评议，评议员，监督员", "en_def": "The act of giving one's opinion on or evaluating the content of a broadcast, or newspaper or magazine, etc after watching or reading them or a person who does such a work. ", "zh_def": "看广播、报纸、杂志等后提出意见或评价的工作；或指做那种工作的 人。"}, {"en": "monitoring; monitor", "ko": "생산 업체의 의뢰를 받아 제품을 써 보고 의견을 내놓는 일. 또는 그런 일을 하는 사람.", "zh": "评测，监测员", "en_def": "The act of using a product upon request by its manufacturer and giving one's opinion, or a person who does such work. ", "zh_def": "收到生产厂家的委托后，使用其产品并提供意见的工作；或指做那种工作的人。"}]	\N
 모델	\N	model	[{"en": "model", "ko": "작품을 만들기 전에 미리 만든 물건. 또는 완성된 작품을 보여주는 대표적인 보기.", "zh": "型，款，样品", "en_def": "A preliminary work made prior to a final product, or one serving as a representative of a final product. ", "zh_def": "在正式生产前先行生产出的少量产品；或指代表成品品质的实物。"}, {"en": "model; example", "ko": "본보기가 되는 대상이나 모범.", "zh": "榜样，模范，模板", "en_def": "An examplary thing or person. ", "zh_def": "值得学习的对象或楷模。"}, {"en": "model", "ko": "새로운 옷이나 최신 유행의 옷을 발표할 때, 그 옷을 입고 관객들에게 보이는 것을 직업으로 하는 사람.", "zh": "时装模特", "en_def": "In a show disclosing new clothing or the lastest fashion, a person whose job is to wear the clothing and show it to the audience. ", "zh_def": "在进行新款服装或最新时装发布会时，以穿着该服装向观众展示为业的人。"}, {"en": "model", "ko": "소설이나 희곡 등에서 등장인물이 되는 실재의 사람이나 소재가 되는 사건.", "zh": "原型，素材", "en_def": "In a novel or play, etc., a real person on which a character is based, or an event that serves as a material for the work. ", "zh_def": "小说或戏曲等中的人物形象所依据的现实生活中的人或材料。"}, {"en": "model", "ko": "사진, 그림, 조각 등에서 표현의 대상으로 삼는 인물이나 물건.", "zh": "模特", "en_def": "In a photo, painting, sculpture, etc., a figure or thing used as the object of expression. ", "zh_def": "在摄影、绘画、雕刻等领域里，当作表现对象的人物或东西。"}]	\N
@@ -27923,9 +27941,6 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 그래야	\N	\N	[{"en": "so that; then", "ko": "'그리하여야'가 줄어든 말.", "zh": "这样才，只有这样才", "en_def": "A contraction of &apos;so that or then&apos;", "zh_def": "“그리하여야”的缩略语。"}]	\N
 레저	\N	leisure	[{"en": "leisure", "ko": "일이나 공부를 하지 않아도 되는 자유롭고 한가한 때. 또는 그 시간을 이용해 편안하게 노는 일.", "zh": "休闲", "en_def": "Time free from work or duties, or using that time to relax comfortably.", "zh_def": "不用工作或学习的自由闲暇时间，或利用该时间舒适玩耍的行为。"}]	\N
 매너	\N	manner	[{"en": "manners", "ko": "일상생활에서 갖추는 예의나 자세 또는 행동 방식.", "zh": "礼貌", "en_def": "Courtesy, attitude or way of behavior in everyday life. ", "zh_def": "在日常生活中具备的礼仪、姿态或行为方式。"}]	\N
-메일	\N	mail	[{"en": "e-mail; electronic mail", "ko": "인터넷이나 통신망으로 주고받는 편지.", "zh": "电邮，电子邮件，电子函件", "en_def": "A letter sent and received through the Internet or other forms of computer networks.", "zh_def": "通过互联网或通信网收发的信件。"}]	\N
-미팅	\N	meeting	[{"en": "group blind date", "ko": "사교를 목적으로 남녀 여러 명이 함께 하는 모임.", "zh": "集体约会，集体相亲", "en_def": "A gathering of several men and women for social purposes.", "zh_def": "以交际为目的的，多名男女参加的聚会。"}]	\N
-샌드위치	\N	sandwich	[{"en": "sandwich", "ko": "두 조각의 빵 사이에 채소나 고기, 달걀, 치즈 등을 넣어 만든 음식.", "zh": "三明治", "en_def": "Food made by putting vegetables, meat, egg, cheese, etc., between two pieces of bread. ", "zh_def": "两片面包之间夹入蔬菜、 肉类、 鸡蛋及芝士等而做成的食物。"}, {"en": "sandwich", "ko": "(비유적으로) 사람이나 사물 등의 사이에 끼어 꼼짝하지 못하는 상태.", "zh": "腹背受压", "en_def": "(figurative) A state of being stuck between persons or things, etc., unable to move. ", "zh_def": "(喻义)被夹在人或事物中间而不能动弹的状态。"}]	\N
 섹시하다	\N	sexy하다	[{"en": "sexy; hot", "ko": "외모나 행동에 성적인 매력이 있다.", "zh": "性感", "en_def": "One's appearance or behavior being sexually attractive.", "zh_def": "外貌或行动有性的魅力。"}]	\N
 센티미터	\N	centimeter	[{"en": "centimeter", "ko": "길이의 단위.", "zh": "厘米，公分", "en_def": "A length unit.", "zh_def": "长度单位。"}]	\N
 소스01	\N	sauce	[{"en": "sauce", "ko": "음식에 넣어 맛과 냄새와 모양을 더하는 액체.", "zh": "酱汁，调味汁", "en_def": "Liquid put in food that adds taste, smell and shape.", "zh_def": "放在食物里，增加色香味的液体。"}]	\N
@@ -28011,6 +28026,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 햄04	\N	ham	[{"en": "ham ", "ko": "돼지고기를 소금에 절인 뒤 연기에 익히고 말려 만든 식품.", "zh": "火腿，熏肉", "en_def": "Food made by smoking and drying pork preserved in salt. ", "zh_def": "把用盐腌过的猪肉用烟熏熟之后再晒制成的食物。"}]	\N
 자장면	\N	←zhajiangmian[炸醬麵]	[{"en": "jajangmyeon", "ko": "중국식 된장에 고기와 채소 등을 넣어 볶은 양념에 면을 비벼 먹는 음식.", "zh": "韩式炸酱面", "en_def": "A dish made by making sauce by stir-frying chopped meat, vegetables, etc., with Chinese soybean paste and then mixing noodles with the sauce.", "zh_def": "将肉类、蔬菜等食材伴着春酱炒成调料酱，再浇在面条上拌着吃的食物。"}]	\N
 작은아버지	\N	\N	[{"en": "uncle", "ko": "아버지의 남동생. 또는 그 사람을 부르는 말. 주로 결혼한 남동생을 가리키거나 일컫는다.", "zh": "叔父，叔叔", "en_def": "Father&apos;s younger brother. Or a term for that person. Usually refers to or refers to a married younger brother.", "zh_def": "父亲的弟弟；或对其的称呼，通常指已婚的弟弟。"}]	\N
+그만하다	geumanhada	\N	[{"en": "quit; stop", "ko": "하고 있던 일을 멈추다.", "zh": "停止，停", "en_def": "To stop what one has been doing.", "zh_def": "停住正在做的事。"}]	2764798578.wav
 작은어머니	\N	\N	[{"en": "aunt", "ko": "아버지 동생의 아내. 또는 그 사람을 부르는 말.", "zh": "叔母，婶婶", "en_def": "Father&apos;s younger brother. Or a term for that person.", "zh_def": "父亲弟弟的妻子；或对其的称呼。"}, {"en": "father&apos;s mistress", "ko": "본래 부인이 낳은 자식이 아버지의 첩을 이르거나 부르는 말.", "zh": "庶母，小妈", "en_def": "A word used by the offspring of a man&apos;s legal wife to refer to or address one&apos;s father&apos;s mistress.", "zh_def": "原配夫人的子女用于指称或称呼父亲的妾。"}]	\N
 잠바	\N	←jumper	[{"en": "jumper; jacket", "ko": "품이 넉넉해 웃옷 위에 덧입기 좋고 활동하기에도 편한 겉옷.", "zh": "夹克", "en_def": "An outer garment that is loose and thus good to be worn over another upper garment and comfortable for activities.", "zh_def": "比较宽松，适合穿在上衣外面、活动方便的外套。"}]	\N
 재즈	\N	jazz	[{"en": "jazz", "ko": "미국 흑인들의 민속 음악을 바탕으로 만들어진 대중음악.", "zh": "爵士", "en_def": "A genre of popular music that originated from the folk music of African Americans.", "zh_def": "以美国黑人民俗音乐为基础而制作的流行音乐。"}]	\N
@@ -28027,6 +28043,10 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 초콜릿	\N	chocolate	[{"en": "chocolate", "ko": "코코아 가루에 우유, 설탕 등을 섞어 만든, 주로 검은색의 달콤한 음식.", "zh": "巧克力", "en_def": "Sweet, mostly dark-colored food, that is made by mixing cocoa powder, milk, sugar, etc.  ", "zh_def": "一种在可可粉中掺入牛奶、糖等而制成的黑色甜品。"}]	\N
 탤런트	\N	talent	[{"en": "TV actor; TV actress", "ko": "텔레비전 드라마에 나오는 연기자.", "zh": "演员", "en_def": "An actor or actress appearing on a television show.", "zh_def": "出演电视剧的表演者。"}]	\N
 치즈	\N	cheese	[{"en": "cheese", "ko": "우유에서 단백질이 많은 성분을 뽑아내고 굳혀서 발효시킨 음식.", "zh": "奶酪", "en_def": "Food that is made by taking out the substance rich in protein from milk and drying and fermenting it.  ", "zh_def": "从牛奶中提取蛋白质含量较高的成分，并把其凝固、发酵而成的食物。"}]	\N
+콜라	\N	cola	[{"en": "cola; Coke", "ko": "맛이 달고 독특한 향이 나는 검은색의 탄산음료.", "zh": "可乐", "en_def": "Blackish soda, with a sweet flavor and unique scent.", "zh_def": "味甜且具有独特的香味的黑色碳酸饮料。"}]	\N
+콤플렉스	\N	complex	[{"en": "complex; inferiority complex", "ko": "무의식 속에 자리 잡고 사라지지 않는 생각이나 스스로 남보다 못하다고 여기는 생각.", "zh": "情结，自卑感", "en_def": "A thought, deep in one's unconscious mind, that does not go away or the feeling of regarding oneself as falling behind others.", "zh_def": "占据在潜意识里挥之不去的感情纠葛或认为不如别人的想法。"}]	\N
+크리스마스	\N	Christmas	[{"en": "Christmas Day", "ko": "기독교의 창시자인 예수가 태어난 것을 기념하는 날. 12월 25일이다.", "zh": "圣诞节", "en_def": "The day to commemorate the birth of Jesus, the founder of Christianity, December 25.", "zh_def": "纪念基督教创始人耶稣诞生的日子，12月25日。"}]	\N
+그분	geubun	\N	[{"en": "geubun", "ko": "(아주 높이는 말로) 그 사람.", "zh": "那位", "en_def": "(very polite form) The person.", "zh_def": "(高尊)那个人。"}]	d38bd07aa6.wav
 카드	\N	card	[{"en": "card", "ko": "어떤 내용을 증명하거나 기록하기 위해 일정한 크기와 형식으로 자른 두꺼운 종이 또는 플라스틱.", "zh": "卡", "en_def": "A thick piece of paper or plastic cut out in a fixed size and form, to prove or record something.", "zh_def": "为了证明或记录某一内容，剪裁成一定规格、形状的厚纸片或塑料片。"}, {"en": "card", "ko": "특별한 날을 기념하거나 인사를 전하기 위해 그림이나 장식, 글 등을 인쇄한 종이.", "zh": "卡，卡片", "en_def": "A piece of paper on which an image, decoration, message, etc., is printed, to celebrate a special day or greet someone.", "zh_def": "为纪念特别的日子或传递问候，印成画、装饰图案、文字等的纸。"}, {"en": "card", "ko": "어떤 내용을 기록해 자료의 정리, 계산 등에 사용하는 종이.", "zh": "卡，卡片", "en_def": "A piece of paper used in arrangement, calculation, etc., of data, by recording a certain content on it.", "zh_def": "记录某些内容，而用于整理材料、结算等方面的纸片。"}, {"en": "card", "ko": "카드놀이를 할 때 쓰는 작고 두꺼운 종이.", "zh": "扑克牌", "en_def": "A small and thick piece of paper used in a card game.", "zh_def": "玩扑克的时候使用的小而厚的纸。"}, {"en": "solution; key", "ko": "어떤 일을 해결하기 위해 사용하는 결정적인 방법이나 수단.", "zh": "杀手锏，秘密武器", "en_def": "A critical method or means used to solve a certain issue.", "zh_def": "为解决某一事情而使用的，可一剑定乾坤的方法或手段。"}, {"en": "card", "ko": "상품이나 서비스를 구입한 대금을 그 자리에서 바로 지불하거나, 일정 기간 이후에 할 수 있도록 만든 네모난 플라스틱 판.", "zh": "银行卡，储蓄卡，信用卡", "en_def": "A rectangular piece of plastic that enables one to pay for goods or services right away or after a certain period of time.", "zh_def": "在购物或接受服务后，可当场或过一段时间后付款的支付工具，是个呈方型的塑料片。"}, {"en": "card", "ko": "컴퓨터에서 전자 정보를 담고 있는 일정한 규격의 판.", "zh": "内存卡，存储卡", "en_def": "In a computer, a regular-sized plate containing electronic data.", "zh_def": "电脑里储存电子信息的，具有一定规格的卡片状物品。"}]	\N
 카레	\N	←curry	[{"en": "curry", "ko": "강황, 생강, 후추, 마늘 등을 섞어 만든 노란 빛깔의 향신료.", "zh": "咖喱，咖喱粉", "en_def": "Yellow spice made by mixing turmeric, ginger, black pepper, garlic, etc.", "zh_def": "一种用姜黄、生姜、胡椒、大蒜等混合制成的黄色调味品。"}, {"en": "curry rice", "ko": "고기와 감자, 양파 등의 채소를 볶다가 카레 가루를 섞어서 끓인 다음 밥에 얹어 먹는 인도식 요리.", "zh": "咖喱饭", "en_def": "An Indian dish made by boiling a mixture of curry powder and stir-fried meat and vegetables such as potatoes, onions, etc., served over rice.", "zh_def": "一种印度料理，其做法为先将切成大块的肉和土豆、洋葱等蔬菜炒熟后，再加入咖喱粉煮熟，最后倒在饭上。"}]	\N
 카메라	\N	camera	[{"en": "camera", "ko": "사진을 찍는 기계.", "zh": "照相机", "en_def": "A device used to take photographs.", "zh_def": "照相用的机器。"}, {"en": "camera", "ko": "영상이나 영화를 찍는 기계.", "zh": "摄像机", "en_def": "A device used to take moving pictures or films.", "zh_def": "用于拍摄视频或电影的机器。"}]	\N
@@ -28050,9 +28070,6 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 코치	\N	coach	[{"en": "coaching; teaching", "ko": "지도하고 가르침.", "zh": "教练，训练", "en_def": "An act of leading and teaching someone.", "zh_def": "指导并教授。"}, {"en": "coaching; training", "ko": "운동 경기의 기술이나 전술을 선수들에게 지도하고 훈련시키는 일.", "zh": "教练，训练", "en_def": "An act of leading athletes and teaching them the techniques or tactics of a sports game.", "zh_def": "指导并训练选手掌握运动比赛的技术或战术。"}, {"en": "coach", "ko": "운동 경기의 기술이나 전술을 선수들에게 지도하고 훈련시키는 사람.", "zh": "教练，教练员", "en_def": "A person who leads athletes and teaches them the techniques or tactics of a sports game.", "zh_def": "从事指导并训练选手掌握运动比赛的技战术的人员。"}]	\N
 코트03	\N	coat	[{"en": "overcoat; coat", "ko": "추위를 막기 위해 겉에 입는 옷.", "zh": "大衣", "en_def": "An outer garment that one wears over other clothes to protect oneself from the cold. ", "zh_def": "为了御寒而穿在外面的衣服。"}]	\N
 콘서트	\N	concert	[{"en": "music concert", "ko": "악기를 연주하거나 노래를 하여 청중에게 들려주는 모임.", "zh": "演唱会", "en_def": "A gathering organized so that people can listen to songs or music being sung or played live. ", "zh_def": "面向观众演奏乐器或唱歌的表演。"}]	\N
-콜라	\N	cola	[{"en": "cola; Coke", "ko": "맛이 달고 독특한 향이 나는 검은색의 탄산음료.", "zh": "可乐", "en_def": "Blackish soda, with a sweet flavor and unique scent.", "zh_def": "味甜且具有独特的香味的黑色碳酸饮料。"}]	\N
-콤플렉스	\N	complex	[{"en": "complex; inferiority complex", "ko": "무의식 속에 자리 잡고 사라지지 않는 생각이나 스스로 남보다 못하다고 여기는 생각.", "zh": "情结，自卑感", "en_def": "A thought, deep in one's unconscious mind, that does not go away or the feeling of regarding oneself as falling behind others.", "zh_def": "占据在潜意识里挥之不去的感情纠葛或认为不如别人的想法。"}]	\N
-크리스마스	\N	Christmas	[{"en": "Christmas Day", "ko": "기독교의 창시자인 예수가 태어난 것을 기념하는 날. 12월 25일이다.", "zh": "圣诞节", "en_def": "The day to commemorate the birth of Jesus, the founder of Christianity, December 25.", "zh_def": "纪念基督教创始人耶稣诞生的日子，12月25日。"}]	\N
 크림	\N	cream	[{"en": "cream", "ko": "버터, 아이스크림 등의 원료나 조리에 사용하는, 우유에서 얻는 하얀 기름.", "zh": "奶油", "en_def": "White oil obtained from milk, used as the base material of butter, ice cream, etc., or used in cooking.", "zh_def": "用于作制黄油、冰淇淋等的原料或烹饪中的，从牛奶中提取的白色油。"}, {"en": "whipping cream", "ko": "달걀, 우유, 설탕 등으로 만든, 옅은 노란색이나 하얀색의 끈적끈적한 식품.", "zh": "奶油", "en_def": "Light yellow or white, sticky food which is made of egg, milk, sugar, etc.", "zh_def": "用鸡蛋、牛奶、白糖等制成的淡黄色或白色的黏性食品。"}, {"en": "cream", "ko": "피부나 머리 손질에 쓰는, 기름기가 많은 기초 화장품.", "zh": "霜", "en_def": "Oily fundamental cosmetics used to smooth one's skin or groom one's hair.", "zh_def": "用于保养皮肤或头发的基础化妆品，其成分内含有较多的油分。"}]	\N
 키스	\N	kiss	[{"en": "kiss", "ko": "사랑의 표현으로 상대의 입에 자기의 입을 대어 맞춤.", "zh": "吻", "en_def": "An act of pressing one's lips against someone's lips, as an expression of love.", "zh_def": "为表达爱意而把自己的嘴贴在对方的嘴上的行为。"}, {"en": "kiss; smack", "ko": "서양에서, 인사를 할 때나 존경을 표시할 때 상대의 손등이나 뺨에 입을 맞춤.", "zh": "吻", "en_def": "In western culture, an act of pressing one's lips against someone's hand or cheek, as a greeting or as an expression of respect.", "zh_def": "在西方，问候或表达尊敬时用嘴接触对方的手背或面颊的行为。"}]	\N
 타입02	\N	type	[{"en": "type; category", "ko": "성질이나 특징, 모양 등이 비슷한 것끼리 묶은 하나의 무리. 또는 그 무리에 속하는 것.", "zh": "类型，样式", "en_def": "A group of things that are categorized according to their nature, characteristics, shapes, etc., or something that belongs to that group.", "zh_def": "性质、特征、形状等相似的一群；又或是属于那一群的。"}]	\N
@@ -28139,6 +28156,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 가난하다	gananhada	\N	[{"en": "poor; indigent; destitute", "ko": "돈이 없어서 생활이 어렵다.", "zh": "穷，穷困", "en_def": "Hard to make a living due to a lack of money.", "zh_def": "因没有钱而生活困难。"}]	8d5ac5b7bf.wav
 가늘다	ganeulda	\N	[{"en": "thin", "ko": "물체의 너비가 좁거나 굵기가 얇으면서 길다.", "zh": "细，纤细", "en_def": "An object having a narrow width or being thin and long.", "zh_def": "物体的宽度窄或粗细单薄，且有一定长度。"}, {"en": "weak; small", "ko": "소리의 울림이 약하다.", "zh": "轻，轻微，微弱", "en_def": "The reverberation of sound being weak.", "zh_def": "声音的振动很弱。"}, {"en": "fine", "ko": "알갱이의 크기가 매우 작다.", "zh": "细，细小，细碎", "en_def": "The size of grains being very small.", "zh_def": "颗粒很小。"}, {"en": "weak", "ko": "빛, 바람, 연기, 숨 등이 희미하고 약하다.", "zh": "微弱，轻微", "en_def": "Light, wind, smoke, breath, etc., being faint and weak.", "zh_def": "光线、风、烟雾、气息等模糊而轻淡。"}, {"en": "faint", "ko": "표정이 얼굴에 나타날 듯 말 듯 약하다.", "zh": "淡淡的，隐隐的", "en_def": "A facial expression being faint or nearly imperceptible.", "zh_def": "脸上的表情很微弱，若隐若现。"}, {"en": "fine", "ko": "천이나 그물 등의 짜임이 촘촘하다.", "zh": "密，细密，致密", "en_def": "The weave of a fabric, net, etc., being fine.", "zh_def": "布或网等编织得紧致。"}, {"en": "slight", "ko": "움직이는 정도가 아주 약하다.", "zh": "细微，轻微", "en_def": "A movement being very small.", "zh_def": "移动的程度很弱。"}]	a1f36e0502.wav
 가능	ganeung	可能	[{"en": "possibility; potentiality", "ko": "할 수 있거나 될 수 있음.", "zh": "可能", "en_def": "The state of being able to do or be something.", "zh_def": "可以做到或可以成为。"}]	c9db14cf19.wav
+그사이	geusai	\N	[{"en": "meanwhile; meantime", "ko": "어느 때부터 다른 어느 때까지의 비교적 짧은 동안.", "zh": "其间，那会儿，近来", "en_def": "A relatively short period from a certain point of time to another certain point of time.", "zh_def": "从某一时候到另一时候较短的时间。"}]	fd65353221.wav
 가능성	ganeungsseong	可能性	[{"en": "possibility; chance; likelihood", "ko": "어떤 일이 앞으로 이루어질 수 있는 성질.", "zh": "可能性，可行性", "en_def": "The extent to which something can happen.", "zh_def": "某事今后可能实现的性质。"}, {"en": "potential; possibility", "ko": "앞으로 성장할 수 있는 성질.", "zh": "可能性，潜能", "en_def": "The ability that can be developed in the future.", "zh_def": "今后可能成长的性质。"}]	ba85d02246.wav
 가능하다	ganeunghada	可能하다	[{"en": "possible; able", "ko": "할 수 있거나 될 수 있다.", "zh": "可能", "en_def": "Being able to be something or to do something.", "zh_def": "可以做到或可以成为。"}]	b6ccf95861.wav
 가득01	gadeuk	\N	[{"en": "full ", "ko": "양이나 수가 정해진 범위에 꽉 찬 모양.", "zh": "多，充满，满满地", "en_def": "In a quantity or amount that reaches full capacity.", "zh_def": "量或数达到既定范围的样子。"}, {"en": "full", "ko": "빈 곳이 없을 정도로 무엇이 많은 모양.", "zh": "挤满，装满，充满", "en_def": "In such a large quantity that there is no empty space.", "zh_def": "事物或人多得没有空隙的样子。"}, {"en": "full", "ko": "냄새나 빛, 소리 등이 공간에 널리 퍼져 있는 상태.", "zh": "充满，满满地", "en_def": "In a state in which a smell, light, sound, etc., pervades a space.", "zh_def": "气味、光线或声音等弥漫在整个空间的状态。"}, {"en": "full", "ko": "어떤 감정이나 생각이 강한 모양.", "zh": "充满，满满地", "en_def": "With a strong emotion or thought.", "zh_def": "某种感情或想法非常强烈的样子。"}]	d594c7c04f.wav
@@ -28150,6 +28168,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 가령05	galyeong	假令	[{"en": "supposing", "ko": "실제로는 그렇지 않지만 예를 들어 말해서.", "zh": "如果，假如", "en_def": "Not really, but for example.", "zh_def": "实际上并非如此，举例来说。"}, {"en": "for example", "ko": "예를 들어.", "zh": "比如", "en_def": "For instance.", "zh_def": "举例来说。"}]	84567e5e6a.wav
 가로01	galo	\N	[{"en": "width; crosswise direction", "ko": "왼쪽에서 오른쪽으로 이어지는 방향. 또는 그 길이.", "zh": "横", "en_def": "A horizontal direction or the width from left to right.", "zh_def": "从左边延伸到右边的方向；或指其长度。"}]	bffa9b759f.wav
 가로등	galodeung	街路燈	[{"en": "streetlamp", "ko": "어둠을 밝히기 위하여 길에 설치한 등.", "zh": "路灯，街灯", "en_def": "A lamp set up on a street to light up the dark.", "zh_def": "设在路上，用来照明的灯。"}]	1993c9669f.wav
+개방04	gaebang	開放	[{"en": "opening; opening to the public", "ko": "자유롭게 들어가거나 이용할 수 있도록 열어 놓음.", "zh": "开放，对外开放", "en_def": "The act of opening the entrance to a place for people to enter or use freely.", "zh_def": "打开，使可以自由进入或利用。"}, {"en": "opening up; removing barriers", "ko": "금지하던 것을 풀어 자유롭게 교류하고 활동하게 함.", "zh": "开放，放开", "en_def": "The act of removing a ban on something and letting people or goods travel or interact freely.", "zh_def": "解禁，使自由交流和活动。"}]	ba2608a9e5.wav
 가로막다	garomaktta	\N	[{"en": "block; be in the way", "ko": "앞을 막아 통하거나 지나지 못하게 하다.", "zh": "挡，堵，截", "en_def": "To stand in the way so as to keep someone or something from going by or passing through.", "zh_def": "挡在前面，使之不通或无法经过。"}, {"en": "obstruct; block", "ko": "말이나 행동, 일 등을 하지 못하게 방해하다.", "zh": "阻止，阻挡，拦", "en_def": "To obstruct someone from saying a word or doing a certain action, task, etc.", "zh_def": "妨碍别人说话、行动或做事。"}, {"en": "block; be in the way", "ko": "앞이 보이지 않게 가리다.", "zh": "遮挡", "en_def": "To obstruct someone's view.", "zh_def": "遮住使之看不到前方。"}]	a956b5f20d.wav
 가로수	galosu	街路樹	[{"en": "roadside trees; street trees", "ko": "길을 따라 줄지어 심은 나무.", "zh": "行道树，林荫树", "en_def": "Trees planted alongside the streets.", "zh_def": "沿路种植的成排的树。"}]	f40e318c1a.wav
 가루01	garu	\N	[{"en": "powder", "ko": "단단한 물체가 아주 잘게 부스러지거나 갈린 것.", "zh": "粉末，面儿", "en_def": "A very small grain of something hard, as a result of grinding or pounding it.", "zh_def": "坚硬的物体被粉碎或磨得很小。"}]	db680f6d4d.wav
@@ -28159,6 +28178,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 가리다03	garida	\N	[{"en": "distinguish; differentiate", "ko": "여러 가지 중에서 하나를 구별하여 뽑다.", "zh": "分辨，区分", "en_def": "To distinguish and single out one from many things.", "zh_def": "从多个中区别挑出一个。"}, {"en": "be shy; have inhibitions about", "ko": "성격 등의 이유로 잘 모르는 사람과 대화하거나 낯선 사람을 대하는 것을 싫어하다.", "zh": "认生", "en_def": "To dislike talking to people you don&apos;t know or dealing with strangers due to personality reasons.", "zh_def": "因性格等原因不喜欢与陌生人交谈或面对生人。"}, {"en": "distinguish; discriminate", "ko": "잘잘못이나 좋고 나쁨 등과 같은 기준에 따라 구분하거나 나누다.", "zh": "明辨，分清", "en_def": "To sort out or divide things according to a certain standard such as right or wrong, good or bad, etc.", "zh_def": "按照对错或好坏等标准进行区别或区分。"}, {"en": "be potty-trained", "ko": "대소변을 눌 곳에 스스로 누다.", "zh": "会(大小便)", "en_def": "For children to be able to use the toilet.", "zh_def": "自己会在适当的地方解决大小便。"}, {"en": "be picky (with food)", "ko": "좋아하는 음식만 까다롭게 골라서 먹다.", "zh": "挑食，偏食", "en_def": "To be picky with food and therefore eat only one&apos;s favorite food.", "zh_def": "只挑喜欢的东西吃。"}, {"en": "look after oneself; take care of one&apos;s business", "ko": "자기 일을 알아서 스스로 처리하다.", "zh": "自食其力，自顾", "en_def": "To take care of one&apos;s matters on one&apos;s own.", "zh_def": "自己的事情自己处理。"}]	c1bf19e87b.wav
 가리키다01	garikida	\N	[{"en": "point; gesture; indicate", "ko": "손가락이나 물건을 어떤 방향이나 대상으로 향하게 하여 다른 사람에게 그것을 알게 하다.", "zh": "指，指着，指出", "en_def": "To point a finger or some other thing in a certain direction or toward a certain object to let others recognize it.", "zh_def": "把手指或东西朝着某个方向或对象，以让别人知道。"}, {"en": "point; indicate; show", "ko": "시계나 온도계의 바늘이 시각이나 온도 등을 알려 주다.", "zh": "指向，指示", "en_def": "For hands of a clock or the sensor of a thermometer to indicate time or temperature.", "zh_def": "钟表或温度计的指针告知时间或温度等。"}, {"en": "mean; imply", "ko": "어떤 사실이나 내용을 뜻하다.", "zh": "表示，意指", "en_def": "To convey a fact or meaning.", "zh_def": "意味着某种事实或内容。"}, {"en": "refer", "ko": "어떤 대상을 특별히 지적해 말하다.", "zh": "特指，指称，把……叫做", "en_def": "To make reference to or mention something specifically.", "zh_def": "特别指着某个对象说。"}]	3bb00ce96e.wav
 가만	gaman	\N	[{"en": "quietly; motionlessly", "ko": "움직이지 않거나 말 없이.", "zh": "且慢，慢着", "en_def": "Without movement or words.", "zh_def": "不动或不说话地。"}, {"en": "indifferently", "ko": "일을 해결하기 위한 어떠한 대책이나 노력 없이.", "zh": "放任，任由", "en_def": "Without any action or effort to solve something.", "zh_def": "没有任何解决问题的对策或努力地。"}, {"en": "deliberately; carefully", "ko": "마음을 차분하게 하고 주의를 기울여.", "zh": "静心，专心", "en_def": "With calm and care.", "zh_def": "平心静气，集中注意力地。"}]	3d67ae834c.wav
+그야말로	geuyamallo	\N	[{"en": "certainly; indeed; really", "ko": "(강조하는 말로) 사실 그대로.", "zh": "那真是，那才是", "en_def": "(emphasizing form) Truly.", "zh_def": "(强调)正如事实一样。"}]	71bbc6dbb5.wav
 가만있다	gamanittta	\N	[{"en": "keep quiet; remain still", "ko": "말을 하거나 몸을 움직이지 않고 조용히 있다.", "zh": "老实呆着，不声不响，忍耐", "en_def": "To remain quiet without saying a word or moving one's body.", "zh_def": "不说话或不动身体，安静地呆着。"}, {"en": "sit still; sit idle", "ko": "어떤 대책을 세우거나 적절한 행동을 하지 않고 그대로 있다.", "zh": "不管，不参与", "en_def": "To do nothing without developing any measure or taking any appropriate action.", "zh_def": "不制定任何对策或不采取适当的行动，就这样呆着。"}, {"en": "let me see", "ko": "갑자기 생각이 잘 나지 않거나 기억이 떠오르지 않을 때 하는 말.", "zh": "慢着，等等", "en_def": "An expression used when one cannot think of or recall something offhand.", "zh_def": "突然想不起来或记不起来时说的话。"}]	9ec8d8e4ae.wav
 가만히	gamanhi	\N	[{"en": "quietly; motionlessly", "ko": "움직이지 않거나 말 없이.", "zh": "静静地，默默地", "en_def": "Without movement or words.", "zh_def": "不动或不说话地。"}, {"en": "indifferently", "ko": "일을 해결하기 위한 어떠한 대책이나 노력 없이.", "zh": "就那么，就那样", "en_def": "Without any action or effort to solve something.", "zh_def": "没有任何解决问题的对策或不做任何努力地。"}, {"en": "deliberately; carefully", "ko": "마음을 차분하게 하고 주의를 기울여.", "zh": "冷静地，仔细地", "en_def": "With calm and care.", "zh_def": "静下心来，集中注意力。"}, {"en": "silently", "ko": "남이 모르게 조용히.", "zh": "悄悄地，轻轻地，偷偷地", "en_def": "Quietly so that others will not notice.", "zh_def": "背着别人暗暗地。"}]	7aab76175e.wav
 가뭄	gamum	\N	[{"en": "drought", "ko": "오랫동안 비가 오지 않는 날씨.", "zh": "干旱", "en_def": "A weather condition with no rain for a long time.", "zh_def": "长时间不下雨的天气。"}]	f6181377dd.wav
@@ -28189,6 +28209,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 가죽01	gajuk	\N	[{"en": "skin", "ko": "사람이나 동물의 몸을 싸고 있는 껍질.", "zh": "皮", "en_def": "The surface covering a human or animal body.", "zh_def": "包裹在人或动物身上的表皮。"}, {"en": "leather", "ko": "동물의 몸에서 벗겨 낸 껍질을 가공한 물건.", "zh": "皮，皮制", "en_def": "The product made by processing the skin peeled from an animal's body.", "zh_def": "把动物身上剥下来的表皮进行加工后的东西。"}]	a49e8729e2.wav
 가지01	gaji	\N	[{"en": "branch; sprig; bough; twig", "ko": "나무나 풀의 큰 줄기에서 갈라져 나간 작은 줄기.", "zh": "树枝，枝", "en_def": "A small twig broken off from a branch of a tree or blade of grass.", "zh_def": "从树或草的主干分叉出去的小分支。"}, {"en": "branch", "ko": "근본이 되는 어떤 것에서 다시 갈라져 나온 것.", "zh": "分支", "en_def": "Something deriving from a certain thing that is the basis.", "zh_def": "从根本的东西分叉出来的东西。"}]	9ab8dc6aa6.wav
 가지04	gaji	\N	[{"en": "kind; sort", "ko": "사물의 종류를 헤아리는 말.", "zh": "种，项，类别，个", "en_def": "A bound noun used to indicate the type of a thing.", "zh_def": "表示事物种类的数量单位。"}]	361e71ef65.wav
+개방되다	gaebangdoeda	開放되다	[{"en": "be opened", "ko": "자유롭게 들어가거나 이용할 수 있도록 열리다.", "zh": "开放，对外开放", "en_def": "For the entrance to a place to open for people to enter or use freely.", "zh_def": "被打开，可以自由进入或利用。"}, {"en": "be opened up", "ko": "금지되던 것이 풀려 자유롭게 교류하고 활동할 수 있게 되다.", "zh": "开放，放开", "en_def": "For a ban on something to be removed, allowing people or goods to travel or interact freely.", "zh_def": "被解禁，可以自由交流或活动。"}]	528f52358f.wav
 가지다	gajida	\N	[{"en": "have; hold", "ko": "무엇을 손에 쥐거나 몸에 지니다.", "zh": "持，带，戴", "en_def": "To carry or keep something, or hold it in one's hands.", "zh_def": "手里握着或身上携带着某物。"}, {"en": "own; possess; keep", "ko": "자기 것으로 하다.", "zh": "拥有，得到", "en_def": "To take possession of something.", "zh_def": "占为己有。"}, {"en": "have; hold", "ko": "직업이나 자격, 자격증, 신분 등을 지니다.", "zh": "持有，有", "en_def": "To have a certain job, qualification, certificate, status, etc.", "zh_def": "获得职业、资格、资格证或身份等。"}, {"en": "hold; give; have; throw; convene", "ko": "회의나 모임, 공연 등을 열다.", "zh": "开，举办，举行", "en_def": "To have a meeting, gathering, performance, etc.", "zh_def": "召开会议或聚会，进行演出等。"}, {"en": "have; possess", "ko": "발휘할 수 있는 효력이나 능력 등을 지니다.", "zh": "拥有，具有，持有", "en_def": "To have an effect, ability, etc.", "zh_def": "具备可以发挥的效力或能力等。"}, {"en": "have", "ko": "어떤 신체적 특성을 지니다.", "zh": "有，拥有", "en_def": "To have a certain physical characteristic.", "zh_def": "具有某种身体特征。"}, {"en": "conceive; be pregnant; expect", "ko": "아이나 새끼를 배다.", "zh": "怀，怀孕", "en_def": "For a person or an animal to be pregnant with a baby.", "zh_def": "肚子里孕育着婴儿或小崽子。"}, {"en": "have", "ko": "병이나 병의 증세 등을 지니다.", "zh": "患有，带有", "en_def": "To have a certain disease or related symptoms.", "zh_def": "有疾病或患病的症状等。"}, {"en": "use", "ko": "무엇을 도구나 재료, 수단이나 방법으로 하다.", "zh": "用，拿", "en_def": "To use something as a tool, material, means, method, etc.", "zh_def": "把某物作为工具或材料、手段或方法。"}, {"en": "target", "ko": "무엇을 대상으로 하다.", "zh": "拿，就", "en_def": "To cause someone to become the target of something.", "zh_def": "把某物或人当作对象。"}, {"en": "have; harbor", "ko": "생각, 태도, 사상 등을 마음에 품다.", "zh": "怀有，感", "en_def": "To conceive a thought or an idea or develop an attitude.", "zh_def": "心里有想法、态度、思想等。"}, {"en": "have relationship with; interact", "ko": "관계를 맺다.", "zh": "保持，拥有", "en_def": "To establish a relationship.", "zh_def": "建立关系。"}]	eaac9533f4.wav
 가짜	gajja	假짜	[{"en": "fake; forgery; imitation", "ko": "진짜처럼 꾸몄지만 진짜가 아닌 것.", "zh": "假，伪", "en_def": "Something which is made to look real, but is not real.", "zh_def": "装得像真的一样，但不是真的。"}]	8ae07555a6.wav
 가치06	gachi	價値	[{"en": "value", "ko": "값이나 귀중한 정도.", "zh": "价，价值", "en_def": "Price or the degree of valuableness.", "zh_def": "价格，或者贵重程度。"}, {"en": "value; worth", "ko": "의미나 중요성.", "zh": "价值", "en_def": "Meaning or importance.", "zh_def": "意义或重要性。"}]	10bf9fdb71.wav
@@ -28298,8 +28319,6 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 거절하다01	geojeolhada	拒絕하다	[{"en": "refuse; reject; deny", "ko": "다른 사람의 부탁이나 제안, 선물 등을 받아들이지 않다.", "zh": "拒绝，谢绝", "en_def": "Not to accept a request, proposal or gift from another person.", "zh_def": "不接受别人的请求、提议或礼物等。"}]	4ffcb7d98b.wav
 거짓	geojid	\N	[{"en": "lie; fabrication", "ko": "사실이 아닌 것을 사실처럼 꾸민 것.", "zh": "假，假的", "en_def": "Something that is not true but made to look true.", "zh_def": "把不是事实的事情装得像事实一样。"}]	ddc3c0a91d.wav
 개발하다	gaebalhada	開發하다	[{"en": "develop; exploit", "ko": "토지나 천연자원 등을 이용하기 쉽거나 쓸모 있게 만들다.", "zh": "开发", "en_def": "To make land, natural resources, etc., useful, or easy to utilize.", "zh_def": "使土地或自然资源等变得容易利用或有用。"}, {"en": "develop", "ko": "능력이나 지식 등을 더 나아지게 하다.", "zh": "开发，发掘", "en_def": "To improve one's ability, knowledge, etc.", "zh_def": "使能力或知识等变得更好。"}, {"en": "develop", "ko": "한 나라의 경제나 특정 분야의 산업을 더 나아지게 하거나 커지게 하다.", "zh": "开发，发展", "en_def": "To improve or expand the economy of a nation or a certain industry.", "zh_def": "使一个国家的经济或特定领域的产业变得更好或更大。"}, {"en": "develop; devise; invent", "ko": "새로운 물건을 만들거나 새로운 생각을 내놓다.", "zh": "开发，研发", "en_def": "To create a new product or idea.", "zh_def": "做出新的东西或提出新的想法。"}]	8867a853d0.wav
-개방04	gaebang	開放	[{"en": "opening; opening to the public", "ko": "자유롭게 들어가거나 이용할 수 있도록 열어 놓음.", "zh": "开放，对外开放", "en_def": "The act of opening the entrance to a place for people to enter or use freely.", "zh_def": "打开，使可以自由进入或利用。"}, {"en": "opening up; removing barriers", "ko": "금지하던 것을 풀어 자유롭게 교류하고 활동하게 함.", "zh": "开放，放开", "en_def": "The act of removing a ban on something and letting people or goods travel or interact freely.", "zh_def": "解禁，使自由交流和活动。"}]	ba2608a9e5.wav
-개방되다	gaebangdoeda	開放되다	[{"en": "be opened", "ko": "자유롭게 들어가거나 이용할 수 있도록 열리다.", "zh": "开放，对外开放", "en_def": "For the entrance to a place to open for people to enter or use freely.", "zh_def": "被打开，可以自由进入或利用。"}, {"en": "be opened up", "ko": "금지되던 것이 풀려 자유롭게 교류하고 활동할 수 있게 되다.", "zh": "开放，放开", "en_def": "For a ban on something to be removed, allowing people or goods to travel or interact freely.", "zh_def": "被解禁，可以自由交流或活动。"}]	528f52358f.wav
 개방하다03	gaebanghada	開放하다	[{"en": "open; be open to the public", "ko": "자유롭게 들어가거나 이용할 수 있도록 열어 놓다.", "zh": "开放，对外开放", "en_def": "To open the entrance to a place for people to enter or use freely.", "zh_def": "打开，使可以自由进入或利用。"}, {"en": "open up", "ko": "금지하던 것을 풀어 자유롭게 교류하고 활동하게 하다.", "zh": "开放，放开", "en_def": "To remove a ban on something, allowing people or goods travel or interact freely.", "zh_def": "解禁，使自由交流或活动。"}]	7c4df29712.wav
 개별	gaebyeol	個別	[{"en": "being separate; being individual", "ko": "하나씩 따로 떨어져 있는 상태.", "zh": "个别", "en_def": "A state in which something or someone exists as a distinct entity separate from others.", "zh_def": "指一个一个单独分开的状态。"}]	54ffac5e5d.wav
 개선01	gaeseon	改善	[{"en": "improvement", "ko": "부족한 점, 잘못된 점, 나쁜 점 등을 고쳐서 더 좋아지게 함.", "zh": "改善", "en_def": "The act of reforming shortcomings, wrong or bad sides to character and making them better.", "zh_def": "改掉不足点、错误点、问题点等而使之变得更好。"}]	308e919d91.wav
@@ -28329,6 +28348,8 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 거액	geoaeg	巨額	[{"en": "fortune; large amount of money", "ko": "아주 많은 액수의 돈.", "zh": "巨额，巨款", "en_def": "An extremely large amount of money.", "zh_def": "数额很大的钱。"}]	2bde68d4f4.wav
 거울01	geoul	\N	[{"en": "mirror", "ko": "물체의 모양을 비추어 보는 얇고 평평한 물건.", "zh": "镜子", "en_def": "A thin, flat object reflecting the appearance of an object or person.", "zh_def": "可以照出物体样子的薄而平的物品。"}, {"en": "mirror", "ko": "(비유적으로) 어떤 사실을 그대로 드러내거나 보여 주는 것.", "zh": "镜子，写照", "en_def": "(figurative) Something disclosing or showing a certain fact as it is.", "zh_def": "(喻义)如实地显示或呈现某个事实。"}, {"en": "example", "ko": "모범이나 교훈이 될 만한 것.", "zh": "榜样，典范", "en_def": "Something to benchmark or that gives a lesson.", "zh_def": "可以成为模范或教训的。"}]	58a07cd3c4.wav
 거치다01	geochida	\N	[{"en": "be stuck; be blocked", "ko": "무엇에 걸리거나 막히다.", "zh": "绊，碍", "en_def": "To be stuck or blocked by something.", "zh_def": "被什么东西卡住或堵住。"}, {"en": "hesitate", "ko": "마음에 걸려 꺼려지다.", "zh": "牵挂，挂念", "en_def": "To feel uneasy and reluctant about something.", "zh_def": "放心不下，觉得愧疚。"}, {"en": "stop over", "ko": "오가는 길에 어디를 지나거나 들르다.", "zh": "经，经过，经由", "en_def": "To pass or drop by a certain place on the route.", "zh_def": "来回的路上路过或顺路去某处。"}, {"en": "go through", "ko": "어떤 과정을 겪거나 단계를 밟다.", "zh": "经过，经历", "en_def": "To go through a process or stage.", "zh_def": "经受某个过程或走过某个阶段。"}, {"en": "be examined", "ko": "검사를 받거나 살펴보다.", "zh": "经由", "en_def": "To be tested or inspected.", "zh_def": "接受检查或察看。"}]	856484bb93.wav
+그립다	geuriptta	\N	[{"en": "miss", "ko": "매우 보고 싶고 만나고 싶다.", "zh": "思念，怀念", "en_def": "Wanting to see and meet someone very much.", "zh_def": "非常想念，想见面。"}, {"en": "miss", "ko": "어떤 것이 매우 필요하거나 없어서 아쉽다.", "zh": "想要，向往，渴求", "en_def": "Feeling the lack of something because one needs it desperately or does not have it.", "zh_def": "非常需要某种东西或因为没有而深感遗憾。"}]	7cad5ad971.wav
+그만02	geuman	\N	[{"en": "such; like that", "ko": "상태, 모양, 성질 등이 그 정도의.", "zh": "那么点", "en_def": "A state, appearance, characteristic, etc., being as such.", "zh_def": "状态、模样、性质等就那种程度的。"}]	c02989123e.wav
 거칠다	geochilda	\N	[{"en": "rough; coarse", "ko": "표면이 곱거나 부드럽지 않다.", "zh": "粗，粗糙", "en_def": "The surface of something being not soft or smooth.", "zh_def": "表面不细致、不柔和。"}, {"en": "rough; tough", "ko": "정확하거나 꼼꼼하지 않고 대충 함부로 하는 모습이다.", "zh": "粗略，粗枝大叶，马虎，草率", "en_def": "Doing something carelessly, not meticulously or accurately.", "zh_def": "不准确或不仔细、做事随便任性的样子。"}, {"en": "rough", "ko": "땅이 기름지지 않고 메마르다.", "zh": "荒芜，荒凉", "en_def": "A land being dry, not fertile.", "zh_def": "土地不肥沃，很贫瘠。"}, {"en": "rough; violent; wild", "ko": "행동이나 성격이 몹시 강하고 세다.", "zh": "粗鲁，粗野，粗犷", "en_def": "Someone's behavior or personality being very violent and strong.", "zh_def": "行动或性格非常强悍厉害。"}, {"en": "rough; wild", "ko": "바람, 파도 등의 자연 현상이 거세고 강하다.", "zh": "巨大，猛烈", "en_def": "Natural phenomena such as the wind and waves being strong and fierce. ", "zh_def": "风、波涛等自然现象很强大。"}, {"en": "wild; rough", "ko": "인정이 없고 살기에 험하다.", "zh": "粗暴，险恶", "en_def": "People being heartless and a place being too rough to live in.", "zh_def": "没有人情味，生活环境恶劣。"}, {"en": "coarse", "ko": "알갱이가 고르지 못하고 굵다.", "zh": "粗", "en_def": "Grains being big, not regular in size.", "zh_def": "颗粒不均匀，很大。"}, {"en": "rough; harsh", "ko": "말이나 글이 점잖거나 세련되지 못하다.", "zh": "粗俗，粗劣", "en_def": "Someone's remark or writing being not refined or decent.", "zh_def": "话语或文章不文雅或不老练。"}, {"en": "harsh", "ko": "숨이나 기침이 고르지 않고 세거나 심하다.", "zh": "急促", "en_def": "A person's breath or coughs being heavy, violent, and not regular. ", "zh_def": "呼吸或咳嗽不平稳，很剧烈或很严重。"}, {"en": "coarse", "ko": "돌이 날카롭다.", "zh": "尖锐", "en_def": "A rock being sharp-edged.", "zh_def": "石头很锋利。"}, {"en": "rough", "ko": "일이 육체적으로 힘들다.", "zh": "粗", "en_def": "Physically hard to do. ", "zh_def": "事情很费体力。"}]	4439b6618e.wav
 거품	geopum	\N	[{"en": "bubble; foam", "ko": "액체 속에 공기가 들어가 만들어진 속이 빈 둥근 방울.", "zh": "泡沫", "en_def": "An empty, round drop of liquid, containing air in it.", "zh_def": "空气进入液体而形成的、里面空心的圆泡泡。"}, {"en": "bubble", "ko": "(비유적으로) 실제로 안에 들어있는 내용은 없는데 겉으로만 크게 보이는 것.", "zh": "泡沫，水分", "en_def": "(figurative) Something looking great on the outside, while there is nothing inside.", "zh_def": "(喻义)里面没有实际内容，只是表面上看上去很盛大的东西。"}]	bc0b25cc19.wav
 걱정	geokjjeong	\N	[{"en": "worry; concern; care", "ko": "좋지 않은 일이 있을까 봐 두렵고 불안함.", "zh": "担心，忧虑，担忧", "en_def": "The state of feeling afraid and uneasy, in fear of the possible occurrence of something bad.", "zh_def": "害怕发生不好的事情而感到不安。"}, {"en": "scolding; blaming", "ko": "아랫사람의 잘못을 꾸짖음.", "zh": "数落，责骂，斥责", "en_def": "An act of scolding a younger person for his/her fault.", "zh_def": "责备晚辈或下级的错误。"}]	9d0e3fa18e.wav
@@ -28369,6 +28390,8 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 검사02	geomsa	檢事	[{"en": "prosecutor", "ko": "범죄를 수사하고 범인을 고발하는 공무원.", "zh": "检察官", "en_def": "A judiciary civil servant who investigates crimes and makes accusations or charges against criminals.", "zh_def": "调查犯罪事件、起诉罪犯的公务员。"}]	0fbeb284e7.wav
 검사03	geomsa	檢査	[{"en": "examination; inspection", "ko": "어떤 일이나 대상을 조사하여 옳고 그름이나 좋고 나쁨을 알아냄.", "zh": "检查", "en_def": "Reviewing a certain incident or object to decide whether it is right or wrong, or good or bad.", "zh_def": "调查某事或某个对象，从而判断其对错、好坏。"}]	fab339d908.wav
 검은색	geomeunsaek	검은色	[{"en": "black", "ko": "빛이 없을 때의 밤하늘이나 먹과 같은 색.", "zh": "黑，黑色", "en_def": "A very dark color like a night sky with no light or black ink.", "zh_def": "无光的夜空或墨汁一样的颜色。"}]	35b00ae8ac.wav
+그만두다	geumanduda	\N	[{"en": "stop", "ko": "하던 일을 중간에 그치고 하지 않다.", "zh": "停住，停", "en_def": "To stop and to not do what one has been doing.", "zh_def": "停住正在做的事，不再进行。"}, {"en": "stop", "ko": "앞으로 할 일이나 하려고 하던 일을 하지 않다.", "zh": "罢休，放弃", "en_def": "To not do what one has to do or plans to do in the future.", "zh_def": "不做打算以后要做的事情。"}]	6367cb7be7.wav
+그만큼	geumankeum	\N	[{"en": "that much", "ko": "그러한 정도. 또는 그만한 정도.", "zh": "那些，那样，那么多", "en_def": "Just so much or about that much. ", "zh_def": "那种程度；或指那个程度。"}]	f30f22c8e0.wav
 것01	geot	\N	[{"en": "something", "ko": "정확히 가리키는 대상이 정해지지 않은 사물이나 사실.", "zh": "东西，事，的", "en_def": "A bound noun used to refer to a thing or fact that is not specified or determind by someone.", "zh_def": "泛指各种事物或事情。"}, {"en": "(no equivalent expression)", "ko": "(낮잡아 이르는 말로) 사람 또는 동물.", "zh": "(无对应词汇)", "en_def": "(disparaging) A bound noun used to refer to a person or animal.", "zh_def": "(贬称)人或动物。"}, {"en": "(no equivalent expression)", "ko": "그 사람의 소유물임을 나타내는 말.", "zh": "(某人)的", "en_def": "A bound noun used to indicate that something belongs to a certain person.", "zh_def": "表示某人的所有物。"}, {"en": "(no equivalent expression)", "ko": "어떤 행위나 상태, 일을 나타내는 말.", "zh": "(无对应词汇)", "en_def": "A bound noun used to indicate a certain act, situation, or accomplishment.", "zh_def": "表示某种行为、状态或事情。"}, {"en": "(no equivalent expression)", "ko": "어떤 사실에 대한 확신이나 강조를 나타내는 말.", "zh": "(无对应词汇)", "en_def": "A bound noun used to indicate one's confidence or emphasis regarding a certain fact.", "zh_def": "表示对某事的确信或强调。"}, {"en": "(no equivalent expression)", "ko": "아직 일어나지 않은 일에 대한 예상이나 추측, 계획을 나타내는 말.", "zh": "(无对应词汇)", "en_def": "A bound noun used to indicate one's prediction, guess, and plan regarding a thing that has not occurred yet.", "zh_def": "表示对未发生事情的预测、推测或计划。"}, {"en": "(no equivalent expression)", "ko": "명령이나 지시의 뜻으로 문장을 끝맺는 말.", "zh": "(无对应词汇)", "en_def": "A sentence-concluding bound noun carrying the sense of a command or instruction.", "zh_def": "表示命令或指示。用于句末成句。"}]	c7e9c676db.wav
 겉01	geot	\N	[{"en": "outside; surface; exterior", "ko": "안팎이 있는 물건에서 물건의 바깥쪽 부분.", "zh": "外面，表面，表", "en_def": "The outer part of an object that has an inside and an outside.", "zh_def": "在有里外的东西中，东西的外侧部分。"}, {"en": "surface", "ko": "밖으로 드러난 모습이나 현상.", "zh": "外表，表面", "en_def": "An outer appearance or phenomenon.", "zh_def": "指显现在外的样子或现象。"}]	9e11d3fd9d.wav
 게01	ge	\N	[{"en": "crab", "ko": "온몸이 단단한 껍질로 싸여 있으며 열 개의 발이 있어 옆으로 기어다니는 동물.", "zh": "螃蟹，蟹", "en_def": "An animal, covered by a hard shell, which crawls sideways with its ten feet.", "zh_def": "一种横着爬的动物，浑身包着坚硬的外壳，有十只脚。"}]	fe8cd0e692.wav
@@ -28772,14 +28795,6 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 그림자	geulimja	\N	[{"en": "shadow; silhouette", "ko": "물체가 빛을 가려서 그 물체의 뒷면에 나타나는 검은 그늘.", "zh": "影子", "en_def": "A dark shadow that appears on the back of an object when the object blocks light.", "zh_def": "物体遮挡光线后，其背面出现的黑色阴影。"}, {"en": "reflection", "ko": "물이나 거울 등에 비치는 물체의 모습.", "zh": "影子，倒影，影像", "en_def": "The appearance of an object shown in the water or mirror.", "zh_def": "映在水中或镜子等上的物体的样子。"}, {"en": "trace", "ko": "사람의 자취나 흔적.", "zh": "身影，影子", "en_def": "The trace or track showing that someone was there.", "zh_def": "人的踪迹或痕迹。"}, {"en": "sadness; shadow", "ko": "얼굴에 나타난 어두운 표정.", "zh": "阴影", "en_def": "A sad facial expression.", "zh_def": "脸上出现的黯淡的表情。"}, {"en": "ominous feeling", "ko": "좋지 않은 느낌.", "zh": "阴影", "en_def": "A bad feeling.", "zh_def": "不好的感觉。"}, {"en": "tag; reputation", "ko": "(비유적으로) 어떤 사람에게 항상 따라다니는 것.", "zh": "跟班，跟屁虫，如影随形的人或物", "en_def": "(figurative) Something following someone at any time and anywhere.", "zh_def": "(喻义)一直跟随着某人的人或物。"}]	6ce79aa297.wav
 그토록	geutolog	\N	[{"en": "that much", "ko": "그런 정도로까지. 또는 그렇게까지.", "zh": "那么，如此", "en_def": "To that extent, or as much as that.", "zh_def": "达到那个程度；或到那样。"}]	a89becadfe.wav
 그해	geuhae	\N	[{"en": "that year; the year", "ko": "과거의 어느 해.", "zh": "那年", "en_def": "A certain year in the past.", "zh_def": "过去的某一年。"}]	cea644aa81.wav
-그립다	geuriptta	\N	[{"en": "miss", "ko": "매우 보고 싶고 만나고 싶다.", "zh": "思念，怀念", "en_def": "Wanting to see and meet someone very much.", "zh_def": "非常想念，想见面。"}, {"en": "miss", "ko": "어떤 것이 매우 필요하거나 없어서 아쉽다.", "zh": "想要，向往，渴求", "en_def": "Feeling the lack of something because one needs it desperately or does not have it.", "zh_def": "非常需要某种东西或因为没有而深感遗憾。"}]	7cad5ad971.wav
-그만02	geuman	\N	[{"en": "such; like that", "ko": "상태, 모양, 성질 등이 그 정도의.", "zh": "那么点", "en_def": "A state, appearance, characteristic, etc., being as such.", "zh_def": "状态、模样、性质等就那种程度的。"}]	c02989123e.wav
-그만두다	geumanduda	\N	[{"en": "stop", "ko": "하던 일을 중간에 그치고 하지 않다.", "zh": "停住，停", "en_def": "To stop and to not do what one has been doing.", "zh_def": "停住正在做的事，不再进行。"}, {"en": "stop", "ko": "앞으로 할 일이나 하려고 하던 일을 하지 않다.", "zh": "罢休，放弃", "en_def": "To not do what one has to do or plans to do in the future.", "zh_def": "不做打算以后要做的事情。"}]	6367cb7be7.wav
-그만큼	geumankeum	\N	[{"en": "that much", "ko": "그러한 정도. 또는 그만한 정도.", "zh": "那些，那样，那么多", "en_def": "Just so much or about that much. ", "zh_def": "那种程度；或指那个程度。"}]	f30f22c8e0.wav
-그만하다	geumanhada	\N	[{"en": "quit; stop", "ko": "하고 있던 일을 멈추다.", "zh": "停止，停", "en_def": "To stop what one has been doing.", "zh_def": "停住正在做的事。"}]	2764798578.wav
-그분	geubun	\N	[{"en": "geubun", "ko": "(아주 높이는 말로) 그 사람.", "zh": "那位", "en_def": "(very polite form) The person.", "zh_def": "(高尊)那个人。"}]	d38bd07aa6.wav
-그사이	geusai	\N	[{"en": "meanwhile; meantime", "ko": "어느 때부터 다른 어느 때까지의 비교적 짧은 동안.", "zh": "其间，那会儿，近来", "en_def": "A relatively short period from a certain point of time to another certain point of time.", "zh_def": "从某一时候到另一时候较短的时间。"}]	fd65353221.wav
-그야말로	geuyamallo	\N	[{"en": "certainly; indeed; really", "ko": "(강조하는 말로) 사실 그대로.", "zh": "那真是，那才是", "en_def": "(emphasizing form) Truly.", "zh_def": "(强调)正如事实一样。"}]	71bbc6dbb5.wav
 그이01	geui	\N	[{"en": "(no equivalent expression)", "ko": "(조금 높이는 말로) 그 사람.", "zh": "那位", "en_def": "(formal, slightly addressee-raising) The person.", "zh_def": "(略敬)那个人。"}, {"en": "he; him", "ko": "여자가 다른 사람에게 그 자리에 없는 자기 남편이나 애인을 가리키는 말.", "zh": "我那位", "en_def": "A pronoun used by a female when indicating her husband or boyfriend who is not there currently to another person.", "zh_def": "用于向别人指代不在场的自己丈夫或男朋友。"}]	3b8e9b4b88.wav
 그저	geujeo	\N	[{"en": "just; same", "ko": "이제까지 변함없이 계속해서.", "zh": "一直", "en_def": "Lasting up until now without a change.", "zh_def": "到现在没有变化而持续地。"}, {"en": "just", "ko": "다른 일은 하지 않고 그냥.", "zh": "仅仅", "en_def": "Without doing anything else.", "zh_def": "不做别的事情就那样。"}, {"en": "just; anyway", "ko": "어쨌든지 무조건.", "zh": "只顾，光", "en_def": "Without a condition.", "zh_def": "无论如何，无条件地。"}, {"en": "just", "ko": "특별한 이유나 목적 없이.", "zh": "随便地，无意地", "en_def": "Without a particular reason or cause.", "zh_def": "没有特别的理由或目的地。"}, {"en": "just; ordinarily", "ko": "대단한 것 없이 다만.", "zh": "还是", "en_def": "Not special or important, but.", "zh_def": "没有了不起的只是。"}]	d4601dee3d.wav
 그저께	geujeokke	\N	[{"en": "the day before yesterday", "ko": "어제의 전날. 이틀 전.", "zh": "前天", "en_def": "The day before yesterday; two days before today.", "zh_def": "昨天的前一天，即两天前。"}]	6909a3cd44.wav
@@ -29168,6 +29183,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 노력하다01	noryeokada	努力하다	[{"en": "make effort; endeavor; work hard", "ko": "어떤 목적을 이루기 위하여 힘을 들이고 애를 쓰다.", "zh": "努力，下工夫", "en_def": "To make an effort and work hard to achieve something.", "zh_def": "为达到某种目的而尽心尽力。"}]	58717acacd.wav
 노선01	noseon	路線	[{"en": "route; line", "ko": "버스, 기차, 비행기 등이 정기적으로 오가는 일정한 두 지점 사이의 정해진 길.", "zh": "路线", "en_def": "A fixed path between one point and another, regularly traveled by a bus, train, plane, etc.  ", "zh_def": "巴士、火车、飞机等定期往返于两个特定地点之间的规定道路。"}, {"en": "line; course", "ko": "목표를 이루기 위해 따르는 견해나 행동의 지침.", "zh": "路线", "en_def": "A guideline for views or actions that one follows to achieve a goal. ", "zh_def": "为实现目标而遵从的见解或行动方针。"}]	02a54538e5.wav
 노인01	noin	老人	[{"en": "old person; the aged; senior citizen", "ko": "나이가 들어 늙은 사람.", "zh": "老人，老年人", "en_def": "A person who is old.", "zh_def": "上岁数而年迈的人。"}]	5e231b4f34.wav
+둘러싸다	dulleossada	\N	[{"en": "wrap", "ko": "전체를 감아서 싸다.", "zh": "包围", "en_def": "To enfold and cover something completely. ", "zh_def": "围住整体。"}, {"en": "surround; enclose; encompass", "ko": "동그랗게 둘러서 막거나 가리다.", "zh": "包", "en_def": "To block or hide something by encircling it. ", "zh_def": "围成一圈堵住或遮住。"}, {"en": "surround", "ko": "문제의 대상으로 삼다.", "zh": "围绕", "en_def": "To have something as an issue.", "zh_def": "当作问题的对象。"}]	42538cac1c.wav
 녹다01	noktta	\N	[{"en": "melt; thaw", "ko": "얼음이나 눈이 열을 받아서 물이 되다.", "zh": "融化，溶化", "en_def": "For ice or snow to become water after being heated. ", "zh_def": "冰或雪受热后变成水。"}, {"en": "melt; thaw", "ko": "고체가 열을 받거나 습기를 먹어서 물러지거나 물처럼 되다.", "zh": "熔化", "en_def": "For solid substance to become like water or softened after being heated or moisturized. ", "zh_def": "固体受热或吸湿后变软或成为液体。"}, {"en": "be unfrozen; become warm", "ko": "추워서 굳어진 물질이나 신체 부위 등이 풀어지다.", "zh": "解冻，暖和", "en_def": "For a hardened substance or body parts that have stiffened due to cold to become soft and tender. ", "zh_def": "冻僵的物质或身体部位等回暖。"}, {"en": "be eased; be softened", "ko": "좋지 않은 감정이나 마음이 풀어지다.", "zh": "化解，消除", "en_def": "For unpleasant feelings or thoughts to become eased. ", "zh_def": "不好的情绪或心情被解消。"}, {"en": "melt; taste good", "ko": "음식의 맛이 부드럽고 맛있다.", "zh": "化开，溶解", "en_def": "For food to have tender texture and good taste. ", "zh_def": "食物的味道柔和而甜美。"}, {"en": "dissolve; melt", "ko": "가루나 설탕 등이 물이나 다른 액체에 풀리어 섞이다.", "zh": "溶解", "en_def": "For powdery substance, sugar, etc., to be dissolved and mixed with water or other liquid. ", "zh_def": "粉末或糖等在水或其它液体中散开，并掺杂在其中。"}, {"en": "melt; be absorbed", "ko": "어떤 물건이나 현상에 스며들거나 동화되다.", "zh": "融化", "en_def": "To be absorbed in a thing or phenomenon, and assimilate into it. ", "zh_def": "渗入或同化在某个东西或现象之中。"}, {"en": "fall for", "ko": "어떤 대상에게 몹시 반하거나 빠지다.", "zh": "迷住", "en_def": "To fall for or be addicted to something.", "zh_def": "对某个对象非常痴迷或沉醉。"}]	01ef65f2a3.wav
 담당하다	damdanghada	擔當하다	[{"en": "take charge of", "ko": "어떤 일을 맡다.", "zh": "负责，担任", "en_def": "To be in charge of something.", "zh_def": "担负某事。"}]	24f1cb6a64.wav
 녹색	nokssaek	綠色	[{"en": "green", "ko": "노란색과 파란색의 중간색으로, 짙은 풀과 같은 색.", "zh": "绿色", "en_def": "Yellow-blue in the middle, the same color as dark grass.", "zh_def": "一种介于黄色与蓝色之间的颜色，类似深草的颜色。"}, {"en": "being green", "ko": "자연환경을 깨끗하게 가꾸고 지키는 데 도움이 되는 일.", "zh": "绿色，无公害，环保", "en_def": "The state of being conscious and helpful with regard to ecologically friendly living.", "zh_def": "旨在保护和改善自然环境的各类事项。"}]	9c5c27cf87.wav
@@ -29203,6 +29219,10 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 높아지다	nopajida	\N	[{"en": "get higher", "ko": "위에서 아래까지의 길이가 길게 되다.", "zh": "增高，升高", "en_def": "For the length from bottom to top, to become long.", "zh_def": "从下向上的距离变得更长。"}, {"en": "rise", "ko": "이전보다 더 높은 정도나 수준, 지위에 이르다.", "zh": "提高，加深", "en_def": "To reach a higher degree, level, or status than before.", "zh_def": "程度、水平、地位等比以前更高。"}, {"en": "get stronger", "ko": "어떤 의견을 지지하는 사람이 많아지거나 그 세력이 강해지다.", "zh": "提高，加深", "en_def": "For people who support a certain opinion to increase in number, or for their force to become strong.", "zh_def": "支持某种意见的人增多或其势力变得更强。"}]	57bce82f1e.wav
 높이01	nopi	\N	[{"en": "height; depth", "ko": "높은 정도.", "zh": "高度", "en_def": "The degree of height.", "zh_def": "高低的程度。"}]	1a6d733928.wav
 높이02	nopi	\N	[{"en": "high; aloft", "ko": "아래에서 위쪽으로 높게.", "zh": "高高地", "en_def": "High, in an upward direction.", "zh_def": "从下而上高地。"}, {"en": "high", "ko": "온도나 습도나 압력 등이 기준보다 위에 있게.", "zh": "高地", "en_def": "In the state of the temperature, humidity, pressure, etc., being higher than normal.", "zh_def": "温度、湿度、压力等在标准值之上地。"}, {"en": "high", "ko": "품질이나 수준 또는 능력이나 가치가 보통보다 위에 있게.", "zh": "高度地", "en_def": "In the state of the quality, level, ability, or value being higher than the average.", "zh_def": "质量、水平或能力、价值等在平均程度之上地。"}, {"en": "high", "ko": "값이나 비율이 보통보다 위에 있게.", "zh": "高地", "en_def": "In the state of a price or rate being higher that the average.", "zh_def": "价格或比例在普通程度之上地。"}, {"en": "highly", "ko": "지위나 신분 등이 보통보다 위에 있게.", "zh": "高贵地", "en_def": "In the state of someone's status or position being higher than the average.", "zh_def": "地位、身份等在普通程度之上地。"}, {"en": "high; in a high pitch", "ko": "소리나 음계가 보통보다 크거나 위에 있게.", "zh": "高大地", "en_def": "In the staten of a sound being at a high pitch.", "zh_def": "声音或音阶比普通程度大或处于之上地。"}, {"en": "highly", "ko": "이름이나 명성이 널리 알려지게.", "zh": "远扬地，大地", "en_def": "In the state of someone's name or fame being widely known.", "zh_def": "使名字或名声广为人知地。"}, {"en": "high", "ko": "기세 등이 힘차고 대단하게.", "zh": "高昂地，高涨地", "en_def": "In the state of the force of someone or something being great and powerful. ", "zh_def": "劲头等强而旺盛地。"}, {"en": "largely", "ko": "어떤 의견이 다른 의견보다 많고 우세하게.", "zh": "强烈地", "en_def": "In the state of an opinion being more predominant than the others.", "zh_def": "某种意见比其它意见多且强势地。"}, {"en": "high", "ko": "꿈이나 이상이 크고 원대하게.", "zh": "远大地", "en_def": "In the state of one's dream or ideal being grand and ambitious.", "zh_def": "梦想或理想很大而远地。"}]	6ca7dbd29e.wav
+둘러싸이다	dulleossaida	\N	[{"en": "be wrapped", "ko": "전체가 감겨 싸이다.", "zh": "被包围", "en_def": "To be enfolded and covered completely.", "zh_def": "整体被围住。"}, {"en": "be surrounded; be enclosed; be encompassed", "ko": "동그랗게 둘려 막히거나 가려지다.", "zh": "被包围", "en_def": "To be blocked or hidden by being encircled. ", "zh_def": "围成一圈堵住或遮住。"}]	9f0236c87d.wav
+둘째	duljjae	\N	[{"en": "second", "ko": "처음부터 세어 모두 두 개가 됨.", "zh": "第二次，第二个", "en_def": "Totaling two when counted from the start.", "zh_def": "从一数起，一共是两个。"}, {"en": "second child", "ko": "두 번째 자식.", "zh": "老二", "en_def": "One's second offspring.", "zh_def": "第二个孩子。"}]	e74f4aa84a.wav
+둥글다01	dunggeulda	\N	[{"en": "be round", "ko": "동그라미나 공의 모양과 같거나 비슷하게 되다.", "zh": "圆，圆圆的", "en_def": "To become the same as or similar to the shape of a circle or ball.", "zh_def": "变得与圆圈或球的样子相同或相似。"}]	73ea26c187.wav
+둥지	dungji	\N	[{"en": "nest", "ko": "새가 알을 낳거나 살기 위해 풀, 나뭇가지 등을 엮어 만든 둥근 모양의 집.", "zh": "鸟巢，鸟窝", "en_def": "A round-shaped container made by a bird out of grass, twigs, etc., to live or lay eggs in.", "zh_def": "鸟类为了下蛋或栖身而用草、树枝等编制的圆形住处。"}]	0103e73a17.wav
 높이다	nopida	\N	[{"en": "make higher", "ko": "아래에서 위까지의 길이를 길게 하다.", "zh": "增高，加高", "en_def": "To make the length from bottom to top be longer.", "zh_def": "使上下距离变长。"}, {"en": "make higher", "ko": "아래에서 위까지의 벌어진 사이를 크게 하다.", "zh": "抬高", "en_def": "To make the space from bottom to top larger.", "zh_def": "使上下相隔的距离变远。"}, {"en": "raise; increase", "ko": "온도, 습도, 압력 등을 정해진 기준보다 위에 있게 하다.", "zh": "提高，增高", "en_def": "To make the temperature, humidity, pressure, etc., be higher than normal.", "zh_def": "使温度、湿度、压力等在规定的基准之上。"}, {"en": "raise; improve", "ko": "품질이나 수준 또는 능력이나 가치를 보통보다 위에 있게 하다.", "zh": "增强，加强", "en_def": "To make the quality, level, ability, or value higher than the average.", "zh_def": "使质量、水平或能力、价值等在平均程度之上。"}, {"en": "make higher; raise", "ko": "값이나 비율을 보통보다 위에 있게 하다.", "zh": "提高，抬高", "en_def": "To make a price or rate higher than the average.", "zh_def": "使价格或比例在普通程度之上。"}, {"en": "raise; elevate", "ko": "지위나 신분 등을 보통보다 위에 있게 하다.", "zh": "提高，抬高", "en_def": "To make someone's status or position higher than the average.", "zh_def": "使地位或身份等在普通程度之上。"}, {"en": "raise", "ko": "소리 등을 음계에서 위쪽에 있게 하다.", "zh": "拔高，提高", "en_def": "To make a sound be at a high pitch or its number of vibrations increase.", "zh_def": "使声音等处于较高的音阶。"}, {"en": "make famous", "ko": "이름이나 명성을 널리 알리다.", "zh": "扬", "en_def": "To make someone's name or fame be widely known.", "zh_def": "将名字或名声被广为人知。"}, {"en": "elate; boost", "ko": "기운 등을 매우 세차고 대단하게 하다.", "zh": "提高，增强", "en_def": "To make the force of someone or something great and powerful. ", "zh_def": "使劲头等很强、旺盛。"}, {"en": "strengthen", "ko": "어떤 의견을 다른 의견보다 많고 세게 하다.", "zh": "抬高，增多", "en_def": "To make an opinion more predominant than others. ", "zh_def": "使某种意见比其它意见多且强势。"}, {"en": "elevate", "ko": "꿈이나 이상을 매우 크게 하다.", "zh": "定高", "en_def": "To make one's dream or ideal grand and ambitious.", "zh_def": "使梦想或理想变大。"}, {"en": "turn up; raise", "ko": "소리의 세기를 세게 하다.", "zh": "提高，抬高", "en_def": "To make a sound stronger.", "zh_def": "使音量变大。"}, {"en": "increase", "ko": "일어날 확률이나 가능성을 다른 것보다 많게 하다.", "zh": "增多，提高", "en_def": "To make the probability or possibility of something happening higher than that of another thing that is happening. ", "zh_def": "使发生的概率或可能性比其他多。"}, {"en": "respect; revere", "ko": "존경하는 마음으로 받들다. 또는 그런 태도로 말하다.", "zh": "尊敬，尊称", "en_def": "To look up to someone with respect; to speak with such an attitude.", "zh_def": "以崇敬的心情尊奉；或指以这样的态度说话。"}]	e8b8acc4fc.wav
 놓다01	nota	\N	[{"en": "let go; let loose", "ko": "손으로 잡거나 누르고 있던 물건을 손을 펴거나 힘을 빼서 손에서 빠져나가게 하다.", "zh": "松，松开", "en_def": "To let something that one is either holding in one's hand or pushing be released by opening or relaxing one's hand.", "zh_def": "摊开手或不用力，使抓着或摁住的东西从手里掉出来。"}, {"en": "stop", "ko": "계속해 오던 일을 그만두다.", "zh": "停止，停下，放弃", "en_def": "To quit doing something that one has been doing continuously.", "zh_def": "放下一直在做的事。"}, {"en": "relax; ease", "ko": "걱정이나 긴장 등을 잊거나 풀어 없애다.", "zh": "放心，放下", "en_def": "To forget or discard one's worries, anxiety, etc.", "zh_def": "忘掉或消除担忧或紧张等。"}, {"en": "bet", "ko": "노름이나 내기에서 돈을 걸다.", "zh": "下注，押注", "en_def": "To put money on a bet while gambling.", "zh_def": "在赌博或打赌中下赌注。"}, {"en": "about; on", "ko": "논의의 대상으로 삼다.", "zh": "针对，就", "en_def": "To have something as a subject for discussion.", "zh_def": "当做议论的对象。"}, {"en": "calculate; reckon", "ko": "수판이나 막대기 등을 이용하여 수를 세다.", "zh": "打，算", "en_def": "To count numbers by using an abacus, sticks, etc.  ", "zh_def": "使用算盘或杆子数数。"}, {"en": "increase; speed up", "ko": "빨리 가도록 힘을 더하다.", "zh": "使劲，加快，提高", "en_def": "To add power to go fast. ", "zh_def": "为跑得更快而用力。"}, {"en": "recover from", "ko": "병에서 벗어나 몸이 회복되다.", "zh": "治愈，治好", "en_def": "To get over an illness.", "zh_def": "摆脱疾病，恢复健康。"}, {"en": "put; place", "ko": "잡거나 쥐고 있던 물체를 어떤 곳에 두다.", "zh": "放，放置", "en_def": "To lay down on something an object one is holding or gripping.", "zh_def": "把原本手里抓或握着的物体置于某处。"}, {"en": "construct; lay", "ko": "어떤 곳에 기계나 장치, 구조물 등을 설치하다.", "zh": "架设，设置", "en_def": "To install a machine, device, structure, etc., in a certain place.", "zh_def": "在某个地方安装设施、装置或构造物等。"}, {"en": "set; lay", "ko": "동물이나 물고기를 잡기 위해 일정한 곳에 무엇을 두다.", "zh": "撒，放", "en_def": "To install something in a certain place to catch an animal or fish.", "zh_def": "为捕获动物或抓鱼而在某个地方设置东西。"}, {"en": "adorn; embroider; engrave", "ko": "무늬나 그림, 글자 등을 새기다.", "zh": "绣，缝，刺绣", "en_def": "To carve a pattern, painting, letters, etc.", "zh_def": "刻印花纹、画或字等。"}, {"en": "set", "ko": "불을 지르거나 피우다.", "zh": "放，点", "en_def": "To set or make fire.", "zh_def": "纵火或烧火。"}, {"en": "stuff", "ko": "옷, 이불, 방석 등을 만들 때 속에 솜이나 털과 같은 내용물을 넣다.", "zh": "填充，塞，装", "en_def": "To fill the inside of clothes, covers, a cushion, etc., with cotton, down, etc.", "zh_def": "制作衣服、被子、坐垫等时在里面放一些棉花或毛之类的东西。"}, {"en": "add", "ko": "중심이 되는 음식에 다른 것을 섞어서 한 음식으로 만들다.", "zh": "放，加，配", "en_def": "To put something into a dish to complete the dish.", "zh_def": "在核心食物里掺杂别的东西，使之成为一体。"}, {"en": "sow", "ko": "심어서 가꾸거나 키우다.", "zh": "种植", "en_def": "To plant and grow something. ", "zh_def": "栽种或种养。"}, {"en": "add", "ko": "어떤 수에 수를 더하다.", "zh": "加上", "en_def": "To add a number to another number. ", "zh_def": "在某个数字上叠加一个数字。"}, {"en": "put in", "ko": "어떤 목적을 위하여 사람이나 동물 등을 내보내다.", "zh": "放，撒，派出", "en_def": "To send a person, animal, etc., for a certain purpose.", "zh_def": "为达到某种目的而放出人或动物等。"}, {"en": "inject; needle", "ko": "치료를 위해 주사나 침을 찌르다.", "zh": "注射，扎", "en_def": "To give an injection or apply acupuncture for treatment.", "zh_def": "以治疗为目的给患者刺针头。"}, {"en": "give; make", "ko": "상대에게 어떤 행동을 하다.", "zh": "加以，给以，施以", "en_def": "To do a certain act toward someone.", "zh_def": "向对方做出某种行为。"}, {"en": "loan", "ko": "돈이나 이자를 받고 집이나 돈, 쌀 등을 빌려주다.", "zh": "租，放", "en_def": "To lend someone a house, money, rice, etc., for money or at interest. ", "zh_def": "把房子、钱或大米等借给别人，并收取钱财或利息。"}, {"en": "bid; name", "ko": "값을 계산하여 매기다.", "zh": "开价", "en_def": "To offer the price of something.", "zh_def": "核算价格而定价。"}, {"en": "place", "ko": "장기나 바둑에서 돌이나 말을 두다.", "zh": "下", "en_def": "To put on a playing board a go stone or piece in Korean chess, janggi, or  the game of go. ", "zh_def": "在象棋或围棋里放棋子。"}, {"en": "shoot\\t", "ko": "총이나 대포를 쏘다.", "zh": "发，射", "en_def": "To fire a gun or cannon.", "zh_def": "开枪或开炮。"}, {"en": "send", "ko": "어떤 내용을 편지 등으로 알리다.", "zh": "发，公告，颁布", "en_def": "To let someone know about something through a letter, etc.", "zh_def": "用写信等方式告知某些事宜。"}, {"en": "use friendly terms", "ko": "말을 높이지 않고 반말로 말하다.", "zh": "(无对应词汇)", "en_def": "To use low forms of speech, not talking in an honorific way.", "zh_def": "不使用敬语，以平语说话。"}, {"en": "set", "ko": "기계 장치를 조작하여 원하는 상태가 되게 하다.", "zh": "设定", "en_def": "To  operate a machine and have it be in the state that one wants. ", "zh_def": "操作机械设备，使之处于自己希望的状态。"}]	6fb3189baf.wav
 놓아두다	noaduda	\N	[{"en": "put", "ko": "들고 있던 것을 어떤 곳에 두다.", "zh": "放在，放到", "en_def": "To lay down somewhere something that one is holding.", "zh_def": "把拿在手里的东西置于某个地方。"}, {"en": "leave", "ko": "건드리지 않고 그대로 두다.", "zh": "闲置，放着不管", "en_def": "To keep something as it is, not touching it.", "zh_def": "不触碰，就那么搁置着。"}, {"en": "let someone do", "ko": "남이 마음대로 하도록 두다.", "zh": "放手，不管", "en_def": "To let someone do as he/she likes.", "zh_def": "不约束别人，让其任意行事。"}]	c2e64f5d5a.wav
@@ -29259,6 +29279,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 다시01	dasi	\N	[{"en": "again", "ko": "같은 말이나 행동을 반복해서 또.", "zh": "再，再次", "en_def": "Repeatedly with the same words or behavior.", "zh_def": "反复相同的话或行动。"}, {"en": "again", "ko": "방법이나 목표 등을 바꿔서 새롭게.", "zh": "再，重新", "en_def": "To do or begin once more by changing the method, goal, etc.", "zh_def": "变换方法或目标等而重做。"}, {"en": "again", "ko": "하다가 멈춘 것을 이어서.", "zh": "继续，又", "en_def": "In resumption of what has been suspended.", "zh_def": "接着做停下的事。"}, {"en": "again", "ko": "다음에 또.", "zh": "再次，再一次", "en_def": "Once more in the future.", "zh_def": "下一次再。"}, {"en": "again", "ko": "이전 상태로 또.", "zh": "又", "en_def": "Back to the previous state.", "zh_def": "再次回到以前的状态。"}, {"en": "again; all over again", "ko": "처음부터 새롭게.", "zh": "又，重新", "en_def": "Anew starting from scratch.", "zh_def": "从头开始重做。"}, {"en": "ever", "ko": "앞으로 더.", "zh": "再也", "en_def": "Additionally in the future.", "zh_def": "以后再。"}]	dfd1292197.wav
 다니다	danida	\N	[{"en": "go continuously", "ko": "어떤 곳에 계속하여 드나들다.", "zh": "常去", "en_def": "To constantly go to a place.", "zh_def": "经常出入某个地方。"}, {"en": "drop in", "ko": "일이 있어 어떤 곳에 들르다.", "zh": "顺便去，去一趟", "en_def": "To drop in a place because of something.", "zh_def": "因有事而顺便到某个地方。"}, {"en": "attend; commute", "ko": "직장이나 학교 등의 기관을 정기적으로 오고 가다.", "zh": "上班，上学，上", "en_def": "To come and go to an institution such as a workplace, school, etc., on a regular basis.", "zh_def": "定期往返于职场或学校等地方。"}, {"en": "come and go", "ko": "이리저리 오고 가다.", "zh": "来往，走遍，", "en_def": "To come and go to places.", "zh_def": "到处走动。"}, {"en": "pass by", "ko": "어떤 곳을 지나가고 지나오고 하다.", "zh": "往返，来回", "en_def": "To pass by a place.", "zh_def": "来往于某个地方。"}, {"en": "run", "ko": "교통수단이 정해진 길로 오고 가다.", "zh": "来往，往返", "en_def": "For a transportation mode to come and go through a fixed route.", "zh_def": "交通手段按照规定的路线来回。"}, {"en": "come and go", "ko": "어떤 목적으로 가지고 왔다 갔다 하다.", "zh": "去", "en_def": "To come and go with a purpose.", "zh_def": "为了某个目的而来来回回。"}]	7867953f2f.wav
 다듬다	dadeumtta	\N	[{"en": "mend; trim", "ko": "사용할 수 있도록 필요 없는 부분을 버리고 손질하다.", "zh": "择，收拾", "en_def": "To throw away the unnecessary parts and mend something so that it can be used.", "zh_def": "为了使用而除掉、修理不必要的部分。"}, {"en": "mend; trim", "ko": "맵시가 나도록 고른 상태로 손질하다.", "zh": "捋，修剪", "en_def": "To mend something so that it looks stylish.", "zh_def": "修理到均匀的状态，十分好看。"}, {"en": "fix", "ko": "글이나 문장 등을 바르고 짜임새 있게 고치다.", "zh": "推敲，润色，琢磨", "en_def": "To fix a piece of writing, sentence, etc., in a correct, complete manner.", "zh_def": "将文章或句子等修改得工整、有条理。"}, {"en": "clear one's throat", "ko": "잘 나오도록 소리를 고르게 하다.", "zh": "清(嗓子)", "en_def": "To make one's voice not hoarse in order to speak clearly.", "zh_def": "调整嗓子，使声音清晰地发出。"}, {"en": "mend; trim", "ko": "표면 등을 고르게 손질하다.", "zh": "打磨", "en_def": "To even a surface, etc.", "zh_def": "将表面等修理平整。"}]	2891b58441.wav
+불안하다	buranhada	不安하다	[{"en": "uneasy; anxious", "ko": "마음이 편하지 않고 걱정되다.", "zh": "不安，不宁，担心", "en_def": "To worry with a feeling uneasy and worried.", "zh_def": "心里不舒服而忧虑。"}, {"en": "uncertain; insecure", "ko": "분위기나 상황이 안정되지 않아 어지럽다.", "zh": "动荡，不安定", "en_def": "To feel dizzy because the atmosphere or situation is not stable.", "zh_def": "氛围或局势不稳定而混乱。"}]	b6ae827747.wav
 다루다01	daruda	\N	[{"en": "do", "ko": "어떤 것을 일거리로 삼다.", "zh": "处理，办理", "en_def": "To do something as one's task.", "zh_def": "以某物当作活儿。"}, {"en": "sell and buy", "ko": "어떤 물건을 사고파는 일을 하다.", "zh": "买卖，经营", "en_def": "To sell and buy an item.", "zh_def": "从事购买或销售某物的工作。"}, {"en": "use; play", "ko": "악기나 기계 등을 사용하다.", "zh": "操作，操纵，使用", "en_def": "To use an instrument, machine, etc.", "zh_def": "使用乐器或机器等。"}, {"en": "tend; handle", "ko": "가죽 등을 손질해서 부드럽게 하다.", "zh": "鞣制，硝，制革", "en_def": "To tend leather, etc., and soften it.", "zh_def": "加工皮革等，使其变柔软。"}, {"en": "deal with; handle", "ko": "사람이나 동물을 상대하거나 부리다.", "zh": "对付，使唤，管教", "en_def": "To deal with or handle a person or animal.", "zh_def": "对待或支使人或动物。"}, {"en": "deal with; handle", "ko": "물건이나 일거리 등을 어떠하게 취급하다.", "zh": "对待，处理", "en_def": "To handle an item, task, etc., in a certain way.", "zh_def": "如何针对物品或工作等。"}, {"en": "deal with; handle", "ko": "어떤 것을 소재나 주제로 삼다.", "zh": "探讨，针对", "en_def": "To make something the subject or topic.", "zh_def": "将某对象作为素材或主题。"}]	dc1a2c3e61.wav
 다르다01	dareuda	\N	[{"en": "different; other", "ko": "두 개의 대상이 서로 같지 아니하다.", "zh": "不同，不一致", "en_def": "Not the same as each other.", "zh_def": "两个对象相互不一样。"}, {"en": "different; extraordinary", "ko": "보통의 사물이나 사람과 같지 않고 특별한 면이 있다.", "zh": "与众不同，非同一般", "en_def": "Not the same as ordinary things or people; of special qualities.", "zh_def": "与普通的事物或人不一样，有特别的一面。"}]	6f6ef61bc7.wav
 다른	dareun	\N	[{"en": "different; other", "ko": "해당하는 것 이외의.", "zh": "其他，别的", "en_def": "Other than the one concerned.", "zh_def": "除相关之外的。"}]	8d586a6179.wav
@@ -29267,6 +29288,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 다리02	dari	\N	[{"en": "bridge", "ko": "강, 바다, 길, 골짜기 등을 건너갈 수 있도록 양쪽을 이어서 만들어 놓은 시설.", "zh": "桥，桥梁", "en_def": "A facility that connects both sides to allow a person or animal to cross a river, a sea, a road, a valley, etc.", "zh_def": "为使越过河流、大海、道路，山谷等而连接两边建造的设施。"}, {"en": "bridge; intermediary", "ko": "중간에 거치게 되는 단계나 과정.", "zh": "中间环节", "en_def": "A step or process that one goes through in the middle of something.", "zh_def": "中间经历的阶段或过程。"}, {"en": "setting up; fixing up; matchmaker", "ko": "(비유적으로) 둘 사이의 관계를 이어 주는 역할을 하는 사람이나 사물.", "zh": "中介，媒介", "en_def": "(figurative) A person or object that plays a role in connecting two people, etc.", "zh_def": "(喻义)起连接两人关系作用的人或事物。"}]	c484617e77.wav
 다음01	daeum	\N	[{"en": "next; following", "ko": "어떤 차례에서 바로 뒤.", "zh": "下面，下一个", "en_def": "Something that comes right after another in a sequence of time, place, turn, etc.", "zh_def": "某个次序的后一个。"}, {"en": "next; following", "ko": "이번 차례의 바로 뒤.", "zh": "下面，下一个", "en_def": "The thing that comes right after this time or turn in sequence.", "zh_def": "这个次序的后一个。"}, {"en": "next", "ko": "나란히 있는 것들 중에서 바로 닿아 있는 것.", "zh": "挨着的，靠着的", "en_def": "Something nearest to another in a series of things queued up.", "zh_def": "并排的东西中正好挨在一起的东西。"}, {"en": "being after", "ko": "어떤 일이 끝난 뒤.", "zh": "之后", "en_def": "The time after a thing is finished.", "zh_def": "某事结束后。"}, {"en": "next time; being later", "ko": "시간이 지난 뒤.", "zh": "以后，下次", "en_def": "A state in which a certain time has passed since something happened.", "zh_def": "一段时间后。"}, {"en": "next", "ko": "서열에서 바로 아래.", "zh": "下一个", "en_def": "A thing or person right below another in ranking.", "zh_def": "排序中的后一个。"}, {"en": "unless; if not", "ko": "어떤 것이 아니라는 사실을 강조하여 나타내는 말.", "zh": "又不是", "en_def": "A word used to emphasize that a certain thing is not true.", "zh_def": "用于强调不是的事实。"}, {"en": "next; following", "ko": "말이나 글에서 바로 뒤에 이어지는 것.", "zh": "下面，下一个", "en_def": "A statement coming right after another in text or speech.", "zh_def": "话或文字之后连接的内容。"}, {"en": "next; consequence; future", "ko": "뒤따라 생기는 결과.", "zh": "后果", "en_def": "A subsequent result or consequence.", "zh_def": "随后产生的结果。"}]	273c9f25bc.wav
 다정하다	dajeonghada	多情하다	[{"en": "kind; friendly", "ko": "마음이 따뜻하고 정이 많다.", "zh": "多情，深情，亲密", "en_def": "Warm-hearted and affectionate.", "zh_def": "内心温暖，富有温情。"}]	198f5c3690.wav
+불어오다	bureooda	\N	[{"en": "blow from", "ko": "바람이 이쪽으로 불다.", "zh": "吹来", "en_def": "For wind to come blowing in.", "zh_def": "风向这边刮来。"}, {"en": "begin", "ko": "경향이나 유행 등이 영향을 끼쳐 오다.", "zh": "(喻义)吹起，刮起", "en_def": "For a trend, fashion, etc., to begin to affect people. ", "zh_def": "倾向或流行等带来影响。"}]	e73aa3ba7d.wav
 다지다	dajida	\N	[{"en": "harden; firm", "ko": "들떠 있는 것을 누르거나 밟거나 쳐서 단단하게 하다.", "zh": "压实，打夯", "en_def": "To step on or hit something that is loose in order to harden it.", "zh_def": "按压、踩或拍打翘起来的东西，使其牢固。"}, {"en": "brace oneself", "ko": "마음이나 뜻을 굳게 하다.", "zh": "下定，坚定", "en_def": "To strengthen one's will or heart.", "zh_def": "使内心或意志坚强。"}, {"en": "strengthen", "ko": "구조나 체제의 기본을 튼튼히 하다.", "zh": "巩固，奠定", "en_def": "To strengthen the basis of a structure or system.", "zh_def": "加固构造或体制的基础。"}, {"en": "strengthen; thicken", "ko": "관계를 더욱 두텁게 하다.", "zh": "加深", "en_def": "To make a relationship stronger.", "zh_def": "使关系更深厚。"}, {"en": "confirm; emphasize", "ko": "뒷말이 없도록 강조하거나 확인하다.", "zh": "叮咛，叮嘱", "en_def": "To emphasize or confirm for thorough understanding.", "zh_def": "强调或确认，以确保没有后话。"}]	99712c8675.wav
 다짐하다	dajimhada	\N	[{"en": "promise; assure; pledge", "ko": "이미 한 일이나 앞으로 할 일이 틀림이 없음을 단단히 확인하다.", "zh": "保证", "en_def": "To make certain that one has done or will do something.", "zh_def": "确认已经做过的事或将要做的事没有错误。"}, {"en": "determine; resolve", "ko": "마음을 굳게 먹고 뜻을 정하다.", "zh": "下定决心，发誓", "en_def": "To make up one's mind to do something. ", "zh_def": "下狠心或打定主意。"}]	48304f022a.wav
 다치다01	dachida	\N	[{"en": "be injured", "ko": "부딪치거나 맞거나 하여 몸이나 몸의 일부에 상처가 생기다. 또는 상처가 생기게 하다.", "zh": "受伤，负伤，弄伤", "en_def": "To be hit or bumped into by something or someone, so that one's body or body part is injured; to make an injury.", "zh_def": "被撞到或被打后身上或身体的一部分出现伤口；或指使出现伤口。"}, {"en": "be hurt", "ko": "마음이나 체면이나 명예가 상하다. 또는 상하게 하다.", "zh": "受伤，受刺激，伤感情，伤面子", "en_def": "For one's heart, reputation, or honor to be damaged; to make a damage.", "zh_def": "感情、面子或名誉受损；或指使受损。"}, {"en": "do harm", "ko": "남의 재산에 손해를 끼치다. 또는 끼치게 하다.", "zh": "损坏，使受损", "en_def": "To do damage to another person's property; to make a damage.", "zh_def": "损害别人的财物；或指使受损。"}]	bb7dfab7ac.wav
@@ -29277,6 +29299,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 다행히	dahaenghi	多幸히	[{"en": "luckily; with luck", "ko": "뜻밖에 운이 좋게.", "zh": "幸运，万幸，走运", "en_def": "Luckily unexpected.", "zh_def": "意外地运气好地。"}]	7cd6b22b3d.wav
 닥치다01	dakchida	\N	[{"en": "approach; draw near; strike; come", "ko": "어려운 시기나 일 등이 갑자기 가까이 다가오다.", "zh": "临近，迫近", "en_def": "For tough times or difficuties to suddenly come near.", "zh_def": "困难时期或事情等突然临近。"}]	21e3308aee.wav
 닦다01	daktta	\N	[{"en": "wipe; scrub\\t", "ko": "더러운 것을 없애려고 문지르다.", "zh": "擦，拭", "en_def": "To rub to eliminate dirty things.", "zh_def": "为去掉脏东西而抹。"}, {"en": "clean", "ko": "깨끗하게 씻다.", "zh": "刷，擦", "en_def": "To wash something clean.", "zh_def": "干净地洗去。"}, {"en": "dry", "ko": "물기를 없애다.", "zh": "擦，拭", "en_def": "To remove moisture. ", "zh_def": "除去水分。"}, {"en": "level; smooth", "ko": "바닥을 평평하고 단단하게 하여 길 등을 만들다.", "zh": "铺平，修筑", "en_def": "To make a road, etc., by making the ground even and hard. ", "zh_def": "使地面平整而坚实，铺成道路等。"}, {"en": "practice; train", "ko": "학문이나 기술을 배우고 익히다.", "zh": "钻研，磨练", "en_def": "To pursue learning or learn and master a technique.", "zh_def": "学习并熟知学问或技术。"}, {"en": "cultivate", "ko": "행동이나 마음을 바르게 기르다.", "zh": "修养，磨练", "en_def": "To refine one's behavior or mind. ", "zh_def": "培养端正的行动或内心。"}, {"en": "lay; pave", "ko": "어떤 일을 하기 위한 기초나 바탕을 마련하다.", "zh": "奠定", "en_def": "To build a foundation or basis for something.", "zh_def": "为做某事而备置基础或根底。"}]	0ba348c485.wav
+불완전하다	burwanjeonhada	不完全하다	[{"en": "imperfect; incomplete", "ko": "완전하지 않거나 완전하지 못하다.", "zh": "不完全，不完善", "en_def": "Not perfect or complete.", "zh_def": "没有达到或达不到完全的程度。"}]	d30f55fc9a.wav
 단06	dan	段	[{"en": "column", "ko": "인쇄물에서 지면을 가로나 세로로 나눈 구역.", "zh": "段", "en_def": "In printed materials, vertically and horizontally divided sections within a page.", "zh_def": "出版物中，横向或竖向分割纸面的区域。"}, {"en": "column", "ko": "인쇄물에서 지면을 나눈 구역을 세는 단위.", "zh": "段", "en_def": "In printing materials, a unit for counting the number of sections within a page.", "zh_def": "数出版物中横向或竖向分割纸面区域的量词。"}, {"en": "grade; degree", "ko": "바둑, 장기, 태권도, 유도, 검도 등에서 실력에 따라 매기는 등급.", "zh": "段", "en_def": "In go, taekwondo, kendo, janggi, or Korean chess, judo, etc., a player's grade based on his/her ability.", "zh_def": "围棋、象棋、跆拳道、柔道、剑道等中，按实力评定的等级。"}, {"en": "grade; level", "ko": "바둑, 장기, 태권도, 유도, 검도 등에서 실력에 따라 매기는 등급을 세는 단위.", "zh": "段位", "en_def": "In go, taekwondo, kendo, janggi, or Korean chess, judo, etc., a unit for counting a player's level based on his/her ability.", "zh_def": "围棋、象棋、跆拳道、柔道、剑道等中，按实力评定的等级单位。"}, {"en": "step; stair", "ko": "사다리나 계단 등의 하나하나의 층.", "zh": "级", "en_def": "One in a series of steps on a ladder or staircase, etc.", "zh_def": "指楼梯、台阶等的每个层。"}, {"en": "step; stair", "ko": "사다리나 계단 등의 하나하나의 층을 세는 단위.", "zh": "级", "en_def": "A unit for counting the number of steps in a ladder or staircase, etc.", "zh_def": "数楼梯、台阶等的计量单位。"}]	1b5ac1ea7c.wav
 단09	dan	單	[{"en": "just; merely; simply", "ko": "오직 그 수량뿐임을 나타내는 말.", "zh": "只，单单", "en_def": "A word that indicates there is only the amount of something.", "zh_def": "表示仅那个数量。"}]	5bd0a55754.wav
 단계03	dangye	段階	[{"en": "phase; step", "ko": "일이 순서를 따라 변화해 나가는 각 과정.", "zh": "阶段", "en_def": "Each process in which things change in sequence.", "zh_def": "事情按顺序发生变化的每个过程。"}]	d3a0788177.wav
@@ -29288,6 +29311,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 달05	dal	\N	[{"en": "moon", "ko": "밤이 되면 하늘에 뜨는 동그랗고 밝은 빛이 나는 천체.", "zh": "月，月亮，月球", "en_def": "A bright, round celestial body that apprears in the sky at night.", "zh_def": "晚上天空中出现的圆形明亮的发光天体。"}, {"en": "month", "ko": "일 년을 열둘로 나누어 놓은 기간.", "zh": "月", "en_def": "A period in a year divided by twelve.", "zh_def": "把一年分为十二个的每个时间段。"}]	2f9578e98c.wav
 단순하다	dansunhada	單純하다	[{"en": "simple", "ko": "복잡하지 않고 간단하다.", "zh": "单纯，单一", "en_def": "Simple, not complex.", "zh_def": "简单不复杂。"}, {"en": "simple-minded", "ko": "사람의 생각이나 성격이 복잡하지 않거나 꼼꼼하지 않다.", "zh": "单纯，纯真，天真", "en_def": "One's thoughts or personality being not intricate or meticulous.", "zh_def": "人的想法或性格不复杂或不仔细。"}, {"en": "mere; simple", "ko": "별다른 의미가 없거나 대수롭지 않다.", "zh": "单纯的，简单的", "en_def": "Insignificant and not very meaningful. ", "zh_def": "没有特别的意思或不重要。"}]	417b4e3fcf.wav
 단순히	dansunhi	單純히	[{"en": "simply", "ko": "복잡하지 않고 간단하게.", "zh": "简单地，单一地", "en_def": "Simply, not complicated.", "zh_def": "简单不复杂地。"}, {"en": "just", "ko": "별다른 의미 없이.", "zh": "单纯地，简单地", "en_def": "Without any specific meaning.", "zh_def": "没有特别的意思地。"}]	e6c42fbe96.wav
+불이익	bulriik	不利益	[{"en": "disadvantage; penalty; detriment", "ko": "이익이 되지 않고 손해가 됨.", "zh": "损失", "en_def": "A state of being a loss without being beneficial to someone. ", "zh_def": "没有获得利益，遭受损害。"}]	0b200f8eca.wav
 단어	daneo	單語	[{"en": "word", "ko": "일정한 뜻과 기능을 가지며 홀로 쓰일 수 있는 가장 작은 말의 단위.", "zh": "单词，词汇", "en_def": "The smallest independent unit of language, which has a certain meaning or function.", "zh_def": "具有一定的意义和功能、可单独被使用的最小的语言单位。"}]	5da608b2aa.wav
 단위02	danwi	單位	[{"en": "unit", "ko": "미터, 리터, 그램과 같이 길이, 양, 무게 등을 수로 나타낼 때 기초가 되는 기준.", "zh": "单位", "en_def": "A standard for expressing length, quantity or weight in numbers, such as meter, liter, gram, etc.", "zh_def": "如米、升、公斤等表示长度、体积、重量等数的基础标准。"}, {"en": "unit", "ko": "조직이나 활동을 이루는 데에 기본이 되는 덩어리.", "zh": "单位", "en_def": "A group that serves as the basis for forming an organization or activity. ", "zh_def": "实现组织或活动的基本团体。"}]	19e77c2ef6.wav
 단점01	danjjeom	短點	[{"en": "weakness; shortcoming; demerit", "ko": "모자라거나 흠이 되는 점.", "zh": "缺点", "en_def": "A trait of one's personality that is defective or not admirable.", "zh_def": "不足或有缺陷的地方。"}]	0b5b09bd61.wav
@@ -29299,6 +29323,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 단풍01	danpung	丹楓	[{"en": "autumn foliage", "ko": "가을에 나뭇잎이 노란 색이나 붉은 색으로 변하는 현상. 또는 그렇게 변한 잎.", "zh": "红叶，枫叶", "en_def": "A natural phenomenon in which leaves turn yellow or red in autumn, or such a tinged leaf. ", "zh_def": "在秋季树叶变成黄色或红色的现象；或指变成那样的叶子。"}, {"en": "maple tree", "ko": "손바닥 모양의 잎이 가을에 빨갛게 물드는 나무.", "zh": "枫树", "en_def": "A tree whose hand-shaped leaves turn red in autumn.", "zh_def": "手掌形状的树叶在秋季变成红色的树木。"}]	240d5cebe8.wav
 닫다02	dattta	\N	[{"en": "shut", "ko": "문, 뚜껑, 서랍 등을 원래 위치로 움직여 열린 것을 막다.", "zh": "关，盖，合", "en_def": "To close something that is opened, such as the door, lid, drawer, etc., by moving it back to its original position. ", "zh_def": "把门、盖子、抽屉等挪到原位置，防止打开。"}, {"en": "close the door", "ko": "하루 영업을 마치다.", "zh": "关门，结束，打烊", "en_def": "To close business for the day. ", "zh_def": "结束一天的营业。"}, {"en": "close one's business; go out of business", "ko": "사업체를 더 이상 운영하지 않다.", "zh": "关闭，关门，关张", "en_def": "To stop operating a company. ", "zh_def": "不再营业。"}, {"en": "close", "ko": "입을 굳게 다물다.", "zh": "闭口", "en_def": "To shut one's mouth tight. ", "zh_def": "牢牢地闭上嘴。"}]	91ee112e8a.wav
 닫히다	dachida	\N	[{"en": "be shut; shut", "ko": "열린 문이나 뚜껑, 서랍 등이 다시 제자리로 가게 되다.", "zh": "被关", "en_def": "For an opened door, lid, drawer, etc., to be moved back to its original position.", "zh_def": "开着的门、盖子、抽屉等被重新挪回原位置。"}, {"en": "be closed", "ko": "업무나 영업 등을 하지 않게 되다.", "zh": "关门，关张", "en_def": "To not do work or business. ", "zh_def": "业务或营业等不再进行。"}, {"en": "be shut; be closed", "ko": "마음을 터놓거나 무엇을 마음속으로 받아들일 수 없게 되다.", "zh": "封闭", "en_def": "To become hard to open oneself up or accept something in one's heart. ", "zh_def": "变得无法敞开心扉或没法从心底里接受某物。"}, {"en": "be closed", "ko": "말을 할 수 없게 입이 다물어지다.", "zh": "闭口", "en_def": "For one's mouth to be shut, making oneself unable to speak.", "zh_def": "闭上嘴，无法说话。"}]	37ac018ee4.wav
+불편01	bulpyeon	不便	[{"en": "inconvenience", "ko": "이용하기에 편리하지 않음.", "zh": "不便，不方便", "en_def": "An inconvenience in using something.", "zh_def": "使用不便利。"}, {"en": "discomfort", "ko": "몸이나 마음이 편하지 않고 괴로움.", "zh": "不适，不舒服", "en_def": "Discomfort and pain in one's body or mind.", "zh_def": "身体或心理欠佳，难受。"}, {"en": "awkwardness", "ko": "다른 사람과의 관계 등이 편하지 않음.", "zh": "不自在", "en_def": "The awkwardness of a relationship with another person, etc.", "zh_def": "与他人的关系等别扭。"}]	578a4d3d50.wav
 달다03	darda	\N	[{"en": "hang; stick; fasten", "ko": "물건을 어떤 곳에 걸거나 꽂거나 매어서 붙어 있게 하다.", "zh": "挂，悬，别，带", "en_def": "To hang, stick, or fasten an object to something.", "zh_def": "将物品拴挂或插在某处，使其不掉落。"}, {"en": "install", "ko": "어떤 기기나 장치를 설치하다.", "zh": "安装", "en_def": "To install a device or machine.", "zh_def": "设置某种机器或装置。"}, {"en": "add", "ko": "글이나 말에 설명이나 조건 등을 덧붙이다.", "zh": "注上，加", "en_def": "To add an explanation, condition, etc., to a writing or speech.", "zh_def": "在文章或话语上附加说明或条件等。"}, {"en": "name", "ko": "이름이나 제목을 정해 붙이다.", "zh": "起名，挂头衔", "en_def": "To give a name or title.", "zh_def": "定下名字或题目。"}, {"en": "record", "ko": "장부에 적다.", "zh": "记", "en_def": "To write in an account book.", "zh_def": "写在账簿上。"}, {"en": "attach; link", "ko": "물건을 이어지도록 연결하다.", "zh": "连，挂，钩", "en_def": "To join objects in order for them to be connected.", "zh_def": "将物品连接起来。"}, {"en": "bring along", "ko": "어디를 가거나 올 때 누구를 따르게 하다.", "zh": "随从，跟随", "en_def": "To make someone follow another person when going or coming to a place.", "zh_def": "去某处时跟着某人。"}, {"en": "be constantly sick", "ko": "잔병을 끊이지 않고 자주 앓다.", "zh": "病不离身", "en_def": "To constantly have minor illnesses and frequently be sick.", "zh_def": "小病不断，经常生病。"}]	2528ec541a.wav
 달다04	darda	\N	[{"en": "weigh; measure", "ko": "저울로 무게를 알아보다.", "zh": "称", "en_def": "To figure out the weight of something with a balance.", "zh_def": "用秤量重量。"}]	13045539db.wav
 달다05	darda	\N	[{"en": "request; ask for", "ko": "듣는 이가 말하는 이에게 어떤 것을 가지게 하거나 누리게 하다.", "zh": "请求，要", "en_def": "For the listener to get the speaker to have or enjoy something.", "zh_def": "话者向听者要求做某事。"}]	fd7a4a769d.wav
@@ -29550,11 +29575,6 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 둘01	dur	\N	[{"en": "two", "ko": "하나에 하나를 더한 수.", "zh": "二", "en_def": "The cardinal number equal to the sum of 1 + 1.", "zh_def": "一加一后所得的数目。"}]	0080fa7282.wav
 둘러보다	dulleoboda	\N	[{"en": "look around; browse", "ko": "주변을 이리저리 살펴보다.", "zh": "环视，环顾", "en_def": "To look around here and there.", "zh_def": "到处查看周边。"}]	ed7d80445f.wav
 들려주다	deullyeojuda	\N	[{"en": "sing; speak\\t", "ko": "소리나 말을 듣게 해 주다.", "zh": "给人听，告诉", "en_def": "To have someone listen to a sound or remark.", "zh_def": "使人听到声音或话。"}]	f5219f5536.wav
-둘러싸다	dulleossada	\N	[{"en": "wrap", "ko": "전체를 감아서 싸다.", "zh": "包围", "en_def": "To enfold and cover something completely. ", "zh_def": "围住整体。"}, {"en": "surround; enclose; encompass", "ko": "동그랗게 둘러서 막거나 가리다.", "zh": "包", "en_def": "To block or hide something by encircling it. ", "zh_def": "围成一圈堵住或遮住。"}, {"en": "surround", "ko": "문제의 대상으로 삼다.", "zh": "围绕", "en_def": "To have something as an issue.", "zh_def": "当作问题的对象。"}]	42538cac1c.wav
-둘러싸이다	dulleossaida	\N	[{"en": "be wrapped", "ko": "전체가 감겨 싸이다.", "zh": "被包围", "en_def": "To be enfolded and covered completely.", "zh_def": "整体被围住。"}, {"en": "be surrounded; be enclosed; be encompassed", "ko": "동그랗게 둘려 막히거나 가려지다.", "zh": "被包围", "en_def": "To be blocked or hidden by being encircled. ", "zh_def": "围成一圈堵住或遮住。"}]	9f0236c87d.wav
-둘째	duljjae	\N	[{"en": "second", "ko": "처음부터 세어 모두 두 개가 됨.", "zh": "第二次，第二个", "en_def": "Totaling two when counted from the start.", "zh_def": "从一数起，一共是两个。"}, {"en": "second child", "ko": "두 번째 자식.", "zh": "老二", "en_def": "One's second offspring.", "zh_def": "第二个孩子。"}]	e74f4aa84a.wav
-둥글다01	dunggeulda	\N	[{"en": "be round", "ko": "동그라미나 공의 모양과 같거나 비슷하게 되다.", "zh": "圆，圆圆的", "en_def": "To become the same as or similar to the shape of a circle or ball.", "zh_def": "变得与圆圈或球的样子相同或相似。"}]	73ea26c187.wav
-둥지	dungji	\N	[{"en": "nest", "ko": "새가 알을 낳거나 살기 위해 풀, 나뭇가지 등을 엮어 만든 둥근 모양의 집.", "zh": "鸟巢，鸟窝", "en_def": "A round-shaped container made by a bird out of grass, twigs, etc., to live or lay eggs in.", "zh_def": "鸟类为了下蛋或栖身而用草、树枝等编制的圆形住处。"}]	0103e73a17.wav
 뒤01	dwi	\N	[{"en": "back", "ko": "향하고 있는 방향의 반대쪽.", "zh": "后，后面", "en_def": "The direction that is opposite of the one that someone or something is facing.", "zh_def": "朝向的反方向。"}, {"en": "next time; later time", "ko": "시간이나 순서상으로 다음이나 나중.", "zh": "后，之后，后来", "en_def": "A time or turn that comes next or later.", "zh_def": "在时间或顺序上，以后或下次。"}, {"en": "being behind the scenes", "ko": "겉으로 보이거나 드러나지 않는 부분.", "zh": "背后，背地里，内幕", "en_def": "A part that is not exposed or revealed.", "zh_def": "不显露于外的部分。"}, {"en": "end; last part", "ko": "일의 마지막이 되는 부분.", "zh": "结尾，收尾", "en_def": "The last part of a job.", "zh_def": "事情的最后部分。"}, {"en": "legacy; footstep", "ko": "앞선 것의 다음.", "zh": "之后，下一个，接下来", "en_def": "Something that is preceded by something else.", "zh_def": "接着前一个。"}, {"en": "help; assist", "ko": "어떤 일을 할 수 있게 도와주는 힘.", "zh": "撑腰，后台，靠山", "en_def": "A force that helps a person do something.", "zh_def": "支持做成某事的力量。"}, {"en": "trace; result", "ko": "어떤 일의 흔적이나 결과.", "zh": "结果，后果", "en_def": "The trace or result of something", "zh_def": "某事的痕迹或结局。"}, {"en": "grudge; resentment", "ko": "풀리지 않고 남아 있는 좋지 않은 감정.", "zh": "遗憾，疙瘩，心结", "en_def": "Hard feelings that remain pent up.", "zh_def": "没解开的不好的情感。"}, {"en": "faecal matter", "ko": "(완곡한 말로) 사람의 똥.", "zh": "屎", "en_def": "(euphemism) The feces of a human.", "zh_def": "(委婉)人的粪便。"}, {"en": "behind; rear end", "ko": "(완곡한 말로) 엉덩이.", "zh": "臀部", "en_def": "(euphemism) A butt.", "zh_def": "(委婉)屁股。"}]	90b1c33657.wav
 뒤늦다	dwineuttta	\N	[{"en": "belated", "ko": "어떤 일을 하기에 알맞은 때가 지나서 늦다.", "zh": "晚，迟", "en_def": "Late because the proper time to do something was missed. ", "zh_def": "过了干某事合适的时候。"}]	2d6139cd93.wav
 뒤따르다	dwittaleuda	\N	[{"en": "follow; chase; go after", "ko": "뒤를 좇거나 뒤에서 따르다.", "zh": "跟随", "en_def": "To chase or follow someone.", "zh_def": "在后面追赶或跟在后面。"}, {"en": "result in", "ko": "어떤 일에 따른 결과로 나오다.", "zh": "伴随", "en_def": "To come out as a result of a certain thing.", "zh_def": "作为某事的结果出现。"}, {"en": "benchmark; follow the example of\\t", "ko": "앞선 이가 한 것과 같은 일을 하다.", "zh": "继承", "en_def": "To do the same thing as a predecessor.", "zh_def": "做与前面的人相同的事。"}]	4a3026ec9d.wav
@@ -29613,6 +29633,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 따라서	ttaraseo	\N	[{"en": "therefore; so; hence", "ko": "앞의 내용이 뒤의 내용의 원인이나 근거, 조건 등이 될 때 쓰는 말.", "zh": "因此，所以", "en_def": "An adverb used when a statement is the reason for, grounds for, or condition of the following statement. ", "zh_def": "用于表示前文为后文的原因、根据或条件等。"}]	9dcafa32b1.wav
 따라오다	ttaraoda	\N	[{"en": "follow", "ko": "움직이는 것을 그대로 쫓아서 가다.", "zh": "追来，追赶", "en_def": "To trace someone or something that moves exactly in the same route.", "zh_def": "追赶移动的人或物。"}, {"en": "equal; match", "ko": "앞서 있는 것의 정도나 수준에 가까워지다.", "zh": "跟上，赶上", "en_def": "To be near the degree or level of someone or something ahead.", "zh_def": "接近前行的人或物之程度或水平。"}, {"en": "imitate; follow", "ko": "어떤 사람의 방식, 행동, 의도 등을 그대로 실행하다.", "zh": "承袭，遵循", "en_def": "To do exactly according to someone's method, behavior, intention, etc.", "zh_def": "依照某人的方式、行动、意图等实施。"}, {"en": "go along; travel along", "ko": "일정한 선 등을 그대로 밟아 오다.", "zh": "沿着", "en_def": "To walk on a certain line, etc.", "zh_def": "跟着一定的线等跟来。"}, {"en": "happen together", "ko": "어떤 일이 다른 일과 함께 일어나게 되다.", "zh": "伴随", "en_def": "For a certain incident to happen at the same time as another incident.", "zh_def": "某事和其它的事一同发生。"}]	71bc38dceb.wav
 따로	ttaro	\N	[{"en": "separately", "ko": "다른 것들과 함께 하거나 섞이지 않게.", "zh": "分开，单独", "en_def": "In such a manner that something is not together with or is not mixed with other things. ", "zh_def": "不与其他东西放或掺杂在一起。"}, {"en": "particularly; specifically", "ko": "보통의 것과는 달리 특별하게.", "zh": "另行，别的，不同地", "en_def": "In a particular manner, unlike ordinary things. ", "zh_def": "跟普通的不一样，比较特别。"}]	b9f322c0c7.wav
+불편하다01	bulpyeonhada	不便하다	[{"en": "inconvenient", "ko": "이용하기에 편리하지 않다.", "zh": "不便，不方便", "en_def": "Inconvenient to use something.", "zh_def": "使用时不便利。"}, {"en": "uncomfortable", "ko": "몸이나 마음이 편하지 않고 괴롭다.", "zh": "不舒服，不适", "en_def": "The body or mind being uncomfortable and painful.", "zh_def": "身体或心理欠佳，难受。"}, {"en": "awkward", "ko": "다른 사람과의 관계 등이 편하지 않다.", "zh": "不自在", "en_def": "The relationship with another person, etc., being awkward.", "zh_def": "与他人的关系等别扭。"}]	96f6812e16.wav
 따르다01	ttareuda	\N	[{"en": "follow", "ko": "다른 사람의 뒤에서 그가 가는 대로 같이 가다.", "zh": "跟随，尾随", "en_def": "To go with someone behind him/her on the same track.", "zh_def": "在他人后面跟着走。"}, {"en": "equal; match", "ko": "보다 높은 수준의 것과 같은 수준에 이르다.", "zh": "跟上", "en_def": "To reach the same level as an advanced one.", "zh_def": "达到有相对较高水平的对象的同样水准。"}, {"en": "respect", "ko": "좋아하거나 존경해서 가까이 좇다.", "zh": "追随", "en_def": "To be near or follow someone because one likes or respects him/her.", "zh_def": "喜欢或尊敬而走近并跟着。"}, {"en": "obey; conform to", "ko": "정해진 법규나 절차, 관행 또는 다른 사람의 의견을 그대로 실행하다.", "zh": "遵从，遵循", "en_def": "To do exactly as in a decided law, procedure, practice, or someone's opinion.", "zh_def": "原封不动地执行规定的法规、程序、惯例或他人的意见。"}, {"en": "go along; travel along", "ko": "일정한 선이나 방향 등을 그대로 밟아 움직이다.", "zh": "沿着", "en_def": "To walk on a certain line, in a direction, etc.", "zh_def": "按照一定的线路或方向等移动。"}, {"en": "do as someone does", "ko": "다른 사람이 하는 대로 같이 하다.", "zh": "跟从，跟着", "en_def": "To do as someone else does.", "zh_def": "按别人做的一样地做。"}, {"en": "happen together", "ko": "어떤 일이 다른 일과 함께 일어나다.", "zh": "伴随，同伴", "en_def": "For a certain incident to happen with another incident at the same time.", "zh_def": "某事与其它事一起发生。"}, {"en": "depend on; be based on", "ko": "어떤 조건이나 기준, 상황에 근거하다.", "zh": "按照", "en_def": "To be based on a certain condition, standard, or situation.", "zh_def": "根据某种条件、基准或状况。"}, {"en": "be proportional to", "ko": "그것에 비례하다.", "zh": "随着", "en_def": "To be proportional to something.", "zh_def": "与某对象成比例。"}, {"en": "be based on", "ko": "어떤 것에 의하다.", "zh": "按照，依照", "en_def": "To be decided according to a certain thing.", "zh_def": "根据某对象。"}]	121f8f0701.wav
 따르다02	ttareuda	\N	[{"en": "pour; spill", "ko": "액체가 담긴 물건을 기울여 액체를 밖으로 조금씩 흐르게 하다.", "zh": "倒", "en_def": "To tilt an object that contains liquid and have the liquid flow out, little by little.", "zh_def": "倾斜装有液体的容器，使液体一点点流出来。"}]	69f262bc3f.wav
 따스하다	ttaseuhada	\N	[{"en": "warm", "ko": "날씨나 햇볕이 기분 좋을 만큼 따뜻하다.", "zh": "温暖，和煦", "en_def": "A weather or sunlight being pleasingly warm.", "zh_def": "天气或阳光暖和，令人心情愉悦。"}, {"en": "warm; kind", "ko": "표정이나 마음이 다정하다.", "zh": "热情，亲切", "en_def": "A facial expression or state of mind being tender. ", "zh_def": "表情或内心暖和。"}]	3ec8f7dd32.wav
@@ -29967,6 +29988,8 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 문화재	munhwajae	文化財	[{"en": "cultural asset; cultural property", "ko": "문화 활동으로 창조된 가치가 뛰어난 사물.", "zh": "文化资产", "en_def": "Objects of outstanding value created through cultural activities.", "zh_def": "由文化活动创造的具有重大价值的物品。"}, {"en": "cultural asset; cultural property", "ko": "'국가유산'의 전 용어.", "zh": "(无对应词汇)", "en_def": "The former term for &apos;national heritage&apos;.", "zh_def": "“国家遗产”的旧称。"}]	226cb674b8.wav
 문화적	munhwajeok	文化的	[{"en": "being cultural", "ko": "문화와 관련된 것.", "zh": "文化的", "en_def": "A quality of being related to culture.", "zh_def": "与文化相关的。"}]	4526845c71.wav
 묻다01	muttta	\N	[{"en": "be stained with; be smeared with", "ko": "먼지, 때, 가루, 액체 등이 달라붙다.", "zh": "沾上", "en_def": "For dust, stain or powder, liquid, etc., to dirty something.", "zh_def": "黏上灰尘、污垢、粉末或液体等。"}, {"en": "be contained; be mixed", "ko": "함께 겹쳐서 붙거나 사이에 섞이다.", "zh": "跟着", "en_def": "To overlap and stick together or mix in between.", "zh_def": "互相重叠而黏在一起，或掺杂在之间。"}]	449b69f3ed.wav
+불평01	bulpyeong	不平	[{"en": "complaint; grumbling", "ko": "어떤 일이나 사람에 대해 마음에 들지 않아 못마땅하게 여김. 또는 그것을 말이나 행동으로 드러냄.", "zh": "不满，牢骚", "en_def": "To feel dissatisfied with something or someone, or to express it through words or actions.", "zh_def": "对某事或某人感到不满意；或将此种心情通过言行表现出来。"}]	384b5cedb6.wav
+불평등하다	bulpyeongdeunghada	不平等하다	[{"en": "unequal; unfair", "ko": "차별이 있어 평등하지 않다.", "zh": "不平等", "en_def": "Not equal due to discrimination.", "zh_def": "有差别，不公平。"}]	b8842a4209.wav
 묻다02	muttta	\N	[{"en": "bury", "ko": "물건을 특정 장소 속에 넣고 흙이나 다른 물건으로 위를 덮어서 가리다.", "zh": "埋", "en_def": "To put an object in a specific place and cover it with dirt or other objects.", "zh_def": "将物体放入某处并用土或其他物品覆盖遮住。"}, {"en": "hide; cover; conceal", "ko": "일을 깊이 숨기어 감추다.", "zh": "掩藏，掩盖", "en_def": "To deeply hide an incident and cover it up.", "zh_def": "将事情深藏起来。"}, {"en": "cover", "ko": "얼굴을 다른 물체에 가리듯 기대다.", "zh": "埋，掩", "en_def": "To lean on something, hiding one&apos;s face.", "zh_def": "将脸靠在其它物体上，以使脸被遮住。"}, {"en": "be deeply seated", "ko": "의자나 이불 같은 데에 몸을 깊이 기대다.", "zh": "埋", "en_def": "To be seated deeply in an armchair or comforter.", "zh_def": "将身体深深靠在椅子或被子等里面。"}]	118a3041d6.wav
 묻다03	muttta	\N	[{"en": "ask; inquire; interrogate", "ko": "대답이나 설명을 요구하며 말하다.", "zh": "问", "en_def": "To say something, demanding an answer or explanation.", "zh_def": "要求回答或说明。"}, {"en": "blame; criticize; hold someone accountable", "ko": "어떤 일에 대한 책임을 따지다.", "zh": "追究", "en_def": "To hold someone accountable for something.", "zh_def": "追查对某事的责任。"}]	c96e78fe12.wav
 식료품	singnyopum	食料品	[{"en": "food", "ko": "음식의 재료가 되는 먹을거리.", "zh": "食品原料", "en_def": "Food used as ingredients for cuisines.", "zh_def": "成为食品材料的食物。"}]	d6215fbc2e.wav
@@ -30032,6 +30055,10 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 밀접하다	miljjeopada	密接하다	[{"en": "close; intimate", "ko": "아주 가깝게 마주 닿아 있다. 또는 그런 관계에 있다.", "zh": "紧密，密切，亲密", "en_def": "Being adjacent and very close to something, or being in such relations. ", "zh_def": "非常近距离地接触；或指处于那样的关系中。"}]	e039604014.wav
 밉다	miptta	\N	[{"en": "upsetting", "ko": "행동이나 태도 등이 마음에 들지 않거나 기분이 나쁜 느낌이 있다.", "zh": "可恶，讨厌，可恨", "en_def": "(for behavior, attitude, etc.) Annoying or irritating.", "zh_def": "行为或态度等不尽如人意或感到心情不悦。"}, {"en": "ugly", "ko": "생김새가 예쁘지 않고 못생기다.", "zh": "难看，丑", "en_def": "Ugly and not pretty in appearance.", "zh_def": "长相不漂亮、丑陋。"}]	834f4a547f.wav
 및	mit	\N	[{"en": "besides; as well as", "ko": "그리고 또.", "zh": "与，及", "en_def": "And also.", "zh_def": "还有，而且。"}]	4dd0740c8b.wav
+불행	bulhaeng	不幸	[{"en": "unhappiness; misery", "ko": "행복하지 않음.", "zh": "不幸", "en_def": "The state of not being happy.", "zh_def": "不幸福。"}, {"en": "unhappiness; difficulty; misery", "ko": "운이 없음. 좋지 않은 일을 당함.", "zh": "不幸，祸", "en_def": "Lack of luck, or experiencing undesirable events.", "zh_def": "运气不好；或遭遇不好的事。"}]	eee6e4f10e.wav
+불행하다	bulhaenghada	不幸하다	[{"en": "unhappy; unfortunate", "ko": "행복하지 않다.", "zh": "不幸", "en_def": "Not happy.", "zh_def": "不幸福"}]	aedefc1cbc.wav
+불확실하다	bulhwakssilhada	不確實하다	[{"en": "uncertain; unsure", "ko": "확실하지 않다.", "zh": "不确实，不确切，模棱两可", "en_def": "Not certain.", "zh_def": "不确定。"}]	7751761eca.wav
+붉다01	buktta	\N	[{"en": "red", "ko": "빛깔이 피나 익은 고추의 빛과 같다.", "zh": "红，赤", "en_def": "The color of something being like that of blood or a ripe chili pepper. ", "zh_def": "颜色像鲜血或熟了的辣椒一样。"}]	201d774c7f.wav
 밑01	mit	\N	[{"en": "bottom", "ko": "사물의 아래쪽.", "zh": "下面，底下", "en_def": "The lower part of something.", "zh_def": "事物的下边。"}, {"en": "junior; lower position", "ko": "나이, 정도, 지위 등이 적거나 낮음.", "zh": "下面，小", "en_def": "An age, degree, status, etc., that is smaller or lower.", "zh_def": "年龄、程度、地位等少或低。"}, {"en": "guidance; protection; leadership", "ko": "어떤 힘이나 세력, 영향 등의 아래.", "zh": "手下，之下，膝下", "en_def": "The state of being under a certain power, clout or influence.", "zh_def": "在某种力量、势力或影响下。"}, {"en": "bottom; foundation", "ko": "일의 기초나 바탕.", "zh": "基础", "en_def": "The basis or foundation of something.", "zh_def": "事情的根本或起点。"}, {"en": "butt; bottom; private part", "ko": "(속된 말로) 항문이나 여자의 음부.", "zh": "屁股，下身", "en_def": "(slang) The anus or female genitalia.", "zh_def": "(粗俗)肛门或女性的阴部。"}, {"en": "bottom", "ko": "어떤 것의 바닥 또는 아래가 되는 부분.", "zh": "底，底下", "en_def": "A part that forms the bottom or lower part of something.", "zh_def": "某物的底部或下部。"}]	73bdaac411.wav
 밑바닥	mitppadak	\N	[{"en": "bottom", "ko": "어떤 것의 바닥 또는 아래가 되는 부분.", "zh": "底，底部", "en_def": "A part that forms the bottom or lower part of something.", "zh_def": "某物的下方或底部。"}, {"en": "bottom; corner; psyche", "ko": "(비유적으로) 어떤 사건이나 현상의 근본.", "zh": "底层，根底", "en_def": "(figurative) The root of an affair or phenomenon.", "zh_def": "(喻义)某些事件或现象的根本。"}, {"en": "bottom", "ko": "(비유적으로) 아무 것도 없는 상태나 생활 수준의 최하층.", "zh": "最下层，最底层，谷底", "en_def": "(figurative) The state of having nothing or the lowest rung on the quality-of-life ladder.", "zh_def": "(喻义)一无所有或属于社会最下层的生活水平。"}]	a5a099add6.wav
 바03	\N	\N	[{"en": "ba", "ko": "앞에서 말한 내용 그 자체나 일 등을 나타내는 말.", "zh": "(无对应词汇)", "en_def": "A bound noun indicating things mentioned earlier or a piece of work, etc.", "zh_def": "表示如上所述。"}, {"en": "ba", "ko": "일의 방법이나 방도.", "zh": "(无对应词汇)", "en_def": "A bound noun meaning a way or method of doing something.", "zh_def": "做事的方法或途径。"}, {"en": "ba", "ko": "기회나 경우.", "zh": "(无对应词汇)", "en_def": "A bound noun meaning a chance or case.", "zh_def": "机会或境况。"}, {"en": "ba", "ko": "자기주장을 강조하여 나타내는 말.", "zh": "(无对应词汇)", "en_def": "A bound noun used to emphasize one's opinion.", "zh_def": "表示强调自己的主张。"}]	dfa2c04016.mp3
@@ -30042,6 +30069,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 바구니	baguni	\N	[{"en": "basket", "ko": "대, 플라스틱 등을 엮어 속이 깊숙하게 만든 그릇.", "zh": "篮子，篮，筐", "en_def": "A container that is hollow inside, made by weaving bamboo, plastic, etc.", "zh_def": "用竹子、塑料等材料编织而成的内部空间较深的容器。"}, {"en": "basket", "ko": "작은 물건을 바구니에 담아 그 분량을 세는 단위.", "zh": "篮，筐，篓", "en_def": "The unit for counting the number of baskets after putting small things into them.", "zh_def": "用篮子盛装小件物品时计算其数量所用的单位。"}]	1459b2e424.wav
 바깥	bakkat	\N	[{"en": "outside", "ko": "밖이 되는 곳.", "zh": "外，外面", "en_def": "The area outside. ", "zh_def": "外边。"}, {"en": "outside; exterior", "ko": "사방과 하늘을 가리지 않은 건물의 바깥.", "zh": "外边，外面", "en_def": "The outside of a building where all sides and sky are not covered. ", "zh_def": "建筑外部没被遮住四周和天空的地方。"}]	19fc81de8c.wav
 바깥쪽	bakkatjjok	\N	[{"en": "outside; exterior", "ko": "바깥으로 향하는 쪽.", "zh": "外边，外头", "en_def": "The side facing outward.", "zh_def": "向着外面的方向。"}, {"en": "outside; exterior", "ko": "바깥으로 보이는 부분.", "zh": "外层，外部", "en_def": "The part revealed outward.", "zh_def": "在外面看到的部分。"}]	3d897dba36.wav
+붐비다	bumbida	\N	[{"en": "be crowded; be jam-packed with", "ko": "많은 사람들이나 차 등이 한 곳에 몰려 매우 복잡하다.", "zh": "拥挤", "en_def": "To be very congested as a lot of people, cars, etc., gather in one place. ", "zh_def": "很多人或车辆等聚在一处，十分复杂。"}]	f526f102a6.wav
 바꾸다	bakkuda	\N	[{"en": "change; exchange; replace; turn into", "ko": "원래 있던 것을 없애고 다른 것으로 대신하게 하다.", "zh": "换，更换，调换", "en_def": "To remove something and replace it with another.", "zh_def": "去掉原来的东西，用其他东西替代。"}, {"en": "translate; put into", "ko": "한 언어를 다른 언어로 번역하여 옮기다.", "zh": "翻译", "en_def": "To translate from one language into another.", "zh_def": "把一种语言转换成另一种语言。"}, {"en": "exchange; trade", "ko": "자신의 것을 다른 사람에게 주고 대신 다른 것을 받거나 가지다.", "zh": "更换，互换，对调", "en_def": "To give one's belongings to someone else and receive or take something in return.", "zh_def": "把自己的东西给别人，同时收取或得到其他东西。"}, {"en": "change; alter; modify", "ko": "원래 있던 내용이나 상태를 다르게 고치다.", "zh": "改变，转变，更改", "en_def": "To change the original content or state.", "zh_def": "改动原有的内容或状态。"}, {"en": "put through; transfer; direct", "ko": "전화를 할 때 전화를 다른 사람에게 넘기거나 다른 사람에게 전화를 받게 하다.", "zh": "换人接电话，转接", "en_def": "To transfer a call to someone else or get him/her to answer the call.", "zh_def": "打电话时把电话转给别人或让别人接电话。"}]	12ef54af74.wav
 바뀌다	bakkwida	\N	[{"en": "be changed; be replaced", "ko": "원래 있던 것이 다른 것으로 대체되다.", "zh": "被换，被更换，被调换", "en_def": "For something that has existed to be replaced by something else.", "zh_def": "原有的东西被其他东西替代。"}, {"en": "be translated", "ko": "한 언어가 다른 언어로 번역되다.", "zh": "被翻译", "en_def": "For a language to be translated into another language.", "zh_def": "一种语言被转换成另一种语言。"}, {"en": "be changed; be exchanged", "ko": "자기의 물건을 다른 사람이 가지게 되고, 그 대신 다른 사람의 물건을 자기가 가지게 되다.", "zh": "调换", "en_def": "To have one's own object taken by someone and to take his/her object instead.", "zh_def": "自己的东西被别人拿走，同时自己得到别人的东西。"}, {"en": "become different", "ko": "내용이나 상태 등이 변하거나 달라지다.", "zh": "改变，转变，更改", "en_def": "For a content, state, etc., to become changed or different.", "zh_def": "内容或状态等变化或变样。"}, {"en": "turn", "ko": "시간이 지나서 다음 날, 달, 해, 계절 등이 되다.", "zh": "更替", "en_def": "To become the next day, month, year, season, etc., as time goes by.", "zh_def": "随着时间的流逝而进入下一个日、月、年、季节等。"}, {"en": "become the next turn", "ko": "차례가 지나서 다음 번 차례가 되다.", "zh": "更替", "en_def": "To become the next turn.", "zh_def": "轮到下一个。"}]	74dad00d92.wav
 바늘	baneul	\N	[{"en": "needle", "ko": "옷 등을 꿰매거나 만드는 데 쓰는, 쇠로 된 가늘고 끝이 뾰족한 물건.", "zh": "针，缝衣针", "en_def": "A thin, long metallic item with a pointed end that is used to sew or make clothes.", "zh_def": "缝衣服等时使用的末端尖细的铁质东西。"}, {"en": "hand", "ko": "시계나 저울 등에서 눈금을 가리키는 가늘고 긴 물건.", "zh": "针，表针", "en_def": "A long, thin object in a clock or scale that points to the markings.", "zh_def": "表或称等上指示刻度的细长的东西。"}, {"en": "needle", "ko": "뜨개질을 할 때 실을 감아 엮는 가늘고 긴 막대.", "zh": "针，织针", "en_def": "A long, thin stick that is used to weave the thread in knitting.", "zh_def": "织毛衣时可以缠绕毛线的细长的棍子。"}, {"en": "needle", "ko": "주사약이나 바람을 넣기 위하여 액체나 바람이 속으로 통하게 만든, 끝이 뾰족하고 가는 물건.", "zh": "针，注射针", "en_def": "A thin item with a pointed end that has a conduit inside it for forcing air or liquid like intravenous medication into a person or object.", "zh_def": "为了放入注射药或空气而制作的，可以让液体或空气通过的末端尖细的东西。"}]	5558e96869.wav
@@ -30058,6 +30086,8 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 바르다01	bareuda	\N	[{"en": "apply; spread", "ko": "종이 등에 풀을 칠해 다른 물체의 표면에 고루 붙이다.", "zh": "糊，涂", "en_def": "To apply glue to paper, etc., and attach that to the surface of another object.", "zh_def": "在纸等东西上涂抹浆糊后均匀地粘贴在其他物体的表面。"}, {"en": "spread; plaster; fill in", "ko": "흙이나 시멘트 등을 벽이나 바닥에 고르게 덧붙이거나 구멍에 넣어 메우다.", "zh": "涂，抹", "en_def": "To spread soil, cement, etc., on a wall or floor evenly, or to fill a hole with it.", "zh_def": "把泥土或水泥等均匀地粘贴在墙或地上，或用来填充缝隙。"}, {"en": "apply; spread; put on", "ko": "액체나 가루 등을 물체의 표면에 문질러 고루 묻히다.", "zh": "抹，搽", "en_def": "To put liquid, powder, etc., on the surface of an object and spread it evenly.", "zh_def": "把液体或粉末等置于物体表面揉擦，使其被均匀涂抹。"}]	295a315f6b.wav
 바보	babo	\N	[{"en": "idiot; fool; being retarded", "ko": "(낮잡아 이르는 말로) 지능이 모자라서 정상적으로 판단하지 못하는 사람.", "zh": "傻子，智障人", "en_def": "(disparaging) A person who cannot judge properly due to lack of intelligence.", "zh_def": "(贬称)因智力低下而不能正常判断的人。"}, {"en": "fool; dumber; jerk", "ko": "(욕하는 말로) 어리석고 멍청하거나 못난 사람.", "zh": "白痴，笨蛋，傻瓜", "en_def": "(insulting) A stupid and foolish person.", "zh_def": "(骂语)愚笨傻气或没出息的人。"}]	c194f941d6.wav
 바쁘다	bappeuda	\N	[{"en": "busy; hectic", "ko": "할 일이 많거나 시간이 없어서 다른 것을 할 여유가 없다.", "zh": "忙，忙碌，紧张", "en_def": "Having no time to do other things because one has many things to do or has little time.", "zh_def": "因为要做的事情多或没有时间而无暇顾及其他。"}, {"en": "urgent; pressing", "ko": "몹시 급하다.", "zh": "匆忙，急忙", "en_def": "Being in a hurry.", "zh_def": "非常急。"}, {"en": "be occupied", "ko": "한 가지 일에 매달려 다른 것을 할 여유가 없다.", "zh": "忙于，只顾", "en_def": "Having no time to do other things because one is occupied with one thing.", "zh_def": "集中于某事而无暇顾及其他。"}, {"en": "having no time in between", "ko": "어떤 행동이 끝나고 다른 행동을 하기까지의 시간이 매우 짧다.", "zh": "马上，一……就……", "en_def": "Having little time between a certain act and another act.", "zh_def": "表示某种行为结束到开始另一种行为的时间间隔很短。"}]	5eb870518d.wav
+붓다01	buttta	\N	[{"en": "swell; be swollen", "ko": "어느 부분의 살갗이 불룩하게 솟아오르다.", "zh": "肿", "en_def": "For the skin of a part of one's body to puff up. ", "zh_def": "某个部位的肌肤鼓起凸出。"}, {"en": "get sulky; become sullen", "ko": "(속된 말로) 불만으로 가득 차 있거나 화가 나 있다.", "zh": "怒气冲冲", "en_def": "(slang) To be full of discontent or be angry.", "zh_def": "(粗俗)满怀不满或生气发火。"}]	28397a1d9e.wav
+붓다02	buttta	\N	[{"en": "pour", "ko": "액체나 가루를 다른 곳에 쏟아 넣다.", "zh": "倒，盛", "en_def": "To put liquid or powder into something.", "zh_def": "将液体或粉末放到别处。"}, {"en": "pay in installments", "ko": "은행 같은 곳에 일정한 기간마다 돈을 맡기다.", "zh": "定期存钱", "en_def": "To deposit money in a bank or the like, every certain period of time. ", "zh_def": "每隔一段时间，将钱交付存放在银行等处。"}]	bc7deca4b0.wav
 바싹01	bassak	\N	[{"en": "completely", "ko": "물기가 거의 없이 마르거나 줄어드는 모양.", "zh": "干巴巴", "en_def": "A word describing something being dried or shrunk until little moisture is left.", "zh_def": "几乎没有水分，干枯或减少的样子。"}, {"en": "closely; tightly", "ko": "매우 가까이 달라붙거나 다가가는 모양.", "zh": "紧紧地", "en_def": "A word describing someone or something being clung to or approaching another thing or person very closely.", "zh_def": "非常紧贴或靠近的样子。"}, {"en": "drastically", "ko": "갑자기 늘거나 주는 모양.", "zh": "猛然，骤然", "en_def": "A word describing something increasing or decreasing suddenly.", "zh_def": "突然增加或减少的样子。"}, {"en": "stubbornly", "ko": "몹시 우기는 모양.", "zh": "顽固地，刚愎地", "en_def": "A word describing one insisting something very hard.", "zh_def": "固执己见的样子。"}, {"en": "stiffly", "ko": "아주 긴장하거나 몹시 힘을 주는 모양.", "zh": "紧绷地", "en_def": "A word describing one being very nervous or tense.", "zh_def": "非常紧张或使劲的样子。"}, {"en": "thinly", "ko": "몸이 매우 마른 모양.", "zh": "瘪瘪地", "en_def": "A word describing one being very thin.", "zh_def": "身体非常消瘦的样子。"}, {"en": "right away", "ko": "무슨 일을 거침없이 빨리 끝내는 모양.", "zh": "疾速地，不停歇地", "en_def": "A word describing one finishing something quickly at once.", "zh_def": "大方快速做完某事的样子。"}]	73a2e2e9a4.wav
 바위01	bawi	\N	[{"en": "rock; boulder", "ko": "아주 큰 돌.", "zh": "岩石", "en_def": "A very large stone. ", "zh_def": "非常大的石头。"}, {"en": "rock", "ko": "가위바위보에서, 주먹을 쥐어 내미는 동작. 또는 그런 손.", "zh": "石头", "en_def": "In a rock-paper-scissors game, the act of clenching one's fist and holding it out, or such a hand. ", "zh_def": "在猜拳游戏中，握拳出示的动作；或指那种手势。"}]	3489e37c35.wav
 바지01	baji	\N	[{"en": "pants", "ko": "위는 통으로 되고 아래는 두 다리를 넣을 수 있게 갈라진, 몸의 아랫부분에 입는 옷.", "zh": "裤子", "en_def": "Clothes worn over the lower part of one's body with the upper part in one whole and the lower part divided into two so that one can put one's legs in each.", "zh_def": "穿在下身的衣物，上面为筒状，下面是可以放腿的两条分叉。"}]	c8062eeed2.wav
@@ -30163,6 +30193,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 배우01	baeu	俳優	[{"en": "actor; actress", "ko": "영화나 연극, 드라마 등에 나오는 인물의 역할을 맡아서 연기하는 사람.", "zh": "演员", "en_def": "A person who acts the part of a character in a movie, play, drama, etc.", "zh_def": "担任电影、话剧或电视剧等中的人物角色进行表演的人。"}]	0da87e7c48.wav
 버릇01	beoreut	\N	[{"en": "habit", "ko": "오랫동안 자꾸 반복하여 몸에 익숙해진 성질이나 행동.", "zh": "习惯，习性", "en_def": "A quality or action that has become accustomed to one's body because of repetition for a long period of time.", "zh_def": "因长期经常的反复身体已熟悉的性质或行为。"}, {"en": "manners", "ko": "윗사람을 대할 때 지켜야 하는 예의.", "zh": "礼貌", "en_def": "Manners that one needs to keep when dealing with a senior.", "zh_def": "对待长辈时应遵守的礼仪。"}]	17d123ee10.wav
 에02	e	\N	[{"en": "e", "ko": "한글 자모 ‘ㅔ’의 이름.", "zh": "(无对应词汇)", "en_def": "The name of the vowel 'ㅔ' in the Korean alphabet.", "zh_def": "韩文字母“ㅔ”的名称。"}]	d07f3ad83a.wav
+붙들다	buttteulda	\N	[{"en": "hold; grasp; grab", "ko": "무엇을 떨어뜨리거나 놓치지 않도록 쥐다.", "zh": "抓住，揪住", "en_def": "To hold something so as not to drop or lose it. ", "zh_def": "攥住某物以防止掉落或错过。"}, {"en": "catch; stop; seize", "ko": "사람을 달아나지 못하게 잡다.", "zh": "抓住，逮住", "en_def": "To hold someone to keep him/her from running away.", "zh_def": "捉住某人而使其无法逃脱。"}, {"en": "hold; stop", "ko": "남을 가지 못하게 멈추어 세우다.", "zh": "抓住，挽留", "en_def": "To stop someone to keep him/her from walking on.", "zh_def": "使某人停住脚而无法离开。"}, {"en": "hold on to; cling to", "ko": "어떤 일에 매달리다.", "zh": "纠缠，紧抓", "en_def": "To stick to something. ", "zh_def": "热衷于某事。"}]	cdcbf5b6ed.wav
 배01	bae	\N	[{"en": "abdomen; belly", "ko": "사람이나 동물의 몸에서, 가슴 아래에서 다리 위까지의 부분.", "zh": "肚子", "en_def": "The part between the chest and legs on the human or animal body.", "zh_def": "人或动物的身体中胸部以下、腿部以上的部分。"}, {"en": "stomach; belly", "ko": "사람이나 동물의 몸에서 음식을 소화시키는 위장, 창자 등의 내장이 있는 곳.", "zh": "腹部", "en_def": "The place where the digestive organs, such as the stomach and intestines, are located in the human or animal body.", "zh_def": "人或动物的身体中消化食物的肠胃等内脏所在的部位。"}, {"en": "uterus; womb", "ko": "여성의 몸에서 아이가 들어서는 부분.", "zh": "肚子", "en_def": "The part in the female body where a baby  is conceived.", "zh_def": "女性的身体中怀孩子的部分。"}, {"en": "middle", "ko": "물건의 가운데 부분.", "zh": "肚子", "en_def": "The middle part of something.", "zh_def": "东西的中间部分。"}, {"en": "time", "ko": "짐승이 새끼나 알을 낳는 횟수를 세는 단위.", "zh": "胎，窝", "en_def": "The unit of counting the number of times an animal bears offspring or lays eggs.", "zh_def": "数动物生崽或产卵次数的单位。"}]	0114be036c.wav
 배02	bae	\N	[{"en": "boat; ship; vessel", "ko": "사람이나 물건을 싣고 물 위를 다니는 교통수단.", "zh": "船", "en_def": "A means of transportation that travels on the water, carrying people or goods. ", "zh_def": "运载人或东西，在水上行驶的交通工具。"}]	92d322d829.wav
 배03	bae	倍	[{"en": "double; two times", "ko": "어떤 수나 양을 두 번 합한 만큼.", "zh": "倍", "en_def": "A state of being twice as much in number or amount. ", "zh_def": "把某数或量合计两次的程度。"}, {"en": "times", "ko": "어떤 수량을 몇 번 합친 수량을 나타내는 단위.", "zh": "倍", "en_def": "The unit indicating the number of instances by which a certain number or amount is multiplied ", "zh_def": "表示把某种数量合计几次的数量单位。"}]	208d569488.wav
@@ -30256,6 +30287,8 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 보고하다02	bogohada	報告하다	[{"en": "report", "ko": "연구하거나 조사한 것의 내용이나 결과를 말이나 글로 알리다.", "zh": "报告", "en_def": "To provide the details or results of research or a survey in words or writing. ", "zh_def": "以话语或文字的形式告知研究或调查的内容或结果。"}]	eea8b60fea.wav
 보관01	bogwan	保管	[{"en": "safekeeping; custody; storage", "ko": "물건을 맡아 간직하여 둠.", "zh": "保管", "en_def": "The state of having a thing in one's keeping. ", "zh_def": "接管和保存东西。"}]	1a45e2e226.wav
 보관하다	bogwanhada	保管하다	[{"en": "keep; store", "ko": "물건을 맡아서 간직하여 두다.", "zh": "保管", "en_def": "To have a thing in one's keeping.", "zh_def": "接管和保存东西。"}]	76443a4bc8.wav
+절대05	jeolttae	絕對	[{"en": "being absolute; being unwavering", "ko": "아무런 조건이나 제약이 붙지 않음.", "zh": "绝对", "en_def": "The state of no conditions or constraints being imposed.", "zh_def": "没有任何条件或制约。"}, {"en": "being absolute", "ko": "비교하여 맞설 만한 것이 없거나, 다른 것과 비교하지 않고 그 자체만으로 존재함.", "zh": "绝对", "en_def": "The state of being incomparable and unmatched or existing in itself without comparison with others.", "zh_def": "不是可以比较的，不与别的东西比较，只以自己本身存在。"}]	1cdfcfbc1d.wav
+절대로	jeolttaero	絕對로	[{"en": "ever", "ko": "어떤 경우라도 반드시.", "zh": "绝对，绝", "en_def": "Surely in any case.", "zh_def": "不管在什么情况下都必须。"}]	1f5086b3d8.wav
 보내다	bonaeda	\N	[{"en": "send", "ko": "사람이나 물건 등을 다른 곳으로 가게 하다.", "zh": "送，寄", "en_def": "To make a person, goods, etc., go somewhere else.", "zh_def": "把人或东西等弄到别的地方去。"}, {"en": "dispatch", "ko": "어떤 임무나 목적으로 가게 하다.", "zh": "派去，送去，派遣，指派", "en_def": "To send someone on a certain mission or for a specific purpose.", "zh_def": "因某个任务或目的而让人去某处。"}, {"en": "send; have someone marry", "ko": "결혼을 시키다.", "zh": "使嫁娶", "en_def": "To marry off someone.", "zh_def": "使结婚。"}, {"en": "send; have someone join", "ko": "어떤 곳에 소속되게 하다.", "zh": "送进，送去", "en_def": "To have someone belong to an organization.", "zh_def": "使隶属于某处。"}, {"en": "express", "ko": "상대편에게 자신의 마음을 알도록 표현하다.", "zh": "送出，给予，致以", "en_def": "To express one&apos;s feelings so that the other person can know.", "zh_def": "向对方表达自己的心意。"}, {"en": "send; let someone leave", "ko": "떠나게 하다.", "zh": "送走", "en_def": "To have someone leave.", "zh_def": "使离开。"}, {"en": "pass time; spend time", "ko": "시간을 지나가게 하다.", "zh": "度过", "en_def": "To have time pass.", "zh_def": "让时间流逝。"}, {"en": "die", "ko": "죽어서 이별하다.", "zh": "送走", "en_def": "To die and part with someone.", "zh_def": "因死亡而离别。"}, {"en": "send; let someone participate", "ko": "경기나 모임 등에 참가하게 하다.", "zh": "派，派去", "en_def": "To have someone participate in a sports game, gathering, etc.", "zh_def": "使参与比赛或聚会等。"}, {"en": "deliver; convey", "ko": "내용이 전달되게 하다.", "zh": "发送", "en_def": "To have content conveyed.", "zh_def": "使内容被传达。"}]	28a5b53a2e.wav
 보내오다	bonaeoda	\N	[{"en": "send over", "ko": "사람이나 사물을 받는 사람 쪽으로 움직여 오게 하다.", "zh": "送来，寄来", "en_def": "To have someone or something move and move near the receiving person.", "zh_def": "使人或事物向着接收人一方移动过来。"}, {"en": "appreciate; thank", "ko": "상대편에게 마음을 표현하다.", "zh": "送来，给予", "en_def": "To express one's heart to someone.", "zh_def": "向对方表达心意。"}]	00ac95305c.wav
 보다02	boda	\N	[{"en": "more", "ko": "어떤 것과 비교해 한층 더.", "zh": "更，还", "en_def": "More than, when compared to something. ", "zh_def": "跟某个相比，愈加。"}]	0e3c567d20.wav
@@ -30412,22 +30445,6 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 불빛	bulppit	\N	[{"en": "firelight; glow", "ko": "타오르는 불의 빛.", "zh": "火光", "en_def": "A light of burning fire.", "zh_def": "燃烧的火的光芒。"}, {"en": "light; beam", "ko": "켜 놓은 불에서 나오는 빛.", "zh": "灯光", "en_def": "A ray emitted from a light that is turned on.", "zh_def": "打开的灯里发出的亮光。"}]	65389af841.wav
 불쌍하다	bulssanghada	\N	[{"en": "pitiful; pathetic", "ko": "사정이나 형편이 좋지 않아 가엾고 마음이 슬프다.", "zh": "可怜", "en_def": "Feeling sorry and sad because someone is in a bad situation.", "zh_def": "境遇或情况不好，让人哀怜和伤心。"}]	39fd40b04f.wav
 불안01	buran	不安	[{"en": "uneasiness; anxiety", "ko": "마음이 편하지 않고 걱정됨.", "zh": "不安，不宁，担心", "en_def": "Feeling uneasy and worried.", "zh_def": "心里不舒服而忧虑。"}, {"en": "uncertainty; insecurity", "ko": "분위기나 상황이 안정되지 않아 어지러움.", "zh": "动荡，不安定", "en_def": "Feeling dizzy because the atmosphere or situation is not stable.", "zh_def": "氛围或局势不稳定而混乱。"}]	32dd9f4807.wav
-불안하다	buranhada	不安하다	[{"en": "uneasy; anxious", "ko": "마음이 편하지 않고 걱정되다.", "zh": "不安，不宁，担心", "en_def": "To worry with a feeling uneasy and worried.", "zh_def": "心里不舒服而忧虑。"}, {"en": "uncertain; insecure", "ko": "분위기나 상황이 안정되지 않아 어지럽다.", "zh": "动荡，不安定", "en_def": "To feel dizzy because the atmosphere or situation is not stable.", "zh_def": "氛围或局势不稳定而混乱。"}]	b6ae827747.wav
-불어오다	bureooda	\N	[{"en": "blow from", "ko": "바람이 이쪽으로 불다.", "zh": "吹来", "en_def": "For wind to come blowing in.", "zh_def": "风向这边刮来。"}, {"en": "begin", "ko": "경향이나 유행 등이 영향을 끼쳐 오다.", "zh": "(喻义)吹起，刮起", "en_def": "For a trend, fashion, etc., to begin to affect people. ", "zh_def": "倾向或流行等带来影响。"}]	e73aa3ba7d.wav
-불완전하다	burwanjeonhada	不完全하다	[{"en": "imperfect; incomplete", "ko": "완전하지 않거나 완전하지 못하다.", "zh": "不完全，不完善", "en_def": "Not perfect or complete.", "zh_def": "没有达到或达不到完全的程度。"}]	d30f55fc9a.wav
-불이익	bulriik	不利益	[{"en": "disadvantage; penalty; detriment", "ko": "이익이 되지 않고 손해가 됨.", "zh": "损失", "en_def": "A state of being a loss without being beneficial to someone. ", "zh_def": "没有获得利益，遭受损害。"}]	0b200f8eca.wav
-불편01	bulpyeon	不便	[{"en": "inconvenience", "ko": "이용하기에 편리하지 않음.", "zh": "不便，不方便", "en_def": "An inconvenience in using something.", "zh_def": "使用不便利。"}, {"en": "discomfort", "ko": "몸이나 마음이 편하지 않고 괴로움.", "zh": "不适，不舒服", "en_def": "Discomfort and pain in one's body or mind.", "zh_def": "身体或心理欠佳，难受。"}, {"en": "awkwardness", "ko": "다른 사람과의 관계 등이 편하지 않음.", "zh": "不自在", "en_def": "The awkwardness of a relationship with another person, etc.", "zh_def": "与他人的关系等别扭。"}]	578a4d3d50.wav
-불편하다01	bulpyeonhada	不便하다	[{"en": "inconvenient", "ko": "이용하기에 편리하지 않다.", "zh": "不便，不方便", "en_def": "Inconvenient to use something.", "zh_def": "使用时不便利。"}, {"en": "uncomfortable", "ko": "몸이나 마음이 편하지 않고 괴롭다.", "zh": "不舒服，不适", "en_def": "The body or mind being uncomfortable and painful.", "zh_def": "身体或心理欠佳，难受。"}, {"en": "awkward", "ko": "다른 사람과의 관계 등이 편하지 않다.", "zh": "不自在", "en_def": "The relationship with another person, etc., being awkward.", "zh_def": "与他人的关系等别扭。"}]	96f6812e16.wav
-불평01	bulpyeong	不平	[{"en": "complaint; grumbling", "ko": "어떤 일이나 사람에 대해 마음에 들지 않아 못마땅하게 여김. 또는 그것을 말이나 행동으로 드러냄.", "zh": "不满，牢骚", "en_def": "To feel dissatisfied with something or someone, or to express it through words or actions.", "zh_def": "对某事或某人感到不满意；或将此种心情通过言行表现出来。"}]	384b5cedb6.wav
-불평등하다	bulpyeongdeunghada	不平等하다	[{"en": "unequal; unfair", "ko": "차별이 있어 평등하지 않다.", "zh": "不平等", "en_def": "Not equal due to discrimination.", "zh_def": "有差别，不公平。"}]	b8842a4209.wav
-불행	bulhaeng	不幸	[{"en": "unhappiness; misery", "ko": "행복하지 않음.", "zh": "不幸", "en_def": "The state of not being happy.", "zh_def": "不幸福。"}, {"en": "unhappiness; difficulty; misery", "ko": "운이 없음. 좋지 않은 일을 당함.", "zh": "不幸，祸", "en_def": "Lack of luck, or experiencing undesirable events.", "zh_def": "运气不好；或遭遇不好的事。"}]	eee6e4f10e.wav
-불행하다	bulhaenghada	不幸하다	[{"en": "unhappy; unfortunate", "ko": "행복하지 않다.", "zh": "不幸", "en_def": "Not happy.", "zh_def": "不幸福"}]	aedefc1cbc.wav
-불확실하다	bulhwakssilhada	不確實하다	[{"en": "uncertain; unsure", "ko": "확실하지 않다.", "zh": "不确实，不确切，模棱两可", "en_def": "Not certain.", "zh_def": "不确定。"}]	7751761eca.wav
-붉다01	buktta	\N	[{"en": "red", "ko": "빛깔이 피나 익은 고추의 빛과 같다.", "zh": "红，赤", "en_def": "The color of something being like that of blood or a ripe chili pepper. ", "zh_def": "颜色像鲜血或熟了的辣椒一样。"}]	201d774c7f.wav
-붐비다	bumbida	\N	[{"en": "be crowded; be jam-packed with", "ko": "많은 사람들이나 차 등이 한 곳에 몰려 매우 복잡하다.", "zh": "拥挤", "en_def": "To be very congested as a lot of people, cars, etc., gather in one place. ", "zh_def": "很多人或车辆等聚在一处，十分复杂。"}]	f526f102a6.wav
-붓다01	buttta	\N	[{"en": "swell; be swollen", "ko": "어느 부분의 살갗이 불룩하게 솟아오르다.", "zh": "肿", "en_def": "For the skin of a part of one's body to puff up. ", "zh_def": "某个部位的肌肤鼓起凸出。"}, {"en": "get sulky; become sullen", "ko": "(속된 말로) 불만으로 가득 차 있거나 화가 나 있다.", "zh": "怒气冲冲", "en_def": "(slang) To be full of discontent or be angry.", "zh_def": "(粗俗)满怀不满或生气发火。"}]	28397a1d9e.wav
-붓다02	buttta	\N	[{"en": "pour", "ko": "액체나 가루를 다른 곳에 쏟아 넣다.", "zh": "倒，盛", "en_def": "To put liquid or powder into something.", "zh_def": "将液体或粉末放到别处。"}, {"en": "pay in installments", "ko": "은행 같은 곳에 일정한 기간마다 돈을 맡기다.", "zh": "定期存钱", "en_def": "To deposit money in a bank or the like, every certain period of time. ", "zh_def": "每隔一段时间，将钱交付存放在银行等处。"}]	bc7deca4b0.wav
-붙들다	buttteulda	\N	[{"en": "hold; grasp; grab", "ko": "무엇을 떨어뜨리거나 놓치지 않도록 쥐다.", "zh": "抓住，揪住", "en_def": "To hold something so as not to drop or lose it. ", "zh_def": "攥住某物以防止掉落或错过。"}, {"en": "catch; stop; seize", "ko": "사람을 달아나지 못하게 잡다.", "zh": "抓住，逮住", "en_def": "To hold someone to keep him/her from running away.", "zh_def": "捉住某人而使其无法逃脱。"}, {"en": "hold; stop", "ko": "남을 가지 못하게 멈추어 세우다.", "zh": "抓住，挽留", "en_def": "To stop someone to keep him/her from walking on.", "zh_def": "使某人停住脚而无法离开。"}, {"en": "hold on to; cling to", "ko": "어떤 일에 매달리다.", "zh": "纠缠，紧抓", "en_def": "To stick to something. ", "zh_def": "热衷于某事。"}]	cdcbf5b6ed.wav
 붙잡다	butjjaptta	\N	[{"en": "hold; grasp; grab", "ko": "무엇을 놓치지 않도록 단단히 잡다.", "zh": "抓住", "en_def": "To hold something firmly so as not to lose it.", "zh_def": "紧紧攥住而使其无法摆脱。"}, {"en": "hold; stop; seize", "ko": "달아나는 것을 잡다.", "zh": "抓住", "en_def": "To grab a person or thing that is running way.", "zh_def": "捉住逃跑的对象。"}, {"en": "hold; stop", "ko": "사람을 떠나거나 지나가지 못하게 잡다.", "zh": "留住，拉住", "en_def": "To stop someone to keep him/her from leaving or passing by.", "zh_def": "抓着他人而使其无法离开或通过。"}, {"en": "seize; get", "ko": "일거리를 얻거나 시작하다.", "zh": "找到(工作)，上手", "en_def": "To get or start a job.", "zh_def": "获得工作或开始工作。"}, {"en": "hold on to; cling to", "ko": "흔들리거나 쓰러지지 않게 잡아 주다.", "zh": "指引，帮助", "en_def": "To hold a thing or person to prevent it from faltering or falling down.", "zh_def": "扶持住他人以使其不动摇或倒下。"}, {"en": "continue; go on", "ko": "말하기 등의 하던 것을 계속 이어 나가다.", "zh": "抓住(话头)，紧咬不放", "en_def": "To continue with what one has been doing or saying, etc.", "zh_def": "话语或其它状况继续不断。"}, {"en": "seize; grab", "ko": "좋은 기회나 사람을 놓치지 않고 잡다.", "zh": "抓住(机会)", "en_def": "To catch hold of a good opportunity or person without losing it or him/her.", "zh_def": "不放过而把握住好的机会或人。"}]	e3428b0d8b.wav
 붙잡히다	butjjapida	\N	[{"en": "be held; be grasped; be grabbed", "ko": "무엇이 빠지지 않도록 단단히 잡히다.", "zh": "被抓住", "en_def": "For something to be held firmly so as not to be lost.", "zh_def": "被紧紧攥住而无法摆脱。"}, {"en": "be caught; be stopped", "ko": "달아나는 것이 붙들리다.", "zh": "(人、动物等)被抓住", "en_def": "For a person or thing running away to be caught. ", "zh_def": "逃跑的对象被捉住。"}, {"en": "be held; be stopped", "ko": "사람이 떠나거나 지나가지 못하게 잡히다.", "zh": "被拉住，被拖住", "en_def": "To be stopped so as not to be able to depart or pass thorugh .", "zh_def": "某人被抓住而无法离开或通过。"}]	cab42c99c3.wav
 비01	bi	\N	[{"en": "rain", "ko": "높은 곳에서 구름을 이루고 있던 수증기가 식어서 뭉쳐 떨어지는 물방울.", "zh": "雨", "en_def": "Water drops generated from cloud-forming vapors high in the sky that get cold, condense, and fall.", "zh_def": "高空中形成云朵的水蒸气冷却凝聚后降落而下的水滴。"}]	a3d89d2781.wav
@@ -30455,6 +30472,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 비빔밥	bibimppap	\N	[{"en": "bibimbap", "ko": "고기, 버섯, 계란, 나물 등에 여러 가지 양념을 넣고 비벼 먹는 밥.", "zh": "拌饭", "en_def": "Rice topped with sliced meat, mushrooms, eggs, namul, seasoned vegetables, some seasonings, etc., of which all the ingredients are stirred before eating.", "zh_def": "在肉丝、蘑菇、鸡蛋、拌菜等材料中加入各种调料后拌着吃的饭。"}]	d22751ad1f.wav
 비상01	bisang	非常	[{"en": "emergency; contingency; being in crisis", "ko": "미리 생각하지 못 했던 위급한 일. 또는 이러한 일을 처리하기 위한 긴급한 명령.", "zh": "紧急，非常", "en_def": "An urgent occasion that one has not thought of, or an urgent order issued to cope with such an occasion. ", "zh_def": "事先不曾预想的危急事件；或为处理某事而下达的紧迫命令。"}]	ecf444c407.wav
 비서05	biseo	祕書	[{"en": "secretary; personal assistant", "ko": "일부 중요한 자리에 있는 사람의 사무나 일정 등을 챙겨 주는 일을 하는 사람.", "zh": "秘书", "en_def": "A person who takes care of office work, schedule, etc. for someone in an important position. ", "zh_def": "安排一部分要职人士的事务或日程等的人。"}]	99b616abbb.wav
+절대적	jeolttaejeok	絕對的	[{"en": "being absolute", "ko": "아무런 조건이나 제약이 붙지 않는 것.", "zh": "绝对的", "en_def": "The state of being with no conditions or constraints imposed.", "zh_def": "没有任何条件或制约的。"}, {"en": "being absolute", "ko": "비교하거나 상대될 만한 것이 없는 것.", "zh": "绝对的", "en_def": "The state of being incomparable or unmatched.", "zh_def": "没有可以比较或做对手的。"}]	78f0723b65.wav
 비슷하다02	biseutada	\N	[{"en": "similar", "ko": "둘 이상의 크기, 모양, 상태, 성질 등이 똑같지는 않지만 많은 부분이 닮아 있다.", "zh": "类似，相似，相近", "en_def": "Two or more sizes, shapes, states, qualities, etc., being not the same, but being alike in many ways.", "zh_def": "两种或两种以上的大小、模样、状态及性质等虽不完全相同，但有很多相像之处。"}, {"en": "be like", "ko": "확실하지는 않지만 무엇으로 짐작되는 상태에 있다.", "zh": "好像，仿佛，宛如", "en_def": "Being guessed as something although it is not certain.", "zh_def": "虽不确实，但可做出推测。"}, {"en": "similar", "ko": "부족하지만 비교 대상과 어느 정도 닮아 있다.", "zh": "近似，接近，差不多", "en_def": "Resembling something, though not precisely.", "zh_def": "虽有不足，但与比较的对象在一定程度上相似。"}]	476ca49bce.wav
 비싸다	bissada	\N	[{"en": "expensive; costly", "ko": "물건값이나 어떤 일을 하는 데 드는 비용이 보통보다 높다.", "zh": "贵", "en_def": "The price of an object or the cost to do something being higher than the average.", "zh_def": "物品的价格或做某事所花的费用高于一般水平。"}, {"en": "play hard to get", "ko": "부탁을 쉽게 들어주지 않고 도도하다.", "zh": "摆架子，拿架子，架子大", "en_def": "Arrogant, not readily accepting someone's request.", "zh_def": "傲慢而轻易不接受请求。"}, {"en": "great", "ko": "어떤 일에 대한 대가가 보통을 넘는 수준이다.", "zh": "昂贵，高昂", "en_def": "A cost for something exceeding the average level. ", "zh_def": "做某事的代价高于一般水准。"}, {"en": "high", "ko": "어떤 대상에 대한 가치가 보통보다 높다.", "zh": "可贵，贵重", "en_def": "The value of something being higher than the average.", "zh_def": "某种对象的价值高于一般。"}]	782b06ab79.wav
 비용03	biyong	費用	[{"en": "cost; expense", "ko": "어떤 일을 하는 데 드는 돈.", "zh": "费，费用", "en_def": "A sum of money spent in doing a certain work. ", "zh_def": "为做某事而花费的钱。"}]	d7710bf29e.wav
@@ -30525,6 +30543,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 사다	sada	\N	[{"en": "buy; purchase; get", "ko": "돈을 주고 어떤 물건이나 권리 등을 자기 것으로 만들다.", "zh": "买，购买", "en_def": "To get ownership of an item, right, etc., by paying for it.", "zh_def": "用钱使某种东西或权利为己所有。"}, {"en": "appreciate; admire; value", "ko": "다른 사람이나 어떤 일의 가치를 인정하다.", "zh": "认可", "en_def": "To recognize the value of a person or work.", "zh_def": "承认他人或某事的价值。"}, {"en": "hire; retain", "ko": "돈을 주고 다른 사람의 힘을 빌리다.", "zh": "雇，雇佣", "en_def": "To pay someone to get help from him/her.", "zh_def": "用钱借用他人的力量。"}, {"en": "cause; stir", "ko": "다른 사람에게 어떤 감정을 가지게 하다.", "zh": "惹，讨，讨得，获取", "en_def": "To cause someone to develop certain feelings.", "zh_def": "使他人产生某种感情。"}, {"en": "buy; treat", "ko": "다른 사람과 함께 먹은 음식의 값을 치르다.", "zh": "请客，付账，买单", "en_def": "To pay for someone's food after you both ate together.", "zh_def": "支付与他人一起吃饭的费用。"}]	48ffdff8c9.wav
 사들이다	\N	\N	[{"en": "buy up; lay in", "ko": "물건 등을 많이 사서 자기 것으로 만들다.", "zh": "买进，购入", "en_def": "To buy something in a large number and make it one's own. ", "zh_def": "买来大批东西等使其成为己有。"}]	bba6189b2b.mp3
 사라지다	sarajida	\N	[{"en": "disappear; vanish; go out of sight", "ko": "어떤 현상이나 물체의 자취 등이 없어지다.", "zh": "消失", "en_def": "For a certain phenomenon, the trace of something, etc., to be gone. ", "zh_def": "某种现象或物体的踪迹等不再存在。"}, {"en": "disappear; evaporate", "ko": "생각이나 감정 등이 없어지다.", "zh": "消失，消灭，泯灭", "en_def": "For a thought, feeling ,etc., to go away.", "zh_def": "想法或感情等不再存在。"}, {"en": "die", "ko": "생명이 끊어지다.", "zh": "死", "en_def": "For the life of someone to cease.", "zh_def": "生命不再继续。"}]	db82cf1c21.wav
+절망02	jeolmang	絕望	[{"en": "despair", "ko": "바라볼 것이 없게 되어 모든 희망을 버림. 또는 그런 상태.", "zh": "绝望", "en_def": "The act of abandoning any hopes due to dim prospects, or such a state.", "zh_def": "变得没有可盼望的，失去所有希望；或指该状态。"}]	eb577efb48.wav
 사람	saram	\N	[{"en": "human; man", "ko": "생각할 수 있으며 언어와 도구를 만들어 사용하고 사회를 이루어 사는 존재.", "zh": "人", "en_def": "A being that is capable of thinking, makes and uses languages and tools and lives by forming a society with others.", "zh_def": "可以思考，会制造并使用语言和工具、构成社会而生活的存在。"}, {"en": "person; native", "ko": "어떤 지역이나 집안, 조직에 속한 자.", "zh": "人", "en_def": "A person who belongs to a region, family, organization, etc.", "zh_def": "归属于某个地域或家庭、组织的人。"}, {"en": "talent; reponsible member", "ko": "일정한 자격이나 인격을 갖춘 존재.", "zh": "人", "en_def": "A being that has certain qualifications or character.", "zh_def": "具备一定的资格或人格的存在。"}, {"en": "personality", "ko": "성질이나 인격.", "zh": "为人，人品", "en_def": "The personality or character of a person.", "zh_def": "性格或人格。"}, {"en": "dude", "ko": "친근한 상대편을 가리키거나 부를 때 사용하는 말.", "zh": "人", "en_def": "The word that is used to refer to or call a person that one feels close to.", "zh_def": "指或称呼亲近的对方的时候使用的词语。"}, {"en": "other; other person", "ko": "특별히 정해지지 않은 자기 외의 남을 가리키는 말.", "zh": "人们，大家", "en_def": "The word that refers to an unspecified person other than oneself.", "zh_def": "对没有特别指定的，自己以外的人的称呼。"}, {"en": "prominent figure", "ko": "뛰어난 인물.", "zh": "人", "en_def": "An extraordinary person.", "zh_def": "出众的人物。"}, {"en": "people", "ko": "일을 할 일꾼이나 그 수.", "zh": "人手", "en_def": "A worker or a person hired to work on a project or assignment.", "zh_def": "可以干活的人员，或其人数。"}, {"en": "person", "ko": "사람의 수를 세는 단위.", "zh": "人", "en_def": "The unit of counting the number of people.", "zh_def": "用于数人数的单位。"}]	084dccc51e.wav
 사랑01	sarang	\N	[{"en": "love", "ko": "상대에게 성적으로 매력을 느껴 열렬히 좋아하는 마음.", "zh": "爱，爱情，恋情", "en_def": "The state of being sexually attracted to and having strong affection for a person.", "zh_def": "从对方身上感到性魅力而热烈喜欢的心。"}, {"en": "love", "ko": "아끼고 소중히 여겨 정성을 다해 위하는 마음.", "zh": "疼爱，关爱", "en_def": "The attitude of sincerely caring about someone out of affection.", "zh_def": "爱护珍惜并真诚相待的心。"}, {"en": "care", "ko": "남을 돕고 이해하려는 마음.", "zh": "爱心", "en_def": "The attitude of trying to help and understand others.", "zh_def": "帮助别人和理解别人的心。"}, {"en": "love", "ko": "무엇을 매우 좋아하거나 즐기는 마음.", "zh": "喜爱，酷爱", "en_def": "The attitude of liking or enjoying something very much.", "zh_def": "非常喜欢或欣赏什么的心。"}, {"en": "love", "ko": "많이 좋아하고 아끼는 사람.", "zh": "爱人", "en_def": "A person that one loves and cares about dearly.", "zh_def": "非常喜欢和珍惜的人。"}]	b6c1ffa101.wav
 사랑스럽다	sarangseureoptta	\N	[{"en": "lovely; adorable", "ko": "사랑을 느낄 만큼 귀엽다.", "zh": "可爱", "en_def": "So cute as to evoke a feeling of affection. ", "zh_def": "十分乖巧，惹人喜欢。"}]	53302823dd.wav
@@ -30538,6 +30557,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 사무05	samu	事務	[{"en": "office work; clerical work; desk job", "ko": "직장에서 주로 책상에 앉아 서류 등을 처리하는 일.", "zh": "业务，事务", "en_def": "A job that consists of primarily doing paperwork, etc., usually sitting at a desk.  ", "zh_def": "职场中主要指坐在办公桌前处理文件等的工作。"}]	e01c2371a1.wav
 사무소	samuso	事務所	[{"en": "office", "ko": "공공 단체, 회사, 개인 등이 일이나 업무를 보는 곳.", "zh": "事务所，办事处", "en_def": "A place where public organizations, companies, individuals, etc. do their business. ", "zh_def": "公共团体、公司、个人等工作或处理业务的场所。"}]	bc350da0a6.wav
 사무실	samusil	事務室	[{"en": "office; place of business; workplace", "ko": "직장에서 주로 서류 등을 처리하며 자신이 맡은 일을 하는 방.", "zh": "办公室", "en_def": "A room at work for working on a given task, usually doing paperwork, etc. ", "zh_def": "职场中主要用于各自处理文件等业务的房间。"}]	9be9284be6.wav
+절반	jeolban	折半	[{"en": "half", "ko": "하나를 반으로 나눔. 또는 그렇게 나눈 반.", "zh": "一半，对半", "en_def": "The act of dividing one into halves, or such a half.", "zh_def": "把一个分成两半；或指那样分出来的一半。"}]	dddb201599.wav
 사무직	samujik	事務職	[{"en": "office job; being white-collar", "ko": "주로 책상에서 문서 등을 다루는 일을 하는 직무. 또는 그 일을 하는 직원.", "zh": "文职工作；文职人员", "en_def": "A job that mainly involves handling documents, etc. at a desk; or an employee who does that job.", "zh_def": "主要在办公桌前处理文件等的工作；或指从事该工作的员工。"}]	bf1e4717bb.wav
 사물10	samul	事物	[{"en": "object; thing", "ko": "직접 보거나 만질 수 있게 일정한 모양과 성질을 갖추고 있는, 세상의 온갖 물건.", "zh": "事物", "en_def": "All kinds of things with a certain shape and property so as to allow one to see or touch.", "zh_def": "实际看得到摸得到，具有一定的模样及性质的世间万物。"}]	d0a171fb06.wav
 사방03	sabang	四方	[{"en": "four directions", "ko": "동, 서, 남, 북의 네 가지 방향.", "zh": "四个方向", "en_def": "The four directions such as north, south, east, and west.", "zh_def": "东西南北四个方向。"}, {"en": "all sides", "ko": "둘레의 모든 곳.", "zh": "四方，到处，四处", "en_def": "All the places around. ", "zh_def": "周围的全部。"}]	39cfab28cf.wav
@@ -30629,6 +30649,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 상대성	sangdaesseong	相對性	[{"en": "relativity", "ko": "어떤 사실이나 사물이 다른 사실이나 사물과 서로 기대어 존재하는 성질.", "zh": "相对性", "en_def": "A quality of a certain fact or object being interdependent on another fact or object. ", "zh_def": "某个事实或事物与其他事实或事物相互依存的性质。"}]	1103fd22f7.wav
 상대적	sangdaejeok	相對的	[{"en": "being relative", "ko": "서로 맞서거나 비교되는 관계에 있는 것.", "zh": "相对", "en_def": "A state of opposing one another or being considered compared with one another. ", "zh_def": "处于互相对比的关系中。"}]	44e5452394.wav
 상대편	sangdaepyeon	相對便	[{"en": "the other party; counterpart", "ko": "상대방이 속한 쪽.", "zh": "对方", "en_def": "A party which one's counterpart belongs to. ", "zh_def": "对手所属的一方。"}]	b8b747e61e.wav
+절약	jeoryak	節約	[{"en": "savings; reduction; conservation", "ko": "마구 쓰지 않고 꼭 필요한 데에만 써서 아낌.", "zh": "节约", "en_def": "The act of saving resources by refraining from reckless use and using them only when necessary.", "zh_def": "不乱用，只节省地用在需要的地方。"}]	ffdc3ef90e.wav
 상류	sangnyu	上流	[{"en": "upper region", "ko": "흐르는 강이나 냇물의 윗부분.", "zh": "上流", "en_def": "The upper part of a running river or stream.", "zh_def": "流动的江河或溪水的上端部分。"}, {"en": "elite; high society; upper class", "ko": "사회적 지위나 생활 수준, 소득 수준, 교양 등이 높은 부류.", "zh": "上流层", "en_def": "A class that holds a higher place in social status, standard of living, income, education, etc.", "zh_def": "社会地位或生活水平、 收入水平、 教养等较高的阶层。"}]	7c85356b94.wav
 상반기	sangbangi	上半期	[{"en": "first half of a year; first half", "ko": "한 해나 일정한 기간을 둘로 나눌 때 앞의 절반 기간.", "zh": "上半年，上半期", "en_def": "The first half of the year or a certain period when divided into two. ", "zh_def": "将一年或一定时期分成两部分时，其中前半部分的时间。"}]	de4b6e664d.wav
 상상07	sangsang	想像	[{"en": "imagination", "ko": "실제로 없는 것이나 경험하지 않은 것을 머릿속으로 그려 봄.", "zh": "想象", "en_def": "An act of picturing something in mind that does not exist or one has never experienced. ", "zh_def": "在脑海中刻画实际不存在或没有经历过的东西。"}]	a6251c94d3.wav
@@ -30647,6 +30668,8 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 상태01	sangtae	狀態	[{"en": "condition; state", "ko": "사물이나 현상의 모양이나 형편.", "zh": "状态", "en_def": "The look or situation of an object or phenomenon.", "zh_def": "事物或现象的模样或情况。"}]	81b3e3886c.wav
 상표02	sangpyo	商標	[{"en": "brand; trademark", "ko": "상품을 만든 회사를 나타내는 기호나 그림 등의 표시.", "zh": "商标", "en_def": "The mark of a symbol or picture that represents a company that makes a product.", "zh_def": "标示制造商品的公司的记号或图画等标志。"}]	bcc046a896.wav
 상품03	sangpum	商品	[{"en": "product; goods", "ko": "사고파는 물건.", "zh": "商品", "en_def": "Goods to sell and buy.", "zh_def": "用于买卖的东西。"}]	9b11ebe83e.wav
+절약하다	jeoryakada	節約하다	[{"en": "save", "ko": "마구 쓰지 않고 꼭 필요한 데에만 써서 아끼다.", "zh": "节约", "en_def": "To control consumption by refraining from reckless spending and using items only when necessary.", "zh_def": "不乱用，只节省地用在需要的地方。"}]	8989dafc00.wav
+젊다	jeomtta	\N	[{"en": "young", "ko": "나이가 한창때에 있다.", "zh": "年青，年轻", "en_def": "Being in one's youthful years.", "zh_def": "正值壮年。"}, {"en": "youthful", "ko": "기운 등이 왕성하다.", "zh": "青春", "en_def": "High in energy, etc.", "zh_def": "气势等旺盛。"}, {"en": "young", "ko": "보기에 나이가 실제 나이보다 적은 듯하다.", "zh": "年轻，显年轻", "en_def": "Looking younger than one actually is.", "zh_def": "看起来好像比实际年龄小。"}]	6a185372bf.wav
 상하다02	sanghada	傷하다	[{"en": "be hurt; be injured", "ko": "몸을 다치거나 건강하지 못한 상태가 되다.", "zh": "受伤，伤", "en_def": "To be wounded or become unhealthy.", "zh_def": "成为身体负伤或健康不佳的状态。"}, {"en": "become haggard; become lean", "ko": "건강이 좋지 않거나 걱정이 많아 야위다.", "zh": "消瘦", "en_def": "To be not healthy or become thin from worry.", "zh_def": "健康不佳或忧虑太多而变瘦。"}, {"en": "be damaged; be spoiled; be hurt", "ko": "물건이 깨어지거나 다쳐 정상적인 상태가 아니게 되다.", "zh": "损坏，腐烂，变质", "en_def": "For something to not be in a normal condition because it has been broken or harmed.", "zh_def": "东西破裂或受到损伤而变得无法维持正常状态。"}, {"en": "rot; go bad; spoil", "ko": "음식이 썩다.", "zh": "损坏，腐烂，变质", "en_def": "For food to go rotten.", "zh_def": "食物腐败。"}, {"en": "be hurt; be injured", "ko": "싫은 일을 당하여 기분이 안 좋아지거나 마음이 불편해지다.", "zh": "伤害，破坏", "en_def": "To feel bad or uncomfortable because one has experienced something unpleasant.", "zh_def": "遭遇不情愿的事而变得心情不佳或心里不舒畅。"}]	b8e8d3a893.wav
 상황02	sanghwang	狀況	[{"en": "situation; condition", "ko": "일이 진행되어 가는 형편이나 모양.", "zh": "状况，情况", "en_def": "The stiuation or state of how something is proceeding.", "zh_def": "事情进行的景况或态势。"}]	e823c5a5eb.wav
 새01	sae	\N	[{"en": "gap; space", "ko": "한 물체에서 다른 물체까지 또는 한곳에서 다른 곳까지의 거리나 공간.", "zh": "缝，缝隙", "en_def": "The distance or space between one object and another or between one place and another. ", "zh_def": "一个物体到其它物体，或一处到另一处之间的距离或空间。"}, {"en": "while; during", "ko": "어떤 때부터 다른 때까지의 동안.", "zh": "之间，以来", "en_def": "The time from a certain time to another. ", "zh_def": "从某个时候到另一个时候的时间。"}, {"en": "time", "ko": "어떤 일을 할 시간적인 틈이나 여유.", "zh": "空，闲暇，时间", "en_def": "The time to do something. ", "zh_def": "能够做某事的时间上的空闲或余地。"}]	7e62c4c4b7.wav
@@ -30709,6 +30732,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 서양인	seoyangnin	西洋人	[{"en": "westerner", "ko": "서양 사람.", "zh": "西方人", "en_def": "A person from the West.", "zh_def": "西方的人。"}]	e134883b15.wav
 서울	seoul	\N	[{"en": "capital", "ko": "한 나라의 중앙 정부가 있는 곳.", "zh": "首都", "en_def": "The place where the nation's central government is located.", "zh_def": "一个国家的中央政府所在地。"}, {"en": "Seoul", "ko": "한반도 중앙에 있는 특별시. 한국의 수도이자 정치, 경제, 산업, 사회, 문화, 교통의 중심지이다. 북한산, 관악산 등의 산에 둘러싸여 있고 가운데로는 한강이 흐른다.", "zh": "首尔", "en_def": "A metropolitan city located in the center of the Korean Peninsula, it is the capital of the Republic of Korea and the center of the country's politics, business, society, culture and transportation. It is surrounded by mountains such as Bukhansan Mountain and Gwanaksan Mountain and crossed by the Hangang River.", "zh_def": "位于朝鲜半岛中央的特别市。既是韩国的首都，又是韩国政治、经济、产业、社会、文化、交通的中心地。被北汉山、冠岳山等众山围绕，汉江贯穿其中。"}]	c7ee6fbe68.wav
 서울역	seoullyeok	서울驛	[{"en": "Seoul Station", "ko": "서울에 있는 기차역 및 지하철역. ", "zh": "首尔站", "en_def": "Train and subway stations in Seoul.", "zh_def": "位于首尔市的火车站及地铁站。"}]	6add0fe939.wav
+젊은이	jeolmeuni	\N	[{"en": "young man; young woman", "ko": "나이가 젊은 사람.", "zh": "青年人，年轻人", "en_def": "A person of a young age.", "zh_def": "年纪轻的人。"}]	0b3323dbed.wav
 서적02	seojeok	書籍	[{"en": "books; publications", "ko": "글이나 그림 등을 인쇄하여 묶어 놓은 것.", "zh": "书籍，书", "en_def": "Writing, pictures, etc., that are printed and bounded.", "zh_def": "印刷文字或画等并装订成的册。"}]	0a0baac7d2.wav
 서점03	seojeom	書店	[{"en": "bookstore", "ko": "책을 파는 가게.", "zh": "书店", "en_def": "A store that sells books.", "zh_def": "卖书的商店。"}]	49ff8954e2.wav
 서쪽	seojjok	西쪽	[{"en": "west", "ko": "동서남북 네 방위 중의 하나로, 해가 지는 쪽.", "zh": "西边，西面", "en_def": "One of the four directions north, south, east, west, and where the sun sets.", "zh_def": "东南西北四方位之一，太阳落山的方向。"}]	e79ec009b8.wav
@@ -31776,6 +31800,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 울산	ulssan	蔚山	[{"en": "Ulsan", "ko": "경상남도 동북쪽에 있는 광역시. 국내 최대의 공업 도시로 조선, 자동차 등의 중화학 공업이 발달하였다.", "zh": "蔚山", "en_def": "A metropolitan city in the northeastern region of Gyeongsangnam-do, or South Gyeongsang Province; It is Korea's biggest industrial city particularly famous for its heavy industry such as the automobile industry.", "zh_def": "位于庆尚南道东北部的广域市。为韩国最大的工业城市，以造船、汽车等重化工业而驰名。"}]	0007d2a57d.wav
 울음	ureum	\N	[{"en": "crying", "ko": "소리를 내면서 눈물을 흘리는 일.", "zh": "哭泣，哭", "en_def": "The act of making a sound and shedding tears at the same time.", "zh_def": "指有声地流泪。"}]	80b55f66e4.wav
 울음소리	ureumssori	\N	[{"en": "crying sound; weeping sound", "ko": "우는 소리.", "zh": "哭声，叫声，啼声", "en_def": "The sound of crying. ", "zh_def": "哭的声音。"}]	485321a0f3.wav
+젊음	jeolmeum	\N	[{"en": "youth", "ko": "몸과 마음이 젊은 상태.", "zh": "年轻，青春", "en_def": "The state of being young both physically and mentally.", "zh_def": "身体和内较年轻的状态。"}]	c9b476f536.wav
 원인02	wonin	原因	[{"en": "cause; reason", "ko": "어떤 일이 일어나게 하거나 어떤 사물의 상태를 바꾸는 근본이 된 일이나 사건.", "zh": "原因，理由，缘由", "en_def": "An affair or event that acts as the root of an occurrence of a certain thing or change of an object's state. ", "zh_def": "使某事情发生或改变某事物状态的根本的事情或事件。"}]	33cecce6f3.wav
 원장07	wonjang	院長	[{"en": "director; president", "ko": "병원이나 연구원같이 ‘-원(院)’자가 붙은 기관의 최고 책임자.", "zh": "院长", "en_def": "The superb manager of an institution whose spelling ends with '원' , for example '유치원' (kindergarten) and '병원' (hospital).", "zh_def": "医院或研究院等以“院”字命名的机构的最高负责人。"}]	2caa60fed0.wav
 움직이다	umjigida	\N	[{"en": "move; budge; be in motion", "ko": "위치나 자세가 바뀌다. 또는 위치나 자세를 바꾸다.", "zh": "动，移动，动弹", "en_def": "For a position or posture to change; to change a position or posture.", "zh_def": "变换位置或姿势；或指使位置或姿势发生变化。"}, {"en": "move; travel; go", "ko": "한 곳에서 다른 곳으로 옮겨 가다.", "zh": "移动，动", "en_def": "To shift from a place to another.", "zh_def": "从一处挪向另一处。"}, {"en": "move; be moved; be affected", "ko": "가지고 있던 생각이 바뀌다. 또는 가지고 있던 생각을 바꾸다.", "zh": "改变，使改变", "en_def": "For one's thought to change; to change one's thought.", "zh_def": "原有的想法发生变化；或使其发生变化。"}, {"en": "move; go into action; maneuver", "ko": "어떤 목적을 가지고 활동하다. 또는 활동하게 하다.", "zh": "发动", "en_def": "To work with a certain goal; to make someone or something work.", "zh_def": "为某个目标而活动；或指使活动。"}, {"en": "move; influence; be influenced", "ko": "어떤 사실이나 현상이 바뀌다. 또는 어떤 사실이나 현상을 바꾸다.", "zh": "改变，使改变", "en_def": "For a certain fact or phenomenon to change; to change a certain fact or phenomenon.", "zh_def": "某个事实或现象发生变化；或指使其发生变化。"}, {"en": "work; function; go", "ko": "기계나 공장 등이 작동되거나 운영되다. 또는 작동하거나 운영하다.", "zh": "运转，使运转", "en_def": "For a machine, factory, etc., to be run or operated; to run or operate a machine, factory, etc.", "zh_def": "机器或工厂等开动或运营；或指使其开动或运营。"}]	1da23db669.wav
@@ -31945,6 +31970,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 이르다01	ireuda	\N	[{"en": "arrive; reach", "ko": "어떤 장소에 도착하다.", "zh": "抵达，到", "en_def": "To get to a place.", "zh_def": "到达某个场所。"}, {"en": "reach", "ko": "어떤 때나 시기가 되다.", "zh": "至", "en_def": "To reach a certain time or period.", "zh_def": "到了某个时候或时期。"}, {"en": "reach; attain to", "ko": "어떤 상태나 정도에 도달하다.", "zh": "到，至", "en_def": "To reach a certain state or level.", "zh_def": "到达某种状态或程度。"}, {"en": "amount to; reach; come to", "ko": "어떤 수치가 되다.", "zh": "达到", "en_def": "To total to a certain figure.", "zh_def": "到某个数值。"}, {"en": "extend", "ko": "어떤 범위에 걸치다.", "zh": "到，至", "en_def": "To extend over a certain range.", "zh_def": "涉及某个范围。"}]	88f8536411.wav
 이르다02	ireuda	\N	[{"en": "tell; let someone know", "ko": "어떤 것을 말하다.", "zh": "告诉", "en_def": "To say something.", "zh_def": "说某个事。"}, {"en": "tell", "ko": "잘 알아듣도록 말해 주다.", "zh": "说明", "en_def": "To say something for someone to keep in mind.", "zh_def": "说得使人听懂。"}, {"en": "tell; say", "ko": "다른 사람에게 어떤 내용을 미리 알려 주다.", "zh": "告知", "en_def": "To let someone know something in advance.", "zh_def": "事先告诉别人，使其知道某个内容。"}, {"en": "tell on", "ko": "남의 잘못이나 실수를 다른 사람에게 말하다.", "zh": "告状", "en_def": "To tell someone about someone else's fault or mistake.", "zh_def": "将别人的错误或失误告诉他人。"}, {"en": "call; refer to", "ko": "어떤 대상이나 상태에 이름을 붙이거나 그것을 가리켜 말하다.", "zh": "叫做", "en_def": "To name or refer to an object or state.", "zh_def": "给某个对象或状态起名，或指着那个说。"}, {"en": "say; go", "ko": "책이나 속담 등으로 전해지는 옛말에서 말해오다.", "zh": "据说", "en_def": "According to what an old proverb, book, etc. says.", "zh_def": "以书或俗话等流传的故事里说。"}]	a61f49fcbe.wav
 이르다03	ireuda	\N	[{"en": "early; premature", "ko": "기준이 되는 때보다 앞서거나 빠르다.", "zh": "早", "en_def": "Preceding or earlier than a point in time that serves as the baseline.", "zh_def": "比作为基准的某个时候还要提前或更快。"}]	04688951c3.wav
+점10	jeom	點	[{"en": "point; dot", "ko": "작고 둥글게 찍은 표시.", "zh": "点", "en_def": "A small, round mark.", "zh_def": "小而圆的标志。"}, {"en": "spot; speck", "ko": "사람의 피부나 동물의 털 등에 있는, 색깔이 다른 작고 둥근 얼룩.", "zh": "痣", "en_def": "A small, round blot on the human skin or animal hair, whose color is different.", "zh_def": "人的皮肤或动物的毛上颜色不同的小圆点。"}, {"en": "point", "ko": "숫자를 적을 때 일 이상의 숫자와 그보다 작은 숫자를 구별하기 위하여 찍는 부호.", "zh": "点", "en_def": "A symbol used in specifying a number to distinguish the number one or bigger and a number smaller than one.", "zh_def": "记数时，为了区分一以上的数字和比它小的数字时使用的符号。"}, {"en": "punctuation mark", "ko": "마침표, 쉼표 등과 같은 문장 부호.", "zh": "点号", "en_def": "A symbol in a sentence such as period, comma, etc.", "zh_def": "和句号、逗号等一样的标点符号。"}, {"en": "thing", "ko": "여러 가지 가운데 특정한 어떤 부분.", "zh": "点", "en_def": "A specific aspect among many.", "zh_def": "许多个中间特定的某部分。"}]	c8f489575f.wav
 이름	ireum	\N	[{"en": "name", "ko": "다른 것과 구별하기 위해 동물, 사물, 현상 등에 붙여서 부르는 말.", "zh": "名字，名称", "en_def": "A word used to refer to or address an animal, object, phenomenon, etc., to distinguish it from others.", "zh_def": "为了区别于他物，给动物、事物、现象等而赋予的称号。"}, {"en": "name; given name", "ko": "사람의 성 다음에 붙여 그 사람만을 부르는 말.", "zh": "名字", "en_def": "A word used with the family name to refer to or address a specific person.", "zh_def": "附加于人的姓氏后面的，只称呼其人的称号。"}, {"en": "name; full name", "ko": "사람의 성과 그 뒤에 붙는 그 사람만을 부르는 말.", "zh": "姓名", "en_def": "The combination of the family and given names that is used to refer to or address a specific person.", "zh_def": "人的姓氏及附加在其后面的，只称呼其人的称号。"}, {"en": "name; identify", "ko": "공식적으로 어떤 일이나 행동을 했음을 알리기 위해 사용된, 사람이나 기관 등을 부르는 말.", "zh": "名称，名义", "en_def": "A word that is used to refer to or address a person, organization, etc., for the purpose of officially announcing an action they took.", "zh_def": "为了正式告知外界我方做了某事或某行为而使用的，个人或机关的名字。"}, {"en": "fame", "ko": "세상에 널리 알려진 명성.", "zh": "名声", "en_def": "The reputation that is known to the world.", "zh_def": "享誉世界的声誉。"}, {"en": "nickname", "ko": "외모나 성격, 행동 등의 특징 때문에 사람들에게 불리는 말.", "zh": "外号", "en_def": "A word that encapsulates someone's appearance, personality, behavior, etc., used to refer to or address him/her.", "zh_def": "因外貌、性格、行为等特征而被别人称呼的非正式名字。"}, {"en": "name; reputation; honor", "ko": "세상 사람들이 훌륭하다고 인정하는 평가와 그에 따르는 영광.", "zh": "名声，名誉", "en_def": "The recognition of one's excellence by others and resulting honor.", "zh_def": "世人称道的好好评价与与之相随的荣耀。"}, {"en": "name", "ko": "어떤 일을 하려고 할 때 내세우는 구실이나 의의.", "zh": "旗号，名义，名目", "en_def": "Something that one presents as an excuse or cause when he/she wants to engage in an undertaking.", "zh_def": "要做某事而提出的理由或借口。"}, {"en": "name", "ko": "대신하여 기대기 위한 어떤 권위나 세력.", "zh": "名义", "en_def": "Authority or power that one depends on for support.", "zh_def": "用来作为依据的某种权威或势力。"}]	31bab6c188.wav
 이리04	iri	\N	[{"en": "wolf", "ko": "개와 비슷하게 생겼으며, 육식성으로 무리를 지어 생활하는 짐승.", "zh": "狼，豺狼", "en_def": "A carnivorous beast that looks similar to a dog, and lives in a pack.", "zh_def": "长相与狗类似，肉食性群居野兽。"}]	e7d66ad28f.wav
 이리저리02	irijeori	\N	[{"en": "like this way and that", "ko": "말이나 행동을 뚜렷하게 정하지 않고 되는대로 하는 모양.", "zh": "这样那样", "en_def": "In the manner of speaking or behaving randomly without any definite order. ", "zh_def": "说话或行为没有明确定下来而随随便便的样子。"}]	af3b0e2c5d.wav
@@ -31959,6 +31985,8 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 이사하다01	isahada	移徙하다	[{"en": "move; change one's abode", "ko": "살던 곳을 떠나 다른 곳으로 옮기다.", "zh": "搬家", "en_def": "To leave the place where one has lived, and move into another place. ", "zh_def": "离开原先生活的地方，搬到别的地方。"}]	1dbf1d81ba.wav
 이상05	isang	以上	[{"en": "or more; and over", "ko": "수량이나 정도가 일정한 기준을 포함하여 그보다 많거나 나은 것.", "zh": "以上", "en_def": "A state in which something equals to or is larger or better than a certain point of reference in quantity or degree.", "zh_def": "数量或程度好于或高于一定基准。"}, {"en": "(no equivalent expression)", "ko": "순서나 위치가 일정한 기준보다 앞이거나 위인 것.", "zh": "以上", "en_def": "A state in which something precedes or tops a certain point of reference in order or ranking.", "zh_def": "顺序或位置比一般基准靠前或靠上。"}, {"en": "now that; since", "ko": "이미 그렇게 된 바에는.", "zh": "既然", "en_def": "Since it has turned out that way.", "zh_def": "已经这样的话。"}, {"en": "the end", "ko": "서류나 강연 등에 마지막에 써서 ‘끝’의 뜻을 나타내는 말.", "zh": "到此结束，结束", "en_def": "A word used at the end of a document, lecture, etc., meaning the &quot;end.&quot;", "zh_def": "文件或演讲等在最后使用，表示“结束”的意思。"}]	fcefdb11b5.wav
 이상09	isang	理想	[{"en": "ideal", "ko": "어떤 것에 대하여 생각할 수 있는 것 중에서 가장 나은 상태나 모습.", "zh": "理想", "en_def": "The best state or form of something that one can think of.", "zh_def": "对于某事能想到的情况中最好的状况或样子。"}]	0974242bec.wav
+점검	jeomgeom	點檢	[{"en": "inspection", "ko": "낱낱이 검사함. 또는 그런 검사.", "zh": "查验，检修，检验", "en_def": "The act of examining each and every element, or such examination.", "zh_def": "一一检查；或指那样的检查。"}]	b51213d9f6.wav
+점수06	jeomssu	點數	[{"en": "score", "ko": "성적을 나타내는 숫자.", "zh": "分数", "en_def": "A number representing one's performance.", "zh_def": "代表成绩的数字。"}, {"en": "the number of items", "ko": "물건의 가짓수.", "zh": "种数", "en_def": "The number of kinds of items.", "zh_def": "东西的种类数。"}]	4add57b992.wav
 이상12	isang	異常	[{"en": "abnormality", "ko": "정상적인 것과 다름.", "zh": "异常，反常，不正常", "en_def": "The quality of being different from something normal.", "zh_def": "与正常的不同。"}, {"en": "uncommonness; extraordinariness; singularity", "ko": "원래 알고 있던 것과 달리 별나거나 색다름.", "zh": "奇怪，古怪", "en_def": "The quality of being peculiar or extraordinary  unlike something that one has known.", "zh_def": "和原本知道的东西不同，特别或独特。"}, {"en": "strangeness", "ko": "보통과 달라 의심스러움.", "zh": "可疑", "en_def": "The quality of being not usual, and thus being doubtful.", "zh_def": "和平常不同，让人怀疑。"}]	ebe5e39576.wav
 이상적01	isangjeok	理想的	[{"en": "being ideal", "ko": "어떤 것에 대하여 생각할 수 있는 것 중에서 가장 나은 것.", "zh": "理想的", "en_def": "The best among things that can be thought about something.", "zh_def": "对于某事能想到的最好的。"}]	87f6d16de8.wav
 이상하다	isanghada	異常하다	[{"en": "strange; unusual", "ko": "정상적인 것과 다르다.", "zh": "异常，反常，不正常", "en_def": "Not normal.", "zh_def": "与正常的不同。"}, {"en": "unusual; strange; peculiar", "ko": "원래 알고 있던 것과 달리 별나거나 색다르다.", "zh": "奇怪，古怪", "en_def": "Something being uncommon or odd because it is different from what one knows about it.", "zh_def": "和原本知道的东西不同，特别或独特。"}, {"en": "suspicious", "ko": "보통과 달라 의심스럽다.", "zh": "可疑", "en_def": "Something being dubious because it is different from that which is usual.", "zh_def": "和平常不同，让人怀疑。"}]	8c2057f490.wav
@@ -31986,6 +32014,8 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 이제01	ije	\N	[{"en": "now", "ko": "말하고 있는 바로 이때.", "zh": "现在", "en_def": "This moment being spoken of.", "zh_def": "说话的同时。"}, {"en": "now", "ko": "지금의 시기.", "zh": "现在", "en_def": "The present.", "zh_def": "当下的时期。"}]	0fe6642c9c.wav
 이제야	ijeya	\N	[{"en": "now", "ko": "말하고 있는 지금에야 비로소.", "zh": "这才", "en_def": "For the first time at this very moment being spoken of.", "zh_def": "说话的当时才。"}]	290fab956c.wav
 이중03	ijung	二重	[{"en": "being double; being two fold; two times", "ko": "두 겹. 또는 두 번 겹치는 것.", "zh": "二重，双重", "en_def": "The state of being folded in two, or repeated two times. ", "zh_def": "两层；或指两层的东西。"}]	fd861189fe.wav
+점심	jeomsim	點心	[{"en": "lunch", "ko": "아침과 저녁 식사 중간에, 낮에 하는 식사.", "zh": "中饭，午饭，午餐", "en_def": "A meal eaten in the afternoon between breakfast and dinner.", "zh_def": "早餐和晚餐之间，白天吃的饭。"}, {"en": "afternoon", "ko": "하루 중에 해가 가장 높이 떠 있는, 아침과 저녁의 중간이 되는 시간.", "zh": "中午", "en_def": "The time between morning and evening when the sun is at its highest during the day.", "zh_def": "一天中太阳在最高位置的，早上和晚上中间的时间。"}]	025cd5d565.wav
+점심때	jeomsimttae	點心때	[{"en": "afternoon", "ko": "하루 중에 해가 가장 높이 떠 있는, 아침과 저녁의 중간이 되는 시간.", "zh": "中午，晌午，午饭时间", "en_def": "The time between morning and evening when the sun is at its highest during the day.", "zh_def": "一天中太阳最高的时候，早上和晚上中间的时间。"}]	3cb2b67b15.wav
 이쪽02	ijjok	\N	[{"en": "this side", "ko": "말하는 사람에게 가까운 곳이나 방향을 가리키는 말.", "zh": "这边", "en_def": "A pronoun used to indicate a place or direction close to the speaker.", "zh_def": "指代离说话人很近的地方或方向。"}, {"en": "I; we", "ko": "말하는 사람이 자신 또는 자신을 포함한 여러 사람을 가리키는 말.", "zh": "我这边", "en_def": "A pronoun used to indicate the speaker himself/herself or several people including the speaker himself/herself.", "zh_def": "指代包括说话人在内的一些人。"}, {"en": "this; these", "ko": "말하는 사람에게 가까이 있는 사람이나 사람들을 가리키는 말.", "zh": "这边，这位", "en_def": "A pronoun used to indicate a person or people who is or are close to the speaker.", "zh_def": "指代离说话人近的人或人群。"}, {"en": "these people", "ko": "말하는 사람에게 가까이 있는 사람과 그 사람을 포함한 여러 사람을 가리키는 말.", "zh": "这方", "en_def": "A pronoun used to indicate several people including a person close to the speaker.", "zh_def": "指代离说话人近的人以及包括他在内的一些人。"}]	962db1b902.wav
 이튿날	iteunnal	\N	[{"en": "next day; following day", "ko": "기준이 되는 날의 다음 날.", "zh": "第二天，翌日，次日", "en_def": "The day following a certain day. ", "zh_def": "作为基准的某天的后一天。"}]	03abdebb62.wav
 이틀01	iteul	\N	[{"en": "(no equivalent expression)", "ko": "두 날.", "zh": "两天", "en_def": "Two days.", "zh_def": "两日。"}, {"en": "the second day", "ko": "매달 첫째 날부터 세어 둘째가 되는 날.", "zh": "第二天", "en_def": "The second day of each month.", "zh_def": "每月从第一天开始数的第二天。"}]	4ce193579b.wav
@@ -32061,6 +32091,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 일본	ilbon	日本	[{"en": "Japan", "ko": "아시아 대륙 동쪽에 있는 섬나라. 공업, 전자 산업이 발달하였고 경제 수준이 높다. 주요 언어는 일본어이고 수도는 도쿄이다.", "zh": "日本", "en_def": "An island country located in East Asia, known for its advanced manufacturing and electronic industries, and high economic standard; the official language is Japanese and the capital is Tokyo. ", "zh_def": "位于亚洲大陆东边的岛国。工业、电子产业发达，经济水平高。主要语言为日语，首都为东京。"}]	7b7ced2bdf.wav
 일본어	ilboneo	日本語	[{"en": "Japanese", "ko": "일본인이 쓰는 말.", "zh": "日语，日本语", "en_def": "A language that Japanese people speak. ", "zh_def": "日本人使用的语言。"}]	ebda59a9a6.wav
 일부02	ilbu	一部	[{"en": "part; some; portion; fraction", "ko": "한 부분. 또는 전체 중에서 얼마.", "zh": "一部分", "en_def": "One portion of something, or part of the whole. ", "zh_def": "一部分；或指全部中的一些。"}]	f41a2d12d7.wav
+점심시간	jeomsimssigan	點心時間	[{"en": "lunchtime", "ko": "점심을 먹기 위해 정해 둔 시간.", "zh": "午饭时间", "en_def": "A time allotted for having lunch.", "zh_def": "吃中饭的时间。"}]	91445e3574.wav
 일부러	irbureo	\N	[{"en": "specially; expressly", "ko": "어떤 생각을 가지고 마음을 써서.", "zh": "特地，特意", "en_def": "Attentively with a certain thought.", "zh_def": "以某个想法用上心思地。"}, {"en": "deliberately; intentionally", "ko": "알면서도 아는 것을 숨기거나 어떤 행위를 하는 본래 마음을 숨기고.", "zh": "故意地", "en_def": "With one's real purpose or intention hidden.", "zh_def": "明明知道却隐瞒自己知道或隐藏做某个行为的本意。"}]	fa7c35d8a5.wav
 일상04	ilssang	日常	[{"en": "everyday life; routines", "ko": "날마다 반복되는 평범한 생활.", "zh": "日常，日常生活，平常", "en_def": "An ordinary life repeated everyday. ", "zh_def": "每天反复的平凡生活。"}]	18de7bb345.wav
 일상생활	ilssangsaenghwal	日常生活	[{"en": "everyday life; daily life", "ko": "특별한 일이 없는 보통 때의 생활.", "zh": "日常生活", "en_def": "An uneventful, ordinary life. ", "zh_def": "没有特别的事，普通生活。"}]	b43f836110.wav
@@ -32073,6 +32104,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 일어나다	ireonada	\N	[{"en": "stand up; rise; sit up", "ko": "누워 있다가 앉거나 앉아 있다가 서다.", "zh": "起，起来", "en_def": "To sit after lying down or stand after sitting.", "zh_def": "由躺而坐或由坐而站。"}, {"en": "get up", "ko": "잠에서 깨어나다.", "zh": "起，起床，起来", "en_def": "To wake up.", "zh_def": "从睡眠中醒来。"}, {"en": "happen; occur; take place", "ko": "일이나 사건 등이 생기다.", "zh": "发生，起", "en_def": "For a matter, incident, etc., to happen.", "zh_def": "事情或事件等产生。"}, {"en": "rise", "ko": "어떤 감정이나 마음이 생기다.", "zh": "发，生，起", "en_def": "For a certain emotion or mind to occur to oneself.", "zh_def": "心里产生某种感情或意向。"}, {"en": "prosper; revive", "ko": "약하거나 없던 것이 번성하거나 세지다.", "zh": "兴起，振兴", "en_def": "For something that was weak or did not exist to flourish or become strong.", "zh_def": "软弱或没有的东西变繁荣或强大。"}, {"en": "rise up", "ko": "어떤 일을 위해 몸과 마음을 모아 나서다.", "zh": "奋起斗争，挺身而出", "en_def": "To take action with all one's physical and mental strength in order to achieve something.", "zh_def": "为了某事而全身心地站出来。"}, {"en": "rise", "ko": "위로 솟아오르거나 겉으로 부풀어 오르다.", "zh": "起", "en_def": "To soar up or swell.", "zh_def": "向上冒出来或向外鼓起来。"}, {"en": "occur", "ko": "자연이나 사람 등에게 어떤 현상이 발생하다.", "zh": "发，犯，爆发", "en_def": "For a certain phenomenon to happen to nature, a person, etc.", "zh_def": "自然或人等发生某种现象。"}, {"en": "be heard", "ko": "어떤 소리가 나다.", "zh": "响起", "en_def": "For a certain sound to be heard.", "zh_def": "发出某种声音。"}, {"en": "occur; be observed", "ko": "사회에 어떤 현상 등이 생기다.", "zh": "发生，掀起，兴起", "en_def": "For a certain phenomenon to appear in a society.", "zh_def": "社会上出现某种现象等。"}, {"en": "get over; recover", "ko": "병을 앓다가 낫다.", "zh": "康复", "en_def": "To recover from an illness.", "zh_def": "患病后痊愈。"}]	6d4607cee1.wav
 일어서다	ireoseoda	\N	[{"en": "stand up; rise to one's feet; get to one's feet", "ko": "앉았다가 서다.", "zh": "起身，站起来", "en_def": "To get up from one's seat.", "zh_def": "由坐而站。"}, {"en": "rise; come forward; be up", "ko": "무엇에 대항하여 용감하게 나서서 행동하다.", "zh": "奋起", "en_def": "To act courageously against something.", "zh_def": "为对抗什么而勇敢地挺身而出、行动起来。"}, {"en": "rise", "ko": "어려움을 이기고 다시 좋아지다.", "zh": "站起来，兴旺，繁荣", "en_def": "To overcome difficulties and get better.", "zh_def": "克服困难，重新好转。"}]	6301cbd1fb.wav
 일으키다	ireukida	\N	[{"en": "raise someone up; pick up; lift up", "ko": "자신의 몸이나 몸의 일부, 다른 사람을 일어나게 하다.", "zh": "扶起", "en_def": "To make one's body, a part of one's body, or another person stand.", "zh_def": "使自己的身体、身体一部分或他人起来。"}, {"en": "revive; bring something to prosperity; restore", "ko": "무엇을 시작하거나 잘되어 번성하게 만들다.", "zh": "掀起，发起", "en_def": "To begin something or make it prosper.", "zh_def": "开始某事或使顺利繁盛。"}, {"en": "generate; raise; produce", "ko": "어떤 힘으로 어떤 현상을 만들어 내다.", "zh": "掀起，发起", "en_def": "To create a certain phenomenon by using certain power.", "zh_def": "以某种力量制造某种现象。"}, {"en": "raise; cause; give rise to", "ko": "어떤 사건이나 일 등을 벌이거나 터뜨리다.", "zh": "惹起，引起", "en_def": "To cause or begin a certain incident, matter, etc.", "zh_def": "引发或爆发某起事情或事件等。"}, {"en": "have an attack of; fall ill; be taken ill", "ko": "병이나 몸의 이상을 알리는 어떤 증상이 나타나다.", "zh": "发", "en_def": "To show the symptoms that one has contracted a disease or is not well.", "zh_def": "出现疾病或某种告知身体异常的症状。"}, {"en": "cause; evoke", "ko": "심리적인 현상, 감정 등을 생기게 하다.", "zh": "引发", "en_def": "To make someone experience a psychological phenomenon, emotion, etc.", "zh_def": "使产生心理现象、感情等。"}, {"en": "break; go wrong", "ko": "고장 등이 생기다.", "zh": "出", "en_def": "To get out of order.", "zh_def": "发生故障等。"}]	4ef6f522d6.wav
+점원01	jeomwon	店員	[{"en": "clerk", "ko": "상점에서 돈을 받고 일하는 사람.", "zh": "店员", "en_def": "A person who is paid to work at a store.", "zh_def": "在商店中收钱干活的人。"}]	9617705e2d.wav
 일일이02	illiri	一一이	[{"en": "one at a time; separately", "ko": "하나씩 하나씩.", "zh": "个个", "en_def": "One by one.", "zh_def": "一个一个地。"}, {"en": "singly; individually; one by one", "ko": "한 사람씩 한 사람씩.", "zh": "人人，每人", "en_def": "One person by one person.", "zh_def": "各个人。"}, {"en": "in full; fully", "ko": "하나씩 자세하게.", "zh": "一一", "en_def": "In detail, one by one.", "zh_def": "逐个仔细地。"}, {"en": "in everything; in every case", "ko": "여러 가지 조건에 그때그때마다.", "zh": "件件，一桩桩", "en_def": "Every time, with a lot of conditions, excuses, etc.", "zh_def": "每当某一些条件时就。"}]	e96a70d060.wav
 일자05	iljja	日子	[{"en": "number of days", "ko": "날의 개수.", "zh": "日数", "en_def": "The number of days. ", "zh_def": "天数。"}]	6215241ea5.wav
 일자리	irjjari	\N	[{"en": "job", "ko": "일터나 직장과 같이 직업으로 삼아 일하는 곳.", "zh": "工作，岗位", "en_def": "An occupation or a place where one is employed like a workplace, an office, etc.", "zh_def": "工作岗位或单位等作为职业工作的地方。"}]	dcdadc96e1.wav
@@ -32094,6 +32126,10 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 읽히다01	ilkida	\N	[{"en": "be read", "ko": "글을 보고 뜻이 이해되다.", "zh": "被阅读", "en_def": "To be read and understood.", "zh_def": "读文字后其意思被了解。"}, {"en": "be read", "ko": "작가의 작품이 사람들에게 보아지다.", "zh": "被读", "en_def": "For a writer's work to be read by people.", "zh_def": "某个作家的作品被看到。"}, {"en": "be read", "ko": "표정이나 행동에 드러난 마음이 남에게 알아차려지다.", "zh": "被了解，被看出", "en_def": "For one's mind revealed on one's face or behavior to be grasped by someone.", "zh_def": "通过表情或动作等表现出来的内心被读懂。"}, {"en": "be guessed; be read", "ko": "바둑이나 장기에서, 남에게 수가 헤아려져 짐작되다.", "zh": "被算路，被猜到", "en_def": "In the game of go or janggi, Korean chess, for one's move to be guessed by one's opponent.", "zh_def": "在围棋或象棋等棋类比赛中，招数被对手猜出。"}]	03844725d9.wav
 잃다	ilta	\N	[{"en": "lose", "ko": "가지고 있던 물건이 자신도 모르게 없어져 더 이상 가지지 못하게 되다.", "zh": "丢，丢失，遗失", "en_def": "To not have something anymore because it has disappeared before one realized it.", "zh_def": "原本拥有的东西在不知不觉间消失而不再拥有。"}, {"en": "be deprived of", "ko": "지니고 있던 것이나 누리고 있던 것을 빼앗기거나 없어져 차지하지 못하게 되다.", "zh": "失去", "en_def": "To come to lose the ownership of something that one owned or enjoyed, because it is no longer available.", "zh_def": "原本拥有或享受到的东西被抢走或不再拥有。"}, {"en": "be deprived of; be bereft of; lose", "ko": "가까운 사람이 죽어 그 사람과 헤어지게 되다.", "zh": "失去", "en_def": "To come to be parted from someone that is dear to one due to his/her death.", "zh_def": "亲人死亡而与之分离。"}, {"en": "lose", "ko": "어떠한 계기로 인해 사람과의 관계가 끊어지거나 헤어지게 되다.", "zh": "失去", "en_def": "To come to cut the relationship with someone or part from him/her due to something.", "zh_def": "由于某种原因而与人断了联系或分离。"}, {"en": "miss", "ko": "기회나 때, 운 등을 놓치다.", "zh": "错失", "en_def": "To fail to grasp an opportunity, time, good luck, etc.", "zh_def": "失去机会、时机或运气等。"}, {"en": "lose", "ko": "몸의 일부가 떨어져 나가거나 제 기능을 전혀 발휘하지 못하게 되다.", "zh": "丢失", "en_def": "To lose a part of one's body or its function completely.", "zh_def": "身体的一部分断离或完全丧失功能。"}, {"en": "lose", "ko": "의식이나 감정, 기운, 생리 현상 등이 사라지다.", "zh": "失去", "en_def": "For one's consciousness, emotion, energy, physiological phenomenon, etc., to disappear.", "zh_def": "意识、感情、精力或生理现象等消失。"}, {"en": "lose", "ko": "어떤 대상이 지닌 좋은 모습이나 상태, 균형을 유지하지 못하게 되다.", "zh": "失去，没有", "en_def": "To fail to maintain the good shape, state, or balance of something.", "zh_def": "某个对象具有的美好样子、状态或均衡等被破坏。"}, {"en": "lose; miss", "ko": "길이나 방향을 찾지 못하게 되다.", "zh": "迷失", "en_def": "To fail to find a way or direction.", "zh_def": "失去方向或迷路。"}, {"en": "lose", "ko": "같이 있던 사람을 놓쳐서 헤어지게 되다.", "zh": "丢", "en_def": "To lose sight of one's companion and thus come to be parted from him/her.", "zh_def": "和在一起的人走散。"}, {"en": "lose", "ko": "다른 사람에게 믿음이나 사랑, 관심 등을 얻지 못하게 되다.", "zh": "失去", "en_def": "To fail to gain trust, love, attention, etc., of someone.", "zh_def": "得不到别人的信任、爱或关心等。"}]	d27633c96a.wav
 입맛	immat	\N	[{"en": "taste bud; appetite", "ko": "음식을 먹을 때 입에서 느끼는 맛. 또는 음식을 먹고 싶은 욕구.", "zh": "口味，胃口，食欲", "en_def": "The taste that one feels when eating, or the desire to eat.", "zh_def": "吃食物使嘴里感受到的味道，或指想吃食物的欲望。"}, {"en": "taste", "ko": "(비유적으로) 어떤 일이나 물건에 흥미를 느껴 즐기고 싶어 하거나 가지고 싶어 하는 마음.", "zh": "口味，喜好", "en_def": "(figurative) The desire to enjoy a job or own a thing because one is interested in it.", "zh_def": "(喻义)对某事情或某物品感兴趣而要享受或想拥有的心态。"}]	74057dc4b5.wav
+점잖다	jeomjanta	\N	[{"en": "calm", "ko": "언행이나 태도가 무게가 있고 매우 조심스럽다.", "zh": "端庄，庄重，斯文", "en_def": "Stately and very cautious in speech, behavior and attitude.", "zh_def": "言行或态度稳重，非常谨慎。"}, {"en": "decent", "ko": "품위가 있고 고상하다.", "zh": "典雅，高雅", "en_def": "Dignified and refined.", "zh_def": "有品位，非常高尚。"}]	5cbe775d0b.wav
+점점01	jeomjeom	漸漸	[{"en": "gradually", "ko": "시간이 지남에 따라 정도가 조금씩 더.", "zh": "越来越", "en_def": "Little by little as times goes by.", "zh_def": "程度随着时间的推移而逐渐地。"}]	dc85373137.wav
+점차02	jeomcha	漸次	[{"en": "being gradual", "ko": "차례를 따라 나아감.", "zh": "渐渐", "en_def": "The act of progressing in succession.", "zh_def": "按顺序前进。"}]	9d80f6a13f.wav
+접근	jeopkkeun	接近	[{"en": "access; approach", "ko": "가까이 다가감.", "zh": "接近，靠近", "en_def": "The act of approaching something.", "zh_def": "走近。"}, {"en": "approach", "ko": "매우 친하고 가까운 관계를 가짐.", "zh": "接近，亲近", "en_def": "The state of having a close and intimate relationship.", "zh_def": "保持十分亲密的关系。"}]	92e144bc9c.wav
 잃어버리다	ireobeorida	\N	[{"en": "lose", "ko": "가졌던 물건을 흘리거나 놓쳐서 더 이상 갖지 않게 되다.", "zh": "丢，丢失，遗失", "en_def": "To not have something anymore because it has slipped from one's grasp or one has failed to notice it.", "zh_def": "丢掉原本拥有的东西而不再拥有。"}, {"en": "lose; be bereaved of", "ko": "어떤 사람과 관계가 끊어지거나 헤어지게 되다.", "zh": "失去", "en_def": "To come to sever relations with someone or part with him/her.", "zh_def": "与人断了联系或分离。"}, {"en": "lose", "ko": "마음속에 있던 능력이나 정신 등이 없어지다.", "zh": "失神", "en_def": "To not have one's ability, soul, etc., anymore.", "zh_def": "内心的能力或精神消失。"}, {"en": "lose", "ko": "어떤 것의 모습이나 상태가 없어지다.", "zh": "失去", "en_def": "To not have a certain shape or state of something anymore.", "zh_def": "某物的样子或状态消失。"}, {"en": "lose; stray; miss", "ko": "가려고 하던 길을 찾지 못하게 되다.", "zh": "迷路", "en_def": "To fail to find the way to one's destination.", "zh_def": "找不到本来想走的路。"}, {"en": "get separated from; lose", "ko": "같이 있던 사람을 놓쳐서 헤어지게 되다.", "zh": "丢", "en_def": "To be separated from someone with whom one has been, and thus come to be apart from him/her.", "zh_def": "和在一起的人走散。"}, {"en": "lose", "ko": "의미나 특성이 없어지다.", "zh": "失去", "en_def": "To not have a meaning or peculiarity anymore.", "zh_def": "意义或特性消失。"}, {"en": "lose; misspend", "ko": "무엇을 제대로 쓰지 못하고 없어지다.", "zh": "失去", "en_def": "To lose something one has not gotten sufficient use out of.", "zh_def": "某对象没有被正常使用而消失。"}]	3d6403b4bd.wav
 임금01	imgeum	\N	[{"en": "king; male monarch", "ko": "왕위가 이어지는 나라에서 나라를 다스리는 왕.", "zh": "国王，君主", "en_def": "A king who is a ruler of a country where the crown is passed down from one to another member of the royal family. ", "zh_def": "在王位继承的国家里管理国家的王。"}]	4a0386104d.wav
 임금03	imgeum	賃金	[{"en": "wage; pay", "ko": "일을 한 대가로 받는 돈.", "zh": "工资", "en_def": "A sum of money that one receives for doing work. ", "zh_def": "作为工作代价而收的钱。"}]	13370210be.wav
@@ -32301,6 +32337,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 저쪽	jeojjok	\N	[{"en": "that side", "ko": "말하는 사람과 듣는 사람으로부터 멀리 있는 곳이나 방향을 가리키는 말.", "zh": "那边", "en_def": "A pronoun used to indicate a place or direction that is far from both the speaker and listener.", "zh_def": "指代离说话人和听话人远的地方或方向。"}, {"en": "that; those", "ko": "말하는 사람과 듣는 사람으로부터 멀리 있는 사람이나 사람들을 가리키는 말.", "zh": "那边，那位", "en_def": "A pronoun used to indicate a persons or persons that are far from both the speaker and listener.", "zh_def": "指代离说话人和听话人远的人或人群。"}, {"en": "they", "ko": "말하는 사람과 듣는 사람으로부터 멀리 있는 사람과 그 사람을 포함한 여러 사람을 가리키는 말.", "zh": "那方", "en_def": "A pronoun used to indicate multiple people including a person that is far from both the speaker and listener.", "zh_def": "指代离说话人和听话人远的人以及包括他在内的一些人。"}, {"en": "other side", "ko": "어떤 것을 사이에 둔 반대편을 가리키는 말.", "zh": "那头", "en_def": "A pronoun to indicate the opposite side of something separated by something else.", "zh_def": "指代相隔在某物对面的地方。"}, {"en": "past", "ko": "현재로부터 얼마 동안 떨어진 과거의 한때를 가리키는 말.", "zh": "前那会儿，那头", "en_def": "A pronoun to indicate a time in the past that is somewhat distant from the present.", "zh_def": "指代与现在相隔一段时间的过去某时。"}]	bb02cf3c9b.wav
 저축03	jeochuk	貯蓄	[{"en": "saving", "ko": "돈이나 재물 등을 아껴 써서 모아 둠.", "zh": "储蓄，积蓄，存款", "en_def": "The act of saving money, wealth, etc., by spending it frugally.", "zh_def": "积攒聚存节约下来的金钱或财物。"}, {"en": "savings", "ko": "벌어들인 돈 가운데 쓰지 않고 남은 부분.", "zh": "储存，积蓄", "en_def": "Earned money that one has left after spending.", "zh_def": "赚来的钱中不用的部分。"}]	b85739ded8.wav
 저편	jeopyeon	저便	[{"en": "far side", "ko": "말하는 사람과 듣는 사람으로부터 멀리 있는 곳이나 방향을 가리키는 말.", "zh": "那边", "en_def": "A word that means a direction or place which is far away from the speaker and the listener.", "zh_def": "指代与说话人和听话人较远的地方或方向。"}, {"en": "they", "ko": "말하는 사람과 듣는 사람으로부터 멀리 있는 사람이나 사람들을 가리키는 말.", "zh": "那方", "en_def": "A person or a group of persons who are far away from the speaker and the listener.", "zh_def": "指代离说话人和听话人较远的人或人群。"}, {"en": "other side", "ko": "어떤 것을 사이에 둔 반대편을 가리키는 말.", "zh": "那边", "en_def": "A word that means the opposite side of something.", "zh_def": "指代相隔在某物对面的地方。"}]	d22ccdbc63.wav
+접근하다	jeopkkeunhada	接近하다	[{"en": "approach; come up to", "ko": "가까이 다가가다.", "zh": "接近，靠近", "en_def": "To get close to.", "zh_def": "走近。"}, {"en": "approach", "ko": "매우 친하고 가까운 관계를 가지다.", "zh": "接近，亲近", "en_def": "To have a very close and intimate relationship.", "zh_def": "保持十分亲密的关系。"}]	6935427d95.wav
 저희01	jeohi	\N	[{"en": "our", "ko": "말하는 사람이 자기보다 높은 사람에게 자기를 포함한 여러 사람들을 가리키는 말.", "zh": "我们", "en_def": "A word used by the speaker to refer to a group of people including himself/herself when speaking to another person who is superior to him/her.", "zh_def": "说话人指代自己在内的一些人。"}, {"en": "our", "ko": "말하는 사람이 자기보다 높은 사람에게 자기와 관련된 것을 친근하게 나타낼 때 쓰는 말.", "zh": "我们", "en_def": "A word used by the speaker to endearingly refer to something related to himself/herself when speaking to another person who is superior to him/her.", "zh_def": "说话人亲切地指代与自己有关的一些对象。一般对比自己身份地位高的人使用。"}, {"en": "they", "ko": "앞에서 이미 말했거나 나왔던 사람들을 다시 가리키는 말.", "zh": "那些人", "en_def": "A word that refers to people that were already mentioned or appeared.", "zh_def": "重指前面已说过或出现过的人群。"}]	1cd7725f69.wav
 적03	jeok	\N	[{"en": "jeok", "ko": "그 일이 이루어지고 있거나 그 상태가 나타나 있는 때. 또는 지나간 어떤 때.", "zh": "时，时候", "en_def": "A bound noun used to refer to a time when a particular event is taking place or a state is manifested, or a time in the past.", "zh_def": "进行某事或出现其状态的时候；或过去某个时间。"}]	d85c4f541a.wav
 전시장	jeonsijang	展示場	[{"en": "showroom; exhibition hall", "ko": "여러 가지 물품을 차려 놓고 찾아온 사람들에게 보여 주는 장소.", "zh": "展示场", "en_def": "A place where a variety of items are set up for visitors to look at.", "zh_def": "摆放许多物品供人们前来观看的地方。"}]	c0cc6f6338.wav
@@ -32383,28 +32420,6 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 절01	jeol	\N	[{"en": "Buddhist temple", "ko": "스님들이 불상을 모시고 불교를 가르치고 배우며 도를 닦는 곳.", "zh": "庙", "en_def": "A place where Buddhist monks enshrine a statue of the Buddha and discipline their minds by teaching and learning their religious doctrine.", "zh_def": "僧人们供奉佛像教授学习修炼佛教的地方。"}]	81c0c82355.wav
 절02	jeol	\N	[{"en": "prostration bow", "ko": "남에게 공경하는 뜻으로 몸을 굽혀 하는 인사.", "zh": "鞠躬，磕头", "en_def": "A type of greeting where one bends his/her body as a show of respect.", "zh_def": "为向别人表达恭敬而屈身问候。"}]	a1322a70bf.wav
 절08	jeol	節	[{"en": "paragraph; passage", "ko": "글의 내용을 여러 단락으로 서술할 때의 한 단락.", "zh": "段，节", "en_def": "One of  many segments in a piece of writing.", "zh_def": "文章内容分成几段叙述时中的一段。"}, {"en": "clause", "ko": "주어와 술어를 갖추었으나 독립하여 쓰이지 못하고 다른 문장의 한 성분으로 쓰이는 단위.", "zh": "节", "en_def": "A unit containing a subject and a predicate that cannot be used independently but as part of a sentence.", "zh_def": "拥有主语和谓语，但无法独立使用，作为其它句子的一部分而使用的单位。"}, {"en": "verse", "ko": "둘 이상의 가사가 붙어 있는 한 노래에서 이를 나눈 각각의 부분.", "zh": "节", "en_def": "One of two or more subsections into which the lyrics of a song is divided.", "zh_def": "有两段以上的歌词的歌中，将其分开的各部分。"}]	b9b529f4cf.wav
-절대05	jeolttae	絕對	[{"en": "being absolute; being unwavering", "ko": "아무런 조건이나 제약이 붙지 않음.", "zh": "绝对", "en_def": "The state of no conditions or constraints being imposed.", "zh_def": "没有任何条件或制约。"}, {"en": "being absolute", "ko": "비교하여 맞설 만한 것이 없거나, 다른 것과 비교하지 않고 그 자체만으로 존재함.", "zh": "绝对", "en_def": "The state of being incomparable and unmatched or existing in itself without comparison with others.", "zh_def": "不是可以比较的，不与别的东西比较，只以自己本身存在。"}]	1cdfcfbc1d.wav
-절대로	jeolttaero	絕對로	[{"en": "ever", "ko": "어떤 경우라도 반드시.", "zh": "绝对，绝", "en_def": "Surely in any case.", "zh_def": "不管在什么情况下都必须。"}]	1f5086b3d8.wav
-절대적	jeolttaejeok	絕對的	[{"en": "being absolute", "ko": "아무런 조건이나 제약이 붙지 않는 것.", "zh": "绝对的", "en_def": "The state of being with no conditions or constraints imposed.", "zh_def": "没有任何条件或制约的。"}, {"en": "being absolute", "ko": "비교하거나 상대될 만한 것이 없는 것.", "zh": "绝对的", "en_def": "The state of being incomparable or unmatched.", "zh_def": "没有可以比较或做对手的。"}]	78f0723b65.wav
-절망02	jeolmang	絕望	[{"en": "despair", "ko": "바라볼 것이 없게 되어 모든 희망을 버림. 또는 그런 상태.", "zh": "绝望", "en_def": "The act of abandoning any hopes due to dim prospects, or such a state.", "zh_def": "变得没有可盼望的，失去所有希望；或指该状态。"}]	eb577efb48.wav
-절반	jeolban	折半	[{"en": "half", "ko": "하나를 반으로 나눔. 또는 그렇게 나눈 반.", "zh": "一半，对半", "en_def": "The act of dividing one into halves, or such a half.", "zh_def": "把一个分成两半；或指那样分出来的一半。"}]	dddb201599.wav
-절약	jeoryak	節約	[{"en": "savings; reduction; conservation", "ko": "마구 쓰지 않고 꼭 필요한 데에만 써서 아낌.", "zh": "节约", "en_def": "The act of saving resources by refraining from reckless use and using them only when necessary.", "zh_def": "不乱用，只节省地用在需要的地方。"}]	ffdc3ef90e.wav
-절약하다	jeoryakada	節約하다	[{"en": "save", "ko": "마구 쓰지 않고 꼭 필요한 데에만 써서 아끼다.", "zh": "节约", "en_def": "To control consumption by refraining from reckless spending and using items only when necessary.", "zh_def": "不乱用，只节省地用在需要的地方。"}]	8989dafc00.wav
-젊다	jeomtta	\N	[{"en": "young", "ko": "나이가 한창때에 있다.", "zh": "年青，年轻", "en_def": "Being in one's youthful years.", "zh_def": "正值壮年。"}, {"en": "youthful", "ko": "기운 등이 왕성하다.", "zh": "青春", "en_def": "High in energy, etc.", "zh_def": "气势等旺盛。"}, {"en": "young", "ko": "보기에 나이가 실제 나이보다 적은 듯하다.", "zh": "年轻，显年轻", "en_def": "Looking younger than one actually is.", "zh_def": "看起来好像比实际年龄小。"}]	6a185372bf.wav
-젊은이	jeolmeuni	\N	[{"en": "young man; young woman", "ko": "나이가 젊은 사람.", "zh": "青年人，年轻人", "en_def": "A person of a young age.", "zh_def": "年纪轻的人。"}]	0b3323dbed.wav
-젊음	jeolmeum	\N	[{"en": "youth", "ko": "몸과 마음이 젊은 상태.", "zh": "年轻，青春", "en_def": "The state of being young both physically and mentally.", "zh_def": "身体和内较年轻的状态。"}]	c9b476f536.wav
-점10	jeom	點	[{"en": "point; dot", "ko": "작고 둥글게 찍은 표시.", "zh": "点", "en_def": "A small, round mark.", "zh_def": "小而圆的标志。"}, {"en": "spot; speck", "ko": "사람의 피부나 동물의 털 등에 있는, 색깔이 다른 작고 둥근 얼룩.", "zh": "痣", "en_def": "A small, round blot on the human skin or animal hair, whose color is different.", "zh_def": "人的皮肤或动物的毛上颜色不同的小圆点。"}, {"en": "point", "ko": "숫자를 적을 때 일 이상의 숫자와 그보다 작은 숫자를 구별하기 위하여 찍는 부호.", "zh": "点", "en_def": "A symbol used in specifying a number to distinguish the number one or bigger and a number smaller than one.", "zh_def": "记数时，为了区分一以上的数字和比它小的数字时使用的符号。"}, {"en": "punctuation mark", "ko": "마침표, 쉼표 등과 같은 문장 부호.", "zh": "点号", "en_def": "A symbol in a sentence such as period, comma, etc.", "zh_def": "和句号、逗号等一样的标点符号。"}, {"en": "thing", "ko": "여러 가지 가운데 특정한 어떤 부분.", "zh": "点", "en_def": "A specific aspect among many.", "zh_def": "许多个中间特定的某部分。"}]	c8f489575f.wav
-점검	jeomgeom	點檢	[{"en": "inspection", "ko": "낱낱이 검사함. 또는 그런 검사.", "zh": "查验，检修，检验", "en_def": "The act of examining each and every element, or such examination.", "zh_def": "一一检查；或指那样的检查。"}]	b51213d9f6.wav
-점수06	jeomssu	點數	[{"en": "score", "ko": "성적을 나타내는 숫자.", "zh": "分数", "en_def": "A number representing one's performance.", "zh_def": "代表成绩的数字。"}, {"en": "the number of items", "ko": "물건의 가짓수.", "zh": "种数", "en_def": "The number of kinds of items.", "zh_def": "东西的种类数。"}]	4add57b992.wav
-점심	jeomsim	點心	[{"en": "lunch", "ko": "아침과 저녁 식사 중간에, 낮에 하는 식사.", "zh": "中饭，午饭，午餐", "en_def": "A meal eaten in the afternoon between breakfast and dinner.", "zh_def": "早餐和晚餐之间，白天吃的饭。"}, {"en": "afternoon", "ko": "하루 중에 해가 가장 높이 떠 있는, 아침과 저녁의 중간이 되는 시간.", "zh": "中午", "en_def": "The time between morning and evening when the sun is at its highest during the day.", "zh_def": "一天中太阳在最高位置的，早上和晚上中间的时间。"}]	025cd5d565.wav
-점심때	jeomsimttae	點心때	[{"en": "afternoon", "ko": "하루 중에 해가 가장 높이 떠 있는, 아침과 저녁의 중간이 되는 시간.", "zh": "中午，晌午，午饭时间", "en_def": "The time between morning and evening when the sun is at its highest during the day.", "zh_def": "一天中太阳最高的时候，早上和晚上中间的时间。"}]	3cb2b67b15.wav
-점심시간	jeomsimssigan	點心時間	[{"en": "lunchtime", "ko": "점심을 먹기 위해 정해 둔 시간.", "zh": "午饭时间", "en_def": "A time allotted for having lunch.", "zh_def": "吃中饭的时间。"}]	91445e3574.wav
-점원01	jeomwon	店員	[{"en": "clerk", "ko": "상점에서 돈을 받고 일하는 사람.", "zh": "店员", "en_def": "A person who is paid to work at a store.", "zh_def": "在商店中收钱干活的人。"}]	9617705e2d.wav
-점잖다	jeomjanta	\N	[{"en": "calm", "ko": "언행이나 태도가 무게가 있고 매우 조심스럽다.", "zh": "端庄，庄重，斯文", "en_def": "Stately and very cautious in speech, behavior and attitude.", "zh_def": "言行或态度稳重，非常谨慎。"}, {"en": "decent", "ko": "품위가 있고 고상하다.", "zh": "典雅，高雅", "en_def": "Dignified and refined.", "zh_def": "有品位，非常高尚。"}]	5cbe775d0b.wav
-점점01	jeomjeom	漸漸	[{"en": "gradually", "ko": "시간이 지남에 따라 정도가 조금씩 더.", "zh": "越来越", "en_def": "Little by little as times goes by.", "zh_def": "程度随着时间的推移而逐渐地。"}]	dc85373137.wav
-점차02	jeomcha	漸次	[{"en": "being gradual", "ko": "차례를 따라 나아감.", "zh": "渐渐", "en_def": "The act of progressing in succession.", "zh_def": "按顺序前进。"}]	9d80f6a13f.wav
-접근	jeopkkeun	接近	[{"en": "access; approach", "ko": "가까이 다가감.", "zh": "接近，靠近", "en_def": "The act of approaching something.", "zh_def": "走近。"}, {"en": "approach", "ko": "매우 친하고 가까운 관계를 가짐.", "zh": "接近，亲近", "en_def": "The state of having a close and intimate relationship.", "zh_def": "保持十分亲密的关系。"}]	92e144bc9c.wav
-접근하다	jeopkkeunhada	接近하다	[{"en": "approach; come up to", "ko": "가까이 다가가다.", "zh": "接近，靠近", "en_def": "To get close to.", "zh_def": "走近。"}, {"en": "approach", "ko": "매우 친하고 가까운 관계를 가지다.", "zh": "接近，亲近", "en_def": "To have a very close and intimate relationship.", "zh_def": "保持十分亲密的关系。"}]	6935427d95.wav
 접다01	jeoptta	\N	[{"en": "fold", "ko": "천이나 종이 등을 꺾어서 겹치게 하다.", "zh": "叠", "en_def": "To bend a piece of cloth, paper, etc., so that one part covers another.", "zh_def": "把布或纸等折上摞起来。"}, {"en": "fold", "ko": "종이를 겹쳐지게 꺾어 모양을 만들다.", "zh": "折纸", "en_def": "To bend a piece of paper so that one part covers another to form a shape.", "zh_def": "把纸叠起来，做出特定形状。"}, {"en": "fold", "ko": "폈던 것을 본래의 모양으로 되게 하다.", "zh": "折起，收回，收拢", "en_def": "To return an unfolded item to its original shape.", "zh_def": "将展开的东西叠成原来的样子。"}, {"en": "relinquish", "ko": "생각을 그만두거나 의견을 포기하다.", "zh": "放弃，结束", "en_def": "To stop thinking about something or give up one's opinion.", "zh_def": "终止想法或放弃意见。"}, {"en": "give a handicap", "ko": "자신보다 못한 사람에게 유리한 조건을 붙여 주다.", "zh": "让，让步", "en_def": "To give advantages to a lesser-skilled opponent.", "zh_def": "向弱于自己的人赋予有利条件。"}]	b18b7a53f1.wav
 접시	jeopssi	\N	[{"en": "plate", "ko": "음식을 담는 데 쓰는 납작하고 평평한 그릇.", "zh": "碟子", "en_def": "A flat, plane-surfaced container to keep food in.", "zh_def": "用来装食物的扁平的盘子。"}, {"en": "plate", "ko": "음식이나 요리를 접시에 담아 그 분량을 세는 단위.", "zh": "碟", "en_def": "A unit of measuring the quantity of food or cuisine contained in a plate.", "zh_def": "计算装在碟子里的食物或料理的单位。"}]	d427b0a563.wav
 접촉	jeopchok	接觸	[{"en": "contact", "ko": "서로 맞닿음.", "zh": "接触", "en_def": "The act of touching each other.", "zh_def": "互相连接。"}, {"en": "contact", "ko": "가까이 대하거나 만남을 가짐.", "zh": "接触", "en_def": "The act of being close to or meeting with someone.", "zh_def": "近距离面对或见面。"}]	7112f9e34c.wav
@@ -32494,6 +32509,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 조13	jo	條	[{"en": "article; clause", "ko": "조목이나 조항.", "zh": "条", "en_def": "A bound noun to indicate a provision or clause.", "zh_def": "条目或条款。"}, {"en": "precondition", "ko": "어떤 명목이나 조건.", "zh": "名义", "en_def": "A bound noun to indicate that something is done as a pretext or condition.", "zh_def": "某个名目或条件。"}]	785b6d3f30.wav
 조15	jo	組	[{"en": "group", "ko": "어떤 목적을 위해서 모인, 비교적 적은 수의 사람들로 이루어진 집단.", "zh": "组，小组", "en_def": "A collection of a relatively small number of persons gathered together for a purpose.", "zh_def": "为达到某种目的而聚集的，由较少人员组成的集体。"}, {"en": "group", "ko": "적은 수의 사람들이 모인 집단을 세는 단위.", "zh": "组", "en_def": "A unit of counting a collection of a small number of people.", "zh_def": "数由较少人员组成的集体的计量单位。"}, {"en": "unit", "ko": "특정한 임무나 역할을 하기 위해 조직하는 작은 집단.", "zh": "组", "en_def": "A word that refers to a small group that is formed to perform a certain duty or role.", "zh_def": "为执行或起到特定任务或作用而组成的小集体。"}]	fdda6c3716.wav
 조각01	jogak	\N	[{"en": "piece; slice", "ko": "한 물건에서 따로 떼어 내거나 떨어져 나온 작은 부분.", "zh": "块儿，碎片", "en_def": "A small part that is taken away or separated from something.", "zh_def": "从一个物体中摘下或掉落下来的一小部分。"}, {"en": "piece", "ko": "종이나 천과 같이 얇고 넓적한 물건의 작은 부분.", "zh": "片", "en_def": "A small part of a long, wide item such as a piece of paper or cloth.", "zh_def": "如纸、布等又薄又宽的物体的一小部分。"}, {"en": "piece", "ko": "한 물건에서 따로 떼어 내거나 떨어져 나온 작은 부분을 세는 단위.", "zh": "块儿", "en_def": "A unit of counting a small part that is taken away or separated from something.", "zh_def": "数从一个物体中摘下或掉落下来的一小部分的计量单位。"}]	9e995147a3.wav
+학점	hakjjeom	學點	[{"en": "credit", "ko": "대학 또는 대학원에서 학생이 들어야 하는 수업의 양을 계산하는 단위.", "zh": "学分", "en_def": "The unit for calculating the number of hours spent on classes a student is required to take in undergraduate or graduate school.", "zh_def": "大学或研究生院里计算学生应修课程数量的单位。"}, {"en": "grade; mark; GPA", "ko": "대학 또는 대학원에서 성적을 표시하는 단위.", "zh": "学分，绩点", "en_def": "The unit for expressing one's academic record in a undergraduate or graduate school.", "zh_def": "大学或研究生院里标记成绩的单位。"}]	4c959a23fe.wav
 조각05	jogak	彫刻/雕刻	[{"en": "carving", "ko": "재료를 새기거나 깎아서 모양을 만듦. 또는 그런 미술 분야.", "zh": "雕刻", "en_def": "The act of forming a figure by engraving or cutting particular material, or such a field of art.", "zh_def": "雕刻或削制材料而制作艺术形象；或指那样的美术领域。"}, {"en": "sculpture", "ko": "재료를 깎고 새기거나 빚어서 입체적인 모양을 만듦. 또는 그런 미술. 보통 조각과 소조를 모두 이른다.", "zh": "雕刻", "en_def": "Creating a three-dimensional shape by cutting, carving, or sculpting materials. Or such art. Usually refers to both sculpture and relief sculpture.", "zh_def": "通过雕刻、刻画或塑造等方式使材料呈现立体造型；或指该类美术，通常包括雕刻和塑像。"}]	602c6dc7e5.wav
 조개01	jogae	\N	[{"en": "shellfish; clam", "ko": "바닷물이나 민물에서 사는, 단단하고 둥글고 납작한 두 쪽의 껍질 속에 사람이 먹을 수 있는 살이 들어 있는 동물.", "zh": "贝，蛤蜊", "en_def": "A freshwater or seawater animal that contains edible flesh between two hard, flat and round coverings.", "zh_def": "生长在海水或淡水里，在坚硬、圆润、扁平的双壳里藏着人类可食用的肉的软体动物。"}]	a1caab752a.wav
 조건02	jokkeon	條件	[{"en": "condition", "ko": "어떤 일을 이루게 하기 위하여 미리 갖추어야 할 상태나 요소.", "zh": "条件", "en_def": "A state or element that is needed in advance to accomplish something.", "zh_def": "为做成某事而应该事先具备的状态或要素。"}, {"en": "condition", "ko": "어떤 일을 하기에 앞서 내놓는 요구나 견해.", "zh": "条件", "en_def": "A demand or opinion that is presented before doing something.", "zh_def": "在做某事前提出的要求或意见。"}]	86098389ee.wav
@@ -32508,6 +32524,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 조사30	josa	調査	[{"en": "poll; survey; investigation", "ko": "어떤 일이나 사물의 내용을 알기 위하여 자세히 살펴보거나 찾아봄.", "zh": "调查", "en_def": "The act of examining or searching to understand the details of an affair or thing.", "zh_def": "为了解某事或某事物的内容，仔细地查看或查找。"}]	a95cb04a2f.wav
 조사하다12	josahada	調査하다	[{"en": "investigate", "ko": "어떤 일이나 사물의 내용을 알기 위하여 자세히 살펴보거나 찾아보다.", "zh": "调查", "en_def": "To examine or look for the details of an affair or thing to understand them.", "zh_def": "为了解某事或某事物的内容而仔细地查看或查找。"}]	896d56a2ff.wav
 조상07	josang	祖上	[{"en": "ancestor", "ko": "한 집안에서 먼저 태어나 살다가 돌아가신 어른.", "zh": "先祖", "en_def": "A member of one's family who lived a long time ago.", "zh_def": "指在一个家庭中先诞生、生活而现已去世的长辈。"}, {"en": "ancestor; ancestry", "ko": "자신이 살고 있는 세대 이전의 모든 세대.", "zh": "前代", "en_def": "All generations previous to the one a person belongs to.", "zh_def": "泛指自己生活的同一代以前的所有上一代。"}, {"en": "ancestor", "ko": "나중에 오는 것이 발생하고 발전하는 데 밑바탕이 되는 것.", "zh": "祖先", "en_def": "Something that serves as a foundation for its posterity to come about and grow.", "zh_def": "在后期之物的发生、发展方面，成为根基的事物。"}]	19617e2ec2.wav
+한01	han	\N	[{"en": "one", "ko": "하나의.", "zh": "一", "en_def": "One.", "zh_def": "一个的。"}, {"en": "one", "ko": "여럿 중 하나인 어떤.", "zh": "一个", "en_def": "One of many.", "zh_def": "多个中的一个。"}, {"en": "one", "ko": "같은.", "zh": "一个，同一", "en_def": "Same.", "zh_def": "同一个。"}, {"en": "approximate", "ko": "대충 어림하여 대략.", "zh": "大概", "en_def": "From a rough guess.", "zh_def": "大约估计。"}]	aa1bdf6093.wav
 조선05	joseon	朝鮮	[{"en": "Joseon", "ko": "한반도에 있던 나라. 1392년 이성계가 고려를 멸망시키고 한양을 수도로 하여 세웠으며 성리학을 주요 이념으로 하였다. 1910년 일본에 국권을 빼앗기고 멸망하였다.", "zh": "朝鲜", "en_def": "A dynasty that existed on the Korean Peninsula; in 1392, it was founded by Yi Seonggye on the basis of on Neo-Confucian ideals after he had overthrown the Goryeo Dynasty and relocated the capital to Hanyang; it fell in 1910 after having been deprived of its sovereignty by Japan.", "zh_def": "位于朝鲜半岛的国家。1392年，李成桂灭掉高丽，迁都汉阳后建国。以性理学为主要理念。1910年被日本掠夺主权而灭亡。"}]	925645ac94.wav
 조심스럽다	josimseureoptta	操心스럽다	[{"en": "careful; cautious", "ko": "잘못이나 실수를 하지 않도록 말이나 행동 등에 주의를 하는 태도가 있다.", "zh": "小心，谨慎", "en_def": "Having the attitude of being careful in speech, behavior, etc., not to make mistakes or errors.", "zh_def": "为了不出错误或失误，言谈举止很注意。"}]	9eb6d6e0fd.wav
 조심하다02	josimhada	操心하다	[{"en": "practice caution", "ko": "좋지 않은 일을 겪지 않도록 말이나 행동 등에 주의를 하다.", "zh": "小心，谨慎，留心", "en_def": "To be careful in speech, behavior, etc., not to get in trouble.", "zh_def": "为避免惹祸而注意言行。"}]	bcdc4bf31f.wav
@@ -32568,6 +32585,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 주무시다	jumusida	\N	[{"en": "sleep", "ko": "(높임말로) 자다.", "zh": "就寝，睡", "en_def": "(honorific) To sleep.", "zh_def": "(尊称)睡觉。"}]	a1641f8ddc.wav
 주문03	jumun	呪文	[{"en": "spells", "ko": "귀신을 쫓아내거나 신비한 일을 일으키기 위해 외우는 글귀.", "zh": "咒文", "en_def": "Words that are recited to scare off a ghost or produce a magical effect.", "zh_def": "为驱鬼或行法术而念叨的口诀。"}]	44b51b5653.wav
 주문04	jumun	注文	[{"en": "order", "ko": "어떤 물건을 만들거나 파는 사람에게 그 물건의 종류, 수량, 모양, 크기 등을 말해 주고 그렇게 만들거나 보내어 달라고 부탁하는 일이나 내용.", "zh": "订购，订货", "en_def": "The act of directing a manufacturer or seller to make or deliver an item by specifying the type, quantity, shape, size, etc., or the details of such instruction.", "zh_def": "向相关制造商或销售商告知自己所需要的物品的种类、数量、模样、规格等，并叮嘱对方按要求制造或送货的事宜或指其内容。"}, {"en": "direction", "ko": "다른 사람에게 어떤 일을 하도록 요구하거나 부탁하는 일이나 내용.", "zh": "要求", "en_def": "The act of requesting or asking others to do something, or the details of such a request.", "zh_def": "指示或嘱咐别人做某事的事宜或指其内容。"}]	93377e4a46.wav
+한05	han	恨	[{"en": "han", "ko": "몹시 원망스럽고 억울하거나 안타깝고 슬퍼서 응어리진 마음.", "zh": "恨", "en_def": "resentment; deep sorrow: A feeling of bitterness, deep resentment or sorrow that builds up in one's mind from an unfair or regretful event.", "zh_def": "因深深的怨恨冤屈或惋惜悲戚而郁结的内心情感。"}]	94971a832f.wav
 주문하다01	jumunhada	注文하다	[{"en": "order", "ko": "어떤 물건을 만들거나 파는 사람에게 그 물건의 종류, 수량, 모양, 크기 등을 말해 주고 그렇게 만들거나 보내어 달라고 부탁하다.", "zh": "订购，预定，下单", "en_def": "To direct a manufacturer or seller to make or deliver an item by specifying the type, quantity, shape, size, etc.", "zh_def": "向相关制造商或销售商告知自己所需要的物品种类、数量、模样、规格等，并叮嘱对方按要求制造或送货。"}, {"en": "tell; ask", "ko": "다른 사람에게 어떤 일을 하도록 요구하거나 부탁하다.", "zh": "要求", "en_def": "To request or ask someone to do something.", "zh_def": "指示或嘱咐别人做某事。"}]	ad50c9bfc5.wav
 주민	jumin	住民	[{"en": "resident", "ko": "일정한 지역 안에 살고 있는 사람.", "zh": "居民", "en_def": "A person who lives in a certain area.", "zh_def": "住在某一区域内的人。"}]	32c4f08f19.wav
 주방05	jubang	廚房	[{"en": "kitchen", "ko": "음식을 만들거나 차리는 곳.", "zh": "厨房", "en_def": "A place where food is made or prepared.", "zh_def": "烹制菜肴饭食的地方。"}]	4cf32b8a48.wav
@@ -32583,6 +32601,7 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 주위02	juwi	周圍	[{"en": "surrounding area", "ko": "어떤 곳을 둘러싸고 있는 테두리.", "zh": "周围", "en_def": "An area surrounding a certain place.", "zh_def": "围住某地的周边。"}, {"en": "surrounding; being around", "ko": "어떤 사물이나 사람을 둘러싸고 있는 것. 또는 그 환경.", "zh": "四周", "en_def": "Something that surrounds a person or thing, or such an environment.", "zh_def": "围住某物或某人；或指那样的环境。"}, {"en": "people around one", "ko": "어떤 사람과 가깝게 지내는 사람들.", "zh": "周边人，周围的人", "en_def": "People who are close to a person.", "zh_def": "跟某人关系要好的人群。"}]	600be40366.wav
 주의07	juui	注意	[{"en": "caution", "ko": "마음에 새겨 두고 조심함.", "zh": "注意，留意", "en_def": "The act of keeping something in mind and being careful about it.", "zh_def": "铭记在心里并加以小心。"}, {"en": "attention", "ko": "어떤 상태나 일에 관심을 집중함.", "zh": "注意力", "en_def": "The act of focusing on a certain state or affair.", "zh_def": "把关心集中于某种状态或某事上。"}, {"en": "warning", "ko": "경고나 충고의 뜻으로 알림.", "zh": "注意", "en_def": "The act of telling something as a warning or advice.", "zh_def": "以警告或忠告的意思予以提醒。"}]	50139ad689.wav
 주의하다01	juuihada	注意하다	[{"en": "practice caution", "ko": "마음에 새겨 두고 조심하다.", "zh": "注意，留意", "en_def": "To keep something in mind and be careful about it.", "zh_def": "铭记在心里并加以小心。"}, {"en": "concentrate", "ko": "어떤 상태나 일에 관심을 집중하다.", "zh": "注意", "en_def": "To focus on a certain state or affair.", "zh_def": "把关心集中于某种状态或某事上。"}]	96fc1dea30.wav
+학원02	hagwon	學院	[{"en": "school", "ko": "일정한 목적, 교과 과정, 제도 등에 따라 학생을 교육하는 기관.", "zh": "学院，学校", "en_def": "An institution that educates students according to a specific purpose, curriculum, system, etc.", "zh_def": "依据一定的目标、教育课程、制度等，教育学生的机构。"}, {"en": "private institute; academy; cram school", "ko": "학생을 모집하여 지식, 기술, 예체능 등을 가르치는 사립 교육 기관.", "zh": "补习班，培训班", "en_def": "A private educational institution that recruits students and then teaches knowledge and skills including art, music, physical education, etc.", "zh_def": "招收学生并教授其知识、技术及艺术体育等的私立教育机关。"}]	b03f156ba8.wav
 주인01	juin	主人	[{"en": "owner", "ko": "대상이나 물건을 자기의 것으로 가진 사람.", "zh": "主人，物主", "en_def": "A person who has an object or item as his/her own.", "zh_def": "指所指对象或物品的所有人。"}, {"en": "leader; master", "ko": "책임감을 가지고 중심이 되어 국가나 조직, 집안, 단체의 일을 이끌어 가는 사람.", "zh": "主人，主人公", "en_def": "A person who plays a central role in leading a nation, organization, family or group with a sense of responsibility.", "zh_def": "肩负着责任感而成为核心，引领国家、组织、家庭、团体之业务的人。"}, {"en": "husband", "ko": "남이나 자신의 남편.", "zh": "老公，丈夫", "en_def": "The husband of oneself or another woman.", "zh_def": "别人或自己的男人。"}, {"en": "host; hostess", "ko": "손님을 초대하거나 맞은 사람.", "zh": "主人，东道主", "en_def": "A person who invites or greets guests.", "zh_def": "招待或迎接客人的人。"}, {"en": "owner; master", "ko": "다른 사람에게 돈을 주고 일을 시키는 사람.", "zh": "雇主", "en_def": "A person who pays another to work.", "zh_def": "花钱雇佣别人做事的人。"}]	9f01137050.wav
 주인공	juingong	主人公	[{"en": "main character", "ko": "연극, 영화, 소설 등에서 이야기의 중심이 되는 인물.", "zh": "主人公，主角", "en_def": "A character who plays a central role in the story of a play, film, novel, etc.", "zh_def": "在话剧、电影、小说等里成为故事核心的人物。"}, {"en": "leader; hero", "ko": "어떤 일에서 중심이 되는 사람. 또는 어떤 일을 주로 이끌어 나가는 사람.", "zh": "主人翁，主人公", "en_def": "A person who is central to something or who mainly leads something.", "zh_def": "在某事上成为核心的人；或指主导某事的人。"}, {"en": "winner; owner", "ko": "관심을 받고 있는 것의 중심이 되는 사람.", "zh": "主人公", "en_def": "A person who is at the center of something that receives attention.", "zh_def": "成为受人关注之事情的核心人。"}]	ef94141a9a.wav
 주일03	juil	週日	[{"en": "week", "ko": "월요일부터 일요일까지의 칠 일 동안.", "zh": "周，星期", "en_def": "The seven-day period from Monday to Sunday.", "zh_def": "指从星期一到星期日之间的七日之间。"}]	c5215796c7.wav
@@ -32606,6 +32625,8 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 줄04	jul	\N	[{"en": "jul", "ko": "어떤 방법이나 실제 내용 등을 나타내는 말.", "zh": "(无对应词汇)", "en_def": "A bound noun used to indicate a certain method or actual content.", "zh_def": "表示某个方法或实际内容等。"}]	3b14b03fc9.wav
 줄거리01	julgeori	\N	[{"en": "bare branch", "ko": "잎이 다 떨어진 나뭇가지.", "zh": "茎", "en_def": "A branch with no leaves on it.", "zh_def": "叶子尽落的树枝。"}, {"en": "plot; storyline", "ko": "글의 내용이나 이야기의 중심이 되는 내용.", "zh": "梗概", "en_def": "The key content of a piece of writing or story.", "zh_def": "指文章的内容或成为故事核心的内容。"}]	5175ae9ec2.wav
 줄곧	julgot	\N	[{"en": "all along; continuously", "ko": "끊임없이 계속.", "zh": "一直", "en_def": "Constantly without stopping.", "zh_def": "持续不断地。"}]	724deeb987.wav
+학위	hagwi	學位	[{"en": "academic degree; degree", "ko": "학사, 석사, 박사 등과 같이 어떤 분야의 학문을 전문적으로 공부하여 일정한 수준에 오른 사람에게 대학에서 주는 자격.", "zh": "学位", "en_def": "A qualification granted by a university to a person who specializes in the study of a certain academic field and who reaches a certain degree level, such as bachelors, masters, or PhDs.", "zh_def": "大学授予专门学习某领域学问并达到一定水平的人的资格，如学士、硕士、博士等。"}]	9c4144a7c8.wav
+학자01	hakjja	學者	[{"en": "scholar", "ko": "특정 학문을 아주 잘 아는 사람. 또는 학문을 연구하는 사람.", "zh": "学者", "en_def": "A person who knows a field of study very well; or a person who carries out academic research. ", "zh_def": "精通某特定领域的学问的人；或指研究学问的人。"}]	40a8d15367.wav
 줄기01	julgi	\N	[{"en": "trunk; stem", "ko": "식물을 받치고 뿌리에서 빨아들인 수분이나 양분을 나르며, 잎이나 가지, 열매 등이 붙는 부분.", "zh": "茎", "en_def": "The part of a plant that serves as a support for the plant, carries water or nutrients absorbed by the root and has leaves, branches, fruits, etc., on it.", "zh_def": "作为中轴支撑整个植物，输送从根吸收的水分或营养成分，长或结叶子、枝头、果实等的部分。"}, {"en": "branch; channel; section", "ko": "물이나 산 등의 뻗어 나가는 갈래.", "zh": "流，脉", "en_def": "Any of the parts into which a stream, mountain, etc., is divided.", "zh_def": "水、山等延伸的分支。"}, {"en": "branch; channel; section", "ko": "물이나 산 등의 뻗어 나가는 갈래를 세는 단위.", "zh": "条，支", "en_def": "A unit of counting the parts into which a stream, mountain, etc., is divided.", "zh_def": "数水、山等延伸的分支的单位。"}, {"en": "flow; ray", "ko": "빛이나 불, 물 등이 길게 뻗어 나가는 모양.", "zh": "束，丝，条", "en_def": "The manner in which a light, fire, stream, etc., runs long.", "zh_def": "光线、火光、水流等长长地延伸的样子。"}, {"en": "flow; ray", "ko": "빛이나 물, 연기 등이 길게 뻗어 나가는 것을 세는 단위.", "zh": "束，丝，条", "en_def": "A unit of counting lights, fires, streams, etc., that run or thrust.", "zh_def": "数长长地延伸的光线、水、烟等时的单位。"}, {"en": "school", "ko": "어떤 사상이나 행동이 계속 이어져 내려오는 것.", "zh": "流派；派系", "en_def": "An idea or practice that has been passed on continuously.", "zh_def": "某种思想或行为一直持续下来。"}, {"en": "flow; plot", "ko": "어떤 일이나 이야기 등이 진행되는 큰 흐름.", "zh": "脉络，大流", "en_def": "The main flow of an event, story, etc.", "zh_def": "某事或故事等进行的大的流向。"}]	c257d6a16e.wav
 줄다	jurda	\N	[{"en": "shrink; diminish", "ko": "물체의 길이나 넓이, 부피 등이 원래보다 작아지다.", "zh": "缩小，减少，减轻", "en_def": "For an object's length, area, volume, etc. to become smaller than the original.", "zh_def": "物体的长度、宽度或体积等变得比原来小。"}, {"en": "decrease", "ko": "수나 양이 원래보다 적어지다.", "zh": "减少", "en_def": "For an amount or quantity to become smaller than the original.", "zh_def": "数或量变得比原来少。"}, {"en": "diminish", "ko": "힘이나 세력 등이 원래보다 못하게 되다.", "zh": "减弱", "en_def": "For one's force or power to become smaller than it used to be.", "zh_def": "力量或势力等变得比原来小。"}, {"en": "diminish; decrease", "ko": "재주나 능력, 실력 등이 원래보다 못하게 되다.", "zh": "退步", "en_def": "For a skill, ability, capability, etc., to become worse than it used to be.", "zh_def": "才能、能力或实力等变得比原来差。"}, {"en": "diminish; get worse", "ko": "살림이 어려워지거나 원래에 못하여지다.", "zh": "变差", "en_def": "For one's financial situation to deteriorate or become worse than it used to be.", "zh_def": "生活变难或不如原来。"}, {"en": "decrease; be shortened", "ko": "시간이나 기간이 짧아지다.", "zh": "缩短", "en_def": "For a time or period to become shorter.", "zh_def": "时间或期间变短。"}]	dda964b621.wav
 줄무늬	julmuni	\N	[{"en": "stripe", "ko": "여러 개의 줄로 이루어진 무늬.", "zh": "条纹", "en_def": "A pattern composed of multiple stripes.", "zh_def": "由多个条形组成的花纹。"}]	2bb437920c.wav
@@ -33350,12 +33371,6 @@ COPY public.korean (word, romanization, origin, senses, sound) FROM stdin;
 학생	hakssaeng	學生	[{"en": "student; learner", "ko": "학교에 다니면서 공부하는 사람.", "zh": "学生", "en_def": "A person who studies in a school. ", "zh_def": "在学校学习的人。"}]	76737f3dad.wav
 학생증	hakssaengjjeung	學生證	[{"en": "student identification", "ko": "어떤 학교에 소속된 학생임을 증명하는 문서.", "zh": "学生证", "en_def": "A document proving that one is a student at a certain school. ", "zh_def": "证明学生就读于某校的文件。"}]	3f0e4c7d90.wav
 학술	hakssul	學術	[{"en": "academics and academic techniques; being academic; being scientific ", "ko": "학문과 기술.", "zh": "学术", "en_def": "A compound noun for academic knowledge and techniques. ", "zh_def": "学问和技术。"}]	deed937f4f.wav
-학원02	hagwon	學院	[{"en": "school", "ko": "일정한 목적, 교과 과정, 제도 등에 따라 학생을 교육하는 기관.", "zh": "学院，学校", "en_def": "An institution that educates students according to a specific purpose, curriculum, system, etc.", "zh_def": "依据一定的目标、教育课程、制度等，教育学生的机构。"}, {"en": "private institute; academy; cram school", "ko": "학생을 모집하여 지식, 기술, 예체능 등을 가르치는 사립 교육 기관.", "zh": "补习班，培训班", "en_def": "A private educational institution that recruits students and then teaches knowledge and skills including art, music, physical education, etc.", "zh_def": "招收学生并教授其知识、技术及艺术体育等的私立教育机关。"}]	b03f156ba8.wav
-학위	hagwi	學位	[{"en": "academic degree; degree", "ko": "학사, 석사, 박사 등과 같이 어떤 분야의 학문을 전문적으로 공부하여 일정한 수준에 오른 사람에게 대학에서 주는 자격.", "zh": "学位", "en_def": "A qualification granted by a university to a person who specializes in the study of a certain academic field and who reaches a certain degree level, such as bachelors, masters, or PhDs.", "zh_def": "大学授予专门学习某领域学问并达到一定水平的人的资格，如学士、硕士、博士等。"}]	9c4144a7c8.wav
-학자01	hakjja	學者	[{"en": "scholar", "ko": "특정 학문을 아주 잘 아는 사람. 또는 학문을 연구하는 사람.", "zh": "学者", "en_def": "A person who knows a field of study very well; or a person who carries out academic research. ", "zh_def": "精通某特定领域的学问的人；或指研究学问的人。"}]	40a8d15367.wav
-학점	hakjjeom	學點	[{"en": "credit", "ko": "대학 또는 대학원에서 학생이 들어야 하는 수업의 양을 계산하는 단위.", "zh": "学分", "en_def": "The unit for calculating the number of hours spent on classes a student is required to take in undergraduate or graduate school.", "zh_def": "大学或研究生院里计算学生应修课程数量的单位。"}, {"en": "grade; mark; GPA", "ko": "대학 또는 대학원에서 성적을 표시하는 단위.", "zh": "学分，绩点", "en_def": "The unit for expressing one's academic record in a undergraduate or graduate school.", "zh_def": "大学或研究生院里标记成绩的单位。"}]	4c959a23fe.wav
-한01	han	\N	[{"en": "one", "ko": "하나의.", "zh": "一", "en_def": "One.", "zh_def": "一个的。"}, {"en": "one", "ko": "여럿 중 하나인 어떤.", "zh": "一个", "en_def": "One of many.", "zh_def": "多个中的一个。"}, {"en": "one", "ko": "같은.", "zh": "一个，同一", "en_def": "Same.", "zh_def": "同一个。"}, {"en": "approximate", "ko": "대충 어림하여 대략.", "zh": "大概", "en_def": "From a rough guess.", "zh_def": "大约估计。"}]	aa1bdf6093.wav
-한05	han	恨	[{"en": "han", "ko": "몹시 원망스럽고 억울하거나 안타깝고 슬퍼서 응어리진 마음.", "zh": "恨", "en_def": "resentment; deep sorrow: A feeling of bitterness, deep resentment or sorrow that builds up in one's mind from an unfair or regretful event.", "zh_def": "因深深的怨恨冤屈或惋惜悲戚而郁结的内心情感。"}]	94971a832f.wav
 한06	han	限	[{"en": "limit; end; bound", "ko": "시간, 공간, 수량, 정도 등의 끝.", "zh": "限度", "en_def": "The end of time, space, amount, extent, etc.", "zh_def": "时间、空间、数量、程度等的极限。"}, {"en": "(no equivalent expression)", "ko": "앞에 오는 말의 정도가 매우 심함을 나타내는 말.", "zh": "界限 ，穷尽", "en_def": "A word used to indicate that the extent of what is referred to in the preceding statement is beyond measure.", "zh_def": "表示前面表达的内容程度太过分。"}, {"en": "(no equivalent expression)", "ko": "어떤 일을 위해 희생하거나 힘들고 어려운 일을 참고 견뎌야 할 상황.", "zh": "程度，限度，范围", "en_def": "A word used to indicate a situation in which one is expected to sacrifice oneself for a certain task or endure a difficult and painful circumstance.", "zh_def": "为了某件事情，处于要牺牲个人或忍受艰难困苦的状况。"}, {"en": "being as long as; being as far as", "ko": "조건의 뜻을 나타내는 말.", "zh": "范围", "en_def": "A word used to mean a condition.", "zh_def": "表示条件。"}]	367743d40a.wav
 한가운데	hangaunde	\N	[{"en": "middle; center; heart", "ko": "어떤 장소나 시간, 상황 등의 바로 가운데.", "zh": "正中间", "en_def": "The dead center of a certain place or time, situation, etc.", "zh_def": "某场所、时间或情况等的正中。"}]	2c1b2b4663.wav
 한가하다02	hangahada	閑暇하다	[{"en": "leisurely; unhurried; relaxed", "ko": "바쁘지 않고 여유가 있다.", "zh": "闲适，空闲", "en_def": "Having time to spare without haste. ", "zh_def": "不忙，有余暇。"}]	ca723d0aa5.wav
@@ -33655,6 +33670,6201 @@ zh
 en
 ja
 ko
+\.
+
+
+--
+-- Data for Name: oxford; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.oxford (word, cefr, pos, region, sense) FROM stdin;
+AIDS	B2	n.		
+April	A1	n.		
+August	A1	n.		
+CD	A1	n.		
+DVD	A1	n.		
+December	A1	n.		
+February	A1	n.		
+Friday	A1	n.		
+I	A1	pron.		
+ID	B2	n.		
+IT	B1	n.		
+January	A1	n.		
+July	A1	n.		
+June	A1	n.		
+March	A1	n.		
+May	A1	n.		
+Monday	A1	n.		
+November	A1	n.		
+OK	A1	adj.		
+OK	A1	adv.		
+OK	A1	exclam.		
+October	A1	n.		
+Saturday	A1	n.		
+September	A1	n.		
+Sunday	A1	n.		
+T-shirt	A1	n.		
+TV	A1	n.		
+Thursday	A1	n.		
+Tuesday	A1	n.		
+Wednesday	A1	n.		
+a, an	A1	indefinite article		
+abandon	B2	v.		
+ability	A2	n.		
+able	A2	adj.		
+abolish	C1	v.		
+abortion	C1	n.		
+about	A1	adv.		
+about	A1	prep.		
+above	A1	adv.		
+above	A1	prep.		
+abroad	A2	adv.	UK	
+abroad	B2	adv.	US	
+absence	C1	n.		
+absent	C1	adj.		
+absolute	B2	adj.		
+absolutely	B1	adv.		
+absorb	B2	v.		
+abstract	B2	adj.		
+absurd	C1	adj.		
+abundance	C1	n.	UK	
+abuse	C1	n.		
+abuse	C1	v.		
+academic	B1	adj.	UK	
+academic	B1	adj.	US	
+academic	B2	n.	UK	
+academy	C1	n.		
+accelerate	C1	v.		
+accent	B2	n.		
+accept	A2	v.		
+acceptable	B2	adj.		
+acceptance	C1	n.		
+access	B1	n.		
+access	B1	v.		
+accessible	C1	adj.		
+accident	A2	n.		
+accidentally	B2	adv.		
+accommodate	B2	v.		
+accommodation	B1	n.	UK	
+accommodation	B2	n.	US	
+accompany	B2	v.		
+accomplish	B2	v.		
+accomplishment	C1	n.		
+accordance	C1	n.	UK	
+according to	A2	prep.		
+accordingly	C1	adv.		
+account	B1	n.		
+account	B2	v.		
+accountability	C1	n.		
+accountable	C1	adj.		
+accountant	B2	n.		
+accumulate	C1	v.		
+accumulation	C1	n.		
+accuracy	B2	n.		
+accurate	B2	adj.		
+accurately	B2	adv.		
+accusation	C1	n.		
+accuse	B2	v.		
+accused	C1	n.		
+achieve	A2	v.		
+achievement	B1	n.		
+acid	B2	n.		
+acid	C1	adj.		
+acknowledge	B2	v.		
+acquire	B2	v.		
+acquisition	C1	n.		
+acre	B2	n.	US	
+acre	C1	n.	UK	
+across	A1	adv.		
+across	A1	prep.		
+act	A2	v.		
+act	B1	n.		
+action	A1	n.		
+activate	B2	v.		
+activation	C1	n.		
+active	A2	adj.		
+activist	C1	n.		
+activity	A1	n.		
+actor	A1	n.		
+actress	A1	n.		
+actual	B2	adj.		
+actually	A2	adv.		
+acute	C1	adj.		
+ad	B1	n.		
+adapt	B2	v.		
+adaptation	C1	n.		
+add	A1	v.		
+addiction	B2	n.		
+addition	B1	n.		
+additional	B2	adj.		
+additionally	B2	adv.		
+address	A1	n.		
+address	B2	v.		
+adequate	B2	adj.		
+adequately	B2	adv.		
+adhere	C1	v.		
+adjacent	C1	adj.		
+adjust	B2	v.		
+adjustment	C1	n.		
+administer	C1	v.		
+administration	B1	n.	US	
+administration	B2	n.	UK	
+administrative	C1	adj.		
+administrator	C1	n.		
+admire	B1	v.		
+admission	C1	n.		
+admit	B1	v.		
+adolescent	C1	n.		
+adopt	B2	v.		
+adoption	C1	n.		
+adult	A1	n.		
+adult	A2	adj.		
+advance	B2	adj.		
+advance	B2	n.		
+advance	B2	v.		
+advanced	B1	adj.		
+advantage	A2	n.		
+adventure	A2	n.		
+adverse	C1	adj.		
+advertise	A2	v.		
+advertisement	A2	n.		
+advertising	A2	n.		
+advice	A1	n.		
+advise	B1	v.		
+advocate	C1	n.		
+advocate	C1	v.		
+aesthetic	C1	adj.		
+affair	B2	n.		
+affect	A2	v.		
+affection	C1	n.		
+afford	B1	v.		
+affordable	B2	adj.		
+afraid	A1	adj.		
+after	A1	prep.		
+after	A2	adv.		
+after	A2	conj.		
+aftermath	C1	n.		
+afternoon	A1	n.		
+afterward	B2	adv.	US	
+afterwards	B2	adv.	UK	
+again	A1	adv.		
+against	A2	prep.		
+age	A1	n.		
+age	B1	v.		
+aged	B1	adj.	UK	
+aged	B2	adj.	US	
+agency	B2	n.		
+agenda	B2	n.		
+agent	B1	n.		
+aggression	C1	n.		
+aggressive	B2	adj.		
+ago	A1	adv.		
+agree	A1	v.		
+agreement	B1	n.		
+agricultural	C1	adj.		
+agriculture	B2	n.		
+ah	A2	exclam.		
+ahead	B1	adv.		
+aid	B2	n.		
+aid	B2	v.		
+aide	C1	n.		
+aim	B1	n.		
+aim	B1	v.		
+air	A1	n.		
+aircraft	B2	n.		
+airline	A2	n.		
+airport	A1	n.		
+alarm	B1	n.		
+alarm	B2	v.		
+albeit	C1	conj.	UK	
+album	B1	n.		
+alcohol	B1	n.		
+alcoholic	B1	adj.		
+alert	C1	adj.		
+alert	C1	n.		
+alert	C1	v.		
+alien	B2	n.		
+alien	C1	adj.		
+align	C1	v.		
+alignment	C1	n.		
+alike	C1	adj.		
+alike	C1	adv.		
+alive	A2	adj.		
+all	A1	det.		
+all	A1	pron.		
+all	A2	adv.		
+all right	A2	adj.	UK	
+all right	A2	adj.	US	
+all right	A2	adv.	UK	
+all right	A2	adv.	US	
+all right	A2	exclam.	UK	
+allegation	C1	n.		
+allege	C1	v.		
+allegedly	C1	adv.		
+alliance	C1	n.		
+allocate	C1	v.		
+allocation	C1	n.		
+allow	A2	v.		
+allowance	C1	n.		
+ally	C1	n.		
+almost	A2	adv.		
+alone	A2	adj.		
+alone	A2	adv.		
+along	A2	adv.		
+along	A2	prep.		
+alongside	B2	prep.		
+already	A2	adv.		
+also	A1	adv.		
+alter	B2	v.		
+alternative	A2	n.		
+alternative	B1	adj.		
+although	A2	conj.		
+altogether	B2	adv.		
+aluminium	C1	n.	UK	
+aluminum	C1	n.	US	
+always	A1	adv.		
+amateur	C1	adj.		
+amateur	C1	n.		
+amazed	B1	adj.		
+amazing	A1	adj.		
+ambassador	C1	n.		
+ambition	B1	n.		
+ambitious	B1	adj.	UK	
+ambitious	B2	adj.	US	
+ambulance	B2	n.		
+amend	C1	v.		
+amendment	C1	n.		
+amid	C1	prep.		
+among	A2	prep.		
+amount	A2	n.		
+amount	B2	v.		
+amusing	B2	adj.		
+analogy	C1	n.		
+analyse	B1	v.	UK	
+analysis	B1	n.		
+analyst	B2	n.		
+analyze	A2	v.	US	
+ancestor	B2	n.		
+anchor	C1	n.		
+ancient	A2	adj.		
+and	A1	conj.		
+angel	C1	n.		
+anger	B2	n.		
+angle	B2	n.		
+angry	A1	adj.		
+animal	A1	n.		
+animation	B2	n.		
+ankle	A2	n.		
+anniversary	B2	n.		
+announce	B1	v.		
+announcement	B1	n.		
+annoy	B1	v.		
+annoyed	B1	adj.		
+annoying	B1	adj.		
+annual	B2	adj.		
+annually	B2	adv.		
+anonymous	C1	adj.		
+another	A1	det.		
+another	A1	pron.		
+answer	A1	n.		
+answer	A1	v.		
+anticipate	B2	v.		
+anxiety	B2	n.		
+anxious	B2	adj.		
+any	A1	det.		
+any	A1	pron.		
+any	A2	adv.		
+any more	A2	adv.	UK	
+anybody	A2	pron.		
+anymore	A2	adv.	US	
+anyone	A1	pron.		
+anything	A1	pron.		
+anyway	A2	adv.		
+anywhere	A2	adv.		
+anywhere	A2	pron.		
+apart	B1	adv.		
+apartment	A1	n.		
+apologize	B1	v.		
+apology	B2	n.		
+app	A2	n.		
+apparatus	C1	n.		
+apparel	C1	n.	US	
+apparent	B2	adj.		
+apparently	B2	adv.		
+appeal	B2	n.		
+appeal	B2	v.		
+appealing	C1	adj.		
+appear	A2	v.		
+appearance	A2	n.		
+appetite	C1	n.		
+applaud	C1	v.		
+apple	A1	n.		
+applicable	C1	adj.		
+applicant	B2	n.		
+application	B1	n.		
+apply	A2	v.		
+appoint	C1	v.		
+appointment	B1	n.		
+appreciate	B1	v.		
+appreciation	C1	n.		
+approach	B2	n.		
+approach	B2	v.		
+appropriate	B2	adj.		
+appropriately	B2	adv.		
+approval	B2	n.		
+approve	B2	v.		
+approximately	B1	adv.		
+arbitrary	C1	adj.		
+architect	A2	n.		
+architectural	C1	adj.		
+architecture	A2	n.		
+archive	C1	n.		
+area	A1	n.		
+arena	C1	n.		
+arguably	C1	adv.	UK	
+argue	A2	v.		
+argument	A2	n.		
+arise	B2	v.		
+arm	A1	n.		
+arm	C1	v.		
+armed	B2	adj.		
+arms	B2	n.		
+army	A2	n.		
+around	A1	adv.		
+around	A1	prep.		
+arrange	A2	v.		
+arrangement	A2	n.		
+array	C1	n.		
+arrest	B1	n.		
+arrest	B1	v.		
+arrival	B1	n.		
+arrive	A1	v.		
+arrow	B2	n.		
+art	A1	n.		
+article	A1	n.		
+articulate	C1	v.		
+artificial	B2	adj.		
+artist	A1	n.		
+artistic	B2	adj.		
+artwork	B2	n.		
+as	A1	prep.		
+as	A2	adv.		
+as	A2	conj.		
+ash	C1	n.		
+ashamed	B2	adj.		
+aside	B2	adv.	UK	
+aside	B2	adv.	US	
+ask	A1	v.		
+asleep	A2	adj.		
+aspect	B2	n.		
+aspiration	C1	n.		
+aspire	C1	v.		
+assassination	C1	n.		
+assault	C1	n.		
+assault	C1	v.		
+assemble	C1	v.		
+assembly	C1	n.		
+assert	C1	v.		
+assertion	C1	n.		
+assess	B2	v.		
+assessment	B2	n.		
+asset	B2	n.		
+assign	B2	v.		
+assignment	B1	n.		
+assist	B1	v.		
+assistance	B2	n.		
+assistant	A2	adj.		
+assistant	A2	n.		
+associate	B2	v.		
+associated	B2	adj.		
+association	B2	n.		
+assume	B2	v.		
+assumption	B2	n.		
+assurance	C1	n.		
+assure	B2	v.		
+astonishing	B2	adj.		
+asylum	C1	n.		
+at	A1	prep.		
+athlete	A2	n.		
+athletic	B2	adj.	US	
+atmosphere	B1	n.		
+atrocity	C1	n.		
+attach	B1	v.		
+attachment	B2	n.		
+attack	A2	n.		
+attack	A2	v.		
+attain	C1	v.		
+attempt	B2	n.		
+attempt	B2	v.		
+attend	A2	v.		
+attendance	C1	n.		
+attention	A2	exclam.	UK	
+attention	A2	n.	UK	
+attention	A2	n.	US	
+attitude	B1	n.		
+attorney	B2	n.	US	
+attorney	C1	n.	UK	
+attract	B1	v.		
+attraction	B1	n.		
+attractive	A2	adj.		
+attribute	C1	n.		
+attribute	C1	v.		
+auction	B2	n.	UK	
+auction	C1	n.	US	
+audience	A2	n.		
+audio	B2	adj.		
+audit	C1	n.		
+aunt	A1	n.		
+authentic	C1	adj.		
+author	A2	n.		
+authority	B1	n.		
+authorize	C1	v.		
+auto	C1	n.		
+automatic	B1	adj.	US	
+automatic	B2	adj.	UK	
+automatically	B1	adv.	US	
+automatically	B2	adv.	UK	
+autonomy	C1	n.		
+autumn	A1	n.	UK	
+autumn	C1	n.	US	
+availability	C1	n.		
+available	A2	adj.		
+average	A2	adj.		
+average	A2	n.		
+average	B1	v.		
+avoid	A2	v.		
+await	C1	v.		
+award	A2	n.		
+award	B1	v.		
+aware	B1	adj.		
+awareness	B2	n.		
+away	A1	adv.		
+awesome	A1	adj.	US	
+awful	A2	adj.		
+awkward	B2	adj.		
+baby	A1	n.		
+back	A1	adv.		
+back	A1	n.		
+back	A2	adj.		
+back	B2	v.		
+backdrop	C1	n.		
+background	A2	n.		
+backing	C1	n.		
+backup	C1	n.		
+backward	B1	adv.	US	
+backwards	B1	adv.	UK	
+bacteria	B2	n.		
+bad	A1	adj.		
+badge	B2	n.		
+badly	A2	adv.		
+bag	A1	n.		
+bail	C1	n.		
+bake	B1	v.		
+balance	B1	n.		
+balance	B1	v.		
+balanced	B2	adj.		
+ball	A1	n.		
+ballet	B2	n.		
+balloon	B2	n.		
+ballot	C1	n.		
+ban	B1	n.		
+ban	B1	v.		
+banana	A1	n.		
+band	A1	n.		
+bank	A1	n.		money
+bank	B1	n.		river
+bankruptcy	C1	n.	US	
+banner	C1	n.		
+bar	A1	n.	US	
+bar	A2	n.	UK	
+bar	B2	v.	UK	
+bar	B2	v.	US	
+bare	C1	adj.		
+barely	B2	adv.		
+bargain	B2	n.		
+barrel	C1	n.		
+barrier	B2	n.		
+base	B1	n.		
+base	B1	v.		
+baseball	A1	n.	US	
+baseball	A2	n.	UK	
+based	A2	adj.		
+basement	B2	n.		
+basic	B1	adj.		
+basically	B2	adv.		
+basis	B1	n.		
+basket	B2	n.		
+basketball	A1	n.	US	
+basketball	A2	n.	UK	
+bass	C1	n.		
+bat	B2	n.		
+bat	C1	v.		
+bath	A1	n.		
+bathroom	A1	n.		
+battery	B1	n.		
+battle	B1	n.		
+battle	B2	v.		
+battlefield	C1	n.		
+bay	C1	n.		
+be	A1	auxiliary v.		
+be	A1	v.		
+beach	A1	n.		
+beam	C1	n.		
+bean	A2	n.		
+bear	A2	n.		animal
+bear	B2	v.		deal with
+beast	C1	n.		
+beat	A2	v.		
+beat	B2	n.		
+beautiful	A1	adj.		
+beauty	B1	n.		
+because	A1	conj.		
+become	A1	v.		
+bed	A1	n.		
+bedroom	A1	n.		
+bee	B1	n.		
+beef	A2	n.		
+beer	A1	n.		
+before	A1	prep.		
+before	A2	adv.		
+before	A2	conj.		
+beg	B2	v.		
+begin	A1	v.		
+beginning	A1	n.		
+behalf	C1	n.		
+behave	A2	v.		
+behavior	A2	n.	US	
+behavioral	C1	adj.	US	
+behaviour	A2	n.	UK	
+behind	A1	adv.		
+behind	A1	prep.		
+being	B2	n.		
+belief	B1	n.		
+believe	A1	v.		
+bell	B1	n.		
+belong	A2	v.		
+beloved	C1	adj.		
+below	A1	adv.		
+below	A1	prep.		
+belt	A2	n.		
+bench	C1	n.		
+benchmark	C1	n.		
+bend	B1	n.		
+bend	B1	v.		
+beneath	C1	prep.		
+beneficial	B2	adj.		
+beneficiary	C1	n.		
+benefit	A2	n.		
+benefit	B1	v.		
+bent	B2	adj.		
+beside	B2	prep.		
+besides	B2	adv.		
+besides	B2	prep.		
+best	A1	adj.		
+best	A2	adv.		
+best	A2	n.		
+bet	B2	n.		
+bet	B2	v.		
+betray	C1	v.		
+better	A1	adj.		
+better	A2	adv.		
+better	B1	n.		
+between	A1	prep.		
+between	A2	adv.		
+beverage	C1	n.	US	
+beyond	B2	adv.		
+beyond	B2	prep.		
+bias	B2	n.		
+bicycle	A1	n.		
+bid	B2	n.		
+bid	B2	v.		
+big	A1	adj.		
+bike	A1	n.		
+bill	A1	n.		
+bill	B2	v.		
+billion	A2	number		
+bin	A2	n.	UK	
+bind	C1	v.		
+biography	C1	n.		
+biological	B2	adj.		
+biology	A2	n.		
+bird	A1	n.		
+birth	A2	n.		
+birthday	A1	n.		
+biscuit	A2	n.	UK	
+bishop	C1	n.		
+bit	A2	n.		
+bite	B1	n.		
+bite	B1	v.		
+bitter	B2	adj.		
+bizarre	C1	adj.		
+black	A1	adj.		
+black	A1	n.		
+blade	C1	n.		
+blame	B2	n.		
+blame	B2	v.		
+blank	A2	adj.		
+blank	A2	n.		
+blanket	B2	n.		
+blast	C1	n.		
+blast	C1	v.		
+bleed	C1	v.		
+blend	C1	n.		
+blend	C1	v.		
+bless	C1	v.		
+blessing	C1	n.		
+blind	B2	adj.		
+block	A2	n.	US	
+block	B1	n.	UK	
+block	B1	v.	UK	
+block	B1	v.	US	
+blog	A1	n.		
+blond	A1	adj.	US	
+blonde	A1	adj.	UK	
+blood	A2	n.		
+blow	A2	v.		
+blow	B2	n.		
+blue	A1	adj.		
+blue	A1	n.		
+board	A2	n.		
+board	B1	v.		
+boast	C1	v.		
+boat	A1	n.		
+body	A1	n.		
+boil	A2	v.		
+bold	B2	adj.		
+bomb	B1	n.		
+bomb	B1	v.		
+bombing	B2	n.		
+bond	B2	n.		
+bone	A2	n.		
+bonus	C1	n.		
+book	A1	n.		
+book	A2	v.		
+booking	B2	n.	UK	
+booking	C1	n.	US	
+boom	C1	n.		
+boost	B2	n.		
+boost	B2	v.		
+boot	A1	n.		
+border	B1	n.		
+border	B2	v.		
+bored	A1	adj.		
+boring	A1	adj.		
+born	A1	v.		
+borrow	A2	v.		
+boss	A2	n.		
+both	A1	det.		
+both	A1	pron.		
+bother	B1	v.		
+bottle	A1	n.		
+bottom	A2	adj.		
+bottom	A2	n.		
+bounce	C1	v.		
+bound	B2	adj.		
+boundary	C1	n.		
+bow	C1	n.		
+bow	C1	v.		
+bowl	A2	n.		
+box	A1	n.		
+boy	A1	n.		
+boyfriend	A1	n.		
+brain	A2	n.		
+branch	B1	n.		
+brand	B1	n.		
+brand	B1	v.		
+brave	B1	adj.		
+breach	C1	n.		
+breach	C1	v.		
+bread	A1	n.		
+break	A1	n.		
+break	A1	v.		
+breakdown	C1	n.		
+breakfast	A1	n.		
+breakthrough	C1	n.		
+breast	B2	n.		
+breath	B1	n.		
+breathe	B1	v.		
+breathing	B1	n.		
+breed	C1	n.		
+breed	C1	v.		
+brick	B2	n.		
+bride	B1	n.		
+bridge	A2	n.		
+brief	B2	adj.		
+briefly	B2	adv.		
+bright	A2	adj.		
+brilliant	A2	adj.		
+bring	A1	v.		
+broad	B2	adj.		
+broadband	C1	n.		
+broadcast	B2	n.		
+broadcast	B2	v.		
+broadcaster	B2	n.		
+broadly	B2	adv.		
+broken	A2	adj.		
+brother	A1	n.		
+brown	A1	adj.		
+brown	A1	n.		
+browser	C1	n.		
+brush	A2	n.		
+brush	A2	v.		
+brutal	C1	adj.		
+bubble	B1	n.		
+buck	B2	n.	US	
+buck	C1	n.	UK	
+buddy	C1	n.		
+budget	B2	n.		
+buffer	C1	n.		
+bug	B2	n.		
+build	A1	v.		
+building	A1	n.		
+bulk	C1	n.		
+bullet	B2	n.		
+bunch	B2	n.		
+burden	C1	n.		
+bureaucracy	C1	n.		
+burial	C1	n.		
+burn	A2	v.		
+burn	B2	n.		
+burst	C1	v.		
+bury	B1	v.		
+bus	A1	n.		
+bush	B2	n.		
+business	A1	n.		
+businessman	A2	n.		
+busy	A1	adj.		
+but	A1	conj.		
+but	B2	prep.		
+butter	A1	n.		
+button	A2	n.		
+buy	A1	v.		
+by	A1	prep.		
+by	B1	adv.		
+bye	A1	exclam.		
+cabin	B2	n.		
+cabinet	C1	n.		
+cable	B1	n.	US	
+cable	B2	n.	UK	
+cafe	A1	n.		
+cake	A1	n.		
+calculate	B2	v.		
+calculation	C1	n.		
+call	A1	n.		
+call	A1	v.		
+calm	B1	adj.		
+calm	B1	n.		
+calm	B1	v.		
+camera	A1	n.		
+camp	A2	n.		
+camp	A2	v.		
+campaign	B1	n.		
+campaign	B1	v.		
+camping	A2	n.		
+campus	A2	n.	US	
+campus	B1	n.	UK	
+can	A1	modal v.		
+can	A2	n.		
+canal	B2	n.		
+cancel	B2	v.		
+cancer	B2	n.		
+candidate	B1	n.		
+candle	B2	n.		
+candy	A2	n.	US	
+cannot	A1	v.		
+canvas	C1	n.		
+cap	B1	n.		
+capability	C1	n.		
+capable	B2	adj.		
+capacity	B2	n.		
+capital	A1	adj.		
+capital	A1	n.		
+capitalism	C1	n.		
+capitalist	C1	adj.		
+captain	B1	n.		
+capture	B2	n.		
+capture	B2	v.		
+car	A1	n.		
+carbon	B2	n.		
+card	A1	n.		
+care	A2	n.		
+care	A2	v.		
+career	A1	n.		
+careful	A2	adj.		
+carefully	A2	adv.		
+careless	B1	adj.		
+cargo	C1	n.		
+carpet	A2	n.		
+carriage	C1	n.		
+carrot	A1	n.		
+carry	A1	v.		
+cartoon	A2	n.		
+carve	C1	v.		
+case	A2	n.		
+cash	A2	n.		
+casino	C1	n.		
+cast	B2	n.		
+cast	B2	v.		
+castle	A2	n.	UK	
+castle	B2	n.	US	
+casual	B2	adj.		
+casualty	C1	n.		
+cat	A1	n.		
+catalog	C1	n.	US	
+catalogue	C1	n.	UK	
+catch	A2	v.		
+catch	B2	n.		
+category	B1	n.		
+cater	C1	v.		
+cattle	C1	n.		
+cause	A2	n.		
+cause	A2	v.		
+caution	C1	n.		
+cautious	C1	adj.		
+cave	B2	n.		
+cease	C1	v.		
+ceiling	B1	n.		
+celebrate	A2	v.		
+celebration	B1	n.		
+celebrity	A2	n.		
+cell	A2	n.	US	
+cell	B2	n.	UK	
+cemetery	C1	n.		
+cent	A1	n.		
+center	A1	n.	US	
+center	B1	v.	US	
+central	B1	adj.		
+centre	A1	n.	UK	
+centre	B1	v.	UK	
+century	A1	n.	UK	
+century	A2	n.	US	
+ceremony	B1	n.		
+certain	A2	adj.		
+certainly	A2	adv.		
+certainty	B2	n.		
+certificate	B2	n.		
+chain	B1	n.		
+chain	B2	v.		
+chair	A1	n.		
+chair	B2	v.		
+chairman	B2	n.		
+challenge	B1	n.		
+challenge	B2	v.		
+challenging	B2	adj.		
+chamber	C1	n.		
+champion	B1	n.		
+championship	B2	n.		
+chance	A2	n.		
+change	A1	n.		
+change	A1	v.		
+channel	B1	n.		
+chaos	C1	n.		
+chapter	B1	n.		
+character	A2	n.		
+characteristic	B2	adj.		
+characteristic	B2	n.		
+characterize	C1	v.		
+charge	B1	n.		
+charge	B1	v.		
+charity	A2	n.		
+charm	C1	n.		
+charming	B2	adj.		
+chart	A1	n.		
+chart	B2	v.		
+charter	C1	n.		
+chase	B2	n.		
+chase	B2	v.		
+chat	A2	n.		
+chat	A2	v.		
+cheap	A1	adj.		
+cheap	B1	adv.		
+cheat	B1	n.		
+cheat	B1	v.		
+check	A1	v.		
+check	A2	n.		
+cheek	B2	n.		
+cheer	B2	n.		
+cheer	B2	v.		
+cheerful	B1	adj.		
+cheese	A1	n.		
+chef	A2	n.		
+chemical	B1	adj.		
+chemical	B1	n.		
+chemistry	A2	n.		
+chest	B1	n.		
+chicken	A1	n.		
+chief	B2	adj.		
+chief	B2	n.		
+child	A1	n.		
+childhood	B1	n.		
+chip	A2	n.		
+chocolate	A1	n.		
+choice	A2	n.		
+choir	B2	n.	UK	
+choir	C1	n.	US	
+choose	A1	v.		
+chop	B2	v.		
+chronic	C1	adj.		
+chunk	C1	n.		
+church	A2	n.		
+cigarette	A2	n.		
+cinema	A1	n.	UK	
+circle	A2	n.		
+circle	A2	v.		
+circuit	B2	n.		
+circulate	C1	v.		
+circulation	C1	n.		
+circumstance	B2	n.		
+cite	B2	v.		
+citizen	B2	n.		
+citizenship	C1	n.		
+city	A1	n.		
+civic	C1	adj.		
+civil	B2	adj.		
+civilian	C1	adj.		
+civilian	C1	n.		
+civilization	B2	n.		
+claim	B1	n.		
+claim	B1	v.		
+clarify	B2	v.		
+clarity	C1	n.		
+clash	C1	n.		
+class	A1	n.		
+classic	B2	adj.		
+classic	B2	n.		
+classical	A2	adj.		
+classification	C1	n.		
+classify	B2	v.		
+classroom	A1	n.		
+clause	B1	n.		
+clean	A1	adj.		
+clean	A1	v.		
+clear	A2	adj.		
+clear	B1	v.		
+clearly	A2	adv.		
+clerk	A2	n.	US	
+clerk	B2	n.	UK	
+clever	A2	adj.	UK	
+clever	B1	adj.	US	
+click	B1	n.		
+click	B1	v.		
+client	B1	n.		
+cliff	B2	n.		
+climate	A2	n.		
+climb	A1	v.		
+climb	B1	n.		
+cling	C1	v.		
+clinic	B2	n.		
+clinical	C1	adj.		
+clip	B2	n.		
+clock	A1	n.		
+close	A1	v.		
+close	A2	adj.		
+close	B1	adv.		
+close	B2	n.		
+closed	A2	adj.		
+closely	B2	adv.		
+closet	A2	n.	US	
+closure	C1	n.		
+cloth	B1	n.		
+clothes	A1	n.		
+clothing	A2	n.		
+cloud	A2	n.		
+club	A1	n.		
+clue	B1	n.		
+cluster	C1	n.		
+coach	A2	n.		
+coach	B1	v.		
+coal	B1	n.		
+coalition	C1	n.		
+coast	A2	n.		
+coastal	C1	adj.		
+coat	A1	n.		
+cocktail	C1	n.		
+code	A2	n.		
+coffee	A1	n.		
+cognitive	C1	adj.		
+coin	B1	n.		
+coincide	C1	v.		
+coincidence	B2	n.		
+cold	A1	adj.		
+cold	A1	n.		
+collaborate	C1	v.		
+collaboration	C1	n.		
+collapse	B2	n.		
+collapse	B2	v.		
+colleague	A2	n.		
+collect	A2	v.		
+collection	B1	n.		
+collective	C1	adj.		
+collector	B2	n.		
+college	A1	n.		
+collision	C1	n.		
+colonial	C1	adj.		
+colony	B2	n.		
+color	A1	n.	US	
+colored	B1	adj.	US	
+colorful	B2	adj.	US	
+colour	A1	n.	UK	
+coloured	B1	adj.	UK	
+colourful	B2	adj.	UK	
+column	A2	n.		
+columnist	C1	n.		
+combat	C1	n.		
+combat	C1	v.		
+combination	B2	n.		
+combine	B1	v.		
+come	A1	v.		
+comedy	A2	n.		
+comfort	B2	n.		
+comfort	B2	v.		
+comfortable	A2	adj.		
+comic	B2	adj.		
+comic	B2	n.		
+command	B2	n.		
+command	B2	v.		
+commander	B2	n.		
+commence	C1	v.		
+comment	A2	n.		
+comment	B1	v.		
+commentary	C1	n.		
+commentator	C1	n.		
+commerce	C1	n.		
+commercial	B1	adj.		
+commercial	B1	n.		
+commission	B2	n.		
+commission	B2	v.		
+commissioner	C1	n.		
+commit	B1	v.		
+commitment	B2	n.		
+committee	B2	n.		
+commodity	C1	n.		
+common	A1	adj.	UK	
+common	A1	adj.	US	
+common	A1	n.	UK	
+commonly	B2	adv.		
+communicate	A2	v.		
+communication	B1	n.		
+communist	C1	adj.		
+community	A2	n.		
+companion	C1	n.		
+company	A1	n.		
+comparable	C1	adj.		
+comparative	B2	adj.		
+compare	A1	v.		
+comparison	B1	n.		
+compassion	C1	n.		
+compel	C1	v.		
+compelling	C1	adj.		
+compensate	C1	v.		
+compensation	C1	n.		
+compete	A2	v.		
+competence	C1	n.		
+competent	C1	adj.		
+competition	A2	n.		
+competitive	B1	adj.		
+competitor	B1	n.		
+compile	C1	v.		
+complain	A2	v.		
+complaint	B1	n.		
+complement	C1	v.		
+complete	A1	adj.		
+complete	A1	v.		
+completely	A2	adv.		
+completion	B2	n.		
+complex	B1	adj.		
+complex	B2	n.		
+complexity	C1	n.		
+compliance	C1	n.		
+complicated	B2	adj.		
+complication	C1	n.		
+comply	C1	v.		
+component	B2	n.		
+compose	B2	v.		
+composer	B2	n.		
+composition	C1	n.		
+compound	B2	n.		
+comprehensive	B2	adj.		
+comprise	B2	v.		
+compromise	C1	n.		
+compromise	C1	v.		
+compulsory	B2	adj.		
+compute	C1	v.		
+computer	A1	n.		
+conceal	C1	v.		
+concede	C1	v.		
+conceive	C1	v.		
+concentrate	B1	v.		
+concentration	B2	n.		
+concept	B2	n.		
+conception	C1	n.		
+concern	B2	n.		
+concern	B2	v.		
+concerned	B2	adj.		
+concert	A1	n.		
+concession	C1	n.		
+conclude	B1	v.		
+conclusion	B1	n.		
+concrete	B2	adj.		
+concrete	B2	n.		
+condemn	C1	v.		
+condition	A2	n.		
+conduct	B2	n.		
+conduct	B2	v.		
+confer	C1	v.		
+conference	A2	n.		
+confess	B2	v.		
+confession	C1	n.		
+confidence	B2	n.		
+confident	B1	adj.		
+configuration	C1	n.		
+confine	C1	v.		
+confirm	B1	v.		
+confirmation	C1	n.		
+conflict	B2	n.		
+conflict	B2	v.		
+confront	C1	v.		
+confrontation	C1	n.		
+confuse	B1	v.		
+confused	B1	adj.		
+confusing	B2	adj.		
+confusion	B2	n.		
+congratulate	C1	v.		
+congregation	C1	n.		
+congress	B2	n.	US	
+congressional	C1	adj.		
+connect	A2	v.		
+connected	A2	adj.		
+connection	B1	n.		
+conquer	C1	v.		
+conscience	C1	n.		
+conscious	B2	adj.		
+consciousness	C1	n.		
+consecutive	C1	adj.		
+consensus	C1	n.		
+consent	C1	n.		
+consent	C1	v.		
+consequence	B1	n.		
+consequently	B2	adv.		
+conservation	B2	n.		
+conservative	B2	adj.		
+conservative	B2	n.		
+conserve	C1	v.		
+consider	A2	v.		
+considerable	B2	adj.		
+considerably	B2	adv.		
+consideration	B2	n.		
+consist	B1	v.		
+consistency	C1	n.		
+consistent	B2	adj.		
+consistently	B2	adv.		
+consolidate	C1	v.		
+conspiracy	B2	n.		
+constant	B2	adj.		
+constantly	B2	adv.		
+constituency	C1	n.	UK	
+constitute	C1	v.		
+constitution	C1	n.		
+constitutional	C1	adj.		
+constraint	C1	n.		
+construct	B2	v.		
+construction	B2	n.		
+consult	B2	v.		
+consultant	B2	n.		
+consultation	C1	n.		
+consume	B1	v.		
+consumer	B1	n.		
+consumption	B2	n.		
+contact	B1	n.		
+contact	B1	v.		
+contain	A2	v.		
+container	B1	n.		
+contemplate	C1	v.		
+contemporary	B2	adj.		
+contempt	C1	n.		
+contend	C1	v.		
+contender	C1	n.		
+content	B1	n.		
+content	C1	adj.		
+contention	C1	n.		
+contest	B2	n.		
+contest	B2	v.		
+context	A2	n.		
+continent	A2	n.		
+continually	C1	adv.		
+continue	A2	v.		
+continuous	B1	adj.		
+contract	B2	n.		
+contract	B2	v.		
+contractor	C1	n.		
+contradiction	C1	n.		
+contrary	C1	adj.		
+contrary	C1	n.		
+contrast	B1	n.		
+contrast	B1	v.		
+contribute	B2	v.		
+contribution	B2	n.		
+contributor	C1	n.		
+control	A2	n.		
+control	A2	v.		
+controversial	B2	adj.		
+controversy	B2	n.		
+convenience	B2	n.		
+convenient	B1	adj.		
+convention	B2	n.		
+conventional	B2	adj.		
+conversation	A1	n.		
+conversion	C1	n.		
+convert	B2	v.		
+convey	B2	v.		
+convict	C1	v.		
+conviction	C1	n.		
+convince	B1	v.		
+convinced	B2	adj.		
+convincing	B2	adj.		
+cook	A1	v.		
+cook	A2	n.		
+cooker	A2	n.	UK	
+cookie	A2	n.	US	
+cooking	A1	n.		
+cool	A1	adj.		
+cool	B1	v.		
+cooperate	C1	v.		
+cooperative	C1	adj.		
+coordinate	C1	v.		
+coordination	C1	n.		
+coordinator	C1	n.		
+cop	B2	n.	US	
+cop	C1	n.	UK	
+cope	B2	v.		
+copper	C1	n.		
+copy	A2	n.		
+copy	A2	v.		
+copyright	C1	n.		
+core	B2	adj.		
+core	B2	n.		
+corn	B1	n.	US	
+corner	A2	n.		
+corporate	B2	adj.		
+corporation	B2	n.		
+correct	A1	adj.		
+correct	A1	v.		
+correction	C1	n.		
+correctly	A2	adv.		
+correlate	C1	v.		
+correlation	C1	n.		
+correspond	C1	v.		
+correspondence	C1	n.		
+correspondent	C1	n.		
+corresponding	C1	adj.		
+corridor	B2	n.		
+corrupt	C1	adj.		
+corruption	C1	n.		
+cost	A1	n.		
+cost	A1	v.		
+costly	C1	adj.		
+costume	B1	n.		
+cottage	B1	n.	UK	
+cotton	B1	n.		
+could	A1	modal v.		
+council	B2	n.		
+councillor	C1	n.	UK	
+councilor	C1	n.	US	
+counseling	C1	n.	US	
+counselling	C1	n.	UK	
+counsellor	C1	n.	UK	
+counselor	C1	n.	US	
+count	A2	v.		
+count	B1	n.		
+counter	B2	n.		long flat surface
+counter	C1	v.		argue against
+counterpart	C1	n.		
+countless	C1	adj.		
+country	A1	n.		
+countryside	B1	n.		
+county	B2	n.		
+coup	C1	n.		
+couple	A2	n.		
+courage	B2	n.		
+course	A1	n.		
+court	B1	n.		
+courtesy	C1	n.		
+cousin	A1	n.		
+cover	A2	v.		
+cover	B1	n.		
+coverage	B2	n.		
+covered	B1	adj.		
+cow	A1	n.		
+cowboy	B2	n.	US	
+crack	B2	n.		
+crack	B2	v.		
+craft	B2	n.		
+craft	C1	v.		
+crash	B2	n.		
+crash	B2	v.		
+crawl	C1	v.		
+crazy	A2	adj.		
+cream	A1	n.		
+cream	B1	adj.		
+create	A1	v.		
+creation	B2	n.		
+creative	A2	adj.		
+creativity	B2	n.		
+creator	C1	n.		
+creature	B2	n.		
+credibility	C1	n.		
+credible	C1	adj.		
+credit	A2	n.		
+credit	B2	v.		
+creep	C1	v.		
+crew	B2	n.		
+crime	A2	n.		
+criminal	A2	n.		
+criminal	B1	adj.		
+crisis	B2	n.		
+criterion	B2	n.		
+critic	B2	n.		
+critical	B2	adj.		
+critically	B2	adv.		
+criticism	B2	n.		
+criticize	B2	v.		
+critique	C1	n.		
+crop	B2	n.		
+cross	A2	n.		
+cross	A2	v.		
+crowd	A2	n.		
+crowded	A2	adj.		
+crown	C1	n.		
+crucial	B2	adj.		
+crude	C1	adj.		
+cruel	B1	adj.		
+cruise	B2	n.		
+cruise	B2	v.		
+crush	C1	v.		
+cry	A2	v.		
+cry	B2	n.		
+crystal	C1	n.		
+cue	B2	n.		
+cult	C1	adj.		
+cult	C1	n.		
+cultivate	C1	v.		
+cultural	B1	adj.		
+culture	A1	n.		
+cup	A1	n.		
+cupboard	A2	n.	UK	
+cupboard	B1	n.	US	
+cure	B2	n.		
+cure	B2	v.		
+curiosity	C1	n.		
+curious	B2	adj.		
+curly	A2	adj.		
+currency	B1	n.		
+current	B1	adj.		
+current	B2	n.		
+currently	B1	adv.		
+curriculum	B2	n.		
+curtain	B1	n.		
+curve	B2	n.		
+curve	B2	v.		
+curved	B2	adj.		
+custody	C1	n.		
+custom	B1	n.		
+customer	A1	n.		
+cut	A1	v.		
+cut	B1	n.		
+cute	B2	adj.		
+cutting	C1	n.		
+cycle	A2	n.		
+cycle	A2	v.		
+cynical	C1	adj.		
+dad	A1	n.		
+daily	A2	adj.		
+daily	B1	adv.		
+dairy	B2	adj.		
+dairy	B2	n.		
+dam	C1	n.		
+damage	B1	n.		
+damage	B1	v.		
+damaging	C1	adj.		
+dance	A1	n.		
+dance	A1	v.		
+dancer	A1	n.		
+dancing	A1	n.		
+danger	A2	n.		
+dangerous	A1	adj.		
+dare	B2	v.		
+dark	A1	adj.		
+dark	A2	n.		
+darkness	B2	n.		
+data	A2	n.		
+database	B2	n.		
+date	A1	n.		
+date	B2	v.		
+daughter	A1	n.		
+dawn	C1	n.		
+day	A1	n.		
+dead	A2	adj.		
+deadline	B2	n.		
+deadly	B2	adj.		
+deal	A2	v.		
+deal	B1	n.		
+dealer	B2	n.		
+dear	A1	adj.	UK	
+dear	A1	adj.	US	
+dear	A2	exclam.	UK	
+death	A2	n.		
+debate	B2	n.		
+debate	B2	v.		
+debris	C1	n.		
+debt	B2	n.		
+debut	C1	n.		
+decade	B1	n.		
+decent	B2	adj.		
+decide	A1	v.		
+decision	A2	n.		
+decision-making	C1	n.		
+decisive	C1	adj.		
+deck	B2	n.		
+declaration	C1	n.		
+declare	B2	v.		
+decline	B2	n.		
+decline	B2	v.		
+decorate	B1	v.	UK	
+decorate	B2	v.	US	
+decoration	B2	n.		
+decrease	B2	n.		
+decrease	B2	v.		
+dedicated	C1	adj.		
+dedication	C1	n.		
+deed	C1	n.		
+deem	C1	v.		
+deep	A2	adj.		
+deep	B1	adv.		
+deeply	B2	adv.		
+default	C1	n.		
+defeat	B2	n.		
+defeat	B2	v.		
+defect	C1	n.		
+defence	B2	n.	UK	
+defend	B2	v.		
+defender	B2	n.		
+defense	B2	n.	US	
+defensive	C1	adj.		
+deficiency	C1	n.		
+deficit	C1	n.		
+define	B1	v.		
+definite	B1	adj.		
+definitely	A2	adv.		
+definition	B1	n.		
+defy	C1	v.		
+degree	A2	n.		
+delay	B2	n.		
+delay	B2	v.		
+delegate	C1	n.		
+delegation	C1	n.		
+delete	B2	v.		
+deliberate	B2	adj.		
+deliberately	B2	adv.		
+delicate	C1	adj.		
+delicious	A1	adj.		
+delight	B2	n.	UK	
+delight	B2	v.	UK	
+delighted	B2	adj.	UK	
+delighted	B2	adj.	US	
+deliver	B1	v.		
+delivery	B2	n.		
+demand	B2	n.		
+demand	B2	v.		
+democracy	B2	n.		
+democratic	B2	adj.		
+demon	C1	n.		
+demonstrate	B2	v.		
+demonstration	B2	n.		
+denial	C1	n.		
+denounce	C1	v.		
+dense	C1	adj.		
+density	C1	n.		
+dentist	A2	n.		
+deny	B2	v.		
+depart	B2	v.		
+department	A2	n.		
+departure	B1	n.		
+depend	A2	v.		
+dependence	C1	n.		
+dependent	B2	adj.		
+depict	C1	v.		
+deploy	C1	v.		
+deployment	C1	n.		
+deposit	B2	n.	UK	
+deposit	B2	n.	US	
+deposit	B2	v.	US	
+deposit	C1	v.	UK	
+depressed	B2	adj.		
+depressing	B2	adj.		
+depression	B2	n.		
+deprive	C1	v.		
+depth	B2	n.		
+deputy	C1	n.		
+derive	B2	v.		
+descend	C1	v.		
+descent	C1	n.		
+describe	A1	v.		
+description	A1	n.		
+desert	A2	n.		
+desert	B2	v.		
+deserve	B2	v.		
+design	A1	n.		
+design	A1	v.		
+designate	C1	v.		
+designer	A2	n.		
+desirable	C1	adj.		
+desire	B2	n.		
+desire	B2	v.		
+desk	A1	n.		
+desktop	C1	n.		
+desperate	B2	adj.		
+desperately	B2	adv.		
+despite	B1	prep.		
+dessert	A2	n.	US	
+destination	B1	n.		
+destroy	A2	v.		
+destruction	B2	n.		
+destructive	C1	adj.		
+detail	A1	n.		
+detail	B2	v.		
+detailed	B2	adj.		
+detain	C1	v.		
+detect	B2	v.		
+detection	C1	n.		
+detective	A2	n.		
+detention	C1	n.		
+deteriorate	C1	v.		
+determination	B2	n.		
+determine	B1	v.		
+determined	B1	adj.		
+devastate	C1	v.		
+develop	A2	v.		
+development	B1	n.		
+device	A2	n.		
+devil	C1	n.		
+devise	C1	v.		
+devote	B2	v.		
+diagnose	C1	v.		
+diagnosis	C1	n.		
+diagram	B1	n.		
+dialogue	A1	n.		
+diamond	B1	n.		
+diary	A2	n.		
+dictate	C1	v.		
+dictator	C1	n.		
+dictionary	A1	n.		
+die	A1	v.		
+diet	A1	n.		
+differ	B2	v.		
+difference	A1	n.		
+different	A1	adj.		
+differentiate	C1	v.		
+differently	A2	adv.		
+difficult	A1	adj.		
+difficulty	B1	n.		
+dig	B2	v.		
+digital	A2	adj.		
+dignity	C1	n.		
+dilemma	C1	n.		
+dime	B2	n.	US	
+dimension	C1	n.		
+diminish	C1	v.		
+dinner	A1	n.		
+dip	C1	v.		
+diplomat	C1	n.		
+diplomatic	C1	n.		
+direct	A2	adj.		
+direct	B1	adv.		
+direct	B1	v.		
+direction	A2	n.		
+directly	B1	adv.		
+director	A2	n.		
+directory	C1	n.		
+dirt	B1	n.		
+dirty	A1	adj.		
+disability	B2	n.		
+disabled	B2	adj.		
+disadvantage	B1	n.		
+disagree	A2	v.		
+disagreement	B2	n.		
+disappear	A2	v.		
+disappoint	B2	v.		
+disappointed	B1	adj.		
+disappointing	B1	adj.		
+disappointment	B2	n.		
+disaster	A2	n.		
+disastrous	C1	adj.		
+disc	B2	n.	UK	
+discard	C1	v.		
+discharge	C1	v.		
+discipline	B2	n.		
+disclose	C1	v.		
+disclosure	C1	n.		
+discount	B1	n.		
+discount	B2	v.		
+discourage	B2	v.		
+discourse	C1	n.		
+discover	A2	v.		
+discovery	A2	n.		
+discretion	C1	n.		
+discrimination	C1	n.		
+discuss	A1	v.		
+discussion	A2	n.		
+disease	A2	n.		
+dish	A1	n.		
+dishonest	B2	adj.		
+disk	B2	n.	US	
+dislike	B1	n.		
+dislike	B1	v.		
+dismiss	B2	v.		
+dismissal	C1	n.		
+disorder	B2	n.		
+displace	C1	v.		
+display	B2	n.		
+display	B2	v.		
+disposal	C1	n.		
+dispose	C1	v.		
+dispute	C1	n.		
+dispute	C1	v.		
+disrupt	C1	v.		
+disruption	C1	n.		
+dissolve	C1	v.		
+distance	A2	n.		
+distant	B2	adj.		
+distinct	B2	adj.		
+distinction	C1	n.		
+distinctive	C1	adj.		
+distinguish	B2	v.		
+distort	C1	v.		
+distract	B2	v.		
+distress	C1	n.		
+distress	C1	v.		
+distribute	B2	v.		
+distribution	B2	n.		
+district	B1	n.	US	
+district	B2	n.	UK	
+disturb	B2	v.		
+disturbing	C1	adj.		
+dive	B2	n.		
+dive	B2	v.		
+diverse	B2	adj.		
+diversity	B2	n.		
+divert	C1	v.		
+divide	B1	v.		
+divide	B2	n.		
+divine	C1	adj.		
+division	B2	n.		
+divorce	B2	n.		
+divorce	B2	v.		
+divorced	A2	adj.		
+do	A1	auxiliary v.		
+do	A1	v.		
+doctor	A1	n.		
+doctrine	C1	n.		
+document	A2	n.		
+document	B2	v.		
+documentary	B1	n.		
+documentation	C1	n.		
+dog	A1	n.		
+dollar	A1	n.		
+domain	C1	n.		
+domestic	B2	adj.		
+dominance	C1	n.		
+dominant	B2	adj.		
+dominate	B2	v.		
+donate	B1	v.		
+donation	B2	n.		
+donor	C1	n.		
+door	A1	n.		
+dose	C1	n.		
+dot	B2	n.		
+double	A2	adj.		
+double	A2	det.		
+double	A2	pron.		
+double	A2	v.		
+double	B1	adv.		
+doubt	B1	n.		
+doubt	B1	v.		
+down	A1	adv.		
+down	A1	prep.		
+download	A2	n.		
+download	A2	v.		
+downstairs	A1	adv.		
+downstairs	A2	adj.		
+downtown	A2	adj.	US	
+downtown	A2	adv.	US	
+downtown	A2	n.	US	
+downtown	B2	adj.	UK	
+downtown	B2	adv.	UK	
+downtown	B2	n.	UK	
+downward	B2	adj.	US	
+downward	B2	adv.	US	
+downwards	B2	adv.	UK	
+dozen	B2	det.		
+dozen	B2	n.		
+draft	B2	n.		
+draft	B2	v.		
+drag	B2	v.		
+drain	C1	v.		
+drama	A2	n.		
+dramatic	B2	adj.		
+dramatically	B2	adv.		
+draw	A1	v.		
+drawing	A2	n.		
+dream	A2	n.		
+dream	A2	v.		
+dress	A1	n.		
+dress	A1	v.		
+dressed	B1	adj.		
+drift	C1	v.		
+drink	A1	n.		
+drink	A1	v.		
+drive	A1	v.		
+drive	A2	n.		
+driver	A1	n.		
+driving	A2	n.		
+driving	C1	adj.		
+drop	A2	v.		
+drop	B1	n.		
+drought	B2	n.		
+drown	C1	v.		
+drug	A2	n.		
+drum	B1	n.		
+drunk	B1	adj.		
+dry	A2	adj.		
+dry	A2	v.		
+dual	C1	adj.		
+dub	C1	v.		
+due	B1	adj.		
+dull	B2	adj.		
+dumb	C1	adj.		
+dump	B2	v.		
+duo	C1	n.		
+duration	B2	n.		
+during	A1	prep.		
+dust	B1	n.		
+duty	B1	n.		
+dynamic	B2	adj.		
+dynamic	C1	n.		
+each	A1	adv.		
+each	A1	det.		
+each	A1	pron.		
+eager	B2	adj.	US	
+eager	C1	adj.	UK	
+ear	A1	n.		
+early	A1	adj.		
+early	A1	adv.		
+earn	A2	v.		
+earnings	C1	n.		
+earth	A2	n.		
+earthquake	B1	n.		
+ease	C1	n.		
+ease	C1	v.		
+easily	A2	adv.		
+east	A1	adj.		
+east	A1	adv.		
+east	A1	n.		
+eastern	B1	adj.		
+easy	A1	adj.		
+eat	A1	v.		
+echo	C1	n.		
+echo	C1	v.		
+ecological	C1	adj.		
+economic	B1	adj.		
+economics	B2	n.		
+economist	B2	n.		
+economy	B1	n.		
+edge	B1	n.		
+edit	B2	v.		
+edition	B2	n.		
+editor	B1	n.		
+editorial	B2	adj.		
+educate	B1	v.		
+educated	B1	adj.		
+education	A2	n.		
+educational	B1	adj.		
+educator	C1	n.		
+effect	A2	n.		
+effective	B1	adj.		
+effectively	B1	adv.		
+effectiveness	C1	n.		
+efficiency	C1	n.		
+efficient	B2	adj.		
+efficiently	B2	adv.		
+effort	B1	n.		
+egg	A1	n.		
+ego	C1	n.		
+eight	A1	number		
+eighteen	A1	number		
+eighty	A1	number		
+either	A2	adv.		
+either	A2	det.		
+either	A2	pron.		
+elaborate	C1	adj.		
+elbow	B2	n.		
+elderly	B2	adj.		
+elect	B2	v.		
+election	B1	n.		
+electoral	C1	adj.		
+electric	A2	adj.		
+electrical	A2	adj.		
+electricity	A2	n.		
+electronic	A2	adj.		
+electronics	B2	n.		
+elegant	B2	adj.		
+element	B1	n.		
+elementary	B2	adj.		
+elephant	A1	n.		
+elevate	C1	v.		
+elevator	A2	n.	US	
+eleven	A1	number		
+eligible	C1	adj.		
+eliminate	B2	v.		
+elite	C1	n.		
+else	A1	adv.		
+elsewhere	B2	adv.		
+email	A1	n.		
+email	A1	v.		
+embark	C1	v.		
+embarrassed	B1	adj.		
+embarrassing	B1	adj.		
+embarrassment	C1	n.		
+embassy	C1	n.		
+embed	C1	v.		
+embody	C1	v.		
+embrace	B2	v.		
+emerge	B2	v.		
+emergence	C1	n.		
+emergency	B1	n.		
+emission	B2	n.		
+emotion	B1	n.		
+emotional	B2	adj.		
+emotionally	B2	adv.		
+emphasis	B2	n.		
+emphasize	B2	v.		
+empire	B2	n.		
+empirical	C1	adj.		
+employ	A2	v.		
+employee	A2	n.		
+employer	A2	n.		
+employment	B1	n.		
+empower	C1	v.		
+empty	A2	adj.		
+empty	B1	v.		
+enable	B2	v.		
+enact	C1	v.		
+encompass	C1	v.		
+encounter	B2	n.		
+encounter	B2	v.		
+encourage	B1	v.		
+encouragement	C1	n.		
+encouraging	C1	adj.		
+end	A1	n.		
+end	A1	v.		
+endeavor	C1	n.	US	
+endeavour	C1	n.	UK	
+ending	A2	n.		
+endless	C1	adj.		
+endorse	C1	v.		
+endorsement	C1	n.		
+endure	C1	v.		
+enemy	B1	n.		
+energy	A2	n.		
+enforce	C1	v.		
+enforcement	C1	n.		
+engage	B2	v.		
+engaged	B1	adj.		
+engagement	C1	n.		
+engaging	C1	adj.		
+engine	A2	n.		
+engineer	A2	n.		
+engineering	B1	n.		
+enhance	B2	v.		
+enjoy	A1	v.		
+enjoyable	B2	adj.		
+enormous	A2	adj.		
+enough	A1	adv.		
+enough	A1	det.		
+enough	A1	pron.		
+enquire	C1	v.	UK	
+enquiry	B2	n.	UK	
+enrich	C1	v.		
+enrol	C1	v.	UK	
+enroll	C1	v.	US	
+ensue	C1	v.		
+ensure	B2	v.		
+enter	A2	v.		
+enterprise	C1	n.		
+entertain	B1	v.		
+entertaining	B2	adj.		
+entertainment	B1	n.		
+enthusiasm	B2	n.		
+enthusiast	C1	n.		
+enthusiastic	B2	adj.		
+entire	B2	adj.		
+entirely	B2	adv.		
+entitle	C1	v.		
+entity	C1	n.		
+entrance	B1	n.		
+entrepreneur	B2	n.		
+entry	B1	n.		
+envelope	B2	n.		
+environment	A2	n.		
+environmental	B1	adj.		
+epidemic	C1	n.		
+episode	B1	n.		
+equal	B1	adj.		
+equal	B1	v.		
+equal	B2	n.		
+equality	C1	n.		
+equally	B1	adv.		
+equation	C1	n.		
+equip	B2	v.		
+equipment	A2	n.		
+equivalent	B2	adj.		
+equivalent	B2	n.		
+era	B2	n.		
+erect	C1	v.		
+error	A2	n.		
+erupt	B2	v.		
+escalate	C1	v.		
+escape	B1	n.		
+escape	B1	v.		
+especially	A2	adv.		
+essay	A2	n.		
+essence	C1	n.		
+essential	B1	adj.		
+essentially	B2	adv.		
+establish	B2	v.		
+establishment	C1	n.		
+estate	B2	n.		
+estimate	B2	n.		
+estimate	B2	v.		
+eternal	C1	adj.		
+ethic	B2	n.		
+ethical	B2	adj.		
+ethnic	B2	adj.		
+euro	A1	n.		
+evacuate	C1	v.		
+evaluate	B2	v.		
+evaluation	B2	n.		
+even	A1	adv.		
+even	B2	adj.		
+evening	A1	n.		
+event	A1	n.		
+eventually	B1	adv.		
+ever	A1	adv.		
+every	A1	det.		
+everybody	A1	pron.		
+everyday	A2	adj.		
+everyone	A1	pron.		
+everything	A1	pron.		
+everywhere	A2	adv.		
+evidence	A2	n.		
+evident	B2	adj.		
+evil	B2	adj.		
+evil	B2	n.		
+evoke	C1	v.		
+evolution	B2	n.		
+evolutionary	C1	adj.		
+evolve	B2	v.		
+exact	A2	adj.		
+exactly	A2	adv.		
+exaggerate	C1	v.		
+exam	A1	n.		
+examination	B2	n.		
+examine	B1	v.		
+example	A1	n.		
+exceed	B2	v.		
+excellence	C1	n.		
+excellent	A2	adj.		
+except	A2	prep.		
+except	B1	conj.		
+exception	B2	n.		
+exceptional	C1	adj.		
+excess	C1	adj.		
+excess	C1	n.		
+excessive	B2	adj.		
+exchange	B1	n.		
+exchange	B1	v.		
+excited	A1	adj.		
+excitement	B1	n.		
+exciting	A1	adj.		
+exclude	B2	v.		
+exclusion	C1	n.		
+exclusive	C1	adj.		
+exclusively	C1	adv.		
+excuse	B2	n.		
+excuse	B2	v.		
+execute	C1	v.		
+execution	C1	n.		
+executive	B2	adj.		
+executive	B2	n.		
+exercise	A1	n.		
+exercise	A1	v.		
+exert	C1	v.		
+exhibit	B2	n.	UK	
+exhibit	B2	n.	US	
+exhibit	B2	v.	UK	
+exhibit	B2	v.	US	
+exhibition	B1	n.		
+exile	C1	n.		
+exist	A2	v.		
+existence	B2	n.		
+exit	B1	n.	US	
+exit	B2	n.	UK	
+exit	B2	v.	US	
+exit	C1	v.	UK	
+exotic	B2	adj.		
+expand	B1	v.		
+expansion	B2	n.		
+expect	A2	v.		
+expectation	B2	n.		
+expected	B1	adj.		
+expedition	B1	n.	UK	
+expedition	B2	n.	US	
+expenditure	C1	n.		
+expense	B2	n.		
+expensive	A1	adj.		
+experience	A2	n.		
+experience	B1	v.		
+experienced	B1	adj.		
+experiment	A2	n.		
+experiment	B1	v.		
+experimental	C1	adj.		
+expert	A2	adj.		
+expert	A2	n.		
+expertise	B2	n.		
+expire	C1	v.		
+explain	A1	v.		
+explanation	A2	n.		
+explicit	C1	adj.		
+explicitly	C1	adv.		
+explode	B1	v.		
+exploit	B2	v.		
+exploitation	C1	n.		
+exploration	B2	n.		
+explore	B1	v.		
+explosion	B1	n.		
+explosive	C1	adj.		
+explosive	C1	n.		
+export	B1	n.		
+export	B1	v.		
+expose	B2	v.		
+exposure	B2	n.		
+express	A2	v.		
+expression	A2	n.		
+extend	B2	v.		
+extension	B2	n.		
+extensive	B2	adj.		
+extensively	B2	adv.		
+extent	B2	n.		
+external	B2	adj.		
+extra	A1	adj.		
+extra	B1	adv.		
+extra	B1	n.		
+extract	B2	n.		
+extract	C1	v.		
+extraordinary	B2	adj.		
+extreme	A2	adj.		
+extreme	B2	n.		
+extremely	A2	adv.		
+extremist	C1	n.		
+eye	A1	n.		
+fabric	B2	n.		
+fabulous	B2	adj.		
+face	A1	n.		
+face	B1	v.		
+facilitate	C1	v.		
+facility	B2	n.		
+fact	A1	n.		
+faction	C1	n.		
+factor	A2	n.		
+factory	A2	n.		
+faculty	B2	n.	US	
+faculty	C1	n.	UK	
+fade	C1	v.		
+fail	A2	v.		
+failed	B2	adj.		
+failure	B2	n.		
+fair	A2	adj.		
+fairly	B1	adv.		
+fairness	C1	n.		
+faith	B2	n.		
+fake	B2	adj.		
+fall	A1	n.	US	
+fall	A1	v.	UK	
+fall	A1	v.	US	
+fall	A2	n.	UK	
+false	A1	adj.		
+fame	B2	n.		
+familiar	B1	adj.		
+family	A1	adj.		
+family	A1	n.		
+famous	A1	adj.		
+fan	A2	n.		
+fancy	B1	adj.	UK	
+fancy	B1	adj.	US	
+fancy	B1	v.	UK	
+fantastic	A1	adj.		
+fantasy	B2	n.		
+far	A1	adv.		
+far	B1	adj.		
+fare	B2	n.		
+farm	A1	n.		
+farm	A2	v.		
+farmer	A1	n.		
+farming	A2	n.		
+fascinating	B1	adj.		
+fashion	A2	n.		
+fashionable	B1	adj.		
+fast	A1	adj.		
+fast	A1	adv.		
+fasten	B1	v.		
+fat	A1	adj.		
+fat	A2	n.		
+fatal	C1	adj.		
+fate	C1	n.		
+father	A1	n.		
+fault	B2	n.		
+favor	B1	n.	US	
+favor	B2	v.	US	
+favorable	C1	adj.	US	
+favorite	A1	adj.	US	
+favorite	A1	n.	US	
+favour	B1	n.	UK	
+favour	B2	v.	UK	
+favourable	C1	adj.	UK	
+favourite	A1	adj.	UK	
+favourite	A1	n.	UK	
+fear	A2	n.		
+fear	B1	v.		
+feat	C1	n.		
+feather	B2	n.		
+feature	A2	n.		
+feature	B1	v.		
+federal	B1	adj.	US	
+federal	B2	adj.	UK	
+fee	B2	n.		
+feed	A2	v.		
+feed	B2	n.		
+feedback	B2	n.		
+feel	A1	v.		
+feel	B2	n.		
+feeling	A1	n.		
+fellow	B2	adj.		
+felony	C1	n.	US	
+female	A2	adj.		
+female	A2	n.		
+feminist	C1	adj.		
+feminist	C1	n.		
+fence	B1	n.		
+festival	A1	n.		
+fever	A2	n.	US	
+fever	B2	n.	UK	
+few	A1	adj.		
+few	A1	det.		
+few	A1	pron.		
+fiber	C1	n.	US	
+fibre	C1	n.	UK	
+fiction	A2	n.		
+field	A2	n.		
+fierce	C1	adj.		
+fifteen	A1	number		
+fifth	A1	number		
+fifty	A1	number		
+fight	A2	n.		
+fight	A2	v.		
+fighting	B1	n.		
+figure	A2	n.		
+figure	B2	v.		
+file	B1	n.		
+file	B2	v.		
+fill	A1	v.		
+film	A1	n.	UK	
+film	A2	n.	US	
+film	A2	v.	UK	
+film	A2	v.	US	
+film-maker	C1	n.	UK	
+filmmaker	C1	n.	US	
+filter	C1	n.		
+filter	C1	v.		
+final	A1	adj.		
+final	A2	n.		
+finally	A2	adv.		
+finance	B2	n.		
+finance	B2	v.		
+financial	B1	adj.		
+find	A1	v.		
+finding	B2	n.		
+fine	A1	adj.		
+fine	C1	n.		
+fine	C1	v.		
+finger	A2	n.		
+finish	A1	v.		
+finish	A2	n.		
+fire	A1	n.	UK	
+fire	A1	n.	US	
+fire	A2	v.	US	
+fire	B1	v.	UK	
+firearm	C1	n.		
+firefighter	B2	n.		
+firework	B2	n.		
+firm	B2	adj.		
+firm	B2	n.		
+firmly	B2	adv.		
+first	A1	adv.		
+first	A1	det.		
+first	A1	number		
+first	A2	n.		
+firstly	A2	adv.	UK	
+fiscal	C1	adj.	US	
+fish	A1	n.		
+fish	A2	v.		
+fishing	A2	n.		
+fit	A2	adj.		
+fit	A2	v.		
+fit	C1	n.		
+fitness	B1	n.		
+five	A1	number		
+fix	A2	v.		
+fix	B2	n.		
+fixed	B1	adj.		
+fixture	C1	n.	UK	
+flag	B1	n.		
+flame	B2	n.		
+flash	B2	n.		
+flash	B2	v.		
+flat	A1	n.	UK	
+flat	A2	adj.	UK	
+flat	A2	adj.	US	
+flavor	B2	n.	US	
+flavour	B2	n.	UK	
+flaw	C1	n.		
+flawed	C1	adj.		
+flee	C1	v.		
+fleet	C1	n.		
+flesh	C1	n.		
+flexibility	C1	n.		
+flexible	B2	adj.		
+flight	A1	n.		
+float	B2	v.		
+flood	B1	n.		
+flood	B1	v.		
+floor	A1	n.		
+flour	B1	n.		
+flourish	C1	v.		
+flow	B1	n.		
+flow	B1	v.		
+flower	A1	n.		
+flu	A2	n.		
+fluid	C1	n.		
+fly	A1	v.		
+fly	A2	n.		
+flying	A2	adj.		
+flying	A2	n.		
+focus	A2	n.		
+focus	A2	v.		
+fold	B1	v.		
+fold	B2	n.		
+folding	B2	adj.		
+folk	B1	adj.		
+folk	B1	n.		
+follow	A1	v.		
+following	A2	adj.		
+following	B1	n.		
+following	B2	prep.		
+fond	B2	adj.		
+food	A1	n.		
+fool	B2	n.		
+foot	A1	n.		
+footage	C1	n.		
+football	A1	n.		
+for	A1	prep.		
+forbid	B2	v.		
+force	B1	n.		
+force	B1	v.		
+forecast	B2	n.		
+forecast	B2	v.		
+foreign	A2	adj.		
+foreigner	C1	n.		
+forest	A2	n.		
+forever	B1	adv.		
+forge	C1	v.		
+forget	A1	v.		
+forgive	B2	v.		
+fork	A2	n.		
+form	A1	n.		
+form	A1	v.		
+formal	A2	adj.		
+format	B2	n.		
+formation	B2	n.		
+former	B2	adj.		
+formerly	B2	adv.		
+formula	C1	n.		
+formulate	C1	v.		
+forth	C1	adv.		
+forthcoming	C1	adj.		
+fortunate	B2	adj.		
+fortunately	A2	adv.		
+fortune	B2	n.		
+forty	A1	number		
+forum	B2	n.		
+forward	A2	adv.		
+forward	B2	adj.		
+fossil	B2	n.		
+foster	C1	v.		
+found	B2	v.		
+foundation	B2	n.		
+founder	B2	n.		
+four	A1	number		
+fourteen	A1	number		
+fourth	A1	number		
+fraction	B2	n.		
+fragile	C1	adj.		
+fragment	B2	n.		
+frame	B1	n.		
+frame	B1	v.		
+framework	B2	n.		
+franchise	C1	n.		
+frankly	C1	adv.		
+fraud	B2	n.		
+free	A1	adj.		
+free	A2	adv.		
+free	B2	v.		
+freedom	B2	n.		
+freely	B2	adv.		
+freeze	B1	v.		
+frequency	B2	n.		
+frequent	B2	adj.		
+frequently	B1	adv.		
+fresh	A2	adj.		
+freshman	C1	n.	US	
+fridge	A2	n.	UK	
+friend	A1	n.		
+friendly	A1	adj.		
+friendship	B1	n.		
+frighten	B1	v.		
+frightened	B1	adj.		
+frightening	B1	adj.		
+frog	A2	n.		
+from	A1	prep.		
+front	A1	adj.		
+front	A1	n.		
+frozen	B1	adj.		
+fruit	A1	n.		
+frustrated	C1	adj.		
+frustrating	C1	adj.		
+frustration	C1	n.		
+fry	B1	v.		
+fuel	B1	n.		
+fuel	B2	v.		
+fulfil	B2	v.	UK	
+fulfill	B2	v.	US	
+full	A1	adj.		
+full-time	B2	adj.		
+full-time	B2	adv.		
+fully	B2	adv.		
+fun	A1	n.		
+fun	A2	adj.		
+function	B1	n.		
+function	B2	v.		
+functional	C1	adj.		
+fund	B2	n.		
+fund	B2	v.		
+fundamental	B2	adj.		
+fundamentally	B2	adv.		
+funding	B2	n.		
+fundraising	C1	n.		
+funeral	C1	n.		
+funny	A1	adj.		
+fur	B1	n.		
+furious	B2	adj.		
+furniture	A2	n.		
+further	A2	adj.		
+further	B1	adv.		
+furthermore	B2	adv.		
+future	A1	n.		
+future	A2	adj.		
+gain	B2	n.		
+gain	B2	v.		
+gallery	A2	n.		
+gallon	B2	n.	US	
+gallon	C1	n.	UK	
+gambling	C1	n.		
+game	A1	n.		
+gaming	B2	n.		
+gang	B2	n.		
+gap	A2	n.		
+garage	B1	n.		
+garbage	A2	n.	US	
+garden	A1	n.		
+gas	A2	n.		
+gate	A2	n.		
+gather	B1	v.		
+gathering	C1	n.		
+gay	B2	adj.		
+gaze	C1	n.		
+gaze	C1	v.		
+gear	C1	n.		
+gender	B2	n.		
+gene	B2	n.		
+general	A2	adj.		
+generally	B1	adv.		
+generate	B2	v.		
+generation	B1	n.		
+generic	C1	adj.		
+generous	B1	adj.		
+genetic	B2	adj.		
+genius	B2	n.		
+genocide	C1	n.		
+genre	B2	n.		
+gentle	B1	adj.		
+gentleman	B1	n.		
+genuine	B2	adj.		
+genuinely	B2	adv.		
+geography	A1	n.		
+gesture	B2	n.		
+get	A1	v.		
+ghost	B1	n.		
+giant	B1	adj.		
+giant	B1	n.		
+gift	A2	n.		
+gig	B2	n.	UK	
+gig	C1	n.	US	
+girl	A1	n.		
+girlfriend	A1	n.		
+give	A1	v.		
+glad	B1	adj.		
+glance	C1	n.		
+glance	C1	v.		
+glass	A1	n.		
+glimpse	C1	n.		
+global	B1	adj.		
+globalization	B2	n.		
+globe	B2	n.		
+glorious	C1	adj.		
+glory	C1	n.		
+glove	B1	n.		
+go	A1	v.		
+go	B1	n.		
+goal	A2	n.		
+god	A2	n.		
+gold	A2	adj.		
+gold	A2	n.		
+golden	B2	adj.		
+golf	A2	n.		
+good	A1	adj.		
+good	A2	n.		
+goodbye	A1	exclam.		
+goodbye	A1	n.		
+goodness	B2	n.		
+goods	B1	n.	UK	
+goods	B2	n.	US	
+gorgeous	B2	adj.		
+govern	B2	v.		
+governance	C1	n.		
+government	A2	n.		
+governor	B2	n.	UK	
+governor	B2	n.	US	
+grab	B2	v.		
+grace	C1	n.		
+grade	B1	n.		
+grade	B2	v.		
+gradually	B2	adv.		
+graduate	B1	n.		
+graduate	B1	v.		
+grain	B1	n.		
+grand	B2	adj.		
+grandfather	A1	n.		
+grandmother	A1	n.		
+grandparent	A1	n.		
+grant	B2	n.		
+grant	B2	v.		
+graphic	B2	adj.		
+graphics	B2	n.		
+grasp	C1	n.		
+grasp	C1	v.		
+grass	A2	n.		
+grateful	B1	adj.		
+grave	C1	adj.		serious
+grave	C1	n.		for dead person
+gravity	C1	n.		
+gray	A1	adj.	US	
+gray	A1	n.	US	
+great	A1	adj.		
+greatly	B2	adv.		
+green	A1	adj.		
+green	A1	n.		
+greenhouse	B2	n.		
+greet	A2	v.		
+grey	A1	adj.	UK	
+grey	A1	n.	UK	
+grid	C1	n.		
+grief	C1	n.		
+grin	C1	n.		
+grin	C1	v.		
+grind	C1	v.		
+grip	C1	n.		
+grip	C1	v.		
+grocery	A2	n.	US	
+grocery	B2	n.	UK	
+gross	C1	adj.		
+ground	A2	n.		
+group	A1	n.		
+grow	A1	v.		
+growth	B1	n.		
+guarantee	B2	n.		
+guarantee	B2	v.		
+guard	B1	n.		
+guard	B1	v.		
+guerrilla	C1	n.		
+guess	A1	n.		
+guess	A1	v.		
+guest	A2	n.		
+guidance	C1	n.		
+guide	A2	n.		
+guide	A2	v.		
+guideline	B2	n.		
+guilt	C1	n.		
+guilty	B1	adj.		
+guitar	A1	n.		
+gun	A2	n.		
+gut	C1	n.		
+guy	A2	n.		
+gym	A1	n.		
+habit	A2	n.		
+habitat	B2	n.		
+hail	C1	v.		
+hair	A1	n.		
+half	A1	det.		
+half	A1	n.		
+half	A1	pron.		
+half	A2	adv.		
+halfway	C1	adv.		
+hall	A2	n.		
+halt	C1	n.		
+halt	C1	v.		
+hand	A1	n.		
+hand	B1	v.		
+handful	C1	n.		
+handle	B2	n.		
+handle	B2	v.		
+handling	C1	n.		
+handy	C1	adj.		
+hang	B1	v.		
+happen	A1	v.		
+happily	A2	adv.		
+happiness	B1	n.		
+happy	A1	adj.		
+harassment	C1	n.		
+harbor	B2	n.	US	
+harbour	B2	n.	UK	
+hard	A1	adj.		
+hard	A1	adv.		
+hardly	B1	adv.		
+hardware	C1	n.		
+harm	B2	n.		
+harm	B2	v.		
+harmful	B2	adj.		
+harmony	C1	n.		
+harsh	C1	adj.		
+harvest	C1	n.		
+harvest	C1	v.		
+hat	A1	n.		
+hate	A1	v.		
+hate	B1	n.		
+hatred	C1	n.		
+haunt	C1	v.		
+have	A1	v.		
+have	A2	auxiliary v.		
+have to	A1	modal v.		
+hazard	C1	n.		
+he	A1	pron.		
+head	A1	n.		
+head	B1	v.		
+headache	A2	n.		
+headline	B1	n.		
+headquarters	B2	n.		
+heal	B2	v.		
+health	A1	n.		
+healthcare	B2	n.		
+healthy	A1	adj.		
+hear	A1	v.		
+hearing	B2	n.		
+heart	A2	n.		
+heat	A2	n.		
+heat	A2	v.		
+heating	B1	n.		
+heaven	B2	n.		
+heavily	B1	adv.		
+heavy	A2	adj.		
+heel	B2	n.		
+height	A2	n.		
+heighten	C1	v.		
+helicopter	B1	n.		
+hell	B2	n.		
+hello	A1	exclam.		
+hello	A1	n.		
+helmet	B2	n.		
+help	A1	n.		
+help	A1	v.		
+helpful	A2	adj.		
+hence	B2	adv.		
+her	A1	det.		
+her	A1	pron.		
+herb	B2	n.		
+here	A1	adv.		
+heritage	C1	n.		
+hero	A2	n.		
+hers	A2	pron.		
+herself	A2	pron.		
+hesitate	B2	v.		
+hey	A1	exclam.		
+hi	A1	exclam.		
+hidden	B2	adj.		
+hide	A2	v.		
+hierarchy	C1	n.		
+high	A1	adj.		
+high	A2	adv.		
+high	B2	n.		
+high-profile	C1	adj.		
+highlight	B1	n.		
+highlight	B1	v.		
+highly	B1	adv.		
+highway	B1	n.	US	
+highway	B2	n.	UK	
+hilarious	B2	adj.		
+hill	A2	n.		
+him	A1	pron.		
+himself	A2	pron.		
+hint	C1	n.		
+hint	C1	v.		
+hip	B2	n.		
+hire	B1	v.		
+hire	B2	n.		
+his	A1	det.		
+his	A2	pron.		
+historian	B2	n.		
+historic	B1	adj.		
+historical	B1	adj.		
+history	A1	n.		
+hit	A2	n.		
+hit	A2	v.		
+hobby	A1	n.		
+hockey	A2	n.		
+hold	A2	v.		
+hold	B2	n.		
+hole	A2	n.		
+holiday	A1	n.	UK	
+holiday	A2	n.	US	
+hollow	B2	adj.		
+holy	B2	adj.		
+home	A1	adv.		
+home	A1	n.		
+home	A2	adj.		
+homeland	C1	n.		
+homeless	B2	adj.		
+homework	A1	n.		
+honest	B1	adj.		
+honesty	B2	n.		
+honey	B2	n.	US	
+honor	B2	n.	US	
+honor	B2	v.	US	
+honour	B2	n.	UK	
+honour	B2	v.	UK	
+hook	B2	n.	US	
+hook	B2	v.	UK	
+hook	B2	v.	US	
+hook	C1	n.	UK	
+hope	A1	v.		
+hope	A2	n.		
+hopeful	C1	adj.		
+hopefully	B2	adv.		
+horizon	C1	n.		
+horn	C1	n.		
+horrible	B1	adj.		
+horror	B1	n.		
+horse	A1	n.		
+hospital	A1	n.		
+host	B1	n.		
+host	B2	v.		
+hostage	C1	n.		
+hostile	C1	adj.		
+hostility	C1	n.		
+hot	A1	adj.		
+hotel	A1	n.		
+hour	A1	n.		
+house	A1	n.	UK	
+house	A1	n.	US	
+house	A1	v.	US	
+house	B2	v.	UK	
+household	B2	n.		
+housing	B2	n.		
+how	A1	adv.		
+however	A1	adv.		
+huge	A2	adj.		
+human	A2	adj.		
+human	A2	n.		
+humanitarian	C1	adj.		
+humanity	C1	n.		
+humble	C1	adj.		
+humor	B2	n.	US	
+humorous	B2	adj.		
+humour	B2	n.	UK	
+hundred	A1	number		
+hunger	B2	n.		
+hungry	A1	adj.		
+hunt	B1	v.		
+hunt	B2	n.		
+hunting	B2	n.		
+hurricane	B1	n.		
+hurry	B1	n.		
+hurry	B1	v.		
+hurt	A2	adj.		
+hurt	A2	v.		
+hurt	B2	n.		
+husband	A1	n.		
+hydrogen	C1	n.		
+hypothesis	B2	n.		
+ice	A1	n.		
+ice cream	A1	n.		
+icon	B2	n.		
+idea	A1	n.		
+ideal	A2	adj.		
+ideal	B2	n.		
+identical	B2	adj.		
+identification	C1	n.		
+identify	A2	v.		
+identity	B1	n.		
+ideological	C1	adj.		
+ideology	C1	n.		
+idiot	C1	n.		
+if	A1	conj.		
+ignorance	C1	n.		
+ignore	B1	v.		
+ill	A2	adj.		
+illegal	B1	adj.		
+illness	A2	n.		
+illusion	B2	n.		
+illustrate	B2	v.		
+illustration	B2	n.		
+image	A2	n.		
+imagery	C1	n.		
+imaginary	B1	adj.		
+imagination	B2	n.		
+imagine	A1	v.		
+immediate	B1	adj.		
+immediately	A2	adv.		
+immense	C1	adj.		
+immigrant	B1	n.		
+immigration	B2	n.		
+imminent	C1	adj.		
+immune	B2	adj.		
+impact	B1	n.		
+impact	B1	v.		
+impatient	B2	adj.		
+implement	B2	v.		
+implementation	C1	n.		
+implication	B2	n.		
+imply	B2	v.		
+import	B1	n.		
+import	B1	v.		
+importance	B1	n.		
+important	A1	adj.		
+impose	B2	v.		
+impossible	A2	adj.		
+impress	B2	v.		
+impressed	B2	adj.		
+impression	B1	n.		
+impressive	B1	adj.		
+imprison	C1	v.		
+imprisonment	C1	n.	UK	
+improve	A1	v.		
+improvement	B1	n.		
+in	A1	adv.		
+in	A1	prep.		
+inability	C1	n.		
+inadequate	C1	adj.		
+inappropriate	C1	adj.		
+incarcerate	C1	v.	US	
+incarceration	C1	n.	US	
+incentive	B2	n.		
+inch	B2	n.		
+incidence	C1	n.		
+incident	B2	n.		
+inclined	C1	adj.		
+include	A1	v.		
+included	A2	adj.		
+including	A2	prep.		
+inclusion	C1	n.		
+income	B2	n.		
+incorporate	B2	v.		
+incorrect	B2	adj.		
+increase	A2	n.		
+increase	A2	v.		
+increasingly	B2	adv.		
+incredible	A2	adj.		
+incredibly	B1	adv.		
+incur	C1	v.		
+indeed	B1	adv.		
+independence	B2	n.		
+independent	A2	adj.		
+index	B2	n.		
+indicate	B1	v.		
+indication	B2	n.		
+indicator	C1	n.		
+indictment	C1	n.		
+indigenous	C1	adj.		
+indirect	B1	adj.		
+individual	A2	adj.		
+individual	A2	n.		
+indoor	B1	adj.		
+indoors	B1	adv.		
+induce	C1	v.		
+indulge	C1	v.		
+industrial	B2	adj.		
+industry	A2	n.		
+inequality	C1	n.		
+inevitable	B2	adj.		
+inevitably	B2	adv.		
+infamous	C1	adj.		
+infant	C1	n.		
+infect	C1	v.		
+infection	B2	n.		
+infer	B2	v.		
+inflation	B2	n.		
+inflict	C1	v.		
+influence	B1	n.		
+influence	B1	v.		
+influential	C1	adj.		
+info	B2	n.		
+inform	B2	v.		
+informal	A2	adj.		
+information	A1	n.		
+infrastructure	B2	n.		
+ingredient	B1	n.		
+inhabitant	B2	n.		
+inherent	C1	adj.		
+inherit	B2	v.		
+inhibit	C1	v.		
+initial	B2	adj.		
+initially	B2	adv.		
+initiate	C1	v.		
+initiative	B2	n.		
+inject	C1	v.		
+injection	C1	n.		
+injure	B1	v.		
+injured	B1	adj.		
+injury	A2	n.		
+injustice	C1	n.		
+ink	B2	n.		
+inmate	C1	n.		
+inner	B2	adj.		
+innocent	B1	adj.		
+innovation	B2	n.		
+innovative	B2	adj.		
+input	B2	n.		
+inquire	C1	v.	US	
+inquiry	B2	n.	US	
+insect	A2	n.		
+insert	B2	v.		
+insertion	C1	n.		
+inside	A2	adj.		
+inside	A2	adv.		
+inside	A2	n.		
+inside	A2	prep.		
+insider	C1	n.		
+insight	B2	n.		
+insist	B2	v.		
+inspect	C1	v.		
+inspection	C1	n.		
+inspector	B2	n.		
+inspiration	C1	n.		
+inspire	B2	v.		
+install	B2	v.		
+installation	B2	n.		
+instance	B2	n.		
+instant	B2	adj.		
+instantly	B2	adv.		
+instead	A2	adv.		
+instinct	C1	n.		
+institute	B2	n.		
+institution	B2	n.		
+institutional	C1	adj.		
+instruct	C1	v.		
+instruction	A2	n.		
+instructor	A2	n.		
+instrument	A2	n.		
+instrumental	C1	adj.		
+insufficient	C1	adj.		
+insult	C1	n.		
+insult	C1	v.		
+insurance	B2	n.		
+intact	C1	adj.		
+intake	C1	n.		
+integral	C1	adj.		
+integrate	B2	v.		
+integrated	C1	adj.		
+integration	C1	n.		
+integrity	C1	n.		
+intellectual	B2	adj.		
+intellectual	C1	n.		
+intelligence	B1	n.		
+intelligent	A2	adj.		
+intend	B1	v.		
+intended	B2	adj.		
+intense	B2	adj.		
+intensify	C1	v.		
+intensity	C1	n.		
+intensive	C1	adj.		
+intent	C1	n.		
+intention	B1	n.		
+interact	B2	v.		
+interaction	B2	n.		
+interactive	C1	adj.		
+interest	A1	n.		
+interest	A1	v.		
+interested	A1	adj.		
+interesting	A1	adj.		
+interface	C1	n.		
+interfere	C1	v.		
+interference	C1	n.		
+interim	C1	adj.		
+interior	C1	adj.		
+interior	C1	n.		
+intermediate	C1	adj.		
+internal	B2	adj.		
+international	A2	adj.		
+internet	A1	n.		
+interpret	B2	v.		
+interpretation	B2	n.		
+interrupt	B2	v.		
+intersection	C1	n.	US	
+interval	B2	n.		
+intervene	C1	v.		
+intervention	C1	n.		
+interview	A1	n.		
+interview	A1	v.		
+intimate	C1	adj.		
+into	A1	prep.		
+intriguing	C1	adj.		
+introduce	A1	v.		
+introduction	A2	n.		
+invade	B2	v.		
+invasion	B2	n.		
+invent	A2	v.		
+invention	A2	n.		
+inventory	C1	n.	US	
+invest	B1	v.		
+investigate	B1	v.		
+investigation	B2	n.		
+investigator	C1	n.		
+investment	B2	n.		
+investor	B2	n.		
+invisible	C1	adj.		
+invitation	A2	n.		
+invite	A2	v.		
+invoke	C1	v.		
+involve	A2	v.		
+involved	B1	adj.		
+involvement	C1	n.		
+iron	B1	n.		
+iron	B1	v.		
+ironic	C1	adj.		
+ironically	C1	adv.		
+irony	C1	n.		
+irrelevant	C1	adj.		
+island	A1	n.		
+isolate	B2	v.		
+isolated	B2	adj.		
+isolation	C1	n.		
+issue	B1	n.		
+issue	B2	v.		
+it	A1	pron.		
+item	A2	n.		
+its	A1	det.		
+itself	A2	pron.		
+jacket	A1	n.		
+jail	B2	n.		
+jail	B2	v.		
+jam	A2	n.		
+jazz	A2	n.		
+jeans	A1	n.		
+jet	B2	n.		
+jewellery	A2	n.	UK	
+jewelry	A2	n.	US	
+job	A1	n.		
+join	A1	v.		
+joint	B2	adj.		
+joint	B2	n.		
+joke	A2	n.		
+joke	A2	v.		
+journal	B1	n.		
+journalism	B2	n.		
+journalist	A2	n.		
+journey	A1	n.	UK	
+journey	B1	n.	US	
+joy	B2	n.		
+judge	B1	n.		
+judge	B1	v.		
+judgement	B2	n.	UK	
+judgment	B2	n.	US	
+judicial	C1	adj.		
+juice	A1	n.		
+jump	A2	n.		
+jump	A2	v.		
+junction	C1	n.	UK	
+junior	B2	adj.		
+jurisdiction	C1	n.		
+jury	B2	n.		
+just	A1	adv.		
+just	C1	adj.		
+justice	B2	n.		
+justification	C1	n.		
+justify	B2	v.		
+keen	B1	adj.	UK	
+keen	C1	adj.	US	
+keep	A1	v.		
+key	A1	adj.		
+key	A1	n.		
+key	B1	v.		
+keyboard	B1	n.		
+kick	B1	n.		
+kick	B1	v.		
+kid	A2	n.		
+kidnap	C1	v.		
+kidney	C1	n.		
+kill	A2	v.		
+killing	B1	n.		
+kilometer	A2	n.	US	
+kilometre	A1	n.	UK	
+kind	A1	n.		type
+kind	B1	adj.		caring
+kindergarten	B2	n.	US	
+king	A2	n.		
+kingdom	C1	n.		
+kiss	B1	n.		
+kiss	B1	v.		
+kit	B2	n.		
+kitchen	A1	n.		
+knee	A2	n.		
+knife	A2	n.		
+knock	A2	v.		
+knock	B1	n.		
+know	A1	v.		
+knowledge	A2	n.		
+lab	A2	n.		
+label	B1	n.		
+label	B1	v.		
+labor	B2	n.	US	
+laboratory	B1	n.		
+labour	B2	n.	UK	
+lack	B1	n.		
+lack	B1	v.		
+lad	C1	n.	UK	
+ladder	B2	n.		
+lady	A2	n.		
+lake	A2	n.		
+lamp	A2	n.		
+land	A1	n.		
+land	A2	v.		
+landing	B2	n.		
+landlord	C1	n.		
+landmark	C1	n.		
+landscape	B2	n.		
+lane	B2	n.		
+language	A1	n.		
+lap	C1	n.		
+laptop	A2	n.		
+large	A1	adj.		
+large-scale	C1	adj.		
+largely	B2	adv.		
+laser	C1	n.		
+last	A1	det.		final
+last	A2	adv.		final
+last	A2	n.		final
+last	A2	v.		taking time
+late	A1	adj.		
+late	A1	adv.		
+lately	B2	adv.		
+later	A1	adv.		
+later	A2	adj.		
+latest	B1	adj.		
+latest	B2	n.		
+latter	C1	adj.		
+latter	C1	n.		
+laugh	A1	n.		
+laugh	A1	v.		
+laughter	A2	n.		
+launch	B2	n.		
+launch	B2	v.		
+law	A2	n.		
+lawmaker	C1	n.	US	
+lawn	C1	n.		
+lawsuit	C1	n.		
+lawyer	A2	n.		
+lay	B1	v.		
+layer	B1	n.		
+layout	C1	n.		
+lazy	A2	adj.		
+lead	A2	v.		
+lead	B1	n.		
+leader	A2	n.		
+leadership	B2	n.		
+leading	B1	adj.		
+leaf	B1	n.		
+leaflet	B2	n.	UK	
+league	B2	n.		
+leak	C1	n.		
+leak	C1	v.		
+lean	B2	v.		
+leap	C1	n.		
+leap	C1	v.		
+learn	A1	v.		
+learning	A2	n.		
+least	A2	adv.		
+least	A2	det.		
+least	A2	pron.		
+leather	B1	n.		
+leave	A1	v.		
+leave	B2	n.		
+lecture	A2	n.		
+lecture	A2	v.		
+left	A1	adj.		
+left	A1	adv.		
+left	A1	n.		
+leg	A1	n.		
+legacy	C1	n.		
+legal	B1	adj.		
+legend	B2	n.		
+legendary	C1	adj.		
+legislation	C1	n.		
+legislative	C1	adj.		
+legislature	C1	n.		
+legitimate	C1	adj.		
+leisure	B1	n.		
+lemon	A2	n.		
+lend	A2	v.		
+length	B1	n.		
+lengthy	C1	adj.		
+lens	B2	n.		
+lesbian	C1	adj.		
+less	A2	adv.		
+less	A2	det.		
+less	A2	pron.		
+lesser	C1	adj.		
+lesson	A1	n.		
+let	A1	v.		
+lethal	C1	adj.		
+letter	A1	n.		
+level	A2	n.		
+level	B1	adj.		
+level	B2	v.		
+liable	C1	adj.		
+liberal	C1	adj.		
+liberal	C1	n.		
+liberation	C1	n.		
+liberty	C1	n.		
+library	A1	n.		
+licence	B2	n.	UK	
+license	B2	n.	US	
+license	C1	v.	UK	
+lie	A1	v.		
+lie	B1	n.		tell a lie
+lie	B1	v.		tell a lie
+life	A1	n.		
+lifelong	C1	adj.		
+lifestyle	A2	n.		
+lifetime	B2	n.		
+lift	A2	n.	UK	
+lift	A2	v.	UK	
+lift	A2	v.	US	
+light	A1	adj.		from the sun/a lamp
+light	A1	n.		from the sun/a lamp
+light	A2	adj.		not heavy
+light	A2	v.		from the sun/a lamp
+lighting	B2	n.		
+like	A1	prep.		similar
+like	A1	v.		find sb/sth pleasant
+like	B1	n.		find sb/sth pleasant
+likelihood	C1	n.		
+likely	A2	adj.		
+likewise	B2	adv.		
+limb	C1	n.		
+limit	B1	n.		
+limit	B1	v.		
+limitation	B2	n.		
+limited	B2	adj.		
+line	A1	n.		
+line	B2	v.		
+line-up	C1	n.	UK	
+linear	C1	adj.		
+lineup	C1	n.	US	
+linger	C1	v.		
+link	A2	n.		
+link	A2	v.		
+lion	A1	n.		
+lip	B1	n.		
+liquid	B1	adj.		
+liquid	B1	n.		
+list	A1	n.		
+list	A1	v.		
+listen	A1	v.		
+listener	A2	n.		
+listing	C1	n.		
+liter	C1	n.	US	
+literacy	C1	n.		
+literally	B2	adv.		
+literary	B2	adj.		
+literature	B1	n.		
+litre	B2	n.	UK	
+litter	B2	n.		
+little	A1	adj.		
+little	A1	det.		
+little	A1	pron.		
+little	A2	adv.		
+live	A1	v.		
+live	B1	adj.		
+live	B1	adv.		
+lively	B2	adj.		
+liver	C1	n.		
+living	B1	adj.		
+living	B1	n.		
+load	B2	n.		
+load	B2	v.		
+loan	B2	n.		
+lobby	C1	n.		
+lobby	C1	v.		
+local	A1	adj.		
+local	B1	n.		
+locate	B1	v.		
+located	B1	adj.		
+location	B1	n.		
+lock	A2	n.		
+lock	A2	v.		
+log	C1	n.		
+log	C1	v.		
+logic	C1	n.		
+logical	B2	adj.		
+logo	B2	n.		
+lonely	B1	adj.		
+long	A1	adj.		
+long	A1	adv.		
+long-standing	C1	adj.		
+long-term	B2	adj.		
+long-term	B2	adv.		
+long-time	C1	adj.	UK	
+longtime	C1	adj.	US	
+look	A1	v.		
+look	A2	n.		
+loom	C1	v.		
+loop	C1	n.		
+loose	B2	adj.		
+lord	B2	n.		
+lorry	A2	n.	UK	
+lose	A1	v.		
+loss	B1	n.		
+lost	A2	adj.		
+lot	A1	adv.		
+lot	A1	det.		
+lot	A1	pron.		
+lottery	B2	n.		
+loud	A2	adj.		
+loud	A2	adv.		
+loudly	A2	adv.		
+love	A1	n.		
+love	A1	v.		
+lovely	A2	adj.	UK	
+low	A2	adj.		
+low	A2	adv.		
+low	B2	n.		
+lower	B2	v.		
+loyal	B2	adj.		
+loyalty	C1	n.		
+luck	A2	n.		
+lucky	A2	adj.		
+lunch	A1	n.		
+lung	B2	n.		
+luxury	B1	n.		
+lyric	B2	n.		
+machine	A1	n.		
+machinery	C1	n.		
+mad	B1	adj.		
+magazine	A1	n.		
+magic	B1	adj.		
+magic	B1	n.		
+magical	C1	adj.		
+magistrate	C1	n.	UK	
+magnetic	C1	adj.		
+magnificent	B2	adj.		
+magnitude	C1	n.		
+mail	A2	n.		
+mail	A2	v.		
+main	A1	adj.		
+mainland	C1	n.		
+mainly	B1	adv.		
+mainstream	C1	adj.		
+mainstream	C1	n.		
+maintain	B2	v.		
+maintenance	C1	n.		
+major	A2	adj.	UK	
+major	A2	adj.	US	
+major	B2	n.	US	
+majority	B2	n.		
+make	A1	v.		
+make	B2	n.		
+make-up	B2	n.	UK	
+makeup	B2	n.	US	
+making	B2	n.		
+male	A2	adj.		
+male	A2	n.		
+mall	A1	n.	US	
+mall	B1	n.	UK	
+man	A1	n.		
+manage	A2	v.		
+management	B1	n.		
+manager	A2	n.		
+mandate	C1	n.		
+mandatory	C1	adj.		
+manifest	C1	v.		
+manipulate	C1	v.		
+manipulation	C1	n.		
+manner	A2	n.		
+manufacture	B2	v.		
+manufacturing	B2	n.		
+manuscript	C1	n.		
+many	A1	det.		
+many	A1	pron.		
+map	A1	n.		
+map	B2	v.		
+marathon	B2	n.		
+march	C1	n.		
+march	C1	v.		
+margin	B2	n.		
+marginal	C1	adj.		
+marine	C1	adj.		
+mark	A2	n.		
+mark	A2	v.		
+marker	B2	n.		
+market	A1	n.		
+market	B1	v.		
+marketing	B1	n.		
+marketplace	C1	n.		
+marriage	B1	n.		
+married	A1	adj.		
+marry	A2	v.		
+martial	B2	adj.		
+mask	C1	n.		
+mass	B2	adj.		
+mass	B2	n.		
+massacre	C1	n.		
+massive	B2	adj.		
+master	B2	n.		
+master	B2	v.		
+match	A1	n.		contest/correspond
+match	A1	v.		contest/correspond
+matching	B2	adj.		
+mate	B2	n.		
+mate	B2	v.		
+material	A2	n.		
+material	B2	adj.		
+math	A2	n.	US	
+mathematical	C1	adj.		
+mathematics	A2	n.		
+maths	A2	n.	UK	
+matter	A2	n.		
+matter	A2	v.		
+mature	C1	adj.		
+mature	C1	v.		
+maximize	C1	v.		
+maximum	B2	adj.		
+maximum	B2	n.		
+may	A2	modal v.		
+maybe	A1	adv.		
+mayor	A2	n.	US	
+mayor	B2	n.	UK	
+me	A1	pron.		
+meal	A1	n.		
+mean	A1	v.		
+meaning	A1	n.		
+meaningful	C1	adj.		
+means	B2	n.		
+meantime	C1	n.		
+meanwhile	B1	adv.		
+measure	B1	n.		
+measure	B1	v.		
+measurement	B2	n.		
+meat	A1	n.		
+mechanic	B2	n.		
+mechanical	B2	adj.		
+mechanism	B2	n.		
+medal	B2	n.		
+media	A2	n.		
+medical	A2	adj.		
+medication	B2	n.		
+medicine	A2	n.		
+medieval	C1	adj.		
+meditation	C1	n.		
+medium	B1	adj.		
+medium	B2	n.		
+meet	A1	v.		
+meeting	A1	n.		
+melody	C1	n.		
+melt	B2	v.		
+member	A1	n.		
+membership	B2	n.		
+memo	C1	n.		
+memoir	C1	n.		
+memorable	B2	adj.		
+memorial	C1	n.		
+memory	A2	n.		
+mental	B1	adj.		
+mention	A2	v.		
+mention	B1	n.		
+mentor	C1	n.		
+menu	A1	n.		
+merchant	C1	n.		
+mercy	C1	n.		
+mere	C1	adj.		
+merely	C1	adv.		
+merge	C1	v.		
+merger	C1	n.		
+merit	C1	n.		
+mess	B1	n.		
+mess	B1	v.		
+message	A1	n.		
+metal	A2	n.		
+metaphor	B2	n.		
+meter	A1	n.	US	
+method	A2	n.		
+methodology	C1	n.		
+metre	A1	n.	UK	
+middle	A2	adj.		
+middle	A2	n.		
+midnight	A1	n.		
+midst	C1	n.		
+might	A2	modal v.		
+migration	C1	n.		
+mild	B1	adj.		
+mile	A1	n.		
+militant	C1	adj.		
+militant	C1	n.		
+military	B2	adj.		
+military	B2	n.		
+militia	C1	n.		
+milk	A1	n.		
+mill	C1	n.		
+million	A1	number		
+mind	A2	n.		
+mind	A2	v.		
+mine	A2	pron.		belongs to me
+mine	B1	n.		hole in the ground
+miner	B2	n.		
+mineral	B2	n.		
+minimal	C1	adj.		
+minimize	C1	v.		
+minimum	B2	adj.		
+minimum	B2	n.		
+mining	C1	n.		
+minister	B2	n.		
+ministry	C1	n.		
+minor	B2	adj.		
+minority	B2	n.		
+minute	A1	n.		
+minute	C1	adj.		
+miracle	C1	n.		
+mirror	A2	n.		
+miserable	B2	adj.		
+misery	C1	n.		
+misleading	C1	adj.		
+miss	A1	v.		
+missile	C1	n.		
+missing	A2	adj.		
+mission	B2	n.		
+mistake	A1	n.		
+mistake	B2	v.		
+mix	B1	n.		
+mix	B1	v.		
+mixed	B2	adj.		
+mixture	B1	n.		
+mob	C1	n.		
+mobile	A2	adj.	UK	
+mobile	A2	n.	UK	
+mobile	C1	adj.	US	
+mobility	C1	n.		
+mobilize	C1	v.		
+mode	B2	n.		
+model	A1	n.		
+model	B2	v.		
+moderate	C1	adj.		
+modern	A1	adj.		
+modest	B2	adj.		
+modification	C1	n.		
+modify	B2	v.		
+module	C1	n.	US	
+mom	A1	n.	US	
+moment	A1	n.		
+momentum	C1	n.		
+money	A1	n.		
+monitor	B2	n.		
+monitor	B2	v.		
+monk	C1	n.		
+monkey	A2	n.		
+monopoly	C1	n.		
+monster	B2	n.		
+month	A1	n.		
+monthly	B2	adj.		
+monument	B2	n.		
+mood	B1	n.		
+moon	A2	n.		
+moral	B2	adj.		
+moral	B2	n.		
+morality	C1	n.		
+more	A1	adv.		
+more	A1	det.		
+more	A1	pron.		
+moreover	B2	adv.		
+morning	A1	n.		
+mortgage	B2	n.		
+mosque	B2	n.		
+mosquito	B2	n.	US	
+most	A1	adv.		
+most	A1	det.		
+most	A1	pron.		
+mostly	A2	adv.		
+mother	A1	n.		
+motion	B2	n.		
+motivate	B2	v.		
+motivation	B2	n.		
+motive	C1	n.		
+motor	B2	adj.		
+motor	B2	n.		
+motorcycle	A2	n.		
+motorist	C1	n.	UK	
+mount	B2	v.		
+mountain	A1	n.		
+mouse	A1	n.		
+mouth	A1	n.		
+move	A1	v.		
+move	B1	n.		
+movement	A2	n.		
+movie	A1	n.		
+moving	B2	adj.		
+much	A1	adv.		
+much	A1	det.		
+much	A1	pron.		
+mud	B1	n.		
+multiple	B2	adj.		
+multiply	B2	v.		
+mum	A1	n.	UK	
+municipal	C1	adj.		
+murder	B1	n.		
+murder	B1	v.		
+muscle	B1	n.		
+museum	A1	n.		
+music	A1	n.		
+musical	A2	adj.		
+musical	B1	n.		
+musician	A2	n.		
+must	A1	modal v.		
+mutual	C1	adj.		
+my	A1	det.		
+myself	A2	pron.		
+mysterious	B2	adj.		
+mystery	B1	n.		
+myth	B2	n.		
+nail	B1	n.		
+naked	B2	adj.		
+name	A1	n.		
+name	A1	v.		
+namely	C1	adv.		
+narrative	B1	adj.		
+narrative	B1	n.		
+narrow	A2	adj.		
+narrow	B2	v.		
+nasty	B2	adj.		
+nation	B1	n.		
+national	A2	adj.		
+national	B2	n.		
+nationwide	C1	adj.		
+native	B1	adj.		
+native	B1	n.		
+natural	A1	adj.		
+naturally	B1	adv.		
+nature	A2	n.		
+naval	C1	adj.		
+navigation	B2	n.		
+near	A1	adj.		
+near	A1	adv.		
+near	A1	prep.		
+nearby	B2	adj.		
+nearby	B2	adv.		
+nearly	A2	adv.		
+neat	B1	adj.	US	
+neat	B2	adj.	UK	
+necessarily	B1	adv.		
+necessary	A2	adj.		
+necessity	B2	n.		
+neck	A2	n.		
+need	A1	v.		
+need	A2	n.		
+need	B1	modal v.		
+needle	B1	n.		
+negative	A1	adj.		
+negative	B2	n.		
+neglect	C1	n.		
+neglect	C1	v.		
+negotiate	B2	v.		
+negotiation	B2	n.		
+neighbor	A1	n.	US	
+neighborhood	A1	n.	US	
+neighboring	C1	adj.	US	
+neighbour	A1	n.	UK	
+neighbourhood	B1	n.	UK	
+neighbouring	C1	adj.	UK	
+neither	A2	det.		
+neither	A2	pron.		
+neither	B1	adv.		
+nerve	B2	n.		
+nervous	A2	adj.		
+nest	C1	n.		
+net	B1	n.		
+net	C1	adj.		
+network	A2	n.		
+neutral	B2	adj.		
+never	A1	adv.		
+nevertheless	B2	adv.		
+new	A1	adj.		
+newly	B2	adv.		
+news	A1	n.		
+newsletter	C1	n.		
+newspaper	A1	n.		
+next	A1	adj.		
+next	A1	adv.		
+next	B1	n.		
+next to	A1	prep.		
+nice	A1	adj.		
+niche	C1	n.		
+nickel	B2	n.	US	
+night	A1	n.		
+nightmare	B2	n.		
+nine	A1	number		
+nineteen	A1	number		
+ninety	A1	number		
+no	A1	det.		
+no	A1	exclam.		
+no one	A1	pron.		
+noble	C1	adj.		
+nobody	A1	pron.		
+nod	C1	v.		
+noise	A2	n.		
+noisy	A2	adj.		
+nominate	C1	v.		
+nomination	C1	n.		
+nominee	C1	n.		
+non-profit	C1	adj.	UK	
+none	A2	pron.		
+nonetheless	C1	adv.		
+nonprofit	C1	adj.	US	
+nonsense	C1	n.		
+noon	C1	n.		
+nor	B1	adv.		
+nor	B1	conj.		
+norm	B2	n.		
+normal	A2	adj.		
+normal	B1	n.		
+normally	A2	adv.		
+north	A1	adj.		
+north	A1	adv.		
+north	A1	n.		
+northern	B1	adj.		
+nose	A1	n.		
+not	A1	adv.		
+notable	C1	adj.		
+notably	C1	adv.		
+note	A1	n.		
+note	B1	v.		
+notebook	B2	n.		
+nothing	A1	pron.		
+notice	A2	n.		
+notice	A2	v.		
+notify	C1	v.		
+notion	B2	n.		
+notorious	C1	adj.		
+novel	A2	n.		
+novel	C1	adj.		
+novelist	B2	n.		
+now	A1	adv.		
+now	B1	conj.		
+nowadays	B2	adv.		
+nowhere	A2	adv.		
+nuclear	B1	adj.		
+number	A1	n.		
+number	A2	v.		
+numerous	B2	adj.		
+nurse	A1	n.		
+nursery	C1	n.		
+nursing	B2	adj.		
+nut	A2	n.		
+nutrition	B2	n.		
+obesity	B2	n.		
+obey	B2	v.		
+object	A1	n.		
+object	B2	v.		
+objection	C1	n.		
+objective	B2	adj.		
+objective	B2	n.		
+obligation	B2	n.		
+oblige	C1	v.		
+observation	B2	n.		
+observe	B2	v.		
+observer	B2	n.		
+obsess	C1	v.		
+obsession	C1	n.		
+obstacle	B2	n.		
+obtain	B2	v.		
+obvious	B1	adj.		
+obviously	B1	adv.		
+occasion	B1	n.		
+occasional	C1	adj.		
+occasionally	B2	adv.		
+occupation	B2	n.		
+occupy	B2	v.		
+occur	B1	v.		
+occurrence	C1	n.		
+ocean	A1	n.	US	
+ocean	A2	n.	UK	
+odd	B1	adj.		
+odds	C1	n.		
+of	A1	prep.		
+off	A1	adv.		
+off	A1	prep.		
+offence	B2	n.	UK	
+offend	B2	v.		
+offender	B2	n.		
+offense	B2	n.	US	
+offensive	B2	adj.		
+offer	A2	n.		
+offer	A2	v.		
+offering	C1	n.		
+office	A1	n.		
+officer	A2	n.		
+official	B1	adj.		
+official	B2	n.		
+offspring	C1	n.		
+often	A1	adv.		
+oh	A1	exclam.		
+oil	A2	n.		
+old	A1	adj.		
+old-fashioned	B1	adj.		
+on	A1	adv.		
+on	A1	prep.		
+once	A1	adv.		
+once	B1	conj.		
+one	A1	det.		
+one	A1	number		
+one	A1	pron.		
+ongoing	B2	adj.		
+onion	A1	n.		
+online	A1	adj.		
+online	A1	adv.		
+only	A1	adj.		
+only	A1	adv.		
+onto	A2	prep.		
+open	A1	adj.		
+open	A1	v.		
+opening	B2	n.		
+openly	B2	adv.		
+opera	B2	n.		
+operate	B2	v.		
+operation	B1	n.		
+operational	C1	adj.		
+operator	B2	n.		
+opinion	A1	n.		
+opponent	B2	n.		
+opportunity	A2	n.		
+oppose	B2	v.		
+opposed	B2	adj.		
+opposite	A1	adj.		
+opposite	A1	adv.		
+opposite	A1	n.		
+opposite	A1	prep.		
+opposition	B2	n.		
+opt	C1	v.		
+optical	C1	adj.		
+optimism	C1	n.		
+optimistic	B2	adj.		
+option	A2	n.		
+or	A1	conj.		
+oral	C1	adj.		
+orange	A1	adj.		
+orange	A1	n.		
+orchestra	B2	n.		
+order	A1	n.		
+order	A1	v.		
+ordinary	A2	adj.		
+organ	B2	n.		
+organic	B2	adj.		
+organization	A2	n.		
+organizational	C1	adj.		
+organize	A2	v.		
+organized	B1	adj.		
+organizer	B1	n.		
+orientation	C1	n.		
+origin	B2	n.		
+original	A2	adj.		
+original	B1	n.		
+originally	B1	adv.		
+originate	C1	v.		
+other	A1	adj.		
+other	A1	pron.		
+otherwise	B2	adv.		
+ought	B1	modal v.		
+our	A1	det.		
+ours	B1	pron.		
+ourselves	A2	pron.		
+out	A1	adv.		
+out	A1	prep.		
+outbreak	C1	n.		
+outcome	B2	n.		
+outdoor	B1	adj.		
+outdoors	B1	adv.		
+outer	B2	adj.		
+outfit	B2	n.		
+outing	C1	n.		
+outlet	C1	n.		
+outline	B2	n.		
+outline	B2	v.		
+outlook	C1	n.		
+output	B2	n.		
+outrage	C1	n.		
+outrage	C1	v.		
+outside	A1	adv.		
+outside	A2	adj.		
+outside	A2	n.		
+outside	A2	prep.		
+outsider	C1	n.		
+outstanding	B2	adj.		
+oven	A2	n.		
+over	A1	adv.		
+over	A1	prep.		
+overall	B2	adj.		
+overall	B2	adv.		
+overcome	B2	v.		
+overlook	C1	v.		
+overly	C1	adv.		
+overnight	B2	adv.		
+overseas	A2	adv.	US	
+overseas	B1	adj.	US	
+overseas	B2	adj.	UK	
+overseas	B2	adv.	UK	
+oversee	C1	v.		
+overturn	C1	v.		
+overwhelm	C1	v.		
+overwhelming	C1	adj.		
+owe	B2	v.		
+own	A1	adj.		
+own	A1	pron.		
+own	A2	v.		
+owner	A2	n.		
+ownership	B2	n.		
+oxygen	B2	n.		
+o’clock	A1	adv.		
+pace	B2	n.		
+pace	B2	v.		
+pack	A2	v.		
+pack	B1	n.		
+package	B1	n.		
+package	B2	v.		
+packet	B2	n.		
+pad	C1	n.		
+page	A1	n.		
+pain	A2	n.		
+painful	B1	adj.		
+paint	A1	n.		
+paint	A1	v.		
+painter	A2	n.		
+painting	A1	n.		
+pair	A1	n.		
+palace	A2	n.		
+pale	B1	adj.		
+palm	B2	n.		
+pan	B1	n.		
+panel	B2	n.		
+panic	B2	n.		
+pants	A1	n.	US	
+pants	A2	n.	UK	
+paper	A1	n.		
+parade	B2	n.		
+paragraph	A1	n.		
+parallel	B2	adj.		
+parallel	B2	n.		
+parameter	C1	n.		
+parent	A1	n.		
+parental	C1	adj.		
+parish	C1	n.	UK	
+park	A1	n.		
+park	A1	v.		
+parking	A2	n.		
+parliament	B2	n.	UK	
+parliament	C1	n.	US	
+parliamentary	C1	adj.	UK	
+part	A1	n.		
+part-time	B2	adj.		
+part-time	B2	adv.		
+partial	C1	adj.		
+partially	C1	adv.		
+participant	B2	n.		
+participate	B1	v.		
+participation	B2	n.		
+particular	A2	adj.		
+particularly	B1	adv.		
+partly	B2	adv.		
+partner	A1	n.		
+partnership	B2	n.		
+party	A1	n.		
+pass	A2	v.		
+pass	B1	n.		
+passage	B2	n.		
+passenger	A2	n.		
+passing	C1	n.		
+passion	B1	n.		
+passionate	B2	adj.		
+passive	C1	adj.		
+passport	A1	n.		
+password	B2	n.		
+past	A1	adj.		
+past	A1	n.		
+past	A1	prep.		
+past	A2	adv.		
+pastor	C1	n.		
+patch	B2	n.	US	
+patch	C1	n.	UK	
+patent	C1	n.		
+path	B1	n.		
+pathway	C1	n.		
+patience	B2	n.		
+patient	A2	n.		
+patient	B2	adj.		
+patrol	C1	n.		
+patrol	C1	v.		
+patron	C1	n.		
+pattern	A2	n.		
+pause	B2	n.		
+pause	B2	v.		
+pay	A1	v.		
+pay	A2	n.		
+payment	B1	n.		
+peace	A2	n.		
+peaceful	B1	adj.		
+peak	C1	n.		
+peasant	C1	n.		
+peculiar	C1	adj.		
+peer	B2	n.		
+pen	A1	n.		
+penalty	B2	n.		
+pencil	A1	n.		
+penny	A2	n.		
+pension	B2	n.	UK	
+pension	C1	n.	US	
+people	A1	n.		
+pepper	A1	n.		
+per	A2	prep.		
+per cent	A2	adj.	UK	
+per cent	A2	adv.	UK	
+per cent	A2	n.	UK	
+perceive	B2	v.		
+percent	A2	adj.	US	
+percent	A2	adv.	US	
+percent	A2	n.	US	
+percentage	B1	n.		
+perception	B2	n.		
+perfect	A1	adj.		
+perfectly	B1	adv.		
+perform	A2	v.		
+performance	B1	n.		
+perhaps	A2	adv.		
+period	A1	n.		
+permanent	B2	adj.		
+permanently	B2	adv.		
+permission	A2	n.		
+permit	B2	n.		
+permit	B2	v.		
+persist	C1	v.		
+persistent	C1	adj.		
+person	A1	n.		
+personal	A1	adj.		
+personality	A2	n.		
+personally	B1	adv.		
+personnel	C1	n.		
+perspective	B2	n.		
+persuade	B1	v.		
+pet	A2	n.		
+petition	C1	n.		
+petrol	A2	n.	UK	
+pharmacy	B2	n.	US	
+phase	B2	n.		
+phenomenon	B2	n.		
+philosopher	C1	n.		
+philosophical	C1	adj.		
+philosophy	B2	n.		
+phone	A1	n.		
+phone	A1	v.		
+photo	A1	n.		
+photograph	A1	n.		
+photograph	A2	v.		
+photographer	B1	n.		
+photography	B1	n.		
+phrase	A1	n.		
+physical	A2	adj.		
+physician	B2	n.	US	
+physician	C1	n.	UK	
+physics	A2	n.		
+piano	A1	n.		
+pick	A2	v.		
+pick	B2	n.		
+picture	A1	n.		
+picture	B2	v.		
+piece	A1	n.		
+pig	A1	n.		
+pile	B2	n.		
+pile	B2	v.		
+pill	B2	n.		
+pilot	A2	n.		
+pin	B1	n.		
+pin	B1	v.		
+pink	A1	adj.		
+pink	A1	n.		
+pioneer	C1	n.		
+pioneer	C1	v.		
+pipe	B1	n.		
+pipeline	C1	n.		
+pirate	C1	n.		
+pit	C1	n.		
+pitch	B2	n.		
+pity	B2	n.		
+place	A1	n.		
+place	B1	v.		
+placement	B2	n.		
+plain	B2	adj.		
+plan	A1	n.		
+plan	A1	v.		
+plane	A1	n.		
+planet	A2	n.		
+planning	B1	n.		
+plant	A1	n.		
+plant	A2	v.		
+plastic	A2	adj.		
+plastic	A2	n.		
+plate	A2	n.		
+platform	A2	n.		
+play	A1	n.		
+play	A1	v.		
+player	A1	n.		
+plea	C1	n.		
+plead	C1	v.		
+pleasant	B1	adj.		
+please	A1	exclam.		
+please	A2	v.		
+pleased	A2	adj.		
+pleasure	B1	n.		
+pledge	C1	n.		
+pledge	C1	v.		
+plenty	B1	pron.		
+plot	B1	n.		
+plot	B2	v.		
+plug	C1	n.		
+plug	C1	v.		
+plunge	C1	v.		
+plus	B1	prep.		
+plus	B2	adj.		
+plus	B2	conj.		
+plus	B2	n.		
+pocket	A2	n.		
+poem	B1	n.		
+poet	B1	n.		
+poetry	B1	n.		
+point	A1	n.		
+point	B1	v.		
+pointed	B2	adj.		
+poison	B1	n.		
+poison	B1	v.		
+poisonous	B1	adj.		
+pole	C1	n.		
+police	A1	n.		
+policeman	A1	n.		
+policy	B1	n.		
+polite	A2	adj.		
+political	B1	adj.		
+politician	B1	n.		
+politics	B1	n.		
+poll	C1	n.		
+pollution	A2	n.		
+pond	C1	n.		
+pool	A1	n.		
+poor	A1	adj.		
+pop	A2	adj.		
+pop	A2	n.		
+pop	C1	v.		
+popular	A1	adj.		
+popularity	B2	n.		
+population	A2	n.		
+port	B1	n.		
+portfolio	C1	n.		
+portion	B2	n.		
+portrait	B1	n.		
+portray	C1	v.		
+pose	B2	v.		
+position	A2	n.		
+position	B2	v.		
+positive	A1	adj.		
+positive	B2	n.		
+possess	B2	v.		
+possession	A2	n.		
+possibility	A2	n.		
+possible	A1	adj.		
+possibly	B1	adv.		
+post	A1	n.		
+post	A1	v.		
+post-war	C1	adj.	UK	
+poster	A2	n.		
+postpone	C1	v.		
+postwar	C1	adj.	US	
+pot	B1	n.		
+potato	A1	n.		
+potential	B2	adj.		
+potential	B2	n.		
+potentially	B2	adv.		
+pound	A1	n.		
+pour	B1	v.		
+poverty	B1	n.		
+powder	B1	n.		
+power	A2	n.		
+power	B2	v.		
+powerful	B1	adj.		
+practical	B1	adj.		
+practice	A1	n.	UK	
+practice	A1	n.	US	
+practice	A1	v.	US	
+practise	A1	v.	UK	
+practitioner	C1	n.		
+praise	B2	n.		
+praise	B2	v.		
+pray	B1	v.		
+prayer	B1	n.		
+preach	C1	v.		
+precede	B2	v.		
+precedent	C1	n.		
+precious	B2	adj.		
+precise	B2	adj.		
+precisely	B2	adv.		
+precision	C1	n.		
+predator	C1	n.		
+predecessor	C1	n.		
+predict	A2	v.		
+predictable	B2	adj.		
+prediction	B1	n.		
+predominantly	C1	adv.		
+prefer	A1	v.		
+preference	B2	n.		
+pregnancy	C1	n.		
+pregnant	B2	adj.		
+prejudice	C1	n.		
+preliminary	C1	adj.		
+premier	C1	n.		
+premise	C1	n.		
+premium	C1	n.		
+preparation	B2	n.		
+prepare	A1	v.		
+prepared	B1	adj.		
+prescribe	C1	v.		
+prescription	C1	n.		
+presence	B2	n.		
+present	A1	adj.		
+present	A1	n.		
+present	A2	v.		
+presentation	B1	n.		
+presently	C1	adv.		
+preservation	C1	n.		
+preserve	B2	v.		
+preside	C1	v.		
+presidency	C1	n.		
+president	A2	n.		
+presidential	B2	adj.	US	
+presidential	C1	adj.	UK	
+press	B1	n.		
+press	B1	v.		
+pressure	B1	n.		
+prestigious	C1	adj.		
+presumably	C1	adv.		
+presume	C1	v.		
+pretend	B1	v.		
+pretty	A1	adj.		
+pretty	A1	adv.		
+prevail	C1	v.		
+prevalence	C1	n.		
+prevent	A2	v.		
+prevention	C1	n.		
+previous	B1	adj.		
+previously	B1	adv.		
+prey	C1	n.		
+price	A1	n.		
+price	B2	v.		
+pride	B2	n.		
+priest	B1	n.		
+primarily	B2	adv.		
+primary	B1	adj.		
+prime	B2	adj.		
+prince	B1	n.		
+princess	B1	n.		
+principal	B1	n.	US	
+principal	B2	adj.		
+principal	B2	adj.	US	
+principal	C1	n.		
+principle	B2	n.		
+print	A2	v.		
+print	B2	n.		
+printer	A2	n.		
+printing	B1	n.		
+prior	B2	adj.		
+priority	B2	n.		
+prison	A2	n.		
+prisoner	B1	n.		
+privacy	B2	n.		
+private	B1	adj.		
+privatization	C1	n.		
+privilege	C1	n.		
+prize	A2	n.		
+probability	B2	n.		
+probable	B2	adj.		
+probably	A1	adv.		
+probe	C1	n.		
+probe	C1	v.		
+problem	A1	n.		
+problematic	C1	adj.		
+procedure	B2	n.		
+proceed	B2	v.		
+proceeding	C1	n.	US	
+proceedings	C1	n.	UK	
+proceeds	C1	n.		
+process	A2	n.		
+process	B2	v.		
+processing	C1	n.		
+processor	C1	n.		
+proclaim	C1	v.		
+produce	A2	v.		
+produce	B2	v.		
+producer	B1	n.		
+product	A1	n.		
+production	B1	n.		
+productive	C1	adj.		
+productivity	C1	n.		
+profession	B1	n.		
+professional	A2	adj.		
+professional	B2	n.		
+professor	A2	n.		
+profile	A2	n.		
+profit	B1	n.		
+profitable	C1	adj.		
+profound	C1	adj.		
+program	A1	n.	US	
+program	A2	n.	UK	
+program	B1	v.	UK	
+program	B1	v.	US	
+programme	A1	n.	UK	
+programming	B2	n.		
+progress	A2	n.	UK	
+progress	A2	n.	US	
+progress	A2	v.	US	
+progress	B2	v.	UK	
+progressive	B2	adj.		
+prohibit	B2	v.		
+project	A1	n.		
+project	B2	v.		
+projection	C1	n.		
+prominent	C1	adj.		
+promise	A2	n.		
+promise	A2	v.		
+promising	B2	adj.		
+promote	B1	v.		
+promotion	B2	n.		
+prompt	B2	v.		
+pronounce	A2	v.		
+pronounced	C1	adj.		
+proof	B2	n.		
+propaganda	C1	n.		
+proper	B1	adj.		
+properly	B1	adv.		
+property	B1	n.		
+proportion	B2	n.		
+proposal	B2	n.		
+propose	B2	v.		
+proposition	C1	n.		
+prosecute	C1	v.		
+prosecution	C1	n.		
+prosecutor	C1	n.		
+prospect	B2	n.		
+prospective	C1	adj.		
+prosperity	C1	n.		
+protect	A2	v.		
+protection	B2	n.		
+protective	C1	adj.		
+protein	B2	n.		
+protest	B1	n.		
+protest	B1	v.		
+protester	B2	n.		
+protocol	C1	n.		
+proud	B1	adj.		
+prove	B1	v.		
+provide	A2	v.		
+province	C1	n.		
+provincial	C1	adj.		
+provision	C1	n.		
+provoke	C1	v.		
+psychiatric	C1	adj.		
+psychological	B2	adj.		
+psychologist	B2	n.		
+psychology	B2	n.		
+pub	A2	n.	UK	
+public	A2	adj.		
+public	A2	n.		
+publication	B2	n.		
+publicity	B2	n.		
+publish	A2	v.		
+publishing	B2	n.		
+pull	A2	v.		
+pull	B1	n.		
+pulse	C1	n.		
+pump	C1	n.		
+pump	C1	v.		
+punch	C1	n.		
+punch	C1	v.		
+punish	B1	v.		
+punishment	B1	n.		
+punk	B2	n.		
+pupil	B2	n.	UK	
+purchase	B2	n.		
+purchase	B2	v.		
+pure	B2	adj.		
+purely	B2	adv.		
+purple	A1	adj.		
+purple	A1	n.		
+purpose	A2	n.		
+pursue	B2	v.		
+pursuit	B2	n.		
+push	A2	v.		
+push	B1	n.		
+put	A1	v.		
+puzzle	B2	n.		
+qualification	B1	n.		
+qualified	B1	adj.		
+qualify	B1	v.		
+quality	A2	n.		
+quantity	A2	n.		
+quarter	A1	n.		
+queen	A2	n.		
+query	C1	n.		
+quest	C1	n.		
+question	A1	n.		
+question	A2	v.		
+questionnaire	B2	n.		
+queue	B1	n.	UK	
+queue	B1	v.	UK	
+quick	A1	adj.		
+quickly	A1	adv.		
+quiet	A1	adj.		
+quietly	A2	adv.		
+quit	B1	v.		
+quite	A1	adv.		
+quota	C1	n.		
+quotation	B1	n.		
+quote	B1	n.		
+quote	B1	v.		
+race	A2	n.	UK	competition
+race	A2	n.	US	competition
+race	A2	v.	UK	competition
+race	A2	v.	US	competition
+race	B1	n.	UK	people
+race	B1	n.	US	of people
+racial	B2	adj.		
+racing	B1	n.		
+racism	B2	n.		
+racist	B2	adj.		
+racist	B2	n.		
+radar	C1	n.		
+radiation	B2	n.		
+radical	C1	adj.		
+radio	A1	n.		
+rage	C1	n.		
+raid	C1	n.		
+raid	C1	v.		
+rail	B2	n.		
+railroad	A2	n.	US	
+railway	A2	n.	UK	
+rain	A1	n.		
+rain	A1	v.		
+raise	A2	v.	UK	
+raise	A2	v.	US	
+raise	B1	n.	US	
+rally	C1	n.		
+rally	C1	v.		
+random	B2	adj.		
+range	B1	n.		
+range	B2	v.		
+rank	B2	n.		
+rank	B2	v.		
+ranking	C1	n.		
+rape	C1	n.		
+rape	C1	v.		
+rapid	B2	adj.		
+rapidly	B2	adv.		
+rare	B1	adj.		
+rarely	B1	adv.		
+rat	B2	n.		
+rate	A2	n.		
+rate	B2	v.		
+rather	A2	adv.		
+rating	B2	n.		
+ratio	C1	n.		
+rational	C1	adj.		
+raw	B2	adj.		
+ray	C1	n.		
+reach	A2	v.		
+reach	B2	n.		
+react	A2	v.		
+reaction	B1	n.		
+read	A1	v.		
+reader	A1	n.		
+readily	C1	adv.		
+reading	A1	n.		
+ready	A1	adj.		
+real	A1	adj.		
+realistic	B2	adj.		
+reality	B1	n.		
+realization	C1	n.		
+realize	A2	v.		
+really	A1	adv.		
+realm	C1	n.		
+rear	C1	adj.		
+rear	C1	n.		
+reason	A1	n.		
+reasonable	B2	adj.		
+reasonably	B2	adv.		
+reasoning	C1	n.		
+reassure	C1	v.		
+rebel	C1	n.		
+rebellion	C1	n.		
+rebuild	B2	v.		
+recall	B2	v.		
+receipt	B1	n.		
+receive	A2	v.		
+receiver	B2	n.		
+recent	A2	adj.		
+recently	A2	adv.		
+reception	A2	n.		
+recession	B2	n.		
+recipe	A2	n.		
+recipient	C1	n.		
+reckon	B2	v.		
+recognition	B2	n.		
+recognize	A2	v.		
+recommend	A2	v.		
+recommendation	B1	n.		
+reconstruction	C1	n.		
+record	A2	n.		
+record	A2	v.		
+recording	A2	n.		
+recount	C1	v.		
+recover	B2	v.		
+recovery	B2	n.		
+recruit	B2	n.		
+recruit	B2	v.		
+recruitment	B2	n.	UK	
+recruitment	C1	n.	US	
+recycle	A2	v.		
+red	A1	adj.		
+red	A1	n.		
+reduce	A2	v.		
+reduction	B2	n.		
+refer	A2	v.		
+referee	B2	n.		
+reference	B1	n.		
+referendum	C1	n.		
+reflect	B1	v.		
+reflection	C1	n.		
+reform	C1	n.		
+reform	C1	v.		
+refrigerator	A2	n.	US	
+refuge	C1	n.		
+refugee	B2	n.		
+refusal	C1	n.		
+refuse	A2	v.		
+regain	C1	v.		
+regard	B2	n.		
+regard	B2	v.		
+regardless	C1	adv.		
+regime	C1	n.		
+region	A2	n.		
+regional	B2	adj.		
+register	B2	n.		
+register	B2	v.		
+registration	B2	n.		
+regret	B2	n.		
+regret	B2	v.		
+regular	A2	adj.		
+regularly	B1	adv.		
+regulate	B2	v.		
+regulation	B2	n.		
+regulator	C1	n.		
+regulatory	C1	adj.		
+rehabilitation	C1	n.		
+reign	C1	n.		
+reign	C1	v.		
+reinforce	B2	v.		
+reject	B1	v.		
+rejection	C1	n.		
+relate	B1	v.		
+related	B1	adj.		
+relation	B1	n.		
+relationship	A2	n.		
+relative	B1	adj.		
+relative	B1	n.		
+relatively	B2	adv.		
+relax	A1	v.		
+relaxed	B1	adj.		
+relaxing	B1	adj.		
+release	B1	n.		
+release	B1	v.		
+relevance	C1	n.		
+relevant	B2	adj.		
+reliability	C1	n.		
+reliable	B1	adj.		
+relief	B2	n.		
+relieve	B2	v.		
+relieved	B2	adj.		
+religion	B1	n.		
+religious	B1	adj.		
+reluctant	C1	adj.		
+rely	B2	v.		
+remain	B1	v.		
+remainder	C1	n.		
+remains	C1	n.		
+remark	B2	n.		
+remark	B2	v.		
+remarkable	B2	adj.		
+remarkably	B2	adv.		
+remedy	C1	n.		
+remember	A1	v.		
+remind	B1	v.		
+reminder	C1	n.		
+remote	B1	adj.		
+removal	C1	n.		
+remove	A2	v.		
+render	C1	v.		
+renew	C1	v.		
+renowned	C1	adj.		
+rent	B1	n.		
+rent	B1	v.		
+rental	C1	n.		
+repair	A2	v.		
+repair	B1	n.		
+repeat	A1	v.		
+repeat	B1	n.		
+repeated	B1	adj.		
+replace	A2	v.		
+replacement	C1	n.		
+reply	A2	n.		
+reply	A2	v.		
+report	A1	n.		
+report	A2	v.		
+reportedly	C1	adv.		
+reporter	A2	n.		
+reporting	B2	n.		
+represent	B1	v.		
+representation	C1	n.		
+representative	B2	adj.		
+representative	B2	n.		
+reproduce	C1	v.		
+reproduction	C1	n.		
+republic	C1	n.		
+reputation	B2	n.		
+request	A2	n.		
+request	B1	v.		
+require	B1	v.		
+requirement	B2	n.		
+rescue	B2	n.		
+rescue	B2	v.		
+research	A2	n.		
+research	A2	v.		
+researcher	A2	n.		
+resemble	C1	v.		
+reservation	B1	n.		
+reserve	B2	n.		
+reserve	B2	v.		
+reside	C1	v.		
+residence	C1	n.		
+resident	B2	adj.		
+resident	B2	n.		
+residential	C1	adj.		
+residue	C1	n.		
+resign	B2	v.		
+resignation	C1	n.		
+resist	B2	v.		
+resistance	C1	n.		
+resolution	B2	n.		
+resolve	B2	v.		
+resort	B2	n.		
+resource	B1	n.		
+respect	B1	n.		
+respect	B1	v.		
+respective	C1	adj.		
+respectively	C1	adv.		
+respond	A2	v.		
+response	A2	n.		
+responsibility	B1	n.		
+responsible	B1	adj.		
+rest	A2	n.		remaining part
+rest	A2	n.		sleep/relax
+rest	A2	v.		sleep/relax
+restaurant	A1	n.		
+restoration	C1	n.		
+restore	B2	v.		
+restraint	C1	n.		
+restrict	B2	v.		
+restriction	B2	n.		
+result	A1	n.		
+result	B1	v.		
+resume	C1	v.		
+retail	B2	n.		
+retain	B2	v.		
+retire	B1	v.		
+retired	B1	adj.		
+retirement	B2	n.		
+retreat	C1	n.		
+retreat	C1	v.		
+retrieve	C1	v.		
+return	A1	n.		
+return	A1	v.		
+reveal	B2	v.		
+revelation	C1	n.		
+revenge	C1	n.		
+revenue	B2	n.		
+reverse	C1	adj.		
+reverse	C1	n.		
+reverse	C1	v.		
+review	A2	n.		
+review	A2	v.		
+revise	B1	v.		
+revision	B2	n.		
+revival	C1	n.		
+revive	C1	v.		
+revolution	B2	n.		
+revolutionary	C1	adj.		
+reward	B2	n.		
+reward	B2	v.		
+rhetoric	C1	n.		
+rhythm	B2	n.		
+rice	A1	n.		
+rich	A1	adj.		
+rid	B2	v.		
+ride	A1	v.		
+ride	A2	n.		
+ridiculous	B2	adj.		
+rifle	C1	n.		
+right	A1	adj.		
+right	A1	adv.		
+right	A1	n.		
+ring	A2	n.		
+ring	A2	v.		
+ring	B1	n.		
+riot	C1	n.		
+rip	C1	v.		
+rise	A2	v.	UK	
+rise	A2	v.	US	
+rise	B1	n.	UK	
+rise	B2	n.	US	
+risk	B1	n.		
+risk	B1	v.		
+risky	B2	adj.		
+ritual	C1	n.		
+rival	B2	adj.		
+rival	B2	n.		
+river	A1	n.		
+road	A1	n.		
+rob	B2	v.		
+robbery	B2	n.		
+robot	B1	n.		
+robust	C1	adj.		
+rock	A2	n.		music
+rock	A2	n.		stone
+rock	C1	v.		
+rocket	B2	n.		
+rod	C1	n.		
+role	A2	n.		
+roll	B1	n.		
+roll	B1	v.		
+romance	B2	n.		
+romantic	B1	adj.		
+roof	A2	n.		
+rookie	C1	n.	US	
+room	A1	n.		
+root	B2	n.		
+rope	B1	n.		
+rose	B2	n.		
+roster	C1	n.	US	
+rotate	C1	v.		
+rotation	C1	n.		
+rough	B1	adj.		
+roughly	B2	adv.		
+round	A2	adj.		
+round	A2	adv.		
+round	A2	prep.		
+round	B2	n.		
+route	A2	n.		
+routine	A1	n.		
+routine	B2	adj.		
+row	B1	n.		
+royal	B1	adj.		
+rub	B2	v.		
+rubber	B2	adj.		
+rubber	B2	n.		
+rubbish	A2	n.	UK	
+rude	A2	adj.		
+rugby	B1	n.	UK	
+ruin	B2	n.		
+ruin	B2	v.		
+rule	A1	n.		
+rule	B1	v.		
+ruling	C1	n.		
+rumor	C1	n.	US	
+rumour	C1	n.	UK	
+run	A1	v.		
+run	A2	n.		
+runner	A2	n.		
+running	A2	n.		
+rural	B2	adj.		
+rush	B2	n.		
+rush	B2	v.		
+résumé	B2	n.	US	
+sack	C1	v.	UK	
+sacred	C1	adj.		
+sacrifice	C1	n.		
+sacrifice	C1	v.		
+sad	A1	adj.		
+sadly	A2	adv.		
+safe	A2	adj.		
+safety	B1	n.		
+sail	A2	v.		
+sail	B1	n.		
+sailing	A2	n.		
+sailor	B1	n.		
+saint	C1	n.		
+sake	C1	n.		
+salad	A1	n.		
+salary	A2	n.		
+sale	A2	n.		
+salt	A1	n.		
+same	A1	adj.		
+same	A1	adv.		
+same	A1	pron.		
+sample	B1	n.		
+sample	B2	v.		
+sanction	C1	n.		
+sand	B1	n.		
+sandwich	A1	n.		
+satellite	B2	n.		
+satisfaction	B2	n.		
+satisfied	B2	adj.		
+satisfy	B2	v.		
+sauce	A2	n.		
+save	A2	v.		
+saving	B2	n.		
+say	A1	v.		
+say	C1	n.		
+scale	B2	n.		
+scan	B1	v.		
+scandal	B2	n.		
+scare	B2	n.		
+scare	B2	v.		
+scared	A2	adj.		
+scary	A2	adj.		
+scattered	C1	adj.		
+scenario	B2	n.		
+scene	A2	n.		
+sceptical	C1	adj.	UK	
+schedule	A2	n.		
+schedule	B2	v.		
+scheme	B2	n.	UK	
+scholar	B2	n.		
+scholarship	B2	n.		
+school	A1	n.		
+science	A1	n.		
+scientific	B1	adj.		
+scientist	A1	n.		
+scope	C1	n.		
+score	A2	n.		
+score	A2	v.		
+scratch	B2	n.		
+scratch	B2	v.		
+scream	B2	n.		
+scream	B2	v.		
+screen	A2	n.		
+screen	B2	v.		
+screening	B2	n.		
+screw	C1	n.		
+screw	C1	v.		
+script	B1	n.		
+scrutiny	C1	n.		
+sculpture	B1	n.		
+sea	A1	n.	UK	
+sea	A2	n.	US	
+seal	C1	n.		
+seal	C1	v.		
+search	A2	n.		
+search	A2	v.		
+season	A2	n.		
+seat	A2	n.		
+seat	B2	v.		
+second	A1	det.		next after the first
+second	A1	n.		unit of time
+second	A1	number		next after the first
+second	A2	adv.		next after the first
+secondary	B1	adj.		
+secondly	A2	adv.	UK	
+secondly	C1	adv.	US	
+secret	A2	adj.		
+secret	A2	n.		
+secretary	A2	n.		
+section	A1	n.		
+sector	B2	n.		
+secular	C1	adj.		
+secure	B2	adj.		
+secure	B2	v.		
+security	B1	n.		
+see	A1	v.		
+seed	B1	n.		
+seek	B2	v.		
+seeker	B2	n.		
+seem	A2	v.		
+seemingly	C1	adv.		
+segment	C1	n.		
+seize	C1	v.		
+seldom	C1	adv.		
+select	B2	v.		
+selection	B2	n.		
+selective	C1	adj.		
+self	B2	n.		
+sell	A1	v.		
+seminar	B2	n.		
+senate	B2	n.	US	
+senator	B2	n.	US	
+senator	C1	n.	UK	
+send	A1	v.		
+senior	B2	adj.		
+sensation	C1	n.		
+sense	A2	n.		
+sense	B2	v.		
+sensible	B1	adj.		
+sensitive	B2	adj.		
+sensitivity	C1	n.		
+sentence	A1	n.		
+sentence	B2	v.		
+sentiment	C1	n.		
+separate	A2	adj.		
+separate	B1	v.		
+separation	C1	n.		
+sequence	B2	n.		
+serial	C1	adj.		
+series	A2	n.		
+serious	A2	adj.		
+seriously	B1	adv.		
+servant	B1	n.		
+serve	A2	v.		
+service	A2	n.		
+session	B2	n.		
+set	B1	n.		group
+set	B1	v.		put
+set-up	C1	n.	UK	
+setting	B1	n.		
+settle	B2	v.		
+settlement	C1	n.		
+settler	B2	n.		
+setup	C1	n.	US	
+seven	A1	number		
+seventeen	A1	number		
+seventy	A1	number		
+several	A2	det.		
+several	A2	pron.		
+severe	B2	adj.		
+severely	B2	adv.		
+sex	B1	n.		
+sexual	B1	adj.		
+sexuality	C1	n.		
+sexy	B2	adj.		
+shade	B2	n.		
+shadow	B2	n.		
+shake	A2	v.		
+shake	B1	n.		
+shall	A2	modal v.	UK	
+shall	B2	modal v.	US	
+shallow	B2	adj.		
+shame	B2	n.		
+shape	A2	n.		
+shape	B2	v.		
+shaped	B2	adj.		
+share	A1	v.		
+share	B1	n.		
+shareholder	C1	n.		
+sharp	B1	adj.		
+shatter	C1	v.		
+she	A1	pron.		
+shed	C1	v.		
+sheep	A1	n.		
+sheer	C1	adj.		
+sheet	A2	n.		
+shelf	B1	n.		
+shell	B1	n.		
+shelter	B2	n.		
+shelter	B2	v.		
+shift	B1	n.		
+shift	B2	v.		
+shine	B1	v.		
+shiny	B1	adj.		
+ship	A2	n.		
+ship	B2	v.		
+shipping	C1	n.		
+shirt	A1	n.		
+shock	B2	n.		
+shock	B2	v.		
+shocked	B2	adj.		
+shocking	B2	adj.		
+shoe	A1	n.		
+shoot	B1	v.		
+shoot	C1	n.		
+shooting	B2	n.		
+shop	A1	n.		
+shop	A1	v.		
+shopping	A1	n.		
+shore	B2	n.		
+short	A1	adj.		
+short-term	B2	adj.		
+shortage	B2	n.		
+shortly	B2	adv.		
+shot	B2	n.		
+should	A1	modal v.		
+shoulder	A2	n.		
+shout	A2	n.		
+shout	A2	v.		
+show	A1	n.		
+show	A1	v.		
+shower	A1	n.		
+shrink	C1	v.		
+shrug	C1	v.		
+shut	A2	adj.		
+shut	A2	v.		
+shy	B1	adj.		
+sibling	B2	n.		
+sick	A1	adj.		
+side	A2	n.		
+sidewalk	B2	n.	US	
+sigh	C1	n.		
+sigh	C1	v.		
+sight	B1	n.		
+sign	A2	n.		
+sign	A2	v.		
+signal	B1	n.		
+signal	B1	v.		
+signature	B2	n.		
+significance	B2	n.		
+significant	B2	adj.		
+significantly	B2	adv.		
+silence	B2	n.		
+silent	B1	adj.		
+silk	B2	n.		
+silly	B1	adj.		
+silver	A2	adj.		
+silver	A2	n.		
+similar	A1	adj.		
+similarity	B1	n.		
+similarly	B1	adv.		
+simple	A2	adj.		
+simply	B1	adv.		
+simulate	C1	v.		
+simulation	C1	n.		
+simultaneously	C1	adv.		
+sin	C1	n.		
+since	A2	conj.		
+since	A2	prep.		
+since	B1	adv.		
+sincere	B2	adj.		
+sing	A1	v.		
+singer	A1	n.		
+singing	A2	n.		
+single	A2	adj.		
+single	A2	n.		
+sink	B1	v.		
+sir	A2	n.		
+sister	A1	n.		
+sit	A1	v.		
+site	A2	n.		
+situated	C1	adj.		
+situation	A1	n.		
+six	A1	number		
+sixteen	A1	number		
+sixty	A1	number		
+size	A2	n.		
+skeptical	C1	adj.	US	
+sketch	C1	n.		
+ski	A2	n.		
+ski	A2	v.		
+skiing	A2	n.		
+skill	A1	n.		
+skilled	B2	adj.		
+skin	A2	n.		
+skip	C1	v.		
+skirt	A1	n.		
+skull	B2	n.		
+sky	A2	n.		
+slam	C1	v.		
+slap	C1	v.		
+slash	C1	v.		
+slave	B1	n.	US	
+slave	B2	n.	UK	
+slavery	C1	n.		
+sleep	A1	v.		
+sleep	A2	n.		
+slice	B1	n.		
+slice	B1	v.		
+slide	B2	n.		
+slide	B2	v.		
+slight	B2	adj.		
+slightly	B1	adv.		
+slip	B2	v.		
+slogan	B2	n.		
+slope	B2	n.		
+slope	B2	v.		
+slot	C1	n.		
+slow	A1	adj.		
+slow	B1	v.		
+slowly	A2	adv.		
+small	A1	adj.		
+smart	A1	adj.	US	
+smart	B1	adj.	UK	
+smartphone	A2	n.		
+smash	C1	v.		
+smell	A2	n.		
+smell	A2	v.		
+smile	A2	n.		
+smile	A2	v.		
+smoke	A2	n.		
+smoke	A2	v.		
+smoking	A2	n.		
+smooth	B1	adj.		
+snake	A1	n.		
+snap	C1	v.		
+sneaker	A2	n.	US	
+snow	A1	n.		
+snow	A1	v.		
+so	A1	adv.		
+so	A1	conj.		
+so-called	B2	adj.		
+soak	C1	v.		
+soap	A2	n.		
+soar	C1	v.		
+soccer	A2	n.		
+social	A2	adj.		
+socialist	C1	adj.		
+society	A2	n.		
+sock	A2	n.		
+soft	A2	adj.		
+software	B1	n.		
+soil	B1	n.		
+solar	B2	adj.		
+soldier	A2	n.		
+sole	C1	adj.		
+solely	C1	adv.		
+solicitor	C1	n.	UK	
+solid	B1	adj.		
+solid	B1	n.		
+solidarity	C1	n.		
+solo	C1	adj.		
+solo	C1	n.		
+solution	A2	n.		
+solve	A2	v.		
+some	A1	det.		
+some	A1	pron.		
+somebody	A1	pron.		
+somehow	B2	adv.		
+someone	A1	pron.		
+something	A1	pron.		
+sometime	B2	adv.		
+sometimes	A1	adv.		
+somewhat	B2	adv.		
+somewhere	A2	adv.		
+somewhere	A2	pron.		
+son	A1	n.		
+song	A1	n.		
+soon	A1	adv.		
+sophisticated	B2	adj.		
+sophomore	C1	n.	US	
+sorry	A1	adj.		
+sorry	A1	exclam.		
+sort	A2	n.		
+sort	B1	v.		
+soul	B2	n.		
+sound	A1	n.		
+sound	A1	v.		
+sound	C1	adj.		
+soup	A1	n.		
+source	A2	n.		
+south	A1	adj.		
+south	A1	adv.		
+south	A1	n.		
+southern	B1	adj.		
+sovereignty	C1	n.		
+space	A1	n.		
+spam	C1	n.		
+span	C1	n.		
+span	C1	v.		
+spare	B2	adj.		
+spare	C1	v.		
+spark	C1	v.		
+speak	A1	v.		
+speaker	A2	n.		
+special	A1	adj.		
+specialist	B2	adj.		
+specialist	B2	n.		
+specialize	B1	v.		
+specialized	C1	adj.		
+species	B2	n.		
+specific	A2	adj.		
+specifically	B1	adv.		
+specification	C1	n.		
+specify	B2	v.		
+specimen	C1	n.		
+spectacle	C1	n.		
+spectacular	B2	adj.		
+spectator	B2	n.		
+spectrum	C1	n.		
+speculate	B2	v.		
+speculation	B2	n.		
+speech	A2	n.		
+speed	A2	n.		
+speed	B2	v.		
+spell	A1	v.		
+spell	C1	n.		
+spelling	A1	n.		
+spend	A1	v.		
+spending	B1	n.		
+sphere	C1	n.		
+spice	B2	n.		
+spicy	B1	adj.		
+spider	A2	n.		
+spill	B2	v.		
+spin	C1	n.		
+spin	C1	v.		
+spine	C1	n.		
+spirit	B1	n.		
+spiritual	B2	adj.		
+spite	B2	n.		
+split	B2	n.		
+split	B2	v.		
+spoil	B2	v.		
+spoken	B1	adj.		
+spokesman	B2	n.		
+spokesperson	B2	n.		
+spokeswoman	B2	n.		
+sponsor	B2	n.		
+sponsor	B2	v.		
+sponsorship	B2	n.		
+spoon	A2	n.		
+sport	A1	n.		
+sporting	B2	adj.	UK	
+spot	B1	n.		
+spot	B2	v.		
+spotlight	C1	n.		
+spouse	C1	n.		
+spread	B1	v.		
+spread	B2	n.		
+spring	A1	n.		
+spring	B1	v.		
+spy	C1	n.		
+spy	C1	v.		
+squad	C1	n.		
+square	A2	adj.		
+square	A2	n.		
+squeeze	C1	v.		
+stab	C1	v.		
+stability	C1	n.		
+stabilize	C1	v.		
+stable	B2	adj.		
+stadium	B1	n.		
+staff	B1	n.		
+stage	A2	n.		
+stage	B2	v.		
+stair	A2	n.		
+stake	C1	n.		
+stall	B2	n.		
+stamp	A2	n.		
+stance	B2	n.		
+stand	A1	v.		
+stand	B2	n.		
+standard	B1	adj.		
+standard	B1	n.		
+standing	C1	adj.		
+star	A1	n.		
+star	A2	v.		
+stare	B2	v.		
+stark	C1	adj.		
+start	A1	v.		
+start	A2	n.		
+starve	B2	v.		
+state	A2	n.		
+state	B1	adj.		
+state	B1	v.		
+statement	A1	n.		
+station	A1	n.		
+statistic	B1	n.		
+statistical	C1	adj.		
+statue	B1	n.		
+status	B2	n.		
+stay	A1	v.		
+stay	A2	n.		
+steadily	B2	adv.		
+steady	B2	adj.		
+steal	A2	v.		
+steam	B2	n.		
+steel	B2	n.		
+steep	B2	adj.		
+steer	C1	v.		
+stem	C1	n.		
+stem	C1	v.		
+step	A2	n.		
+step	B2	v.		
+stereotype	C1	n.		
+stick	B1	n.		piece of wood
+stick	B1	v.		push into/attach
+sticky	B2	adj.		
+stiff	B2	adj.		
+still	A1	adv.		
+still	B1	adj.		
+stimulate	B2	v.		
+stimulus	C1	n.		
+stir	C1	v.		
+stock	B2	n.		
+stomach	A2	n.		
+stone	A2	n.		
+stop	A1	n.		
+stop	A1	v.		
+storage	C1	n.		
+store	A1	n.	US	
+store	A2	n.	UK	
+store	B1	v.	UK	
+store	B1	v.	US	
+storm	A2	n.		
+story	A1	n.		
+stove	A2	n.	US	
+straight	A2	adj.		
+straight	A2	adv.		
+straightforward	C1	adj.		
+strain	C1	n.		
+strand	C1	n.		
+strange	A2	adj.		
+stranger	B1	n.		
+strategic	C1	adj.		
+strategy	A2	n.		
+stream	B2	n.		
+street	A1	n.		
+strength	B1	n.		
+strengthen	B2	v.		
+stress	A2	n.		
+stress	A2	v.		
+stretch	B2	n.		
+stretch	B2	v.		
+strict	B2	adj.		
+strictly	B2	adv.		
+strike	B2	n.		
+strike	B2	v.		
+striking	B2	adj.		
+string	B1	n.		
+strip	C1	n.		long narrow piece
+strip	C1	v.		remove clothes/a layer
+strive	C1	v.		
+stroke	B2	n.		
+strong	A1	adj.		
+strongly	B1	adv.		
+structural	C1	adj.		
+structure	A2	n.		
+structure	B2	v.		
+struggle	B2	n.		
+struggle	B2	v.		
+student	A1	n.		
+studio	B1	n.		
+study	A1	n.		
+study	A1	v.		
+stuff	B1	n.		
+stuff	B2	v.		
+stumble	C1	v.		
+stun	C1	v.		
+stunning	B2	adj.		
+stupid	A2	adj.		
+style	A1	n.		
+subject	A1	n.		
+subject	B2	adj.		
+submission	C1	n.		
+submit	B2	v.		
+subscriber	C1	n.		
+subscription	C1	n.		
+subsequent	B2	adj.		
+subsequently	B2	adv.		
+subsidy	C1	n.		
+substance	B1	n.		
+substantial	C1	adj.		
+substantially	C1	adv.		
+substitute	C1	n.		
+substitute	C1	v.		
+substitution	C1	n.		
+subtle	C1	adj.		
+suburb	B2	n.		
+suburban	C1	adj.		
+subway	A2	n.	US	
+succeed	A2	v.		
+success	A1	n.		
+successful	A2	adj.		
+successfully	B1	adv.		
+succession	C1	n.		
+successive	C1	adj.		
+successor	C1	n.		
+such	A2	det.		
+such	A2	pron.		
+suck	C1	v.		
+sudden	B1	adj.		
+suddenly	A2	adv.		
+sue	C1	v.		
+suffer	B1	v.		
+suffering	B2	n.		
+sufficient	B2	adj.		
+sufficiently	B2	adv.		
+sugar	A1	n.		
+suggest	A2	v.		
+suggestion	A2	n.		
+suicide	C1	n.		
+suit	A2	n.		
+suit	B1	v.		
+suitable	B1	adj.		
+suite	C1	n.		
+sum	B2	n.		
+sum	B2	v.		
+summarize	B1	v.		
+summary	B1	n.		
+summer	A1	n.		
+summit	C1	n.		
+sun	A1	n.		
+super	B2	adj.		
+superb	C1	adj.		
+superintendent	C1	n.	US	
+superior	C1	adj.		
+supermarket	A1	n.		
+supervise	C1	v.		
+supervision	C1	n.		
+supervisor	C1	n.		
+supplement	C1	n.		
+supplement	C1	v.		
+supply	B1	n.		
+supply	B1	v.		
+support	A2	n.		
+support	A2	v.		
+supporter	B1	n.		
+supportive	C1	adj.		
+suppose	A2	v.		
+supposedly	C1	adv.		
+suppress	C1	v.		
+supreme	C1	adj.		
+sure	A1	adj.		
+sure	A2	adv.		
+surely	B1	adv.		
+surface	B1	n.		
+surge	C1	n.		
+surge	C1	v.		
+surgeon	B2	n.		
+surgery	B2	n.		
+surgical	C1	adj.		
+surplus	C1	n.		
+surprise	A2	n.		
+surprise	A2	v.		
+surprised	A2	adj.		
+surprising	A2	adj.		
+surrender	C1	v.		
+surround	B2	v.		
+surrounding	B2	adj.		
+surveillance	C1	n.		
+survey	A2	n.		
+survey	B2	v.		
+survival	B2	n.		
+survive	B1	v.		
+survivor	B2	n.		
+suspect	B2	n.		
+suspect	B2	v.		
+suspend	B2	v.		
+suspension	C1	n.		
+suspicion	C1	n.		
+suspicious	C1	adj.		
+sustain	C1	v.		
+sustainable	B2	adj.		
+swallow	B2	v.		
+swear	B2	v.		
+sweater	A1	n.		
+sweep	B2	v.		
+sweet	A2	adj.	UK	
+sweet	A2	adj.	US	
+sweet	A2	n.	UK	
+swim	A1	v.		
+swim	B1	n.		
+swimming	A1	n.		
+swing	C1	n.		
+swing	C1	v.		
+switch	B1	v.		
+switch	B2	n.		
+sword	C1	n.		
+symbol	A2	n.		
+symbolic	C1	adj.		
+sympathetic	B2	adj.		
+sympathy	B2	n.		
+symptom	B1	n.		
+syndrome	C1	n.		
+synthesis	C1	n.		
+system	A2	n.		
+systematic	C1	adj.		
+table	A1	n.		
+tablet	A2	n.		
+tackle	B2	v.		
+tackle	C1	n.		
+tactic	C1	n.		
+tactical	C1	adj.		
+tag	B2	n.		
+tag	B2	v.		
+tail	B1	n.		
+take	A1	v.		
+tale	B2	n.		
+talent	B1	n.		
+talented	B1	adj.		
+talk	A1	v.		
+talk	A2	n.		
+tall	A1	adj.		
+tank	B2	n.		
+tap	B2	n.		
+tap	B2	v.		
+tape	B1	n.		
+target	A2	n.		
+target	B2	v.		
+task	A2	n.		
+taste	A2	n.		
+taste	A2	v.		
+tax	B1	n.		
+tax	B1	v.		
+taxi	A1	n.		
+taxpayer	C1	n.		
+tea	A1	n.		
+teach	A1	v.		
+teacher	A1	n.		
+teaching	A2	n.		
+team	A1	n.		
+tear	B2	n.		
+tear	B2	v.		
+technical	B1	adj.		
+technique	B1	n.		
+technological	B2	adj.		
+technology	A2	n.		
+teen	B2	adj.	US	
+teen	B2	n.	US	
+teenage	A2	adj.		
+teenager	A1	n.		
+teens	B2	n.	UK	
+telephone	A1	n.		
+telephone	A1	v.		
+television	A1	n.		
+tell	A1	v.		
+temperature	A2	n.		
+temple	B2	n.		
+temporarily	B2	adv.		
+temporary	B2	adj.		
+tempt	C1	v.		
+ten	A1	number		
+tenant	C1	n.		
+tend	B1	v.		
+tendency	B2	n.		
+tender	C1	adj.		
+tennis	A1	n.		
+tension	B2	n.		
+tent	B1	n.		
+tenure	C1	n.		
+term	A2	n.		
+term	B2	v.		
+terminal	B2	n.		
+terminal	C1	adj.		
+terminate	C1	v.		
+terms	B2	n.		
+terrain	C1	n.		
+terrible	A1	adj.		
+terribly	B2	adv.		
+terrific	C1	adj.		
+terrify	B2	v.		
+territory	B2	n.		
+terror	B2	n.		
+terrorism	B2	n.		
+terrorist	B2	n.		
+test	A1	n.		
+test	A1	v.		
+testify	C1	v.		
+testimony	C1	n.		
+testing	B2	n.		
+text	A1	n.		
+text	A2	v.		
+textbook	B2	n.		
+texture	C1	n.		
+than	A1	conj.		
+thank	A1	v.		
+thankfully	C1	adv.		
+thanks	A1	exclam.		
+thanks	A1	n.		
+that	A1	conj.		
+that	A1	det.		
+that	A1	pron.		
+that	B1	adv.		
+the	A1	definite article		
+theater	A1	n.	US	
+theatre	A1	n.	UK	
+theatrical	C1	adj.		
+theft	B2	n.		
+their	A1	det.		
+theirs	B1	pron.		
+them	A1	pron.		
+theme	B1	n.		
+themselves	A2	pron.		
+then	A1	adv.		
+theology	C1	n.		
+theoretical	C1	adj.		
+theory	B1	n.		
+therapist	B2	n.		
+therapy	B2	n.		
+there	A1	adv.		
+thereafter	C1	adv.		
+thereby	C1	adv.		
+therefore	B1	adv.		
+thesis	B2	n.		
+they	A1	pron.		
+thick	A2	adj.		
+thief	A2	n.		
+thin	A2	adj.		
+thing	A1	n.		
+think	A1	v.		
+thinking	A2	n.		
+third	A1	number		
+third	A2	n.		
+thirsty	A1	adj.		
+thirteen	A1	number		
+thirty	A1	number		
+this	A1	det.		
+this	A1	pron.		
+this	B1	adv.		
+thorough	B2	adj.		
+thoroughly	B2	adv.		
+though	B1	adv.		
+though	B1	conj.		
+thought	A2	n.		
+thought-provoking	C1	adj.		
+thoughtful	C1	adj.		
+thousand	A1	number		
+thread	C1	n.		
+threat	B2	n.		
+threaten	B2	v.		
+three	A1	number		
+threshold	C1	n.		
+thrilled	C1	adj.		
+thrive	C1	v.		
+throat	B1	n.		
+through	A1	adv.		
+through	A1	prep.		
+throughout	B1	adv.		
+throughout	B1	prep.		
+throw	A2	v.		
+thumb	B2	n.		
+thus	B2	adv.		
+ticket	A1	n.		
+tide	C1	n.		
+tidy	A2	adj.	UK	
+tidy	A2	v.	UK	
+tie	A2	n.		
+tie	A2	v.		
+tight	B1	adj.		
+tighten	C1	v.		
+till	B1	conj.		
+till	B1	prep.		
+timber	C1	n.		
+time	A1	n.		
+time	B2	v.		
+timely	C1	adj.		
+timing	B2	n.		
+tin	B1	n.	UK	
+tiny	B1	adj.		
+tip	A2	n.		
+tip	B1	v.		
+tire	B1	n.	US	
+tired	A1	adj.		
+tissue	B2	n.		
+title	A1	n.		
+title	B2	v.		
+to	A1	infinitive marker		
+to	A1	prep.		
+tobacco	C1	n.		
+today	A1	adv.		
+today	A1	n.		
+toe	B1	n.		
+together	A1	adv.		
+toilet	A1	n.		
+tolerance	C1	n.		
+tolerate	C1	v.		
+toll	C1	n.		
+tomato	A1	n.		
+tomorrow	A1	adv.		
+tomorrow	A1	n.		
+ton	B1	n.	US	
+ton	B2	n.	UK	
+tone	B2	n.		
+tongue	B1	n.		
+tonight	A1	adv.		
+tonight	A1	n.		
+tonne	B2	n.	UK	
+too	A1	adv.		
+tool	A2	n.		
+tooth	A1	n.		
+top	A2	adj.		
+top	A2	n.		
+top	C1	v.		
+topic	A1	n.		
+torture	C1	n.		
+torture	C1	v.		
+toss	C1	v.		
+total	B1	adj.		
+total	B1	n.		
+total	C1	v.		
+totally	B1	adv.		
+touch	A2	v.		
+touch	B1	n.		
+tough	B2	adj.		
+tour	A2	n.		
+tour	B1	v.		
+tourism	A2	n.		
+tourist	A1	n.		
+tournament	B2	n.		
+toward	A2	prep.	US	
+towards	A2	prep.	UK	
+towel	A2	n.		
+tower	A2	n.		
+town	A1	n.		
+toxic	C1	adj.		
+toy	A2	adj.		
+toy	A2	n.		
+trace	B2	v.		
+trace	C1	n.		
+track	A2	n.		
+track	B2	v.		
+trade	B1	n.		
+trade	B1	v.		
+trademark	C1	n.		
+trading	B2	n.		
+tradition	A2	n.		
+traditional	A2	adj.		
+traffic	A1	n.		
+tragedy	B2	n.		
+tragic	B2	adj.		
+trail	C1	n.		
+trail	C1	v.		
+trailer	C1	n.		
+train	A1	n.		
+train	A2	v.		
+trainer	A2	n.	UK	
+trainer	B1	n.	US	
+training	A2	n.		
+trait	B2	n.		
+transaction	C1	n.		
+transcript	C1	n.		
+transfer	B2	n.		
+transfer	B2	v.		
+transform	B2	v.		
+transformation	C1	n.		
+transit	C1	n.		
+transition	B2	n.		
+translate	B1	v.		
+translation	B1	n.		
+transmission	C1	n.		
+transmit	B2	v.		
+transparency	C1	n.		
+transparent	C1	adj.		
+transport	A2	n.	UK	
+transport	B1	v.	UK	
+transport	B1	v.	US	
+transportation	A2	n.	US	
+transportation	B2	n.	UK	
+trap	B2	n.		
+trap	B2	v.		
+trash	A2	n.	US	
+trauma	C1	n.		
+travel	A1	n.		
+travel	A1	v.		
+traveler	A2	n.	US	
+traveller	A2	n.	UK	
+treasure	B2	n.		
+treat	B1	v.		
+treatment	B1	n.		
+treaty	C1	n.		
+tree	A1	n.		
+tremendous	C1	adj.		
+trend	B1	n.		
+trial	B2	n.		
+tribal	C1	adj.		
+tribe	B2	n.		
+tribunal	C1	n.	UK	
+tribute	C1	n.		
+trick	B1	n.		
+trick	B1	v.		
+trigger	B2	v.		
+trigger	C1	n.		
+trillion	B2	number		
+trio	C1	n.		
+trip	A1	n.		
+trip	B2	v.		
+triumph	C1	n.		
+troop	B2	n.		
+trophy	C1	n.		
+tropical	B2	adj.		
+trouble	A2	n.		
+trouble	B2	v.		
+troubled	C1	adj.		
+trousers	A1	n.	UK	
+truck	A1	n.	US	
+truck	A2	n.	UK	
+true	A1	adj.		
+truly	B2	adv.		
+trust	B2	n.		
+trust	B2	v.		
+trustee	C1	n.		
+truth	B1	n.		
+try	A1	v.		
+try	B2	n.		
+tsunami	B2	n.		
+tube	B1	n.		
+tuition	C1	n.		
+tumor	C1	n.	US	
+tune	B2	n.		
+tunnel	B2	n.		
+turn	A1	n.		
+turn	A1	v.		
+turnout	C1	n.		
+turnover	C1	n.		
+twelve	A1	number		
+twenty	A1	number		
+twice	A1	adv.		
+twin	A2	adj.		
+twin	A2	n.		
+twist	C1	n.		
+twist	C1	v.		
+two	A1	number		
+type	A1	n.		
+type	B1	v.		
+typical	A2	adj.		
+typically	B1	adv.		
+tyre	B1	n.	UK	
+ugly	B1	adj.		
+ultimate	B2	adj.		
+ultimately	B2	adv.		
+umbrella	A1	n.		
+unable	B1	adj.		
+unacceptable	B2	adj.		
+uncertainty	B2	n.		
+uncle	A1	n.		
+uncomfortable	B1	adj.		
+unconscious	B2	adj.		
+unconstitutional	C1	adj.	US	
+under	A1	adv.		
+under	A1	prep.		
+undergo	B2	v.		
+undergraduate	C1	n.		
+underground	A2	adj.		
+underground	A2	adv.		
+underlying	C1	adj.		
+undermine	C1	v.		
+understand	A1	v.		
+understanding	A2	n.		
+undertake	B2	v.		
+underwear	B1	n.		
+undoubtedly	C1	adv.		
+unemployed	B1	adj.		
+unemployment	B1	n.		
+unexpected	B2	adj.		
+unfair	B1	adj.		
+unfold	B2	v.		
+unfortunate	B2	adj.		
+unfortunately	A2	adv.		
+unhappy	A2	adj.		
+uniform	A2	n.		
+unify	C1	v.		
+union	B1	n.		
+unique	B2	adj.		
+unit	A2	n.		
+unite	B2	v.		
+united	A2	adj.		
+unity	B2	n.		
+universal	B2	adj.		
+universe	B2	n.		
+university	A1	n.		
+unknown	B2	adj.		
+unless	B1	conj.		
+unlike	B1	prep.		
+unlikely	B1	adj.		
+unnecessary	B1	adj.		
+unpleasant	B1	adj.		
+unprecedented	C1	adj.		
+until	A1	conj.		
+until	A1	prep.		
+unusual	A2	adj.		
+unveil	C1	v.		
+up	A1	adv.		
+up	A1	prep.		
+upcoming	C1	adj.		
+update	B1	n.		
+update	B1	v.		
+upgrade	C1	n.		
+upgrade	C1	v.		
+uphold	C1	v.		
+upon	B1	prep.		
+upper	B2	adj.		
+upset	B1	adj.		
+upset	B1	v.		
+upstairs	A1	adv.		
+upstairs	A2	adj.		
+upward	B2	adv.	US	
+upwards	B2	adv.	UK	
+urban	B2	adj.		
+urge	B2	v.		
+urgent	B2	adj.		
+us	A1	pron.		
+usage	B2	n.		
+use	A1	v.		
+use	A2	n.		
+used	B1	adj.		
+used to	A2	modal v.		
+useful	A1	adj.		
+useless	B2	adj.		
+user	A2	n.		
+usual	A2	adj.		
+usually	A1	adv.		
+utility	C1	n.		
+utilize	C1	v.		
+utterly	C1	adv.		
+vacation	A1	n.		
+vacuum	C1	n.		
+vague	C1	adj.		
+valid	B2	adj.		
+validity	C1	n.		
+valley	A2	n.		
+valuable	B1	adj.		
+value	B1	n.		
+value	B2	v.		
+van	A2	n.	UK	
+van	B2	n.	US	
+vanish	C1	v.		
+variable	C1	adj.		
+variable	C1	n.		
+variation	B2	n.		
+varied	C1	adj.		
+variety	A2	n.		
+various	B1	adj.		
+vary	B2	v.		
+vast	B2	adj.		
+vegetable	A1	n.		
+vehicle	A2	n.		
+vein	C1	n.		
+venture	C1	n.		
+venture	C1	v.		
+venue	B2	n.		
+verbal	C1	adj.		
+verdict	C1	n.		
+verify	C1	v.		
+verse	C1	n.		
+version	B1	n.		
+versus	C1	conj.	US	
+versus	C1	prep.	UK	
+vertical	B2	adj.		
+very	A1	adv.		
+very	B2	adj.		
+vessel	C1	n.		
+veteran	C1	n.		
+via	B2	prep.		
+viable	C1	adj.		
+vibrant	C1	adj.		
+vice	C1	n.		
+vicious	C1	adj.		
+victim	B1	n.		
+victory	B2	n.		
+video	A1	n.		
+view	A2	n.		
+view	B1	v.		
+viewer	B1	n.		
+viewpoint	B2	n.		
+village	A1	n.	UK	
+village	A2	n.	US	
+villager	C1	n.	UK	
+violate	C1	v.		
+violation	C1	n.		
+violence	B2	n.		
+violent	B1	adj.		
+virtual	B2	adj.		
+virtue	C1	n.		
+virus	A2	n.		
+visa	B2	n.		
+visible	B2	adj.		
+vision	B2	n.		
+visit	A1	n.		
+visit	A1	v.		
+visitor	A1	n.		
+visual	B2	adj.		
+vital	B2	adj.		
+vitamin	B2	n.		
+vocal	C1	adj.		
+voice	A2	n.		
+volume	B2	n.		
+voluntary	B2	adj.		
+volunteer	B1	n.		
+volunteer	B1	v.		
+vote	B1	n.		
+vote	B1	v.		
+voting	B2	n.		
+vow	C1	v.		
+vulnerability	C1	n.		
+vulnerable	C1	adj.		
+wage	B2	n.		
+wait	A1	v.		
+wait	A2	n.		
+waiter	A1	n.		
+wake	A1	v.		
+walk	A1	n.		
+walk	A1	v.		
+wall	A1	n.		
+wander	B2	v.		
+want	A1	v.		
+war	A2	n.		
+ward	C1	n.		
+warehouse	C1	n.		
+warfare	C1	n.		
+warm	A1	adj.		
+warm	B1	v.		
+warming	B2	n.		
+warn	B1	v.		
+warning	B1	n.		
+warrant	C1	n.		
+warrant	C1	v.		
+warrior	C1	n.		
+wash	A1	v.		
+wash	A2	n.		
+washing	A2	n.		
+waste	B1	adj.		
+waste	B1	n.		
+waste	B1	v.		
+watch	A1	n.		
+watch	A1	v.		
+water	A1	n.		
+water	B1	v.		
+wave	A2	n.		
+wave	B1	v.		
+way	A1	n.		
+way	B2	adv.		
+we	A1	pron.		
+weak	A2	adj.		
+weaken	C1	v.		
+weakness	B2	n.		
+wealth	B2	n.		
+wealthy	B2	adj.		
+weapon	B1	n.		
+wear	A1	v.		
+weather	A1	n.		
+weave	C1	v.		
+web	A2	n.		
+website	A1	n.		
+wedding	A2	n.		
+weed	C1	n.		
+week	A1	n.		
+weekend	A1	n.		
+weekly	B2	adj.		
+weigh	B1	v.		
+weight	A2	n.		
+weird	B2	adj.		
+welcome	A1	adj.		
+welcome	A1	exclam.		
+welcome	A1	v.		
+welcome	A2	n.		
+welfare	B2	n.		
+well	A1	adj.		
+well	A1	adv.		
+well	A1	exclam.		
+well	C1	n.		
+well-being	C1	n.		
+west	A1	adj.		
+west	A1	adv.		
+west	A1	n.		
+western	B1	adj.		
+wet	A2	adj.		
+what	A1	det.		
+what	A1	pron.		
+whatever	B1	det.		
+whatever	B1	pron.		
+whatsoever	C1	adv.		
+wheat	B2	n.		
+wheel	A2	n.		
+when	A1	adv.		
+when	A1	conj.		
+when	A1	pron.		
+whenever	B1	conj.		
+where	A1	adv.		
+where	A1	conj.		
+whereas	B2	conj.		
+whereby	C1	adv.		
+wherever	B2	conj.		
+whether	B1	conj.		
+which	A1	det.		
+which	A1	pron.		
+while	A2	conj.		
+while	B1	n.		
+whilst	C1	conj.	UK	
+whip	C1	v.		
+whisper	B2	n.		
+whisper	B2	v.		
+white	A1	adj.		
+white	A1	n.		
+who	A1	pron.		
+whoever	B2	pron.		
+whole	A2	adj.		
+whole	B1	n.		
+wholly	C1	adv.		
+whom	B2	pron.		
+whose	A2	det.		
+whose	A2	pron.		
+why	A1	adv.		
+wide	A2	adj.		
+widely	B2	adv.		
+widen	C1	v.		
+widespread	B2	adj.		
+widow	C1	n.		
+width	C1	n.		
+wife	A1	n.		
+wild	A2	adj.		
+wildlife	B2	n.		
+will	A1	modal v.		
+will	B1	n.		
+willing	B2	adj.		
+willingness	C1	n.		
+win	A1	v.		
+win	B1	n.		
+wind	A2	n.		
+wind	B2	v.		
+window	A1	n.		
+wine	A1	n.		
+wing	B1	n.		
+winner	A2	n.		
+winter	A1	n.		
+wipe	C1	v.		
+wire	B2	n.		
+wisdom	B2	n.		
+wise	B2	adj.		
+wish	A2	n.		
+wish	A2	v.		
+wit	C1	n.		
+with	A1	prep.		
+withdraw	B2	v.		
+withdrawal	C1	n.		
+within	B1	prep.		
+without	A1	prep.		
+witness	B2	n.		
+witness	B2	v.		
+wolf	B2	n.	US	
+woman	A1	n.		
+wonder	B1	n.		
+wonder	B1	v.		
+wonderful	A1	adj.		
+wood	A2	n.		
+wooden	A2	adj.		
+wool	B1	n.		
+word	A1	n.		
+work	A1	n.		
+work	A1	v.		
+worker	A1	n.		
+workforce	B2	n.		
+working	A2	adj.		
+workout	C1	n.		
+workplace	B2	n.		
+workshop	B2	n.		
+world	A1	n.		
+worldwide	B1	adj.		
+worldwide	B1	adv.		
+worm	B2	n.		
+worried	A2	adj.		
+worry	A2	v.		
+worry	B1	n.		
+worse	A2	adj.		
+worse	B1	adv.		
+worse	B2	n.		
+worship	C1	n.		
+worship	C1	v.		
+worst	A2	adj.		
+worst	B1	adv.		
+worst	B2	n.		
+worth	B1	adj.		
+worth	B2	n.		
+worthwhile	C1	adj.		
+worthy	C1	adj.		
+would	A1	modal v.		
+wound	B2	n.		
+wound	B2	v.		
+wow	A2	exclam.		
+wrap	B2	v.		
+wrist	B2	n.		
+write	A1	v.		
+writer	A1	n.		
+writing	A1	n.		
+written	B1	adj.		
+wrong	A1	adj.		
+wrong	B1	adv.		
+wrong	B2	n.		
+yard	A1	n.	US	
+yard	B1	n.	UK	
+yeah	A1	exclam.		
+year	A1	n.		
+yell	C1	v.		
+yellow	A1	adj.		
+yellow	A1	n.		
+yes	A1	exclam.		
+yesterday	A1	adv.		
+yesterday	A1	n.		
+yet	A2	adv.		
+yet	B2	conj.		
+yield	C1	n.		
+yield	C1	v.		
+you	A1	pron.		
+young	A1	adj.		
+young	B1	n.		
+youngster	C1	n.	UK	
+your	A1	det.		
+yours	A2	pron.		
+yourself	A1	pron.		
+youth	B1	n.		
+zero	A2	number		
+zone	B2	n.		
 \.
 
 
@@ -47795,6 +54005,7 @@ en	geologically	{}
 en	geology	{CET4}
 en	geometric	{}
 en	geometrically	{}
+en	CD	{A1}
 en	geometry	{选择性必修,CET4}
 en	germ	{CET4}
 en	gesture	{必修,CET4}
@@ -50824,6 +57035,7 @@ en	rough	{选择性必修,CET4}
 en	roughly	{}
 en	round	{初中,CET4}
 en	rouse	{CET4}
+en	DVD	{A1}
 en	route	{选择性必修,CET4}
 en	routine	{选择性必修,CET4}
 en	row	{初中,CET4}
@@ -51046,6 +57258,7 @@ en	seventeen	{CET4,基数词}
 en	seventeenth	{序数词}
 en	seventh	{序数词}
 en	seventieth	{序数词}
+en	ID	{B2}
 en	seventy	{CET4,基数词}
 en	several	{初中,CET4}
 en	severe	{选择性必修,CET4}
@@ -51379,6 +57592,7 @@ en	spectrum	{CET6}
 en	speculate	{CET4}
 en	speculation	{}
 en	speculative	{}
+en	IT	{B1}
 en	speech	{初中,CET4}
 en	speechless	{}
 en	speed	{初中,CET4}
@@ -51492,6 +57706,7 @@ en	statutory	{}
 en	stay	{初中,CET4}
 en	steadily	{}
 en	steady	{必修,CET4}
+en	a, an	{A1}
 en	steak	{选择性必修,CET4}
 en	steal	{初中,CET4}
 en	steam	{选择性必修,CET4}
@@ -51714,6 +57929,7 @@ en	suspect	{选择性必修,CET4}
 en	suspend	{选择性必修,CET4}
 en	suspense	{}
 en	suspension	{}
+en	footage	{C1}
 en	suspicion	{CET4}
 en	suspicious	{}
 en	sustain	{选择性必修,CET4}
@@ -52155,6 +58371,7 @@ en	twin	{选择性必修,CET4}
 en	twist	{CET4}
 en	two	{CET4,基数词}
 en	type	{必修,CET4}
+en	no one	{A1}
 en	typewriter	{CET4}
 en	typhoon	{选择性必修}
 en	typical	{必修,CET4}
@@ -66382,6 +72599,416 @@ ko	환경 오염	{C}
 ko	마치	{B}
 en	yogurt	{}
 en	practice	{}
+en	accidentally	{B2}
+en	accurately	{B2}
+en	accused	{C1}
+en	activation	{C1}
+en	additionally	{B2}
+en	administrator	{C1}
+en	afterwards	{B2}
+en	ah	{A2}
+en	albeit	{C1}
+en	all right	{A2}
+en	aluminium	{C1}
+en	amazed	{B1}
+en	annoyed	{B1}
+en	annoying	{B1}
+en	annually	{B2}
+en	any more	{A2}
+en	anymore	{A2}
+en	anyone	{A1}
+en	apparel	{C1}
+en	appropriately	{B2}
+en	architectural	{C1}
+en	arguably	{C1}
+en	armed	{B2}
+en	arms	{B2}
+en	artwork	{B2}
+en	associated	{B2}
+en	astonishing	{B2}
+en	backdrop	{C1}
+en	backing	{C1}
+en	balanced	{B2}
+en	based	{A2}
+en	battlefield	{C1}
+en	benchmark	{C1}
+en	bent	{B2}
+en	blonde	{A1}
+en	bombing	{B2}
+en	booking	{B2,C1}
+en	boyfriend	{A1}
+en	breathing	{B1}
+en	briefly	{B2}
+en	broadband	{C1}
+en	broadcaster	{B2}
+en	broadly	{B2}
+en	broken	{A2}
+en	bye	{A1}
+en	camping	{A2}
+en	cannot	{A1}
+en	carefully	{A2}
+en	catalogue	{C1}
+en	closed	{A2}
+en	closely	{B2}
+en	closure	{C1}
+en	collector	{B2}
+en	colored	{B1}
+en	coloured	{B1}
+en	commissioner	{C1}
+en	commonly	{B2}
+en	completely	{A2}
+en	confusing	{B2}
+en	connected	{A2}
+en	considerably	{B2}
+en	consistently	{B2}
+en	constantly	{B2}
+en	contender	{C1}
+en	continually	{C1}
+en	convinced	{B2}
+en	cooking	{A1}
+en	correctly	{A2}
+en	counseling	{C1}
+en	counselling	{C1}
+en	countless	{C1}
+en	covered	{B1}
+en	creativity	{B2}
+en	critically	{B2}
+en	critique	{C1}
+en	curly	{A2}
+en	curved	{B2}
+en	cutting	{C1}
+en	damaging	{C1}
+en	dancer	{A1}
+en	dancing	{A1}
+en	decision-making	{C1}
+en	dedicated	{C1}
+en	defender	{B2}
+en	deliberately	{B2}
+en	delighted	{B2}
+en	demon	{C1}
+en	depressed	{B2}
+en	depressing	{B2}
+en	desperately	{B2}
+en	differently	{A2}
+en	directly	{B1}
+en	disadvantage	{B1}
+en	discretion	{C1}
+en	dishonest	{B2}
+en	disturbing	{C1}
+en	divorced	{A2}
+en	documentation	{C1}
+en	dressed	{B1}
+en	driving	{A2,C1}
+en	duo	{C1}
+en	educated	{B1}
+en	effectively	{B1}
+en	effectiveness	{C1}
+en	efficiently	{B2}
+en	embarrassing	{B1}
+en	emotionally	{B2}
+en	empower	{C1}
+en	encompass	{C1}
+en	endeavour	{C1}
+en	engaged	{B1}
+en	engaging	{C1}
+en	enroll	{C1}
+en	essentially	{B2}
+en	exclusively	{C1}
+en	expected	{B1}
+en	explicitly	{C1}
+en	extensively	{B2}
+en	extremist	{C1}
+en	failed	{B2}
+en	fairness	{C1}
+en	felony	{C1}
+en	fighting	{B1}
+en	film-maker	{C1}
+en	filmmaker	{C1}
+en	firearm	{C1}
+en	firefighter	{B2}
+en	firmly	{B2}
+en	fitness	{B1}
+en	flawed	{C1}
+en	flying	{A2}
+en	folding	{B2}
+en	formerly	{B2}
+en	frankly	{C1}
+en	freely	{B2}
+en	frightening	{B1}
+en	frozen	{B1}
+en	frustrated	{C1}
+en	fulfill	{B2}
+en	full-time	{B2}
+en	fully	{B2}
+en	fundamentally	{B2}
+en	fundraising	{C1}
+en	gambling	{C1}
+en	gaming	{B2}
+en	generic	{C1}
+en	genocide	{C1}
+en	genuinely	{B2}
+en	gig	{B2,C1}
+en	girlfriend	{A1}
+en	globalization	{B2}
+en	governance	{C1}
+en	graphics	{B2}
+en	greatly	{B2}
+en	guerrilla	{C1}
+en	handling	{C1}
+en	harbour	{B2}
+en	have to	{A1}
+en	healthcare	{B2}
+en	heavily	{B1}
+en	hey	{A1}
+en	hidden	{B2}
+en	high-profile	{C1}
+en	hilarious	{B2}
+en	hopefully	{B2}
+en	imagery	{C1}
+en	impressed	{B2}
+en	inability	{C1}
+en	inadequate	{C1}
+en	inappropriate	{C1}
+en	incarcerate	{C1}
+en	incarceration	{C1}
+en	included	{A2}
+en	incorrect	{B2}
+en	indirect	{B1}
+en	inequality	{C1}
+en	inevitably	{B2}
+en	infamous	{C1}
+en	info	{B2}
+en	informal	{A2}
+en	injured	{B1}
+en	injustice	{C1}
+en	install	{B2}
+en	instantly	{B2}
+en	insufficient	{C1}
+en	integrated	{C1}
+en	intended	{B2}
+en	interface	{C1}
+en	intersection	{C1}
+en	intriguing	{C1}
+en	invoke	{C1}
+en	irrelevant	{C1}
+en	isolated	{B2}
+en	jewelry	{A2}
+en	killing	{B1}
+en	large-scale	{C1}
+en	latest	{B1,B2}
+en	lawmaker	{C1}
+en	legislature	{C1}
+en	lesser	{C1}
+en	lethal	{C1}
+en	licence	{B2}
+en	lifelong	{C1}
+en	lifetime	{B2}
+en	line-up	{C1}
+en	lineup	{C1}
+en	listing	{C1}
+en	litre	{B2}
+en	located	{B1}
+en	long-standing	{C1}
+en	long-term	{B2}
+en	long-time	{C1}
+en	longtime	{C1}
+en	mainly	{B1}
+en	make-up	{B2}
+en	making	{B2}
+en	manufacturing	{B2}
+en	marker	{B2}
+en	marketplace	{C1}
+en	married	{A1}
+en	martial	{B2}
+en	matching	{B2}
+en	mathematics	{A2}
+en	meditation	{C1}
+en	memo	{C1}
+en	memoir	{C1}
+en	memorable	{B2}
+en	miner	{B2}
+en	mixed	{B2}
+en	mob	{C1}
+en	mobility	{C1}
+en	module	{C1}
+en	monk	{C1}
+en	mosque	{B2}
+en	motorcycle	{A2}
+en	motorist	{C1}
+en	moving	{B2}
+en	mum	{A1}
+en	neighboring	{C1}
+en	neighbouring	{C1}
+en	newly	{B2}
+en	newsletter	{C1}
+en	next to	{A1}
+en	niche	{C1}
+en	non-profit	{C1}
+en	nonprofit	{C1}
+en	notably	{C1}
+en	nursing	{B2}
+en	oh	{A1}
+en	opposed	{B2}
+en	organized	{B1}
+en	organizer	{B1}
+en	originally	{B1}
+en	ought	{B1}
+en	overly	{C1}
+en	part-time	{B2}
+en	passing	{C1}
+en	pastor	{C1}
+en	pathway	{C1}
+en	perfectly	{B1}
+en	permanently	{B2}
+en	photograph	{A1,A2}
+en	pipeline	{C1}
+en	pleased	{A2}
+en	pointed	{B2}
+en	post-war	{C1}
+en	postwar	{C1}
+en	potentially	{B2}
+en	predominantly	{C1}
+en	prepared	{B1}
+en	previously	{B1}
+en	princess	{B1}
+en	proceeding	{C1}
+en	proceeds	{C1}
+en	processing	{C1}
+en	producer	{B1}
+en	programming	{B2}
+en	pronounced	{C1}
+en	properly	{B1}
+en	prosecutor	{C1}
+en	protester	{B2}
+en	publishing	{B2}
+en	punk	{B2}
+en	purely	{B2}
+en	qualified	{B1}
+en	quickly	{A1}
+en	quietly	{A2}
+en	racing	{B1}
+en	railroad	{A2}
+en	ranking	{C1}
+en	rapidly	{B2}
+en	reasonably	{B2}
+en	reasoning	{C1}
+en	rebuild	{B2}
+en	reconstruction	{C1}
+en	recount	{C1}
+en	regain	{C1}
+en	regularly	{B1}
+en	related	{B1}
+en	relatively	{B2}
+en	relaxed	{B1}
+en	relaxing	{B1}
+en	reliability	{C1}
+en	relieved	{B2}
+en	remains	{C1}
+en	remarkably	{B2}
+en	repeated	{B1}
+en	reportedly	{C1}
+en	reporting	{B2}
+en	residue	{C1}
+en	rookie	{C1}
+en	roster	{C1}
+en	rumour	{C1}
+en	sadly	{A2}
+en	satisfied	{B2}
+en	scared	{A2}
+en	scattered	{C1}
+en	sceptical	{C1}
+en	screening	{B2}
+en	secondly	{A2,C1}
+en	seeker	{B2}
+en	seriously	{B1}
+en	set-up	{C1}
+en	settler	{B2}
+en	setup	{C1}
+en	severely	{B2}
+en	sexuality	{C1}
+en	shaped	{B2}
+en	shareholder	{C1}
+en	shocked	{B2}
+en	shocking	{B2}
+en	shooting	{B2}
+en	short-term	{B2}
+en	sibling	{B2}
+en	sidewalk	{B2}
+en	significantly	{B2}
+en	similarly	{B1}
+en	simultaneously	{C1}
+en	singing	{A2}
+en	situated	{C1}
+en	slowly	{A2}
+en	smoking	{A2}
+en	sneaker	{A2}
+en	sophomore	{C1}
+en	spam	{C1}
+en	specialized	{C1}
+en	spoken	{B1}
+en	spokeswoman	{B2}
+en	sporting	{B2}
+en	standing	{C1}
+en	strictly	{B2}
+en	strongly	{B1}
+en	subsequently	{B2}
+en	substantially	{C1}
+en	successfully	{B1}
+en	sufficiently	{B2}
+en	surely	{B1}
+en	surprised	{A2}
+en	surprising	{A2}
+en	tactical	{C1}
+en	taxpayer	{C1}
+en	teens	{B2}
+en	terms	{B2}
+en	testing	{B2}
+en	thankfully	{C1}
+en	thanks	{A1}
+en	theology	{C1}
+en	thereafter	{C1}
+en	thoroughly	{B2}
+en	thought-provoking	{C1}
+en	thrilled	{C1}
+en	tonne	{B2}
+en	totally	{B1}
+en	trading	{B2}
+en	traveler	{A2}
+en	traveller	{A2}
+en	tribunal	{C1}
+en	trio	{C1}
+en	troubled	{C1}
+en	tsunami	{B2}
+en	typically	{B1}
+en	unable	{B1}
+en	unacceptable	{B2}
+en	uncomfortable	{B1}
+en	unconscious	{B2}
+en	unconstitutional	{C1}
+en	unexpected	{B2}
+en	unfair	{B1}
+en	unfortunate	{B2}
+en	unfortunately	{A2}
+en	unhappy	{A2}
+en	united	{A2}
+en	unknown	{B2}
+en	unlike	{B1}
+en	unlikely	{B1}
+en	unnecessary	{B1}
+en	unpleasant	{B1}
+en	upcoming	{C1}
+en	used to	{A2}
+en	varied	{C1}
+en	vibrant	{C1}
+en	viewer	{B1}
+en	voting	{B2}
+en	warming	{B2}
+en	whilst	{C1}
+en	widely	{B2}
+en	working	{A2}
+en	workplace	{B2}
+en	wow	{A2}
+en	written	{B1}
 \.
 
 
@@ -66434,6 +73061,14 @@ ALTER TABLE ONLY public.languages
 
 
 --
+-- Name: oxford oxford_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.oxford
+    ADD CONSTRAINT oxford_pkey PRIMARY KEY (word, cefr, pos, region, sense);
+
+
+--
 -- Name: words words_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -66453,5 +73088,5 @@ ALTER TABLE ONLY public.words
 -- PostgreSQL database dump complete
 --
 
-\unrestrict EULFq5iosrJejsuP4JMYR1CfQNcfDn1j8P5XwaTgPv8VMvZRUFxMzeeKhFd2GOF
+\unrestrict X5lPvdv1Jfojf5QI5Tja4sja2z0nefhzDHxl05dnTJez6lCIpkcnCIrXPRCdbLk
 
