@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import type { SearchItem } from '../api/search'
 import { Highlight } from './Highlight'
+import { SoundButton } from './SoundButton'
 
 /** Korean homonyms carry a trailing index (톤01) — render it as a superscript. */
 function Word({ text, query }: { text: string; query: string }) {
@@ -52,16 +53,7 @@ export function ResultList({
                 <span className="result__origin">{korean.origin}</span>
               )}
               {korean?.sound && (
-                <a
-                  className="result__sound"
-                  href={korean.sound}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="发音"
-                  title="发音"
-                >
-                  🔊
-                </a>
+                <SoundButton src={`/audio/ko/${korean.sound}`} />
               )}
               {item.categories.length > 0 && (
                 <span className="result__cats">{item.categories.join(' · ')}</span>

@@ -1,3 +1,4 @@
+import './env.ts'
 import { Pool } from 'pg'
 
 const connectionString =

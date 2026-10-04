@@ -16,6 +16,14 @@ db/cedict.txt.gz
 dist-ssr
 *.local
 
+# Local environment (machine-specific paths, secrets)
+.env
+.env.*
+!.env.example
+
+# Audio assets live outside the repo by default (see AUDIO_DIR)
+/audio
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
