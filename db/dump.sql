@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict 6RG9K0tRZVJ86OyTqf1My8RnSbU1bcUdmrZfKjGMUPjz5l9GkJsjtH6X7Na1pta
+\restrict 2YjNMmPmehpexhgpdqVYnBaRaMNih0nqX8m88C74TK4TWCEtuHd0xmyVcw5KeGt
 
 -- Dumped from database version 17.11
 -- Dumped by pg_dump version 17.11
@@ -137,7 +137,8 @@ CREATE TABLE public.oxford (
     cefr text NOT NULL,
     pos text NOT NULL,
     region text DEFAULT ''::text NOT NULL,
-    sense text DEFAULT ''::text NOT NULL
+    sense text DEFAULT ''::text NOT NULL,
+    sound text
 );
 
 
@@ -33648,6194 +33649,6194 @@ ko
 -- Data for Name: oxford; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.oxford (word, cefr, pos, region, sense) FROM stdin;
-AIDS	B2	n.		
-April	A1	n.		
-August	A1	n.		
-CD	A1	n.		
-DVD	A1	n.		
-December	A1	n.		
-February	A1	n.		
-Friday	A1	n.		
-I	A1	pron.		
-ID	B2	n.		
-IT	B1	n.		
-January	A1	n.		
-July	A1	n.		
-June	A1	n.		
-March	A1	n.		
-May	A1	n.		
-Monday	A1	n.		
-November	A1	n.		
-OK	A1	adj.		
-OK	A1	adv.		
-OK	A1	exclam.		
-October	A1	n.		
-Saturday	A1	n.		
-September	A1	n.		
-Sunday	A1	n.		
-T-shirt	A1	n.		
-TV	A1	n.		
-Thursday	A1	n.		
-Tuesday	A1	n.		
-Wednesday	A1	n.		
-a, an	A1	indefinite article		
-abandon	B2	v.		
-ability	A2	n.		
-able	A2	adj.		
-abolish	C1	v.		
-abortion	C1	n.		
-about	A1	adv.		
-about	A1	prep.		
-above	A1	adv.		
-above	A1	prep.		
-abroad	A2	adv.	UK	
-abroad	B2	adv.	US	
-absence	C1	n.		
-absent	C1	adj.		
-absolute	B2	adj.		
-absolutely	B1	adv.		
-absorb	B2	v.		
-abstract	B2	adj.		
-absurd	C1	adj.		
-abundance	C1	n.	UK	
-abuse	C1	n.		
-abuse	C1	v.		
-academic	B1	adj.	UK	
-academic	B1	adj.	US	
-academic	B2	n.	UK	
-academy	C1	n.		
-accelerate	C1	v.		
-accent	B2	n.		
-accept	A2	v.		
-acceptable	B2	adj.		
-acceptance	C1	n.		
-access	B1	n.		
-access	B1	v.		
-accessible	C1	adj.		
-accident	A2	n.		
-accidentally	B2	adv.		
-accommodate	B2	v.		
-accommodation	B1	n.	UK	
-accommodation	B2	n.	US	
-accompany	B2	v.		
-accomplish	B2	v.		
-accomplishment	C1	n.		
-accordance	C1	n.	UK	
-according to	A2	prep.		
-accordingly	C1	adv.		
-account	B1	n.		
-account	B2	v.		
-accountability	C1	n.		
-accountable	C1	adj.		
-accountant	B2	n.		
-accumulate	C1	v.		
-accumulation	C1	n.		
-accuracy	B2	n.		
-accurate	B2	adj.		
-accurately	B2	adv.		
-accusation	C1	n.		
-accuse	B2	v.		
-accused	C1	n.		
-achieve	A2	v.		
-achievement	B1	n.		
-acid	B2	n.		
-acid	C1	adj.		
-acknowledge	B2	v.		
-acquire	B2	v.		
-acquisition	C1	n.		
-acre	B2	n.	US	
-acre	C1	n.	UK	
-across	A1	adv.		
-across	A1	prep.		
-act	A2	v.		
-act	B1	n.		
-action	A1	n.		
-activate	B2	v.		
-activation	C1	n.		
-active	A2	adj.		
-activist	C1	n.		
-activity	A1	n.		
-actor	A1	n.		
-actress	A1	n.		
-actual	B2	adj.		
-actually	A2	adv.		
-acute	C1	adj.		
-ad	B1	n.		
-adapt	B2	v.		
-adaptation	C1	n.		
-add	A1	v.		
-addiction	B2	n.		
-addition	B1	n.		
-additional	B2	adj.		
-additionally	B2	adv.		
-address	A1	n.		
-address	B2	v.		
-adequate	B2	adj.		
-adequately	B2	adv.		
-adhere	C1	v.		
-adjacent	C1	adj.		
-adjust	B2	v.		
-adjustment	C1	n.		
-administer	C1	v.		
-administration	B1	n.	US	
-administration	B2	n.	UK	
-administrative	C1	adj.		
-administrator	C1	n.		
-admire	B1	v.		
-admission	C1	n.		
-admit	B1	v.		
-adolescent	C1	n.		
-adopt	B2	v.		
-adoption	C1	n.		
-adult	A1	n.		
-adult	A2	adj.		
-advance	B2	adj.		
-advance	B2	n.		
-advance	B2	v.		
-advanced	B1	adj.		
-advantage	A2	n.		
-adventure	A2	n.		
-adverse	C1	adj.		
-advertise	A2	v.		
-advertisement	A2	n.		
-advertising	A2	n.		
-advice	A1	n.		
-advise	B1	v.		
-advocate	C1	n.		
-advocate	C1	v.		
-aesthetic	C1	adj.		
-affair	B2	n.		
-affect	A2	v.		
-affection	C1	n.		
-afford	B1	v.		
-affordable	B2	adj.		
-afraid	A1	adj.		
-after	A1	prep.		
-after	A2	adv.		
-after	A2	conj.		
-aftermath	C1	n.		
-afternoon	A1	n.		
-afterward	B2	adv.	US	
-afterwards	B2	adv.	UK	
-again	A1	adv.		
-against	A2	prep.		
-age	A1	n.		
-age	B1	v.		
-aged	B1	adj.	UK	
-aged	B2	adj.	US	
-agency	B2	n.		
-agenda	B2	n.		
-agent	B1	n.		
-aggression	C1	n.		
-aggressive	B2	adj.		
-ago	A1	adv.		
-agree	A1	v.		
-agreement	B1	n.		
-agricultural	C1	adj.		
-agriculture	B2	n.		
-ah	A2	exclam.		
-ahead	B1	adv.		
-aid	B2	n.		
-aid	B2	v.		
-aide	C1	n.		
-aim	B1	n.		
-aim	B1	v.		
-air	A1	n.		
-aircraft	B2	n.		
-airline	A2	n.		
-airport	A1	n.		
-alarm	B1	n.		
-alarm	B2	v.		
-albeit	C1	conj.	UK	
-album	B1	n.		
-alcohol	B1	n.		
-alcoholic	B1	adj.		
-alert	C1	adj.		
-alert	C1	n.		
-alert	C1	v.		
-alien	B2	n.		
-alien	C1	adj.		
-align	C1	v.		
-alignment	C1	n.		
-alike	C1	adj.		
-alike	C1	adv.		
-alive	A2	adj.		
-all	A1	det.		
-all	A1	pron.		
-all	A2	adv.		
-all right	A2	adj.	UK	
-all right	A2	adj.	US	
-all right	A2	adv.	UK	
-all right	A2	adv.	US	
-all right	A2	exclam.	UK	
-allegation	C1	n.		
-allege	C1	v.		
-allegedly	C1	adv.		
-alliance	C1	n.		
-allocate	C1	v.		
-allocation	C1	n.		
-allow	A2	v.		
-allowance	C1	n.		
-ally	C1	n.		
-almost	A2	adv.		
-alone	A2	adj.		
-alone	A2	adv.		
-along	A2	adv.		
-along	A2	prep.		
-alongside	B2	prep.		
-already	A2	adv.		
-also	A1	adv.		
-alter	B2	v.		
-alternative	A2	n.		
-alternative	B1	adj.		
-although	A2	conj.		
-altogether	B2	adv.		
-aluminium	C1	n.	UK	
-aluminum	C1	n.	US	
-always	A1	adv.		
-amateur	C1	adj.		
-amateur	C1	n.		
-amazed	B1	adj.		
-amazing	A1	adj.		
-ambassador	C1	n.		
-ambition	B1	n.		
-ambitious	B1	adj.	UK	
-ambitious	B2	adj.	US	
-ambulance	B2	n.		
-amend	C1	v.		
-amendment	C1	n.		
-amid	C1	prep.		
-among	A2	prep.		
-amount	A2	n.		
-amount	B2	v.		
-amusing	B2	adj.		
-analogy	C1	n.		
-analyse	B1	v.	UK	
-analysis	B1	n.		
-analyst	B2	n.		
-analyze	A2	v.	US	
-ancestor	B2	n.		
-anchor	C1	n.		
-ancient	A2	adj.		
-and	A1	conj.		
-angel	C1	n.		
-anger	B2	n.		
-angle	B2	n.		
-angry	A1	adj.		
-animal	A1	n.		
-animation	B2	n.		
-ankle	A2	n.		
-anniversary	B2	n.		
-announce	B1	v.		
-announcement	B1	n.		
-annoy	B1	v.		
-annoyed	B1	adj.		
-annoying	B1	adj.		
-annual	B2	adj.		
-annually	B2	adv.		
-anonymous	C1	adj.		
-another	A1	det.		
-another	A1	pron.		
-answer	A1	n.		
-answer	A1	v.		
-anticipate	B2	v.		
-anxiety	B2	n.		
-anxious	B2	adj.		
-any	A1	det.		
-any	A1	pron.		
-any	A2	adv.		
-any more	A2	adv.	UK	
-anybody	A2	pron.		
-anymore	A2	adv.	US	
-anyone	A1	pron.		
-anything	A1	pron.		
-anyway	A2	adv.		
-anywhere	A2	adv.		
-anywhere	A2	pron.		
-apart	B1	adv.		
-apartment	A1	n.		
-apologize	B1	v.		
-apology	B2	n.		
-app	A2	n.		
-apparatus	C1	n.		
-apparel	C1	n.	US	
-apparent	B2	adj.		
-apparently	B2	adv.		
-appeal	B2	n.		
-appeal	B2	v.		
-appealing	C1	adj.		
-appear	A2	v.		
-appearance	A2	n.		
-appetite	C1	n.		
-applaud	C1	v.		
-apple	A1	n.		
-applicable	C1	adj.		
-applicant	B2	n.		
-application	B1	n.		
-apply	A2	v.		
-appoint	C1	v.		
-appointment	B1	n.		
-appreciate	B1	v.		
-appreciation	C1	n.		
-approach	B2	n.		
-approach	B2	v.		
-appropriate	B2	adj.		
-appropriately	B2	adv.		
-approval	B2	n.		
-approve	B2	v.		
-approximately	B1	adv.		
-arbitrary	C1	adj.		
-architect	A2	n.		
-architectural	C1	adj.		
-architecture	A2	n.		
-archive	C1	n.		
-area	A1	n.		
-arena	C1	n.		
-arguably	C1	adv.	UK	
-argue	A2	v.		
-argument	A2	n.		
-arise	B2	v.		
-arm	A1	n.		
-arm	C1	v.		
-armed	B2	adj.		
-arms	B2	n.		
-army	A2	n.		
-around	A1	adv.		
-around	A1	prep.		
-arrange	A2	v.		
-arrangement	A2	n.		
-array	C1	n.		
-arrest	B1	n.		
-arrest	B1	v.		
-arrival	B1	n.		
-arrive	A1	v.		
-arrow	B2	n.		
-art	A1	n.		
-article	A1	n.		
-articulate	C1	v.		
-artificial	B2	adj.		
-artist	A1	n.		
-artistic	B2	adj.		
-artwork	B2	n.		
-as	A1	prep.		
-as	A2	adv.		
-as	A2	conj.		
-ash	C1	n.		
-ashamed	B2	adj.		
-aside	B2	adv.	UK	
-aside	B2	adv.	US	
-ask	A1	v.		
-asleep	A2	adj.		
-aspect	B2	n.		
-aspiration	C1	n.		
-aspire	C1	v.		
-assassination	C1	n.		
-assault	C1	n.		
-assault	C1	v.		
-assemble	C1	v.		
-assembly	C1	n.		
-assert	C1	v.		
-assertion	C1	n.		
-assess	B2	v.		
-assessment	B2	n.		
-asset	B2	n.		
-assign	B2	v.		
-assignment	B1	n.		
-assist	B1	v.		
-assistance	B2	n.		
-assistant	A2	adj.		
-assistant	A2	n.		
-associate	B2	v.		
-associated	B2	adj.		
-association	B2	n.		
-assume	B2	v.		
-assumption	B2	n.		
-assurance	C1	n.		
-assure	B2	v.		
-astonishing	B2	adj.		
-asylum	C1	n.		
-at	A1	prep.		
-athlete	A2	n.		
-athletic	B2	adj.	US	
-atmosphere	B1	n.		
-atrocity	C1	n.		
-attach	B1	v.		
-attachment	B2	n.		
-attack	A2	n.		
-attack	A2	v.		
-attain	C1	v.		
-attempt	B2	n.		
-attempt	B2	v.		
-attend	A2	v.		
-attendance	C1	n.		
-attention	A2	exclam.	UK	
-attention	A2	n.	UK	
-attention	A2	n.	US	
-attitude	B1	n.		
-attorney	B2	n.	US	
-attorney	C1	n.	UK	
-attract	B1	v.		
-attraction	B1	n.		
-attractive	A2	adj.		
-attribute	C1	n.		
-attribute	C1	v.		
-auction	B2	n.	UK	
-auction	C1	n.	US	
-audience	A2	n.		
-audio	B2	adj.		
-audit	C1	n.		
-aunt	A1	n.		
-authentic	C1	adj.		
-author	A2	n.		
-authority	B1	n.		
-authorize	C1	v.		
-auto	C1	n.		
-automatic	B1	adj.	US	
-automatic	B2	adj.	UK	
-automatically	B1	adv.	US	
-automatically	B2	adv.	UK	
-autonomy	C1	n.		
-autumn	A1	n.	UK	
-autumn	C1	n.	US	
-availability	C1	n.		
-available	A2	adj.		
-average	A2	adj.		
-average	A2	n.		
-average	B1	v.		
-avoid	A2	v.		
-await	C1	v.		
-award	A2	n.		
-award	B1	v.		
-aware	B1	adj.		
-awareness	B2	n.		
-away	A1	adv.		
-awesome	A1	adj.	US	
-awful	A2	adj.		
-awkward	B2	adj.		
-baby	A1	n.		
-back	A1	adv.		
-back	A1	n.		
-back	A2	adj.		
-back	B2	v.		
-backdrop	C1	n.		
-background	A2	n.		
-backing	C1	n.		
-backup	C1	n.		
-backward	B1	adv.	US	
-backwards	B1	adv.	UK	
-bacteria	B2	n.		
-bad	A1	adj.		
-badge	B2	n.		
-badly	A2	adv.		
-bag	A1	n.		
-bail	C1	n.		
-bake	B1	v.		
-balance	B1	n.		
-balance	B1	v.		
-balanced	B2	adj.		
-ball	A1	n.		
-ballet	B2	n.		
-balloon	B2	n.		
-ballot	C1	n.		
-ban	B1	n.		
-ban	B1	v.		
-banana	A1	n.		
-band	A1	n.		
-bank	A1	n.		money
-bank	B1	n.		river
-bankruptcy	C1	n.	US	
-banner	C1	n.		
-bar	A1	n.	US	
-bar	A2	n.	UK	
-bar	B2	v.	UK	
-bar	B2	v.	US	
-bare	C1	adj.		
-barely	B2	adv.		
-bargain	B2	n.		
-barrel	C1	n.		
-barrier	B2	n.		
-base	B1	n.		
-base	B1	v.		
-baseball	A1	n.	US	
-baseball	A2	n.	UK	
-based	A2	adj.		
-basement	B2	n.		
-basic	B1	adj.		
-basically	B2	adv.		
-basis	B1	n.		
-basket	B2	n.		
-basketball	A1	n.	US	
-basketball	A2	n.	UK	
-bass	C1	n.		
-bat	B2	n.		
-bat	C1	v.		
-bath	A1	n.		
-bathroom	A1	n.		
-battery	B1	n.		
-battle	B1	n.		
-battle	B2	v.		
-battlefield	C1	n.		
-bay	C1	n.		
-be	A1	auxiliary v.		
-be	A1	v.		
-beach	A1	n.		
-beam	C1	n.		
-bean	A2	n.		
-bear	A2	n.		animal
-bear	B2	v.		deal with
-beast	C1	n.		
-beat	A2	v.		
-beat	B2	n.		
-beautiful	A1	adj.		
-beauty	B1	n.		
-because	A1	conj.		
-become	A1	v.		
-bed	A1	n.		
-bedroom	A1	n.		
-bee	B1	n.		
-beef	A2	n.		
-beer	A1	n.		
-before	A1	prep.		
-before	A2	adv.		
-before	A2	conj.		
-beg	B2	v.		
-begin	A1	v.		
-beginning	A1	n.		
-behalf	C1	n.		
-behave	A2	v.		
-behavior	A2	n.	US	
-behavioral	C1	adj.	US	
-behaviour	A2	n.	UK	
-behind	A1	adv.		
-behind	A1	prep.		
-being	B2	n.		
-belief	B1	n.		
-believe	A1	v.		
-bell	B1	n.		
-belong	A2	v.		
-beloved	C1	adj.		
-below	A1	adv.		
-below	A1	prep.		
-belt	A2	n.		
-bench	C1	n.		
-benchmark	C1	n.		
-bend	B1	n.		
-bend	B1	v.		
-beneath	C1	prep.		
-beneficial	B2	adj.		
-beneficiary	C1	n.		
-benefit	A2	n.		
-benefit	B1	v.		
-bent	B2	adj.		
-beside	B2	prep.		
-besides	B2	adv.		
-besides	B2	prep.		
-best	A1	adj.		
-best	A2	adv.		
-best	A2	n.		
-bet	B2	n.		
-bet	B2	v.		
-betray	C1	v.		
-better	A1	adj.		
-better	A2	adv.		
-better	B1	n.		
-between	A1	prep.		
-between	A2	adv.		
-beverage	C1	n.	US	
-beyond	B2	adv.		
-beyond	B2	prep.		
-bias	B2	n.		
-bicycle	A1	n.		
-bid	B2	n.		
-bid	B2	v.		
-big	A1	adj.		
-bike	A1	n.		
-bill	A1	n.		
-bill	B2	v.		
-billion	A2	number		
-bin	A2	n.	UK	
-bind	C1	v.		
-biography	C1	n.		
-biological	B2	adj.		
-biology	A2	n.		
-bird	A1	n.		
-birth	A2	n.		
-birthday	A1	n.		
-biscuit	A2	n.	UK	
-bishop	C1	n.		
-bit	A2	n.		
-bite	B1	n.		
-bite	B1	v.		
-bitter	B2	adj.		
-bizarre	C1	adj.		
-black	A1	adj.		
-black	A1	n.		
-blade	C1	n.		
-blame	B2	n.		
-blame	B2	v.		
-blank	A2	adj.		
-blank	A2	n.		
-blanket	B2	n.		
-blast	C1	n.		
-blast	C1	v.		
-bleed	C1	v.		
-blend	C1	n.		
-blend	C1	v.		
-bless	C1	v.		
-blessing	C1	n.		
-blind	B2	adj.		
-block	A2	n.	US	
-block	B1	n.	UK	
-block	B1	v.	UK	
-block	B1	v.	US	
-blog	A1	n.		
-blond	A1	adj.	US	
-blonde	A1	adj.	UK	
-blood	A2	n.		
-blow	A2	v.		
-blow	B2	n.		
-blue	A1	adj.		
-blue	A1	n.		
-board	A2	n.		
-board	B1	v.		
-boast	C1	v.		
-boat	A1	n.		
-body	A1	n.		
-boil	A2	v.		
-bold	B2	adj.		
-bomb	B1	n.		
-bomb	B1	v.		
-bombing	B2	n.		
-bond	B2	n.		
-bone	A2	n.		
-bonus	C1	n.		
-book	A1	n.		
-book	A2	v.		
-booking	B2	n.	UK	
-booking	C1	n.	US	
-boom	C1	n.		
-boost	B2	n.		
-boost	B2	v.		
-boot	A1	n.		
-border	B1	n.		
-border	B2	v.		
-bored	A1	adj.		
-boring	A1	adj.		
-born	A1	v.		
-borrow	A2	v.		
-boss	A2	n.		
-both	A1	det.		
-both	A1	pron.		
-bother	B1	v.		
-bottle	A1	n.		
-bottom	A2	adj.		
-bottom	A2	n.		
-bounce	C1	v.		
-bound	B2	adj.		
-boundary	C1	n.		
-bow	C1	n.		
-bow	C1	v.		
-bowl	A2	n.		
-box	A1	n.		
-boy	A1	n.		
-boyfriend	A1	n.		
-brain	A2	n.		
-branch	B1	n.		
-brand	B1	n.		
-brand	B1	v.		
-brave	B1	adj.		
-breach	C1	n.		
-breach	C1	v.		
-bread	A1	n.		
-break	A1	n.		
-break	A1	v.		
-breakdown	C1	n.		
-breakfast	A1	n.		
-breakthrough	C1	n.		
-breast	B2	n.		
-breath	B1	n.		
-breathe	B1	v.		
-breathing	B1	n.		
-breed	C1	n.		
-breed	C1	v.		
-brick	B2	n.		
-bride	B1	n.		
-bridge	A2	n.		
-brief	B2	adj.		
-briefly	B2	adv.		
-bright	A2	adj.		
-brilliant	A2	adj.		
-bring	A1	v.		
-broad	B2	adj.		
-broadband	C1	n.		
-broadcast	B2	n.		
-broadcast	B2	v.		
-broadcaster	B2	n.		
-broadly	B2	adv.		
-broken	A2	adj.		
-brother	A1	n.		
-brown	A1	adj.		
-brown	A1	n.		
-browser	C1	n.		
-brush	A2	n.		
-brush	A2	v.		
-brutal	C1	adj.		
-bubble	B1	n.		
-buck	B2	n.	US	
-buck	C1	n.	UK	
-buddy	C1	n.		
-budget	B2	n.		
-buffer	C1	n.		
-bug	B2	n.		
-build	A1	v.		
-building	A1	n.		
-bulk	C1	n.		
-bullet	B2	n.		
-bunch	B2	n.		
-burden	C1	n.		
-bureaucracy	C1	n.		
-burial	C1	n.		
-burn	A2	v.		
-burn	B2	n.		
-burst	C1	v.		
-bury	B1	v.		
-bus	A1	n.		
-bush	B2	n.		
-business	A1	n.		
-businessman	A2	n.		
-busy	A1	adj.		
-but	A1	conj.		
-but	B2	prep.		
-butter	A1	n.		
-button	A2	n.		
-buy	A1	v.		
-by	A1	prep.		
-by	B1	adv.		
-bye	A1	exclam.		
-cabin	B2	n.		
-cabinet	C1	n.		
-cable	B1	n.	US	
-cable	B2	n.	UK	
-cafe	A1	n.		
-cake	A1	n.		
-calculate	B2	v.		
-calculation	C1	n.		
-call	A1	n.		
-call	A1	v.		
-calm	B1	adj.		
-calm	B1	n.		
-calm	B1	v.		
-camera	A1	n.		
-camp	A2	n.		
-camp	A2	v.		
-campaign	B1	n.		
-campaign	B1	v.		
-camping	A2	n.		
-campus	A2	n.	US	
-campus	B1	n.	UK	
-can	A1	modal v.		
-can	A2	n.		
-canal	B2	n.		
-cancel	B2	v.		
-cancer	B2	n.		
-candidate	B1	n.		
-candle	B2	n.		
-candy	A2	n.	US	
-cannot	A1	v.		
-canvas	C1	n.		
-cap	B1	n.		
-capability	C1	n.		
-capable	B2	adj.		
-capacity	B2	n.		
-capital	A1	adj.		
-capital	A1	n.		
-capitalism	C1	n.		
-capitalist	C1	adj.		
-captain	B1	n.		
-capture	B2	n.		
-capture	B2	v.		
-car	A1	n.		
-carbon	B2	n.		
-card	A1	n.		
-care	A2	n.		
-care	A2	v.		
-career	A1	n.		
-careful	A2	adj.		
-carefully	A2	adv.		
-careless	B1	adj.		
-cargo	C1	n.		
-carpet	A2	n.		
-carriage	C1	n.		
-carrot	A1	n.		
-carry	A1	v.		
-cartoon	A2	n.		
-carve	C1	v.		
-case	A2	n.		
-cash	A2	n.		
-casino	C1	n.		
-cast	B2	n.		
-cast	B2	v.		
-castle	A2	n.	UK	
-castle	B2	n.	US	
-casual	B2	adj.		
-casualty	C1	n.		
-cat	A1	n.		
-catalog	C1	n.	US	
-catalogue	C1	n.	UK	
-catch	A2	v.		
-catch	B2	n.		
-category	B1	n.		
-cater	C1	v.		
-cattle	C1	n.		
-cause	A2	n.		
-cause	A2	v.		
-caution	C1	n.		
-cautious	C1	adj.		
-cave	B2	n.		
-cease	C1	v.		
-ceiling	B1	n.		
-celebrate	A2	v.		
-celebration	B1	n.		
-celebrity	A2	n.		
-cell	A2	n.	US	
-cell	B2	n.	UK	
-cemetery	C1	n.		
-cent	A1	n.		
-center	A1	n.	US	
-center	B1	v.	US	
-central	B1	adj.		
-centre	A1	n.	UK	
-centre	B1	v.	UK	
-century	A1	n.	UK	
-century	A2	n.	US	
-ceremony	B1	n.		
-certain	A2	adj.		
-certainly	A2	adv.		
-certainty	B2	n.		
-certificate	B2	n.		
-chain	B1	n.		
-chain	B2	v.		
-chair	A1	n.		
-chair	B2	v.		
-chairman	B2	n.		
-challenge	B1	n.		
-challenge	B2	v.		
-challenging	B2	adj.		
-chamber	C1	n.		
-champion	B1	n.		
-championship	B2	n.		
-chance	A2	n.		
-change	A1	n.		
-change	A1	v.		
-channel	B1	n.		
-chaos	C1	n.		
-chapter	B1	n.		
-character	A2	n.		
-characteristic	B2	adj.		
-characteristic	B2	n.		
-characterize	C1	v.		
-charge	B1	n.		
-charge	B1	v.		
-charity	A2	n.		
-charm	C1	n.		
-charming	B2	adj.		
-chart	A1	n.		
-chart	B2	v.		
-charter	C1	n.		
-chase	B2	n.		
-chase	B2	v.		
-chat	A2	n.		
-chat	A2	v.		
-cheap	A1	adj.		
-cheap	B1	adv.		
-cheat	B1	n.		
-cheat	B1	v.		
-check	A1	v.		
-check	A2	n.		
-cheek	B2	n.		
-cheer	B2	n.		
-cheer	B2	v.		
-cheerful	B1	adj.		
-cheese	A1	n.		
-chef	A2	n.		
-chemical	B1	adj.		
-chemical	B1	n.		
-chemistry	A2	n.		
-chest	B1	n.		
-chicken	A1	n.		
-chief	B2	adj.		
-chief	B2	n.		
-child	A1	n.		
-childhood	B1	n.		
-chip	A2	n.		
-chocolate	A1	n.		
-choice	A2	n.		
-choir	B2	n.	UK	
-choir	C1	n.	US	
-choose	A1	v.		
-chop	B2	v.		
-chronic	C1	adj.		
-chunk	C1	n.		
-church	A2	n.		
-cigarette	A2	n.		
-cinema	A1	n.	UK	
-circle	A2	n.		
-circle	A2	v.		
-circuit	B2	n.		
-circulate	C1	v.		
-circulation	C1	n.		
-circumstance	B2	n.		
-cite	B2	v.		
-citizen	B2	n.		
-citizenship	C1	n.		
-city	A1	n.		
-civic	C1	adj.		
-civil	B2	adj.		
-civilian	C1	adj.		
-civilian	C1	n.		
-civilization	B2	n.		
-claim	B1	n.		
-claim	B1	v.		
-clarify	B2	v.		
-clarity	C1	n.		
-clash	C1	n.		
-class	A1	n.		
-classic	B2	adj.		
-classic	B2	n.		
-classical	A2	adj.		
-classification	C1	n.		
-classify	B2	v.		
-classroom	A1	n.		
-clause	B1	n.		
-clean	A1	adj.		
-clean	A1	v.		
-clear	A2	adj.		
-clear	B1	v.		
-clearly	A2	adv.		
-clerk	A2	n.	US	
-clerk	B2	n.	UK	
-clever	A2	adj.	UK	
-clever	B1	adj.	US	
-click	B1	n.		
-click	B1	v.		
-client	B1	n.		
-cliff	B2	n.		
-climate	A2	n.		
-climb	A1	v.		
-climb	B1	n.		
-cling	C1	v.		
-clinic	B2	n.		
-clinical	C1	adj.		
-clip	B2	n.		
-clock	A1	n.		
-close	A1	v.		
-close	A2	adj.		
-close	B1	adv.		
-close	B2	n.		
-closed	A2	adj.		
-closely	B2	adv.		
-closet	A2	n.	US	
-closure	C1	n.		
-cloth	B1	n.		
-clothes	A1	n.		
-clothing	A2	n.		
-cloud	A2	n.		
-club	A1	n.		
-clue	B1	n.		
-cluster	C1	n.		
-coach	A2	n.		
-coach	B1	v.		
-coal	B1	n.		
-coalition	C1	n.		
-coast	A2	n.		
-coastal	C1	adj.		
-coat	A1	n.		
-cocktail	C1	n.		
-code	A2	n.		
-coffee	A1	n.		
-cognitive	C1	adj.		
-coin	B1	n.		
-coincide	C1	v.		
-coincidence	B2	n.		
-cold	A1	adj.		
-cold	A1	n.		
-collaborate	C1	v.		
-collaboration	C1	n.		
-collapse	B2	n.		
-collapse	B2	v.		
-colleague	A2	n.		
-collect	A2	v.		
-collection	B1	n.		
-collective	C1	adj.		
-collector	B2	n.		
-college	A1	n.		
-collision	C1	n.		
-colonial	C1	adj.		
-colony	B2	n.		
-color	A1	n.	US	
-colored	B1	adj.	US	
-colorful	B2	adj.	US	
-colour	A1	n.	UK	
-coloured	B1	adj.	UK	
-colourful	B2	adj.	UK	
-column	A2	n.		
-columnist	C1	n.		
-combat	C1	n.		
-combat	C1	v.		
-combination	B2	n.		
-combine	B1	v.		
-come	A1	v.		
-comedy	A2	n.		
-comfort	B2	n.		
-comfort	B2	v.		
-comfortable	A2	adj.		
-comic	B2	adj.		
-comic	B2	n.		
-command	B2	n.		
-command	B2	v.		
-commander	B2	n.		
-commence	C1	v.		
-comment	A2	n.		
-comment	B1	v.		
-commentary	C1	n.		
-commentator	C1	n.		
-commerce	C1	n.		
-commercial	B1	adj.		
-commercial	B1	n.		
-commission	B2	n.		
-commission	B2	v.		
-commissioner	C1	n.		
-commit	B1	v.		
-commitment	B2	n.		
-committee	B2	n.		
-commodity	C1	n.		
-common	A1	adj.	UK	
-common	A1	adj.	US	
-common	A1	n.	UK	
-commonly	B2	adv.		
-communicate	A2	v.		
-communication	B1	n.		
-communist	C1	adj.		
-community	A2	n.		
-companion	C1	n.		
-company	A1	n.		
-comparable	C1	adj.		
-comparative	B2	adj.		
-compare	A1	v.		
-comparison	B1	n.		
-compassion	C1	n.		
-compel	C1	v.		
-compelling	C1	adj.		
-compensate	C1	v.		
-compensation	C1	n.		
-compete	A2	v.		
-competence	C1	n.		
-competent	C1	adj.		
-competition	A2	n.		
-competitive	B1	adj.		
-competitor	B1	n.		
-compile	C1	v.		
-complain	A2	v.		
-complaint	B1	n.		
-complement	C1	v.		
-complete	A1	adj.		
-complete	A1	v.		
-completely	A2	adv.		
-completion	B2	n.		
-complex	B1	adj.		
-complex	B2	n.		
-complexity	C1	n.		
-compliance	C1	n.		
-complicated	B2	adj.		
-complication	C1	n.		
-comply	C1	v.		
-component	B2	n.		
-compose	B2	v.		
-composer	B2	n.		
-composition	C1	n.		
-compound	B2	n.		
-comprehensive	B2	adj.		
-comprise	B2	v.		
-compromise	C1	n.		
-compromise	C1	v.		
-compulsory	B2	adj.		
-compute	C1	v.		
-computer	A1	n.		
-conceal	C1	v.		
-concede	C1	v.		
-conceive	C1	v.		
-concentrate	B1	v.		
-concentration	B2	n.		
-concept	B2	n.		
-conception	C1	n.		
-concern	B2	n.		
-concern	B2	v.		
-concerned	B2	adj.		
-concert	A1	n.		
-concession	C1	n.		
-conclude	B1	v.		
-conclusion	B1	n.		
-concrete	B2	adj.		
-concrete	B2	n.		
-condemn	C1	v.		
-condition	A2	n.		
-conduct	B2	n.		
-conduct	B2	v.		
-confer	C1	v.		
-conference	A2	n.		
-confess	B2	v.		
-confession	C1	n.		
-confidence	B2	n.		
-confident	B1	adj.		
-configuration	C1	n.		
-confine	C1	v.		
-confirm	B1	v.		
-confirmation	C1	n.		
-conflict	B2	n.		
-conflict	B2	v.		
-confront	C1	v.		
-confrontation	C1	n.		
-confuse	B1	v.		
-confused	B1	adj.		
-confusing	B2	adj.		
-confusion	B2	n.		
-congratulate	C1	v.		
-congregation	C1	n.		
-congress	B2	n.	US	
-congressional	C1	adj.		
-connect	A2	v.		
-connected	A2	adj.		
-connection	B1	n.		
-conquer	C1	v.		
-conscience	C1	n.		
-conscious	B2	adj.		
-consciousness	C1	n.		
-consecutive	C1	adj.		
-consensus	C1	n.		
-consent	C1	n.		
-consent	C1	v.		
-consequence	B1	n.		
-consequently	B2	adv.		
-conservation	B2	n.		
-conservative	B2	adj.		
-conservative	B2	n.		
-conserve	C1	v.		
-consider	A2	v.		
-considerable	B2	adj.		
-considerably	B2	adv.		
-consideration	B2	n.		
-consist	B1	v.		
-consistency	C1	n.		
-consistent	B2	adj.		
-consistently	B2	adv.		
-consolidate	C1	v.		
-conspiracy	B2	n.		
-constant	B2	adj.		
-constantly	B2	adv.		
-constituency	C1	n.	UK	
-constitute	C1	v.		
-constitution	C1	n.		
-constitutional	C1	adj.		
-constraint	C1	n.		
-construct	B2	v.		
-construction	B2	n.		
-consult	B2	v.		
-consultant	B2	n.		
-consultation	C1	n.		
-consume	B1	v.		
-consumer	B1	n.		
-consumption	B2	n.		
-contact	B1	n.		
-contact	B1	v.		
-contain	A2	v.		
-container	B1	n.		
-contemplate	C1	v.		
-contemporary	B2	adj.		
-contempt	C1	n.		
-contend	C1	v.		
-contender	C1	n.		
-content	B1	n.		
-content	C1	adj.		
-contention	C1	n.		
-contest	B2	n.		
-contest	B2	v.		
-context	A2	n.		
-continent	A2	n.		
-continually	C1	adv.		
-continue	A2	v.		
-continuous	B1	adj.		
-contract	B2	n.		
-contract	B2	v.		
-contractor	C1	n.		
-contradiction	C1	n.		
-contrary	C1	adj.		
-contrary	C1	n.		
-contrast	B1	n.		
-contrast	B1	v.		
-contribute	B2	v.		
-contribution	B2	n.		
-contributor	C1	n.		
-control	A2	n.		
-control	A2	v.		
-controversial	B2	adj.		
-controversy	B2	n.		
-convenience	B2	n.		
-convenient	B1	adj.		
-convention	B2	n.		
-conventional	B2	adj.		
-conversation	A1	n.		
-conversion	C1	n.		
-convert	B2	v.		
-convey	B2	v.		
-convict	C1	v.		
-conviction	C1	n.		
-convince	B1	v.		
-convinced	B2	adj.		
-convincing	B2	adj.		
-cook	A1	v.		
-cook	A2	n.		
-cooker	A2	n.	UK	
-cookie	A2	n.	US	
-cooking	A1	n.		
-cool	A1	adj.		
-cool	B1	v.		
-cooperate	C1	v.		
-cooperative	C1	adj.		
-coordinate	C1	v.		
-coordination	C1	n.		
-coordinator	C1	n.		
-cop	B2	n.	US	
-cop	C1	n.	UK	
-cope	B2	v.		
-copper	C1	n.		
-copy	A2	n.		
-copy	A2	v.		
-copyright	C1	n.		
-core	B2	adj.		
-core	B2	n.		
-corn	B1	n.	US	
-corner	A2	n.		
-corporate	B2	adj.		
-corporation	B2	n.		
-correct	A1	adj.		
-correct	A1	v.		
-correction	C1	n.		
-correctly	A2	adv.		
-correlate	C1	v.		
-correlation	C1	n.		
-correspond	C1	v.		
-correspondence	C1	n.		
-correspondent	C1	n.		
-corresponding	C1	adj.		
-corridor	B2	n.		
-corrupt	C1	adj.		
-corruption	C1	n.		
-cost	A1	n.		
-cost	A1	v.		
-costly	C1	adj.		
-costume	B1	n.		
-cottage	B1	n.	UK	
-cotton	B1	n.		
-could	A1	modal v.		
-council	B2	n.		
-councillor	C1	n.	UK	
-councilor	C1	n.	US	
-counseling	C1	n.	US	
-counselling	C1	n.	UK	
-counsellor	C1	n.	UK	
-counselor	C1	n.	US	
-count	A2	v.		
-count	B1	n.		
-counter	B2	n.		long flat surface
-counter	C1	v.		argue against
-counterpart	C1	n.		
-countless	C1	adj.		
-country	A1	n.		
-countryside	B1	n.		
-county	B2	n.		
-coup	C1	n.		
-couple	A2	n.		
-courage	B2	n.		
-course	A1	n.		
-court	B1	n.		
-courtesy	C1	n.		
-cousin	A1	n.		
-cover	A2	v.		
-cover	B1	n.		
-coverage	B2	n.		
-covered	B1	adj.		
-cow	A1	n.		
-cowboy	B2	n.	US	
-crack	B2	n.		
-crack	B2	v.		
-craft	B2	n.		
-craft	C1	v.		
-crash	B2	n.		
-crash	B2	v.		
-crawl	C1	v.		
-crazy	A2	adj.		
-cream	A1	n.		
-cream	B1	adj.		
-create	A1	v.		
-creation	B2	n.		
-creative	A2	adj.		
-creativity	B2	n.		
-creator	C1	n.		
-creature	B2	n.		
-credibility	C1	n.		
-credible	C1	adj.		
-credit	A2	n.		
-credit	B2	v.		
-creep	C1	v.		
-crew	B2	n.		
-crime	A2	n.		
-criminal	A2	n.		
-criminal	B1	adj.		
-crisis	B2	n.		
-criterion	B2	n.		
-critic	B2	n.		
-critical	B2	adj.		
-critically	B2	adv.		
-criticism	B2	n.		
-criticize	B2	v.		
-critique	C1	n.		
-crop	B2	n.		
-cross	A2	n.		
-cross	A2	v.		
-crowd	A2	n.		
-crowded	A2	adj.		
-crown	C1	n.		
-crucial	B2	adj.		
-crude	C1	adj.		
-cruel	B1	adj.		
-cruise	B2	n.		
-cruise	B2	v.		
-crush	C1	v.		
-cry	A2	v.		
-cry	B2	n.		
-crystal	C1	n.		
-cue	B2	n.		
-cult	C1	adj.		
-cult	C1	n.		
-cultivate	C1	v.		
-cultural	B1	adj.		
-culture	A1	n.		
-cup	A1	n.		
-cupboard	A2	n.	UK	
-cupboard	B1	n.	US	
-cure	B2	n.		
-cure	B2	v.		
-curiosity	C1	n.		
-curious	B2	adj.		
-curly	A2	adj.		
-currency	B1	n.		
-current	B1	adj.		
-current	B2	n.		
-currently	B1	adv.		
-curriculum	B2	n.		
-curtain	B1	n.		
-curve	B2	n.		
-curve	B2	v.		
-curved	B2	adj.		
-custody	C1	n.		
-custom	B1	n.		
-customer	A1	n.		
-cut	A1	v.		
-cut	B1	n.		
-cute	B2	adj.		
-cutting	C1	n.		
-cycle	A2	n.		
-cycle	A2	v.		
-cynical	C1	adj.		
-dad	A1	n.		
-daily	A2	adj.		
-daily	B1	adv.		
-dairy	B2	adj.		
-dairy	B2	n.		
-dam	C1	n.		
-damage	B1	n.		
-damage	B1	v.		
-damaging	C1	adj.		
-dance	A1	n.		
-dance	A1	v.		
-dancer	A1	n.		
-dancing	A1	n.		
-danger	A2	n.		
-dangerous	A1	adj.		
-dare	B2	v.		
-dark	A1	adj.		
-dark	A2	n.		
-darkness	B2	n.		
-data	A2	n.		
-database	B2	n.		
-date	A1	n.		
-date	B2	v.		
-daughter	A1	n.		
-dawn	C1	n.		
-day	A1	n.		
-dead	A2	adj.		
-deadline	B2	n.		
-deadly	B2	adj.		
-deal	A2	v.		
-deal	B1	n.		
-dealer	B2	n.		
-dear	A1	adj.	UK	
-dear	A1	adj.	US	
-dear	A2	exclam.	UK	
-death	A2	n.		
-debate	B2	n.		
-debate	B2	v.		
-debris	C1	n.		
-debt	B2	n.		
-debut	C1	n.		
-decade	B1	n.		
-decent	B2	adj.		
-decide	A1	v.		
-decision	A2	n.		
-decision-making	C1	n.		
-decisive	C1	adj.		
-deck	B2	n.		
-declaration	C1	n.		
-declare	B2	v.		
-decline	B2	n.		
-decline	B2	v.		
-decorate	B1	v.	UK	
-decorate	B2	v.	US	
-decoration	B2	n.		
-decrease	B2	n.		
-decrease	B2	v.		
-dedicated	C1	adj.		
-dedication	C1	n.		
-deed	C1	n.		
-deem	C1	v.		
-deep	A2	adj.		
-deep	B1	adv.		
-deeply	B2	adv.		
-default	C1	n.		
-defeat	B2	n.		
-defeat	B2	v.		
-defect	C1	n.		
-defence	B2	n.	UK	
-defend	B2	v.		
-defender	B2	n.		
-defense	B2	n.	US	
-defensive	C1	adj.		
-deficiency	C1	n.		
-deficit	C1	n.		
-define	B1	v.		
-definite	B1	adj.		
-definitely	A2	adv.		
-definition	B1	n.		
-defy	C1	v.		
-degree	A2	n.		
-delay	B2	n.		
-delay	B2	v.		
-delegate	C1	n.		
-delegation	C1	n.		
-delete	B2	v.		
-deliberate	B2	adj.		
-deliberately	B2	adv.		
-delicate	C1	adj.		
-delicious	A1	adj.		
-delight	B2	n.	UK	
-delight	B2	v.	UK	
-delighted	B2	adj.	UK	
-delighted	B2	adj.	US	
-deliver	B1	v.		
-delivery	B2	n.		
-demand	B2	n.		
-demand	B2	v.		
-democracy	B2	n.		
-democratic	B2	adj.		
-demon	C1	n.		
-demonstrate	B2	v.		
-demonstration	B2	n.		
-denial	C1	n.		
-denounce	C1	v.		
-dense	C1	adj.		
-density	C1	n.		
-dentist	A2	n.		
-deny	B2	v.		
-depart	B2	v.		
-department	A2	n.		
-departure	B1	n.		
-depend	A2	v.		
-dependence	C1	n.		
-dependent	B2	adj.		
-depict	C1	v.		
-deploy	C1	v.		
-deployment	C1	n.		
-deposit	B2	n.	UK	
-deposit	B2	n.	US	
-deposit	B2	v.	US	
-deposit	C1	v.	UK	
-depressed	B2	adj.		
-depressing	B2	adj.		
-depression	B2	n.		
-deprive	C1	v.		
-depth	B2	n.		
-deputy	C1	n.		
-derive	B2	v.		
-descend	C1	v.		
-descent	C1	n.		
-describe	A1	v.		
-description	A1	n.		
-desert	A2	n.		
-desert	B2	v.		
-deserve	B2	v.		
-design	A1	n.		
-design	A1	v.		
-designate	C1	v.		
-designer	A2	n.		
-desirable	C1	adj.		
-desire	B2	n.		
-desire	B2	v.		
-desk	A1	n.		
-desktop	C1	n.		
-desperate	B2	adj.		
-desperately	B2	adv.		
-despite	B1	prep.		
-dessert	A2	n.	US	
-destination	B1	n.		
-destroy	A2	v.		
-destruction	B2	n.		
-destructive	C1	adj.		
-detail	A1	n.		
-detail	B2	v.		
-detailed	B2	adj.		
-detain	C1	v.		
-detect	B2	v.		
-detection	C1	n.		
-detective	A2	n.		
-detention	C1	n.		
-deteriorate	C1	v.		
-determination	B2	n.		
-determine	B1	v.		
-determined	B1	adj.		
-devastate	C1	v.		
-develop	A2	v.		
-development	B1	n.		
-device	A2	n.		
-devil	C1	n.		
-devise	C1	v.		
-devote	B2	v.		
-diagnose	C1	v.		
-diagnosis	C1	n.		
-diagram	B1	n.		
-dialogue	A1	n.		
-diamond	B1	n.		
-diary	A2	n.		
-dictate	C1	v.		
-dictator	C1	n.		
-dictionary	A1	n.		
-die	A1	v.		
-diet	A1	n.		
-differ	B2	v.		
-difference	A1	n.		
-different	A1	adj.		
-differentiate	C1	v.		
-differently	A2	adv.		
-difficult	A1	adj.		
-difficulty	B1	n.		
-dig	B2	v.		
-digital	A2	adj.		
-dignity	C1	n.		
-dilemma	C1	n.		
-dime	B2	n.	US	
-dimension	C1	n.		
-diminish	C1	v.		
-dinner	A1	n.		
-dip	C1	v.		
-diplomat	C1	n.		
-diplomatic	C1	n.		
-direct	A2	adj.		
-direct	B1	adv.		
-direct	B1	v.		
-direction	A2	n.		
-directly	B1	adv.		
-director	A2	n.		
-directory	C1	n.		
-dirt	B1	n.		
-dirty	A1	adj.		
-disability	B2	n.		
-disabled	B2	adj.		
-disadvantage	B1	n.		
-disagree	A2	v.		
-disagreement	B2	n.		
-disappear	A2	v.		
-disappoint	B2	v.		
-disappointed	B1	adj.		
-disappointing	B1	adj.		
-disappointment	B2	n.		
-disaster	A2	n.		
-disastrous	C1	adj.		
-disc	B2	n.	UK	
-discard	C1	v.		
-discharge	C1	v.		
-discipline	B2	n.		
-disclose	C1	v.		
-disclosure	C1	n.		
-discount	B1	n.		
-discount	B2	v.		
-discourage	B2	v.		
-discourse	C1	n.		
-discover	A2	v.		
-discovery	A2	n.		
-discretion	C1	n.		
-discrimination	C1	n.		
-discuss	A1	v.		
-discussion	A2	n.		
-disease	A2	n.		
-dish	A1	n.		
-dishonest	B2	adj.		
-disk	B2	n.	US	
-dislike	B1	n.		
-dislike	B1	v.		
-dismiss	B2	v.		
-dismissal	C1	n.		
-disorder	B2	n.		
-displace	C1	v.		
-display	B2	n.		
-display	B2	v.		
-disposal	C1	n.		
-dispose	C1	v.		
-dispute	C1	n.		
-dispute	C1	v.		
-disrupt	C1	v.		
-disruption	C1	n.		
-dissolve	C1	v.		
-distance	A2	n.		
-distant	B2	adj.		
-distinct	B2	adj.		
-distinction	C1	n.		
-distinctive	C1	adj.		
-distinguish	B2	v.		
-distort	C1	v.		
-distract	B2	v.		
-distress	C1	n.		
-distress	C1	v.		
-distribute	B2	v.		
-distribution	B2	n.		
-district	B1	n.	US	
-district	B2	n.	UK	
-disturb	B2	v.		
-disturbing	C1	adj.		
-dive	B2	n.		
-dive	B2	v.		
-diverse	B2	adj.		
-diversity	B2	n.		
-divert	C1	v.		
-divide	B1	v.		
-divide	B2	n.		
-divine	C1	adj.		
-division	B2	n.		
-divorce	B2	n.		
-divorce	B2	v.		
-divorced	A2	adj.		
-do	A1	auxiliary v.		
-do	A1	v.		
-doctor	A1	n.		
-doctrine	C1	n.		
-document	A2	n.		
-document	B2	v.		
-documentary	B1	n.		
-documentation	C1	n.		
-dog	A1	n.		
-dollar	A1	n.		
-domain	C1	n.		
-domestic	B2	adj.		
-dominance	C1	n.		
-dominant	B2	adj.		
-dominate	B2	v.		
-donate	B1	v.		
-donation	B2	n.		
-donor	C1	n.		
-door	A1	n.		
-dose	C1	n.		
-dot	B2	n.		
-double	A2	adj.		
-double	A2	det.		
-double	A2	pron.		
-double	A2	v.		
-double	B1	adv.		
-doubt	B1	n.		
-doubt	B1	v.		
-down	A1	adv.		
-down	A1	prep.		
-download	A2	n.		
-download	A2	v.		
-downstairs	A1	adv.		
-downstairs	A2	adj.		
-downtown	A2	adj.	US	
-downtown	A2	adv.	US	
-downtown	A2	n.	US	
-downtown	B2	adj.	UK	
-downtown	B2	adv.	UK	
-downtown	B2	n.	UK	
-downward	B2	adj.	US	
-downward	B2	adv.	US	
-downwards	B2	adv.	UK	
-dozen	B2	det.		
-dozen	B2	n.		
-draft	B2	n.		
-draft	B2	v.		
-drag	B2	v.		
-drain	C1	v.		
-drama	A2	n.		
-dramatic	B2	adj.		
-dramatically	B2	adv.		
-draw	A1	v.		
-drawing	A2	n.		
-dream	A2	n.		
-dream	A2	v.		
-dress	A1	n.		
-dress	A1	v.		
-dressed	B1	adj.		
-drift	C1	v.		
-drink	A1	n.		
-drink	A1	v.		
-drive	A1	v.		
-drive	A2	n.		
-driver	A1	n.		
-driving	A2	n.		
-driving	C1	adj.		
-drop	A2	v.		
-drop	B1	n.		
-drought	B2	n.		
-drown	C1	v.		
-drug	A2	n.		
-drum	B1	n.		
-drunk	B1	adj.		
-dry	A2	adj.		
-dry	A2	v.		
-dual	C1	adj.		
-dub	C1	v.		
-due	B1	adj.		
-dull	B2	adj.		
-dumb	C1	adj.		
-dump	B2	v.		
-duo	C1	n.		
-duration	B2	n.		
-during	A1	prep.		
-dust	B1	n.		
-duty	B1	n.		
-dynamic	B2	adj.		
-dynamic	C1	n.		
-each	A1	adv.		
-each	A1	det.		
-each	A1	pron.		
-eager	B2	adj.	US	
-eager	C1	adj.	UK	
-ear	A1	n.		
-early	A1	adj.		
-early	A1	adv.		
-earn	A2	v.		
-earnings	C1	n.		
-earth	A2	n.		
-earthquake	B1	n.		
-ease	C1	n.		
-ease	C1	v.		
-easily	A2	adv.		
-east	A1	adj.		
-east	A1	adv.		
-east	A1	n.		
-eastern	B1	adj.		
-easy	A1	adj.		
-eat	A1	v.		
-echo	C1	n.		
-echo	C1	v.		
-ecological	C1	adj.		
-economic	B1	adj.		
-economics	B2	n.		
-economist	B2	n.		
-economy	B1	n.		
-edge	B1	n.		
-edit	B2	v.		
-edition	B2	n.		
-editor	B1	n.		
-editorial	B2	adj.		
-educate	B1	v.		
-educated	B1	adj.		
-education	A2	n.		
-educational	B1	adj.		
-educator	C1	n.		
-effect	A2	n.		
-effective	B1	adj.		
-effectively	B1	adv.		
-effectiveness	C1	n.		
-efficiency	C1	n.		
-efficient	B2	adj.		
-efficiently	B2	adv.		
-effort	B1	n.		
-egg	A1	n.		
-ego	C1	n.		
-eight	A1	number		
-eighteen	A1	number		
-eighty	A1	number		
-either	A2	adv.		
-either	A2	det.		
-either	A2	pron.		
-elaborate	C1	adj.		
-elbow	B2	n.		
-elderly	B2	adj.		
-elect	B2	v.		
-election	B1	n.		
-electoral	C1	adj.		
-electric	A2	adj.		
-electrical	A2	adj.		
-electricity	A2	n.		
-electronic	A2	adj.		
-electronics	B2	n.		
-elegant	B2	adj.		
-element	B1	n.		
-elementary	B2	adj.		
-elephant	A1	n.		
-elevate	C1	v.		
-elevator	A2	n.	US	
-eleven	A1	number		
-eligible	C1	adj.		
-eliminate	B2	v.		
-elite	C1	n.		
-else	A1	adv.		
-elsewhere	B2	adv.		
-email	A1	n.		
-email	A1	v.		
-embark	C1	v.		
-embarrassed	B1	adj.		
-embarrassing	B1	adj.		
-embarrassment	C1	n.		
-embassy	C1	n.		
-embed	C1	v.		
-embody	C1	v.		
-embrace	B2	v.		
-emerge	B2	v.		
-emergence	C1	n.		
-emergency	B1	n.		
-emission	B2	n.		
-emotion	B1	n.		
-emotional	B2	adj.		
-emotionally	B2	adv.		
-emphasis	B2	n.		
-emphasize	B2	v.		
-empire	B2	n.		
-empirical	C1	adj.		
-employ	A2	v.		
-employee	A2	n.		
-employer	A2	n.		
-employment	B1	n.		
-empower	C1	v.		
-empty	A2	adj.		
-empty	B1	v.		
-enable	B2	v.		
-enact	C1	v.		
-encompass	C1	v.		
-encounter	B2	n.		
-encounter	B2	v.		
-encourage	B1	v.		
-encouragement	C1	n.		
-encouraging	C1	adj.		
-end	A1	n.		
-end	A1	v.		
-endeavor	C1	n.	US	
-endeavour	C1	n.	UK	
-ending	A2	n.		
-endless	C1	adj.		
-endorse	C1	v.		
-endorsement	C1	n.		
-endure	C1	v.		
-enemy	B1	n.		
-energy	A2	n.		
-enforce	C1	v.		
-enforcement	C1	n.		
-engage	B2	v.		
-engaged	B1	adj.		
-engagement	C1	n.		
-engaging	C1	adj.		
-engine	A2	n.		
-engineer	A2	n.		
-engineering	B1	n.		
-enhance	B2	v.		
-enjoy	A1	v.		
-enjoyable	B2	adj.		
-enormous	A2	adj.		
-enough	A1	adv.		
-enough	A1	det.		
-enough	A1	pron.		
-enquire	C1	v.	UK	
-enquiry	B2	n.	UK	
-enrich	C1	v.		
-enrol	C1	v.	UK	
-enroll	C1	v.	US	
-ensue	C1	v.		
-ensure	B2	v.		
-enter	A2	v.		
-enterprise	C1	n.		
-entertain	B1	v.		
-entertaining	B2	adj.		
-entertainment	B1	n.		
-enthusiasm	B2	n.		
-enthusiast	C1	n.		
-enthusiastic	B2	adj.		
-entire	B2	adj.		
-entirely	B2	adv.		
-entitle	C1	v.		
-entity	C1	n.		
-entrance	B1	n.		
-entrepreneur	B2	n.		
-entry	B1	n.		
-envelope	B2	n.		
-environment	A2	n.		
-environmental	B1	adj.		
-epidemic	C1	n.		
-episode	B1	n.		
-equal	B1	adj.		
-equal	B1	v.		
-equal	B2	n.		
-equality	C1	n.		
-equally	B1	adv.		
-equation	C1	n.		
-equip	B2	v.		
-equipment	A2	n.		
-equivalent	B2	adj.		
-equivalent	B2	n.		
-era	B2	n.		
-erect	C1	v.		
-error	A2	n.		
-erupt	B2	v.		
-escalate	C1	v.		
-escape	B1	n.		
-escape	B1	v.		
-especially	A2	adv.		
-essay	A2	n.		
-essence	C1	n.		
-essential	B1	adj.		
-essentially	B2	adv.		
-establish	B2	v.		
-establishment	C1	n.		
-estate	B2	n.		
-estimate	B2	n.		
-estimate	B2	v.		
-eternal	C1	adj.		
-ethic	B2	n.		
-ethical	B2	adj.		
-ethnic	B2	adj.		
-euro	A1	n.		
-evacuate	C1	v.		
-evaluate	B2	v.		
-evaluation	B2	n.		
-even	A1	adv.		
-even	B2	adj.		
-evening	A1	n.		
-event	A1	n.		
-eventually	B1	adv.		
-ever	A1	adv.		
-every	A1	det.		
-everybody	A1	pron.		
-everyday	A2	adj.		
-everyone	A1	pron.		
-everything	A1	pron.		
-everywhere	A2	adv.		
-evidence	A2	n.		
-evident	B2	adj.		
-evil	B2	adj.		
-evil	B2	n.		
-evoke	C1	v.		
-evolution	B2	n.		
-evolutionary	C1	adj.		
-evolve	B2	v.		
-exact	A2	adj.		
-exactly	A2	adv.		
-exaggerate	C1	v.		
-exam	A1	n.		
-examination	B2	n.		
-examine	B1	v.		
-example	A1	n.		
-exceed	B2	v.		
-excellence	C1	n.		
-excellent	A2	adj.		
-except	A2	prep.		
-except	B1	conj.		
-exception	B2	n.		
-exceptional	C1	adj.		
-excess	C1	adj.		
-excess	C1	n.		
-excessive	B2	adj.		
-exchange	B1	n.		
-exchange	B1	v.		
-excited	A1	adj.		
-excitement	B1	n.		
-exciting	A1	adj.		
-exclude	B2	v.		
-exclusion	C1	n.		
-exclusive	C1	adj.		
-exclusively	C1	adv.		
-excuse	B2	n.		
-excuse	B2	v.		
-execute	C1	v.		
-execution	C1	n.		
-executive	B2	adj.		
-executive	B2	n.		
-exercise	A1	n.		
-exercise	A1	v.		
-exert	C1	v.		
-exhibit	B2	n.	UK	
-exhibit	B2	n.	US	
-exhibit	B2	v.	UK	
-exhibit	B2	v.	US	
-exhibition	B1	n.		
-exile	C1	n.		
-exist	A2	v.		
-existence	B2	n.		
-exit	B1	n.	US	
-exit	B2	n.	UK	
-exit	B2	v.	US	
-exit	C1	v.	UK	
-exotic	B2	adj.		
-expand	B1	v.		
-expansion	B2	n.		
-expect	A2	v.		
-expectation	B2	n.		
-expected	B1	adj.		
-expedition	B1	n.	UK	
-expedition	B2	n.	US	
-expenditure	C1	n.		
-expense	B2	n.		
-expensive	A1	adj.		
-experience	A2	n.		
-experience	B1	v.		
-experienced	B1	adj.		
-experiment	A2	n.		
-experiment	B1	v.		
-experimental	C1	adj.		
-expert	A2	adj.		
-expert	A2	n.		
-expertise	B2	n.		
-expire	C1	v.		
-explain	A1	v.		
-explanation	A2	n.		
-explicit	C1	adj.		
-explicitly	C1	adv.		
-explode	B1	v.		
-exploit	B2	v.		
-exploitation	C1	n.		
-exploration	B2	n.		
-explore	B1	v.		
-explosion	B1	n.		
-explosive	C1	adj.		
-explosive	C1	n.		
-export	B1	n.		
-export	B1	v.		
-expose	B2	v.		
-exposure	B2	n.		
-express	A2	v.		
-expression	A2	n.		
-extend	B2	v.		
-extension	B2	n.		
-extensive	B2	adj.		
-extensively	B2	adv.		
-extent	B2	n.		
-external	B2	adj.		
-extra	A1	adj.		
-extra	B1	adv.		
-extra	B1	n.		
-extract	B2	n.		
-extract	C1	v.		
-extraordinary	B2	adj.		
-extreme	A2	adj.		
-extreme	B2	n.		
-extremely	A2	adv.		
-extremist	C1	n.		
-eye	A1	n.		
-fabric	B2	n.		
-fabulous	B2	adj.		
-face	A1	n.		
-face	B1	v.		
-facilitate	C1	v.		
-facility	B2	n.		
-fact	A1	n.		
-faction	C1	n.		
-factor	A2	n.		
-factory	A2	n.		
-faculty	B2	n.	US	
-faculty	C1	n.	UK	
-fade	C1	v.		
-fail	A2	v.		
-failed	B2	adj.		
-failure	B2	n.		
-fair	A2	adj.		
-fairly	B1	adv.		
-fairness	C1	n.		
-faith	B2	n.		
-fake	B2	adj.		
-fall	A1	n.	US	
-fall	A1	v.	UK	
-fall	A1	v.	US	
-fall	A2	n.	UK	
-false	A1	adj.		
-fame	B2	n.		
-familiar	B1	adj.		
-family	A1	adj.		
-family	A1	n.		
-famous	A1	adj.		
-fan	A2	n.		
-fancy	B1	adj.	UK	
-fancy	B1	adj.	US	
-fancy	B1	v.	UK	
-fantastic	A1	adj.		
-fantasy	B2	n.		
-far	A1	adv.		
-far	B1	adj.		
-fare	B2	n.		
-farm	A1	n.		
-farm	A2	v.		
-farmer	A1	n.		
-farming	A2	n.		
-fascinating	B1	adj.		
-fashion	A2	n.		
-fashionable	B1	adj.		
-fast	A1	adj.		
-fast	A1	adv.		
-fasten	B1	v.		
-fat	A1	adj.		
-fat	A2	n.		
-fatal	C1	adj.		
-fate	C1	n.		
-father	A1	n.		
-fault	B2	n.		
-favor	B1	n.	US	
-favor	B2	v.	US	
-favorable	C1	adj.	US	
-favorite	A1	adj.	US	
-favorite	A1	n.	US	
-favour	B1	n.	UK	
-favour	B2	v.	UK	
-favourable	C1	adj.	UK	
-favourite	A1	adj.	UK	
-favourite	A1	n.	UK	
-fear	A2	n.		
-fear	B1	v.		
-feat	C1	n.		
-feather	B2	n.		
-feature	A2	n.		
-feature	B1	v.		
-federal	B1	adj.	US	
-federal	B2	adj.	UK	
-fee	B2	n.		
-feed	A2	v.		
-feed	B2	n.		
-feedback	B2	n.		
-feel	A1	v.		
-feel	B2	n.		
-feeling	A1	n.		
-fellow	B2	adj.		
-felony	C1	n.	US	
-female	A2	adj.		
-female	A2	n.		
-feminist	C1	adj.		
-feminist	C1	n.		
-fence	B1	n.		
-festival	A1	n.		
-fever	A2	n.	US	
-fever	B2	n.	UK	
-few	A1	adj.		
-few	A1	det.		
-few	A1	pron.		
-fiber	C1	n.	US	
-fibre	C1	n.	UK	
-fiction	A2	n.		
-field	A2	n.		
-fierce	C1	adj.		
-fifteen	A1	number		
-fifth	A1	number		
-fifty	A1	number		
-fight	A2	n.		
-fight	A2	v.		
-fighting	B1	n.		
-figure	A2	n.		
-figure	B2	v.		
-file	B1	n.		
-file	B2	v.		
-fill	A1	v.		
-film	A1	n.	UK	
-film	A2	n.	US	
-film	A2	v.	UK	
-film	A2	v.	US	
-film-maker	C1	n.	UK	
-filmmaker	C1	n.	US	
-filter	C1	n.		
-filter	C1	v.		
-final	A1	adj.		
-final	A2	n.		
-finally	A2	adv.		
-finance	B2	n.		
-finance	B2	v.		
-financial	B1	adj.		
-find	A1	v.		
-finding	B2	n.		
-fine	A1	adj.		
-fine	C1	n.		
-fine	C1	v.		
-finger	A2	n.		
-finish	A1	v.		
-finish	A2	n.		
-fire	A1	n.	UK	
-fire	A1	n.	US	
-fire	A2	v.	US	
-fire	B1	v.	UK	
-firearm	C1	n.		
-firefighter	B2	n.		
-firework	B2	n.		
-firm	B2	adj.		
-firm	B2	n.		
-firmly	B2	adv.		
-first	A1	adv.		
-first	A1	det.		
-first	A1	number		
-first	A2	n.		
-firstly	A2	adv.	UK	
-fiscal	C1	adj.	US	
-fish	A1	n.		
-fish	A2	v.		
-fishing	A2	n.		
-fit	A2	adj.		
-fit	A2	v.		
-fit	C1	n.		
-fitness	B1	n.		
-five	A1	number		
-fix	A2	v.		
-fix	B2	n.		
-fixed	B1	adj.		
-fixture	C1	n.	UK	
-flag	B1	n.		
-flame	B2	n.		
-flash	B2	n.		
-flash	B2	v.		
-flat	A1	n.	UK	
-flat	A2	adj.	UK	
-flat	A2	adj.	US	
-flavor	B2	n.	US	
-flavour	B2	n.	UK	
-flaw	C1	n.		
-flawed	C1	adj.		
-flee	C1	v.		
-fleet	C1	n.		
-flesh	C1	n.		
-flexibility	C1	n.		
-flexible	B2	adj.		
-flight	A1	n.		
-float	B2	v.		
-flood	B1	n.		
-flood	B1	v.		
-floor	A1	n.		
-flour	B1	n.		
-flourish	C1	v.		
-flow	B1	n.		
-flow	B1	v.		
-flower	A1	n.		
-flu	A2	n.		
-fluid	C1	n.		
-fly	A1	v.		
-fly	A2	n.		
-flying	A2	adj.		
-flying	A2	n.		
-focus	A2	n.		
-focus	A2	v.		
-fold	B1	v.		
-fold	B2	n.		
-folding	B2	adj.		
-folk	B1	adj.		
-folk	B1	n.		
-follow	A1	v.		
-following	A2	adj.		
-following	B1	n.		
-following	B2	prep.		
-fond	B2	adj.		
-food	A1	n.		
-fool	B2	n.		
-foot	A1	n.		
-footage	C1	n.		
-football	A1	n.		
-for	A1	prep.		
-forbid	B2	v.		
-force	B1	n.		
-force	B1	v.		
-forecast	B2	n.		
-forecast	B2	v.		
-foreign	A2	adj.		
-foreigner	C1	n.		
-forest	A2	n.		
-forever	B1	adv.		
-forge	C1	v.		
-forget	A1	v.		
-forgive	B2	v.		
-fork	A2	n.		
-form	A1	n.		
-form	A1	v.		
-formal	A2	adj.		
-format	B2	n.		
-formation	B2	n.		
-former	B2	adj.		
-formerly	B2	adv.		
-formula	C1	n.		
-formulate	C1	v.		
-forth	C1	adv.		
-forthcoming	C1	adj.		
-fortunate	B2	adj.		
-fortunately	A2	adv.		
-fortune	B2	n.		
-forty	A1	number		
-forum	B2	n.		
-forward	A2	adv.		
-forward	B2	adj.		
-fossil	B2	n.		
-foster	C1	v.		
-found	B2	v.		
-foundation	B2	n.		
-founder	B2	n.		
-four	A1	number		
-fourteen	A1	number		
-fourth	A1	number		
-fraction	B2	n.		
-fragile	C1	adj.		
-fragment	B2	n.		
-frame	B1	n.		
-frame	B1	v.		
-framework	B2	n.		
-franchise	C1	n.		
-frankly	C1	adv.		
-fraud	B2	n.		
-free	A1	adj.		
-free	A2	adv.		
-free	B2	v.		
-freedom	B2	n.		
-freely	B2	adv.		
-freeze	B1	v.		
-frequency	B2	n.		
-frequent	B2	adj.		
-frequently	B1	adv.		
-fresh	A2	adj.		
-freshman	C1	n.	US	
-fridge	A2	n.	UK	
-friend	A1	n.		
-friendly	A1	adj.		
-friendship	B1	n.		
-frighten	B1	v.		
-frightened	B1	adj.		
-frightening	B1	adj.		
-frog	A2	n.		
-from	A1	prep.		
-front	A1	adj.		
-front	A1	n.		
-frozen	B1	adj.		
-fruit	A1	n.		
-frustrated	C1	adj.		
-frustrating	C1	adj.		
-frustration	C1	n.		
-fry	B1	v.		
-fuel	B1	n.		
-fuel	B2	v.		
-fulfil	B2	v.	UK	
-fulfill	B2	v.	US	
-full	A1	adj.		
-full-time	B2	adj.		
-full-time	B2	adv.		
-fully	B2	adv.		
-fun	A1	n.		
-fun	A2	adj.		
-function	B1	n.		
-function	B2	v.		
-functional	C1	adj.		
-fund	B2	n.		
-fund	B2	v.		
-fundamental	B2	adj.		
-fundamentally	B2	adv.		
-funding	B2	n.		
-fundraising	C1	n.		
-funeral	C1	n.		
-funny	A1	adj.		
-fur	B1	n.		
-furious	B2	adj.		
-furniture	A2	n.		
-further	A2	adj.		
-further	B1	adv.		
-furthermore	B2	adv.		
-future	A1	n.		
-future	A2	adj.		
-gain	B2	n.		
-gain	B2	v.		
-gallery	A2	n.		
-gallon	B2	n.	US	
-gallon	C1	n.	UK	
-gambling	C1	n.		
-game	A1	n.		
-gaming	B2	n.		
-gang	B2	n.		
-gap	A2	n.		
-garage	B1	n.		
-garbage	A2	n.	US	
-garden	A1	n.		
-gas	A2	n.		
-gate	A2	n.		
-gather	B1	v.		
-gathering	C1	n.		
-gay	B2	adj.		
-gaze	C1	n.		
-gaze	C1	v.		
-gear	C1	n.		
-gender	B2	n.		
-gene	B2	n.		
-general	A2	adj.		
-generally	B1	adv.		
-generate	B2	v.		
-generation	B1	n.		
-generic	C1	adj.		
-generous	B1	adj.		
-genetic	B2	adj.		
-genius	B2	n.		
-genocide	C1	n.		
-genre	B2	n.		
-gentle	B1	adj.		
-gentleman	B1	n.		
-genuine	B2	adj.		
-genuinely	B2	adv.		
-geography	A1	n.		
-gesture	B2	n.		
-get	A1	v.		
-ghost	B1	n.		
-giant	B1	adj.		
-giant	B1	n.		
-gift	A2	n.		
-gig	B2	n.	UK	
-gig	C1	n.	US	
-girl	A1	n.		
-girlfriend	A1	n.		
-give	A1	v.		
-glad	B1	adj.		
-glance	C1	n.		
-glance	C1	v.		
-glass	A1	n.		
-glimpse	C1	n.		
-global	B1	adj.		
-globalization	B2	n.		
-globe	B2	n.		
-glorious	C1	adj.		
-glory	C1	n.		
-glove	B1	n.		
-go	A1	v.		
-go	B1	n.		
-goal	A2	n.		
-god	A2	n.		
-gold	A2	adj.		
-gold	A2	n.		
-golden	B2	adj.		
-golf	A2	n.		
-good	A1	adj.		
-good	A2	n.		
-goodbye	A1	exclam.		
-goodbye	A1	n.		
-goodness	B2	n.		
-goods	B1	n.	UK	
-goods	B2	n.	US	
-gorgeous	B2	adj.		
-govern	B2	v.		
-governance	C1	n.		
-government	A2	n.		
-governor	B2	n.	UK	
-governor	B2	n.	US	
-grab	B2	v.		
-grace	C1	n.		
-grade	B1	n.		
-grade	B2	v.		
-gradually	B2	adv.		
-graduate	B1	n.		
-graduate	B1	v.		
-grain	B1	n.		
-grand	B2	adj.		
-grandfather	A1	n.		
-grandmother	A1	n.		
-grandparent	A1	n.		
-grant	B2	n.		
-grant	B2	v.		
-graphic	B2	adj.		
-graphics	B2	n.		
-grasp	C1	n.		
-grasp	C1	v.		
-grass	A2	n.		
-grateful	B1	adj.		
-grave	C1	adj.		serious
-grave	C1	n.		for dead person
-gravity	C1	n.		
-gray	A1	adj.	US	
-gray	A1	n.	US	
-great	A1	adj.		
-greatly	B2	adv.		
-green	A1	adj.		
-green	A1	n.		
-greenhouse	B2	n.		
-greet	A2	v.		
-grey	A1	adj.	UK	
-grey	A1	n.	UK	
-grid	C1	n.		
-grief	C1	n.		
-grin	C1	n.		
-grin	C1	v.		
-grind	C1	v.		
-grip	C1	n.		
-grip	C1	v.		
-grocery	A2	n.	US	
-grocery	B2	n.	UK	
-gross	C1	adj.		
-ground	A2	n.		
-group	A1	n.		
-grow	A1	v.		
-growth	B1	n.		
-guarantee	B2	n.		
-guarantee	B2	v.		
-guard	B1	n.		
-guard	B1	v.		
-guerrilla	C1	n.		
-guess	A1	n.		
-guess	A1	v.		
-guest	A2	n.		
-guidance	C1	n.		
-guide	A2	n.		
-guide	A2	v.		
-guideline	B2	n.		
-guilt	C1	n.		
-guilty	B1	adj.		
-guitar	A1	n.		
-gun	A2	n.		
-gut	C1	n.		
-guy	A2	n.		
-gym	A1	n.		
-habit	A2	n.		
-habitat	B2	n.		
-hail	C1	v.		
-hair	A1	n.		
-half	A1	det.		
-half	A1	n.		
-half	A1	pron.		
-half	A2	adv.		
-halfway	C1	adv.		
-hall	A2	n.		
-halt	C1	n.		
-halt	C1	v.		
-hand	A1	n.		
-hand	B1	v.		
-handful	C1	n.		
-handle	B2	n.		
-handle	B2	v.		
-handling	C1	n.		
-handy	C1	adj.		
-hang	B1	v.		
-happen	A1	v.		
-happily	A2	adv.		
-happiness	B1	n.		
-happy	A1	adj.		
-harassment	C1	n.		
-harbor	B2	n.	US	
-harbour	B2	n.	UK	
-hard	A1	adj.		
-hard	A1	adv.		
-hardly	B1	adv.		
-hardware	C1	n.		
-harm	B2	n.		
-harm	B2	v.		
-harmful	B2	adj.		
-harmony	C1	n.		
-harsh	C1	adj.		
-harvest	C1	n.		
-harvest	C1	v.		
-hat	A1	n.		
-hate	A1	v.		
-hate	B1	n.		
-hatred	C1	n.		
-haunt	C1	v.		
-have	A1	v.		
-have	A2	auxiliary v.		
-have to	A1	modal v.		
-hazard	C1	n.		
-he	A1	pron.		
-head	A1	n.		
-head	B1	v.		
-headache	A2	n.		
-headline	B1	n.		
-headquarters	B2	n.		
-heal	B2	v.		
-health	A1	n.		
-healthcare	B2	n.		
-healthy	A1	adj.		
-hear	A1	v.		
-hearing	B2	n.		
-heart	A2	n.		
-heat	A2	n.		
-heat	A2	v.		
-heating	B1	n.		
-heaven	B2	n.		
-heavily	B1	adv.		
-heavy	A2	adj.		
-heel	B2	n.		
-height	A2	n.		
-heighten	C1	v.		
-helicopter	B1	n.		
-hell	B2	n.		
-hello	A1	exclam.		
-hello	A1	n.		
-helmet	B2	n.		
-help	A1	n.		
-help	A1	v.		
-helpful	A2	adj.		
-hence	B2	adv.		
-her	A1	det.		
-her	A1	pron.		
-herb	B2	n.		
-here	A1	adv.		
-heritage	C1	n.		
-hero	A2	n.		
-hers	A2	pron.		
-herself	A2	pron.		
-hesitate	B2	v.		
-hey	A1	exclam.		
-hi	A1	exclam.		
-hidden	B2	adj.		
-hide	A2	v.		
-hierarchy	C1	n.		
-high	A1	adj.		
-high	A2	adv.		
-high	B2	n.		
-high-profile	C1	adj.		
-highlight	B1	n.		
-highlight	B1	v.		
-highly	B1	adv.		
-highway	B1	n.	US	
-highway	B2	n.	UK	
-hilarious	B2	adj.		
-hill	A2	n.		
-him	A1	pron.		
-himself	A2	pron.		
-hint	C1	n.		
-hint	C1	v.		
-hip	B2	n.		
-hire	B1	v.		
-hire	B2	n.		
-his	A1	det.		
-his	A2	pron.		
-historian	B2	n.		
-historic	B1	adj.		
-historical	B1	adj.		
-history	A1	n.		
-hit	A2	n.		
-hit	A2	v.		
-hobby	A1	n.		
-hockey	A2	n.		
-hold	A2	v.		
-hold	B2	n.		
-hole	A2	n.		
-holiday	A1	n.	UK	
-holiday	A2	n.	US	
-hollow	B2	adj.		
-holy	B2	adj.		
-home	A1	adv.		
-home	A1	n.		
-home	A2	adj.		
-homeland	C1	n.		
-homeless	B2	adj.		
-homework	A1	n.		
-honest	B1	adj.		
-honesty	B2	n.		
-honey	B2	n.	US	
-honor	B2	n.	US	
-honor	B2	v.	US	
-honour	B2	n.	UK	
-honour	B2	v.	UK	
-hook	B2	n.	US	
-hook	B2	v.	UK	
-hook	B2	v.	US	
-hook	C1	n.	UK	
-hope	A1	v.		
-hope	A2	n.		
-hopeful	C1	adj.		
-hopefully	B2	adv.		
-horizon	C1	n.		
-horn	C1	n.		
-horrible	B1	adj.		
-horror	B1	n.		
-horse	A1	n.		
-hospital	A1	n.		
-host	B1	n.		
-host	B2	v.		
-hostage	C1	n.		
-hostile	C1	adj.		
-hostility	C1	n.		
-hot	A1	adj.		
-hotel	A1	n.		
-hour	A1	n.		
-house	A1	n.	UK	
-house	A1	n.	US	
-house	A1	v.	US	
-house	B2	v.	UK	
-household	B2	n.		
-housing	B2	n.		
-how	A1	adv.		
-however	A1	adv.		
-huge	A2	adj.		
-human	A2	adj.		
-human	A2	n.		
-humanitarian	C1	adj.		
-humanity	C1	n.		
-humble	C1	adj.		
-humor	B2	n.	US	
-humorous	B2	adj.		
-humour	B2	n.	UK	
-hundred	A1	number		
-hunger	B2	n.		
-hungry	A1	adj.		
-hunt	B1	v.		
-hunt	B2	n.		
-hunting	B2	n.		
-hurricane	B1	n.		
-hurry	B1	n.		
-hurry	B1	v.		
-hurt	A2	adj.		
-hurt	A2	v.		
-hurt	B2	n.		
-husband	A1	n.		
-hydrogen	C1	n.		
-hypothesis	B2	n.		
-ice	A1	n.		
-ice cream	A1	n.		
-icon	B2	n.		
-idea	A1	n.		
-ideal	A2	adj.		
-ideal	B2	n.		
-identical	B2	adj.		
-identification	C1	n.		
-identify	A2	v.		
-identity	B1	n.		
-ideological	C1	adj.		
-ideology	C1	n.		
-idiot	C1	n.		
-if	A1	conj.		
-ignorance	C1	n.		
-ignore	B1	v.		
-ill	A2	adj.		
-illegal	B1	adj.		
-illness	A2	n.		
-illusion	B2	n.		
-illustrate	B2	v.		
-illustration	B2	n.		
-image	A2	n.		
-imagery	C1	n.		
-imaginary	B1	adj.		
-imagination	B2	n.		
-imagine	A1	v.		
-immediate	B1	adj.		
-immediately	A2	adv.		
-immense	C1	adj.		
-immigrant	B1	n.		
-immigration	B2	n.		
-imminent	C1	adj.		
-immune	B2	adj.		
-impact	B1	n.		
-impact	B1	v.		
-impatient	B2	adj.		
-implement	B2	v.		
-implementation	C1	n.		
-implication	B2	n.		
-imply	B2	v.		
-import	B1	n.		
-import	B1	v.		
-importance	B1	n.		
-important	A1	adj.		
-impose	B2	v.		
-impossible	A2	adj.		
-impress	B2	v.		
-impressed	B2	adj.		
-impression	B1	n.		
-impressive	B1	adj.		
-imprison	C1	v.		
-imprisonment	C1	n.	UK	
-improve	A1	v.		
-improvement	B1	n.		
-in	A1	adv.		
-in	A1	prep.		
-inability	C1	n.		
-inadequate	C1	adj.		
-inappropriate	C1	adj.		
-incarcerate	C1	v.	US	
-incarceration	C1	n.	US	
-incentive	B2	n.		
-inch	B2	n.		
-incidence	C1	n.		
-incident	B2	n.		
-inclined	C1	adj.		
-include	A1	v.		
-included	A2	adj.		
-including	A2	prep.		
-inclusion	C1	n.		
-income	B2	n.		
-incorporate	B2	v.		
-incorrect	B2	adj.		
-increase	A2	n.		
-increase	A2	v.		
-increasingly	B2	adv.		
-incredible	A2	adj.		
-incredibly	B1	adv.		
-incur	C1	v.		
-indeed	B1	adv.		
-independence	B2	n.		
-independent	A2	adj.		
-index	B2	n.		
-indicate	B1	v.		
-indication	B2	n.		
-indicator	C1	n.		
-indictment	C1	n.		
-indigenous	C1	adj.		
-indirect	B1	adj.		
-individual	A2	adj.		
-individual	A2	n.		
-indoor	B1	adj.		
-indoors	B1	adv.		
-induce	C1	v.		
-indulge	C1	v.		
-industrial	B2	adj.		
-industry	A2	n.		
-inequality	C1	n.		
-inevitable	B2	adj.		
-inevitably	B2	adv.		
-infamous	C1	adj.		
-infant	C1	n.		
-infect	C1	v.		
-infection	B2	n.		
-infer	B2	v.		
-inflation	B2	n.		
-inflict	C1	v.		
-influence	B1	n.		
-influence	B1	v.		
-influential	C1	adj.		
-info	B2	n.		
-inform	B2	v.		
-informal	A2	adj.		
-information	A1	n.		
-infrastructure	B2	n.		
-ingredient	B1	n.		
-inhabitant	B2	n.		
-inherent	C1	adj.		
-inherit	B2	v.		
-inhibit	C1	v.		
-initial	B2	adj.		
-initially	B2	adv.		
-initiate	C1	v.		
-initiative	B2	n.		
-inject	C1	v.		
-injection	C1	n.		
-injure	B1	v.		
-injured	B1	adj.		
-injury	A2	n.		
-injustice	C1	n.		
-ink	B2	n.		
-inmate	C1	n.		
-inner	B2	adj.		
-innocent	B1	adj.		
-innovation	B2	n.		
-innovative	B2	adj.		
-input	B2	n.		
-inquire	C1	v.	US	
-inquiry	B2	n.	US	
-insect	A2	n.		
-insert	B2	v.		
-insertion	C1	n.		
-inside	A2	adj.		
-inside	A2	adv.		
-inside	A2	n.		
-inside	A2	prep.		
-insider	C1	n.		
-insight	B2	n.		
-insist	B2	v.		
-inspect	C1	v.		
-inspection	C1	n.		
-inspector	B2	n.		
-inspiration	C1	n.		
-inspire	B2	v.		
-install	B2	v.		
-installation	B2	n.		
-instance	B2	n.		
-instant	B2	adj.		
-instantly	B2	adv.		
-instead	A2	adv.		
-instinct	C1	n.		
-institute	B2	n.		
-institution	B2	n.		
-institutional	C1	adj.		
-instruct	C1	v.		
-instruction	A2	n.		
-instructor	A2	n.		
-instrument	A2	n.		
-instrumental	C1	adj.		
-insufficient	C1	adj.		
-insult	C1	n.		
-insult	C1	v.		
-insurance	B2	n.		
-intact	C1	adj.		
-intake	C1	n.		
-integral	C1	adj.		
-integrate	B2	v.		
-integrated	C1	adj.		
-integration	C1	n.		
-integrity	C1	n.		
-intellectual	B2	adj.		
-intellectual	C1	n.		
-intelligence	B1	n.		
-intelligent	A2	adj.		
-intend	B1	v.		
-intended	B2	adj.		
-intense	B2	adj.		
-intensify	C1	v.		
-intensity	C1	n.		
-intensive	C1	adj.		
-intent	C1	n.		
-intention	B1	n.		
-interact	B2	v.		
-interaction	B2	n.		
-interactive	C1	adj.		
-interest	A1	n.		
-interest	A1	v.		
-interested	A1	adj.		
-interesting	A1	adj.		
-interface	C1	n.		
-interfere	C1	v.		
-interference	C1	n.		
-interim	C1	adj.		
-interior	C1	adj.		
-interior	C1	n.		
-intermediate	C1	adj.		
-internal	B2	adj.		
-international	A2	adj.		
-internet	A1	n.		
-interpret	B2	v.		
-interpretation	B2	n.		
-interrupt	B2	v.		
-intersection	C1	n.	US	
-interval	B2	n.		
-intervene	C1	v.		
-intervention	C1	n.		
-interview	A1	n.		
-interview	A1	v.		
-intimate	C1	adj.		
-into	A1	prep.		
-intriguing	C1	adj.		
-introduce	A1	v.		
-introduction	A2	n.		
-invade	B2	v.		
-invasion	B2	n.		
-invent	A2	v.		
-invention	A2	n.		
-inventory	C1	n.	US	
-invest	B1	v.		
-investigate	B1	v.		
-investigation	B2	n.		
-investigator	C1	n.		
-investment	B2	n.		
-investor	B2	n.		
-invisible	C1	adj.		
-invitation	A2	n.		
-invite	A2	v.		
-invoke	C1	v.		
-involve	A2	v.		
-involved	B1	adj.		
-involvement	C1	n.		
-iron	B1	n.		
-iron	B1	v.		
-ironic	C1	adj.		
-ironically	C1	adv.		
-irony	C1	n.		
-irrelevant	C1	adj.		
-island	A1	n.		
-isolate	B2	v.		
-isolated	B2	adj.		
-isolation	C1	n.		
-issue	B1	n.		
-issue	B2	v.		
-it	A1	pron.		
-item	A2	n.		
-its	A1	det.		
-itself	A2	pron.		
-jacket	A1	n.		
-jail	B2	n.		
-jail	B2	v.		
-jam	A2	n.		
-jazz	A2	n.		
-jeans	A1	n.		
-jet	B2	n.		
-jewellery	A2	n.	UK	
-jewelry	A2	n.	US	
-job	A1	n.		
-join	A1	v.		
-joint	B2	adj.		
-joint	B2	n.		
-joke	A2	n.		
-joke	A2	v.		
-journal	B1	n.		
-journalism	B2	n.		
-journalist	A2	n.		
-journey	A1	n.	UK	
-journey	B1	n.	US	
-joy	B2	n.		
-judge	B1	n.		
-judge	B1	v.		
-judgement	B2	n.	UK	
-judgment	B2	n.	US	
-judicial	C1	adj.		
-juice	A1	n.		
-jump	A2	n.		
-jump	A2	v.		
-junction	C1	n.	UK	
-junior	B2	adj.		
-jurisdiction	C1	n.		
-jury	B2	n.		
-just	A1	adv.		
-just	C1	adj.		
-justice	B2	n.		
-justification	C1	n.		
-justify	B2	v.		
-keen	B1	adj.	UK	
-keen	C1	adj.	US	
-keep	A1	v.		
-key	A1	adj.		
-key	A1	n.		
-key	B1	v.		
-keyboard	B1	n.		
-kick	B1	n.		
-kick	B1	v.		
-kid	A2	n.		
-kidnap	C1	v.		
-kidney	C1	n.		
-kill	A2	v.		
-killing	B1	n.		
-kilometer	A2	n.	US	
-kilometre	A1	n.	UK	
-kind	A1	n.		type
-kind	B1	adj.		caring
-kindergarten	B2	n.	US	
-king	A2	n.		
-kingdom	C1	n.		
-kiss	B1	n.		
-kiss	B1	v.		
-kit	B2	n.		
-kitchen	A1	n.		
-knee	A2	n.		
-knife	A2	n.		
-knock	A2	v.		
-knock	B1	n.		
-know	A1	v.		
-knowledge	A2	n.		
-lab	A2	n.		
-label	B1	n.		
-label	B1	v.		
-labor	B2	n.	US	
-laboratory	B1	n.		
-labour	B2	n.	UK	
-lack	B1	n.		
-lack	B1	v.		
-lad	C1	n.	UK	
-ladder	B2	n.		
-lady	A2	n.		
-lake	A2	n.		
-lamp	A2	n.		
-land	A1	n.		
-land	A2	v.		
-landing	B2	n.		
-landlord	C1	n.		
-landmark	C1	n.		
-landscape	B2	n.		
-lane	B2	n.		
-language	A1	n.		
-lap	C1	n.		
-laptop	A2	n.		
-large	A1	adj.		
-large-scale	C1	adj.		
-largely	B2	adv.		
-laser	C1	n.		
-last	A1	det.		final
-last	A2	adv.		final
-last	A2	n.		final
-last	A2	v.		taking time
-late	A1	adj.		
-late	A1	adv.		
-lately	B2	adv.		
-later	A1	adv.		
-later	A2	adj.		
-latest	B1	adj.		
-latest	B2	n.		
-latter	C1	adj.		
-latter	C1	n.		
-laugh	A1	n.		
-laugh	A1	v.		
-laughter	A2	n.		
-launch	B2	n.		
-launch	B2	v.		
-law	A2	n.		
-lawmaker	C1	n.	US	
-lawn	C1	n.		
-lawsuit	C1	n.		
-lawyer	A2	n.		
-lay	B1	v.		
-layer	B1	n.		
-layout	C1	n.		
-lazy	A2	adj.		
-lead	A2	v.		
-lead	B1	n.		
-leader	A2	n.		
-leadership	B2	n.		
-leading	B1	adj.		
-leaf	B1	n.		
-leaflet	B2	n.	UK	
-league	B2	n.		
-leak	C1	n.		
-leak	C1	v.		
-lean	B2	v.		
-leap	C1	n.		
-leap	C1	v.		
-learn	A1	v.		
-learning	A2	n.		
-least	A2	adv.		
-least	A2	det.		
-least	A2	pron.		
-leather	B1	n.		
-leave	A1	v.		
-leave	B2	n.		
-lecture	A2	n.		
-lecture	A2	v.		
-left	A1	adj.		
-left	A1	adv.		
-left	A1	n.		
-leg	A1	n.		
-legacy	C1	n.		
-legal	B1	adj.		
-legend	B2	n.		
-legendary	C1	adj.		
-legislation	C1	n.		
-legislative	C1	adj.		
-legislature	C1	n.		
-legitimate	C1	adj.		
-leisure	B1	n.		
-lemon	A2	n.		
-lend	A2	v.		
-length	B1	n.		
-lengthy	C1	adj.		
-lens	B2	n.		
-lesbian	C1	adj.		
-less	A2	adv.		
-less	A2	det.		
-less	A2	pron.		
-lesser	C1	adj.		
-lesson	A1	n.		
-let	A1	v.		
-lethal	C1	adj.		
-letter	A1	n.		
-level	A2	n.		
-level	B1	adj.		
-level	B2	v.		
-liable	C1	adj.		
-liberal	C1	adj.		
-liberal	C1	n.		
-liberation	C1	n.		
-liberty	C1	n.		
-library	A1	n.		
-licence	B2	n.	UK	
-license	B2	n.	US	
-license	C1	v.	UK	
-lie	A1	v.		
-lie	B1	n.		tell a lie
-lie	B1	v.		tell a lie
-life	A1	n.		
-lifelong	C1	adj.		
-lifestyle	A2	n.		
-lifetime	B2	n.		
-lift	A2	n.	UK	
-lift	A2	v.	UK	
-lift	A2	v.	US	
-light	A1	adj.		from the sun/a lamp
-light	A1	n.		from the sun/a lamp
-light	A2	adj.		not heavy
-light	A2	v.		from the sun/a lamp
-lighting	B2	n.		
-like	A1	prep.		similar
-like	A1	v.		find sb/sth pleasant
-like	B1	n.		find sb/sth pleasant
-likelihood	C1	n.		
-likely	A2	adj.		
-likewise	B2	adv.		
-limb	C1	n.		
-limit	B1	n.		
-limit	B1	v.		
-limitation	B2	n.		
-limited	B2	adj.		
-line	A1	n.		
-line	B2	v.		
-line-up	C1	n.	UK	
-linear	C1	adj.		
-lineup	C1	n.	US	
-linger	C1	v.		
-link	A2	n.		
-link	A2	v.		
-lion	A1	n.		
-lip	B1	n.		
-liquid	B1	adj.		
-liquid	B1	n.		
-list	A1	n.		
-list	A1	v.		
-listen	A1	v.		
-listener	A2	n.		
-listing	C1	n.		
-liter	C1	n.	US	
-literacy	C1	n.		
-literally	B2	adv.		
-literary	B2	adj.		
-literature	B1	n.		
-litre	B2	n.	UK	
-litter	B2	n.		
-little	A1	adj.		
-little	A1	det.		
-little	A1	pron.		
-little	A2	adv.		
-live	A1	v.		
-live	B1	adj.		
-live	B1	adv.		
-lively	B2	adj.		
-liver	C1	n.		
-living	B1	adj.		
-living	B1	n.		
-load	B2	n.		
-load	B2	v.		
-loan	B2	n.		
-lobby	C1	n.		
-lobby	C1	v.		
-local	A1	adj.		
-local	B1	n.		
-locate	B1	v.		
-located	B1	adj.		
-location	B1	n.		
-lock	A2	n.		
-lock	A2	v.		
-log	C1	n.		
-log	C1	v.		
-logic	C1	n.		
-logical	B2	adj.		
-logo	B2	n.		
-lonely	B1	adj.		
-long	A1	adj.		
-long	A1	adv.		
-long-standing	C1	adj.		
-long-term	B2	adj.		
-long-term	B2	adv.		
-long-time	C1	adj.	UK	
-longtime	C1	adj.	US	
-look	A1	v.		
-look	A2	n.		
-loom	C1	v.		
-loop	C1	n.		
-loose	B2	adj.		
-lord	B2	n.		
-lorry	A2	n.	UK	
-lose	A1	v.		
-loss	B1	n.		
-lost	A2	adj.		
-lot	A1	adv.		
-lot	A1	det.		
-lot	A1	pron.		
-lottery	B2	n.		
-loud	A2	adj.		
-loud	A2	adv.		
-loudly	A2	adv.		
-love	A1	n.		
-love	A1	v.		
-lovely	A2	adj.	UK	
-low	A2	adj.		
-low	A2	adv.		
-low	B2	n.		
-lower	B2	v.		
-loyal	B2	adj.		
-loyalty	C1	n.		
-luck	A2	n.		
-lucky	A2	adj.		
-lunch	A1	n.		
-lung	B2	n.		
-luxury	B1	n.		
-lyric	B2	n.		
-machine	A1	n.		
-machinery	C1	n.		
-mad	B1	adj.		
-magazine	A1	n.		
-magic	B1	adj.		
-magic	B1	n.		
-magical	C1	adj.		
-magistrate	C1	n.	UK	
-magnetic	C1	adj.		
-magnificent	B2	adj.		
-magnitude	C1	n.		
-mail	A2	n.		
-mail	A2	v.		
-main	A1	adj.		
-mainland	C1	n.		
-mainly	B1	adv.		
-mainstream	C1	adj.		
-mainstream	C1	n.		
-maintain	B2	v.		
-maintenance	C1	n.		
-major	A2	adj.	UK	
-major	A2	adj.	US	
-major	B2	n.	US	
-majority	B2	n.		
-make	A1	v.		
-make	B2	n.		
-make-up	B2	n.	UK	
-makeup	B2	n.	US	
-making	B2	n.		
-male	A2	adj.		
-male	A2	n.		
-mall	A1	n.	US	
-mall	B1	n.	UK	
-man	A1	n.		
-manage	A2	v.		
-management	B1	n.		
-manager	A2	n.		
-mandate	C1	n.		
-mandatory	C1	adj.		
-manifest	C1	v.		
-manipulate	C1	v.		
-manipulation	C1	n.		
-manner	A2	n.		
-manufacture	B2	v.		
-manufacturing	B2	n.		
-manuscript	C1	n.		
-many	A1	det.		
-many	A1	pron.		
-map	A1	n.		
-map	B2	v.		
-marathon	B2	n.		
-march	C1	n.		
-march	C1	v.		
-margin	B2	n.		
-marginal	C1	adj.		
-marine	C1	adj.		
-mark	A2	n.		
-mark	A2	v.		
-marker	B2	n.		
-market	A1	n.		
-market	B1	v.		
-marketing	B1	n.		
-marketplace	C1	n.		
-marriage	B1	n.		
-married	A1	adj.		
-marry	A2	v.		
-martial	B2	adj.		
-mask	C1	n.		
-mass	B2	adj.		
-mass	B2	n.		
-massacre	C1	n.		
-massive	B2	adj.		
-master	B2	n.		
-master	B2	v.		
-match	A1	n.		contest/correspond
-match	A1	v.		contest/correspond
-matching	B2	adj.		
-mate	B2	n.		
-mate	B2	v.		
-material	A2	n.		
-material	B2	adj.		
-math	A2	n.	US	
-mathematical	C1	adj.		
-mathematics	A2	n.		
-maths	A2	n.	UK	
-matter	A2	n.		
-matter	A2	v.		
-mature	C1	adj.		
-mature	C1	v.		
-maximize	C1	v.		
-maximum	B2	adj.		
-maximum	B2	n.		
-may	A2	modal v.		
-maybe	A1	adv.		
-mayor	A2	n.	US	
-mayor	B2	n.	UK	
-me	A1	pron.		
-meal	A1	n.		
-mean	A1	v.		
-meaning	A1	n.		
-meaningful	C1	adj.		
-means	B2	n.		
-meantime	C1	n.		
-meanwhile	B1	adv.		
-measure	B1	n.		
-measure	B1	v.		
-measurement	B2	n.		
-meat	A1	n.		
-mechanic	B2	n.		
-mechanical	B2	adj.		
-mechanism	B2	n.		
-medal	B2	n.		
-media	A2	n.		
-medical	A2	adj.		
-medication	B2	n.		
-medicine	A2	n.		
-medieval	C1	adj.		
-meditation	C1	n.		
-medium	B1	adj.		
-medium	B2	n.		
-meet	A1	v.		
-meeting	A1	n.		
-melody	C1	n.		
-melt	B2	v.		
-member	A1	n.		
-membership	B2	n.		
-memo	C1	n.		
-memoir	C1	n.		
-memorable	B2	adj.		
-memorial	C1	n.		
-memory	A2	n.		
-mental	B1	adj.		
-mention	A2	v.		
-mention	B1	n.		
-mentor	C1	n.		
-menu	A1	n.		
-merchant	C1	n.		
-mercy	C1	n.		
-mere	C1	adj.		
-merely	C1	adv.		
-merge	C1	v.		
-merger	C1	n.		
-merit	C1	n.		
-mess	B1	n.		
-mess	B1	v.		
-message	A1	n.		
-metal	A2	n.		
-metaphor	B2	n.		
-meter	A1	n.	US	
-method	A2	n.		
-methodology	C1	n.		
-metre	A1	n.	UK	
-middle	A2	adj.		
-middle	A2	n.		
-midnight	A1	n.		
-midst	C1	n.		
-might	A2	modal v.		
-migration	C1	n.		
-mild	B1	adj.		
-mile	A1	n.		
-militant	C1	adj.		
-militant	C1	n.		
-military	B2	adj.		
-military	B2	n.		
-militia	C1	n.		
-milk	A1	n.		
-mill	C1	n.		
-million	A1	number		
-mind	A2	n.		
-mind	A2	v.		
-mine	A2	pron.		belongs to me
-mine	B1	n.		hole in the ground
-miner	B2	n.		
-mineral	B2	n.		
-minimal	C1	adj.		
-minimize	C1	v.		
-minimum	B2	adj.		
-minimum	B2	n.		
-mining	C1	n.		
-minister	B2	n.		
-ministry	C1	n.		
-minor	B2	adj.		
-minority	B2	n.		
-minute	A1	n.		
-minute	C1	adj.		
-miracle	C1	n.		
-mirror	A2	n.		
-miserable	B2	adj.		
-misery	C1	n.		
-misleading	C1	adj.		
-miss	A1	v.		
-missile	C1	n.		
-missing	A2	adj.		
-mission	B2	n.		
-mistake	A1	n.		
-mistake	B2	v.		
-mix	B1	n.		
-mix	B1	v.		
-mixed	B2	adj.		
-mixture	B1	n.		
-mob	C1	n.		
-mobile	A2	adj.	UK	
-mobile	A2	n.	UK	
-mobile	C1	adj.	US	
-mobility	C1	n.		
-mobilize	C1	v.		
-mode	B2	n.		
-model	A1	n.		
-model	B2	v.		
-moderate	C1	adj.		
-modern	A1	adj.		
-modest	B2	adj.		
-modification	C1	n.		
-modify	B2	v.		
-module	C1	n.	US	
-mom	A1	n.	US	
-moment	A1	n.		
-momentum	C1	n.		
-money	A1	n.		
-monitor	B2	n.		
-monitor	B2	v.		
-monk	C1	n.		
-monkey	A2	n.		
-monopoly	C1	n.		
-monster	B2	n.		
-month	A1	n.		
-monthly	B2	adj.		
-monument	B2	n.		
-mood	B1	n.		
-moon	A2	n.		
-moral	B2	adj.		
-moral	B2	n.		
-morality	C1	n.		
-more	A1	adv.		
-more	A1	det.		
-more	A1	pron.		
-moreover	B2	adv.		
-morning	A1	n.		
-mortgage	B2	n.		
-mosque	B2	n.		
-mosquito	B2	n.	US	
-most	A1	adv.		
-most	A1	det.		
-most	A1	pron.		
-mostly	A2	adv.		
-mother	A1	n.		
-motion	B2	n.		
-motivate	B2	v.		
-motivation	B2	n.		
-motive	C1	n.		
-motor	B2	adj.		
-motor	B2	n.		
-motorcycle	A2	n.		
-motorist	C1	n.	UK	
-mount	B2	v.		
-mountain	A1	n.		
-mouse	A1	n.		
-mouth	A1	n.		
-move	A1	v.		
-move	B1	n.		
-movement	A2	n.		
-movie	A1	n.		
-moving	B2	adj.		
-much	A1	adv.		
-much	A1	det.		
-much	A1	pron.		
-mud	B1	n.		
-multiple	B2	adj.		
-multiply	B2	v.		
-mum	A1	n.	UK	
-municipal	C1	adj.		
-murder	B1	n.		
-murder	B1	v.		
-muscle	B1	n.		
-museum	A1	n.		
-music	A1	n.		
-musical	A2	adj.		
-musical	B1	n.		
-musician	A2	n.		
-must	A1	modal v.		
-mutual	C1	adj.		
-my	A1	det.		
-myself	A2	pron.		
-mysterious	B2	adj.		
-mystery	B1	n.		
-myth	B2	n.		
-nail	B1	n.		
-naked	B2	adj.		
-name	A1	n.		
-name	A1	v.		
-namely	C1	adv.		
-narrative	B1	adj.		
-narrative	B1	n.		
-narrow	A2	adj.		
-narrow	B2	v.		
-nasty	B2	adj.		
-nation	B1	n.		
-national	A2	adj.		
-national	B2	n.		
-nationwide	C1	adj.		
-native	B1	adj.		
-native	B1	n.		
-natural	A1	adj.		
-naturally	B1	adv.		
-nature	A2	n.		
-naval	C1	adj.		
-navigation	B2	n.		
-near	A1	adj.		
-near	A1	adv.		
-near	A1	prep.		
-nearby	B2	adj.		
-nearby	B2	adv.		
-nearly	A2	adv.		
-neat	B1	adj.	US	
-neat	B2	adj.	UK	
-necessarily	B1	adv.		
-necessary	A2	adj.		
-necessity	B2	n.		
-neck	A2	n.		
-need	A1	v.		
-need	A2	n.		
-need	B1	modal v.		
-needle	B1	n.		
-negative	A1	adj.		
-negative	B2	n.		
-neglect	C1	n.		
-neglect	C1	v.		
-negotiate	B2	v.		
-negotiation	B2	n.		
-neighbor	A1	n.	US	
-neighborhood	A1	n.	US	
-neighboring	C1	adj.	US	
-neighbour	A1	n.	UK	
-neighbourhood	B1	n.	UK	
-neighbouring	C1	adj.	UK	
-neither	A2	det.		
-neither	A2	pron.		
-neither	B1	adv.		
-nerve	B2	n.		
-nervous	A2	adj.		
-nest	C1	n.		
-net	B1	n.		
-net	C1	adj.		
-network	A2	n.		
-neutral	B2	adj.		
-never	A1	adv.		
-nevertheless	B2	adv.		
-new	A1	adj.		
-newly	B2	adv.		
-news	A1	n.		
-newsletter	C1	n.		
-newspaper	A1	n.		
-next	A1	adj.		
-next	A1	adv.		
-next	B1	n.		
-next to	A1	prep.		
-nice	A1	adj.		
-niche	C1	n.		
-nickel	B2	n.	US	
-night	A1	n.		
-nightmare	B2	n.		
-nine	A1	number		
-nineteen	A1	number		
-ninety	A1	number		
-no	A1	det.		
-no	A1	exclam.		
-no one	A1	pron.		
-noble	C1	adj.		
-nobody	A1	pron.		
-nod	C1	v.		
-noise	A2	n.		
-noisy	A2	adj.		
-nominate	C1	v.		
-nomination	C1	n.		
-nominee	C1	n.		
-non-profit	C1	adj.	UK	
-none	A2	pron.		
-nonetheless	C1	adv.		
-nonprofit	C1	adj.	US	
-nonsense	C1	n.		
-noon	C1	n.		
-nor	B1	adv.		
-nor	B1	conj.		
-norm	B2	n.		
-normal	A2	adj.		
-normal	B1	n.		
-normally	A2	adv.		
-north	A1	adj.		
-north	A1	adv.		
-north	A1	n.		
-northern	B1	adj.		
-nose	A1	n.		
-not	A1	adv.		
-notable	C1	adj.		
-notably	C1	adv.		
-note	A1	n.		
-note	B1	v.		
-notebook	B2	n.		
-nothing	A1	pron.		
-notice	A2	n.		
-notice	A2	v.		
-notify	C1	v.		
-notion	B2	n.		
-notorious	C1	adj.		
-novel	A2	n.		
-novel	C1	adj.		
-novelist	B2	n.		
-now	A1	adv.		
-now	B1	conj.		
-nowadays	B2	adv.		
-nowhere	A2	adv.		
-nuclear	B1	adj.		
-number	A1	n.		
-number	A2	v.		
-numerous	B2	adj.		
-nurse	A1	n.		
-nursery	C1	n.		
-nursing	B2	adj.		
-nut	A2	n.		
-nutrition	B2	n.		
-obesity	B2	n.		
-obey	B2	v.		
-object	A1	n.		
-object	B2	v.		
-objection	C1	n.		
-objective	B2	adj.		
-objective	B2	n.		
-obligation	B2	n.		
-oblige	C1	v.		
-observation	B2	n.		
-observe	B2	v.		
-observer	B2	n.		
-obsess	C1	v.		
-obsession	C1	n.		
-obstacle	B2	n.		
-obtain	B2	v.		
-obvious	B1	adj.		
-obviously	B1	adv.		
-occasion	B1	n.		
-occasional	C1	adj.		
-occasionally	B2	adv.		
-occupation	B2	n.		
-occupy	B2	v.		
-occur	B1	v.		
-occurrence	C1	n.		
-ocean	A1	n.	US	
-ocean	A2	n.	UK	
-odd	B1	adj.		
-odds	C1	n.		
-of	A1	prep.		
-off	A1	adv.		
-off	A1	prep.		
-offence	B2	n.	UK	
-offend	B2	v.		
-offender	B2	n.		
-offense	B2	n.	US	
-offensive	B2	adj.		
-offer	A2	n.		
-offer	A2	v.		
-offering	C1	n.		
-office	A1	n.		
-officer	A2	n.		
-official	B1	adj.		
-official	B2	n.		
-offspring	C1	n.		
-often	A1	adv.		
-oh	A1	exclam.		
-oil	A2	n.		
-old	A1	adj.		
-old-fashioned	B1	adj.		
-on	A1	adv.		
-on	A1	prep.		
-once	A1	adv.		
-once	B1	conj.		
-one	A1	det.		
-one	A1	number		
-one	A1	pron.		
-ongoing	B2	adj.		
-onion	A1	n.		
-online	A1	adj.		
-online	A1	adv.		
-only	A1	adj.		
-only	A1	adv.		
-onto	A2	prep.		
-open	A1	adj.		
-open	A1	v.		
-opening	B2	n.		
-openly	B2	adv.		
-opera	B2	n.		
-operate	B2	v.		
-operation	B1	n.		
-operational	C1	adj.		
-operator	B2	n.		
-opinion	A1	n.		
-opponent	B2	n.		
-opportunity	A2	n.		
-oppose	B2	v.		
-opposed	B2	adj.		
-opposite	A1	adj.		
-opposite	A1	adv.		
-opposite	A1	n.		
-opposite	A1	prep.		
-opposition	B2	n.		
-opt	C1	v.		
-optical	C1	adj.		
-optimism	C1	n.		
-optimistic	B2	adj.		
-option	A2	n.		
-or	A1	conj.		
-oral	C1	adj.		
-orange	A1	adj.		
-orange	A1	n.		
-orchestra	B2	n.		
-order	A1	n.		
-order	A1	v.		
-ordinary	A2	adj.		
-organ	B2	n.		
-organic	B2	adj.		
-organization	A2	n.		
-organizational	C1	adj.		
-organize	A2	v.		
-organized	B1	adj.		
-organizer	B1	n.		
-orientation	C1	n.		
-origin	B2	n.		
-original	A2	adj.		
-original	B1	n.		
-originally	B1	adv.		
-originate	C1	v.		
-other	A1	adj.		
-other	A1	pron.		
-otherwise	B2	adv.		
-ought	B1	modal v.		
-our	A1	det.		
-ours	B1	pron.		
-ourselves	A2	pron.		
-out	A1	adv.		
-out	A1	prep.		
-outbreak	C1	n.		
-outcome	B2	n.		
-outdoor	B1	adj.		
-outdoors	B1	adv.		
-outer	B2	adj.		
-outfit	B2	n.		
-outing	C1	n.		
-outlet	C1	n.		
-outline	B2	n.		
-outline	B2	v.		
-outlook	C1	n.		
-output	B2	n.		
-outrage	C1	n.		
-outrage	C1	v.		
-outside	A1	adv.		
-outside	A2	adj.		
-outside	A2	n.		
-outside	A2	prep.		
-outsider	C1	n.		
-outstanding	B2	adj.		
-oven	A2	n.		
-over	A1	adv.		
-over	A1	prep.		
-overall	B2	adj.		
-overall	B2	adv.		
-overcome	B2	v.		
-overlook	C1	v.		
-overly	C1	adv.		
-overnight	B2	adv.		
-overseas	A2	adv.	US	
-overseas	B1	adj.	US	
-overseas	B2	adj.	UK	
-overseas	B2	adv.	UK	
-oversee	C1	v.		
-overturn	C1	v.		
-overwhelm	C1	v.		
-overwhelming	C1	adj.		
-owe	B2	v.		
-own	A1	adj.		
-own	A1	pron.		
-own	A2	v.		
-owner	A2	n.		
-ownership	B2	n.		
-oxygen	B2	n.		
-o’clock	A1	adv.		
-pace	B2	n.		
-pace	B2	v.		
-pack	A2	v.		
-pack	B1	n.		
-package	B1	n.		
-package	B2	v.		
-packet	B2	n.		
-pad	C1	n.		
-page	A1	n.		
-pain	A2	n.		
-painful	B1	adj.		
-paint	A1	n.		
-paint	A1	v.		
-painter	A2	n.		
-painting	A1	n.		
-pair	A1	n.		
-palace	A2	n.		
-pale	B1	adj.		
-palm	B2	n.		
-pan	B1	n.		
-panel	B2	n.		
-panic	B2	n.		
-pants	A1	n.	US	
-pants	A2	n.	UK	
-paper	A1	n.		
-parade	B2	n.		
-paragraph	A1	n.		
-parallel	B2	adj.		
-parallel	B2	n.		
-parameter	C1	n.		
-parent	A1	n.		
-parental	C1	adj.		
-parish	C1	n.	UK	
-park	A1	n.		
-park	A1	v.		
-parking	A2	n.		
-parliament	B2	n.	UK	
-parliament	C1	n.	US	
-parliamentary	C1	adj.	UK	
-part	A1	n.		
-part-time	B2	adj.		
-part-time	B2	adv.		
-partial	C1	adj.		
-partially	C1	adv.		
-participant	B2	n.		
-participate	B1	v.		
-participation	B2	n.		
-particular	A2	adj.		
-particularly	B1	adv.		
-partly	B2	adv.		
-partner	A1	n.		
-partnership	B2	n.		
-party	A1	n.		
-pass	A2	v.		
-pass	B1	n.		
-passage	B2	n.		
-passenger	A2	n.		
-passing	C1	n.		
-passion	B1	n.		
-passionate	B2	adj.		
-passive	C1	adj.		
-passport	A1	n.		
-password	B2	n.		
-past	A1	adj.		
-past	A1	n.		
-past	A1	prep.		
-past	A2	adv.		
-pastor	C1	n.		
-patch	B2	n.	US	
-patch	C1	n.	UK	
-patent	C1	n.		
-path	B1	n.		
-pathway	C1	n.		
-patience	B2	n.		
-patient	A2	n.		
-patient	B2	adj.		
-patrol	C1	n.		
-patrol	C1	v.		
-patron	C1	n.		
-pattern	A2	n.		
-pause	B2	n.		
-pause	B2	v.		
-pay	A1	v.		
-pay	A2	n.		
-payment	B1	n.		
-peace	A2	n.		
-peaceful	B1	adj.		
-peak	C1	n.		
-peasant	C1	n.		
-peculiar	C1	adj.		
-peer	B2	n.		
-pen	A1	n.		
-penalty	B2	n.		
-pencil	A1	n.		
-penny	A2	n.		
-pension	B2	n.	UK	
-pension	C1	n.	US	
-people	A1	n.		
-pepper	A1	n.		
-per	A2	prep.		
-per cent	A2	adj.	UK	
-per cent	A2	adv.	UK	
-per cent	A2	n.	UK	
-perceive	B2	v.		
-percent	A2	adj.	US	
-percent	A2	adv.	US	
-percent	A2	n.	US	
-percentage	B1	n.		
-perception	B2	n.		
-perfect	A1	adj.		
-perfectly	B1	adv.		
-perform	A2	v.		
-performance	B1	n.		
-perhaps	A2	adv.		
-period	A1	n.		
-permanent	B2	adj.		
-permanently	B2	adv.		
-permission	A2	n.		
-permit	B2	n.		
-permit	B2	v.		
-persist	C1	v.		
-persistent	C1	adj.		
-person	A1	n.		
-personal	A1	adj.		
-personality	A2	n.		
-personally	B1	adv.		
-personnel	C1	n.		
-perspective	B2	n.		
-persuade	B1	v.		
-pet	A2	n.		
-petition	C1	n.		
-petrol	A2	n.	UK	
-pharmacy	B2	n.	US	
-phase	B2	n.		
-phenomenon	B2	n.		
-philosopher	C1	n.		
-philosophical	C1	adj.		
-philosophy	B2	n.		
-phone	A1	n.		
-phone	A1	v.		
-photo	A1	n.		
-photograph	A1	n.		
-photograph	A2	v.		
-photographer	B1	n.		
-photography	B1	n.		
-phrase	A1	n.		
-physical	A2	adj.		
-physician	B2	n.	US	
-physician	C1	n.	UK	
-physics	A2	n.		
-piano	A1	n.		
-pick	A2	v.		
-pick	B2	n.		
-picture	A1	n.		
-picture	B2	v.		
-piece	A1	n.		
-pig	A1	n.		
-pile	B2	n.		
-pile	B2	v.		
-pill	B2	n.		
-pilot	A2	n.		
-pin	B1	n.		
-pin	B1	v.		
-pink	A1	adj.		
-pink	A1	n.		
-pioneer	C1	n.		
-pioneer	C1	v.		
-pipe	B1	n.		
-pipeline	C1	n.		
-pirate	C1	n.		
-pit	C1	n.		
-pitch	B2	n.		
-pity	B2	n.		
-place	A1	n.		
-place	B1	v.		
-placement	B2	n.		
-plain	B2	adj.		
-plan	A1	n.		
-plan	A1	v.		
-plane	A1	n.		
-planet	A2	n.		
-planning	B1	n.		
-plant	A1	n.		
-plant	A2	v.		
-plastic	A2	adj.		
-plastic	A2	n.		
-plate	A2	n.		
-platform	A2	n.		
-play	A1	n.		
-play	A1	v.		
-player	A1	n.		
-plea	C1	n.		
-plead	C1	v.		
-pleasant	B1	adj.		
-please	A1	exclam.		
-please	A2	v.		
-pleased	A2	adj.		
-pleasure	B1	n.		
-pledge	C1	n.		
-pledge	C1	v.		
-plenty	B1	pron.		
-plot	B1	n.		
-plot	B2	v.		
-plug	C1	n.		
-plug	C1	v.		
-plunge	C1	v.		
-plus	B1	prep.		
-plus	B2	adj.		
-plus	B2	conj.		
-plus	B2	n.		
-pocket	A2	n.		
-poem	B1	n.		
-poet	B1	n.		
-poetry	B1	n.		
-point	A1	n.		
-point	B1	v.		
-pointed	B2	adj.		
-poison	B1	n.		
-poison	B1	v.		
-poisonous	B1	adj.		
-pole	C1	n.		
-police	A1	n.		
-policeman	A1	n.		
-policy	B1	n.		
-polite	A2	adj.		
-political	B1	adj.		
-politician	B1	n.		
-politics	B1	n.		
-poll	C1	n.		
-pollution	A2	n.		
-pond	C1	n.		
-pool	A1	n.		
-poor	A1	adj.		
-pop	A2	adj.		
-pop	A2	n.		
-pop	C1	v.		
-popular	A1	adj.		
-popularity	B2	n.		
-population	A2	n.		
-port	B1	n.		
-portfolio	C1	n.		
-portion	B2	n.		
-portrait	B1	n.		
-portray	C1	v.		
-pose	B2	v.		
-position	A2	n.		
-position	B2	v.		
-positive	A1	adj.		
-positive	B2	n.		
-possess	B2	v.		
-possession	A2	n.		
-possibility	A2	n.		
-possible	A1	adj.		
-possibly	B1	adv.		
-post	A1	n.		
-post	A1	v.		
-post-war	C1	adj.	UK	
-poster	A2	n.		
-postpone	C1	v.		
-postwar	C1	adj.	US	
-pot	B1	n.		
-potato	A1	n.		
-potential	B2	adj.		
-potential	B2	n.		
-potentially	B2	adv.		
-pound	A1	n.		
-pour	B1	v.		
-poverty	B1	n.		
-powder	B1	n.		
-power	A2	n.		
-power	B2	v.		
-powerful	B1	adj.		
-practical	B1	adj.		
-practice	A1	n.	UK	
-practice	A1	n.	US	
-practice	A1	v.	US	
-practise	A1	v.	UK	
-practitioner	C1	n.		
-praise	B2	n.		
-praise	B2	v.		
-pray	B1	v.		
-prayer	B1	n.		
-preach	C1	v.		
-precede	B2	v.		
-precedent	C1	n.		
-precious	B2	adj.		
-precise	B2	adj.		
-precisely	B2	adv.		
-precision	C1	n.		
-predator	C1	n.		
-predecessor	C1	n.		
-predict	A2	v.		
-predictable	B2	adj.		
-prediction	B1	n.		
-predominantly	C1	adv.		
-prefer	A1	v.		
-preference	B2	n.		
-pregnancy	C1	n.		
-pregnant	B2	adj.		
-prejudice	C1	n.		
-preliminary	C1	adj.		
-premier	C1	n.		
-premise	C1	n.		
-premium	C1	n.		
-preparation	B2	n.		
-prepare	A1	v.		
-prepared	B1	adj.		
-prescribe	C1	v.		
-prescription	C1	n.		
-presence	B2	n.		
-present	A1	adj.		
-present	A1	n.		
-present	A2	v.		
-presentation	B1	n.		
-presently	C1	adv.		
-preservation	C1	n.		
-preserve	B2	v.		
-preside	C1	v.		
-presidency	C1	n.		
-president	A2	n.		
-presidential	B2	adj.	US	
-presidential	C1	adj.	UK	
-press	B1	n.		
-press	B1	v.		
-pressure	B1	n.		
-prestigious	C1	adj.		
-presumably	C1	adv.		
-presume	C1	v.		
-pretend	B1	v.		
-pretty	A1	adj.		
-pretty	A1	adv.		
-prevail	C1	v.		
-prevalence	C1	n.		
-prevent	A2	v.		
-prevention	C1	n.		
-previous	B1	adj.		
-previously	B1	adv.		
-prey	C1	n.		
-price	A1	n.		
-price	B2	v.		
-pride	B2	n.		
-priest	B1	n.		
-primarily	B2	adv.		
-primary	B1	adj.		
-prime	B2	adj.		
-prince	B1	n.		
-princess	B1	n.		
-principal	B1	n.	US	
-principal	B2	adj.		
-principal	B2	adj.	US	
-principal	C1	n.		
-principle	B2	n.		
-print	A2	v.		
-print	B2	n.		
-printer	A2	n.		
-printing	B1	n.		
-prior	B2	adj.		
-priority	B2	n.		
-prison	A2	n.		
-prisoner	B1	n.		
-privacy	B2	n.		
-private	B1	adj.		
-privatization	C1	n.		
-privilege	C1	n.		
-prize	A2	n.		
-probability	B2	n.		
-probable	B2	adj.		
-probably	A1	adv.		
-probe	C1	n.		
-probe	C1	v.		
-problem	A1	n.		
-problematic	C1	adj.		
-procedure	B2	n.		
-proceed	B2	v.		
-proceeding	C1	n.	US	
-proceedings	C1	n.	UK	
-proceeds	C1	n.		
-process	A2	n.		
-process	B2	v.		
-processing	C1	n.		
-processor	C1	n.		
-proclaim	C1	v.		
-produce	A2	v.		
-produce	B2	v.		
-producer	B1	n.		
-product	A1	n.		
-production	B1	n.		
-productive	C1	adj.		
-productivity	C1	n.		
-profession	B1	n.		
-professional	A2	adj.		
-professional	B2	n.		
-professor	A2	n.		
-profile	A2	n.		
-profit	B1	n.		
-profitable	C1	adj.		
-profound	C1	adj.		
-program	A1	n.	US	
-program	A2	n.	UK	
-program	B1	v.	UK	
-program	B1	v.	US	
-programme	A1	n.	UK	
-programming	B2	n.		
-progress	A2	n.	UK	
-progress	A2	n.	US	
-progress	A2	v.	US	
-progress	B2	v.	UK	
-progressive	B2	adj.		
-prohibit	B2	v.		
-project	A1	n.		
-project	B2	v.		
-projection	C1	n.		
-prominent	C1	adj.		
-promise	A2	n.		
-promise	A2	v.		
-promising	B2	adj.		
-promote	B1	v.		
-promotion	B2	n.		
-prompt	B2	v.		
-pronounce	A2	v.		
-pronounced	C1	adj.		
-proof	B2	n.		
-propaganda	C1	n.		
-proper	B1	adj.		
-properly	B1	adv.		
-property	B1	n.		
-proportion	B2	n.		
-proposal	B2	n.		
-propose	B2	v.		
-proposition	C1	n.		
-prosecute	C1	v.		
-prosecution	C1	n.		
-prosecutor	C1	n.		
-prospect	B2	n.		
-prospective	C1	adj.		
-prosperity	C1	n.		
-protect	A2	v.		
-protection	B2	n.		
-protective	C1	adj.		
-protein	B2	n.		
-protest	B1	n.		
-protest	B1	v.		
-protester	B2	n.		
-protocol	C1	n.		
-proud	B1	adj.		
-prove	B1	v.		
-provide	A2	v.		
-province	C1	n.		
-provincial	C1	adj.		
-provision	C1	n.		
-provoke	C1	v.		
-psychiatric	C1	adj.		
-psychological	B2	adj.		
-psychologist	B2	n.		
-psychology	B2	n.		
-pub	A2	n.	UK	
-public	A2	adj.		
-public	A2	n.		
-publication	B2	n.		
-publicity	B2	n.		
-publish	A2	v.		
-publishing	B2	n.		
-pull	A2	v.		
-pull	B1	n.		
-pulse	C1	n.		
-pump	C1	n.		
-pump	C1	v.		
-punch	C1	n.		
-punch	C1	v.		
-punish	B1	v.		
-punishment	B1	n.		
-punk	B2	n.		
-pupil	B2	n.	UK	
-purchase	B2	n.		
-purchase	B2	v.		
-pure	B2	adj.		
-purely	B2	adv.		
-purple	A1	adj.		
-purple	A1	n.		
-purpose	A2	n.		
-pursue	B2	v.		
-pursuit	B2	n.		
-push	A2	v.		
-push	B1	n.		
-put	A1	v.		
-puzzle	B2	n.		
-qualification	B1	n.		
-qualified	B1	adj.		
-qualify	B1	v.		
-quality	A2	n.		
-quantity	A2	n.		
-quarter	A1	n.		
-queen	A2	n.		
-query	C1	n.		
-quest	C1	n.		
-question	A1	n.		
-question	A2	v.		
-questionnaire	B2	n.		
-queue	B1	n.	UK	
-queue	B1	v.	UK	
-quick	A1	adj.		
-quickly	A1	adv.		
-quiet	A1	adj.		
-quietly	A2	adv.		
-quit	B1	v.		
-quite	A1	adv.		
-quota	C1	n.		
-quotation	B1	n.		
-quote	B1	n.		
-quote	B1	v.		
-race	A2	n.	UK	competition
-race	A2	n.	US	competition
-race	A2	v.	UK	competition
-race	A2	v.	US	competition
-race	B1	n.	UK	people
-race	B1	n.	US	of people
-racial	B2	adj.		
-racing	B1	n.		
-racism	B2	n.		
-racist	B2	adj.		
-racist	B2	n.		
-radar	C1	n.		
-radiation	B2	n.		
-radical	C1	adj.		
-radio	A1	n.		
-rage	C1	n.		
-raid	C1	n.		
-raid	C1	v.		
-rail	B2	n.		
-railroad	A2	n.	US	
-railway	A2	n.	UK	
-rain	A1	n.		
-rain	A1	v.		
-raise	A2	v.	UK	
-raise	A2	v.	US	
-raise	B1	n.	US	
-rally	C1	n.		
-rally	C1	v.		
-random	B2	adj.		
-range	B1	n.		
-range	B2	v.		
-rank	B2	n.		
-rank	B2	v.		
-ranking	C1	n.		
-rape	C1	n.		
-rape	C1	v.		
-rapid	B2	adj.		
-rapidly	B2	adv.		
-rare	B1	adj.		
-rarely	B1	adv.		
-rat	B2	n.		
-rate	A2	n.		
-rate	B2	v.		
-rather	A2	adv.		
-rating	B2	n.		
-ratio	C1	n.		
-rational	C1	adj.		
-raw	B2	adj.		
-ray	C1	n.		
-reach	A2	v.		
-reach	B2	n.		
-react	A2	v.		
-reaction	B1	n.		
-read	A1	v.		
-reader	A1	n.		
-readily	C1	adv.		
-reading	A1	n.		
-ready	A1	adj.		
-real	A1	adj.		
-realistic	B2	adj.		
-reality	B1	n.		
-realization	C1	n.		
-realize	A2	v.		
-really	A1	adv.		
-realm	C1	n.		
-rear	C1	adj.		
-rear	C1	n.		
-reason	A1	n.		
-reasonable	B2	adj.		
-reasonably	B2	adv.		
-reasoning	C1	n.		
-reassure	C1	v.		
-rebel	C1	n.		
-rebellion	C1	n.		
-rebuild	B2	v.		
-recall	B2	v.		
-receipt	B1	n.		
-receive	A2	v.		
-receiver	B2	n.		
-recent	A2	adj.		
-recently	A2	adv.		
-reception	A2	n.		
-recession	B2	n.		
-recipe	A2	n.		
-recipient	C1	n.		
-reckon	B2	v.		
-recognition	B2	n.		
-recognize	A2	v.		
-recommend	A2	v.		
-recommendation	B1	n.		
-reconstruction	C1	n.		
-record	A2	n.		
-record	A2	v.		
-recording	A2	n.		
-recount	C1	v.		
-recover	B2	v.		
-recovery	B2	n.		
-recruit	B2	n.		
-recruit	B2	v.		
-recruitment	B2	n.	UK	
-recruitment	C1	n.	US	
-recycle	A2	v.		
-red	A1	adj.		
-red	A1	n.		
-reduce	A2	v.		
-reduction	B2	n.		
-refer	A2	v.		
-referee	B2	n.		
-reference	B1	n.		
-referendum	C1	n.		
-reflect	B1	v.		
-reflection	C1	n.		
-reform	C1	n.		
-reform	C1	v.		
-refrigerator	A2	n.	US	
-refuge	C1	n.		
-refugee	B2	n.		
-refusal	C1	n.		
-refuse	A2	v.		
-regain	C1	v.		
-regard	B2	n.		
-regard	B2	v.		
-regardless	C1	adv.		
-regime	C1	n.		
-region	A2	n.		
-regional	B2	adj.		
-register	B2	n.		
-register	B2	v.		
-registration	B2	n.		
-regret	B2	n.		
-regret	B2	v.		
-regular	A2	adj.		
-regularly	B1	adv.		
-regulate	B2	v.		
-regulation	B2	n.		
-regulator	C1	n.		
-regulatory	C1	adj.		
-rehabilitation	C1	n.		
-reign	C1	n.		
-reign	C1	v.		
-reinforce	B2	v.		
-reject	B1	v.		
-rejection	C1	n.		
-relate	B1	v.		
-related	B1	adj.		
-relation	B1	n.		
-relationship	A2	n.		
-relative	B1	adj.		
-relative	B1	n.		
-relatively	B2	adv.		
-relax	A1	v.		
-relaxed	B1	adj.		
-relaxing	B1	adj.		
-release	B1	n.		
-release	B1	v.		
-relevance	C1	n.		
-relevant	B2	adj.		
-reliability	C1	n.		
-reliable	B1	adj.		
-relief	B2	n.		
-relieve	B2	v.		
-relieved	B2	adj.		
-religion	B1	n.		
-religious	B1	adj.		
-reluctant	C1	adj.		
-rely	B2	v.		
-remain	B1	v.		
-remainder	C1	n.		
-remains	C1	n.		
-remark	B2	n.		
-remark	B2	v.		
-remarkable	B2	adj.		
-remarkably	B2	adv.		
-remedy	C1	n.		
-remember	A1	v.		
-remind	B1	v.		
-reminder	C1	n.		
-remote	B1	adj.		
-removal	C1	n.		
-remove	A2	v.		
-render	C1	v.		
-renew	C1	v.		
-renowned	C1	adj.		
-rent	B1	n.		
-rent	B1	v.		
-rental	C1	n.		
-repair	A2	v.		
-repair	B1	n.		
-repeat	A1	v.		
-repeat	B1	n.		
-repeated	B1	adj.		
-replace	A2	v.		
-replacement	C1	n.		
-reply	A2	n.		
-reply	A2	v.		
-report	A1	n.		
-report	A2	v.		
-reportedly	C1	adv.		
-reporter	A2	n.		
-reporting	B2	n.		
-represent	B1	v.		
-representation	C1	n.		
-representative	B2	adj.		
-representative	B2	n.		
-reproduce	C1	v.		
-reproduction	C1	n.		
-republic	C1	n.		
-reputation	B2	n.		
-request	A2	n.		
-request	B1	v.		
-require	B1	v.		
-requirement	B2	n.		
-rescue	B2	n.		
-rescue	B2	v.		
-research	A2	n.		
-research	A2	v.		
-researcher	A2	n.		
-resemble	C1	v.		
-reservation	B1	n.		
-reserve	B2	n.		
-reserve	B2	v.		
-reside	C1	v.		
-residence	C1	n.		
-resident	B2	adj.		
-resident	B2	n.		
-residential	C1	adj.		
-residue	C1	n.		
-resign	B2	v.		
-resignation	C1	n.		
-resist	B2	v.		
-resistance	C1	n.		
-resolution	B2	n.		
-resolve	B2	v.		
-resort	B2	n.		
-resource	B1	n.		
-respect	B1	n.		
-respect	B1	v.		
-respective	C1	adj.		
-respectively	C1	adv.		
-respond	A2	v.		
-response	A2	n.		
-responsibility	B1	n.		
-responsible	B1	adj.		
-rest	A2	n.		remaining part
-rest	A2	n.		sleep/relax
-rest	A2	v.		sleep/relax
-restaurant	A1	n.		
-restoration	C1	n.		
-restore	B2	v.		
-restraint	C1	n.		
-restrict	B2	v.		
-restriction	B2	n.		
-result	A1	n.		
-result	B1	v.		
-resume	C1	v.		
-retail	B2	n.		
-retain	B2	v.		
-retire	B1	v.		
-retired	B1	adj.		
-retirement	B2	n.		
-retreat	C1	n.		
-retreat	C1	v.		
-retrieve	C1	v.		
-return	A1	n.		
-return	A1	v.		
-reveal	B2	v.		
-revelation	C1	n.		
-revenge	C1	n.		
-revenue	B2	n.		
-reverse	C1	adj.		
-reverse	C1	n.		
-reverse	C1	v.		
-review	A2	n.		
-review	A2	v.		
-revise	B1	v.		
-revision	B2	n.		
-revival	C1	n.		
-revive	C1	v.		
-revolution	B2	n.		
-revolutionary	C1	adj.		
-reward	B2	n.		
-reward	B2	v.		
-rhetoric	C1	n.		
-rhythm	B2	n.		
-rice	A1	n.		
-rich	A1	adj.		
-rid	B2	v.		
-ride	A1	v.		
-ride	A2	n.		
-ridiculous	B2	adj.		
-rifle	C1	n.		
-right	A1	adj.		
-right	A1	adv.		
-right	A1	n.		
-ring	A2	n.		
-ring	A2	v.		
-ring	B1	n.		
-riot	C1	n.		
-rip	C1	v.		
-rise	A2	v.	UK	
-rise	A2	v.	US	
-rise	B1	n.	UK	
-rise	B2	n.	US	
-risk	B1	n.		
-risk	B1	v.		
-risky	B2	adj.		
-ritual	C1	n.		
-rival	B2	adj.		
-rival	B2	n.		
-river	A1	n.		
-road	A1	n.		
-rob	B2	v.		
-robbery	B2	n.		
-robot	B1	n.		
-robust	C1	adj.		
-rock	A2	n.		music
-rock	A2	n.		stone
-rock	C1	v.		
-rocket	B2	n.		
-rod	C1	n.		
-role	A2	n.		
-roll	B1	n.		
-roll	B1	v.		
-romance	B2	n.		
-romantic	B1	adj.		
-roof	A2	n.		
-rookie	C1	n.	US	
-room	A1	n.		
-root	B2	n.		
-rope	B1	n.		
-rose	B2	n.		
-roster	C1	n.	US	
-rotate	C1	v.		
-rotation	C1	n.		
-rough	B1	adj.		
-roughly	B2	adv.		
-round	A2	adj.		
-round	A2	adv.		
-round	A2	prep.		
-round	B2	n.		
-route	A2	n.		
-routine	A1	n.		
-routine	B2	adj.		
-row	B1	n.		
-royal	B1	adj.		
-rub	B2	v.		
-rubber	B2	adj.		
-rubber	B2	n.		
-rubbish	A2	n.	UK	
-rude	A2	adj.		
-rugby	B1	n.	UK	
-ruin	B2	n.		
-ruin	B2	v.		
-rule	A1	n.		
-rule	B1	v.		
-ruling	C1	n.		
-rumor	C1	n.	US	
-rumour	C1	n.	UK	
-run	A1	v.		
-run	A2	n.		
-runner	A2	n.		
-running	A2	n.		
-rural	B2	adj.		
-rush	B2	n.		
-rush	B2	v.		
-résumé	B2	n.	US	
-sack	C1	v.	UK	
-sacred	C1	adj.		
-sacrifice	C1	n.		
-sacrifice	C1	v.		
-sad	A1	adj.		
-sadly	A2	adv.		
-safe	A2	adj.		
-safety	B1	n.		
-sail	A2	v.		
-sail	B1	n.		
-sailing	A2	n.		
-sailor	B1	n.		
-saint	C1	n.		
-sake	C1	n.		
-salad	A1	n.		
-salary	A2	n.		
-sale	A2	n.		
-salt	A1	n.		
-same	A1	adj.		
-same	A1	adv.		
-same	A1	pron.		
-sample	B1	n.		
-sample	B2	v.		
-sanction	C1	n.		
-sand	B1	n.		
-sandwich	A1	n.		
-satellite	B2	n.		
-satisfaction	B2	n.		
-satisfied	B2	adj.		
-satisfy	B2	v.		
-sauce	A2	n.		
-save	A2	v.		
-saving	B2	n.		
-say	A1	v.		
-say	C1	n.		
-scale	B2	n.		
-scan	B1	v.		
-scandal	B2	n.		
-scare	B2	n.		
-scare	B2	v.		
-scared	A2	adj.		
-scary	A2	adj.		
-scattered	C1	adj.		
-scenario	B2	n.		
-scene	A2	n.		
-sceptical	C1	adj.	UK	
-schedule	A2	n.		
-schedule	B2	v.		
-scheme	B2	n.	UK	
-scholar	B2	n.		
-scholarship	B2	n.		
-school	A1	n.		
-science	A1	n.		
-scientific	B1	adj.		
-scientist	A1	n.		
-scope	C1	n.		
-score	A2	n.		
-score	A2	v.		
-scratch	B2	n.		
-scratch	B2	v.		
-scream	B2	n.		
-scream	B2	v.		
-screen	A2	n.		
-screen	B2	v.		
-screening	B2	n.		
-screw	C1	n.		
-screw	C1	v.		
-script	B1	n.		
-scrutiny	C1	n.		
-sculpture	B1	n.		
-sea	A1	n.	UK	
-sea	A2	n.	US	
-seal	C1	n.		
-seal	C1	v.		
-search	A2	n.		
-search	A2	v.		
-season	A2	n.		
-seat	A2	n.		
-seat	B2	v.		
-second	A1	det.		next after the first
-second	A1	n.		unit of time
-second	A1	number		next after the first
-second	A2	adv.		next after the first
-secondary	B1	adj.		
-secondly	A2	adv.	UK	
-secondly	C1	adv.	US	
-secret	A2	adj.		
-secret	A2	n.		
-secretary	A2	n.		
-section	A1	n.		
-sector	B2	n.		
-secular	C1	adj.		
-secure	B2	adj.		
-secure	B2	v.		
-security	B1	n.		
-see	A1	v.		
-seed	B1	n.		
-seek	B2	v.		
-seeker	B2	n.		
-seem	A2	v.		
-seemingly	C1	adv.		
-segment	C1	n.		
-seize	C1	v.		
-seldom	C1	adv.		
-select	B2	v.		
-selection	B2	n.		
-selective	C1	adj.		
-self	B2	n.		
-sell	A1	v.		
-seminar	B2	n.		
-senate	B2	n.	US	
-senator	B2	n.	US	
-senator	C1	n.	UK	
-send	A1	v.		
-senior	B2	adj.		
-sensation	C1	n.		
-sense	A2	n.		
-sense	B2	v.		
-sensible	B1	adj.		
-sensitive	B2	adj.		
-sensitivity	C1	n.		
-sentence	A1	n.		
-sentence	B2	v.		
-sentiment	C1	n.		
-separate	A2	adj.		
-separate	B1	v.		
-separation	C1	n.		
-sequence	B2	n.		
-serial	C1	adj.		
-series	A2	n.		
-serious	A2	adj.		
-seriously	B1	adv.		
-servant	B1	n.		
-serve	A2	v.		
-service	A2	n.		
-session	B2	n.		
-set	B1	n.		group
-set	B1	v.		put
-set-up	C1	n.	UK	
-setting	B1	n.		
-settle	B2	v.		
-settlement	C1	n.		
-settler	B2	n.		
-setup	C1	n.	US	
-seven	A1	number		
-seventeen	A1	number		
-seventy	A1	number		
-several	A2	det.		
-several	A2	pron.		
-severe	B2	adj.		
-severely	B2	adv.		
-sex	B1	n.		
-sexual	B1	adj.		
-sexuality	C1	n.		
-sexy	B2	adj.		
-shade	B2	n.		
-shadow	B2	n.		
-shake	A2	v.		
-shake	B1	n.		
-shall	A2	modal v.	UK	
-shall	B2	modal v.	US	
-shallow	B2	adj.		
-shame	B2	n.		
-shape	A2	n.		
-shape	B2	v.		
-shaped	B2	adj.		
-share	A1	v.		
-share	B1	n.		
-shareholder	C1	n.		
-sharp	B1	adj.		
-shatter	C1	v.		
-she	A1	pron.		
-shed	C1	v.		
-sheep	A1	n.		
-sheer	C1	adj.		
-sheet	A2	n.		
-shelf	B1	n.		
-shell	B1	n.		
-shelter	B2	n.		
-shelter	B2	v.		
-shift	B1	n.		
-shift	B2	v.		
-shine	B1	v.		
-shiny	B1	adj.		
-ship	A2	n.		
-ship	B2	v.		
-shipping	C1	n.		
-shirt	A1	n.		
-shock	B2	n.		
-shock	B2	v.		
-shocked	B2	adj.		
-shocking	B2	adj.		
-shoe	A1	n.		
-shoot	B1	v.		
-shoot	C1	n.		
-shooting	B2	n.		
-shop	A1	n.		
-shop	A1	v.		
-shopping	A1	n.		
-shore	B2	n.		
-short	A1	adj.		
-short-term	B2	adj.		
-shortage	B2	n.		
-shortly	B2	adv.		
-shot	B2	n.		
-should	A1	modal v.		
-shoulder	A2	n.		
-shout	A2	n.		
-shout	A2	v.		
-show	A1	n.		
-show	A1	v.		
-shower	A1	n.		
-shrink	C1	v.		
-shrug	C1	v.		
-shut	A2	adj.		
-shut	A2	v.		
-shy	B1	adj.		
-sibling	B2	n.		
-sick	A1	adj.		
-side	A2	n.		
-sidewalk	B2	n.	US	
-sigh	C1	n.		
-sigh	C1	v.		
-sight	B1	n.		
-sign	A2	n.		
-sign	A2	v.		
-signal	B1	n.		
-signal	B1	v.		
-signature	B2	n.		
-significance	B2	n.		
-significant	B2	adj.		
-significantly	B2	adv.		
-silence	B2	n.		
-silent	B1	adj.		
-silk	B2	n.		
-silly	B1	adj.		
-silver	A2	adj.		
-silver	A2	n.		
-similar	A1	adj.		
-similarity	B1	n.		
-similarly	B1	adv.		
-simple	A2	adj.		
-simply	B1	adv.		
-simulate	C1	v.		
-simulation	C1	n.		
-simultaneously	C1	adv.		
-sin	C1	n.		
-since	A2	conj.		
-since	A2	prep.		
-since	B1	adv.		
-sincere	B2	adj.		
-sing	A1	v.		
-singer	A1	n.		
-singing	A2	n.		
-single	A2	adj.		
-single	A2	n.		
-sink	B1	v.		
-sir	A2	n.		
-sister	A1	n.		
-sit	A1	v.		
-site	A2	n.		
-situated	C1	adj.		
-situation	A1	n.		
-six	A1	number		
-sixteen	A1	number		
-sixty	A1	number		
-size	A2	n.		
-skeptical	C1	adj.	US	
-sketch	C1	n.		
-ski	A2	n.		
-ski	A2	v.		
-skiing	A2	n.		
-skill	A1	n.		
-skilled	B2	adj.		
-skin	A2	n.		
-skip	C1	v.		
-skirt	A1	n.		
-skull	B2	n.		
-sky	A2	n.		
-slam	C1	v.		
-slap	C1	v.		
-slash	C1	v.		
-slave	B1	n.	US	
-slave	B2	n.	UK	
-slavery	C1	n.		
-sleep	A1	v.		
-sleep	A2	n.		
-slice	B1	n.		
-slice	B1	v.		
-slide	B2	n.		
-slide	B2	v.		
-slight	B2	adj.		
-slightly	B1	adv.		
-slip	B2	v.		
-slogan	B2	n.		
-slope	B2	n.		
-slope	B2	v.		
-slot	C1	n.		
-slow	A1	adj.		
-slow	B1	v.		
-slowly	A2	adv.		
-small	A1	adj.		
-smart	A1	adj.	US	
-smart	B1	adj.	UK	
-smartphone	A2	n.		
-smash	C1	v.		
-smell	A2	n.		
-smell	A2	v.		
-smile	A2	n.		
-smile	A2	v.		
-smoke	A2	n.		
-smoke	A2	v.		
-smoking	A2	n.		
-smooth	B1	adj.		
-snake	A1	n.		
-snap	C1	v.		
-sneaker	A2	n.	US	
-snow	A1	n.		
-snow	A1	v.		
-so	A1	adv.		
-so	A1	conj.		
-so-called	B2	adj.		
-soak	C1	v.		
-soap	A2	n.		
-soar	C1	v.		
-soccer	A2	n.		
-social	A2	adj.		
-socialist	C1	adj.		
-society	A2	n.		
-sock	A2	n.		
-soft	A2	adj.		
-software	B1	n.		
-soil	B1	n.		
-solar	B2	adj.		
-soldier	A2	n.		
-sole	C1	adj.		
-solely	C1	adv.		
-solicitor	C1	n.	UK	
-solid	B1	adj.		
-solid	B1	n.		
-solidarity	C1	n.		
-solo	C1	adj.		
-solo	C1	n.		
-solution	A2	n.		
-solve	A2	v.		
-some	A1	det.		
-some	A1	pron.		
-somebody	A1	pron.		
-somehow	B2	adv.		
-someone	A1	pron.		
-something	A1	pron.		
-sometime	B2	adv.		
-sometimes	A1	adv.		
-somewhat	B2	adv.		
-somewhere	A2	adv.		
-somewhere	A2	pron.		
-son	A1	n.		
-song	A1	n.		
-soon	A1	adv.		
-sophisticated	B2	adj.		
-sophomore	C1	n.	US	
-sorry	A1	adj.		
-sorry	A1	exclam.		
-sort	A2	n.		
-sort	B1	v.		
-soul	B2	n.		
-sound	A1	n.		
-sound	A1	v.		
-sound	C1	adj.		
-soup	A1	n.		
-source	A2	n.		
-south	A1	adj.		
-south	A1	adv.		
-south	A1	n.		
-southern	B1	adj.		
-sovereignty	C1	n.		
-space	A1	n.		
-spam	C1	n.		
-span	C1	n.		
-span	C1	v.		
-spare	B2	adj.		
-spare	C1	v.		
-spark	C1	v.		
-speak	A1	v.		
-speaker	A2	n.		
-special	A1	adj.		
-specialist	B2	adj.		
-specialist	B2	n.		
-specialize	B1	v.		
-specialized	C1	adj.		
-species	B2	n.		
-specific	A2	adj.		
-specifically	B1	adv.		
-specification	C1	n.		
-specify	B2	v.		
-specimen	C1	n.		
-spectacle	C1	n.		
-spectacular	B2	adj.		
-spectator	B2	n.		
-spectrum	C1	n.		
-speculate	B2	v.		
-speculation	B2	n.		
-speech	A2	n.		
-speed	A2	n.		
-speed	B2	v.		
-spell	A1	v.		
-spell	C1	n.		
-spelling	A1	n.		
-spend	A1	v.		
-spending	B1	n.		
-sphere	C1	n.		
-spice	B2	n.		
-spicy	B1	adj.		
-spider	A2	n.		
-spill	B2	v.		
-spin	C1	n.		
-spin	C1	v.		
-spine	C1	n.		
-spirit	B1	n.		
-spiritual	B2	adj.		
-spite	B2	n.		
-split	B2	n.		
-split	B2	v.		
-spoil	B2	v.		
-spoken	B1	adj.		
-spokesman	B2	n.		
-spokesperson	B2	n.		
-spokeswoman	B2	n.		
-sponsor	B2	n.		
-sponsor	B2	v.		
-sponsorship	B2	n.		
-spoon	A2	n.		
-sport	A1	n.		
-sporting	B2	adj.	UK	
-spot	B1	n.		
-spot	B2	v.		
-spotlight	C1	n.		
-spouse	C1	n.		
-spread	B1	v.		
-spread	B2	n.		
-spring	A1	n.		
-spring	B1	v.		
-spy	C1	n.		
-spy	C1	v.		
-squad	C1	n.		
-square	A2	adj.		
-square	A2	n.		
-squeeze	C1	v.		
-stab	C1	v.		
-stability	C1	n.		
-stabilize	C1	v.		
-stable	B2	adj.		
-stadium	B1	n.		
-staff	B1	n.		
-stage	A2	n.		
-stage	B2	v.		
-stair	A2	n.		
-stake	C1	n.		
-stall	B2	n.		
-stamp	A2	n.		
-stance	B2	n.		
-stand	A1	v.		
-stand	B2	n.		
-standard	B1	adj.		
-standard	B1	n.		
-standing	C1	adj.		
-star	A1	n.		
-star	A2	v.		
-stare	B2	v.		
-stark	C1	adj.		
-start	A1	v.		
-start	A2	n.		
-starve	B2	v.		
-state	A2	n.		
-state	B1	adj.		
-state	B1	v.		
-statement	A1	n.		
-station	A1	n.		
-statistic	B1	n.		
-statistical	C1	adj.		
-statue	B1	n.		
-status	B2	n.		
-stay	A1	v.		
-stay	A2	n.		
-steadily	B2	adv.		
-steady	B2	adj.		
-steal	A2	v.		
-steam	B2	n.		
-steel	B2	n.		
-steep	B2	adj.		
-steer	C1	v.		
-stem	C1	n.		
-stem	C1	v.		
-step	A2	n.		
-step	B2	v.		
-stereotype	C1	n.		
-stick	B1	n.		piece of wood
-stick	B1	v.		push into/attach
-sticky	B2	adj.		
-stiff	B2	adj.		
-still	A1	adv.		
-still	B1	adj.		
-stimulate	B2	v.		
-stimulus	C1	n.		
-stir	C1	v.		
-stock	B2	n.		
-stomach	A2	n.		
-stone	A2	n.		
-stop	A1	n.		
-stop	A1	v.		
-storage	C1	n.		
-store	A1	n.	US	
-store	A2	n.	UK	
-store	B1	v.	UK	
-store	B1	v.	US	
-storm	A2	n.		
-story	A1	n.		
-stove	A2	n.	US	
-straight	A2	adj.		
-straight	A2	adv.		
-straightforward	C1	adj.		
-strain	C1	n.		
-strand	C1	n.		
-strange	A2	adj.		
-stranger	B1	n.		
-strategic	C1	adj.		
-strategy	A2	n.		
-stream	B2	n.		
-street	A1	n.		
-strength	B1	n.		
-strengthen	B2	v.		
-stress	A2	n.		
-stress	A2	v.		
-stretch	B2	n.		
-stretch	B2	v.		
-strict	B2	adj.		
-strictly	B2	adv.		
-strike	B2	n.		
-strike	B2	v.		
-striking	B2	adj.		
-string	B1	n.		
-strip	C1	n.		long narrow piece
-strip	C1	v.		remove clothes/a layer
-strive	C1	v.		
-stroke	B2	n.		
-strong	A1	adj.		
-strongly	B1	adv.		
-structural	C1	adj.		
-structure	A2	n.		
-structure	B2	v.		
-struggle	B2	n.		
-struggle	B2	v.		
-student	A1	n.		
-studio	B1	n.		
-study	A1	n.		
-study	A1	v.		
-stuff	B1	n.		
-stuff	B2	v.		
-stumble	C1	v.		
-stun	C1	v.		
-stunning	B2	adj.		
-stupid	A2	adj.		
-style	A1	n.		
-subject	A1	n.		
-subject	B2	adj.		
-submission	C1	n.		
-submit	B2	v.		
-subscriber	C1	n.		
-subscription	C1	n.		
-subsequent	B2	adj.		
-subsequently	B2	adv.		
-subsidy	C1	n.		
-substance	B1	n.		
-substantial	C1	adj.		
-substantially	C1	adv.		
-substitute	C1	n.		
-substitute	C1	v.		
-substitution	C1	n.		
-subtle	C1	adj.		
-suburb	B2	n.		
-suburban	C1	adj.		
-subway	A2	n.	US	
-succeed	A2	v.		
-success	A1	n.		
-successful	A2	adj.		
-successfully	B1	adv.		
-succession	C1	n.		
-successive	C1	adj.		
-successor	C1	n.		
-such	A2	det.		
-such	A2	pron.		
-suck	C1	v.		
-sudden	B1	adj.		
-suddenly	A2	adv.		
-sue	C1	v.		
-suffer	B1	v.		
-suffering	B2	n.		
-sufficient	B2	adj.		
-sufficiently	B2	adv.		
-sugar	A1	n.		
-suggest	A2	v.		
-suggestion	A2	n.		
-suicide	C1	n.		
-suit	A2	n.		
-suit	B1	v.		
-suitable	B1	adj.		
-suite	C1	n.		
-sum	B2	n.		
-sum	B2	v.		
-summarize	B1	v.		
-summary	B1	n.		
-summer	A1	n.		
-summit	C1	n.		
-sun	A1	n.		
-super	B2	adj.		
-superb	C1	adj.		
-superintendent	C1	n.	US	
-superior	C1	adj.		
-supermarket	A1	n.		
-supervise	C1	v.		
-supervision	C1	n.		
-supervisor	C1	n.		
-supplement	C1	n.		
-supplement	C1	v.		
-supply	B1	n.		
-supply	B1	v.		
-support	A2	n.		
-support	A2	v.		
-supporter	B1	n.		
-supportive	C1	adj.		
-suppose	A2	v.		
-supposedly	C1	adv.		
-suppress	C1	v.		
-supreme	C1	adj.		
-sure	A1	adj.		
-sure	A2	adv.		
-surely	B1	adv.		
-surface	B1	n.		
-surge	C1	n.		
-surge	C1	v.		
-surgeon	B2	n.		
-surgery	B2	n.		
-surgical	C1	adj.		
-surplus	C1	n.		
-surprise	A2	n.		
-surprise	A2	v.		
-surprised	A2	adj.		
-surprising	A2	adj.		
-surrender	C1	v.		
-surround	B2	v.		
-surrounding	B2	adj.		
-surveillance	C1	n.		
-survey	A2	n.		
-survey	B2	v.		
-survival	B2	n.		
-survive	B1	v.		
-survivor	B2	n.		
-suspect	B2	n.		
-suspect	B2	v.		
-suspend	B2	v.		
-suspension	C1	n.		
-suspicion	C1	n.		
-suspicious	C1	adj.		
-sustain	C1	v.		
-sustainable	B2	adj.		
-swallow	B2	v.		
-swear	B2	v.		
-sweater	A1	n.		
-sweep	B2	v.		
-sweet	A2	adj.	UK	
-sweet	A2	adj.	US	
-sweet	A2	n.	UK	
-swim	A1	v.		
-swim	B1	n.		
-swimming	A1	n.		
-swing	C1	n.		
-swing	C1	v.		
-switch	B1	v.		
-switch	B2	n.		
-sword	C1	n.		
-symbol	A2	n.		
-symbolic	C1	adj.		
-sympathetic	B2	adj.		
-sympathy	B2	n.		
-symptom	B1	n.		
-syndrome	C1	n.		
-synthesis	C1	n.		
-system	A2	n.		
-systematic	C1	adj.		
-table	A1	n.		
-tablet	A2	n.		
-tackle	B2	v.		
-tackle	C1	n.		
-tactic	C1	n.		
-tactical	C1	adj.		
-tag	B2	n.		
-tag	B2	v.		
-tail	B1	n.		
-take	A1	v.		
-tale	B2	n.		
-talent	B1	n.		
-talented	B1	adj.		
-talk	A1	v.		
-talk	A2	n.		
-tall	A1	adj.		
-tank	B2	n.		
-tap	B2	n.		
-tap	B2	v.		
-tape	B1	n.		
-target	A2	n.		
-target	B2	v.		
-task	A2	n.		
-taste	A2	n.		
-taste	A2	v.		
-tax	B1	n.		
-tax	B1	v.		
-taxi	A1	n.		
-taxpayer	C1	n.		
-tea	A1	n.		
-teach	A1	v.		
-teacher	A1	n.		
-teaching	A2	n.		
-team	A1	n.		
-tear	B2	n.		
-tear	B2	v.		
-technical	B1	adj.		
-technique	B1	n.		
-technological	B2	adj.		
-technology	A2	n.		
-teen	B2	adj.	US	
-teen	B2	n.	US	
-teenage	A2	adj.		
-teenager	A1	n.		
-teens	B2	n.	UK	
-telephone	A1	n.		
-telephone	A1	v.		
-television	A1	n.		
-tell	A1	v.		
-temperature	A2	n.		
-temple	B2	n.		
-temporarily	B2	adv.		
-temporary	B2	adj.		
-tempt	C1	v.		
-ten	A1	number		
-tenant	C1	n.		
-tend	B1	v.		
-tendency	B2	n.		
-tender	C1	adj.		
-tennis	A1	n.		
-tension	B2	n.		
-tent	B1	n.		
-tenure	C1	n.		
-term	A2	n.		
-term	B2	v.		
-terminal	B2	n.		
-terminal	C1	adj.		
-terminate	C1	v.		
-terms	B2	n.		
-terrain	C1	n.		
-terrible	A1	adj.		
-terribly	B2	adv.		
-terrific	C1	adj.		
-terrify	B2	v.		
-territory	B2	n.		
-terror	B2	n.		
-terrorism	B2	n.		
-terrorist	B2	n.		
-test	A1	n.		
-test	A1	v.		
-testify	C1	v.		
-testimony	C1	n.		
-testing	B2	n.		
-text	A1	n.		
-text	A2	v.		
-textbook	B2	n.		
-texture	C1	n.		
-than	A1	conj.		
-thank	A1	v.		
-thankfully	C1	adv.		
-thanks	A1	exclam.		
-thanks	A1	n.		
-that	A1	conj.		
-that	A1	det.		
-that	A1	pron.		
-that	B1	adv.		
-the	A1	definite article		
-theater	A1	n.	US	
-theatre	A1	n.	UK	
-theatrical	C1	adj.		
-theft	B2	n.		
-their	A1	det.		
-theirs	B1	pron.		
-them	A1	pron.		
-theme	B1	n.		
-themselves	A2	pron.		
-then	A1	adv.		
-theology	C1	n.		
-theoretical	C1	adj.		
-theory	B1	n.		
-therapist	B2	n.		
-therapy	B2	n.		
-there	A1	adv.		
-thereafter	C1	adv.		
-thereby	C1	adv.		
-therefore	B1	adv.		
-thesis	B2	n.		
-they	A1	pron.		
-thick	A2	adj.		
-thief	A2	n.		
-thin	A2	adj.		
-thing	A1	n.		
-think	A1	v.		
-thinking	A2	n.		
-third	A1	number		
-third	A2	n.		
-thirsty	A1	adj.		
-thirteen	A1	number		
-thirty	A1	number		
-this	A1	det.		
-this	A1	pron.		
-this	B1	adv.		
-thorough	B2	adj.		
-thoroughly	B2	adv.		
-though	B1	adv.		
-though	B1	conj.		
-thought	A2	n.		
-thought-provoking	C1	adj.		
-thoughtful	C1	adj.		
-thousand	A1	number		
-thread	C1	n.		
-threat	B2	n.		
-threaten	B2	v.		
-three	A1	number		
-threshold	C1	n.		
-thrilled	C1	adj.		
-thrive	C1	v.		
-throat	B1	n.		
-through	A1	adv.		
-through	A1	prep.		
-throughout	B1	adv.		
-throughout	B1	prep.		
-throw	A2	v.		
-thumb	B2	n.		
-thus	B2	adv.		
-ticket	A1	n.		
-tide	C1	n.		
-tidy	A2	adj.	UK	
-tidy	A2	v.	UK	
-tie	A2	n.		
-tie	A2	v.		
-tight	B1	adj.		
-tighten	C1	v.		
-till	B1	conj.		
-till	B1	prep.		
-timber	C1	n.		
-time	A1	n.		
-time	B2	v.		
-timely	C1	adj.		
-timing	B2	n.		
-tin	B1	n.	UK	
-tiny	B1	adj.		
-tip	A2	n.		
-tip	B1	v.		
-tire	B1	n.	US	
-tired	A1	adj.		
-tissue	B2	n.		
-title	A1	n.		
-title	B2	v.		
-to	A1	infinitive marker		
-to	A1	prep.		
-tobacco	C1	n.		
-today	A1	adv.		
-today	A1	n.		
-toe	B1	n.		
-together	A1	adv.		
-toilet	A1	n.		
-tolerance	C1	n.		
-tolerate	C1	v.		
-toll	C1	n.		
-tomato	A1	n.		
-tomorrow	A1	adv.		
-tomorrow	A1	n.		
-ton	B1	n.	US	
-ton	B2	n.	UK	
-tone	B2	n.		
-tongue	B1	n.		
-tonight	A1	adv.		
-tonight	A1	n.		
-tonne	B2	n.	UK	
-too	A1	adv.		
-tool	A2	n.		
-tooth	A1	n.		
-top	A2	adj.		
-top	A2	n.		
-top	C1	v.		
-topic	A1	n.		
-torture	C1	n.		
-torture	C1	v.		
-toss	C1	v.		
-total	B1	adj.		
-total	B1	n.		
-total	C1	v.		
-totally	B1	adv.		
-touch	A2	v.		
-touch	B1	n.		
-tough	B2	adj.		
-tour	A2	n.		
-tour	B1	v.		
-tourism	A2	n.		
-tourist	A1	n.		
-tournament	B2	n.		
-toward	A2	prep.	US	
-towards	A2	prep.	UK	
-towel	A2	n.		
-tower	A2	n.		
-town	A1	n.		
-toxic	C1	adj.		
-toy	A2	adj.		
-toy	A2	n.		
-trace	B2	v.		
-trace	C1	n.		
-track	A2	n.		
-track	B2	v.		
-trade	B1	n.		
-trade	B1	v.		
-trademark	C1	n.		
-trading	B2	n.		
-tradition	A2	n.		
-traditional	A2	adj.		
-traffic	A1	n.		
-tragedy	B2	n.		
-tragic	B2	adj.		
-trail	C1	n.		
-trail	C1	v.		
-trailer	C1	n.		
-train	A1	n.		
-train	A2	v.		
-trainer	A2	n.	UK	
-trainer	B1	n.	US	
-training	A2	n.		
-trait	B2	n.		
-transaction	C1	n.		
-transcript	C1	n.		
-transfer	B2	n.		
-transfer	B2	v.		
-transform	B2	v.		
-transformation	C1	n.		
-transit	C1	n.		
-transition	B2	n.		
-translate	B1	v.		
-translation	B1	n.		
-transmission	C1	n.		
-transmit	B2	v.		
-transparency	C1	n.		
-transparent	C1	adj.		
-transport	A2	n.	UK	
-transport	B1	v.	UK	
-transport	B1	v.	US	
-transportation	A2	n.	US	
-transportation	B2	n.	UK	
-trap	B2	n.		
-trap	B2	v.		
-trash	A2	n.	US	
-trauma	C1	n.		
-travel	A1	n.		
-travel	A1	v.		
-traveler	A2	n.	US	
-traveller	A2	n.	UK	
-treasure	B2	n.		
-treat	B1	v.		
-treatment	B1	n.		
-treaty	C1	n.		
-tree	A1	n.		
-tremendous	C1	adj.		
-trend	B1	n.		
-trial	B2	n.		
-tribal	C1	adj.		
-tribe	B2	n.		
-tribunal	C1	n.	UK	
-tribute	C1	n.		
-trick	B1	n.		
-trick	B1	v.		
-trigger	B2	v.		
-trigger	C1	n.		
-trillion	B2	number		
-trio	C1	n.		
-trip	A1	n.		
-trip	B2	v.		
-triumph	C1	n.		
-troop	B2	n.		
-trophy	C1	n.		
-tropical	B2	adj.		
-trouble	A2	n.		
-trouble	B2	v.		
-troubled	C1	adj.		
-trousers	A1	n.	UK	
-truck	A1	n.	US	
-truck	A2	n.	UK	
-true	A1	adj.		
-truly	B2	adv.		
-trust	B2	n.		
-trust	B2	v.		
-trustee	C1	n.		
-truth	B1	n.		
-try	A1	v.		
-try	B2	n.		
-tsunami	B2	n.		
-tube	B1	n.		
-tuition	C1	n.		
-tumor	C1	n.	US	
-tune	B2	n.		
-tunnel	B2	n.		
-turn	A1	n.		
-turn	A1	v.		
-turnout	C1	n.		
-turnover	C1	n.		
-twelve	A1	number		
-twenty	A1	number		
-twice	A1	adv.		
-twin	A2	adj.		
-twin	A2	n.		
-twist	C1	n.		
-twist	C1	v.		
-two	A1	number		
-type	A1	n.		
-type	B1	v.		
-typical	A2	adj.		
-typically	B1	adv.		
-tyre	B1	n.	UK	
-ugly	B1	adj.		
-ultimate	B2	adj.		
-ultimately	B2	adv.		
-umbrella	A1	n.		
-unable	B1	adj.		
-unacceptable	B2	adj.		
-uncertainty	B2	n.		
-uncle	A1	n.		
-uncomfortable	B1	adj.		
-unconscious	B2	adj.		
-unconstitutional	C1	adj.	US	
-under	A1	adv.		
-under	A1	prep.		
-undergo	B2	v.		
-undergraduate	C1	n.		
-underground	A2	adj.		
-underground	A2	adv.		
-underlying	C1	adj.		
-undermine	C1	v.		
-understand	A1	v.		
-understanding	A2	n.		
-undertake	B2	v.		
-underwear	B1	n.		
-undoubtedly	C1	adv.		
-unemployed	B1	adj.		
-unemployment	B1	n.		
-unexpected	B2	adj.		
-unfair	B1	adj.		
-unfold	B2	v.		
-unfortunate	B2	adj.		
-unfortunately	A2	adv.		
-unhappy	A2	adj.		
-uniform	A2	n.		
-unify	C1	v.		
-union	B1	n.		
-unique	B2	adj.		
-unit	A2	n.		
-unite	B2	v.		
-united	A2	adj.		
-unity	B2	n.		
-universal	B2	adj.		
-universe	B2	n.		
-university	A1	n.		
-unknown	B2	adj.		
-unless	B1	conj.		
-unlike	B1	prep.		
-unlikely	B1	adj.		
-unnecessary	B1	adj.		
-unpleasant	B1	adj.		
-unprecedented	C1	adj.		
-until	A1	conj.		
-until	A1	prep.		
-unusual	A2	adj.		
-unveil	C1	v.		
-up	A1	adv.		
-up	A1	prep.		
-upcoming	C1	adj.		
-update	B1	n.		
-update	B1	v.		
-upgrade	C1	n.		
-upgrade	C1	v.		
-uphold	C1	v.		
-upon	B1	prep.		
-upper	B2	adj.		
-upset	B1	adj.		
-upset	B1	v.		
-upstairs	A1	adv.		
-upstairs	A2	adj.		
-upward	B2	adv.	US	
-upwards	B2	adv.	UK	
-urban	B2	adj.		
-urge	B2	v.		
-urgent	B2	adj.		
-us	A1	pron.		
-usage	B2	n.		
-use	A1	v.		
-use	A2	n.		
-used	B1	adj.		
-used to	A2	modal v.		
-useful	A1	adj.		
-useless	B2	adj.		
-user	A2	n.		
-usual	A2	adj.		
-usually	A1	adv.		
-utility	C1	n.		
-utilize	C1	v.		
-utterly	C1	adv.		
-vacation	A1	n.		
-vacuum	C1	n.		
-vague	C1	adj.		
-valid	B2	adj.		
-validity	C1	n.		
-valley	A2	n.		
-valuable	B1	adj.		
-value	B1	n.		
-value	B2	v.		
-van	A2	n.	UK	
-van	B2	n.	US	
-vanish	C1	v.		
-variable	C1	adj.		
-variable	C1	n.		
-variation	B2	n.		
-varied	C1	adj.		
-variety	A2	n.		
-various	B1	adj.		
-vary	B2	v.		
-vast	B2	adj.		
-vegetable	A1	n.		
-vehicle	A2	n.		
-vein	C1	n.		
-venture	C1	n.		
-venture	C1	v.		
-venue	B2	n.		
-verbal	C1	adj.		
-verdict	C1	n.		
-verify	C1	v.		
-verse	C1	n.		
-version	B1	n.		
-versus	C1	conj.	US	
-versus	C1	prep.	UK	
-vertical	B2	adj.		
-very	A1	adv.		
-very	B2	adj.		
-vessel	C1	n.		
-veteran	C1	n.		
-via	B2	prep.		
-viable	C1	adj.		
-vibrant	C1	adj.		
-vice	C1	n.		
-vicious	C1	adj.		
-victim	B1	n.		
-victory	B2	n.		
-video	A1	n.		
-view	A2	n.		
-view	B1	v.		
-viewer	B1	n.		
-viewpoint	B2	n.		
-village	A1	n.	UK	
-village	A2	n.	US	
-villager	C1	n.	UK	
-violate	C1	v.		
-violation	C1	n.		
-violence	B2	n.		
-violent	B1	adj.		
-virtual	B2	adj.		
-virtue	C1	n.		
-virus	A2	n.		
-visa	B2	n.		
-visible	B2	adj.		
-vision	B2	n.		
-visit	A1	n.		
-visit	A1	v.		
-visitor	A1	n.		
-visual	B2	adj.		
-vital	B2	adj.		
-vitamin	B2	n.		
-vocal	C1	adj.		
-voice	A2	n.		
-volume	B2	n.		
-voluntary	B2	adj.		
-volunteer	B1	n.		
-volunteer	B1	v.		
-vote	B1	n.		
-vote	B1	v.		
-voting	B2	n.		
-vow	C1	v.		
-vulnerability	C1	n.		
-vulnerable	C1	adj.		
-wage	B2	n.		
-wait	A1	v.		
-wait	A2	n.		
-waiter	A1	n.		
-wake	A1	v.		
-walk	A1	n.		
-walk	A1	v.		
-wall	A1	n.		
-wander	B2	v.		
-want	A1	v.		
-war	A2	n.		
-ward	C1	n.		
-warehouse	C1	n.		
-warfare	C1	n.		
-warm	A1	adj.		
-warm	B1	v.		
-warming	B2	n.		
-warn	B1	v.		
-warning	B1	n.		
-warrant	C1	n.		
-warrant	C1	v.		
-warrior	C1	n.		
-wash	A1	v.		
-wash	A2	n.		
-washing	A2	n.		
-waste	B1	adj.		
-waste	B1	n.		
-waste	B1	v.		
-watch	A1	n.		
-watch	A1	v.		
-water	A1	n.		
-water	B1	v.		
-wave	A2	n.		
-wave	B1	v.		
-way	A1	n.		
-way	B2	adv.		
-we	A1	pron.		
-weak	A2	adj.		
-weaken	C1	v.		
-weakness	B2	n.		
-wealth	B2	n.		
-wealthy	B2	adj.		
-weapon	B1	n.		
-wear	A1	v.		
-weather	A1	n.		
-weave	C1	v.		
-web	A2	n.		
-website	A1	n.		
-wedding	A2	n.		
-weed	C1	n.		
-week	A1	n.		
-weekend	A1	n.		
-weekly	B2	adj.		
-weigh	B1	v.		
-weight	A2	n.		
-weird	B2	adj.		
-welcome	A1	adj.		
-welcome	A1	exclam.		
-welcome	A1	v.		
-welcome	A2	n.		
-welfare	B2	n.		
-well	A1	adj.		
-well	A1	adv.		
-well	A1	exclam.		
-well	C1	n.		
-well-being	C1	n.		
-west	A1	adj.		
-west	A1	adv.		
-west	A1	n.		
-western	B1	adj.		
-wet	A2	adj.		
-what	A1	det.		
-what	A1	pron.		
-whatever	B1	det.		
-whatever	B1	pron.		
-whatsoever	C1	adv.		
-wheat	B2	n.		
-wheel	A2	n.		
-when	A1	adv.		
-when	A1	conj.		
-when	A1	pron.		
-whenever	B1	conj.		
-where	A1	adv.		
-where	A1	conj.		
-whereas	B2	conj.		
-whereby	C1	adv.		
-wherever	B2	conj.		
-whether	B1	conj.		
-which	A1	det.		
-which	A1	pron.		
-while	A2	conj.		
-while	B1	n.		
-whilst	C1	conj.	UK	
-whip	C1	v.		
-whisper	B2	n.		
-whisper	B2	v.		
-white	A1	adj.		
-white	A1	n.		
-who	A1	pron.		
-whoever	B2	pron.		
-whole	A2	adj.		
-whole	B1	n.		
-wholly	C1	adv.		
-whom	B2	pron.		
-whose	A2	det.		
-whose	A2	pron.		
-why	A1	adv.		
-wide	A2	adj.		
-widely	B2	adv.		
-widen	C1	v.		
-widespread	B2	adj.		
-widow	C1	n.		
-width	C1	n.		
-wife	A1	n.		
-wild	A2	adj.		
-wildlife	B2	n.		
-will	A1	modal v.		
-will	B1	n.		
-willing	B2	adj.		
-willingness	C1	n.		
-win	A1	v.		
-win	B1	n.		
-wind	A2	n.		
-wind	B2	v.		
-window	A1	n.		
-wine	A1	n.		
-wing	B1	n.		
-winner	A2	n.		
-winter	A1	n.		
-wipe	C1	v.		
-wire	B2	n.		
-wisdom	B2	n.		
-wise	B2	adj.		
-wish	A2	n.		
-wish	A2	v.		
-wit	C1	n.		
-with	A1	prep.		
-withdraw	B2	v.		
-withdrawal	C1	n.		
-within	B1	prep.		
-without	A1	prep.		
-witness	B2	n.		
-witness	B2	v.		
-wolf	B2	n.	US	
-woman	A1	n.		
-wonder	B1	n.		
-wonder	B1	v.		
-wonderful	A1	adj.		
-wood	A2	n.		
-wooden	A2	adj.		
-wool	B1	n.		
-word	A1	n.		
-work	A1	n.		
-work	A1	v.		
-worker	A1	n.		
-workforce	B2	n.		
-working	A2	adj.		
-workout	C1	n.		
-workplace	B2	n.		
-workshop	B2	n.		
-world	A1	n.		
-worldwide	B1	adj.		
-worldwide	B1	adv.		
-worm	B2	n.		
-worried	A2	adj.		
-worry	A2	v.		
-worry	B1	n.		
-worse	A2	adj.		
-worse	B1	adv.		
-worse	B2	n.		
-worship	C1	n.		
-worship	C1	v.		
-worst	A2	adj.		
-worst	B1	adv.		
-worst	B2	n.		
-worth	B1	adj.		
-worth	B2	n.		
-worthwhile	C1	adj.		
-worthy	C1	adj.		
-would	A1	modal v.		
-wound	B2	n.		
-wound	B2	v.		
-wow	A2	exclam.		
-wrap	B2	v.		
-wrist	B2	n.		
-write	A1	v.		
-writer	A1	n.		
-writing	A1	n.		
-written	B1	adj.		
-wrong	A1	adj.		
-wrong	B1	adv.		
-wrong	B2	n.		
-yard	A1	n.	US	
-yard	B1	n.	UK	
-yeah	A1	exclam.		
-year	A1	n.		
-yell	C1	v.		
-yellow	A1	adj.		
-yellow	A1	n.		
-yes	A1	exclam.		
-yesterday	A1	adv.		
-yesterday	A1	n.		
-yet	A2	adv.		
-yet	B2	conj.		
-yield	C1	n.		
-yield	C1	v.		
-you	A1	pron.		
-young	A1	adj.		
-young	B1	n.		
-youngster	C1	n.	UK	
-your	A1	det.		
-yours	A2	pron.		
-yourself	A1	pron.		
-youth	B1	n.		
-zero	A2	number		
-zone	B2	n.		
+COPY public.oxford (word, cefr, pos, region, sense, sound) FROM stdin;
+AIDS	B2	n.			eab6bfc78a.mp3
+April	A1	n.			82877be910.mp3
+August	A1	n.			18a58946da.mp3
+CD	A1	n.			5ce37c28d5.mp3
+DVD	A1	n.			970bdc3525.mp3
+December	A1	n.			02e6243c80.mp3
+February	A1	n.			9c2be6041a.mp3
+Friday	A1	n.			db383b8021.mp3
+I	A1	pron.			6e238ea298.mp3
+ID	B2	n.			e863687307.mp3
+IT	B1	n.			ed34d84d70.mp3
+January	A1	n.			3e79c6f7c9.mp3
+July	A1	n.			4ab32a2b63.mp3
+June	A1	n.			05ef89e1f7.mp3
+March	A1	n.			a870d945d1.mp3
+May	A1	n.			1b9de77421.mp3
+Monday	A1	n.			f51905b39a.mp3
+November	A1	n.			f200782479.mp3
+OK	A1	adj.			db29a795da.mp3
+OK	A1	adv.			db29a795da.mp3
+OK	A1	exclam.			db29a795da.mp3
+October	A1	n.			bd11e3ade1.mp3
+Saturday	A1	n.			feebf4d10a.mp3
+September	A1	n.			7784114114.mp3
+Sunday	A1	n.			d8afc4d8dc.mp3
+T-shirt	A1	n.			fbbacda0ed.mp3
+TV	A1	n.			40ccb03121.mp3
+Thursday	A1	n.			214e08afb3.mp3
+Tuesday	A1	n.			5847546560.mp3
+Wednesday	A1	n.			ab6d81cb39.mp3
+a, an	A1	indefinite article			4ecb96937f.mp3
+abandon	B2	v.			6dd01c1be6.mp3
+ability	A2	n.			07f6fe6059.mp3
+able	A2	adj.			97809870cc.mp3
+abolish	C1	v.			96bbdfbe01.mp3
+abortion	C1	n.			620f190f1a.mp3
+about	A1	adv.			b82b6bd799.mp3
+about	A1	prep.			b82b6bd799.mp3
+above	A1	adv.			b98ce1bad8.mp3
+above	A1	prep.			b98ce1bad8.mp3
+abroad	A2	adv.	UK		099fab7fe3.mp3
+abroad	B2	adv.	US		099fab7fe3.mp3
+absence	C1	n.			b0da1b3ff5.mp3
+absent	C1	adj.			084faea659.mp3
+absolute	B2	adj.			9dccd160e8.mp3
+absolutely	B1	adv.			03bf016b7d.mp3
+absorb	B2	v.			120b871b77.mp3
+abstract	B2	adj.			da215089c2.mp3
+absurd	C1	adj.			dda523e55d.mp3
+abundance	C1	n.	UK		60ccd042c9.mp3
+abuse	C1	n.			18b5a68b0b.mp3
+abuse	C1	v.			18b5a68b0b.mp3
+academic	B1	adj.	UK		d86d038a2e.mp3
+academic	B1	adj.	US		d86d038a2e.mp3
+academic	B2	n.	UK		d86d038a2e.mp3
+academy	C1	n.			a28ad76a00.mp3
+accelerate	C1	v.			82ab00ada2.mp3
+accent	B2	n.			e56ab908d9.mp3
+accept	A2	v.			997ed3e7c7.mp3
+acceptable	B2	adj.			bddbd7f1d6.mp3
+acceptance	C1	n.			a75976bfba.mp3
+access	B1	n.			be446f4e89.mp3
+access	B1	v.			be446f4e89.mp3
+accessible	C1	adj.			fdc5f3ce3f.mp3
+accident	A2	n.			0dbd2bb086.mp3
+accidentally	B2	adv.			9cea2a3dd1.mp3
+accommodate	B2	v.			0170a8010c.mp3
+accommodation	B1	n.	UK		a85d312338.mp3
+accommodation	B2	n.	US		a85d312338.mp3
+accompany	B2	v.			07cff4fcd3.mp3
+accomplish	B2	v.			1643e29b2e.mp3
+accomplishment	C1	n.			1b53aef916.mp3
+accordance	C1	n.	UK		a428f5ac38.mp3
+according to	A2	prep.			20cc11b8d3.mp3
+accordingly	C1	adv.			d87196b03b.mp3
+account	B1	n.			cf6e3d103f.mp3
+account	B2	v.			cf6e3d103f.mp3
+accountability	C1	n.			9a74f5df09.mp3
+accountable	C1	adj.			c1a46c54b8.mp3
+accountant	B2	n.			2a5865131f.mp3
+accumulate	C1	v.			7d59daa732.mp3
+accumulation	C1	n.			e79ccb0016.mp3
+accuracy	B2	n.			7f44a428aa.mp3
+accurate	B2	adj.			2eeb1660e6.mp3
+accurately	B2	adv.			3c8e393edb.mp3
+accusation	C1	n.			5b78ab5b85.mp3
+accuse	B2	v.			5a62809670.mp3
+accused	C1	n.			41e937c832.mp3
+achieve	A2	v.			15e01bc4d4.mp3
+achievement	B1	n.			6c3f8370b0.mp3
+acid	B2	n.			89c3c2bf63.mp3
+acid	C1	adj.			89c3c2bf63.mp3
+acknowledge	B2	v.			fac9c0cdb7.mp3
+acquire	B2	v.			fba15dfabe.mp3
+acquisition	C1	n.			847c2d6271.mp3
+acre	B2	n.	US		0c905abbb5.mp3
+acre	C1	n.	UK		0c905abbb5.mp3
+across	A1	adv.			c0b54cb968.mp3
+across	A1	prep.			c0b54cb968.mp3
+act	A2	v.			4620ac4848.mp3
+act	B1	n.			4620ac4848.mp3
+action	A1	n.			d85b7c473c.mp3
+activate	B2	v.			25084a4b12.mp3
+activation	C1	n.			005ba65a06.mp3
+active	A2	adj.			e0c129fc61.mp3
+activist	C1	n.			0bc92922d8.mp3
+activity	A1	n.			3a510f532d.mp3
+actor	A1	n.			0609e9f1ff.mp3
+actress	A1	n.			ecbd957d01.mp3
+actual	B2	adj.			822a150f30.mp3
+actually	A2	adv.			fae6e2af3d.mp3
+acute	C1	adj.			3ba8b4f022.mp3
+ad	B1	n.			caca5ceb65.mp3
+adapt	B2	v.			d3478fd879.mp3
+adaptation	C1	n.			388813d540.mp3
+add	A1	v.			f557dbfdc7.mp3
+addiction	B2	n.			ab4099d8d1.mp3
+addition	B1	n.			08c7c495e5.mp3
+additional	B2	adj.			d8fe128b6f.mp3
+additionally	B2	adv.			8973250f38.mp3
+address	A1	n.			2876a169c2.mp3
+address	B2	v.			2876a169c2.mp3
+adequate	B2	adj.			cfa2a1d013.mp3
+adequately	B2	adv.			2bacf2404d.mp3
+adhere	C1	v.			3ec932c557.mp3
+adjacent	C1	adj.			227d8b6d74.mp3
+adjust	B2	v.			8d02ad5633.mp3
+adjustment	C1	n.			c186682494.mp3
+administer	C1	v.			1d436beec4.mp3
+administration	B1	n.	US		b365f6f0b9.mp3
+administration	B2	n.	UK		b365f6f0b9.mp3
+administrative	C1	adj.			2cfc66ec87.mp3
+administrator	C1	n.			9cfec992a3.mp3
+admire	B1	v.			744e53db92.mp3
+admission	C1	n.			2f80dd75a1.mp3
+admit	B1	v.			202e155480.mp3
+adolescent	C1	n.			87fefec7bf.mp3
+adopt	B2	v.			e9eee90c5d.mp3
+adoption	C1	n.			85b0e204b3.mp3
+adult	A1	n.			1fd2683a06.mp3
+adult	A2	adj.			1fd2683a06.mp3
+advance	B2	adj.			43432349d3.mp3
+advance	B2	n.			43432349d3.mp3
+advance	B2	v.			43432349d3.mp3
+advanced	B1	adj.			7996ad70c5.mp3
+advantage	A2	n.			cf0ea4fdaf.mp3
+adventure	A2	n.			893a8f1f95.mp3
+adverse	C1	adj.			3fea813ee8.mp3
+advertise	A2	v.			fd58918185.mp3
+advertisement	A2	n.			8c6fcd9306.mp3
+advertising	A2	n.			56cf163c47.mp3
+advice	A1	n.			ac57629802.mp3
+advise	B1	v.			3577f2d735.mp3
+advocate	C1	n.			bb3b6440dc.mp3
+advocate	C1	v.			bb3b6440dc.mp3
+aesthetic	C1	adj.			bf8bd25292.mp3
+affair	B2	n.			e6bbe004ca.mp3
+affect	A2	v.			1a933073af.mp3
+affection	C1	n.			39179f83df.mp3
+afford	B1	v.			4ca11d6635.mp3
+affordable	B2	adj.			78eb8159fb.mp3
+afraid	A1	adj.			5fd3261790.mp3
+after	A1	prep.			7e16e7c407.mp3
+after	A2	adv.			7e16e7c407.mp3
+after	A2	conj.			7e16e7c407.mp3
+aftermath	C1	n.			444efce887.mp3
+afternoon	A1	n.			926eb12f9d.mp3
+afterward	B2	adv.	US		f6f3712c42.mp3
+afterwards	B2	adv.	UK		b2797a0097.mp3
+again	A1	adv.			2c7f11c093.mp3
+against	A2	prep.			310c810741.mp3
+age	A1	n.			03f1d6d1e5.mp3
+age	B1	v.			03f1d6d1e5.mp3
+aged	B1	adj.	UK		d6995469f8.mp3
+aged	B2	adj.	US		d6995469f8.mp3
+agency	B2	n.			c5f3e1c74d.mp3
+agenda	B2	n.			b8665b8cc2.mp3
+agent	B1	n.			c5f9b1cce5.mp3
+aggression	C1	n.			05065fa9bc.mp3
+aggressive	B2	adj.			663dacb399.mp3
+ago	A1	adv.			b4b66f4cf3.mp3
+agree	A1	v.			a07e670ad6.mp3
+agreement	B1	n.			c83f060dc6.mp3
+agricultural	C1	adj.			b5ebc9373b.mp3
+agriculture	B2	n.			9e7df67c29.mp3
+ah	A2	exclam.			58b5c5fad5.mp3
+ahead	B1	adv.			b1252dc2d9.mp3
+aid	B2	n.			57242658e8.mp3
+aid	B2	v.			57242658e8.mp3
+aide	C1	n.			0425266c3b.mp3
+aim	B1	n.			888675ec71.mp3
+aim	B1	v.			888675ec71.mp3
+air	A1	n.			98ba570ec2.mp3
+aircraft	B2	n.			618838ebe8.mp3
+airline	A2	n.			2f9491eae7.mp3
+airport	A1	n.			4456b06636.mp3
+alarm	B1	n.			737c911638.mp3
+alarm	B2	v.			737c911638.mp3
+albeit	C1	conj.	UK		319305a261.mp3
+album	B1	n.			54874fc278.mp3
+alcohol	B1	n.			22b7385345.mp3
+alcoholic	B1	adj.			4b3ff7ba91.mp3
+alert	C1	adj.			4d178b2d95.mp3
+alert	C1	n.			4d178b2d95.mp3
+alert	C1	v.			4d178b2d95.mp3
+alien	B2	n.			d71f57a9b9.mp3
+alien	C1	adj.			d71f57a9b9.mp3
+align	C1	v.			f41df95221.mp3
+alignment	C1	n.			13c9b6e5f0.mp3
+alike	C1	adj.			6c5a5dc29d.mp3
+alike	C1	adv.			6c5a5dc29d.mp3
+alive	A2	adj.			4ab5cb5b8a.mp3
+all	A1	det.			aa4e237682.mp3
+all	A1	pron.			aa4e237682.mp3
+all	A2	adv.			aa4e237682.mp3
+all right	A2	adj.	UK		d2a608ecc7.mp3
+all right	A2	adj.	US		d2a608ecc7.mp3
+all right	A2	adv.	UK		d2a608ecc7.mp3
+all right	A2	adv.	US		d2a608ecc7.mp3
+all right	A2	exclam.	UK		d2a608ecc7.mp3
+allegation	C1	n.			5f078638de.mp3
+allege	C1	v.			a50e54ec53.mp3
+allegedly	C1	adv.			14c5c6083d.mp3
+alliance	C1	n.			6c5a4c8822.mp3
+allocate	C1	v.			dd971b9cb9.mp3
+allocation	C1	n.			8caa2920b0.mp3
+allow	A2	v.			fde7718102.mp3
+allowance	C1	n.			c8ceeeb36c.mp3
+ally	C1	n.			bdc05202c4.mp3
+almost	A2	adv.			2627fda727.mp3
+alone	A2	adj.			369d741a7f.mp3
+alone	A2	adv.			369d741a7f.mp3
+along	A2	adv.			c60f15b31c.mp3
+along	A2	prep.			c60f15b31c.mp3
+alongside	B2	prep.			bf6880c9c8.mp3
+already	A2	adv.			4f9247e276.mp3
+also	A1	adv.			016236f60a.mp3
+alter	B2	v.			0967f039bf.mp3
+alternative	A2	n.			efa3c1f430.mp3
+alternative	B1	adj.			efa3c1f430.mp3
+although	A2	conj.			7034c1f3cd.mp3
+altogether	B2	adv.			6fe7686fe7.mp3
+aluminium	C1	n.	UK		904f9c6269.mp3
+aluminum	C1	n.	US		669db52641.mp3
+always	A1	adv.			6275bcffaf.mp3
+amateur	C1	adj.			9f28cd071f.mp3
+amateur	C1	n.			9f28cd071f.mp3
+amazed	B1	adj.			1508aa7d86.mp3
+amazing	A1	adj.			450f6fea5f.mp3
+ambassador	C1	n.			c8d3968d20.mp3
+ambition	B1	n.			53827d75ce.mp3
+ambitious	B1	adj.	UK		df8fd7b757.mp3
+ambitious	B2	adj.	US		df8fd7b757.mp3
+ambulance	B2	n.			50d3969215.mp3
+amend	C1	v.			c033923240.mp3
+amendment	C1	n.			ca061f9291.mp3
+amid	C1	prep.			0118a7c82f.mp3
+among	A2	prep.			d97bd2c4b0.mp3
+amount	A2	n.			ae8a031f06.mp3
+amount	B2	v.			ae8a031f06.mp3
+amusing	B2	adj.			c89ab7e6c5.mp3
+analogy	C1	n.			c57e073b4f.mp3
+analyse	B1	v.	UK		2dec428e03.mp3
+analysis	B1	n.			d923aa5857.mp3
+analyst	B2	n.			dab8d184c3.mp3
+analyze	A2	v.	US		b9e72b3c9b.mp3
+ancestor	B2	n.			1a1db49b29.mp3
+anchor	C1	n.			af256e60f9.mp3
+ancient	A2	adj.			e85d43e7c1.mp3
+and	A1	conj.			f4586b9a3a.mp3
+angel	C1	n.			fecb3d8076.mp3
+anger	B2	n.			394d80c11e.mp3
+angle	B2	n.			39db2d72f0.mp3
+angry	A1	adj.			a08069c787.mp3
+animal	A1	n.			9e76e5de59.mp3
+animation	B2	n.			35d7e9d562.mp3
+ankle	A2	n.			47b41b2c09.mp3
+anniversary	B2	n.			2713732f9c.mp3
+announce	B1	v.			8d949139cc.mp3
+announcement	B1	n.			14e286aacb.mp3
+annoy	B1	v.			d20c9233f2.mp3
+annoyed	B1	adj.			345cd3fa14.mp3
+annoying	B1	adj.			dc552e58bb.mp3
+annual	B2	adj.			48b445539b.mp3
+annually	B2	adv.			e6dccdb6c0.mp3
+anonymous	C1	adj.			e7a7a19c1f.mp3
+another	A1	det.			8fb1fa84a5.mp3
+another	A1	pron.			8fb1fa84a5.mp3
+answer	A1	n.			7bbb3f519b.mp3
+answer	A1	v.			7bbb3f519b.mp3
+anticipate	B2	v.			aefbe1fd79.mp3
+anxiety	B2	n.			b6ab1d20b4.mp3
+anxious	B2	adj.			f43a977fed.mp3
+any	A1	det.			bef7d794b8.mp3
+any	A1	pron.			bef7d794b8.mp3
+any	A2	adv.			bef7d794b8.mp3
+any more	A2	adv.	UK		cf39fb13b9.mp3
+anybody	A2	pron.			45bb9ecc2c.mp3
+anymore	A2	adv.	US		7bd3bee4b8.mp3
+anyone	A1	pron.			3419043d89.mp3
+anything	A1	pron.			7288309021.mp3
+anyway	A2	adv.			2b2dd2ae4b.mp3
+anywhere	A2	adv.			073c79fc50.mp3
+anywhere	A2	pron.			073c79fc50.mp3
+apart	B1	adv.			af24ffb7c9.mp3
+apartment	A1	n.			71e5ecbfa4.mp3
+apologize	B1	v.			0a70319a0d.mp3
+apology	B2	n.			5d0cc1e662.mp3
+app	A2	n.			5c4d6389f5.mp3
+apparatus	C1	n.			0f2be6aa9d.mp3
+apparel	C1	n.	US		46a173d105.mp3
+apparent	B2	adj.			4b0a5df35a.mp3
+apparently	B2	adv.			2d5842d6d5.mp3
+appeal	B2	n.			23a5f666e1.mp3
+appeal	B2	v.			23a5f666e1.mp3
+appealing	C1	adj.			e2a5955878.mp3
+appear	A2	v.			5b3f1aae63.mp3
+appearance	A2	n.			4b9ca0b818.mp3
+appetite	C1	n.			3db5f166bc.mp3
+applaud	C1	v.			efe1a53195.mp3
+apple	A1	n.			9bd0007920.mp3
+applicable	C1	adj.			b682e8cb9b.mp3
+applicant	B2	n.			fd9870e589.mp3
+application	B1	n.			f667e6d894.mp3
+apply	A2	v.			ad46647bc4.mp3
+appoint	C1	v.			5d4934532b.mp3
+appointment	B1	n.			41b2ce40f8.mp3
+appreciate	B1	v.			638ca702b7.mp3
+appreciation	C1	n.			0766d38de1.mp3
+approach	B2	n.			0503cb8cd4.mp3
+approach	B2	v.			0503cb8cd4.mp3
+appropriate	B2	adj.			da2da03b84.mp3
+appropriately	B2	adv.			af2d25b5fb.mp3
+approval	B2	n.			2408250d39.mp3
+approve	B2	v.			7585368c49.mp3
+approximately	B1	adv.			e7dd9639c3.mp3
+arbitrary	C1	adj.			a4feb66e96.mp3
+architect	A2	n.			fcaa3aed5a.mp3
+architectural	C1	adj.			67d6a914fe.mp3
+architecture	A2	n.			9cbe05f3d8.mp3
+archive	C1	n.			400992f28c.mp3
+area	A1	n.			1c9b52a10e.mp3
+arena	C1	n.			a95bd3de31.mp3
+arguably	C1	adv.	UK		9816d5c3dc.mp3
+argue	A2	v.			3dc337b046.mp3
+argument	A2	n.			d4ed895422.mp3
+arise	B2	v.			2f7e69787f.mp3
+arm	A1	n.			b960015a0e.mp3
+arm	C1	v.			b960015a0e.mp3
+armed	B2	adj.			5bc2b75e81.mp3
+arms	B2	n.			cb0fe08f4f.mp3
+army	A2	n.			745d74c866.mp3
+around	A1	adv.			8af27cfb23.mp3
+around	A1	prep.			8af27cfb23.mp3
+arrange	A2	v.			19672bef3c.mp3
+arrangement	A2	n.			8fac7100af.mp3
+array	C1	n.			edae950498.mp3
+arrest	B1	n.			4ffa67426d.mp3
+arrest	B1	v.			4ffa67426d.mp3
+arrival	B1	n.			375c1d5ccf.mp3
+arrive	A1	v.			d67f4361e4.mp3
+arrow	B2	n.			4c2ad98346.mp3
+art	A1	n.			86021d960e.mp3
+article	A1	n.			5f1cee37f8.mp3
+articulate	C1	v.			01147566f9.mp3
+artificial	B2	adj.			afc05192ea.mp3
+artist	A1	n.			72e4487805.mp3
+artistic	B2	adj.			7f49913944.mp3
+artwork	B2	n.			7f1291307c.mp3
+as	A1	prep.			2f19546614.mp3
+as	A2	adv.			2f19546614.mp3
+as	A2	conj.			2f19546614.mp3
+ash	C1	n.			5fb43ae99b.mp3
+ashamed	B2	adj.			9f4536459b.mp3
+aside	B2	adv.	UK		4793d0e92d.mp3
+aside	B2	adv.	US		4793d0e92d.mp3
+ask	A1	v.			5554131837.mp3
+asleep	A2	adj.			fcbb29a870.mp3
+aspect	B2	n.			cadf6ee0d5.mp3
+aspiration	C1	n.			4de8210bcb.mp3
+aspire	C1	v.			c07fd06222.mp3
+assassination	C1	n.			a30437bf71.mp3
+assault	C1	n.			f36ee9e9bc.mp3
+assault	C1	v.			f36ee9e9bc.mp3
+assemble	C1	v.			e64ab86042.mp3
+assembly	C1	n.			67aadf2cc7.mp3
+assert	C1	v.			5f32afa636.mp3
+assertion	C1	n.			1abae6ef1e.mp3
+assess	B2	v.			a068422491.mp3
+assessment	B2	n.			f22e8e8b9d.mp3
+asset	B2	n.			7e9bc688e2.mp3
+assign	B2	v.			3c03587b4a.mp3
+assignment	B1	n.			4586e01a0c.mp3
+assist	B1	v.			c598a19a69.mp3
+assistance	B2	n.			3928c7862e.mp3
+assistant	A2	adj.			3f494e96a5.mp3
+assistant	A2	n.			3f494e96a5.mp3
+associate	B2	v.			bc9c068353.mp3
+associated	B2	adj.			bae51bd94a.mp3
+association	B2	n.			65836abe3a.mp3
+assume	B2	v.			8172adaa3c.mp3
+assumption	B2	n.			f56a061eec.mp3
+assurance	C1	n.			0169e6a275.mp3
+assure	B2	v.			3222a501e3.mp3
+astonishing	B2	adj.			a561f5e836.mp3
+asylum	C1	n.			8385121f53.mp3
+at	A1	prep.			7ccfecbaad.mp3
+athlete	A2	n.			0769d668be.mp3
+athletic	B2	adj.	US		136618ffe7.mp3
+atmosphere	B1	n.			2c0c14fa7d.mp3
+atrocity	C1	n.			e82d199eaa.mp3
+attach	B1	v.			473c1a9e1f.mp3
+attachment	B2	n.			90bfe95e12.mp3
+attack	A2	n.			c870113445.mp3
+attack	A2	v.			c870113445.mp3
+attain	C1	v.			7e2cce0c12.mp3
+attempt	B2	n.			f23e15fbe8.mp3
+attempt	B2	v.			f23e15fbe8.mp3
+attend	A2	v.			95767cf677.mp3
+attendance	C1	n.			847747c8ab.mp3
+attention	A2	exclam.	UK		cd7e459dd5.mp3
+attention	A2	n.	UK		cd7e459dd5.mp3
+attention	A2	n.	US		cd7e459dd5.mp3
+attitude	B1	n.			351194e1c4.mp3
+attorney	B2	n.	US		6eeefefa0e.mp3
+attorney	C1	n.	UK		6eeefefa0e.mp3
+attract	B1	v.			d7c029e4f4.mp3
+attraction	B1	n.			004d665646.mp3
+attractive	A2	adj.			2d3320e4b4.mp3
+attribute	C1	n.			791c377593.mp3
+attribute	C1	v.			791c377593.mp3
+auction	B2	n.	UK		db37c6c751.mp3
+auction	C1	n.	US		db37c6c751.mp3
+audience	A2	n.			cc4893d1d8.mp3
+audio	B2	adj.			2765025458.mp3
+audit	C1	n.			3d12ca3910.mp3
+aunt	A1	n.			dcc6f4873b.mp3
+authentic	C1	adj.			ae28aa9e97.mp3
+author	A2	n.			6efd316784.mp3
+authority	B1	n.			018d0b25a1.mp3
+authorize	C1	v.			bcaf26de0d.mp3
+auto	C1	n.			6a82c297ce.mp3
+automatic	B1	adj.	US		1af7a74a1e.mp3
+automatic	B2	adj.	UK		1af7a74a1e.mp3
+automatically	B1	adv.	US		d42598f6e1.mp3
+automatically	B2	adv.	UK		d42598f6e1.mp3
+autonomy	C1	n.			59ef3272e0.mp3
+autumn	A1	n.	UK		d0ef79a9c1.mp3
+autumn	C1	n.	US		d0ef79a9c1.mp3
+availability	C1	n.			4b88f33e8b.mp3
+available	A2	adj.			733b6ddb90.mp3
+average	A2	adj.			18d0ab2412.mp3
+average	A2	n.			18d0ab2412.mp3
+average	B1	v.			18d0ab2412.mp3
+avoid	A2	v.			2528152e11.mp3
+await	C1	v.			4929113a4e.mp3
+award	A2	n.			9edab3510f.mp3
+award	B1	v.			9edab3510f.mp3
+aware	B1	adj.			06c7014e55.mp3
+awareness	B2	n.			334696c568.mp3
+away	A1	adv.			4a0188d4a7.mp3
+awesome	A1	adj.	US		d4e8f37dfc.mp3
+awful	A2	adj.			b91ac6811e.mp3
+awkward	B2	adj.			22860bb09b.mp3
+baby	A1	n.			97a9b1d6af.mp3
+back	A1	adv.			e941bf3ea3.mp3
+back	A1	n.			e941bf3ea3.mp3
+back	A2	adj.			e941bf3ea3.mp3
+back	B2	v.			e941bf3ea3.mp3
+backdrop	C1	n.			0b9236724b.mp3
+background	A2	n.			2e4f5c1af7.mp3
+backing	C1	n.			c03ac039fb.mp3
+backup	C1	n.			9a7e2b995e.mp3
+backward	B1	adv.	US		85521534cd.mp3
+backwards	B1	adv.	UK		7a8c9ad170.mp3
+bacteria	B2	n.			284ff015c4.mp3
+bad	A1	adj.			0a2e7beff1.mp3
+badge	B2	n.			c78dbbc82d.mp3
+badly	A2	adv.			3a202ae522.mp3
+bag	A1	n.			618e2c99e3.mp3
+bail	C1	n.			50cbd787a5.mp3
+bake	B1	v.			8a2983b072.mp3
+balance	B1	n.			0d6c89c9d7.mp3
+balance	B1	v.			0d6c89c9d7.mp3
+balanced	B2	adj.			3c4775e31d.mp3
+ball	A1	n.			b2798093ff.mp3
+ballet	B2	n.			3d0416a88c.mp3
+balloon	B2	n.			c573e8958a.mp3
+ballot	C1	n.			0860704bd6.mp3
+ban	B1	n.			c295783249.mp3
+ban	B1	v.			c295783249.mp3
+banana	A1	n.			7bb8aa6f6b.mp3
+band	A1	n.			d0cbe989c9.mp3
+bank	A1	n.		money	bc13b58236.mp3
+bank	B1	n.		river	bc13b58236.mp3
+bankruptcy	C1	n.	US		6e526868c0.mp3
+banner	C1	n.			41943a4370.mp3
+bar	A1	n.	US		1f91971232.mp3
+bar	A2	n.	UK		1f91971232.mp3
+bar	B2	v.	UK		1f91971232.mp3
+bar	B2	v.	US		1f91971232.mp3
+bare	C1	adj.			c27c1877e8.mp3
+barely	B2	adv.			bd8c6c635b.mp3
+bargain	B2	n.			33f25732e2.mp3
+barrel	C1	n.			2a464a5af7.mp3
+barrier	B2	n.			581a357ac3.mp3
+base	B1	n.			33febb6ebb.mp3
+base	B1	v.			33febb6ebb.mp3
+baseball	A1	n.	US		77df37813a.mp3
+baseball	A2	n.	UK		77df37813a.mp3
+based	A2	adj.			17f58928cf.mp3
+basement	B2	n.			ca3724f237.mp3
+basic	B1	adj.			d195aba696.mp3
+basically	B2	adv.			d95aba8118.mp3
+basis	B1	n.			e0a9eae647.mp3
+basket	B2	n.			cc3a2a78f8.mp3
+basketball	A1	n.	US		e22efe4265.mp3
+basketball	A2	n.	UK		e22efe4265.mp3
+bass	C1	n.			2754909dff.mp3
+bat	B2	n.			e26c55f345.mp3
+bat	C1	v.			e26c55f345.mp3
+bath	A1	n.			f948da7d55.mp3
+bathroom	A1	n.			8fc9c0c1f3.mp3
+battery	B1	n.			6c192f5f82.mp3
+battle	B1	n.			48bd4dc86b.mp3
+battle	B2	v.			48bd4dc86b.mp3
+battlefield	C1	n.			c26e30f7d2.mp3
+bay	C1	n.			94b8af83f5.mp3
+be	A1	auxiliary v.			fa79060536.mp3
+be	A1	v.			fa79060536.mp3
+beach	A1	n.			96cb582ab1.mp3
+beam	C1	n.			e423e8fda4.mp3
+bean	A2	n.			8f7e25cbba.mp3
+bear	A2	n.		animal	fca78794d7.mp3
+bear	B2	v.		deal with	fca78794d7.mp3
+beast	C1	n.			2a82485c60.mp3
+beat	A2	v.			bba82fcb30.mp3
+beat	B2	n.			bba82fcb30.mp3
+beautiful	A1	adj.			6c70473a07.mp3
+beauty	B1	n.			0adb51feb8.mp3
+because	A1	conj.			a6100b624b.mp3
+become	A1	v.			bd6424940e.mp3
+bed	A1	n.			721fa8daf8.mp3
+bedroom	A1	n.			4f9b1f335f.mp3
+bee	B1	n.			429c742ca2.mp3
+beef	A2	n.			e2f7bcb5cf.mp3
+beer	A1	n.			c20530dc2b.mp3
+before	A1	prep.			82f5b91eb6.mp3
+before	A2	adv.			82f5b91eb6.mp3
+before	A2	conj.			82f5b91eb6.mp3
+beg	B2	v.			1315d19ad0.mp3
+begin	A1	v.			2d32a58e24.mp3
+beginning	A1	n.			01090f97cd.mp3
+behalf	C1	n.			62cc518eb2.mp3
+behave	A2	v.			217b50a177.mp3
+behavior	A2	n.	US		60aabb630c.mp3
+behavioral	C1	adj.	US		80f6891815.mp3
+behaviour	A2	n.	UK		81f1ea5899.mp3
+behind	A1	adv.			9c1e54ce95.mp3
+behind	A1	prep.			9c1e54ce95.mp3
+being	B2	n.			9891174500.mp3
+belief	B1	n.			dde3e20328.mp3
+believe	A1	v.			4bdcdf06e5.mp3
+bell	B1	n.			208f5dc8fd.mp3
+belong	A2	v.			924e286ea1.mp3
+beloved	C1	adj.			21c02e6c3c.mp3
+below	A1	adv.			f7df866a36.mp3
+below	A1	prep.			f7df866a36.mp3
+belt	A2	n.			c56589cf6c.mp3
+bench	C1	n.			f0883ff6a8.mp3
+benchmark	C1	n.			9ae9c3c832.mp3
+bend	B1	n.			821578ba22.mp3
+bend	B1	v.			821578ba22.mp3
+beneath	C1	prep.			f56d107df8.mp3
+beneficial	B2	adj.			f46b09a15a.mp3
+beneficiary	C1	n.			11ac375dac.mp3
+benefit	A2	n.			e96428ae92.mp3
+benefit	B1	v.			e96428ae92.mp3
+bent	B2	adj.			74b723f106.mp3
+beside	B2	prep.			0567ab646a.mp3
+besides	B2	adv.			ba932e2245.mp3
+besides	B2	prep.			ba932e2245.mp3
+best	A1	adj.			60ef5d1add.mp3
+best	A2	adv.			60ef5d1add.mp3
+best	A2	n.			60ef5d1add.mp3
+bet	B2	n.			2a9d6bde51.mp3
+bet	B2	v.			2a9d6bde51.mp3
+betray	C1	v.			8e5f662c2e.mp3
+better	A1	adj.			e38498351f.mp3
+better	A2	adv.			e38498351f.mp3
+better	B1	n.			e38498351f.mp3
+between	A1	prep.			0b3599d944.mp3
+between	A2	adv.			0b3599d944.mp3
+beverage	C1	n.	US		781ea17ab6.mp3
+beyond	B2	adv.			056695a91c.mp3
+beyond	B2	prep.			056695a91c.mp3
+bias	B2	n.			ba95141045.mp3
+bicycle	A1	n.			e81c430239.mp3
+bid	B2	n.			8ea1361a78.mp3
+bid	B2	v.			8ea1361a78.mp3
+big	A1	adj.			a5b9cd156e.mp3
+bike	A1	n.			8ae9be56b2.mp3
+bill	A1	n.			0ecedf79c7.mp3
+bill	B2	v.			0ecedf79c7.mp3
+billion	A2	number			5e17738c3b.mp3
+bin	A2	n.	UK		1fbe0a556c.mp3
+bind	C1	v.			8022bf72ac.mp3
+biography	C1	n.			1a93728274.mp3
+biological	B2	adj.			e4a2025a79.mp3
+biology	A2	n.			14773d4375.mp3
+bird	A1	n.			d6197f1aac.mp3
+birth	A2	n.			922c26274f.mp3
+birthday	A1	n.			51039c5e2e.mp3
+biscuit	A2	n.	UK		c5601e60dd.mp3
+bishop	C1	n.			a9938fc24e.mp3
+bit	A2	n.			a5ea9eaeab.mp3
+bite	B1	n.			1034a7dd87.mp3
+bite	B1	v.			1034a7dd87.mp3
+bitter	B2	adj.			fe56fd86fb.mp3
+bizarre	C1	adj.			232d40da7e.mp3
+black	A1	adj.			f6802309c9.mp3
+black	A1	n.			f6802309c9.mp3
+blade	C1	n.			ef52c0518e.mp3
+blame	B2	n.			37436e1317.mp3
+blame	B2	v.			37436e1317.mp3
+blank	A2	adj.			e148a51992.mp3
+blank	A2	n.			e148a51992.mp3
+blanket	B2	n.			097f8ca679.mp3
+blast	C1	n.			06a2cbbd27.mp3
+blast	C1	v.			06a2cbbd27.mp3
+bleed	C1	v.			caf9076576.mp3
+blend	C1	n.			92c8a03564.mp3
+blend	C1	v.			92c8a03564.mp3
+bless	C1	v.			d1337946e1.mp3
+blessing	C1	n.			3aa0eb46a7.mp3
+blind	B2	adj.			285780dcb3.mp3
+block	A2	n.	US		2a502f8a6b.mp3
+block	B1	n.	UK		2a502f8a6b.mp3
+block	B1	v.	UK		2a502f8a6b.mp3
+block	B1	v.	US		2a502f8a6b.mp3
+blog	A1	n.			6170ecfd7b.mp3
+blond	A1	adj.	US		abf414af29.mp3
+blonde	A1	adj.	UK		7ef40f86e0.mp3
+blood	A2	n.			251709b9f8.mp3
+blow	A2	v.			4ef7e23238.mp3
+blow	B2	n.			4ef7e23238.mp3
+blue	A1	adj.			9e74809de1.mp3
+blue	A1	n.			9e74809de1.mp3
+board	A2	n.			d0687f574c.mp3
+board	B1	v.			d0687f574c.mp3
+boast	C1	v.			9f513db009.mp3
+boat	A1	n.			dfd9606aa6.mp3
+body	A1	n.			d0387a2993.mp3
+boil	A2	v.			4707d970dd.mp3
+bold	B2	adj.			c101dd51aa.mp3
+bomb	B1	n.			a67890254a.mp3
+bomb	B1	v.			a67890254a.mp3
+bombing	B2	n.			ec52a72159.mp3
+bond	B2	n.			5578084889.mp3
+bone	A2	n.			c54c5ecc5e.mp3
+bonus	C1	n.			e96861d72c.mp3
+book	A1	n.			25f9feaaf5.mp3
+book	A2	v.			25f9feaaf5.mp3
+booking	B2	n.	UK		adba844261.mp3
+booking	C1	n.	US		adba844261.mp3
+boom	C1	n.			ca248fc37a.mp3
+boost	B2	n.			4a4f337065.mp3
+boost	B2	v.			4a4f337065.mp3
+boot	A1	n.			859aedcaf9.mp3
+border	B1	n.			bbda9024c1.mp3
+border	B2	v.			bbda9024c1.mp3
+bored	A1	adj.			f0eeaab594.mp3
+boring	A1	adj.			528d668a22.mp3
+born	A1	v.			fa7a92e229.mp3
+borrow	A2	v.			6f0c93e27f.mp3
+boss	A2	n.			334677ecb9.mp3
+both	A1	det.			68dddad64a.mp3
+both	A1	pron.			68dddad64a.mp3
+bother	B1	v.			a741b29331.mp3
+bottle	A1	n.			7068283577.mp3
+bottom	A2	adj.			946b2e0480.mp3
+bottom	A2	n.			946b2e0480.mp3
+bounce	C1	v.			6b5c69e957.mp3
+bound	B2	adj.			9876cdd84a.mp3
+boundary	C1	n.			f1b3a25321.mp3
+bow	C1	n.			cafdb37390.mp3
+bow	C1	v.			cafdb37390.mp3
+bowl	A2	n.			3c9fe95c2b.mp3
+box	A1	n.			4c474a0b2f.mp3
+boy	A1	n.			ed9d72fccb.mp3
+boyfriend	A1	n.			78a7b0d737.mp3
+brain	A2	n.			3bc01aae34.mp3
+branch	B1	n.			0a33d87cc4.mp3
+brand	B1	n.			2bbe8259be.mp3
+brand	B1	v.			2bbe8259be.mp3
+brave	B1	adj.			55882c75f5.mp3
+breach	C1	n.			1a4915be21.mp3
+breach	C1	v.			1a4915be21.mp3
+bread	A1	n.			0bee2f5bce.mp3
+break	A1	n.			b19b5dfa07.mp3
+break	A1	v.			b19b5dfa07.mp3
+breakdown	C1	n.			bc5d908f45.mp3
+breakfast	A1	n.			f16983901b.mp3
+breakthrough	C1	n.			519903607e.mp3
+breast	B2	n.			328be54b65.mp3
+breath	B1	n.			b34ce4a07f.mp3
+breathe	B1	v.			e9e836d0cd.mp3
+breathing	B1	n.			65c6f7a269.mp3
+breed	C1	n.			471afe4e57.mp3
+breed	C1	v.			471afe4e57.mp3
+brick	B2	n.			c03c2a6898.mp3
+bride	B1	n.			b1e2f146c7.mp3
+bridge	A2	n.			fae3c48c35.mp3
+brief	B2	adj.			76468dfae7.mp3
+briefly	B2	adv.			b20e244091.mp3
+bright	A2	adj.			cccda8f4a9.mp3
+brilliant	A2	adj.			1c38d6541d.mp3
+bring	A1	v.			67f7c5c59f.mp3
+broad	B2	adj.			f33b657938.mp3
+broadband	C1	n.			dc28e2474e.mp3
+broadcast	B2	n.			6d007c7eff.mp3
+broadcast	B2	v.			6d007c7eff.mp3
+broadcaster	B2	n.			f1471c2d93.mp3
+broadly	B2	adv.			fd7273b219.mp3
+broken	A2	adj.			460fb40087.mp3
+brother	A1	n.			e43c153432.mp3
+brown	A1	adj.			69f806af39.mp3
+brown	A1	n.			69f806af39.mp3
+browser	C1	n.			93d2c38672.mp3
+brush	A2	n.			3fa2c73023.mp3
+brush	A2	v.			3fa2c73023.mp3
+brutal	C1	adj.			51938ef16a.mp3
+bubble	B1	n.			e3fcc60d61.mp3
+buck	B2	n.	US		abf2d128f6.mp3
+buck	C1	n.	UK		abf2d128f6.mp3
+buddy	C1	n.			7142e6414e.mp3
+budget	B2	n.			0cd150c0dc.mp3
+buffer	C1	n.			4855eb4f2a.mp3
+bug	B2	n.			f5d0168351.mp3
+build	A1	v.			f482dbc773.mp3
+building	A1	n.			d54d961961.mp3
+bulk	C1	n.			8121f4c25a.mp3
+bullet	B2	n.			1dafe11191.mp3
+bunch	B2	n.			90ed605bd6.mp3
+burden	C1	n.			cd4c48e035.mp3
+bureaucracy	C1	n.			bb36e9f745.mp3
+burial	C1	n.			821161b903.mp3
+burn	A2	v.			1669597646.mp3
+burn	B2	n.			1669597646.mp3
+burst	C1	v.			db289d91bd.mp3
+bury	B1	v.			d8296505ff.mp3
+bus	A1	n.			7dbfca78ce.mp3
+bush	B2	n.			6dc9472b91.mp3
+business	A1	n.			946fa8a079.mp3
+businessman	A2	n.			3f756b80b6.mp3
+busy	A1	adj.			c3ab79135c.mp3
+but	A1	conj.			1e6975b822.mp3
+but	B2	prep.			1e6975b822.mp3
+butter	A1	n.			bfd5dd4e27.mp3
+button	A2	n.			b374dc96f9.mp3
+buy	A1	v.			e01246ae4c.mp3
+by	A1	prep.			9a01d66b16.mp3
+by	B1	adv.			9a01d66b16.mp3
+bye	A1	exclam.			e3ae7f5da6.mp3
+cabin	B2	n.			d2758aeba9.mp3
+cabinet	C1	n.			92bd9e3557.mp3
+cable	B1	n.	US		417f7cd555.mp3
+cable	B2	n.	UK		417f7cd555.mp3
+cafe	A1	n.			f006f02033.mp3
+cake	A1	n.			b38b3b7d53.mp3
+calculate	B2	v.			4939ae7ea0.mp3
+calculation	C1	n.			2955d7a108.mp3
+call	A1	n.			160485be23.mp3
+call	A1	v.			160485be23.mp3
+calm	B1	adj.			9627e3c412.mp3
+calm	B1	n.			9627e3c412.mp3
+calm	B1	v.			9627e3c412.mp3
+camera	A1	n.			05f0f84eab.mp3
+camp	A2	n.			35e6562cdf.mp3
+camp	A2	v.			35e6562cdf.mp3
+campaign	B1	n.			9689a0b2ea.mp3
+campaign	B1	v.			9689a0b2ea.mp3
+camping	A2	n.			3f3dc88acc.mp3
+campus	A2	n.	US		8fa46eff13.mp3
+campus	B1	n.	UK		8fa46eff13.mp3
+can	A1	modal v.			09d05ec4b4.mp3
+can	A2	n.			09d05ec4b4.mp3
+canal	B2	n.			837b8d7fbc.mp3
+cancel	B2	v.			53134e8afd.mp3
+cancer	B2	n.			ea62fb0729.mp3
+candidate	B1	n.			fd1977768f.mp3
+candle	B2	n.			30d31a3604.mp3
+candy	A2	n.	US		00d0c16ca7.mp3
+cannot	A1	v.			e33389ee17.mp3
+canvas	C1	n.			c22b8d1d35.mp3
+cap	B1	n.			9de4bb91d5.mp3
+capability	C1	n.			c4a71cd888.mp3
+capable	B2	adj.			dd68f6d0b6.mp3
+capacity	B2	n.			94abe2d33a.mp3
+capital	A1	adj.			7165361cdd.mp3
+capital	A1	n.			7165361cdd.mp3
+capitalism	C1	n.			ac7debd90b.mp3
+capitalist	C1	adj.			ecd103d0d5.mp3
+captain	B1	n.			f5e20dc4cc.mp3
+capture	B2	n.			cbe121a8a8.mp3
+capture	B2	v.			cbe121a8a8.mp3
+car	A1	n.			0726d61b31.mp3
+carbon	B2	n.			48e3430237.mp3
+card	A1	n.			9deab4f31f.mp3
+care	A2	n.			2afcf12caf.mp3
+care	A2	v.			2afcf12caf.mp3
+career	A1	n.			fa4c77472e.mp3
+careful	A2	adj.			dc9f7704ca.mp3
+carefully	A2	adv.			e87a0d47cf.mp3
+careless	B1	adj.			9e932ee57e.mp3
+cargo	C1	n.			5deeef506e.mp3
+carpet	A2	n.			475ae35a2a.mp3
+carriage	C1	n.			d9d90c5a7f.mp3
+carrot	A1	n.			5c0d75dfda.mp3
+carry	A1	v.			36117e76ce.mp3
+cartoon	A2	n.			8493667121.mp3
+carve	C1	v.			4f19037fa7.mp3
+case	A2	n.			fb52124ce6.mp3
+cash	A2	n.			8d12b4df61.mp3
+casino	C1	n.			b5885523ed.mp3
+cast	B2	n.			3234eb2a9f.mp3
+cast	B2	v.			3234eb2a9f.mp3
+castle	A2	n.	UK		a48a27ab16.mp3
+castle	B2	n.	US		a48a27ab16.mp3
+casual	B2	adj.			d3b2705d41.mp3
+casualty	C1	n.			19ac3f1862.mp3
+cat	A1	n.			3c967e4015.mp3
+catalog	C1	n.	US		e2193822c1.mp3
+catalogue	C1	n.	UK		1237e4fd42.mp3
+catch	A2	v.			7ff44d42f0.mp3
+catch	B2	n.			7ff44d42f0.mp3
+category	B1	n.			4105c91731.mp3
+cater	C1	v.			99a7775f45.mp3
+cattle	C1	n.			c43bb577ec.mp3
+cause	A2	n.			1b42e1b0b0.mp3
+cause	A2	v.			1b42e1b0b0.mp3
+caution	C1	n.			e9bf1ff120.mp3
+cautious	C1	adj.			4bef26eead.mp3
+cave	B2	n.			3ae381f32f.mp3
+cease	C1	v.			2c8d0b02cc.mp3
+ceiling	B1	n.			0eb435767d.mp3
+celebrate	A2	v.			64848f9aa5.mp3
+celebration	B1	n.			b24700f8ca.mp3
+celebrity	A2	n.			595d9f5924.mp3
+cell	A2	n.	US		344db1f78f.mp3
+cell	B2	n.	UK		344db1f78f.mp3
+cemetery	C1	n.			9ac9b254de.mp3
+cent	A1	n.			a1e78e60db.mp3
+center	A1	n.	US		71b6aa2267.mp3
+center	B1	v.	US		71b6aa2267.mp3
+central	B1	adj.			4bd7594b3e.mp3
+centre	A1	n.	UK		988945fbc8.mp3
+centre	B1	v.	UK		988945fbc8.mp3
+century	A1	n.	UK		02c6d5cfd1.mp3
+century	A2	n.	US		02c6d5cfd1.mp3
+ceremony	B1	n.			220ae181a7.mp3
+certain	A2	adj.			c26fb4bc01.mp3
+certainly	A2	adv.			5ea0a660b6.mp3
+certainty	B2	n.			caf4da3393.mp3
+certificate	B2	n.			fb9ac1ef32.mp3
+chain	B1	n.			1a7d1d80f9.mp3
+chain	B2	v.			1a7d1d80f9.mp3
+chair	A1	n.			717816e39d.mp3
+chair	B2	v.			717816e39d.mp3
+chairman	B2	n.			de6f638531.mp3
+challenge	B1	n.			c10ff257cc.mp3
+challenge	B2	v.			c10ff257cc.mp3
+challenging	B2	adj.			5ab8e9634f.mp3
+chamber	C1	n.			e03c94a319.mp3
+champion	B1	n.			4188dbb4c0.mp3
+championship	B2	n.			80648558e9.mp3
+chance	A2	n.			8c9a35437d.mp3
+change	A1	n.			efb705077d.mp3
+change	A1	v.			efb705077d.mp3
+channel	B1	n.			c7157155e8.mp3
+chaos	C1	n.			1515f4c638.mp3
+chapter	B1	n.			f641f1b51c.mp3
+character	A2	n.			5fc561639b.mp3
+characteristic	B2	adj.			a45bab343e.mp3
+characteristic	B2	n.			a45bab343e.mp3
+characterize	C1	v.			3810500bae.mp3
+charge	B1	n.			0a1583fa38.mp3
+charge	B1	v.			0a1583fa38.mp3
+charity	A2	n.			58a42c190d.mp3
+charm	C1	n.			e5f4debc1d.mp3
+charming	B2	adj.			707f9c859c.mp3
+chart	A1	n.			3be502c051.mp3
+chart	B2	v.			3be502c051.mp3
+charter	C1	n.			755b2e269b.mp3
+chase	B2	n.			c87a232415.mp3
+chase	B2	v.			c87a232415.mp3
+chat	A2	n.			c5e6ef92aa.mp3
+chat	A2	v.			c5e6ef92aa.mp3
+cheap	A1	adj.			ecdc28b30c.mp3
+cheap	B1	adv.			ecdc28b30c.mp3
+cheat	B1	n.			ba9b797899.mp3
+cheat	B1	v.			ba9b797899.mp3
+check	A1	v.			2165920299.mp3
+check	A2	n.			2165920299.mp3
+cheek	B2	n.			0bf5d7f8f9.mp3
+cheer	B2	n.			5614005a5c.mp3
+cheer	B2	v.			5614005a5c.mp3
+cheerful	B1	adj.			dbcb48f4b2.mp3
+cheese	A1	n.			024e8dba65.mp3
+chef	A2	n.			61a2d740b3.mp3
+chemical	B1	adj.			d4eec42a68.mp3
+chemical	B1	n.			d4eec42a68.mp3
+chemistry	A2	n.			9ccdb4d292.mp3
+chest	B1	n.			7dea4461ab.mp3
+chicken	A1	n.			f71fd3074f.mp3
+chief	B2	adj.			d3e54cf38e.mp3
+chief	B2	n.			d3e54cf38e.mp3
+child	A1	n.			bb373b57e3.mp3
+childhood	B1	n.			1c68c2ec50.mp3
+chip	A2	n.			80f7538d30.mp3
+chocolate	A1	n.			158d49a012.mp3
+choice	A2	n.			6d93b7c6bc.mp3
+choir	B2	n.	UK		3920d07758.mp3
+choir	C1	n.	US		3920d07758.mp3
+choose	A1	v.			2c514f4554.mp3
+chop	B2	v.			368597f1f8.mp3
+chronic	C1	adj.			c4fa14fe2b.mp3
+chunk	C1	n.			5efc3269c5.mp3
+church	A2	n.			f53b414178.mp3
+cigarette	A2	n.			627480b3f8.mp3
+cinema	A1	n.	UK		1988c57191.mp3
+circle	A2	n.			2e0022f48a.mp3
+circle	A2	v.			2e0022f48a.mp3
+circuit	B2	n.			d5108577a6.mp3
+circulate	C1	v.			b33078a003.mp3
+circulation	C1	n.			4d1a62d36b.mp3
+circumstance	B2	n.			b3be2009c3.mp3
+cite	B2	v.			433764c6d8.mp3
+citizen	B2	n.			fb220d25e8.mp3
+citizenship	C1	n.			64fba5d06a.mp3
+city	A1	n.			84a36849b2.mp3
+civic	C1	adj.			dad049343b.mp3
+civil	B2	adj.			839e2fb957.mp3
+civilian	C1	adj.			e9b02982b2.mp3
+civilian	C1	n.			e9b02982b2.mp3
+civilization	B2	n.			d1994be20f.mp3
+claim	B1	n.			052c13e26b.mp3
+claim	B1	v.			052c13e26b.mp3
+clarify	B2	v.			dbffff30d0.mp3
+clarity	C1	n.			4e30ccd025.mp3
+clash	C1	n.			be0052d6db.mp3
+class	A1	n.			632433e2fa.mp3
+classic	B2	adj.			2cc1e6e0ff.mp3
+classic	B2	n.			2cc1e6e0ff.mp3
+classical	A2	adj.			33ba699c4e.mp3
+classification	C1	n.			2c230a00af.mp3
+classify	B2	v.			9bad3592f1.mp3
+classroom	A1	n.			db39753ffc.mp3
+clause	B1	n.			99a1140207.mp3
+clean	A1	adj.			a75a1c1e87.mp3
+clean	A1	v.			a75a1c1e87.mp3
+clear	A2	adj.			91c3769e7e.mp3
+clear	B1	v.			91c3769e7e.mp3
+clearly	A2	adv.			dbdf258b35.mp3
+clerk	A2	n.	US		3911f53216.mp3
+clerk	B2	n.	UK		3911f53216.mp3
+clever	A2	adj.	UK		b4b92541aa.mp3
+clever	B1	adj.	US		b4b92541aa.mp3
+click	B1	n.			db9bcef4f1.mp3
+click	B1	v.			db9bcef4f1.mp3
+client	B1	n.			8f47dbc84c.mp3
+cliff	B2	n.			da5a419431.mp3
+climate	A2	n.			91c3a77b68.mp3
+climb	A1	v.			65ff7b5f7a.mp3
+climb	B1	n.			65ff7b5f7a.mp3
+cling	C1	v.			2615af7b6f.mp3
+clinic	B2	n.			001b989778.mp3
+clinical	C1	adj.			6040767637.mp3
+clip	B2	n.			cd8fb7a879.mp3
+clock	A1	n.			42b1d449c6.mp3
+close	A1	v.			9f755cb893.mp3
+close	A2	adj.			9f755cb893.mp3
+close	B1	adv.			9f755cb893.mp3
+close	B2	n.			9f755cb893.mp3
+closed	A2	adj.			c2e0393881.mp3
+closely	B2	adv.			9317635239.mp3
+closet	A2	n.	US		2c6e38a7b1.mp3
+closure	C1	n.			382bb70b3d.mp3
+cloth	B1	n.			2dfc526d12.mp3
+clothes	A1	n.			b43ae428c0.mp3
+clothing	A2	n.			38d616e068.mp3
+cloud	A2	n.			ecb9530fc0.mp3
+club	A1	n.			efaf088718.mp3
+clue	B1	n.			c64b947de5.mp3
+cluster	C1	n.			f540a241fa.mp3
+coach	A2	n.			8488952556.mp3
+coach	B1	v.			8488952556.mp3
+coal	B1	n.			66850bd4e1.mp3
+coalition	C1	n.			38bbbe20cc.mp3
+coast	A2	n.			999edd0415.mp3
+coastal	C1	adj.			37f3454d5a.mp3
+coat	A1	n.			f128d2e200.mp3
+cocktail	C1	n.			6335732164.mp3
+code	A2	n.			52bf764e88.mp3
+coffee	A1	n.			317e212b82.mp3
+cognitive	C1	adj.			b2b4b9b5ff.mp3
+coin	B1	n.			0724500c40.mp3
+coincide	C1	v.			3edc8309ee.mp3
+coincidence	B2	n.			05fffabbeb.mp3
+cold	A1	adj.			d8713b2321.mp3
+cold	A1	n.			d8713b2321.mp3
+collaborate	C1	v.			8e1ecc8e49.mp3
+collaboration	C1	n.			bdcc0bf093.mp3
+collapse	B2	n.			4f78b3efa9.mp3
+collapse	B2	v.			4f78b3efa9.mp3
+colleague	A2	n.			3b2bed8441.mp3
+collect	A2	v.			0dbdbf4819.mp3
+collection	B1	n.			550471d61c.mp3
+collective	C1	adj.			5e309cc54c.mp3
+collector	B2	n.			b0ba5d1b6a.mp3
+college	A1	n.			22ee285d6b.mp3
+collision	C1	n.			162ec86cef.mp3
+colonial	C1	adj.			0285974167.mp3
+colony	B2	n.			8c2a7cebfe.mp3
+color	A1	n.	US		704bba2123.mp3
+colored	B1	adj.	US		2d0dcedfa9.mp3
+colorful	B2	adj.	US		8725682b72.mp3
+colour	A1	n.	UK		b4684a4747.mp3
+coloured	B1	adj.	UK		f520660b32.mp3
+colourful	B2	adj.	UK		744467f8be.mp3
+column	A2	n.			e55de9a133.mp3
+columnist	C1	n.			3769dba202.mp3
+combat	C1	n.			b3dbae7b2e.mp3
+combat	C1	v.			b3dbae7b2e.mp3
+combination	B2	n.			6c3545c12b.mp3
+combine	B1	v.			abceeea2be.mp3
+come	A1	v.			820786c54d.mp3
+comedy	A2	n.			43f0979033.mp3
+comfort	B2	n.			71796f509b.mp3
+comfort	B2	v.			71796f509b.mp3
+comfortable	A2	adj.			0919e5b683.mp3
+comic	B2	adj.			e7386732d7.mp3
+comic	B2	n.			e7386732d7.mp3
+command	B2	n.			17cf36bfc4.mp3
+command	B2	v.			17cf36bfc4.mp3
+commander	B2	n.			4758f76d82.mp3
+commence	C1	v.			03c1835178.mp3
+comment	A2	n.			b17b24d1e3.mp3
+comment	B1	v.			b17b24d1e3.mp3
+commentary	C1	n.			c835235d31.mp3
+commentator	C1	n.			6438a9c9c9.mp3
+commerce	C1	n.			26e0227ca5.mp3
+commercial	B1	adj.			98ae9035b6.mp3
+commercial	B1	n.			98ae9035b6.mp3
+commission	B2	n.			c95176f9c0.mp3
+commission	B2	v.			c95176f9c0.mp3
+commissioner	C1	n.			bc72b61429.mp3
+commit	B1	v.			24218431b7.mp3
+commitment	B2	n.			ec946dfad3.mp3
+committee	B2	n.			1fb04cd0e6.mp3
+commodity	C1	n.			923b42f9ad.mp3
+common	A1	adj.	UK		e7919af3d6.mp3
+common	A1	adj.	US		e7919af3d6.mp3
+common	A1	n.	UK		e7919af3d6.mp3
+commonly	B2	adv.			b996406440.mp3
+communicate	A2	v.			f964a3b10f.mp3
+communication	B1	n.			15ccbaeb00.mp3
+communist	C1	adj.			cc96e0410c.mp3
+community	A2	n.			6bd21b4e12.mp3
+companion	C1	n.			0edc1e482d.mp3
+company	A1	n.			0efcbd1b40.mp3
+comparable	C1	adj.			8126be1a07.mp3
+comparative	B2	adj.			df8636d0f5.mp3
+compare	A1	v.			a90854acb5.mp3
+comparison	B1	n.			c3a70054ac.mp3
+compassion	C1	n.			404ff6ff28.mp3
+compel	C1	v.			691c29112d.mp3
+compelling	C1	adj.			4f33f75e17.mp3
+compensate	C1	v.			a6f279daa5.mp3
+compensation	C1	n.			3ac8ee14cd.mp3
+compete	A2	v.			cfef176a26.mp3
+competence	C1	n.			1da8a2e095.mp3
+competent	C1	adj.			a4561368c2.mp3
+competition	A2	n.			47653d635c.mp3
+competitive	B1	adj.			6b629dc7e3.mp3
+competitor	B1	n.			c42ad3ed8d.mp3
+compile	C1	v.			ae7e688a8a.mp3
+complain	A2	v.			3bbdb4cde2.mp3
+complaint	B1	n.			11f4ba2a7f.mp3
+complement	C1	v.			3ae3c02feb.mp3
+complete	A1	adj.			0faf82c1c2.mp3
+complete	A1	v.			0faf82c1c2.mp3
+completely	A2	adv.			bc56b24d1e.mp3
+completion	B2	n.			e513368984.mp3
+complex	B1	adj.			6ba5d66e39.mp3
+complex	B2	n.			6ba5d66e39.mp3
+complexity	C1	n.			c216a28034.mp3
+compliance	C1	n.			35fe543d4b.mp3
+complicated	B2	adj.			c5dd11a1ce.mp3
+complication	C1	n.			be6b64d956.mp3
+comply	C1	v.			519ce830d2.mp3
+component	B2	n.			17d37475f9.mp3
+compose	B2	v.			cafe994a10.mp3
+composer	B2	n.			51a3dfc936.mp3
+composition	C1	n.			8d9af37a56.mp3
+compound	B2	n.			8b50a4d0dc.mp3
+comprehensive	B2	adj.			e406677485.mp3
+comprise	B2	v.			931c3c001a.mp3
+compromise	C1	n.			5e7aebf62c.mp3
+compromise	C1	v.			5e7aebf62c.mp3
+compulsory	B2	adj.			92443b9101.mp3
+compute	C1	v.			544949df98.mp3
+computer	A1	n.			982c47c95b.mp3
+conceal	C1	v.			efd8750837.mp3
+concede	C1	v.			5118a005e0.mp3
+conceive	C1	v.			aa3819f775.mp3
+concentrate	B1	v.			61e85fc76f.mp3
+concentration	B2	n.			e9e67d5478.mp3
+concept	B2	n.			3b660706fd.mp3
+conception	C1	n.			fa3359d2a6.mp3
+concern	B2	n.			ebbbbe2968.mp3
+concern	B2	v.			ebbbbe2968.mp3
+concerned	B2	adj.			15f553a9dc.mp3
+concert	A1	n.			8bc3b4f6ed.mp3
+concession	C1	n.			4cf1d4240c.mp3
+conclude	B1	v.			1a7a0c1691.mp3
+conclusion	B1	n.			36a14984f7.mp3
+concrete	B2	adj.			35cef77f2f.mp3
+concrete	B2	n.			35cef77f2f.mp3
+condemn	C1	v.			ab29b98538.mp3
+condition	A2	n.			0f32c6dc9d.mp3
+conduct	B2	n.			ca69ead637.mp3
+conduct	B2	v.			ca69ead637.mp3
+confer	C1	v.			f6b1ada041.mp3
+conference	A2	n.			68d471ce56.mp3
+confess	B2	v.			ff13d5a5f7.mp3
+confession	C1	n.			e84bc3dfc8.mp3
+confidence	B2	n.			c4e8e7be2b.mp3
+confident	B1	adj.			872bb0c910.mp3
+configuration	C1	n.			3b20443212.mp3
+confine	C1	v.			363f2d632f.mp3
+confirm	B1	v.			7e067ec802.mp3
+confirmation	C1	n.			0d0d52f4fd.mp3
+conflict	B2	n.			b1422c9548.mp3
+conflict	B2	v.			b1422c9548.mp3
+confront	C1	v.			ecc6cfc2ad.mp3
+confrontation	C1	n.			492cd65150.mp3
+confuse	B1	v.			30176e6d08.mp3
+confused	B1	adj.			8f803af8d7.mp3
+confusing	B2	adj.			30f0c5f180.mp3
+confusion	B2	n.			3ed16544bf.mp3
+congratulate	C1	v.			0504be94f6.mp3
+congregation	C1	n.			2b0b4e8257.mp3
+congress	B2	n.	US		f5257ccce9.mp3
+congressional	C1	adj.			242f64d112.mp3
+connect	A2	v.			a13823e976.mp3
+connected	A2	adj.			2f2a59755b.mp3
+connection	B1	n.			05a2810d59.mp3
+conquer	C1	v.			cb247d809a.mp3
+conscience	C1	n.			07205ddf63.mp3
+conscious	B2	adj.			3a7f0c496b.mp3
+consciousness	C1	n.			e68193fcf7.mp3
+consecutive	C1	adj.			1f168e320d.mp3
+consensus	C1	n.			8b4be13af9.mp3
+consent	C1	n.			995b82f6e2.mp3
+consent	C1	v.			995b82f6e2.mp3
+consequence	B1	n.			957736c5ba.mp3
+consequently	B2	adv.			5c752a9c31.mp3
+conservation	B2	n.			e68a957f41.mp3
+conservative	B2	adj.			f226b7a22f.mp3
+conservative	B2	n.			f226b7a22f.mp3
+conserve	C1	v.			c7c3b2e99b.mp3
+consider	A2	v.			fd4451b29e.mp3
+considerable	B2	adj.			f15792db80.mp3
+considerably	B2	adv.			4ecdf8c38c.mp3
+consideration	B2	n.			6703024b22.mp3
+consist	B1	v.			ab695a8ced.mp3
+consistency	C1	n.			b275c109e3.mp3
+consistent	B2	adj.			46155cf149.mp3
+consistently	B2	adv.			012b633286.mp3
+consolidate	C1	v.			e221165fd0.mp3
+conspiracy	B2	n.			b8ea249f31.mp3
+constant	B2	adj.			f08368561f.mp3
+constantly	B2	adv.			64c18d7358.mp3
+constituency	C1	n.	UK		e0df81e98f.mp3
+constitute	C1	v.			ade19eb326.mp3
+constitution	C1	n.			92749a258a.mp3
+constitutional	C1	adj.			3c653baea8.mp3
+constraint	C1	n.			be73b4c4d4.mp3
+construct	B2	v.			21c736c967.mp3
+construction	B2	n.			f170aab059.mp3
+consult	B2	v.			9d216a3a72.mp3
+consultant	B2	n.			29ce176a3e.mp3
+consultation	C1	n.			4b90dcf58b.mp3
+consume	B1	v.			19761d3ad1.mp3
+consumer	B1	n.			8978a21e68.mp3
+consumption	B2	n.			45f6a57fc8.mp3
+contact	B1	n.			de1655e231.mp3
+contact	B1	v.			de1655e231.mp3
+contain	A2	v.			00d3bf4f43.mp3
+container	B1	n.			2fc5f80d9c.mp3
+contemplate	C1	v.			8d4e4c3b7c.mp3
+contemporary	B2	adj.			76c6d28262.mp3
+contempt	C1	n.			620dbef87a.mp3
+contend	C1	v.			10315bc3c9.mp3
+contender	C1	n.			eef8ce5bc7.mp3
+content	B1	n.			888bed9096.mp3
+content	C1	adj.			888bed9096.mp3
+contention	C1	n.			fbf81b41ac.mp3
+contest	B2	n.			b4c1c5c1ad.mp3
+contest	B2	v.			b4c1c5c1ad.mp3
+context	A2	n.			d595c90219.mp3
+continent	A2	n.			86afcd58d5.mp3
+continually	C1	adv.			c65ff13278.mp3
+continue	A2	v.			e8b16a89fa.mp3
+continuous	B1	adj.			7042152613.mp3
+contract	B2	n.			545b706654.mp3
+contract	B2	v.			545b706654.mp3
+contractor	C1	n.			57dc77df69.mp3
+contradiction	C1	n.			367239bb83.mp3
+contrary	C1	adj.			3d31a9f484.mp3
+contrary	C1	n.			3d31a9f484.mp3
+contrast	B1	n.			d10fb66a08.mp3
+contrast	B1	v.			d10fb66a08.mp3
+contribute	B2	v.			9fe4662fb9.mp3
+contribution	B2	n.			ebd0b5c68f.mp3
+contributor	C1	n.			4434bbf791.mp3
+control	A2	n.			66650bf89d.mp3
+control	A2	v.			66650bf89d.mp3
+controversial	B2	adj.			4fd4229f53.mp3
+controversy	B2	n.			430adcfe34.mp3
+convenience	B2	n.			045bf9dedb.mp3
+convenient	B1	adj.			40cb6ea308.mp3
+convention	B2	n.			7677196af4.mp3
+conventional	B2	adj.			ef27605445.mp3
+conversation	A1	n.			3b0c0d90d6.mp3
+conversion	C1	n.			8bd4529734.mp3
+convert	B2	v.			0fcdc20313.mp3
+convey	B2	v.			81d9111108.mp3
+convict	C1	v.			933eabaa8b.mp3
+conviction	C1	n.			e3aa2821cc.mp3
+convince	B1	v.			b1c17d95b0.mp3
+convinced	B2	adj.			cc9a015078.mp3
+convincing	B2	adj.			c17eef381d.mp3
+cook	A1	v.			2378e14848.mp3
+cook	A2	n.			2378e14848.mp3
+cooker	A2	n.	UK		2c12fc0bb6.mp3
+cookie	A2	n.	US		7ac1aaf777.mp3
+cooking	A1	n.			833ee0b5cb.mp3
+cool	A1	adj.			cdbe9bcc87.mp3
+cool	B1	v.			cdbe9bcc87.mp3
+cooperate	C1	v.			3f93ddbe60.mp3
+cooperative	C1	adj.			dcf96f5576.mp3
+coordinate	C1	v.			16f0e5a750.mp3
+coordination	C1	n.			b6a24c492b.mp3
+coordinator	C1	n.			63f5241840.mp3
+cop	B2	n.	US		64167e83a2.mp3
+cop	C1	n.	UK		64167e83a2.mp3
+cope	B2	v.			ed1d43d8c7.mp3
+copper	C1	n.			f26008b4d3.mp3
+copy	A2	n.			cced61439d.mp3
+copy	A2	v.			cced61439d.mp3
+copyright	C1	n.			2d22a5bded.mp3
+core	B2	adj.			1b471e6cce.mp3
+core	B2	n.			1b471e6cce.mp3
+corn	B1	n.	US		258baa9bc7.mp3
+corner	A2	n.			aaffe1aefa.mp3
+corporate	B2	adj.			8c043124ae.mp3
+corporation	B2	n.			3530eb45b1.mp3
+correct	A1	adj.			ba51aea4a0.mp3
+correct	A1	v.			ba51aea4a0.mp3
+correction	C1	n.			f53483896c.mp3
+correctly	A2	adv.			0db8ca23f4.mp3
+correlate	C1	v.			b6112a417a.mp3
+correlation	C1	n.			3bf08823fd.mp3
+correspond	C1	v.			f285db7125.mp3
+correspondence	C1	n.			4f768d8cc8.mp3
+correspondent	C1	n.			9209d2dbda.mp3
+corresponding	C1	adj.			c436cf7cae.mp3
+corridor	B2	n.			3731df85dc.mp3
+corrupt	C1	adj.			9ceb638e59.mp3
+corruption	C1	n.			1953bc53c4.mp3
+cost	A1	n.			4ae9c5592d.mp3
+cost	A1	v.			4ae9c5592d.mp3
+costly	C1	adj.			089c4dcdb3.mp3
+costume	B1	n.			ac70aa329b.mp3
+cottage	B1	n.	UK		f457e0c7da.mp3
+cotton	B1	n.			8aaa108abd.mp3
+could	A1	modal v.			8a569dbefc.mp3
+council	B2	n.			8968e72e58.mp3
+councillor	C1	n.	UK		45b2c98c0d.mp3
+councilor	C1	n.	US		818a5c6e52.mp3
+counseling	C1	n.	US		4f1ef821c0.mp3
+counselling	C1	n.	UK		2ce657c9a6.mp3
+counsellor	C1	n.	UK		92777cf10b.mp3
+counselor	C1	n.	US		f568e2a63c.mp3
+count	A2	v.			4750f9b1a3.mp3
+count	B1	n.			4750f9b1a3.mp3
+counter	B2	n.		long flat surface	29bcafff27.mp3
+counter	C1	v.		argue against	29bcafff27.mp3
+counterpart	C1	n.			cfb3e75d63.mp3
+countless	C1	adj.			60250a07c8.mp3
+country	A1	n.			3fc58544ad.mp3
+countryside	B1	n.			cd5c920e4b.mp3
+county	B2	n.			02be6d892d.mp3
+coup	C1	n.			7184762915.mp3
+couple	A2	n.			582f9a76d4.mp3
+courage	B2	n.			ed1aa38a5f.mp3
+course	A1	n.			ff0e07170a.mp3
+court	B1	n.			a9420ced9e.mp3
+courtesy	C1	n.			80cd19feca.mp3
+cousin	A1	n.			530d5ef672.mp3
+cover	A2	v.			67c6c09ff9.mp3
+cover	B1	n.			67c6c09ff9.mp3
+coverage	B2	n.			e0647d94e3.mp3
+covered	B1	adj.			edf32fcd2e.mp3
+cow	A1	n.			4022606c02.mp3
+cowboy	B2	n.	US		fb3e6dbb57.mp3
+crack	B2	n.			8c50b955fc.mp3
+crack	B2	v.			8c50b955fc.mp3
+craft	B2	n.			2f4ff389dd.mp3
+craft	C1	v.			2f4ff389dd.mp3
+crash	B2	n.			b0ab5d3707.mp3
+crash	B2	v.			b0ab5d3707.mp3
+crawl	C1	v.			10f0926361.mp3
+crazy	A2	adj.			482700a091.mp3
+cream	A1	n.			99bbe3c6e4.mp3
+cream	B1	adj.			99bbe3c6e4.mp3
+create	A1	v.			9d01067556.mp3
+creation	B2	n.			f382dbd3f5.mp3
+creative	A2	adj.			d9962636d3.mp3
+creativity	B2	n.			163e822b73.mp3
+creator	C1	n.			efa9c4f7e9.mp3
+creature	B2	n.			62cd848130.mp3
+credibility	C1	n.			fc372b429e.mp3
+credible	C1	adj.			26d1325896.mp3
+credit	A2	n.			e68b2e653d.mp3
+credit	B2	v.			e68b2e653d.mp3
+creep	C1	v.			4b29023057.mp3
+crew	B2	n.			53cca35d99.mp3
+crime	A2	n.			a5eee31d7a.mp3
+criminal	A2	n.			94c1a2a02b.mp3
+criminal	B1	adj.			94c1a2a02b.mp3
+crisis	B2	n.			8e6908ad5f.mp3
+criterion	B2	n.			b601c75530.mp3
+critic	B2	n.			f3cb31b248.mp3
+critical	B2	adj.			b01262bedb.mp3
+critically	B2	adv.			79362d1c6f.mp3
+criticism	B2	n.			54e9dd24e6.mp3
+criticize	B2	v.			a837f49dd0.mp3
+critique	C1	n.			bde2bd45b4.mp3
+crop	B2	n.			2cd39f5403.mp3
+cross	A2	n.			13de0d5114.mp3
+cross	A2	v.			13de0d5114.mp3
+crowd	A2	n.			29638488ea.mp3
+crowded	A2	adj.			95bef03f28.mp3
+crown	C1	n.			f20c17199e.mp3
+crucial	B2	adj.			504a7b44b9.mp3
+crude	C1	adj.			ea4338a930.mp3
+cruel	B1	adj.			b2ea2f7158.mp3
+cruise	B2	n.			c93a62c34e.mp3
+cruise	B2	v.			c93a62c34e.mp3
+crush	C1	v.			37c750e7f1.mp3
+cry	A2	v.			44391c6fd6.mp3
+cry	B2	n.			44391c6fd6.mp3
+crystal	C1	n.			92231ee6c8.mp3
+cue	B2	n.			649c281e2d.mp3
+cult	C1	adj.			37909938a4.mp3
+cult	C1	n.			37909938a4.mp3
+cultivate	C1	v.			c089ce348b.mp3
+cultural	B1	adj.			86a75723e4.mp3
+culture	A1	n.			53a65cd0b9.mp3
+cup	A1	n.			821015cacc.mp3
+cupboard	A2	n.	UK		43252f1cb4.mp3
+cupboard	B1	n.	US		43252f1cb4.mp3
+cure	B2	n.			9ec1047a4e.mp3
+cure	B2	v.			9ec1047a4e.mp3
+curiosity	C1	n.			91af3817d8.mp3
+curious	B2	adj.			5322e00b60.mp3
+curly	A2	adj.			ea25f6ab0c.mp3
+currency	B1	n.			e3359c9c41.mp3
+current	B1	adj.			ff8e4f5276.mp3
+current	B2	n.			ff8e4f5276.mp3
+currently	B1	adv.			1cca7a8ebd.mp3
+curriculum	B2	n.			9860256681.mp3
+curtain	B1	n.			ccee5ded6f.mp3
+curve	B2	n.			4d7c694f12.mp3
+curve	B2	v.			4d7c694f12.mp3
+curved	B2	adj.			673de33666.mp3
+custody	C1	n.			1a4aeed53b.mp3
+custom	B1	n.			b87d6868a6.mp3
+customer	A1	n.			26165ab800.mp3
+cut	A1	v.			5504de8ade.mp3
+cut	B1	n.			5504de8ade.mp3
+cute	B2	adj.			69f9a95a97.mp3
+cutting	C1	n.			4807311a66.mp3
+cycle	A2	n.			9b23548dd8.mp3
+cycle	A2	v.			9b23548dd8.mp3
+cynical	C1	adj.			d37d9e0698.mp3
+dad	A1	n.			d63d2f1602.mp3
+daily	A2	adj.			965595a2c4.mp3
+daily	B1	adv.			965595a2c4.mp3
+dairy	B2	adj.			109bbc1f77.mp3
+dairy	B2	n.			109bbc1f77.mp3
+dam	C1	n.			817ca8cb7e.mp3
+damage	B1	n.			117f771377.mp3
+damage	B1	v.			117f771377.mp3
+damaging	C1	adj.			0378f35863.mp3
+dance	A1	n.			d8a0bd465f.mp3
+dance	A1	v.			d8a0bd465f.mp3
+dancer	A1	n.			5f1d6dad3a.mp3
+dancing	A1	n.			cd5b15f57f.mp3
+danger	A2	n.			97014f7634.mp3
+dangerous	A1	adj.			14916a1120.mp3
+dare	B2	v.			a62277327e.mp3
+dark	A1	adj.			08bde6e958.mp3
+dark	A2	n.			08bde6e958.mp3
+darkness	B2	n.			220930363f.mp3
+data	A2	n.			40f850f881.mp3
+database	B2	n.			7dd6d4c064.mp3
+date	A1	n.			aaeb5504f5.mp3
+date	B2	v.			aaeb5504f5.mp3
+daughter	A1	n.			7e50a1e450.mp3
+dawn	C1	n.			badd27d35c.mp3
+day	A1	n.			bea05a1ff5.mp3
+dead	A2	adj.			f16a49ad45.mp3
+deadline	B2	n.			2c3004fc2e.mp3
+deadly	B2	adj.			b53f36cd29.mp3
+deal	A2	v.			a762ad70a4.mp3
+deal	B1	n.			a762ad70a4.mp3
+dealer	B2	n.			07836390ca.mp3
+dear	A1	adj.	UK		bee2eae06c.mp3
+dear	A1	adj.	US		bee2eae06c.mp3
+dear	A2	exclam.	UK		bee2eae06c.mp3
+death	A2	n.			15a8cba203.mp3
+debate	B2	n.			29bf2427cb.mp3
+debate	B2	v.			29bf2427cb.mp3
+debris	C1	n.			359f81c9cc.mp3
+debt	B2	n.			c15066ab4a.mp3
+debut	C1	n.			bdd3315d09.mp3
+decade	B1	n.			e543a8f0ce.mp3
+decent	B2	adj.			a740f8ba6a.mp3
+decide	A1	v.			4af3ae9931.mp3
+decision	A2	n.			8aa641c98b.mp3
+decision-making	C1	n.			94eb23183a.mp3
+decisive	C1	adj.			c4c8d04823.mp3
+deck	B2	n.			8afc7e808d.mp3
+declaration	C1	n.			88e63bc3de.mp3
+declare	B2	v.			a5935c9cb4.mp3
+decline	B2	n.			2d058b1f60.mp3
+decline	B2	v.			2d058b1f60.mp3
+decorate	B1	v.	UK		ecdd104e17.mp3
+decorate	B2	v.	US		ecdd104e17.mp3
+decoration	B2	n.			61ac4b834b.mp3
+decrease	B2	n.			954184cc54.mp3
+decrease	B2	v.			954184cc54.mp3
+dedicated	C1	adj.			f0339d84b9.mp3
+dedication	C1	n.			488aa11b24.mp3
+deed	C1	n.			187d751a31.mp3
+deem	C1	v.			cace0da6f6.mp3
+deep	A2	adj.			54e7b472da.mp3
+deep	B1	adv.			54e7b472da.mp3
+deeply	B2	adv.			20cfc58cf5.mp3
+default	C1	n.			362ceb2dae.mp3
+defeat	B2	n.			2b2864d713.mp3
+defeat	B2	v.			2b2864d713.mp3
+defect	C1	n.			ae7d999668.mp3
+defence	B2	n.	UK		126fb17147.mp3
+defend	B2	v.			658f04d8d8.mp3
+defender	B2	n.			e9eee9bfa8.mp3
+defense	B2	n.	US		55e4f7a3e4.mp3
+defensive	C1	adj.			88bd2763d9.mp3
+deficiency	C1	n.			3bcfc2633d.mp3
+deficit	C1	n.			94229c04ad.mp3
+define	B1	v.			7c85487f90.mp3
+definite	B1	adj.			e4ae92eba2.mp3
+definitely	A2	adv.			f17d6d70e5.mp3
+definition	B1	n.			4f88fa32f5.mp3
+defy	C1	v.			8702fc695e.mp3
+degree	A2	n.			e216708477.mp3
+delay	B2	n.			a5f396fade.mp3
+delay	B2	v.			a5f396fade.mp3
+delegate	C1	n.			088d436154.mp3
+delegation	C1	n.			e759372240.mp3
+delete	B2	v.			1918c0637a.mp3
+deliberate	B2	adj.			f0582f63e1.mp3
+deliberately	B2	adv.			66920d2a41.mp3
+delicate	C1	adj.			7911607788.mp3
+delicious	A1	adj.			bdd38ced7f.mp3
+delight	B2	n.	UK		048b173fdb.mp3
+delight	B2	v.	UK		048b173fdb.mp3
+delighted	B2	adj.	UK		58e80ccc53.mp3
+delighted	B2	adj.	US		58e80ccc53.mp3
+deliver	B1	v.			8e13324651.mp3
+delivery	B2	n.			b0945fdb01.mp3
+demand	B2	n.			0528e498ae.mp3
+demand	B2	v.			0528e498ae.mp3
+democracy	B2	n.			c4c5937c34.mp3
+democratic	B2	adj.			025041c6ed.mp3
+demon	C1	n.			b0da34eace.mp3
+demonstrate	B2	v.			921e6a4112.mp3
+demonstration	B2	n.			a79c7543e9.mp3
+denial	C1	n.			15c19ceedb.mp3
+denounce	C1	v.			fd2e80d602.mp3
+dense	C1	adj.			c64619e527.mp3
+density	C1	n.			9d18f8ab49.mp3
+dentist	A2	n.			444cd0a07e.mp3
+deny	B2	v.			dea861cc9f.mp3
+depart	B2	v.			d6f844e79e.mp3
+department	A2	n.			3830440d0f.mp3
+departure	B1	n.			7bbc9f63a5.mp3
+depend	A2	v.			dbcd0410e0.mp3
+dependence	C1	n.			56531d5651.mp3
+dependent	B2	adj.			108a223e35.mp3
+depict	C1	v.			3b716c0240.mp3
+deploy	C1	v.			6462e940a3.mp3
+deployment	C1	n.			aabdf854d1.mp3
+deposit	B2	n.	UK		a08d85c7d8.mp3
+deposit	B2	n.	US		a08d85c7d8.mp3
+deposit	B2	v.	US		a08d85c7d8.mp3
+deposit	C1	v.	UK		a08d85c7d8.mp3
+depressed	B2	adj.			7ca0222c85.mp3
+depressing	B2	adj.			333a51b335.mp3
+depression	B2	n.			a539a15f32.mp3
+deprive	C1	v.			d01e1ff6b8.mp3
+depth	B2	n.			54a4f0c7de.mp3
+deputy	C1	n.			5bb174f2da.mp3
+derive	B2	v.			7b1293077c.mp3
+descend	C1	v.			dacf55da05.mp3
+descent	C1	n.			cd179d1552.mp3
+describe	A1	v.			9860d7f8ab.mp3
+description	A1	n.			b38ec2c36d.mp3
+desert	A2	n.			d971636711.mp3
+desert	B2	v.			d971636711.mp3
+deserve	B2	v.			5863d360cf.mp3
+design	A1	n.			6de36a20a6.mp3
+design	A1	v.			6de36a20a6.mp3
+designate	C1	v.			9194cf883b.mp3
+designer	A2	n.			0267b3d3c0.mp3
+desirable	C1	adj.			750bbb58a0.mp3
+desire	B2	n.			985ac1ada1.mp3
+desire	B2	v.			985ac1ada1.mp3
+desk	A1	n.			e704f5b3cd.mp3
+desktop	C1	n.			e4299c1e45.mp3
+desperate	B2	adj.			02bfff2d76.mp3
+desperately	B2	adv.			2f5c5f7bbc.mp3
+despite	B1	prep.			fb43c549d2.mp3
+dessert	A2	n.	US		a5af1e6e3f.mp3
+destination	B1	n.			9051de8c56.mp3
+destroy	A2	v.			e5511b027a.mp3
+destruction	B2	n.			0a0430f742.mp3
+destructive	C1	adj.			27f2c962ef.mp3
+detail	A1	n.			389898eab2.mp3
+detail	B2	v.			389898eab2.mp3
+detailed	B2	adj.			261f9ec3f2.mp3
+detain	C1	v.			61b67a7922.mp3
+detect	B2	v.			1f90074eec.mp3
+detection	C1	n.			5b137c7aea.mp3
+detective	A2	n.			b45766592b.mp3
+detention	C1	n.			be42b3d964.mp3
+deteriorate	C1	v.			1add7c295e.mp3
+determination	B2	n.			a786ffa889.mp3
+determine	B1	v.			0ed1a1d894.mp3
+determined	B1	adj.			14d1e89cf6.mp3
+devastate	C1	v.			bbeb49a028.mp3
+develop	A2	v.			bfc6224515.mp3
+development	B1	n.			0ea738ce47.mp3
+device	A2	n.			5da53d3082.mp3
+devil	C1	n.			23b793694e.mp3
+devise	C1	v.			4369639020.mp3
+devote	B2	v.			f02e98eace.mp3
+diagnose	C1	v.			3ea7916b71.mp3
+diagnosis	C1	n.			a2c5ae4d31.mp3
+diagram	B1	n.			629c0493e8.mp3
+dialogue	A1	n.			54f1ec601d.mp3
+diamond	B1	n.			4d7264dc9c.mp3
+diary	A2	n.			5c322ffb06.mp3
+dictate	C1	v.			114e48708f.mp3
+dictator	C1	n.			190ed06a40.mp3
+dictionary	A1	n.			5da9e7c339.mp3
+die	A1	v.			d4ff13c211.mp3
+diet	A1	n.			27309768fb.mp3
+differ	B2	v.			367d998fc8.mp3
+difference	A1	n.			c8bdc28939.mp3
+different	A1	adj.			1f68573bfa.mp3
+differentiate	C1	v.			b2b6e62415.mp3
+differently	A2	adv.			f08ec5bcd6.mp3
+difficult	A1	adj.			204960b6c4.mp3
+difficulty	B1	n.			dbc9293ea5.mp3
+dig	B2	v.			9cb3a4f0fd.mp3
+digital	A2	adj.			c82d19765a.mp3
+dignity	C1	n.			e897fe6e9f.mp3
+dilemma	C1	n.			16a66aad9c.mp3
+dime	B2	n.	US		163f532f9a.mp3
+dimension	C1	n.			97512371d6.mp3
+diminish	C1	v.			080e3e9982.mp3
+dinner	A1	n.			a3e23486d1.mp3
+dip	C1	v.			fe64fa2e0d.mp3
+diplomat	C1	n.			b29bd725a5.mp3
+diplomatic	C1	n.			8e521b5756.mp3
+direct	A2	adj.			e359d30a46.mp3
+direct	B1	adv.			e359d30a46.mp3
+direct	B1	v.			e359d30a46.mp3
+direction	A2	n.			f6cdf1206b.mp3
+directly	B1	adv.			4cb67e8236.mp3
+director	A2	n.			ccab0ee5e1.mp3
+directory	C1	n.			40b1119fba.mp3
+dirt	B1	n.			fe978fb8fb.mp3
+dirty	A1	adj.			7f5cd68da0.mp3
+disability	B2	n.			c78ce873f6.mp3
+disabled	B2	adj.			1b023f2c7b.mp3
+disadvantage	B1	n.			ac0ebd1821.mp3
+disagree	A2	v.			53dd6ff5f7.mp3
+disagreement	B2	n.			09544bf3b9.mp3
+disappear	A2	v.			76c06176d2.mp3
+disappoint	B2	v.			a615bc5f52.mp3
+disappointed	B1	adj.			4e3af3a179.mp3
+disappointing	B1	adj.			535429cf53.mp3
+disappointment	B2	n.			023f93fc6f.mp3
+disaster	A2	n.			1e2000a062.mp3
+disastrous	C1	adj.			966bae470c.mp3
+disc	B2	n.	UK		ac03200328.mp3
+discard	C1	v.			6fdb1b24ae.mp3
+discharge	C1	v.			42326c126e.mp3
+discipline	B2	n.			fadf03e452.mp3
+disclose	C1	v.			a93ab35587.mp3
+disclosure	C1	n.			094e9d2f33.mp3
+discount	B1	n.			bd1370e63f.mp3
+discount	B2	v.			bd1370e63f.mp3
+discourage	B2	v.			2cb360e4ed.mp3
+discourse	C1	n.			7655beff3e.mp3
+discover	A2	v.			270fe3838f.mp3
+discovery	A2	n.			9d3bbf123a.mp3
+discretion	C1	n.			080441b886.mp3
+discrimination	C1	n.			988cfa85d4.mp3
+discuss	A1	v.			85897663e3.mp3
+discussion	A2	n.			577e1c9c3b.mp3
+disease	A2	n.			806dccfcd4.mp3
+dish	A1	n.			fa6303d2b1.mp3
+dishonest	B2	adj.			313cb05126.mp3
+disk	B2	n.	US		c6d3f5aba5.mp3
+dislike	B1	n.			071b7ad53c.mp3
+dislike	B1	v.			071b7ad53c.mp3
+dismiss	B2	v.			302ff0556f.mp3
+dismissal	C1	n.			e9ca1e85bd.mp3
+disorder	B2	n.			8bca459cfd.mp3
+displace	C1	v.			5c5752f49c.mp3
+display	B2	n.			61be617ba1.mp3
+display	B2	v.			61be617ba1.mp3
+disposal	C1	n.			934727e865.mp3
+dispose	C1	v.			674669aeeb.mp3
+dispute	C1	n.			1a167ee93e.mp3
+dispute	C1	v.			1a167ee93e.mp3
+disrupt	C1	v.			e05f49f831.mp3
+disruption	C1	n.			f47bdeb442.mp3
+dissolve	C1	v.			fa4d7cefe7.mp3
+distance	A2	n.			9360462fc9.mp3
+distant	B2	adj.			6a3252feb2.mp3
+distinct	B2	adj.			835fc6ee20.mp3
+distinction	C1	n.			48a7191b93.mp3
+distinctive	C1	adj.			de33b6e77a.mp3
+distinguish	B2	v.			2d04f93d75.mp3
+distort	C1	v.			ccfe1bfcb2.mp3
+distract	B2	v.			98ae19a394.mp3
+distress	C1	n.			f3209239f8.mp3
+distress	C1	v.			f3209239f8.mp3
+distribute	B2	v.			cf3795a6f2.mp3
+distribution	B2	n.			6887609691.mp3
+district	B1	n.	US		4238d3d5bb.mp3
+district	B2	n.	UK		4238d3d5bb.mp3
+disturb	B2	v.			36a5c4ad0d.mp3
+disturbing	C1	adj.			d04d777d5a.mp3
+dive	B2	n.			683ffc48b9.mp3
+dive	B2	v.			683ffc48b9.mp3
+diverse	B2	adj.			236d11d0cf.mp3
+diversity	B2	n.			8cceefcfcc.mp3
+divert	C1	v.			87ad5a8d1e.mp3
+divide	B1	v.			8b6eb1d7b8.mp3
+divide	B2	n.			8b6eb1d7b8.mp3
+divine	C1	adj.			858657800c.mp3
+division	B2	n.			76a38bd8f9.mp3
+divorce	B2	n.			63f43d1de8.mp3
+divorce	B2	v.			63f43d1de8.mp3
+divorced	A2	adj.			156e515c34.mp3
+do	A1	auxiliary v.			0c602efcd2.mp3
+do	A1	v.			0c602efcd2.mp3
+doctor	A1	n.			513055038e.mp3
+doctrine	C1	n.			476a217a4f.mp3
+document	A2	n.			71fdee84de.mp3
+document	B2	v.			71fdee84de.mp3
+documentary	B1	n.			dda4a210cf.mp3
+documentation	C1	n.			9d99384612.mp3
+dog	A1	n.			e83667d464.mp3
+dollar	A1	n.			6bf6732193.mp3
+domain	C1	n.			46d892401c.mp3
+domestic	B2	adj.			af5309a97b.mp3
+dominance	C1	n.			54bb9bf918.mp3
+dominant	B2	adj.			17d857d8ea.mp3
+dominate	B2	v.			9086b79857.mp3
+donate	B1	v.			ce7513da87.mp3
+donation	B2	n.			e63cf575ac.mp3
+donor	C1	n.			dce847ccd2.mp3
+door	A1	n.			6601b84392.mp3
+dose	C1	n.			eeb424fbba.mp3
+dot	B2	n.			889a6a1fb4.mp3
+double	A2	adj.			3661ad6c84.mp3
+double	A2	det.			3661ad6c84.mp3
+double	A2	pron.			3661ad6c84.mp3
+double	A2	v.			3661ad6c84.mp3
+double	B1	adv.			3661ad6c84.mp3
+doubt	B1	n.			9588656d96.mp3
+doubt	B1	v.			9588656d96.mp3
+down	A1	adv.			3490ccbdad.mp3
+down	A1	prep.			3490ccbdad.mp3
+download	A2	n.			2e5a731e90.mp3
+download	A2	v.			2e5a731e90.mp3
+downstairs	A1	adv.			85b65bfb3f.mp3
+downstairs	A2	adj.			85b65bfb3f.mp3
+downtown	A2	adj.	US		c1b4577de6.mp3
+downtown	A2	adv.	US		c1b4577de6.mp3
+downtown	A2	n.	US		c1b4577de6.mp3
+downtown	B2	adj.	UK		c1b4577de6.mp3
+downtown	B2	adv.	UK		c1b4577de6.mp3
+downtown	B2	n.	UK		c1b4577de6.mp3
+downward	B2	adj.	US		000b225956.mp3
+downward	B2	adv.	US		000b225956.mp3
+downwards	B2	adv.	UK		332e32c323.mp3
+dozen	B2	det.			cf498cb8c7.mp3
+dozen	B2	n.			cf498cb8c7.mp3
+draft	B2	n.			ea9016f3ca.mp3
+draft	B2	v.			ea9016f3ca.mp3
+drag	B2	v.			46e7f71dcd.mp3
+drain	C1	v.			62f9deb3bc.mp3
+drama	A2	n.			9f3439c777.mp3
+dramatic	B2	adj.			602308b94b.mp3
+dramatically	B2	adv.			b2913bb8c7.mp3
+draw	A1	v.			c2b9ff5da6.mp3
+drawing	A2	n.			0843b7f276.mp3
+dream	A2	n.			10157aaac8.mp3
+dream	A2	v.			10157aaac8.mp3
+dress	A1	n.			6bd9e9b0fd.mp3
+dress	A1	v.			6bd9e9b0fd.mp3
+dressed	B1	adj.			a955e8771f.mp3
+drift	C1	v.			d40284d550.mp3
+drink	A1	n.			33fc9deaee.mp3
+drink	A1	v.			33fc9deaee.mp3
+drive	A1	v.			4f285536a6.mp3
+drive	A2	n.			4f285536a6.mp3
+driver	A1	n.			a64678b049.mp3
+driving	A2	n.			796e75e364.mp3
+driving	C1	adj.			796e75e364.mp3
+drop	A2	v.			f5e286cfdf.mp3
+drop	B1	n.			f5e286cfdf.mp3
+drought	B2	n.			034c7454ab.mp3
+drown	C1	v.			78f3ccbb00.mp3
+drug	A2	n.			f1f98af497.mp3
+drum	B1	n.			267942fbd4.mp3
+drunk	B1	adj.			34ba610e42.mp3
+dry	A2	adj.			2426b3b90f.mp3
+dry	A2	v.			2426b3b90f.mp3
+dual	C1	adj.			12aef40f9c.mp3
+dub	C1	v.			ce6a13817c.mp3
+due	B1	adj.			f4014a8005.mp3
+dull	B2	adj.			2355eef14f.mp3
+dumb	C1	adj.			03e7dbec69.mp3
+dump	B2	v.			493e3faeed.mp3
+duo	C1	n.			410c2e08f7.mp3
+duration	B2	n.			7b1a971cdb.mp3
+during	A1	prep.			55dd2ffaa2.mp3
+dust	B1	n.			27961d3f85.mp3
+duty	B1	n.			9bde71e948.mp3
+dynamic	B2	adj.			490ba735ba.mp3
+dynamic	C1	n.			490ba735ba.mp3
+each	A1	adv.			501f00b2d7.mp3
+each	A1	det.			501f00b2d7.mp3
+each	A1	pron.			501f00b2d7.mp3
+eager	B2	adj.	US		9ce4445daa.mp3
+eager	C1	adj.	UK		9ce4445daa.mp3
+ear	A1	n.			d4e3bec8a6.mp3
+early	A1	adj.			5ea000cfaf.mp3
+early	A1	adv.			5ea000cfaf.mp3
+earn	A2	v.			ce7fa6b39a.mp3
+earnings	C1	n.			53a6d071c4.mp3
+earth	A2	n.			c2a268408f.mp3
+earthquake	B1	n.			779555a3ee.mp3
+ease	C1	n.			0d3e5afcd4.mp3
+ease	C1	v.			0d3e5afcd4.mp3
+easily	A2	adv.			93be9de733.mp3
+east	A1	adj.			026313c62a.mp3
+east	A1	adv.			026313c62a.mp3
+east	A1	n.			026313c62a.mp3
+eastern	B1	adj.			e0962d23d0.mp3
+easy	A1	adj.			0e5b0e8571.mp3
+eat	A1	v.			428dfde4b1.mp3
+echo	C1	n.			20a74b10bc.mp3
+echo	C1	v.			20a74b10bc.mp3
+ecological	C1	adj.			556da30ae2.mp3
+economic	B1	adj.			764817d5cf.mp3
+economics	B2	n.			ef626dd155.mp3
+economist	B2	n.			938f5cf81b.mp3
+economy	B1	n.			0aa0ff8781.mp3
+edge	B1	n.			8c525313cd.mp3
+edit	B2	v.			a0ad986196.mp3
+edition	B2	n.			800f4c6b4e.mp3
+editor	B1	n.			502d67d401.mp3
+editorial	B2	adj.			cf58d87ce8.mp3
+educate	B1	v.			b60832656f.mp3
+educated	B1	adj.			aded17aebf.mp3
+education	A2	n.			605bbad3f6.mp3
+educational	B1	adj.			09bbdf8f76.mp3
+educator	C1	n.			f76df7da39.mp3
+effect	A2	n.			8ff4ae0d19.mp3
+effective	B1	adj.			39ce611352.mp3
+effectively	B1	adv.			5bfa1dc2e8.mp3
+effectiveness	C1	n.			7e5fbaf940.mp3
+efficiency	C1	n.			6c62ca9935.mp3
+efficient	B2	adj.			9f280f4d02.mp3
+efficiently	B2	adv.			e8d6c2d01b.mp3
+effort	B1	n.			445f669066.mp3
+egg	A1	n.			153fee3c15.mp3
+ego	C1	n.			b24256d3f1.mp3
+eight	A1	number			f3fb7d077f.mp3
+eighteen	A1	number			f2c5a187db.mp3
+eighty	A1	number			d41302984a.mp3
+either	A2	adv.			b230f7ed39.mp3
+either	A2	det.			b230f7ed39.mp3
+either	A2	pron.			b230f7ed39.mp3
+elaborate	C1	adj.			4060f01ddd.mp3
+elbow	B2	n.			55df64f6ff.mp3
+elderly	B2	adj.			9ce13be6e6.mp3
+elect	B2	v.			ef99c9ecd0.mp3
+election	B1	n.			17405086dd.mp3
+electoral	C1	adj.			21a2fabd71.mp3
+electric	A2	adj.			b25771d44e.mp3
+electrical	A2	adj.			b4466b8f61.mp3
+electricity	A2	n.			78ff776883.mp3
+electronic	A2	adj.			7e451181c7.mp3
+electronics	B2	n.			1f834a466f.mp3
+elegant	B2	adj.			2baaf5c322.mp3
+element	B1	n.			4a772de8d2.mp3
+elementary	B2	adj.			3beca67ba1.mp3
+elephant	A1	n.			e2281ac7b9.mp3
+elevate	C1	v.			cafd7095b2.mp3
+elevator	A2	n.	US		e6db01e074.mp3
+eleven	A1	number			2c356423ac.mp3
+eligible	C1	adj.			08c7e33594.mp3
+eliminate	B2	v.			cce1433097.mp3
+elite	C1	n.			19f0a1a6d1.mp3
+else	A1	adv.			3a1c487780.mp3
+elsewhere	B2	adv.			2b89a0cc39.mp3
+email	A1	n.			46648b2c6a.mp3
+email	A1	v.			46648b2c6a.mp3
+embark	C1	v.			4f8639f9ba.mp3
+embarrassed	B1	adj.			39fe4ddc2f.mp3
+embarrassing	B1	adj.			f4b253925d.mp3
+embarrassment	C1	n.			b7368c3107.mp3
+embassy	C1	n.			7a2199ce13.mp3
+embed	C1	v.			e783eb4d44.mp3
+embody	C1	v.			9db49df84b.mp3
+embrace	B2	v.			5b75a4eca1.mp3
+emerge	B2	v.			e1ef799491.mp3
+emergence	C1	n.			0a43b2e029.mp3
+emergency	B1	n.			f0020e06be.mp3
+emission	B2	n.			181465b741.mp3
+emotion	B1	n.			421ff4b993.mp3
+emotional	B2	adj.			7a662ea059.mp3
+emotionally	B2	adv.			0af7cebc1e.mp3
+emphasis	B2	n.			35371241fc.mp3
+emphasize	B2	v.			956d80af64.mp3
+empire	B2	n.			5beb9ac8dc.mp3
+empirical	C1	adj.			563718afa2.mp3
+employ	A2	v.			a6f62cd14b.mp3
+employee	A2	n.			925febe3c8.mp3
+employer	A2	n.			642a5ed3cb.mp3
+employment	B1	n.			32e7c50a0b.mp3
+empower	C1	v.			038d975a4d.mp3
+empty	A2	adj.			b6b02b6aad.mp3
+empty	B1	v.			b6b02b6aad.mp3
+enable	B2	v.			95db1bf1d6.mp3
+enact	C1	v.			1479539aed.mp3
+encompass	C1	v.			f26f829b35.mp3
+encounter	B2	n.			40dffbb71e.mp3
+encounter	B2	v.			40dffbb71e.mp3
+encourage	B1	v.			26fab9332b.mp3
+encouragement	C1	n.			726799c03b.mp3
+encouraging	C1	adj.			cfc70c231a.mp3
+end	A1	n.			17a61fec46.mp3
+end	A1	v.			17a61fec46.mp3
+endeavor	C1	n.	US		f8322a567a.mp3
+endeavour	C1	n.	UK		f69747abfe.mp3
+ending	A2	n.			a3f04a11f2.mp3
+endless	C1	adj.			466a97efb4.mp3
+endorse	C1	v.			822b635e73.mp3
+endorsement	C1	n.			e919e61a88.mp3
+endure	C1	v.			9fee8d7c5e.mp3
+enemy	B1	n.			20a827a2d9.mp3
+energy	A2	n.			179e54b3f1.mp3
+enforce	C1	v.			5aa8cd8469.mp3
+enforcement	C1	n.			68cfc3cf65.mp3
+engage	B2	v.			e2adf9bbcb.mp3
+engaged	B1	adj.			413e7acb69.mp3
+engagement	C1	n.			88fc142a1f.mp3
+engaging	C1	adj.			9022845bb7.mp3
+engine	A2	n.			cafbbddd68.mp3
+engineer	A2	n.			0c568a1988.mp3
+engineering	B1	n.			8ef77420ee.mp3
+enhance	B2	v.			52ce49305c.mp3
+enjoy	A1	v.			4a7cdc7fff.mp3
+enjoyable	B2	adj.			8e0cca2b32.mp3
+enormous	A2	adj.			07e61f705e.mp3
+enough	A1	adv.			bbaff29923.mp3
+enough	A1	det.			bbaff29923.mp3
+enough	A1	pron.			bbaff29923.mp3
+enquire	C1	v.	UK		f145647084.mp3
+enquiry	B2	n.	UK		90cf942135.mp3
+enrich	C1	v.			1946a7d593.mp3
+enrol	C1	v.	UK		17a916caef.mp3
+enroll	C1	v.	US		c832c90ce0.mp3
+ensue	C1	v.			e81adc5905.mp3
+ensure	B2	v.			6996c56c30.mp3
+enter	A2	v.			fc2ad0e36a.mp3
+enterprise	C1	n.			bdb8ce7f48.mp3
+entertain	B1	v.			cb72124a4c.mp3
+entertaining	B2	adj.			4190b55bfa.mp3
+entertainment	B1	n.			b4f53f3a03.mp3
+enthusiasm	B2	n.			95d4121f9e.mp3
+enthusiast	C1	n.			8cb7b9c7e2.mp3
+enthusiastic	B2	adj.			2d98682dbd.mp3
+entire	B2	adj.			4defbb3027.mp3
+entirely	B2	adv.			0d61fc418d.mp3
+entitle	C1	v.			aa2ce00af8.mp3
+entity	C1	n.			5b8abe719a.mp3
+entrance	B1	n.			cdc516cd51.mp3
+entrepreneur	B2	n.			b4a7d740ef.mp3
+entry	B1	n.			ad3a44cf38.mp3
+envelope	B2	n.			9138c9d559.mp3
+environment	A2	n.			d15edbb2ee.mp3
+environmental	B1	adj.			ddea9f6cd5.mp3
+epidemic	C1	n.			8f58bce053.mp3
+episode	B1	n.			e61856e1c2.mp3
+equal	B1	adj.			65849a9c6a.mp3
+equal	B1	v.			65849a9c6a.mp3
+equal	B2	n.			65849a9c6a.mp3
+equality	C1	n.			b5fce79c04.mp3
+equally	B1	adv.			b3f83bc3ba.mp3
+equation	C1	n.			ad09a12843.mp3
+equip	B2	v.			b68fd6b657.mp3
+equipment	A2	n.			f0187bf1e5.mp3
+equivalent	B2	adj.			9caab413a4.mp3
+equivalent	B2	n.			9caab413a4.mp3
+era	B2	n.			fd3ac1ebfd.mp3
+erect	C1	v.			d98994cf06.mp3
+error	A2	n.			36733d32fb.mp3
+erupt	B2	v.			ba0b627d2c.mp3
+escalate	C1	v.			11e7af0efc.mp3
+escape	B1	n.			41ae3ffed3.mp3
+escape	B1	v.			41ae3ffed3.mp3
+especially	A2	adv.			0791ad49a7.mp3
+essay	A2	n.			1943cba681.mp3
+essence	C1	n.			3dbc839fcc.mp3
+essential	B1	adj.			64fcde9990.mp3
+essentially	B2	adv.			0c3bf37c9d.mp3
+establish	B2	v.			411d8bc597.mp3
+establishment	C1	n.			87d1b211f7.mp3
+estate	B2	n.			694164b79f.mp3
+estimate	B2	n.			bfaa4b0da1.mp3
+estimate	B2	v.			bfaa4b0da1.mp3
+eternal	C1	adj.			35762c63e1.mp3
+ethic	B2	n.			922e5b9962.mp3
+ethical	B2	adj.			27aefcec97.mp3
+ethnic	B2	adj.			5831b10fbf.mp3
+euro	A1	n.			86286bbbb3.mp3
+evacuate	C1	v.			8afa30d2a5.mp3
+evaluate	B2	v.			e96cf48d07.mp3
+evaluation	B2	n.			a0f70893e6.mp3
+even	A1	adv.			0413aaed1d.mp3
+even	B2	adj.			0413aaed1d.mp3
+evening	A1	n.			e7d94cfce6.mp3
+event	A1	n.			b39d4bd86b.mp3
+eventually	B1	adv.			58be4945d7.mp3
+ever	A1	adv.			eeeaf49880.mp3
+every	A1	det.			fad6a2644b.mp3
+everybody	A1	pron.			7d3b102c79.mp3
+everyday	A2	adj.			7842256157.mp3
+everyone	A1	pron.			2855dee4e9.mp3
+everything	A1	pron.			8d94dc3752.mp3
+everywhere	A2	adv.			7779021263.mp3
+evidence	A2	n.			e8911259ae.mp3
+evident	B2	adj.			1edd2cfa08.mp3
+evil	B2	adj.			cfd6c82b13.mp3
+evil	B2	n.			cfd6c82b13.mp3
+evoke	C1	v.			f75040880f.mp3
+evolution	B2	n.			7796bb9a2c.mp3
+evolutionary	C1	adj.			f59cb9db89.mp3
+evolve	B2	v.			ef79308f89.mp3
+exact	A2	adj.			e429170f0a.mp3
+exactly	A2	adv.			b20d7365de.mp3
+exaggerate	C1	v.			62bbe0e0fe.mp3
+exam	A1	n.			7cecab234d.mp3
+examination	B2	n.			d2cca42543.mp3
+examine	B1	v.			10cac5e4f9.mp3
+example	A1	n.			474befe98f.mp3
+exceed	B2	v.			330f4481a9.mp3
+excellence	C1	n.			703da4977e.mp3
+excellent	A2	adj.			621b8b58a4.mp3
+except	A2	prep.			16947d1e26.mp3
+except	B1	conj.			16947d1e26.mp3
+exception	B2	n.			e3932d7bd5.mp3
+exceptional	C1	adj.			d202fd5095.mp3
+excess	C1	adj.			d54ac72812.mp3
+excess	C1	n.			d54ac72812.mp3
+excessive	B2	adj.			38eb76ac9b.mp3
+exchange	B1	n.			1614d46d9f.mp3
+exchange	B1	v.			1614d46d9f.mp3
+excited	A1	adj.			9a2549bb51.mp3
+excitement	B1	n.			34018bf7b6.mp3
+exciting	A1	adj.			43232d8528.mp3
+exclude	B2	v.			fcda2acf72.mp3
+exclusion	C1	n.			c6877d2540.mp3
+exclusive	C1	adj.			0ca1e3a472.mp3
+exclusively	C1	adv.			f0555aa8db.mp3
+excuse	B2	n.			9afcbcce72.mp3
+excuse	B2	v.			9afcbcce72.mp3
+execute	C1	v.			92fb18a706.mp3
+execution	C1	n.			ca15e142b4.mp3
+executive	B2	adj.			d949bfa4db.mp3
+executive	B2	n.			d949bfa4db.mp3
+exercise	A1	n.			9e741b9847.mp3
+exercise	A1	v.			9e741b9847.mp3
+exert	C1	v.			81333bda26.mp3
+exhibit	B2	n.	UK		93f9d8d905.mp3
+exhibit	B2	n.	US		93f9d8d905.mp3
+exhibit	B2	v.	UK		93f9d8d905.mp3
+exhibit	B2	v.	US		93f9d8d905.mp3
+exhibition	B1	n.			e991ee59ee.mp3
+exile	C1	n.			9ab325fcbc.mp3
+exist	A2	v.			31aecbbdaf.mp3
+existence	B2	n.			1c46ebe59e.mp3
+exit	B1	n.	US		87876b6cd8.mp3
+exit	B2	n.	UK		87876b6cd8.mp3
+exit	B2	v.	US		87876b6cd8.mp3
+exit	C1	v.	UK		87876b6cd8.mp3
+exotic	B2	adj.			6c4c1c2c2e.mp3
+expand	B1	v.			6bf472ecb6.mp3
+expansion	B2	n.			77c1b46243.mp3
+expect	A2	v.			d7782238a0.mp3
+expectation	B2	n.			c0687d1aa5.mp3
+expected	B1	adj.			367fd9689f.mp3
+expedition	B1	n.	UK		4cd2eaef5d.mp3
+expedition	B2	n.	US		4cd2eaef5d.mp3
+expenditure	C1	n.			8f7090721d.mp3
+expense	B2	n.			ab5bb07fb8.mp3
+expensive	A1	adj.			16ff6f6f79.mp3
+experience	A2	n.			141ad13100.mp3
+experience	B1	v.			141ad13100.mp3
+experienced	B1	adj.			6a7f6cba04.mp3
+experiment	A2	n.			0fa4eb3c2e.mp3
+experiment	B1	v.			0fa4eb3c2e.mp3
+experimental	C1	adj.			e0b0f36e96.mp3
+expert	A2	adj.			9467801b24.mp3
+expert	A2	n.			9467801b24.mp3
+expertise	B2	n.			8152c3c836.mp3
+expire	C1	v.			60f004617c.mp3
+explain	A1	v.			2044a8f155.mp3
+explanation	A2	n.			87e34e966c.mp3
+explicit	C1	adj.			0d50055084.mp3
+explicitly	C1	adv.			5690a67607.mp3
+explode	B1	v.			4f105d0e8e.mp3
+exploit	B2	v.			4d46d64d85.mp3
+exploitation	C1	n.			7421276c42.mp3
+exploration	B2	n.			9544ceae9e.mp3
+explore	B1	v.			2a4aa9c675.mp3
+explosion	B1	n.			fbd9eaa047.mp3
+explosive	C1	adj.			2ebe702ad0.mp3
+explosive	C1	n.			2ebe702ad0.mp3
+export	B1	n.			a78f1eb6ce.mp3
+export	B1	v.			a78f1eb6ce.mp3
+expose	B2	v.			6c7585098c.mp3
+exposure	B2	n.			a689aad24f.mp3
+express	A2	v.			e0d38d228f.mp3
+expression	A2	n.			f605174661.mp3
+extend	B2	v.			0dd4d754b3.mp3
+extension	B2	n.			c22b7a8fa3.mp3
+extensive	B2	adj.			81a61395c3.mp3
+extensively	B2	adv.			addd8139e1.mp3
+extent	B2	n.			8942fde6fd.mp3
+external	B2	adj.			e50bd71cba.mp3
+extra	A1	adj.			de07d6b663.mp3
+extra	B1	adv.			de07d6b663.mp3
+extra	B1	n.			de07d6b663.mp3
+extract	B2	n.			5348125717.mp3
+extract	C1	v.			5348125717.mp3
+extraordinary	B2	adj.			d91939c06b.mp3
+extreme	A2	adj.			acfdd5a43c.mp3
+extreme	B2	n.			acfdd5a43c.mp3
+extremely	A2	adv.			4c5a7af0af.mp3
+extremist	C1	n.			0089fb7e6b.mp3
+eye	A1	n.			8ace15e904.mp3
+fabric	B2	n.			4a2a64a617.mp3
+fabulous	B2	adj.			2751fa3400.mp3
+face	A1	n.			db866e1b41.mp3
+face	B1	v.			db866e1b41.mp3
+facilitate	C1	v.			64c4b3a8ce.mp3
+facility	B2	n.			3f13496bfe.mp3
+fact	A1	n.			ba79699ac9.mp3
+faction	C1	n.			2cd56578ad.mp3
+factor	A2	n.			6952106bb1.mp3
+factory	A2	n.			9a272e4b56.mp3
+faculty	B2	n.	US		e80ce609c1.mp3
+faculty	C1	n.	UK		e80ce609c1.mp3
+fade	C1	v.			622a79f224.mp3
+fail	A2	v.			42d8091d06.mp3
+failed	B2	adj.			14afb8b942.mp3
+failure	B2	n.			67cedbd29b.mp3
+fair	A2	adj.			9b6f44e724.mp3
+fairly	B1	adv.			b1f55a0478.mp3
+fairness	C1	n.			6400e660d3.mp3
+faith	B2	n.			7af502736a.mp3
+fake	B2	adj.			99595131d1.mp3
+fall	A1	n.	US		b0a3010165.mp3
+fall	A1	v.	UK		b0a3010165.mp3
+fall	A1	v.	US		b0a3010165.mp3
+fall	A2	n.	UK		b0a3010165.mp3
+false	A1	adj.			28a23c9281.mp3
+fame	B2	n.			28faae49f7.mp3
+familiar	B1	adj.			fd18e1e014.mp3
+family	A1	adj.			5fb5fc130b.mp3
+family	A1	n.			5fb5fc130b.mp3
+famous	A1	adj.			6b4274c0d6.mp3
+fan	A2	n.			2b5847a138.mp3
+fancy	B1	adj.	UK		fc9db57041.mp3
+fancy	B1	adj.	US		fc9db57041.mp3
+fancy	B1	v.	UK		fc9db57041.mp3
+fantastic	A1	adj.			2913dc7da5.mp3
+fantasy	B2	n.			70b7acecaf.mp3
+far	A1	adv.			e84859cf64.mp3
+far	B1	adj.			e84859cf64.mp3
+fare	B2	n.			d92a4b5768.mp3
+farm	A1	n.			a41eef8d0c.mp3
+farm	A2	v.			a41eef8d0c.mp3
+farmer	A1	n.			e02758367d.mp3
+farming	A2	n.			a6356ecff1.mp3
+fascinating	B1	adj.			ff4eabf0c0.mp3
+fashion	A2	n.			e44a61190d.mp3
+fashionable	B1	adj.			b9f3a308ab.mp3
+fast	A1	adj.			76a1f92678.mp3
+fast	A1	adv.			76a1f92678.mp3
+fasten	B1	v.			043eeacbfa.mp3
+fat	A1	adj.			83cac1a4f1.mp3
+fat	A2	n.			83cac1a4f1.mp3
+fatal	C1	adj.			dba183af29.mp3
+fate	C1	n.			11f26108db.mp3
+father	A1	n.			2fd66c30ea.mp3
+fault	B2	n.			67ed2e4743.mp3
+favor	B1	n.	US		2dba495ffc.mp3
+favor	B2	v.	US		2dba495ffc.mp3
+favorable	C1	adj.	US		a502d3b4ef.mp3
+favorite	A1	adj.	US		4a43edf15a.mp3
+favorite	A1	n.	US		4a43edf15a.mp3
+favour	B1	n.	UK		4ac7703bc2.mp3
+favour	B2	v.	UK		4ac7703bc2.mp3
+favourable	C1	adj.	UK		f7b06c73eb.mp3
+favourite	A1	adj.	UK		7c4b39fa64.mp3
+favourite	A1	n.	UK		7c4b39fa64.mp3
+fear	A2	n.			0bcfd87d08.mp3
+fear	B1	v.			0bcfd87d08.mp3
+feat	C1	n.			7620dcb333.mp3
+feather	B2	n.			4e268232d7.mp3
+feature	A2	n.			5d5cb3741b.mp3
+feature	B1	v.			5d5cb3741b.mp3
+federal	B1	adj.	US		630c2c5180.mp3
+federal	B2	adj.	UK		630c2c5180.mp3
+fee	B2	n.			889593b02e.mp3
+feed	A2	v.			b63c5346a9.mp3
+feed	B2	n.			b63c5346a9.mp3
+feedback	B2	n.			d90cdee3be.mp3
+feel	A1	v.			995b6206f4.mp3
+feel	B2	n.			995b6206f4.mp3
+feeling	A1	n.			0e46d74779.mp3
+fellow	B2	adj.			d369f8ff4d.mp3
+felony	C1	n.	US		d1e505d6e1.mp3
+female	A2	adj.			3b8d2f948b.mp3
+female	A2	n.			3b8d2f948b.mp3
+feminist	C1	adj.			6694b41f0e.mp3
+feminist	C1	n.			6694b41f0e.mp3
+fence	B1	n.			cbbc45ef44.mp3
+festival	A1	n.			739f8e5b5c.mp3
+fever	A2	n.	US		3dce711453.mp3
+fever	B2	n.	UK		3dce711453.mp3
+few	A1	adj.			67fa070177.mp3
+few	A1	det.			67fa070177.mp3
+few	A1	pron.			67fa070177.mp3
+fiber	C1	n.	US		376c519a6a.mp3
+fibre	C1	n.	UK		d30ce84d5c.mp3
+fiction	A2	n.			4ebcaa4d4a.mp3
+field	A2	n.			224050202f.mp3
+fierce	C1	adj.			071bbbe2f9.mp3
+fifteen	A1	number			5f074e8250.mp3
+fifth	A1	number			ced73ea38a.mp3
+fifty	A1	number			25b7e763d9.mp3
+fight	A2	n.			7b55e04076.mp3
+fight	A2	v.			7b55e04076.mp3
+fighting	B1	n.			123012d828.mp3
+figure	A2	n.			6c1068ea66.mp3
+figure	B2	v.			6c1068ea66.mp3
+file	B1	n.			5ca8c59ec9.mp3
+file	B2	v.			5ca8c59ec9.mp3
+fill	A1	v.			e3376f5b1a.mp3
+film	A1	n.	UK		bd21f50b12.mp3
+film	A2	n.	US		bd21f50b12.mp3
+film	A2	v.	UK		bd21f50b12.mp3
+film	A2	v.	US		bd21f50b12.mp3
+film-maker	C1	n.	UK		291af6806a.mp3
+filmmaker	C1	n.	US		d66334a980.mp3
+filter	C1	n.			f3c5923573.mp3
+filter	C1	v.			f3c5923573.mp3
+final	A1	adj.			f806722998.mp3
+final	A2	n.			f806722998.mp3
+finally	A2	adv.			e9c9ca8135.mp3
+finance	B2	n.			ed42ea3e91.mp3
+finance	B2	v.			ed42ea3e91.mp3
+financial	B1	adj.			d79ebf33a8.mp3
+find	A1	v.			0f6fa29ec5.mp3
+finding	B2	n.			45c77edffc.mp3
+fine	A1	adj.			6d96b3b195.mp3
+fine	C1	n.			6d96b3b195.mp3
+fine	C1	v.			6d96b3b195.mp3
+finger	A2	n.			29ad733a1e.mp3
+finish	A1	v.			e8f9924f1e.mp3
+finish	A2	n.			e8f9924f1e.mp3
+fire	A1	n.	UK		fd6f9186b2.mp3
+fire	A1	n.	US		fd6f9186b2.mp3
+fire	A2	v.	US		fd6f9186b2.mp3
+fire	B1	v.	UK		fd6f9186b2.mp3
+firearm	C1	n.			315133afa8.mp3
+firefighter	B2	n.			ca365d4438.mp3
+firework	B2	n.			ebe01a535e.mp3
+firm	B2	adj.			0d286a1671.mp3
+firm	B2	n.			0d286a1671.mp3
+firmly	B2	adv.			e4e0762249.mp3
+first	A1	adv.			0d2affee2e.mp3
+first	A1	det.			0d2affee2e.mp3
+first	A1	number			0d2affee2e.mp3
+first	A2	n.			0d2affee2e.mp3
+firstly	A2	adv.	UK		3be0c46a2c.mp3
+fiscal	C1	adj.	US		abf8b21f38.mp3
+fish	A1	n.			c0d733c712.mp3
+fish	A2	v.			c0d733c712.mp3
+fishing	A2	n.			777f17fdee.mp3
+fit	A2	adj.			817ec4b312.mp3
+fit	A2	v.			817ec4b312.mp3
+fit	C1	n.			817ec4b312.mp3
+fitness	B1	n.			a8eaf0959a.mp3
+five	A1	number			575203c3db.mp3
+fix	A2	v.			a4198cfdda.mp3
+fix	B2	n.			a4198cfdda.mp3
+fixed	B1	adj.			f88d5a13f8.mp3
+fixture	C1	n.	UK		4dd50de6ed.mp3
+flag	B1	n.			ff2b7c08f0.mp3
+flame	B2	n.			a69068f623.mp3
+flash	B2	n.			a41fbe7764.mp3
+flash	B2	v.			a41fbe7764.mp3
+flat	A1	n.	UK		11458f7723.mp3
+flat	A2	adj.	UK		11458f7723.mp3
+flat	A2	adj.	US		11458f7723.mp3
+flavor	B2	n.	US		63b9db2828.mp3
+flavour	B2	n.	UK		7b736e3ddf.mp3
+flaw	C1	n.			9d15b55f89.mp3
+flawed	C1	adj.			c70bdb3453.mp3
+flee	C1	v.			ce9951bd30.mp3
+fleet	C1	n.			6f4b0e701a.mp3
+flesh	C1	n.			3538c62b78.mp3
+flexibility	C1	n.			6a736e24cd.mp3
+flexible	B2	adj.			5d659279b9.mp3
+flight	A1	n.			bf7a354897.mp3
+float	B2	v.			1dbbb94028.mp3
+flood	B1	n.			1d85c7728d.mp3
+flood	B1	v.			1d85c7728d.mp3
+floor	A1	n.			90ffa5ecca.mp3
+flour	B1	n.			bf5cc203ae.mp3
+flourish	C1	v.			38e15acb6d.mp3
+flow	B1	n.			8a8ae2f0b9.mp3
+flow	B1	v.			8a8ae2f0b9.mp3
+flower	A1	n.			8711768126.mp3
+flu	A2	n.			c1bd3f0240.mp3
+fluid	C1	n.			08240705e2.mp3
+fly	A1	v.			39e12d1685.mp3
+fly	A2	n.			39e12d1685.mp3
+flying	A2	adj.			8890b085b4.mp3
+flying	A2	n.			8890b085b4.mp3
+focus	A2	n.			92d2f71347.mp3
+focus	A2	v.			92d2f71347.mp3
+fold	B1	v.			6808e9dd60.mp3
+fold	B2	n.			6808e9dd60.mp3
+folding	B2	adj.			8dd15bfdae.mp3
+folk	B1	adj.			fd820d6542.mp3
+folk	B1	n.			fd820d6542.mp3
+follow	A1	v.			f065dcf83f.mp3
+following	A2	adj.			de205a9d97.mp3
+following	B1	n.			de205a9d97.mp3
+following	B2	prep.			de205a9d97.mp3
+fond	B2	adj.			30eccad1af.mp3
+food	A1	n.			5083ac1664.mp3
+fool	B2	n.			d6c295ca7c.mp3
+foot	A1	n.			64355a1de5.mp3
+footage	C1	n.			da28c56d01.mp3
+football	A1	n.			e1c103df5d.mp3
+for	A1	prep.			8e4423689d.mp3
+forbid	B2	v.			bbc4ba8127.mp3
+force	B1	n.			20707bcc18.mp3
+force	B1	v.			20707bcc18.mp3
+forecast	B2	n.			3839d3f81f.mp3
+forecast	B2	v.			3839d3f81f.mp3
+foreign	A2	adj.			8c57aff549.mp3
+foreigner	C1	n.			19cf8dbcd7.mp3
+forest	A2	n.			dca7958f28.mp3
+forever	B1	adv.			305f8a00c9.mp3
+forge	C1	v.			1e16724285.mp3
+forget	A1	v.			2411e8c678.mp3
+forgive	B2	v.			ab780dd424.mp3
+fork	A2	n.			f995df2124.mp3
+form	A1	n.			4534454dc0.mp3
+form	A1	v.			4534454dc0.mp3
+formal	A2	adj.			40ae61743f.mp3
+format	B2	n.			2ce958476d.mp3
+formation	B2	n.			040896bb24.mp3
+former	B2	adj.			a1d5b6385f.mp3
+formerly	B2	adv.			d4fd44c76d.mp3
+formula	C1	n.			de5e00795f.mp3
+formulate	C1	v.			f4d3e15128.mp3
+forth	C1	adv.			a97a9768de.mp3
+forthcoming	C1	adj.			903e0636c5.mp3
+fortunate	B2	adj.			c1ef748a35.mp3
+fortunately	A2	adv.			79fd76f28c.mp3
+fortune	B2	n.			af6eaa2645.mp3
+forty	A1	number			d02a675ea4.mp3
+forum	B2	n.			cc4b1fb7aa.mp3
+forward	A2	adv.			c490575acc.mp3
+forward	B2	adj.			c490575acc.mp3
+fossil	B2	n.			47388590ac.mp3
+foster	C1	v.			2c66b21f25.mp3
+found	B2	v.			52aab97793.mp3
+foundation	B2	n.			5fdbcbdb42.mp3
+founder	B2	n.			b0d0aabfc9.mp3
+four	A1	number			358f767136.mp3
+fourteen	A1	number			0e7f427ec5.mp3
+fourth	A1	number			0052421ed4.mp3
+fraction	B2	n.			daa0540a69.mp3
+fragile	C1	adj.			4a3cd961de.mp3
+fragment	B2	n.			e166b196c5.mp3
+frame	B1	n.			48c967d0a2.mp3
+frame	B1	v.			48c967d0a2.mp3
+framework	B2	n.			352baa2f0b.mp3
+franchise	C1	n.			4d6fc1e0dd.mp3
+frankly	C1	adv.			0023cf1775.mp3
+fraud	B2	n.			752f369954.mp3
+free	A1	adj.			37189f1440.mp3
+free	A2	adv.			37189f1440.mp3
+free	B2	v.			37189f1440.mp3
+freedom	B2	n.			66db97c644.mp3
+freely	B2	adv.			d8138055c7.mp3
+freeze	B1	v.			6a56ad5f0a.mp3
+frequency	B2	n.			9273aa1192.mp3
+frequent	B2	adj.			ba60f7a722.mp3
+frequently	B1	adv.			7eae270e99.mp3
+fresh	A2	adj.			25028fc143.mp3
+freshman	C1	n.	US		af57aac25c.mp3
+fridge	A2	n.	UK		00cbdffe4b.mp3
+friend	A1	n.			0b28af8040.mp3
+friendly	A1	adj.			a1144a231b.mp3
+friendship	B1	n.			9f4a24a00e.mp3
+frighten	B1	v.			1b00e1298c.mp3
+frightened	B1	adj.			f57a3eb0de.mp3
+frightening	B1	adj.			695adbae2e.mp3
+frog	A2	n.			2fc4d4d479.mp3
+from	A1	prep.			89af3e21ae.mp3
+front	A1	adj.			7ead342412.mp3
+front	A1	n.			7ead342412.mp3
+frozen	B1	adj.			3ec61b5ad5.mp3
+fruit	A1	n.			ba81382b19.mp3
+frustrated	C1	adj.			532aac14bd.mp3
+frustrating	C1	adj.			eb56bb769f.mp3
+frustration	C1	n.			dcf883e7e2.mp3
+fry	B1	v.			43db3745f7.mp3
+fuel	B1	n.			8fda2c2508.mp3
+fuel	B2	v.			8fda2c2508.mp3
+fulfil	B2	v.	UK		8c384b935a.mp3
+fulfill	B2	v.	US		616bb91055.mp3
+full	A1	adj.			fdc47c26de.mp3
+full-time	B2	adj.			01d373d59b.mp3
+full-time	B2	adv.			01d373d59b.mp3
+fully	B2	adv.			ee5a5f6b46.mp3
+fun	A1	n.			1e0c251821.mp3
+fun	A2	adj.			1e0c251821.mp3
+function	B1	n.			b2592a6946.mp3
+function	B2	v.			b2592a6946.mp3
+functional	C1	adj.			3b89a52d7a.mp3
+fund	B2	n.			bcc6ae093d.mp3
+fund	B2	v.			bcc6ae093d.mp3
+fundamental	B2	adj.			3c36921e99.mp3
+fundamentally	B2	adv.			180d174f46.mp3
+funding	B2	n.			09e313ffa0.mp3
+fundraising	C1	n.			33fadd5d1f.mp3
+funeral	C1	n.			409ad56c1d.mp3
+funny	A1	adj.			c7d83f7f14.mp3
+fur	B1	n.			80b09bb0a7.mp3
+furious	B2	adj.			750c7b9aee.mp3
+furniture	A2	n.			e0479f0773.mp3
+further	A2	adj.			65ef8a01ff.mp3
+further	B1	adv.			65ef8a01ff.mp3
+furthermore	B2	adv.			e9e9208dd5.mp3
+future	A1	n.			26634ae8b1.mp3
+future	A2	adj.			26634ae8b1.mp3
+gain	B2	n.			977cce91e8.mp3
+gain	B2	v.			977cce91e8.mp3
+gallery	A2	n.			b5e7c991ed.mp3
+gallon	B2	n.	US		ab838b16ff.mp3
+gallon	C1	n.	UK		ab838b16ff.mp3
+gambling	C1	n.			f8cbdf9bde.mp3
+game	A1	n.			aa4b99fed6.mp3
+gaming	B2	n.			3aa98696c5.mp3
+gang	B2	n.			539c62427c.mp3
+gap	A2	n.			581ef8d758.mp3
+garage	B1	n.			e60a45a0ea.mp3
+garbage	A2	n.	US		2844db7726.mp3
+garden	A1	n.			d682189d10.mp3
+gas	A2	n.			020b9ad86f.mp3
+gate	A2	n.			84c888dbc6.mp3
+gather	B1	v.			bb04ceeeff.mp3
+gathering	C1	n.			ab2dbd90f9.mp3
+gay	B2	adj.			fd779d1b4d.mp3
+gaze	C1	n.			f657128d35.mp3
+gaze	C1	v.			f657128d35.mp3
+gear	C1	n.			97083b1bdf.mp3
+gender	B2	n.			59dd5973fb.mp3
+gene	B2	n.			30e970e2bc.mp3
+general	A2	adj.			10457c78eb.mp3
+generally	B1	adv.			3e0c7f8a00.mp3
+generate	B2	v.			62501b374a.mp3
+generation	B1	n.			fe9596c8a0.mp3
+generic	C1	adj.			49fe285183.mp3
+generous	B1	adj.			f8d962a35c.mp3
+genetic	B2	adj.			47bb1f7ad8.mp3
+genius	B2	n.			44177aa835.mp3
+genocide	C1	n.			6b695ea98a.mp3
+genre	B2	n.			297a085b7d.mp3
+gentle	B1	adj.			15455b23d7.mp3
+gentleman	B1	n.			7e1c26ff2b.mp3
+genuine	B2	adj.			561251029e.mp3
+genuinely	B2	adv.			0212dc3943.mp3
+geography	A1	n.			633080729c.mp3
+gesture	B2	n.			967916d4d9.mp3
+get	A1	v.			291e27e52a.mp3
+ghost	B1	n.			22309c0a0a.mp3
+giant	B1	adj.			b7fb5570e2.mp3
+giant	B1	n.			b7fb5570e2.mp3
+gift	A2	n.			d0a416a31a.mp3
+gig	B2	n.	UK		91d4e45cf2.mp3
+gig	C1	n.	US		91d4e45cf2.mp3
+girl	A1	n.			09e60f164a.mp3
+girlfriend	A1	n.			777eae80b3.mp3
+give	A1	v.			f79d5cdbc1.mp3
+glad	B1	adj.			24da9e9f5a.mp3
+glance	C1	n.			c4610f2df7.mp3
+glance	C1	v.			c4610f2df7.mp3
+glass	A1	n.			218837fd81.mp3
+glimpse	C1	n.			d952d20a3f.mp3
+global	B1	adj.			4946ce11ab.mp3
+globalization	B2	n.			edfdc712c3.mp3
+globe	B2	n.			0ba51a3322.mp3
+glorious	C1	adj.			cf862b2d4a.mp3
+glory	C1	n.			c618fc2510.mp3
+glove	B1	n.			35a7eaca12.mp3
+go	A1	v.			68440f35f4.mp3
+go	B1	n.			68440f35f4.mp3
+goal	A2	n.			e9e503e868.mp3
+god	A2	n.			5a0f29b198.mp3
+gold	A2	adj.			e87b3668e9.mp3
+gold	A2	n.			e87b3668e9.mp3
+golden	B2	adj.			d6ba57aea2.mp3
+golf	A2	n.			b376f799c1.mp3
+good	A1	adj.			74ae5a2ba6.mp3
+good	A2	n.			74ae5a2ba6.mp3
+goodbye	A1	exclam.			2bfef1b37e.mp3
+goodbye	A1	n.			2bfef1b37e.mp3
+goodness	B2	n.			e2b9bb6d32.mp3
+goods	B1	n.	UK		6168304be3.mp3
+goods	B2	n.	US		6168304be3.mp3
+gorgeous	B2	adj.			28ae2231c2.mp3
+govern	B2	v.			55b23be52d.mp3
+governance	C1	n.			a1709dd3c7.mp3
+government	A2	n.			61e94f8a8f.mp3
+governor	B2	n.	UK		5a1544eef2.mp3
+governor	B2	n.	US		5a1544eef2.mp3
+grab	B2	v.			b131727f74.mp3
+grace	C1	n.			3573097bf8.mp3
+grade	B1	n.			0b4d08f01c.mp3
+grade	B2	v.			0b4d08f01c.mp3
+gradually	B2	adv.			eab1b26427.mp3
+graduate	B1	n.			62562e54c3.mp3
+graduate	B1	v.			62562e54c3.mp3
+grain	B1	n.			9ac085bb02.mp3
+grand	B2	adj.			99a67c147d.mp3
+grandfather	A1	n.			f378f0c2de.mp3
+grandmother	A1	n.			d2a5c5a2b4.mp3
+grandparent	A1	n.			ba76a51b81.mp3
+grant	B2	n.			2f26d0e5fe.mp3
+grant	B2	v.			2f26d0e5fe.mp3
+graphic	B2	adj.			4e99df0b3e.mp3
+graphics	B2	n.			3f90a0ad9e.mp3
+grasp	C1	n.			d794f0aaae.mp3
+grasp	C1	v.			d794f0aaae.mp3
+grass	A2	n.			25daf2b06a.mp3
+grateful	B1	adj.			1efa69176e.mp3
+grave	C1	adj.		serious	9872687885.mp3
+grave	C1	n.		for dead person	9872687885.mp3
+gravity	C1	n.			3169eecd98.mp3
+gray	A1	adj.	US		cbc349519d.mp3
+gray	A1	n.	US		cbc349519d.mp3
+great	A1	adj.			691ed97fb0.mp3
+greatly	B2	adv.			e935844d00.mp3
+green	A1	adj.			96e60d9623.mp3
+green	A1	n.			96e60d9623.mp3
+greenhouse	B2	n.			f20dd1a97e.mp3
+greet	A2	v.			ca6f4f65df.mp3
+grey	A1	adj.	UK		194ad624ed.mp3
+grey	A1	n.	UK		194ad624ed.mp3
+grid	C1	n.			e759ec0e13.mp3
+grief	C1	n.			ef619c2594.mp3
+grin	C1	n.			0442766885.mp3
+grin	C1	v.			0442766885.mp3
+grind	C1	v.			13dafdb7f5.mp3
+grip	C1	n.			e6f416beb2.mp3
+grip	C1	v.			e6f416beb2.mp3
+grocery	A2	n.	US		e6620c5972.mp3
+grocery	B2	n.	UK		e6620c5972.mp3
+gross	C1	adj.			2113359a42.mp3
+ground	A2	n.			85b5e3465c.mp3
+group	A1	n.			3590df4dd9.mp3
+grow	A1	v.			30c739a645.mp3
+growth	B1	n.			274dd60126.mp3
+guarantee	B2	n.			9a96e9adda.mp3
+guarantee	B2	v.			9a96e9adda.mp3
+guard	B1	n.			c77e17a314.mp3
+guard	B1	v.			c77e17a314.mp3
+guerrilla	C1	n.			786957c243.mp3
+guess	A1	n.			2aac7f1d5a.mp3
+guess	A1	v.			2aac7f1d5a.mp3
+guest	A2	n.			e49c9a40a0.mp3
+guidance	C1	n.			7a0faced37.mp3
+guide	A2	n.			c3d947d74e.mp3
+guide	A2	v.			c3d947d74e.mp3
+guideline	B2	n.			c76b86f7d7.mp3
+guilt	C1	n.			6bd8287b99.mp3
+guilty	B1	adj.			ad5aff1bab.mp3
+guitar	A1	n.			9c84c8b95e.mp3
+gun	A2	n.			120c06ee54.mp3
+gut	C1	n.			818cb54b56.mp3
+guy	A2	n.			dddd63643e.mp3
+gym	A1	n.			196721da94.mp3
+habit	A2	n.			a5ee2abe51.mp3
+habitat	B2	n.			abfe62aedd.mp3
+hail	C1	v.			6333618211.mp3
+hair	A1	n.			54b6cc3105.mp3
+half	A1	det.			1dc76cf663.mp3
+half	A1	n.			1dc76cf663.mp3
+half	A1	pron.			1dc76cf663.mp3
+half	A2	adv.			1dc76cf663.mp3
+halfway	C1	adv.			ab017f0f45.mp3
+hall	A2	n.			4585f5763b.mp3
+halt	C1	n.			15db3afa36.mp3
+halt	C1	v.			15db3afa36.mp3
+hand	A1	n.			6a503f541c.mp3
+hand	B1	v.			6a503f541c.mp3
+handful	C1	n.			5d549c15a9.mp3
+handle	B2	n.			ce8649714c.mp3
+handle	B2	v.			ce8649714c.mp3
+handling	C1	n.			dfb32c6140.mp3
+handy	C1	adj.			b1e13ede65.mp3
+hang	B1	v.			fd1e8d764c.mp3
+happen	A1	v.			f858307d53.mp3
+happily	A2	adv.			450b339d39.mp3
+happiness	B1	n.			84e96f945d.mp3
+happy	A1	adj.			e1f24dea42.mp3
+harassment	C1	n.			3c10344530.mp3
+harbor	B2	n.	US		5b88215d2c.mp3
+harbour	B2	n.	UK		f7af9f0bae.mp3
+hard	A1	adj.			cfb11d007e.mp3
+hard	A1	adv.			cfb11d007e.mp3
+hardly	B1	adv.			d31389c2c0.mp3
+hardware	C1	n.			756ec5135c.mp3
+harm	B2	n.			e0de6b4bb7.mp3
+harm	B2	v.			e0de6b4bb7.mp3
+harmful	B2	adj.			f4bc2421b3.mp3
+harmony	C1	n.			6a410d3b22.mp3
+harsh	C1	adj.			1e81b3ea59.mp3
+harvest	C1	n.			2f75a035d4.mp3
+harvest	C1	v.			2f75a035d4.mp3
+hat	A1	n.			656e709648.mp3
+hate	A1	v.			0b41ab8f2e.mp3
+hate	B1	n.			0b41ab8f2e.mp3
+hatred	C1	n.			f2c5932e3e.mp3
+haunt	C1	v.			71163edb65.mp3
+have	A1	v.			6bc538eae5.mp3
+have	A2	auxiliary v.			6bc538eae5.mp3
+have to	A1	modal v.			d67a06323d.mp3
+hazard	C1	n.			b525b88281.mp3
+he	A1	pron.			5716147e84.mp3
+head	A1	n.			167744e622.mp3
+head	B1	v.			167744e622.mp3
+headache	A2	n.			c8f23fbebd.mp3
+headline	B1	n.			fa212af18b.mp3
+headquarters	B2	n.			d942043709.mp3
+heal	B2	v.			916eb5b198.mp3
+health	A1	n.			7b332ff46a.mp3
+healthcare	B2	n.			dd910d581a.mp3
+healthy	A1	adj.			0f7179e0e6.mp3
+hear	A1	v.			b399820949.mp3
+hearing	B2	n.			59c52f0ab4.mp3
+heart	A2	n.			6bc0dc6e7e.mp3
+heat	A2	n.			9649c496c0.mp3
+heat	A2	v.			9649c496c0.mp3
+heating	B1	n.			801c6d30fc.mp3
+heaven	B2	n.			ec6ac48c72.mp3
+heavily	B1	adv.			4b096a7cf1.mp3
+heavy	A2	adj.			a1611e43fa.mp3
+heel	B2	n.			368737c766.mp3
+height	A2	n.			dfaf633a0b.mp3
+heighten	C1	v.			83c5ceb565.mp3
+helicopter	B1	n.			937a96813d.mp3
+hell	B2	n.			e90a990712.mp3
+hello	A1	exclam.			b77451fe23.mp3
+hello	A1	n.			b77451fe23.mp3
+helmet	B2	n.			0883110e0f.mp3
+help	A1	n.			d53ebd365f.mp3
+help	A1	v.			d53ebd365f.mp3
+helpful	A2	adj.			0e165bf51c.mp3
+hence	B2	adv.			adf4cf9036.mp3
+her	A1	det.			115f63e670.mp3
+her	A1	pron.			115f63e670.mp3
+herb	B2	n.			061de2809f.mp3
+here	A1	adv.			0b83797057.mp3
+heritage	C1	n.			6ee98ae8ce.mp3
+hero	A2	n.			935ca4f04c.mp3
+hers	A2	pron.			4f9dc5ae43.mp3
+herself	A2	pron.			71d557f199.mp3
+hesitate	B2	v.			ce4e9f63a1.mp3
+hey	A1	exclam.			cfb8050620.mp3
+hi	A1	exclam.			6f2d624e05.mp3
+hidden	B2	adj.			65c454a867.mp3
+hide	A2	v.			7c8216d9ea.mp3
+hierarchy	C1	n.			ee7f9b7dce.mp3
+high	A1	adj.			0ed1900db4.mp3
+high	A2	adv.			0ed1900db4.mp3
+high	B2	n.			0ed1900db4.mp3
+high-profile	C1	adj.			a5ffbe7301.mp3
+highlight	B1	n.			9718208346.mp3
+highlight	B1	v.			9718208346.mp3
+highly	B1	adv.			bb7f3feb19.mp3
+highway	B1	n.	US		d2bdccc376.mp3
+highway	B2	n.	UK		d2bdccc376.mp3
+hilarious	B2	adj.			44ee5770ae.mp3
+hill	A2	n.			50abb5a929.mp3
+him	A1	pron.			40706b7a38.mp3
+himself	A2	pron.			0996615a19.mp3
+hint	C1	n.			7acf79f61e.mp3
+hint	C1	v.			7acf79f61e.mp3
+hip	B2	n.			100064da36.mp3
+hire	B1	v.			700837c86b.mp3
+hire	B2	n.			700837c86b.mp3
+his	A1	det.			1d5bddda4e.mp3
+his	A2	pron.			1d5bddda4e.mp3
+historian	B2	n.			06407e6e92.mp3
+historic	B1	adj.			d68968c64d.mp3
+historical	B1	adj.			f860553598.mp3
+history	A1	n.			5eaf7bd2b3.mp3
+hit	A2	n.			63cd79e075.mp3
+hit	A2	v.			63cd79e075.mp3
+hobby	A1	n.			27d0d7f3de.mp3
+hockey	A2	n.			36fe00c406.mp3
+hold	A2	v.			26705cbe82.mp3
+hold	B2	n.			26705cbe82.mp3
+hole	A2	n.			9bd8283ad9.mp3
+holiday	A1	n.	UK		2a8b58dfd5.mp3
+holiday	A2	n.	US		2a8b58dfd5.mp3
+hollow	B2	adj.			d3599a4434.mp3
+holy	B2	adj.			bc637b5c49.mp3
+home	A1	adv.			2dd9e07385.mp3
+home	A1	n.			2dd9e07385.mp3
+home	A2	adj.			2dd9e07385.mp3
+homeland	C1	n.			a61fd95bb0.mp3
+homeless	B2	adj.			da55b56a80.mp3
+homework	A1	n.			b0d396a1c0.mp3
+honest	B1	adj.			46873cdcf4.mp3
+honesty	B2	n.			ff3bcccab9.mp3
+honey	B2	n.	US		eed49e55e7.mp3
+honor	B2	n.	US		e3e7d2650b.mp3
+honor	B2	v.	US		e3e7d2650b.mp3
+honour	B2	n.	UK		6f5a5b6fe6.mp3
+honour	B2	v.	UK		6f5a5b6fe6.mp3
+hook	B2	n.	US		9bc8acf864.mp3
+hook	B2	v.	UK		9bc8acf864.mp3
+hook	B2	v.	US		9bc8acf864.mp3
+hook	C1	n.	UK		9bc8acf864.mp3
+hope	A1	v.			87aa303994.mp3
+hope	A2	n.			87aa303994.mp3
+hopeful	C1	adj.			dc643e1c6e.mp3
+hopefully	B2	adv.			648cac3ed2.mp3
+horizon	C1	n.			71b65e6060.mp3
+horn	C1	n.			171d628bd3.mp3
+horrible	B1	adj.			5be8eb6325.mp3
+horror	B1	n.			0a5c210674.mp3
+horse	A1	n.			974c13d02c.mp3
+hospital	A1	n.			46547c7d31.mp3
+host	B1	n.			51a5d96fef.mp3
+host	B2	v.			51a5d96fef.mp3
+hostage	C1	n.			74216edcbd.mp3
+hostile	C1	adj.			3ba050c553.mp3
+hostility	C1	n.			e39c90510e.mp3
+hot	A1	adj.			425213e035.mp3
+hotel	A1	n.			20ea0d3672.mp3
+hour	A1	n.			273644031f.mp3
+house	A1	n.	UK		147b375f35.mp3
+house	A1	n.	US		147b375f35.mp3
+house	A1	v.	US		147b375f35.mp3
+house	B2	v.	UK		147b375f35.mp3
+household	B2	n.			9198e3bfca.mp3
+housing	B2	n.			10db58d084.mp3
+how	A1	adv.			d1df24e82c.mp3
+however	A1	adv.			e4e03b2fc2.mp3
+huge	A2	adj.			f1076e5385.mp3
+human	A2	adj.			236b60107c.mp3
+human	A2	n.			236b60107c.mp3
+humanitarian	C1	adj.			603cc46819.mp3
+humanity	C1	n.			cebd689149.mp3
+humble	C1	adj.			e26238b748.mp3
+humor	B2	n.	US		15a5274e7c.mp3
+humorous	B2	adj.			420bc73970.mp3
+humour	B2	n.	UK		b4038d979b.mp3
+hundred	A1	number			65e3219f71.mp3
+hunger	B2	n.			454c1d0dc1.mp3
+hungry	A1	adj.			e4c3f604b1.mp3
+hunt	B1	v.			45a02300e3.mp3
+hunt	B2	n.			45a02300e3.mp3
+hunting	B2	n.			53dd47fa55.mp3
+hurricane	B1	n.			f1860db003.mp3
+hurry	B1	n.			1146ea4b31.mp3
+hurry	B1	v.			1146ea4b31.mp3
+hurt	A2	adj.			e77ecfebce.mp3
+hurt	A2	v.			e77ecfebce.mp3
+hurt	B2	n.			e77ecfebce.mp3
+husband	A1	n.			254521f65b.mp3
+hydrogen	C1	n.			26fdc84bc9.mp3
+hypothesis	B2	n.			8052f4a833.mp3
+ice	A1	n.			42ec7f0a95.mp3
+ice cream	A1	n.			1dc51265a0.mp3
+icon	B2	n.			dc5053334c.mp3
+idea	A1	n.			6cafae805c.mp3
+ideal	A2	adj.			dd4735a65a.mp3
+ideal	B2	n.			dd4735a65a.mp3
+identical	B2	adj.			9c58969c8a.mp3
+identification	C1	n.			9fc6b92577.mp3
+identify	A2	v.			47f60fdb5b.mp3
+identity	B1	n.			d459f7102a.mp3
+ideological	C1	adj.			03d5bb0b03.mp3
+ideology	C1	n.			a5fe3114e2.mp3
+idiot	C1	n.			6d3737e74b.mp3
+if	A1	conj.			3ef2cd0c5c.mp3
+ignorance	C1	n.			3d19167b08.mp3
+ignore	B1	v.			0916a180ba.mp3
+ill	A2	adj.			8324a80062.mp3
+illegal	B1	adj.			4c32957138.mp3
+illness	A2	n.			b072cd9373.mp3
+illusion	B2	n.			9e8cb13165.mp3
+illustrate	B2	v.			4f293d34f0.mp3
+illustration	B2	n.			49f0633155.mp3
+image	A2	n.			7ad26db55e.mp3
+imagery	C1	n.			2121d9aae7.mp3
+imaginary	B1	adj.			9d0c1af11d.mp3
+imagination	B2	n.			3677d8a9e8.mp3
+imagine	A1	v.			6f48140cbc.mp3
+immediate	B1	adj.			360237c641.mp3
+immediately	A2	adv.			69e8562354.mp3
+immense	C1	adj.			218849fdba.mp3
+immigrant	B1	n.			777984bc63.mp3
+immigration	B2	n.			b02e5d88a1.mp3
+imminent	C1	adj.			b8466b4745.mp3
+immune	B2	adj.			a06ddeb164.mp3
+impact	B1	n.			2ed2a3e97c.mp3
+impact	B1	v.			2ed2a3e97c.mp3
+impatient	B2	adj.			f35804d103.mp3
+implement	B2	v.			6f2293150e.mp3
+implementation	C1	n.			6aeba36a21.mp3
+implication	B2	n.			bc2a06ec61.mp3
+imply	B2	v.			b3ab7aae6d.mp3
+import	B1	n.			e7d29f5f0e.mp3
+import	B1	v.			e7d29f5f0e.mp3
+importance	B1	n.			b3b47aa9ec.mp3
+important	A1	adj.			d033f57092.mp3
+impose	B2	v.			a3de6d2ff9.mp3
+impossible	A2	adj.			32d55a0ac9.mp3
+impress	B2	v.			7b2d8d8620.mp3
+impressed	B2	adj.			1ae7c32c33.mp3
+impression	B1	n.			25cd0585d7.mp3
+impressive	B1	adj.			3c53e2b9e7.mp3
+imprison	C1	v.			aba81fe892.mp3
+imprisonment	C1	n.	UK		dd06c6c54f.mp3
+improve	A1	v.			1ff4a0d974.mp3
+improvement	B1	n.			9bfbff3a0a.mp3
+in	A1	adv.			a86b0dcc7d.mp3
+in	A1	prep.			a86b0dcc7d.mp3
+inability	C1	n.			efbdaf4086.mp3
+inadequate	C1	adj.			72e5d9e9f8.mp3
+inappropriate	C1	adj.			89718e6d36.mp3
+incarcerate	C1	v.	US		24ab60fd68.mp3
+incarceration	C1	n.	US		2f087e170b.mp3
+incentive	B2	n.			a87bbffed8.mp3
+inch	B2	n.			cda14a17ba.mp3
+incidence	C1	n.			7254bc6b8b.mp3
+incident	B2	n.			2266784456.mp3
+inclined	C1	adj.			23149d76ee.mp3
+include	A1	v.			8e464e26bf.mp3
+included	A2	adj.			c927a5f78c.mp3
+including	A2	prep.			33b784b1fe.mp3
+inclusion	C1	n.			7686502125.mp3
+income	B2	n.			13b8a9f3d4.mp3
+incorporate	B2	v.			867eb33536.mp3
+incorrect	B2	adj.			2f482ab19a.mp3
+increase	A2	n.			41dcde7aaa.mp3
+increase	A2	v.			41dcde7aaa.mp3
+increasingly	B2	adv.			d05f8c984e.mp3
+incredible	A2	adj.			f1ba337846.mp3
+incredibly	B1	adv.			6a7b9f2610.mp3
+incur	C1	v.			33d212f9ba.mp3
+indeed	B1	adv.			0467a00ae2.mp3
+independence	B2	n.			aa92043ca7.mp3
+independent	A2	adj.			31f22b624b.mp3
+index	B2	n.			eb10b3b3ed.mp3
+indicate	B1	v.			dfb8be592b.mp3
+indication	B2	n.			60cdd42424.mp3
+indicator	C1	n.			0d8473a4e6.mp3
+indictment	C1	n.			175f7468a3.mp3
+indigenous	C1	adj.			7a5eebb803.mp3
+indirect	B1	adj.			004bb2ee38.mp3
+individual	A2	adj.			8532d52c0a.mp3
+individual	A2	n.			8532d52c0a.mp3
+indoor	B1	adj.			d3ecf73d3a.mp3
+indoors	B1	adv.			75f9eb1e30.mp3
+induce	C1	v.			8834e7a74a.mp3
+indulge	C1	v.			1ca0d1817e.mp3
+industrial	B2	adj.			a04ac9f9d3.mp3
+industry	A2	n.			6ec3fc729e.mp3
+inequality	C1	n.			1957349751.mp3
+inevitable	B2	adj.			340d6aa8a2.mp3
+inevitably	B2	adv.			fe3200bc31.mp3
+infamous	C1	adj.			96342604d3.mp3
+infant	C1	n.			b5bedf6388.mp3
+infect	C1	v.			d70e2eeb18.mp3
+infection	B2	n.			eee99ef7b4.mp3
+infer	B2	v.			22c9d5e330.mp3
+inflation	B2	n.			7675c67e06.mp3
+inflict	C1	v.			b7e63b73f9.mp3
+influence	B1	n.			f91ec5f904.mp3
+influence	B1	v.			f91ec5f904.mp3
+influential	C1	adj.			7fb43c6a2a.mp3
+info	B2	n.			dc5fa2eb34.mp3
+inform	B2	v.			b320a8e189.mp3
+informal	A2	adj.			170a3f8824.mp3
+information	A1	n.			0ba2a7db44.mp3
+infrastructure	B2	n.			a5d9665493.mp3
+ingredient	B1	n.			093bbba3b3.mp3
+inhabitant	B2	n.			a2081cb2b0.mp3
+inherent	C1	adj.			29336dd63c.mp3
+inherit	B2	v.			e81163ee36.mp3
+inhibit	C1	v.			61f63bc4c0.mp3
+initial	B2	adj.			3fe0268c56.mp3
+initially	B2	adv.			e091f534b2.mp3
+initiate	C1	v.			3f3662dc1b.mp3
+initiative	B2	n.			2ab3a694d6.mp3
+inject	C1	v.			e6fde3e608.mp3
+injection	C1	n.			35ac1a2158.mp3
+injure	B1	v.			a5da6753e2.mp3
+injured	B1	adj.			c4d0c82a8e.mp3
+injury	A2	n.			6f89ee2019.mp3
+injustice	C1	n.			9d1d701fa3.mp3
+ink	B2	n.			9868164771.mp3
+inmate	C1	n.			a98bca4812.mp3
+inner	B2	adj.			7aba0677f6.mp3
+innocent	B1	adj.			199b3109cc.mp3
+innovation	B2	n.			8370ef55f6.mp3
+innovative	B2	adj.			6860d8263a.mp3
+input	B2	n.			95cb4a52a2.mp3
+inquire	C1	v.	US		841bf7238c.mp3
+inquiry	B2	n.	US		a6ebf40eba.mp3
+insect	A2	n.			5ca3b6b8fb.mp3
+insert	B2	v.			1245bb6634.mp3
+insertion	C1	n.			0e90c1cd16.mp3
+inside	A2	adj.			65ceddb41b.mp3
+inside	A2	adv.			65ceddb41b.mp3
+inside	A2	n.			65ceddb41b.mp3
+inside	A2	prep.			65ceddb41b.mp3
+insider	C1	n.			d032123ee3.mp3
+insight	B2	n.			c8a3d33f41.mp3
+insist	B2	v.			c0a8666879.mp3
+inspect	C1	v.			71e0b170e1.mp3
+inspection	C1	n.			60f6735bb7.mp3
+inspector	B2	n.			e1ade0fa23.mp3
+inspiration	C1	n.			66a9bc2b2d.mp3
+inspire	B2	v.			1001961db1.mp3
+install	B2	v.			a08e6b1187.mp3
+installation	B2	n.			553cfe16fe.mp3
+instance	B2	n.			3386f57b8c.mp3
+instant	B2	adj.			b4b901940f.mp3
+instantly	B2	adv.			540c513266.mp3
+instead	A2	adv.			7d47c6c76f.mp3
+instinct	C1	n.			098aaec546.mp3
+institute	B2	n.			e722fae58c.mp3
+institution	B2	n.			56e12b3a00.mp3
+institutional	C1	adj.			fbbbc4a0ae.mp3
+instruct	C1	v.			9ea51e6506.mp3
+instruction	A2	n.			bb0d318573.mp3
+instructor	A2	n.			f152b1a55f.mp3
+instrument	A2	n.			f42f083ac0.mp3
+instrumental	C1	adj.			d42a431758.mp3
+insufficient	C1	adj.			c151c14539.mp3
+insult	C1	n.			d773066a6b.mp3
+insult	C1	v.			d773066a6b.mp3
+insurance	B2	n.			c8c7a33c86.mp3
+intact	C1	adj.			51120cecde.mp3
+intake	C1	n.			565c3099c6.mp3
+integral	C1	adj.			72a89fe131.mp3
+integrate	B2	v.			174a37b5d0.mp3
+integrated	C1	adj.			012d7f719e.mp3
+integration	C1	n.			ebd50cb822.mp3
+integrity	C1	n.			3cd81bd1db.mp3
+intellectual	B2	adj.			43349f8386.mp3
+intellectual	C1	n.			43349f8386.mp3
+intelligence	B1	n.			0730ef7748.mp3
+intelligent	A2	adj.			f869de2a8c.mp3
+intend	B1	v.			719daebbcd.mp3
+intended	B2	adj.			0f3195300a.mp3
+intense	B2	adj.			b2ac8be741.mp3
+intensify	C1	v.			38950c57e1.mp3
+intensity	C1	n.			f447a3356b.mp3
+intensive	C1	adj.			e3fc3b3d16.mp3
+intent	C1	n.			b16e86d244.mp3
+intention	B1	n.			d2a1d8907f.mp3
+interact	B2	v.			601510d6fa.mp3
+interaction	B2	n.			fccfe50358.mp3
+interactive	C1	adj.			53c9372d8f.mp3
+interest	A1	n.			00950d8219.mp3
+interest	A1	v.			00950d8219.mp3
+interested	A1	adj.			a49b7e5ee2.mp3
+interesting	A1	adj.			e20c9702a6.mp3
+interface	C1	n.			afe68f5f07.mp3
+interfere	C1	v.			3cd3211840.mp3
+interference	C1	n.			71c130006f.mp3
+interim	C1	adj.			892fa831bc.mp3
+interior	C1	adj.			b3036b2ba3.mp3
+interior	C1	n.			b3036b2ba3.mp3
+intermediate	C1	adj.			726ff3e6bd.mp3
+internal	B2	adj.			fd46f5fbde.mp3
+international	A2	adj.			4b2e9e6d11.mp3
+internet	A1	n.			ca98808ed8.mp3
+interpret	B2	v.			8c475ddcbd.mp3
+interpretation	B2	n.			ef6936410b.mp3
+interrupt	B2	v.			4d12dd84e0.mp3
+intersection	C1	n.	US		bbd1f3bc7b.mp3
+interval	B2	n.			2cb39a0d42.mp3
+intervene	C1	v.			1627fa3972.mp3
+intervention	C1	n.			4777443a01.mp3
+interview	A1	n.			3500383ae6.mp3
+interview	A1	v.			3500383ae6.mp3
+intimate	C1	adj.			ef48945022.mp3
+into	A1	prep.			cdb781df21.mp3
+intriguing	C1	adj.			cef94b2229.mp3
+introduce	A1	v.			d75137fd52.mp3
+introduction	A2	n.			d77b852d02.mp3
+invade	B2	v.			e23e3f7027.mp3
+invasion	B2	n.			32dce2f1fb.mp3
+invent	A2	v.			4786dade0e.mp3
+invention	A2	n.			d244cac4e2.mp3
+inventory	C1	n.	US		1f66c3fda2.mp3
+invest	B1	v.			9b39969c96.mp3
+investigate	B1	v.			001954590f.mp3
+investigation	B2	n.			5c2c81dcc1.mp3
+investigator	C1	n.			ef2355907f.mp3
+investment	B2	n.			549d3a6c33.mp3
+investor	B2	n.			2db243cbd0.mp3
+invisible	C1	adj.			98d95850cf.mp3
+invitation	A2	n.			fb8f915546.mp3
+invite	A2	v.			0ac0532473.mp3
+invoke	C1	v.			6bb9a9f9b5.mp3
+involve	A2	v.			de9653ec4f.mp3
+involved	B1	adj.			9821a8e493.mp3
+involvement	C1	n.			77c5574ba5.mp3
+iron	B1	n.			aa1a0a7ce0.mp3
+iron	B1	v.			aa1a0a7ce0.mp3
+ironic	C1	adj.			c5b172ea8b.mp3
+ironically	C1	adv.			ce75e27529.mp3
+irony	C1	n.			6ef356f0ff.mp3
+irrelevant	C1	adj.			aae8a0c8bb.mp3
+island	A1	n.			9032bbdc9e.mp3
+isolate	B2	v.			5fdcb78004.mp3
+isolated	B2	adj.			2dc664ef2f.mp3
+isolation	C1	n.			f588f45ad7.mp3
+issue	B1	n.			3bb2a8eb35.mp3
+issue	B2	v.			3bb2a8eb35.mp3
+it	A1	pron.			c53c740b59.mp3
+item	A2	n.			86d31579ca.mp3
+its	A1	det.			905565537e.mp3
+itself	A2	pron.			d052a86f4d.mp3
+jacket	A1	n.			739545511d.mp3
+jail	B2	n.			31538133a0.mp3
+jail	B2	v.			31538133a0.mp3
+jam	A2	n.			375363c768.mp3
+jazz	A2	n.			5454ed3f0d.mp3
+jeans	A1	n.			d9f6ab6e86.mp3
+jet	B2	n.			1d9b287a2e.mp3
+jewellery	A2	n.	UK		9ebf9205f3.mp3
+jewelry	A2	n.	US		89dae83260.mp3
+job	A1	n.			7456c457ac.mp3
+join	A1	v.			5737accc2b.mp3
+joint	B2	adj.			b99646ff37.mp3
+joint	B2	n.			b99646ff37.mp3
+joke	A2	n.			ee4bdd7a14.mp3
+joke	A2	v.			ee4bdd7a14.mp3
+journal	B1	n.			15baf2114e.mp3
+journalism	B2	n.			64e3a177c4.mp3
+journalist	A2	n.			c3f4ce4ed4.mp3
+journey	A1	n.	UK		aa83f7e5f8.mp3
+journey	B1	n.	US		aa83f7e5f8.mp3
+joy	B2	n.			e372f67328.mp3
+judge	B1	n.			ebb35bc97b.mp3
+judge	B1	v.			ebb35bc97b.mp3
+judgement	B2	n.	UK		4802c97804.mp3
+judgment	B2	n.	US		2d5c1c1867.mp3
+judicial	C1	adj.			0f8373c7e0.mp3
+juice	A1	n.			947c8f1610.mp3
+jump	A2	n.			07c279da77.mp3
+jump	A2	v.			07c279da77.mp3
+junction	C1	n.	UK		1444d5d67a.mp3
+junior	B2	adj.			16a5537916.mp3
+jurisdiction	C1	n.			86212faf44.mp3
+jury	B2	n.			c60073aa51.mp3
+just	A1	adv.			279ea75675.mp3
+just	C1	adj.			279ea75675.mp3
+justice	B2	n.			48f3d0f086.mp3
+justification	C1	n.			c57ad701cb.mp3
+justify	B2	v.			7d17f8bb44.mp3
+keen	B1	adj.	UK		efae310e79.mp3
+keen	C1	adj.	US		efae310e79.mp3
+keep	A1	v.			c3a96aa010.mp3
+key	A1	adj.			a49a0d4e3e.mp3
+key	A1	n.			a49a0d4e3e.mp3
+key	B1	v.			a49a0d4e3e.mp3
+keyboard	B1	n.			ffa1899fb6.mp3
+kick	B1	n.			c3ad25b69f.mp3
+kick	B1	v.			c3ad25b69f.mp3
+kid	A2	n.			809e138c9a.mp3
+kidnap	C1	v.			ffd3361ae7.mp3
+kidney	C1	n.			9f03419744.mp3
+kill	A2	v.			c481470000.mp3
+killing	B1	n.			a8094afa5a.mp3
+kilometer	A2	n.	US		a14204c7a3.mp3
+kilometre	A1	n.	UK		f86d298f92.mp3
+kind	A1	n.		type	33a822c0b7.mp3
+kind	B1	adj.		caring	33a822c0b7.mp3
+kindergarten	B2	n.	US		b45bf82cb2.mp3
+king	A2	n.			7af4542c2c.mp3
+kingdom	C1	n.			7e59d0d3cd.mp3
+kiss	B1	n.			131dc279a4.mp3
+kiss	B1	v.			131dc279a4.mp3
+kit	B2	n.			abe8e28e63.mp3
+kitchen	A1	n.			597de5f6e0.mp3
+knee	A2	n.			296d672387.mp3
+knife	A2	n.			1e6dbe7342.mp3
+knock	A2	v.			389fd12596.mp3
+knock	B1	n.			389fd12596.mp3
+know	A1	v.			3c514c68fd.mp3
+knowledge	A2	n.			e84333f645.mp3
+lab	A2	n.			cda2cdec0f.mp3
+label	B1	n.			b7b16991ce.mp3
+label	B1	v.			b7b16991ce.mp3
+labor	B2	n.	US		a6068d0fb8.mp3
+laboratory	B1	n.			4c30855937.mp3
+labour	B2	n.	UK		8836090c42.mp3
+lack	B1	n.			afaab580b6.mp3
+lack	B1	v.			afaab580b6.mp3
+lad	C1	n.	UK		eb26b669cc.mp3
+ladder	B2	n.			e23cacaa7f.mp3
+lady	A2	n.			708857d091.mp3
+lake	A2	n.			f7eb285f3a.mp3
+lamp	A2	n.			63e61ab653.mp3
+land	A1	n.			2d715e438c.mp3
+land	A2	v.			2d715e438c.mp3
+landing	B2	n.			fcedec4c91.mp3
+landlord	C1	n.			fb9adbffa1.mp3
+landmark	C1	n.			174f9bef3a.mp3
+landscape	B2	n.			a6c0552c95.mp3
+lane	B2	n.			4d1632a23b.mp3
+language	A1	n.			f69ca8df88.mp3
+lap	C1	n.			d8faa3f967.mp3
+laptop	A2	n.			1bc0f4b1c5.mp3
+large	A1	adj.			ce3602bf93.mp3
+large-scale	C1	adj.			3d709492c2.mp3
+largely	B2	adv.			414415561c.mp3
+laser	C1	n.			b93ddb0715.mp3
+last	A1	det.		final	0caded5d3e.mp3
+last	A2	adv.		final	0caded5d3e.mp3
+last	A2	n.		final	0caded5d3e.mp3
+last	A2	v.		taking time	0caded5d3e.mp3
+late	A1	adj.			1d6d84c9ae.mp3
+late	A1	adv.			1d6d84c9ae.mp3
+lately	B2	adv.			342dd148b4.mp3
+later	A1	adv.			5ba24ffb16.mp3
+later	A2	adj.			5ba24ffb16.mp3
+latest	B1	adj.			b2589dc245.mp3
+latest	B2	n.			b2589dc245.mp3
+latter	C1	adj.			2523c6f8a6.mp3
+latter	C1	n.			2523c6f8a6.mp3
+laugh	A1	n.			b479871d64.mp3
+laugh	A1	v.			b479871d64.mp3
+laughter	A2	n.			c58a8ae31e.mp3
+launch	B2	n.			1e965214a6.mp3
+launch	B2	v.			1e965214a6.mp3
+law	A2	n.			75c70c30d1.mp3
+lawmaker	C1	n.	US		e8928d94f5.mp3
+lawn	C1	n.			efc959d488.mp3
+lawsuit	C1	n.			c61295936b.mp3
+lawyer	A2	n.			8aed3a4344.mp3
+lay	B1	v.			32cfc65167.mp3
+layer	B1	n.			ce521a6246.mp3
+layout	C1	n.			9f5dcf9d94.mp3
+lazy	A2	adj.			2be68a320b.mp3
+lead	A2	v.			9a84cc6b55.mp3
+lead	B1	n.			9a84cc6b55.mp3
+leader	A2	n.			5e503bd8d3.mp3
+leadership	B2	n.			d97e04104c.mp3
+leading	B1	adj.			ed455700fa.mp3
+leaf	B1	n.			a399ca715d.mp3
+leaflet	B2	n.	UK		75a43ee286.mp3
+league	B2	n.			2c1e6cfc62.mp3
+leak	C1	n.			deda99da8b.mp3
+leak	C1	v.			deda99da8b.mp3
+lean	B2	v.			74d13b0013.mp3
+leap	C1	n.			7413c13aab.mp3
+leap	C1	v.			7413c13aab.mp3
+learn	A1	v.			134d5d7951.mp3
+learning	A2	n.			d82be52764.mp3
+least	A2	adv.			b1a0e07e28.mp3
+least	A2	det.			b1a0e07e28.mp3
+least	A2	pron.			b1a0e07e28.mp3
+leather	B1	n.			a45f5b058c.mp3
+leave	A1	v.			1bae3440fa.mp3
+leave	B2	n.			1bae3440fa.mp3
+lecture	A2	n.			132b86f82e.mp3
+lecture	A2	v.			132b86f82e.mp3
+left	A1	adj.			e4c02f9931.mp3
+left	A1	adv.			e4c02f9931.mp3
+left	A1	n.			e4c02f9931.mp3
+leg	A1	n.			6acd489023.mp3
+legacy	C1	n.			a060bc5665.mp3
+legal	B1	adj.			5a44cafd68.mp3
+legend	B2	n.			9d17c4661f.mp3
+legendary	C1	adj.			02c01a24fa.mp3
+legislation	C1	n.			257ed035dc.mp3
+legislative	C1	adj.			1c19133c08.mp3
+legislature	C1	n.			bc663f7330.mp3
+legitimate	C1	adj.			d5a58ca848.mp3
+leisure	B1	n.			8c33098b39.mp3
+lemon	A2	n.			c93f4f89df.mp3
+lend	A2	v.			877899e0c9.mp3
+length	B1	n.			9abd087159.mp3
+lengthy	C1	adj.			6cdac52ecf.mp3
+lens	B2	n.			8a06a6f2e5.mp3
+lesbian	C1	adj.			d3887fa1e4.mp3
+less	A2	adv.			b200a43958.mp3
+less	A2	det.			b200a43958.mp3
+less	A2	pron.			b200a43958.mp3
+lesser	C1	adj.			f89d7a5a67.mp3
+lesson	A1	n.			791189c900.mp3
+let	A1	v.			c6198b3a65.mp3
+lethal	C1	adj.			5db992e23f.mp3
+letter	A1	n.			abe63fa87e.mp3
+level	A2	n.			c2a87289ef.mp3
+level	B1	adj.			c2a87289ef.mp3
+level	B2	v.			c2a87289ef.mp3
+liable	C1	adj.			3ecea5daa1.mp3
+liberal	C1	adj.			352b26804e.mp3
+liberal	C1	n.			352b26804e.mp3
+liberation	C1	n.			f234135b51.mp3
+liberty	C1	n.			70a1a27b23.mp3
+library	A1	n.			e3c5642bac.mp3
+licence	B2	n.	UK		d9a9395cdc.mp3
+license	B2	n.	US		854ed7bac1.mp3
+license	C1	v.	UK		854ed7bac1.mp3
+lie	A1	v.			f343c07d9a.mp3
+lie	B1	n.		tell a lie	f343c07d9a.mp3
+lie	B1	v.		tell a lie	f343c07d9a.mp3
+life	A1	n.			7c8333e502.mp3
+lifelong	C1	adj.			4d99077fd2.mp3
+lifestyle	A2	n.			6f7c308c66.mp3
+lifetime	B2	n.			4b90345bbb.mp3
+lift	A2	n.	UK		ab8e43ae7e.mp3
+lift	A2	v.	UK		ab8e43ae7e.mp3
+lift	A2	v.	US		ab8e43ae7e.mp3
+light	A1	adj.		from the sun/a lamp	0eeb20388f.mp3
+light	A1	n.		from the sun/a lamp	0eeb20388f.mp3
+light	A2	adj.		not heavy	0eeb20388f.mp3
+light	A2	v.		from the sun/a lamp	0eeb20388f.mp3
+lighting	B2	n.			2a93bc34cc.mp3
+like	A1	prep.		similar	9120118b0b.mp3
+like	A1	v.		find sb/sth pleasant	9120118b0b.mp3
+like	B1	n.		find sb/sth pleasant	9120118b0b.mp3
+likelihood	C1	n.			5ccf4afd69.mp3
+likely	A2	adj.			6cfe3576e6.mp3
+likewise	B2	adv.			571c19fc48.mp3
+limb	C1	n.			823ca46436.mp3
+limit	B1	n.			b4f47a3a4a.mp3
+limit	B1	v.			b4f47a3a4a.mp3
+limitation	B2	n.			6a0d25c692.mp3
+limited	B2	adj.			5ddcafc430.mp3
+line	A1	n.			a8bdd14310.mp3
+line	B2	v.			a8bdd14310.mp3
+line-up	C1	n.	UK		d400e70aeb.mp3
+linear	C1	adj.			d85097416b.mp3
+lineup	C1	n.	US		682f6dd558.mp3
+linger	C1	v.			8655539739.mp3
+link	A2	n.			3adc3743a9.mp3
+link	A2	v.			3adc3743a9.mp3
+lion	A1	n.			3c01a70d7a.mp3
+lip	B1	n.			b6d20a9ab3.mp3
+liquid	B1	adj.			ad7e106ac0.mp3
+liquid	B1	n.			ad7e106ac0.mp3
+list	A1	n.			bdf2a0a2e1.mp3
+list	A1	v.			bdf2a0a2e1.mp3
+listen	A1	v.			cd127d8a45.mp3
+listener	A2	n.			6bc9c4919d.mp3
+listing	C1	n.			5adc19c3a4.mp3
+liter	C1	n.	US		6d16ca80ae.mp3
+literacy	C1	n.			9c4e8710d4.mp3
+literally	B2	adv.			cdcbd4aadd.mp3
+literary	B2	adj.			144e105850.mp3
+literature	B1	n.			9c24dc8c9d.mp3
+litre	B2	n.	UK		c3b5869567.mp3
+litter	B2	n.			d21fcd41c8.mp3
+little	A1	adj.			fb45d39f2c.mp3
+little	A1	det.			fb45d39f2c.mp3
+little	A1	pron.			fb45d39f2c.mp3
+little	A2	adv.			fb45d39f2c.mp3
+live	A1	v.			f9b6f7ce36.mp3
+live	B1	adj.			f9b6f7ce36.mp3
+live	B1	adv.			f9b6f7ce36.mp3
+lively	B2	adj.			2553778150.mp3
+liver	C1	n.			9152e31c74.mp3
+living	B1	adj.			c5452f997a.mp3
+living	B1	n.			c5452f997a.mp3
+load	B2	n.			05d0550ecb.mp3
+load	B2	v.			05d0550ecb.mp3
+loan	B2	n.			109713e4d4.mp3
+lobby	C1	n.			89899d3535.mp3
+lobby	C1	v.			89899d3535.mp3
+local	A1	adj.			2b101d6b1b.mp3
+local	B1	n.			2b101d6b1b.mp3
+locate	B1	v.			6b7caefdcf.mp3
+located	B1	adj.			b56925a1e7.mp3
+location	B1	n.			f98278f3d7.mp3
+lock	A2	n.			843715821b.mp3
+lock	A2	v.			843715821b.mp3
+log	C1	n.			e392826e76.mp3
+log	C1	v.			e392826e76.mp3
+logic	C1	n.			93b9009533.mp3
+logical	B2	adj.			95f28ffbb7.mp3
+logo	B2	n.			1e1f866136.mp3
+lonely	B1	adj.			08873d35fa.mp3
+long	A1	adj.			4e0188a54c.mp3
+long	A1	adv.			4e0188a54c.mp3
+long-standing	C1	adj.			d2412c80ff.mp3
+long-term	B2	adj.			6dab905665.mp3
+long-term	B2	adv.			6dab905665.mp3
+long-time	C1	adj.	UK		a6f0f36152.mp3
+longtime	C1	adj.	US		499e46a8b2.mp3
+look	A1	v.			1fc5c4dc78.mp3
+look	A2	n.			1fc5c4dc78.mp3
+loom	C1	v.			961b74894b.mp3
+loop	C1	n.			6ab1652599.mp3
+loose	B2	adj.			5b42d22a63.mp3
+lord	B2	n.			146475a9f7.mp3
+lorry	A2	n.	UK		10f7ed2871.mp3
+lose	A1	v.			006b07d887.mp3
+loss	B1	n.			18a17fc5bb.mp3
+lost	A2	adj.			e8e23c8945.mp3
+lot	A1	adv.			cbb483e0fc.mp3
+lot	A1	det.			cbb483e0fc.mp3
+lot	A1	pron.			cbb483e0fc.mp3
+lottery	B2	n.			009ef04062.mp3
+loud	A2	adj.			ff7aa61821.mp3
+loud	A2	adv.			ff7aa61821.mp3
+loudly	A2	adv.			b33e5f8bb4.mp3
+love	A1	n.			338eae8c29.mp3
+love	A1	v.			338eae8c29.mp3
+lovely	A2	adj.	UK		4e62e12426.mp3
+low	A2	adj.			15a79210bb.mp3
+low	A2	adv.			15a79210bb.mp3
+low	B2	n.			15a79210bb.mp3
+lower	B2	v.			e55ac3d7ee.mp3
+loyal	B2	adj.			75cde064a7.mp3
+loyalty	C1	n.			d009fcd8b1.mp3
+luck	A2	n.			c0326cc70b.mp3
+lucky	A2	adj.			518fc09898.mp3
+lunch	A1	n.			b2b83ec2b8.mp3
+lung	B2	n.			45bd568260.mp3
+luxury	B1	n.			853d021ab4.mp3
+lyric	B2	n.			1595febbd3.mp3
+machine	A1	n.			c8a534142a.mp3
+machinery	C1	n.			b64d3903df.mp3
+mad	B1	adj.			a874719702.mp3
+magazine	A1	n.			fd976ac3ba.mp3
+magic	B1	adj.			8e874f141c.mp3
+magic	B1	n.			8e874f141c.mp3
+magical	C1	adj.			b548b77309.mp3
+magistrate	C1	n.	UK		0db85ef310.mp3
+magnetic	C1	adj.			11def42276.mp3
+magnificent	B2	adj.			01c00d613f.mp3
+magnitude	C1	n.			b4e674bfd0.mp3
+mail	A2	n.			48c8b9208f.mp3
+mail	A2	v.			48c8b9208f.mp3
+main	A1	adj.			28843d52ba.mp3
+mainland	C1	n.			605870e73e.mp3
+mainly	B1	adv.			ceb8d52060.mp3
+mainstream	C1	adj.			ac40e1044a.mp3
+mainstream	C1	n.			ac40e1044a.mp3
+maintain	B2	v.			baba9074ef.mp3
+maintenance	C1	n.			0e0bb3864d.mp3
+major	A2	adj.	UK		5acffc2769.mp3
+major	A2	adj.	US		5acffc2769.mp3
+major	B2	n.	US		5acffc2769.mp3
+majority	B2	n.			d34608b4c3.mp3
+make	A1	v.			537be77bf5.mp3
+make	B2	n.			537be77bf5.mp3
+make-up	B2	n.	UK		da8e86ead3.mp3
+makeup	B2	n.	US		38be2c84e7.mp3
+making	B2	n.			3a66eaa0c5.mp3
+male	A2	adj.			3aaff44d2e.mp3
+male	A2	n.			3aaff44d2e.mp3
+mall	A1	n.	US		f04800d38b.mp3
+mall	B1	n.	UK		f04800d38b.mp3
+man	A1	n.			50152adac4.mp3
+manage	A2	v.			277744591f.mp3
+management	B1	n.			829712a877.mp3
+manager	A2	n.			fcecd49b41.mp3
+mandate	C1	n.			a5850815c1.mp3
+mandatory	C1	adj.			9b44a3a237.mp3
+manifest	C1	v.			69624f9908.mp3
+manipulate	C1	v.			f7f7d2f16a.mp3
+manipulation	C1	n.			9ec095f4ae.mp3
+manner	A2	n.			79b56c45c5.mp3
+manufacture	B2	v.			91f05aa7d0.mp3
+manufacturing	B2	n.			3029548a42.mp3
+manuscript	C1	n.			4c5bb9a84c.mp3
+many	A1	det.			3c5e45f4e3.mp3
+many	A1	pron.			3c5e45f4e3.mp3
+map	A1	n.			91946133eb.mp3
+map	B2	v.			91946133eb.mp3
+marathon	B2	n.			d5e7c2097f.mp3
+march	C1	n.			3d4c11f49b.mp3
+march	C1	v.			3d4c11f49b.mp3
+margin	B2	n.			b6c3f38c12.mp3
+marginal	C1	adj.			18ec38eb99.mp3
+marine	C1	adj.			e0fdca3ab5.mp3
+mark	A2	n.			353e56e00e.mp3
+mark	A2	v.			353e56e00e.mp3
+marker	B2	n.			c25f1efde6.mp3
+market	A1	n.			e35aa3fc69.mp3
+market	B1	v.			e35aa3fc69.mp3
+marketing	B1	n.			2b196954bc.mp3
+marketplace	C1	n.			3f4aff9090.mp3
+marriage	B1	n.			e8cf7ab4c7.mp3
+married	A1	adj.			91c6519b79.mp3
+marry	A2	v.			b0543a5138.mp3
+martial	B2	adj.			8c691358e6.mp3
+mask	C1	n.			ca8ebcaae2.mp3
+mass	B2	adj.			97f8a85696.mp3
+mass	B2	n.			97f8a85696.mp3
+massacre	C1	n.			b332f3f015.mp3
+massive	B2	adj.			7ff656ff2f.mp3
+master	B2	n.			11ce186202.mp3
+master	B2	v.			11ce186202.mp3
+match	A1	n.		contest/correspond	0deb69275f.mp3
+match	A1	v.		contest/correspond	0deb69275f.mp3
+matching	B2	adj.			9554e3d59f.mp3
+mate	B2	n.			581138b10d.mp3
+mate	B2	v.			581138b10d.mp3
+material	A2	n.			78a2e0ef44.mp3
+material	B2	adj.			78a2e0ef44.mp3
+math	A2	n.	US		018e04ec98.mp3
+mathematical	C1	adj.			6c149fc864.mp3
+mathematics	A2	n.			cde9f160af.mp3
+maths	A2	n.	UK		16b3b2ea04.mp3
+matter	A2	n.			cc032c1552.mp3
+matter	A2	v.			cc032c1552.mp3
+mature	C1	adj.			63f32dffeb.mp3
+mature	C1	v.			63f32dffeb.mp3
+maximize	C1	v.			0395de3b1e.mp3
+maximum	B2	adj.			1461ea2cd5.mp3
+maximum	B2	n.			1461ea2cd5.mp3
+may	A2	modal v.			11c124039a.mp3
+maybe	A1	adv.			865f7974d0.mp3
+mayor	A2	n.	US		d02fbc16d5.mp3
+mayor	B2	n.	UK		d02fbc16d5.mp3
+me	A1	pron.			c476a15ce3.mp3
+meal	A1	n.			9d9f701dee.mp3
+mean	A1	v.			8852a6c2a5.mp3
+meaning	A1	n.			cdab779b4d.mp3
+meaningful	C1	adj.			089f3a27aa.mp3
+means	B2	n.			465083eff4.mp3
+meantime	C1	n.			7b4ed42116.mp3
+meanwhile	B1	adv.			ba7afd04f1.mp3
+measure	B1	n.			87a3dec29d.mp3
+measure	B1	v.			87a3dec29d.mp3
+measurement	B2	n.			275e88d828.mp3
+meat	A1	n.			adc4f36fe3.mp3
+mechanic	B2	n.			749fb66e3f.mp3
+mechanical	B2	adj.			ea6cd79ff5.mp3
+mechanism	B2	n.			b9919cbd81.mp3
+medal	B2	n.			75f1baba6e.mp3
+media	A2	n.			30b6c6ec8c.mp3
+medical	A2	adj.			1232c47331.mp3
+medication	B2	n.			da61f51b28.mp3
+medicine	A2	n.			a66a6f22b0.mp3
+medieval	C1	adj.			e4b2395e2c.mp3
+meditation	C1	n.			bc1221575f.mp3
+medium	B1	adj.			91e0bd5de9.mp3
+medium	B2	n.			91e0bd5de9.mp3
+meet	A1	v.			60b24cee61.mp3
+meeting	A1	n.			4e58fdbfd7.mp3
+melody	C1	n.			b86b464f02.mp3
+melt	B2	v.			e32fbb4258.mp3
+member	A1	n.			46e97cc0d4.mp3
+membership	B2	n.			e838708a10.mp3
+memo	C1	n.			ef3b7db6f6.mp3
+memoir	C1	n.			2682cc5884.mp3
+memorable	B2	adj.			a30a753189.mp3
+memorial	C1	n.			848afffedf.mp3
+memory	A2	n.			77dfe26478.mp3
+mental	B1	adj.			6b4d9a21ac.mp3
+mention	A2	v.			00e9350cb2.mp3
+mention	B1	n.			00e9350cb2.mp3
+mentor	C1	n.			000f7ac818.mp3
+menu	A1	n.			62e0547007.mp3
+merchant	C1	n.			d7e578b7da.mp3
+mercy	C1	n.			cdc4ef39ca.mp3
+mere	C1	adj.			8b98a976e4.mp3
+merely	C1	adv.			9720873c32.mp3
+merge	C1	v.			abc9485cbe.mp3
+merger	C1	n.			d6bbd4ab91.mp3
+merit	C1	n.			e2e3d0dd47.mp3
+mess	B1	n.			691173f5b6.mp3
+mess	B1	v.			691173f5b6.mp3
+message	A1	n.			26c9a46ede.mp3
+metal	A2	n.			8ce1ba0890.mp3
+metaphor	B2	n.			b0ef587ce8.mp3
+meter	A1	n.	US		634e2f764d.mp3
+method	A2	n.			9131eef3bc.mp3
+methodology	C1	n.			c4856f1171.mp3
+metre	A1	n.	UK		8651acf42e.mp3
+middle	A2	adj.			ccb9d89976.mp3
+middle	A2	n.			ccb9d89976.mp3
+midnight	A1	n.			93f85921a1.mp3
+midst	C1	n.			5cd3eabf80.mp3
+might	A2	modal v.			84f97142b2.mp3
+migration	C1	n.			f86f750a9d.mp3
+mild	B1	adj.			c47aae2a82.mp3
+mile	A1	n.			b05815485d.mp3
+militant	C1	adj.			7d442e6168.mp3
+militant	C1	n.			7d442e6168.mp3
+military	B2	adj.			0518a186ae.mp3
+military	B2	n.			0518a186ae.mp3
+militia	C1	n.			90c3d0c262.mp3
+milk	A1	n.			bbf977bf58.mp3
+mill	C1	n.			4048ce9957.mp3
+million	A1	number			26b86a7c02.mp3
+mind	A2	n.			728e0bfd92.mp3
+mind	A2	v.			728e0bfd92.mp3
+mine	A2	pron.		belongs to me	13bcaba641.mp3
+mine	B1	n.		hole in the ground	13bcaba641.mp3
+miner	B2	n.			ae9f7a7e27.mp3
+mineral	B2	n.			5434266eda.mp3
+minimal	C1	adj.			957267cc77.mp3
+minimize	C1	v.			438a26c1dd.mp3
+minimum	B2	adj.			45a760d605.mp3
+minimum	B2	n.			45a760d605.mp3
+mining	C1	n.			678351db70.mp3
+minister	B2	n.			49b12291ff.mp3
+ministry	C1	n.			bd981ce7d4.mp3
+minor	B2	adj.			9a3f3115a7.mp3
+minority	B2	n.			3ba11272be.mp3
+minute	A1	n.			b1391d9666.mp3
+minute	C1	adj.			b1391d9666.mp3
+miracle	C1	n.			6953211f10.mp3
+mirror	A2	n.			b421b742ef.mp3
+miserable	B2	adj.			617b2530c0.mp3
+misery	C1	n.			87318b093d.mp3
+misleading	C1	adj.			425de6cbaa.mp3
+miss	A1	v.			1f62482bbb.mp3
+missile	C1	n.			8c605ed06c.mp3
+missing	A2	adj.			c96beefb3d.mp3
+mission	B2	n.			94b0c1f730.mp3
+mistake	A1	n.			4c50374839.mp3
+mistake	B2	v.			4c50374839.mp3
+mix	B1	n.			f45da6a69d.mp3
+mix	B1	v.			f45da6a69d.mp3
+mixed	B2	adj.			9baac0f75c.mp3
+mixture	B1	n.			9af01df15e.mp3
+mob	C1	n.			f0ff8fc8e1.mp3
+mobile	A2	adj.	UK		19559cc423.mp3
+mobile	A2	n.	UK		19559cc423.mp3
+mobile	C1	adj.	US		19559cc423.mp3
+mobility	C1	n.			b04db52f4e.mp3
+mobilize	C1	v.			c9e78f39fd.mp3
+mode	B2	n.			8bf721a9cb.mp3
+model	A1	n.			59e4afcb68.mp3
+model	B2	v.			59e4afcb68.mp3
+moderate	C1	adj.			7d29a85cbd.mp3
+modern	A1	adj.			2616bb30b1.mp3
+modest	B2	adj.			20f41259a5.mp3
+modification	C1	n.			d585a1ac3b.mp3
+modify	B2	v.			463217a30c.mp3
+module	C1	n.	US		8da6cab604.mp3
+mom	A1	n.	US		b1d4df066d.mp3
+moment	A1	n.			5fb30d8882.mp3
+momentum	C1	n.			557b48f5ad.mp3
+money	A1	n.			7d82d3e200.mp3
+monitor	B2	n.			3edb4fc37b.mp3
+monitor	B2	v.			3edb4fc37b.mp3
+monk	C1	n.			c99a0e05fc.mp3
+monkey	A2	n.			58834339b0.mp3
+monopoly	C1	n.			334a684233.mp3
+monster	B2	n.			204ce34d94.mp3
+month	A1	n.			e31d795364.mp3
+monthly	B2	adj.			bfafbb0a8d.mp3
+monument	B2	n.			00b5fa573c.mp3
+mood	B1	n.			324867484c.mp3
+moon	A2	n.			0a2dac7234.mp3
+moral	B2	adj.			3d329931ab.mp3
+moral	B2	n.			3d329931ab.mp3
+morality	C1	n.			ced6da7b33.mp3
+more	A1	adv.			3c2acd238a.mp3
+more	A1	det.			3c2acd238a.mp3
+more	A1	pron.			3c2acd238a.mp3
+moreover	B2	adv.			4892c46ad9.mp3
+morning	A1	n.			be555c40f6.mp3
+mortgage	B2	n.			30c0e8bd59.mp3
+mosque	B2	n.			af0809bca4.mp3
+mosquito	B2	n.	US		d0932aa999.mp3
+most	A1	adv.			192bec7ca8.mp3
+most	A1	det.			192bec7ca8.mp3
+most	A1	pron.			192bec7ca8.mp3
+mostly	A2	adv.			a47603603c.mp3
+mother	A1	n.			2999303c8e.mp3
+motion	B2	n.			917bb647ae.mp3
+motivate	B2	v.			d7ea903906.mp3
+motivation	B2	n.			7822218a94.mp3
+motive	C1	n.			e2d95a7c6b.mp3
+motor	B2	adj.			097083fe15.mp3
+motor	B2	n.			097083fe15.mp3
+motorcycle	A2	n.			c852d7f686.mp3
+motorist	C1	n.	UK		6ac8bc8aa1.mp3
+mount	B2	v.			2ac8022aa1.mp3
+mountain	A1	n.			dffcde6c90.mp3
+mouse	A1	n.			4bae9051f5.mp3
+mouth	A1	n.			be96330091.mp3
+move	A1	v.			665397cf24.mp3
+move	B1	n.			665397cf24.mp3
+movement	A2	n.			d754a4daf2.mp3
+movie	A1	n.			95934382c4.mp3
+moving	B2	adj.			15c89e7719.mp3
+much	A1	adv.			afda09bfef.mp3
+much	A1	det.			afda09bfef.mp3
+much	A1	pron.			afda09bfef.mp3
+mud	B1	n.			69c3b136f5.mp3
+multiple	B2	adj.			cc7cdbf3d8.mp3
+multiply	B2	v.			ee1ca0129c.mp3
+mum	A1	n.	UK		2cfefe769c.mp3
+municipal	C1	adj.			eaf4d50a12.mp3
+murder	B1	n.			5c2a2dfbec.mp3
+murder	B1	v.			5c2a2dfbec.mp3
+muscle	B1	n.			5116639c51.mp3
+museum	A1	n.			75dcfa047b.mp3
+music	A1	n.			99d1a67e79.mp3
+musical	A2	adj.			cbb9d7b6bf.mp3
+musical	B1	n.			cbb9d7b6bf.mp3
+musician	A2	n.			57be59f224.mp3
+must	A1	modal v.			ab90833d96.mp3
+mutual	C1	adj.			26d8382b84.mp3
+my	A1	det.			8c77c1f219.mp3
+myself	A2	pron.			1b266a556d.mp3
+mysterious	B2	adj.			6eede19cb3.mp3
+mystery	B1	n.			e8f796f969.mp3
+myth	B2	n.			fe7ed1ae13.mp3
+nail	B1	n.			25a2b96f5f.mp3
+naked	B2	adj.			63505d5b2c.mp3
+name	A1	n.			167955c77b.mp3
+name	A1	v.			167955c77b.mp3
+namely	C1	adv.			110ad2fb11.mp3
+narrative	B1	adj.			50c236dbcd.mp3
+narrative	B1	n.			50c236dbcd.mp3
+narrow	A2	adj.			308321b197.mp3
+narrow	B2	v.			308321b197.mp3
+nasty	B2	adj.			45a21c3d2a.mp3
+nation	B1	n.			ab3910f92b.mp3
+national	A2	adj.			22e04080dc.mp3
+national	B2	n.			22e04080dc.mp3
+nationwide	C1	adj.			40a0957834.mp3
+native	B1	adj.			54b5fbd7dd.mp3
+native	B1	n.			54b5fbd7dd.mp3
+natural	A1	adj.			a91ca61037.mp3
+naturally	B1	adv.			3f808e85a0.mp3
+nature	A2	n.			6df9ca90ff.mp3
+naval	C1	adj.			edeab04a80.mp3
+navigation	B2	n.			2bbe12d03d.mp3
+near	A1	adj.			6117d71e3b.mp3
+near	A1	adv.			6117d71e3b.mp3
+near	A1	prep.			6117d71e3b.mp3
+nearby	B2	adj.			dc4c373ff5.mp3
+nearby	B2	adv.			dc4c373ff5.mp3
+nearly	A2	adv.			440caa2816.mp3
+neat	B1	adj.	US		ac2f86f8ff.mp3
+neat	B2	adj.	UK		ac2f86f8ff.mp3
+necessarily	B1	adv.			6bfc3992a0.mp3
+necessary	A2	adj.			3f6bc4be24.mp3
+necessity	B2	n.			53ec0c2df5.mp3
+neck	A2	n.			2c673a5d14.mp3
+need	A1	v.			9238b711b6.mp3
+need	A2	n.			9238b711b6.mp3
+need	B1	modal v.			9238b711b6.mp3
+needle	B1	n.			b0cc63dd50.mp3
+negative	A1	adj.			d8e72f805e.mp3
+negative	B2	n.			d8e72f805e.mp3
+neglect	C1	n.			c1883b5eea.mp3
+neglect	C1	v.			c1883b5eea.mp3
+negotiate	B2	v.			7057ce0ac1.mp3
+negotiation	B2	n.			4e96a783c8.mp3
+neighbor	A1	n.	US		4318f1185e.mp3
+neighborhood	A1	n.	US		7ba099b220.mp3
+neighboring	C1	adj.	US		f2c111e4a4.mp3
+neighbour	A1	n.	UK		2504860431.mp3
+neighbourhood	B1	n.	UK		bf658548cb.mp3
+neighbouring	C1	adj.	UK		dd783e52bb.mp3
+neither	A2	det.			ed62191911.mp3
+neither	A2	pron.			ed62191911.mp3
+neither	B1	adv.			ed62191911.mp3
+nerve	B2	n.			42d7c42e40.mp3
+nervous	A2	adj.			2b68b4d478.mp3
+nest	C1	n.			347a7bda89.mp3
+net	B1	n.			f1d8b6db0f.mp3
+net	C1	adj.			f1d8b6db0f.mp3
+network	A2	n.			b04a0a7a55.mp3
+neutral	B2	adj.			2504b8082d.mp3
+never	A1	adv.			334570b714.mp3
+nevertheless	B2	adv.			1dd8b22f4f.mp3
+new	A1	adj.			5ddd91b49f.mp3
+newly	B2	adv.			db48603595.mp3
+news	A1	n.			25aa94fe46.mp3
+newsletter	C1	n.			aa8e139c80.mp3
+newspaper	A1	n.			8285a2607c.mp3
+next	A1	adj.			a4ff4b4da2.mp3
+next	A1	adv.			a4ff4b4da2.mp3
+next	B1	n.			a4ff4b4da2.mp3
+next to	A1	prep.			c997569249.mp3
+nice	A1	adj.			ca01d3b305.mp3
+niche	C1	n.			f329049f41.mp3
+nickel	B2	n.	US		3514e64934.mp3
+night	A1	n.			279395f422.mp3
+nightmare	B2	n.			f55d5100c0.mp3
+nine	A1	number			9013f0377c.mp3
+nineteen	A1	number			c4986ea08b.mp3
+ninety	A1	number			97d5d38db0.mp3
+no	A1	det.			cdcf8769e6.mp3
+no	A1	exclam.			cdcf8769e6.mp3
+no one	A1	pron.			2a912f04cf.mp3
+noble	C1	adj.			9bb0881b08.mp3
+nobody	A1	pron.			770c1e99d2.mp3
+nod	C1	v.			a45f3dcf4c.mp3
+noise	A2	n.			72dd458272.mp3
+noisy	A2	adj.			250634247d.mp3
+nominate	C1	v.			221cca21a8.mp3
+nomination	C1	n.			d960c53d6b.mp3
+nominee	C1	n.			4a6cdeb371.mp3
+non-profit	C1	adj.	UK		9a7c389d08.mp3
+none	A2	pron.			a70c849896.mp3
+nonetheless	C1	adv.			d29a927fd0.mp3
+nonprofit	C1	adj.	US		4410ce3281.mp3
+nonsense	C1	n.			0666a51802.mp3
+noon	C1	n.			aaa3f41f1d.mp3
+nor	B1	adv.			b6daf4a162.mp3
+nor	B1	conj.			b6daf4a162.mp3
+norm	B2	n.			268b8bc711.mp3
+normal	A2	adj.			c3ffae1e0d.mp3
+normal	B1	n.			c3ffae1e0d.mp3
+normally	A2	adv.			02449a041c.mp3
+north	A1	adj.			e37b2c4314.mp3
+north	A1	adv.			e37b2c4314.mp3
+north	A1	n.			e37b2c4314.mp3
+northern	B1	adj.			d2245d2268.mp3
+nose	A1	n.			0d6f3a6044.mp3
+not	A1	adv.			29af7267b1.mp3
+notable	C1	adj.			21cd4e5441.mp3
+notably	C1	adv.			ca16a83281.mp3
+note	A1	n.			0e0005aadb.mp3
+note	B1	v.			0e0005aadb.mp3
+notebook	B2	n.			66e829e8af.mp3
+nothing	A1	pron.			18dc22ea66.mp3
+notice	A2	n.			e7eb679068.mp3
+notice	A2	v.			e7eb679068.mp3
+notify	C1	v.			2f9e49d627.mp3
+notion	B2	n.			302e3c4bbd.mp3
+notorious	C1	adj.			a5f06fb7a5.mp3
+novel	A2	n.			f335537a2e.mp3
+novel	C1	adj.			f335537a2e.mp3
+novelist	B2	n.			d5204f1d01.mp3
+now	A1	adv.			6b713f3863.mp3
+now	B1	conj.			6b713f3863.mp3
+nowadays	B2	adv.			fd0ce7a9d5.mp3
+nowhere	A2	adv.			eeab2de8c8.mp3
+nuclear	B1	adj.			f657ea68f9.mp3
+number	A1	n.			5e726ce1b8.mp3
+number	A2	v.			5e726ce1b8.mp3
+numerous	B2	adj.			59270832e7.mp3
+nurse	A1	n.			1e2ff40542.mp3
+nursery	C1	n.			0910725919.mp3
+nursing	B2	adj.			c68c663e7e.mp3
+nut	A2	n.			b46d451598.mp3
+nutrition	B2	n.			2bab526174.mp3
+obesity	B2	n.			63a177f303.mp3
+obey	B2	v.			7fe273948e.mp3
+object	A1	n.			b5f10289f0.mp3
+object	B2	v.			b5f10289f0.mp3
+objection	C1	n.			5b76f5ae08.mp3
+objective	B2	adj.			5c454d9991.mp3
+objective	B2	n.			5c454d9991.mp3
+obligation	B2	n.			2c658ed742.mp3
+oblige	C1	v.			c597da6ce9.mp3
+observation	B2	n.			ab91144004.mp3
+observe	B2	v.			30aac34ea0.mp3
+observer	B2	n.			d055f24adb.mp3
+obsess	C1	v.			f954c6a700.mp3
+obsession	C1	n.			ebabc2b4da.mp3
+obstacle	B2	n.			2392c57fb8.mp3
+obtain	B2	v.			de74818b26.mp3
+obvious	B1	adj.			853c20583f.mp3
+obviously	B1	adv.			7694fe831f.mp3
+occasion	B1	n.			b92a07096f.mp3
+occasional	C1	adj.			855e380059.mp3
+occasionally	B2	adv.			788e475da3.mp3
+occupation	B2	n.			add364d1c9.mp3
+occupy	B2	v.			680745001f.mp3
+occur	B1	v.			032c69f611.mp3
+occurrence	C1	n.			9421676302.mp3
+ocean	A1	n.	US		da4dd29a10.mp3
+ocean	A2	n.	UK		da4dd29a10.mp3
+odd	B1	adj.			e018f6fd31.mp3
+odds	C1	n.			7f87750d8b.mp3
+of	A1	prep.			b689cc12ae.mp3
+off	A1	adv.			3e204cd423.mp3
+off	A1	prep.			3e204cd423.mp3
+offence	B2	n.	UK		8f4f9e4034.mp3
+offend	B2	v.			264f95ef2a.mp3
+offender	B2	n.			235e76594f.mp3
+offense	B2	n.	US		af1e8fb5d0.mp3
+offensive	B2	adj.			3d80ae7b94.mp3
+offer	A2	n.			bb9b4633d4.mp3
+offer	A2	v.			bb9b4633d4.mp3
+offering	C1	n.			7935ec6e49.mp3
+office	A1	n.			4536b8786c.mp3
+officer	A2	n.			bc9c242b61.mp3
+official	B1	adj.			c793d6e4c4.mp3
+official	B2	n.			c793d6e4c4.mp3
+offspring	C1	n.			6389392050.mp3
+often	A1	adv.			e8092b1d73.mp3
+oh	A1	exclam.			73e9cf0cb9.mp3
+oil	A2	n.			5449d47ae3.mp3
+old	A1	adj.			01c8af0131.mp3
+old-fashioned	B1	adj.			20a08bc665.mp3
+on	A1	adv.			f9f6b783a3.mp3
+on	A1	prep.			f9f6b783a3.mp3
+once	A1	adv.			66f0c2f35c.mp3
+once	B1	conj.			66f0c2f35c.mp3
+one	A1	det.			25e4b04dc4.mp3
+one	A1	number			25e4b04dc4.mp3
+one	A1	pron.			25e4b04dc4.mp3
+ongoing	B2	adj.			677b11da4c.mp3
+onion	A1	n.			4e51c9d2c1.mp3
+online	A1	adj.			4e1b594bdc.mp3
+online	A1	adv.			4e1b594bdc.mp3
+only	A1	adj.			3505b37e12.mp3
+only	A1	adv.			3505b37e12.mp3
+onto	A2	prep.			f43d30c528.mp3
+open	A1	adj.			55c06b35b8.mp3
+open	A1	v.			55c06b35b8.mp3
+opening	B2	n.			8f153100f2.mp3
+openly	B2	adv.			c7116a54d5.mp3
+opera	B2	n.			a58fd4b85a.mp3
+operate	B2	v.			d9f34012fa.mp3
+operation	B1	n.			5787512726.mp3
+operational	C1	adj.			1ae783d273.mp3
+operator	B2	n.			7f1102e374.mp3
+opinion	A1	n.			3a132705b9.mp3
+opponent	B2	n.			daddff9658.mp3
+opportunity	A2	n.			4bfbdf65bc.mp3
+oppose	B2	v.			cf9b6ee5b9.mp3
+opposed	B2	adj.			323ec27130.mp3
+opposite	A1	adj.			d6c66ec41c.mp3
+opposite	A1	adv.			d6c66ec41c.mp3
+opposite	A1	n.			d6c66ec41c.mp3
+opposite	A1	prep.			d6c66ec41c.mp3
+opposition	B2	n.			a59cda2d51.mp3
+opt	C1	v.			c0bf79baca.mp3
+optical	C1	adj.			42aa046c26.mp3
+optimism	C1	n.			a23b92a90f.mp3
+optimistic	B2	adj.			edddcb913e.mp3
+option	A2	n.			589f09c6b0.mp3
+or	A1	conj.			4003951551.mp3
+oral	C1	adj.			569d056f96.mp3
+orange	A1	adj.			2272463c06.mp3
+orange	A1	n.			2272463c06.mp3
+orchestra	B2	n.			8a053a8651.mp3
+order	A1	n.			823a6c70c3.mp3
+order	A1	v.			823a6c70c3.mp3
+ordinary	A2	adj.			74a7db167d.mp3
+organ	B2	n.			7f15570dac.mp3
+organic	B2	adj.			ec742c0c18.mp3
+organization	A2	n.			480445e045.mp3
+organizational	C1	adj.			20e0d1fd28.mp3
+organize	A2	v.			44fa9cfbb7.mp3
+organized	B1	adj.			2d40111ab1.mp3
+organizer	B1	n.			ef50492dbd.mp3
+orientation	C1	n.			bcfd16f103.mp3
+origin	B2	n.			d82980f9b9.mp3
+original	A2	adj.			eaa81b2c8a.mp3
+original	B1	n.			eaa81b2c8a.mp3
+originally	B1	adv.			f2b95b5154.mp3
+originate	C1	v.			9207d04d24.mp3
+other	A1	adj.			835f56ccd1.mp3
+other	A1	pron.			835f56ccd1.mp3
+otherwise	B2	adv.			9a29cb4fe9.mp3
+ought	B1	modal v.			932b7b351d.mp3
+our	A1	det.			f785c4fda0.mp3
+ours	B1	pron.			d4ce8dc63d.mp3
+ourselves	A2	pron.			ea35adf71f.mp3
+out	A1	adv.			3c078ad880.mp3
+out	A1	prep.			3c078ad880.mp3
+outbreak	C1	n.			e430d683db.mp3
+outcome	B2	n.			367d2efec1.mp3
+outdoor	B1	adj.			eff667f17c.mp3
+outdoors	B1	adv.			2a8155932e.mp3
+outer	B2	adj.			de01652fe4.mp3
+outfit	B2	n.			6e29e02d79.mp3
+outing	C1	n.			cb9a04cdb2.mp3
+outlet	C1	n.			1719629d61.mp3
+outline	B2	n.			546d25be03.mp3
+outline	B2	v.			546d25be03.mp3
+outlook	C1	n.			acec8603e7.mp3
+output	B2	n.			039cc892d5.mp3
+outrage	C1	n.			5071404887.mp3
+outrage	C1	v.			5071404887.mp3
+outside	A1	adv.			cd0228172e.mp3
+outside	A2	adj.			cd0228172e.mp3
+outside	A2	n.			cd0228172e.mp3
+outside	A2	prep.			cd0228172e.mp3
+outsider	C1	n.			1b7ea0589b.mp3
+outstanding	B2	adj.			bc1682e302.mp3
+oven	A2	n.			294b2cf694.mp3
+over	A1	adv.			9c6f843e60.mp3
+over	A1	prep.			9c6f843e60.mp3
+overall	B2	adj.			2f24c426bd.mp3
+overall	B2	adv.			2f24c426bd.mp3
+overcome	B2	v.			6c491b5bd4.mp3
+overlook	C1	v.			66740531b8.mp3
+overly	C1	adv.			033306ca38.mp3
+overnight	B2	adv.			0cd821ce25.mp3
+overseas	A2	adv.	US		a2464bf925.mp3
+overseas	B1	adj.	US		a2464bf925.mp3
+overseas	B2	adj.	UK		a2464bf925.mp3
+overseas	B2	adv.	UK		a2464bf925.mp3
+oversee	C1	v.			2f2916f101.mp3
+overturn	C1	v.			f197aa622b.mp3
+overwhelm	C1	v.			08c6cf26dc.mp3
+overwhelming	C1	adj.			808dcf1ab3.mp3
+owe	B2	v.			112ec94697.mp3
+own	A1	adj.			2523ada328.mp3
+own	A1	pron.			2523ada328.mp3
+own	A2	v.			2523ada328.mp3
+owner	A2	n.			e463a92790.mp3
+ownership	B2	n.			ab7d035a1f.mp3
+oxygen	B2	n.			f99898d1fa.mp3
+o’clock	A1	adv.			05bf603dd6.mp3
+pace	B2	n.			0e485e5160.mp3
+pace	B2	v.			0e485e5160.mp3
+pack	A2	v.			350f39acaa.mp3
+pack	B1	n.			350f39acaa.mp3
+package	B1	n.			6c98b2a2e2.mp3
+package	B2	v.			6c98b2a2e2.mp3
+packet	B2	n.			611a31bd42.mp3
+pad	C1	n.			ccc9364d99.mp3
+page	A1	n.			0bacf9da17.mp3
+pain	A2	n.			655094aec2.mp3
+painful	B1	adj.			5dd4caa683.mp3
+paint	A1	n.			30e1265b6f.mp3
+paint	A1	v.			30e1265b6f.mp3
+painter	A2	n.			f8ce61479f.mp3
+painting	A1	n.			1710153667.mp3
+pair	A1	n.			179ab396f2.mp3
+palace	A2	n.			7bd33de579.mp3
+pale	B1	adj.			2467a9c522.mp3
+palm	B2	n.			98404760d8.mp3
+pan	B1	n.			952f3c0b60.mp3
+panel	B2	n.			ed485b952d.mp3
+panic	B2	n.			24ace497a8.mp3
+pants	A1	n.	US		d5c51be84b.mp3
+pants	A2	n.	UK		d5c51be84b.mp3
+paper	A1	n.			bec1e82171.mp3
+parade	B2	n.			4a6c0b6634.mp3
+paragraph	A1	n.			86d274009b.mp3
+parallel	B2	adj.			481c58a128.mp3
+parallel	B2	n.			481c58a128.mp3
+parameter	C1	n.			6a9b5d5c6c.mp3
+parent	A1	n.			79e4465f81.mp3
+parental	C1	adj.			dcd62bb929.mp3
+parish	C1	n.	UK		50bdd6b3af.mp3
+park	A1	n.			64ee743712.mp3
+park	A1	v.			64ee743712.mp3
+parking	A2	n.			25d5736d50.mp3
+parliament	B2	n.	UK		b3db4ad7ad.mp3
+parliament	C1	n.	US		b3db4ad7ad.mp3
+parliamentary	C1	adj.	UK		622ba4df43.mp3
+part	A1	n.			a7b6a98292.mp3
+part-time	B2	adj.			e34e8a3d01.mp3
+part-time	B2	adv.			e34e8a3d01.mp3
+partial	C1	adj.			a564cc3cdd.mp3
+partially	C1	adv.			4045dba22d.mp3
+participant	B2	n.			7d1069b9ee.mp3
+participate	B1	v.			f8883058be.mp3
+participation	B2	n.			372d580c1f.mp3
+particular	A2	adj.			d3806d2ff2.mp3
+particularly	B1	adv.			e7384e17f8.mp3
+partly	B2	adv.			e1ce4fed67.mp3
+partner	A1	n.			f831b96115.mp3
+partnership	B2	n.			c468a00045.mp3
+party	A1	n.			eeb48bf370.mp3
+pass	A2	v.			3cef227044.mp3
+pass	B1	n.			3cef227044.mp3
+passage	B2	n.			8d3b9339ae.mp3
+passenger	A2	n.			a7cdd61f5e.mp3
+passing	C1	n.			86ebdae442.mp3
+passion	B1	n.			c55375e950.mp3
+passionate	B2	adj.			41f15535ef.mp3
+passive	C1	adj.			3924c19dfa.mp3
+passport	A1	n.			44e693bfbe.mp3
+password	B2	n.			ca80b206db.mp3
+past	A1	adj.			d19432ac5a.mp3
+past	A1	n.			d19432ac5a.mp3
+past	A1	prep.			d19432ac5a.mp3
+past	A2	adv.			d19432ac5a.mp3
+pastor	C1	n.			fd45a4cc62.mp3
+patch	B2	n.	US		d79e7555f7.mp3
+patch	C1	n.	UK		d79e7555f7.mp3
+patent	C1	n.			585ad0fd15.mp3
+path	B1	n.			68c44efa60.mp3
+pathway	C1	n.			40606e360c.mp3
+patience	B2	n.			881ad59bf3.mp3
+patient	A2	n.			32f1726938.mp3
+patient	B2	adj.			32f1726938.mp3
+patrol	C1	n.			41b4dc99a8.mp3
+patrol	C1	v.			41b4dc99a8.mp3
+patron	C1	n.			3b7db84360.mp3
+pattern	A2	n.			e88556bbd1.mp3
+pause	B2	n.			3e5fe0af7c.mp3
+pause	B2	v.			3e5fe0af7c.mp3
+pay	A1	v.			088bd20f5f.mp3
+pay	A2	n.			088bd20f5f.mp3
+payment	B1	n.			6a8a72b051.mp3
+peace	A2	n.			ad3ad46402.mp3
+peaceful	B1	adj.			faede5bfab.mp3
+peak	C1	n.			3815b6fa8e.mp3
+peasant	C1	n.			85295943c4.mp3
+peculiar	C1	adj.			6876692a35.mp3
+peer	B2	n.			c67ddbe968.mp3
+pen	A1	n.			44f9d9b31d.mp3
+penalty	B2	n.			745b9dc7a4.mp3
+pencil	A1	n.			6a860ee41c.mp3
+penny	A2	n.			a429d3811d.mp3
+pension	B2	n.	UK		c370e91269.mp3
+pension	C1	n.	US		c370e91269.mp3
+people	A1	n.			cbf10d170e.mp3
+pepper	A1	n.			4bceeee52e.mp3
+per	A2	prep.			fcd2b9da4c.mp3
+per cent	A2	adj.	UK		c098d72766.mp3
+per cent	A2	adv.	UK		c098d72766.mp3
+per cent	A2	n.	UK		c098d72766.mp3
+perceive	B2	v.			cb07c77f55.mp3
+percent	A2	adj.	US		79d05fc1c7.mp3
+percent	A2	adv.	US		79d05fc1c7.mp3
+percent	A2	n.	US		79d05fc1c7.mp3
+percentage	B1	n.			4e17b4ac72.mp3
+perception	B2	n.			36f942904f.mp3
+perfect	A1	adj.			e1ca207dd3.mp3
+perfectly	B1	adv.			63d7644f5f.mp3
+perform	A2	v.			fc74e64c19.mp3
+performance	B1	n.			be8acf34af.mp3
+perhaps	A2	adv.			c8705351b1.mp3
+period	A1	n.			05ba0e1dd3.mp3
+permanent	B2	adj.			ab2dd05821.mp3
+permanently	B2	adv.			0eeed8c417.mp3
+permission	A2	n.			0d667f018a.mp3
+permit	B2	n.			7ed49b1170.mp3
+permit	B2	v.			7ed49b1170.mp3
+persist	C1	v.			1660ad9e2b.mp3
+persistent	C1	adj.			a069387d71.mp3
+person	A1	n.			33669782db.mp3
+personal	A1	adj.			01cbc780c7.mp3
+personality	A2	n.			19ac0bf1a7.mp3
+personally	B1	adv.			882e8180e8.mp3
+personnel	C1	n.			4d55ca8a32.mp3
+perspective	B2	n.			722bf4ddc9.mp3
+persuade	B1	v.			df97854ecb.mp3
+pet	A2	n.			f4a674614d.mp3
+petition	C1	n.			7f6ce9334e.mp3
+petrol	A2	n.	UK		eb5048d718.mp3
+pharmacy	B2	n.	US		624ff42856.mp3
+phase	B2	n.			db1fce963e.mp3
+phenomenon	B2	n.			3466ba109e.mp3
+philosopher	C1	n.			1b7583e042.mp3
+philosophical	C1	adj.			5a32c30d4f.mp3
+philosophy	B2	n.			1a8b52e5fd.mp3
+phone	A1	n.			be37007019.mp3
+phone	A1	v.			be37007019.mp3
+photo	A1	n.			4eb3c3a944.mp3
+photograph	A1	n.			25badb41a8.mp3
+photograph	A2	v.			25badb41a8.mp3
+photographer	B1	n.			7a6c46ab1e.mp3
+photography	B1	n.			cf4105d309.mp3
+phrase	A1	n.			2aed00927d.mp3
+physical	A2	adj.			f447a7e7aa.mp3
+physician	B2	n.	US		cd3541ae69.mp3
+physician	C1	n.	UK		cd3541ae69.mp3
+physics	A2	n.			94169bba5b.mp3
+piano	A1	n.			ac7cf4fe6a.mp3
+pick	A2	v.			baab718aa7.mp3
+pick	B2	n.			baab718aa7.mp3
+picture	A1	n.			39bd0f8bc0.mp3
+picture	B2	v.			39bd0f8bc0.mp3
+piece	A1	n.			f7feb47524.mp3
+pig	A1	n.			a7193db780.mp3
+pile	B2	n.			74f446f4fe.mp3
+pile	B2	v.			74f446f4fe.mp3
+pill	B2	n.			23b62ca440.mp3
+pilot	A2	n.			2ec27af96d.mp3
+pin	B1	n.			f989f763c7.mp3
+pin	B1	v.			f989f763c7.mp3
+pink	A1	adj.			0534ca3830.mp3
+pink	A1	n.			0534ca3830.mp3
+pioneer	C1	n.			04057fd69b.mp3
+pioneer	C1	v.			04057fd69b.mp3
+pipe	B1	n.			8d57d68051.mp3
+pipeline	C1	n.			46c9566d16.mp3
+pirate	C1	n.			b31e76e2af.mp3
+pit	C1	n.			d9264d8ed5.mp3
+pitch	B2	n.			6cf8b036b4.mp3
+pity	B2	n.			b354c30fdd.mp3
+place	A1	n.			7f11f8c68c.mp3
+place	B1	v.			7f11f8c68c.mp3
+placement	B2	n.			04fc96f61e.mp3
+plain	B2	adj.			67c49e19ee.mp3
+plan	A1	n.			1d69fb8161.mp3
+plan	A1	v.			1d69fb8161.mp3
+plane	A1	n.			609019123a.mp3
+planet	A2	n.			a08ba31979.mp3
+planning	B1	n.			ed18904dcf.mp3
+plant	A1	n.			89c6eca87e.mp3
+plant	A2	v.			89c6eca87e.mp3
+plastic	A2	adj.			5114e70ff1.mp3
+plastic	A2	n.			5114e70ff1.mp3
+plate	A2	n.			6502bf6096.mp3
+platform	A2	n.			b6302767f4.mp3
+play	A1	n.			9b4c6f0668.mp3
+play	A1	v.			9b4c6f0668.mp3
+player	A1	n.			b4ef68d6df.mp3
+plea	C1	n.			b03240f69b.mp3
+plead	C1	v.			44849a3ff1.mp3
+pleasant	B1	adj.			f9e7256e49.mp3
+please	A1	exclam.			50c802da23.mp3
+please	A2	v.			50c802da23.mp3
+pleased	A2	adj.			497b09b758.mp3
+pleasure	B1	n.			6488aeb7a1.mp3
+pledge	C1	n.			4b8c00945d.mp3
+pledge	C1	v.			4b8c00945d.mp3
+plenty	B1	pron.			5a79a725c2.mp3
+plot	B1	n.			6bf244dc8c.mp3
+plot	B2	v.			6bf244dc8c.mp3
+plug	C1	n.			bbf5e30e25.mp3
+plug	C1	v.			bbf5e30e25.mp3
+plunge	C1	v.			3595ca993f.mp3
+plus	B1	prep.			78ad181671.mp3
+plus	B2	adj.			78ad181671.mp3
+plus	B2	conj.			78ad181671.mp3
+plus	B2	n.			78ad181671.mp3
+pocket	A2	n.			df253a79cf.mp3
+poem	B1	n.			c22101cc11.mp3
+poet	B1	n.			5b5fd0066e.mp3
+poetry	B1	n.			2a835613aa.mp3
+point	A1	n.			c4055705ee.mp3
+point	B1	v.			c4055705ee.mp3
+pointed	B2	adj.			0d2202dc42.mp3
+poison	B1	n.			67485d5075.mp3
+poison	B1	v.			67485d5075.mp3
+poisonous	B1	adj.			a20da5f641.mp3
+pole	C1	n.			98ae85addb.mp3
+police	A1	n.			6c609d3840.mp3
+policeman	A1	n.			f5992f2ba5.mp3
+policy	B1	n.			164ac03770.mp3
+polite	A2	adj.			e8ca76c030.mp3
+political	B1	adj.			e5626cd287.mp3
+politician	B1	n.			bf389a6e3c.mp3
+politics	B1	n.			1e672806e6.mp3
+poll	C1	n.			ea32f561ae.mp3
+pollution	A2	n.			8db9198119.mp3
+pond	C1	n.			650af26542.mp3
+pool	A1	n.			44ab3f07b7.mp3
+poor	A1	adj.			ee1789c23d.mp3
+pop	A2	adj.			b6c2e84277.mp3
+pop	A2	n.			b6c2e84277.mp3
+pop	C1	v.			b6c2e84277.mp3
+popular	A1	adj.			dcfa87426a.mp3
+popularity	B2	n.			5a1fab32d5.mp3
+population	A2	n.			8b91d0113d.mp3
+port	B1	n.			ce376a0d88.mp3
+portfolio	C1	n.			9fe3ae77ba.mp3
+portion	B2	n.			6e16063606.mp3
+portrait	B1	n.			81cbccedb2.mp3
+portray	C1	v.			e193d919f6.mp3
+pose	B2	v.			138f7f827f.mp3
+position	A2	n.			61b095f551.mp3
+position	B2	v.			61b095f551.mp3
+positive	A1	adj.			01c643c003.mp3
+positive	B2	n.			01c643c003.mp3
+possess	B2	v.			d10c925184.mp3
+possession	A2	n.			f942bf9c7c.mp3
+possibility	A2	n.			1cf9f5cb01.mp3
+possible	A1	adj.			edf372d72e.mp3
+possibly	B1	adv.			ca3cdc5a55.mp3
+post	A1	n.			0f5d808adb.mp3
+post	A1	v.			0f5d808adb.mp3
+post-war	C1	adj.	UK		cfc49b25bc.mp3
+poster	A2	n.			4bdc7cd75a.mp3
+postpone	C1	v.			74120bb623.mp3
+postwar	C1	adj.	US		148f897f85.mp3
+pot	B1	n.			4bdf82de2c.mp3
+potato	A1	n.			63fa307d3a.mp3
+potential	B2	adj.			823833e1eb.mp3
+potential	B2	n.			823833e1eb.mp3
+potentially	B2	adv.			1831779272.mp3
+pound	A1	n.			a8ea473c2e.mp3
+pour	B1	v.			9891896e4b.mp3
+poverty	B1	n.			344965255f.mp3
+powder	B1	n.			96a0c51429.mp3
+power	A2	n.			44eb83dd97.mp3
+power	B2	v.			44eb83dd97.mp3
+powerful	B1	adj.			5606e8fc8f.mp3
+practical	B1	adj.			edfc928edf.mp3
+practice	A1	n.	UK		86b2635bc2.mp3
+practice	A1	n.	US		86b2635bc2.mp3
+practice	A1	v.	US		86b2635bc2.mp3
+practise	A1	v.	UK		f8abfe3dc5.mp3
+practitioner	C1	n.			26926d8098.mp3
+praise	B2	n.			09fddac24f.mp3
+praise	B2	v.			09fddac24f.mp3
+pray	B1	v.			afa2ae13ab.mp3
+prayer	B1	n.			ef9c075aa2.mp3
+preach	C1	v.			3708e8b4ab.mp3
+precede	B2	v.			178a74e7ee.mp3
+precedent	C1	n.			98f5111248.mp3
+precious	B2	adj.			a743573205.mp3
+precise	B2	adj.			e31e5c747a.mp3
+precisely	B2	adv.			8cbb8b6e15.mp3
+precision	C1	n.			c9135df745.mp3
+predator	C1	n.			a9c21c5c3a.mp3
+predecessor	C1	n.			a757830ae4.mp3
+predict	A2	v.			75de984f3d.mp3
+predictable	B2	adj.			13205eec0b.mp3
+prediction	B1	n.			b51515b9b4.mp3
+predominantly	C1	adv.			024f2097f1.mp3
+prefer	A1	v.			072b85aac6.mp3
+preference	B2	n.			c40d33e999.mp3
+pregnancy	C1	n.			88579f2427.mp3
+pregnant	B2	adj.			421d70fc35.mp3
+prejudice	C1	n.			ef69aed362.mp3
+preliminary	C1	adj.			56f572326f.mp3
+premier	C1	n.			8e36e095db.mp3
+premise	C1	n.			57dbc34abc.mp3
+premium	C1	n.			7533e6e680.mp3
+preparation	B2	n.			608c7904b3.mp3
+prepare	A1	v.			9e76346e21.mp3
+prepared	B1	adj.			af2fe36342.mp3
+prescribe	C1	v.			a4c17c6c4f.mp3
+prescription	C1	n.			f4545d4e0e.mp3
+presence	B2	n.			3d6521b730.mp3
+present	A1	adj.			f70b34c31b.mp3
+present	A1	n.			f70b34c31b.mp3
+present	A2	v.			f70b34c31b.mp3
+presentation	B1	n.			7abe430613.mp3
+presently	C1	adv.			9148c28c18.mp3
+preservation	C1	n.			bf1ff0d150.mp3
+preserve	B2	v.			9f13fb5c8c.mp3
+preside	C1	v.			f01590b292.mp3
+presidency	C1	n.			f261a21136.mp3
+president	A2	n.			c9f58b16c3.mp3
+presidential	B2	adj.	US		565c42462e.mp3
+presidential	C1	adj.	UK		565c42462e.mp3
+press	B1	n.			18b3502eca.mp3
+press	B1	v.			18b3502eca.mp3
+pressure	B1	n.			68d3d712e2.mp3
+prestigious	C1	adj.			6383e04b40.mp3
+presumably	C1	adv.			179590019c.mp3
+presume	C1	v.			392ecdd3e6.mp3
+pretend	B1	v.			ccb47f3420.mp3
+pretty	A1	adj.			39f1d6ce4d.mp3
+pretty	A1	adv.			39f1d6ce4d.mp3
+prevail	C1	v.			12bdb39e2e.mp3
+prevalence	C1	n.			9ea9de7523.mp3
+prevent	A2	v.			4aa01f49d4.mp3
+prevention	C1	n.			63fe793d8d.mp3
+previous	B1	adj.			7ed249723b.mp3
+previously	B1	adv.			bae4b33da8.mp3
+prey	C1	n.			65e1c6abc4.mp3
+price	A1	n.			a52f1e83f3.mp3
+price	B2	v.			a52f1e83f3.mp3
+pride	B2	n.			7817411402.mp3
+priest	B1	n.			3d5e723eec.mp3
+primarily	B2	adv.			2a190534ce.mp3
+primary	B1	adj.			2eed6038b0.mp3
+prime	B2	adj.			7ed0a25b7e.mp3
+prince	B1	n.			e2dc26f3cb.mp3
+princess	B1	n.			6502146b2c.mp3
+principal	B1	n.	US		294fa7063c.mp3
+principal	B2	adj.			294fa7063c.mp3
+principal	B2	adj.	US		294fa7063c.mp3
+principal	C1	n.			294fa7063c.mp3
+principle	B2	n.			c275bfa281.mp3
+print	A2	v.			0df7b799e5.mp3
+print	B2	n.			0df7b799e5.mp3
+printer	A2	n.			1fbdafd07a.mp3
+printing	B1	n.			1677fb1dbd.mp3
+prior	B2	adj.			df5fde7abf.mp3
+priority	B2	n.			907b474755.mp3
+prison	A2	n.			ba6979436f.mp3
+prisoner	B1	n.			2f928e6cd9.mp3
+privacy	B2	n.			25a43fd8fc.mp3
+private	B1	adj.			49bd6da0ea.mp3
+privatization	C1	n.			44d8940cef.mp3
+privilege	C1	n.			315577174a.mp3
+prize	A2	n.			6ca770e8c5.mp3
+probability	B2	n.			2c0b402196.mp3
+probable	B2	adj.			71a913b6b5.mp3
+probably	A1	adv.			f8430cf24d.mp3
+probe	C1	n.			bd1fdf5530.mp3
+probe	C1	v.			bd1fdf5530.mp3
+problem	A1	n.			706dcd82ff.mp3
+problematic	C1	adj.			07fb93b9a2.mp3
+procedure	B2	n.			0728fa3cb6.mp3
+proceed	B2	v.			754db142dd.mp3
+proceeding	C1	n.	US		7077be387a.mp3
+proceedings	C1	n.	UK		5600cd0a5b.mp3
+proceeds	C1	n.			a732f9f702.mp3
+process	A2	n.			d89a802c02.mp3
+process	B2	v.			d89a802c02.mp3
+processing	C1	n.			69359ca457.mp3
+processor	C1	n.			1527f51a7a.mp3
+proclaim	C1	v.			abd34cc89c.mp3
+produce	A2	v.			41a5063831.mp3
+produce	B2	v.			41a5063831.mp3
+producer	B1	n.			1326372b9e.mp3
+product	A1	n.			d4f8b23620.mp3
+production	B1	n.			ae16fefa01.mp3
+productive	C1	adj.			faaa169edb.mp3
+productivity	C1	n.			77aecb60f5.mp3
+profession	B1	n.			2a733edae9.mp3
+professional	A2	adj.			80228377a0.mp3
+professional	B2	n.			80228377a0.mp3
+professor	A2	n.			88fa727dc5.mp3
+profile	A2	n.			b1a2adfe4d.mp3
+profit	B1	n.			23efb1aadf.mp3
+profitable	C1	adj.			4a55f0e969.mp3
+profound	C1	adj.			de7703e99a.mp3
+program	A1	n.	US		2a8d89c234.mp3
+program	A2	n.	UK		2a8d89c234.mp3
+program	B1	v.	UK		2a8d89c234.mp3
+program	B1	v.	US		2a8d89c234.mp3
+programme	A1	n.	UK		4cf4e7c93d.mp3
+programming	B2	n.			772d993604.mp3
+progress	A2	n.	UK		24099f202a.mp3
+progress	A2	n.	US		24099f202a.mp3
+progress	A2	v.	US		24099f202a.mp3
+progress	B2	v.	UK		24099f202a.mp3
+progressive	B2	adj.			3087336211.mp3
+prohibit	B2	v.			1c5d7f125f.mp3
+project	A1	n.			7f08b6f517.mp3
+project	B2	v.			7f08b6f517.mp3
+projection	C1	n.			2e82cc67aa.mp3
+prominent	C1	adj.			855548ead9.mp3
+promise	A2	n.			bc3c19f324.mp3
+promise	A2	v.			bc3c19f324.mp3
+promising	B2	adj.			a6189fa79d.mp3
+promote	B1	v.			cc08f4ce17.mp3
+promotion	B2	n.			877a3070c9.mp3
+prompt	B2	v.			b851411229.mp3
+pronounce	A2	v.			0e709b29ce.mp3
+pronounced	C1	adj.			54a4110757.mp3
+proof	B2	n.			00dfea64d9.mp3
+propaganda	C1	n.			c28f718191.mp3
+proper	B1	adj.			157349d6bb.mp3
+properly	B1	adv.			c99bfb5e06.mp3
+property	B1	n.			92e8c01bcc.mp3
+proportion	B2	n.			da034fd226.mp3
+proposal	B2	n.			9c5c84b735.mp3
+propose	B2	v.			f35a862887.mp3
+proposition	C1	n.			0333bd086b.mp3
+prosecute	C1	v.			3c914c4b8b.mp3
+prosecution	C1	n.			ba25918fb7.mp3
+prosecutor	C1	n.			7d7cf89bc1.mp3
+prospect	B2	n.			4ce9aff069.mp3
+prospective	C1	adj.			ac1ccb121f.mp3
+prosperity	C1	n.			fcc56bb7fe.mp3
+protect	A2	v.			d1b930ab76.mp3
+protection	B2	n.			a1c05226eb.mp3
+protective	C1	adj.			eac79dd48a.mp3
+protein	B2	n.			93b636d55b.mp3
+protest	B1	n.			25fc3528d6.mp3
+protest	B1	v.			25fc3528d6.mp3
+protester	B2	n.			979fd0ab13.mp3
+protocol	C1	n.			511f24d46f.mp3
+proud	B1	adj.			10951764f5.mp3
+prove	B1	v.			0c00a5f0dc.mp3
+provide	A2	v.			f2da962c53.mp3
+province	C1	n.			1541cc5f17.mp3
+provincial	C1	adj.			67aa6fcd8b.mp3
+provision	C1	n.			09a6fcf7f3.mp3
+provoke	C1	v.			269a3758a1.mp3
+psychiatric	C1	adj.			72bf2b02a3.mp3
+psychological	B2	adj.			6418a864f3.mp3
+psychologist	B2	n.			2e01f617b1.mp3
+psychology	B2	n.			24df4eefa3.mp3
+pub	A2	n.	UK		df2696acc2.mp3
+public	A2	adj.			54bdf99b20.mp3
+public	A2	n.			54bdf99b20.mp3
+publication	B2	n.			e311bb7bd3.mp3
+publicity	B2	n.			485b05b50f.mp3
+publish	A2	v.			e14bb7e8cc.mp3
+publishing	B2	n.			ef4df83494.mp3
+pull	A2	v.			055b34b270.mp3
+pull	B1	n.			055b34b270.mp3
+pulse	C1	n.			9e0d455e71.mp3
+pump	C1	n.			88db315a8e.mp3
+pump	C1	v.			88db315a8e.mp3
+punch	C1	n.			b4c6224b88.mp3
+punch	C1	v.			b4c6224b88.mp3
+punish	B1	v.			a91243a139.mp3
+punishment	B1	n.			5edb8c082d.mp3
+punk	B2	n.			77f830e212.mp3
+pupil	B2	n.	UK		50cb2a5d85.mp3
+purchase	B2	n.			05e106cb62.mp3
+purchase	B2	v.			05e106cb62.mp3
+pure	B2	adj.			d2ab666b50.mp3
+purely	B2	adv.			794c62dd04.mp3
+purple	A1	adj.			f7721f709a.mp3
+purple	A1	n.			f7721f709a.mp3
+purpose	A2	n.			6ed4552ff3.mp3
+pursue	B2	v.			5531cc037a.mp3
+pursuit	B2	n.			6c1751bc0a.mp3
+push	A2	v.			92cf9d5f2a.mp3
+push	B1	n.			92cf9d5f2a.mp3
+put	A1	v.			84af562400.mp3
+puzzle	B2	n.			982e838761.mp3
+qualification	B1	n.			6f7f634842.mp3
+qualified	B1	adj.			3b1c125a8b.mp3
+qualify	B1	v.			6f9c1242db.mp3
+quality	A2	n.			b80a527d4f.mp3
+quantity	A2	n.			0f7a9a66fc.mp3
+quarter	A1	n.			d08b9d2cca.mp3
+queen	A2	n.			92753b9df4.mp3
+query	C1	n.			95cd7ac4cd.mp3
+quest	C1	n.			e69c5effac.mp3
+question	A1	n.			12fa6d5d3b.mp3
+question	A2	v.			12fa6d5d3b.mp3
+questionnaire	B2	n.			59d9afe5aa.mp3
+queue	B1	n.	UK		24777ef623.mp3
+queue	B1	v.	UK		24777ef623.mp3
+quick	A1	adj.			f05d149703.mp3
+quickly	A1	adv.			20716bf3f0.mp3
+quiet	A1	adj.			f5e5afb5ad.mp3
+quietly	A2	adv.			0d6fce7489.mp3
+quit	B1	v.			920c0df709.mp3
+quite	A1	adv.			3b645bf686.mp3
+quota	C1	n.			6724f201ee.mp3
+quotation	B1	n.			b7c99d7e96.mp3
+quote	B1	n.			943a11c9ba.mp3
+quote	B1	v.			943a11c9ba.mp3
+race	A2	n.	UK	competition	e315ae2620.mp3
+race	A2	n.	US	competition	e315ae2620.mp3
+race	A2	v.	UK	competition	e315ae2620.mp3
+race	A2	v.	US	competition	e315ae2620.mp3
+race	B1	n.	UK	people	e315ae2620.mp3
+race	B1	n.	US	of people	e315ae2620.mp3
+racial	B2	adj.			466b469762.mp3
+racing	B1	n.			71e76f20d4.mp3
+racism	B2	n.			1296f55bbe.mp3
+racist	B2	adj.			70d90192d7.mp3
+racist	B2	n.			70d90192d7.mp3
+radar	C1	n.			3da10fba7d.mp3
+radiation	B2	n.			2b4f9ab846.mp3
+radical	C1	adj.			63294e1004.mp3
+radio	A1	n.			3d6ade5a18.mp3
+rage	C1	n.			34a97ab375.mp3
+raid	C1	n.			653c7f00f0.mp3
+raid	C1	v.			653c7f00f0.mp3
+rail	B2	n.			b2c9fc6bbd.mp3
+railroad	A2	n.	US		5842064966.mp3
+railway	A2	n.	UK		666152027c.mp3
+rain	A1	n.			100beeee3c.mp3
+rain	A1	v.			100beeee3c.mp3
+raise	A2	v.	UK		488ade9c73.mp3
+raise	A2	v.	US		488ade9c73.mp3
+raise	B1	n.	US		488ade9c73.mp3
+rally	C1	n.			eafaaa7ba8.mp3
+rally	C1	v.			eafaaa7ba8.mp3
+random	B2	adj.			1c00443550.mp3
+range	B1	n.			55344ffbfa.mp3
+range	B2	v.			55344ffbfa.mp3
+rank	B2	n.			7014b55297.mp3
+rank	B2	v.			7014b55297.mp3
+ranking	C1	n.			28a2d13758.mp3
+rape	C1	n.			f4ff3c551f.mp3
+rape	C1	v.			f4ff3c551f.mp3
+rapid	B2	adj.			48d5847926.mp3
+rapidly	B2	adv.			18bdc87c5d.mp3
+rare	B1	adj.			4f3e23d8a6.mp3
+rarely	B1	adv.			719995f323.mp3
+rat	B2	n.			9187dd8a27.mp3
+rate	A2	n.			2ffbfbca33.mp3
+rate	B2	v.			2ffbfbca33.mp3
+rather	A2	adv.			aecb3bf9a1.mp3
+rating	B2	n.			7e7c334ba0.mp3
+ratio	C1	n.			d888e0071e.mp3
+rational	C1	adj.			17989e5fb0.mp3
+raw	B2	adj.			e5031525e1.mp3
+ray	C1	n.			fc3635363c.mp3
+reach	A2	v.			a843cb0104.mp3
+reach	B2	n.			a843cb0104.mp3
+react	A2	v.			621da2ba8c.mp3
+reaction	B1	n.			490e88679c.mp3
+read	A1	v.			3b205be0b6.mp3
+reader	A1	n.			d2333a3272.mp3
+readily	C1	adv.			635921636f.mp3
+reading	A1	n.			6a87eac909.mp3
+ready	A1	adj.			c12a27ee61.mp3
+real	A1	adj.			f611d95de5.mp3
+realistic	B2	adj.			3cd4e8f9b3.mp3
+reality	B1	n.			1b076a0639.mp3
+realization	C1	n.			1b2a0eba7b.mp3
+realize	A2	v.			1ac7a9f3f7.mp3
+really	A1	adv.			f72203cf75.mp3
+realm	C1	n.			756055818d.mp3
+rear	C1	adj.			17447541a1.mp3
+rear	C1	n.			17447541a1.mp3
+reason	A1	n.			0bba708adb.mp3
+reasonable	B2	adj.			be36c6fbe9.mp3
+reasonably	B2	adv.			2df4d43ecd.mp3
+reasoning	C1	n.			fb9c7eab08.mp3
+reassure	C1	v.			cb4a66abe6.mp3
+rebel	C1	n.			1f6527b9b6.mp3
+rebellion	C1	n.			ccf7c8581b.mp3
+rebuild	B2	v.			3174605852.mp3
+recall	B2	v.			087faaa1a3.mp3
+receipt	B1	n.			4279fe91c1.mp3
+receive	A2	v.			6aae97842f.mp3
+receiver	B2	n.			590966bbca.mp3
+recent	A2	adj.			909225e3de.mp3
+recently	A2	adv.			71f471328c.mp3
+reception	A2	n.			3c3545f8df.mp3
+recession	B2	n.			5c64032e3f.mp3
+recipe	A2	n.			57bdbd576f.mp3
+recipient	C1	n.			6b000926fa.mp3
+reckon	B2	v.			988e5168a7.mp3
+recognition	B2	n.			a550c9cfa5.mp3
+recognize	A2	v.			9531ca45c3.mp3
+recommend	A2	v.			868d1d2404.mp3
+recommendation	B1	n.			d1e83f3b4c.mp3
+reconstruction	C1	n.			0cddeffc6f.mp3
+record	A2	n.			0be5b41070.mp3
+record	A2	v.			0be5b41070.mp3
+recording	A2	n.			a8bb8b441f.mp3
+recount	C1	v.			93c9409580.mp3
+recover	B2	v.			b2f7828122.mp3
+recovery	B2	n.			28d071c16c.mp3
+recruit	B2	n.			6dd8c75f99.mp3
+recruit	B2	v.			6dd8c75f99.mp3
+recruitment	B2	n.	UK		3c1ee17d71.mp3
+recruitment	C1	n.	US		3c1ee17d71.mp3
+recycle	A2	v.			ac0627084a.mp3
+red	A1	adj.			875af93ea8.mp3
+red	A1	n.			875af93ea8.mp3
+reduce	A2	v.			e78cdf56a3.mp3
+reduction	B2	n.			53270127ce.mp3
+refer	A2	v.			e74f7eed00.mp3
+referee	B2	n.			0122178521.mp3
+reference	B1	n.			6ecc558072.mp3
+referendum	C1	n.			9f1dc89d67.mp3
+reflect	B1	v.			7dfbc72195.mp3
+reflection	C1	n.			52677a5b0d.mp3
+reform	C1	n.			0d99df9d67.mp3
+reform	C1	v.			0d99df9d67.mp3
+refrigerator	A2	n.	US		2ad66f1dcb.mp3
+refuge	C1	n.			a0e984ae90.mp3
+refugee	B2	n.			64a13cfff0.mp3
+refusal	C1	n.			e817e08567.mp3
+refuse	A2	v.			5ada404fb5.mp3
+regain	C1	v.			04ac9fa3b4.mp3
+regard	B2	n.			1deb828eca.mp3
+regard	B2	v.			1deb828eca.mp3
+regardless	C1	adv.			129d0282f5.mp3
+regime	C1	n.			52b50e2ade.mp3
+region	A2	n.			b2afc0b107.mp3
+regional	B2	adj.			196b05e2bd.mp3
+register	B2	n.			25eb33ed66.mp3
+register	B2	v.			25eb33ed66.mp3
+registration	B2	n.			cb74f5ca2f.mp3
+regret	B2	n.			e1341ed228.mp3
+regret	B2	v.			e1341ed228.mp3
+regular	A2	adj.			46c759238d.mp3
+regularly	B1	adv.			2b520bed2f.mp3
+regulate	B2	v.			cc6c9caae0.mp3
+regulation	B2	n.			f68a02c69a.mp3
+regulator	C1	n.			a42dc446a5.mp3
+regulatory	C1	adj.			93a505e6ab.mp3
+rehabilitation	C1	n.			d24f6087bd.mp3
+reign	C1	n.			e6dd94ba14.mp3
+reign	C1	v.			e6dd94ba14.mp3
+reinforce	B2	v.			6c21b25839.mp3
+reject	B1	v.			fc42d90271.mp3
+rejection	C1	n.			7ce8199aa0.mp3
+relate	B1	v.			6303c9e886.mp3
+related	B1	adj.			3e64cbf26c.mp3
+relation	B1	n.			ddbc851434.mp3
+relationship	A2	n.			b19c0103c6.mp3
+relative	B1	adj.			385b3e359e.mp3
+relative	B1	n.			385b3e359e.mp3
+relatively	B2	adv.			73a93b8ca3.mp3
+relax	A1	v.			8481480556.mp3
+relaxed	B1	adj.			73d3201044.mp3
+relaxing	B1	adj.			70cb524d4d.mp3
+release	B1	n.			799ed95022.mp3
+release	B1	v.			799ed95022.mp3
+relevance	C1	n.			5cb32c1670.mp3
+relevant	B2	adj.			afcdfb85b5.mp3
+reliability	C1	n.			0cbb38d713.mp3
+reliable	B1	adj.			7cf40f795b.mp3
+relief	B2	n.			a956e9a50e.mp3
+relieve	B2	v.			67d1a542d9.mp3
+relieved	B2	adj.			29530fb06f.mp3
+religion	B1	n.			c7331dedf3.mp3
+religious	B1	adj.			7a6ec1dbc3.mp3
+reluctant	C1	adj.			7b18ad3d41.mp3
+rely	B2	v.			c2f08e1a80.mp3
+remain	B1	v.			341ca823d9.mp3
+remainder	C1	n.			024ce83b57.mp3
+remains	C1	n.			e462224ff7.mp3
+remark	B2	n.			7565446a39.mp3
+remark	B2	v.			7565446a39.mp3
+remarkable	B2	adj.			d6dcbbb150.mp3
+remarkably	B2	adv.			45f415b7c8.mp3
+remedy	C1	n.			c944bde038.mp3
+remember	A1	v.			7612f08bed.mp3
+remind	B1	v.			779a0dcb7e.mp3
+reminder	C1	n.			f73b2545db.mp3
+remote	B1	adj.			60e448148f.mp3
+removal	C1	n.			b124330589.mp3
+remove	A2	v.			5fe8a2c6dc.mp3
+render	C1	v.			35540ae818.mp3
+renew	C1	v.			b9d560a9a7.mp3
+renowned	C1	adj.			5389e12b37.mp3
+rent	B1	n.			4ded011e80.mp3
+rent	B1	v.			4ded011e80.mp3
+rental	C1	n.			665a54bec5.mp3
+repair	A2	v.			3f962d183d.mp3
+repair	B1	n.			3f962d183d.mp3
+repeat	A1	v.			f85ed785ef.mp3
+repeat	B1	n.			f85ed785ef.mp3
+repeated	B1	adj.			5106d75908.mp3
+replace	A2	v.			2d7e684bdc.mp3
+replacement	C1	n.			bb80b5ec96.mp3
+reply	A2	n.			445958345a.mp3
+reply	A2	v.			445958345a.mp3
+report	A1	n.			5c87591c84.mp3
+report	A2	v.			5c87591c84.mp3
+reportedly	C1	adv.			2d40d2bcd9.mp3
+reporter	A2	n.			6df7de885d.mp3
+reporting	B2	n.			58450c4fad.mp3
+represent	B1	v.			4e208a4cc9.mp3
+representation	C1	n.			c787e18182.mp3
+representative	B2	adj.			741d55f460.mp3
+representative	B2	n.			741d55f460.mp3
+reproduce	C1	v.			ceb34431dd.mp3
+reproduction	C1	n.			cdf188882b.mp3
+republic	C1	n.			5b1ed074b4.mp3
+reputation	B2	n.			2ebc18ab7e.mp3
+request	A2	n.			2e4841fbac.mp3
+request	B1	v.			2e4841fbac.mp3
+require	B1	v.			061e34f0ce.mp3
+requirement	B2	n.			24fc178fa9.mp3
+rescue	B2	n.			a9f55901a2.mp3
+rescue	B2	v.			a9f55901a2.mp3
+research	A2	n.			89c400a72e.mp3
+research	A2	v.			89c400a72e.mp3
+researcher	A2	n.			95ba5b67e6.mp3
+resemble	C1	v.			bf1bab22e6.mp3
+reservation	B1	n.			b03eaebea4.mp3
+reserve	B2	n.			213b4bdeb5.mp3
+reserve	B2	v.			213b4bdeb5.mp3
+reside	C1	v.			e303e65eaa.mp3
+residence	C1	n.			6d489caf45.mp3
+resident	B2	adj.			85ad4bcf84.mp3
+resident	B2	n.			85ad4bcf84.mp3
+residential	C1	adj.			2f775ec00d.mp3
+residue	C1	n.			6f02683b77.mp3
+resign	B2	v.			c613d593fd.mp3
+resignation	C1	n.			a2fabd0b3d.mp3
+resist	B2	v.			6f3ac953b6.mp3
+resistance	C1	n.			39cbbbb54f.mp3
+resolution	B2	n.			4556af077a.mp3
+resolve	B2	v.			966bd990d9.mp3
+resort	B2	n.			bb3176b803.mp3
+resource	B1	n.			2ced2ad0b9.mp3
+respect	B1	n.			8ca66d1262.mp3
+respect	B1	v.			8ca66d1262.mp3
+respective	C1	adj.			35d98b4213.mp3
+respectively	C1	adv.			7f78c5e858.mp3
+respond	A2	v.			c5a4dd297d.mp3
+response	A2	n.			1b9e590c2e.mp3
+responsibility	B1	n.			ff710d2de5.mp3
+responsible	B1	adj.			745e7b38fe.mp3
+rest	A2	n.		remaining part	6c16fb3391.mp3
+rest	A2	n.		sleep/relax	6c16fb3391.mp3
+rest	A2	v.		sleep/relax	6c16fb3391.mp3
+restaurant	A1	n.			6974195efe.mp3
+restoration	C1	n.			58a3683485.mp3
+restore	B2	v.			d32f27250f.mp3
+restraint	C1	n.			f888b3c645.mp3
+restrict	B2	v.			63816537a5.mp3
+restriction	B2	n.			9c25fe9253.mp3
+result	A1	n.			0e14892475.mp3
+result	B1	v.			0e14892475.mp3
+resume	C1	v.			d206165e13.mp3
+retail	B2	n.			db3d31a5fa.mp3
+retain	B2	v.			29f864fe04.mp3
+retire	B1	v.			5ba446aa57.mp3
+retired	B1	adj.			67abbac4d2.mp3
+retirement	B2	n.			abe6b84f47.mp3
+retreat	C1	n.			1903936c95.mp3
+retreat	C1	v.			1903936c95.mp3
+retrieve	C1	v.			94438a36ea.mp3
+return	A1	n.			cc5749cb8a.mp3
+return	A1	v.			cc5749cb8a.mp3
+reveal	B2	v.			af5c09a92c.mp3
+revelation	C1	n.			38416056fe.mp3
+revenge	C1	n.			7293b039d9.mp3
+revenue	B2	n.			eb7f119c40.mp3
+reverse	C1	adj.			b792bd0ac3.mp3
+reverse	C1	n.			b792bd0ac3.mp3
+reverse	C1	v.			b792bd0ac3.mp3
+review	A2	n.			4c75fcd895.mp3
+review	A2	v.			4c75fcd895.mp3
+revise	B1	v.			99e5e7cf2c.mp3
+revision	B2	n.			7687c01b6d.mp3
+revival	C1	n.			e7a3b4b069.mp3
+revive	C1	v.			4cb2c260b0.mp3
+revolution	B2	n.			6e9ead7bb7.mp3
+revolutionary	C1	adj.			412f612b33.mp3
+reward	B2	n.			d9ed522e1a.mp3
+reward	B2	v.			d9ed522e1a.mp3
+rhetoric	C1	n.			b83de70844.mp3
+rhythm	B2	n.			c930f867aa.mp3
+rice	A1	n.			d46d509dc9.mp3
+rich	A1	adj.			6c9150bd7a.mp3
+rid	B2	v.			7f5b43acf2.mp3
+ride	A1	v.			dc515fec48.mp3
+ride	A2	n.			dc515fec48.mp3
+ridiculous	B2	adj.			a5eb899aca.mp3
+rifle	C1	n.			f6af72be0e.mp3
+right	A1	adj.			2029a6b447.mp3
+right	A1	adv.			2029a6b447.mp3
+right	A1	n.			2029a6b447.mp3
+ring	A2	n.			3fc1949766.mp3
+ring	A2	v.			3fc1949766.mp3
+ring	B1	n.			3fc1949766.mp3
+riot	C1	n.			db75e66fdd.mp3
+rip	C1	v.			4250605762.mp3
+rise	A2	v.	UK		7309831421.mp3
+rise	A2	v.	US		7309831421.mp3
+rise	B1	n.	UK		7309831421.mp3
+rise	B2	n.	US		7309831421.mp3
+risk	B1	n.			2f424b0a27.mp3
+risk	B1	v.			2f424b0a27.mp3
+risky	B2	adj.			8a1a8a44ac.mp3
+ritual	C1	n.			d03d9c3572.mp3
+rival	B2	adj.			795b1a0008.mp3
+rival	B2	n.			795b1a0008.mp3
+river	A1	n.			66d20f9fe6.mp3
+road	A1	n.			46278bfcb0.mp3
+rob	B2	v.			fc689ff55d.mp3
+robbery	B2	n.			557060d1a7.mp3
+robot	B1	n.			34b13cac01.mp3
+robust	C1	adj.			14fb5e7a50.mp3
+rock	A2	n.		music	eb6fe7c969.mp3
+rock	A2	n.		stone	eb6fe7c969.mp3
+rock	C1	v.			eb6fe7c969.mp3
+rocket	B2	n.			4acdc8e8d0.mp3
+rod	C1	n.			7704ecc45f.mp3
+role	A2	n.			1662c396f5.mp3
+roll	B1	n.			3a5af75ade.mp3
+roll	B1	v.			3a5af75ade.mp3
+romance	B2	n.			30fdd06b58.mp3
+romantic	B1	adj.			4c8c7e2a34.mp3
+roof	A2	n.			773d099ed2.mp3
+rookie	C1	n.	US		c1676deb3c.mp3
+room	A1	n.			67c36ad24a.mp3
+root	B2	n.			5aacf9f9b8.mp3
+rope	B1	n.			56acd07112.mp3
+rose	B2	n.			ba34d1704d.mp3
+roster	C1	n.	US		bbc3e50b85.mp3
+rotate	C1	v.			5ce764643d.mp3
+rotation	C1	n.			8a97cd6745.mp3
+rough	B1	adj.			42cfd976ab.mp3
+roughly	B2	adv.			043c7434e0.mp3
+round	A2	adj.			b5ab5284ce.mp3
+round	A2	adv.			b5ab5284ce.mp3
+round	A2	prep.			b5ab5284ce.mp3
+round	B2	n.			b5ab5284ce.mp3
+route	A2	n.			58e22f8b66.mp3
+routine	A1	n.			0826a465c3.mp3
+routine	B2	adj.			0826a465c3.mp3
+row	B1	n.			ba33b21fa5.mp3
+royal	B1	adj.			b9a8fcba0e.mp3
+rub	B2	v.			c89b553fe5.mp3
+rubber	B2	adj.			1eebe3976e.mp3
+rubber	B2	n.			1eebe3976e.mp3
+rubbish	A2	n.	UK		5e5427f6a5.mp3
+rude	A2	adj.			c849e34db0.mp3
+rugby	B1	n.	UK		73d256fc4d.mp3
+ruin	B2	n.			8895a1401e.mp3
+ruin	B2	v.			8895a1401e.mp3
+rule	A1	n.			127b307f56.mp3
+rule	B1	v.			127b307f56.mp3
+ruling	C1	n.			f0082e8f39.mp3
+rumor	C1	n.	US		eed4dcc5f1.mp3
+rumour	C1	n.	UK		874b3bd53b.mp3
+run	A1	v.			aaf6b7a42a.mp3
+run	A2	n.			aaf6b7a42a.mp3
+runner	A2	n.			2f0ab93c9f.mp3
+running	A2	n.			59f3d25459.mp3
+rural	B2	adj.			e1a34de373.mp3
+rush	B2	n.			8a3b00e0cb.mp3
+rush	B2	v.			8a3b00e0cb.mp3
+résumé	B2	n.	US		b13876f9ea.mp3
+sack	C1	v.	UK		e42e015af8.mp3
+sacred	C1	adj.			8ad754a2e8.mp3
+sacrifice	C1	n.			b9e1d93939.mp3
+sacrifice	C1	v.			b9e1d93939.mp3
+sad	A1	adj.			a1422d0e1f.mp3
+sadly	A2	adv.			09dc4bf73e.mp3
+safe	A2	adj.			a3b76cfa97.mp3
+safety	B1	n.			2e79e8310a.mp3
+sail	A2	v.			14539a7191.mp3
+sail	B1	n.			14539a7191.mp3
+sailing	A2	n.			0e1ab1cbe4.mp3
+sailor	B1	n.			725349ec9d.mp3
+saint	C1	n.			623b5cdf6d.mp3
+sake	C1	n.			cb69e49178.mp3
+salad	A1	n.			33006e2a27.mp3
+salary	A2	n.			4d672ce1c4.mp3
+sale	A2	n.			838421d5fe.mp3
+salt	A1	n.			7983627bc5.mp3
+same	A1	adj.			4c256368c9.mp3
+same	A1	adv.			4c256368c9.mp3
+same	A1	pron.			4c256368c9.mp3
+sample	B1	n.			c0cdf73a8f.mp3
+sample	B2	v.			c0cdf73a8f.mp3
+sanction	C1	n.			16c1c9f520.mp3
+sand	B1	n.			7c35451e45.mp3
+sandwich	A1	n.			a5a22cc1ac.mp3
+satellite	B2	n.			cfa03ce935.mp3
+satisfaction	B2	n.			a9cc42b988.mp3
+satisfied	B2	adj.			2a8ed60f41.mp3
+satisfy	B2	v.			453b850bc5.mp3
+sauce	A2	n.			e584806ac4.mp3
+save	A2	v.			1bd3dfde23.mp3
+saving	B2	n.			1e72f1b8b5.mp3
+say	A1	v.			054318638a.mp3
+say	C1	n.			054318638a.mp3
+scale	B2	n.			5f9b6fbc17.mp3
+scan	B1	v.			a0afa2843e.mp3
+scandal	B2	n.			7f9b72a7f7.mp3
+scare	B2	n.			a552b89ab3.mp3
+scare	B2	v.			a552b89ab3.mp3
+scared	A2	adj.			439210cc3c.mp3
+scary	A2	adj.			4f77e72124.mp3
+scattered	C1	adj.			72a5d7c83c.mp3
+scenario	B2	n.			37c0fc0886.mp3
+scene	A2	n.			5c879ab441.mp3
+sceptical	C1	adj.	UK		534cc0d370.mp3
+schedule	A2	n.			64fd743b7c.mp3
+schedule	B2	v.			64fd743b7c.mp3
+scheme	B2	n.	UK		82c928223c.mp3
+scholar	B2	n.			fe20960c9d.mp3
+scholarship	B2	n.			0864ccd8da.mp3
+school	A1	n.			8fc2d33ad5.mp3
+science	A1	n.			e6618614c2.mp3
+scientific	B1	adj.			de503a493a.mp3
+scientist	A1	n.			b9381a9350.mp3
+scope	C1	n.			8c30b6201c.mp3
+score	A2	n.			91ee4679d0.mp3
+score	A2	v.			91ee4679d0.mp3
+scratch	B2	n.			01ea532dc6.mp3
+scratch	B2	v.			01ea532dc6.mp3
+scream	B2	n.			5fed03fe08.mp3
+scream	B2	v.			5fed03fe08.mp3
+screen	A2	n.			915c5aa756.mp3
+screen	B2	v.			915c5aa756.mp3
+screening	B2	n.			6459892f17.mp3
+screw	C1	n.			56ab453b8c.mp3
+screw	C1	v.			56ab453b8c.mp3
+script	B1	n.			4d86a27708.mp3
+scrutiny	C1	n.			51a9c4a668.mp3
+sculpture	B1	n.			8bd1fad261.mp3
+sea	A1	n.	UK		ae49b953e4.mp3
+sea	A2	n.	US		ae49b953e4.mp3
+seal	C1	n.			c761076ced.mp3
+seal	C1	v.			c761076ced.mp3
+search	A2	n.			55bc586608.mp3
+search	A2	v.			55bc586608.mp3
+season	A2	n.			a4e118d610.mp3
+seat	A2	n.			f8621b2eb2.mp3
+seat	B2	v.			f8621b2eb2.mp3
+second	A1	det.		next after the first	2075c3ecd6.mp3
+second	A1	n.		unit of time	2075c3ecd6.mp3
+second	A1	number		next after the first	2075c3ecd6.mp3
+second	A2	adv.		next after the first	2075c3ecd6.mp3
+secondary	B1	adj.			9282bd31f5.mp3
+secondly	A2	adv.	UK		9941a32377.mp3
+secondly	C1	adv.	US		9941a32377.mp3
+secret	A2	adj.			77c090ed68.mp3
+secret	A2	n.			77c090ed68.mp3
+secretary	A2	n.			9c531eddbf.mp3
+section	A1	n.			3cc8b8b648.mp3
+sector	B2	n.			836c2fb2e9.mp3
+secular	C1	adj.			4d9974f150.mp3
+secure	B2	adj.			99b5ef2083.mp3
+secure	B2	v.			99b5ef2083.mp3
+security	B1	n.			c4ff3a6f7d.mp3
+see	A1	v.			85029c2eb0.mp3
+seed	B1	n.			159bac541f.mp3
+seek	B2	v.			2c261f3fae.mp3
+seeker	B2	n.			9eb3985c7f.mp3
+seem	A2	v.			a0c90a19e7.mp3
+seemingly	C1	adv.			762f3d5ae8.mp3
+segment	C1	n.			8739f91c71.mp3
+seize	C1	v.			5ecf5fa790.mp3
+seldom	C1	adv.			33312208c1.mp3
+select	B2	v.			a978e63129.mp3
+selection	B2	n.			7905f9782a.mp3
+selective	C1	adj.			5b55907cd0.mp3
+self	B2	n.			3861893a4b.mp3
+sell	A1	v.			0dcd8267d9.mp3
+seminar	B2	n.			a23e909a44.mp3
+senate	B2	n.	US		dcee2fa996.mp3
+senator	B2	n.	US		50b0823af4.mp3
+senator	C1	n.	UK		50b0823af4.mp3
+send	A1	v.			6c9fc58fbf.mp3
+senior	B2	adj.			5d541ccab6.mp3
+sensation	C1	n.			2386243e24.mp3
+sense	A2	n.			644547e599.mp3
+sense	B2	v.			644547e599.mp3
+sensible	B1	adj.			ff8ca5b302.mp3
+sensitive	B2	adj.			3ab18822c2.mp3
+sensitivity	C1	n.			01983b4d8c.mp3
+sentence	A1	n.			a4f5afd0f9.mp3
+sentence	B2	v.			a4f5afd0f9.mp3
+sentiment	C1	n.			c1cef0d3e3.mp3
+separate	A2	adj.			000a6b622d.mp3
+separate	B1	v.			000a6b622d.mp3
+separation	C1	n.			ee9edba013.mp3
+sequence	B2	n.			81a3ead639.mp3
+serial	C1	adj.			d26fa0617d.mp3
+series	A2	n.			a9242631ad.mp3
+serious	A2	adj.			0ba30cb600.mp3
+seriously	B1	adv.			641d149ad4.mp3
+servant	B1	n.			c640065222.mp3
+serve	A2	v.			1a298ca8a7.mp3
+service	A2	n.			ecf01f7c06.mp3
+session	B2	n.			35ae5ac960.mp3
+set	B1	n.		group	0e6d9f755b.mp3
+set	B1	v.		put	0e6d9f755b.mp3
+set-up	C1	n.	UK		c9681bffa3.mp3
+setting	B1	n.			42bab72b00.mp3
+settle	B2	v.			ac4e0a199c.mp3
+settlement	C1	n.			c802f2a427.mp3
+settler	B2	n.			b64311f99f.mp3
+setup	C1	n.	US		efe6e214bf.mp3
+seven	A1	number			ca41575bd4.mp3
+seventeen	A1	number			f45537e26d.mp3
+seventy	A1	number			2b86963dc8.mp3
+several	A2	det.			8a7aab2c9b.mp3
+several	A2	pron.			8a7aab2c9b.mp3
+severe	B2	adj.			868d6e1229.mp3
+severely	B2	adv.			04d8a3ee69.mp3
+sex	B1	n.			f64b9a73c0.mp3
+sexual	B1	adj.			6110708416.mp3
+sexuality	C1	n.			9e5747f499.mp3
+sexy	B2	adj.			35f33c8fd8.mp3
+shade	B2	n.			424ab37c1b.mp3
+shadow	B2	n.			a9f264cea9.mp3
+shake	A2	v.			b9194aa2b4.mp3
+shake	B1	n.			b9194aa2b4.mp3
+shall	A2	modal v.	UK		a53f7eba2e.mp3
+shall	B2	modal v.	US		a53f7eba2e.mp3
+shallow	B2	adj.			805c3f0780.mp3
+shame	B2	n.			2cdbac42ac.mp3
+shape	A2	n.			dcb080fd5d.mp3
+shape	B2	v.			dcb080fd5d.mp3
+shaped	B2	adj.			6596d1ea75.mp3
+share	A1	v.			26cfd9143a.mp3
+share	B1	n.			26cfd9143a.mp3
+shareholder	C1	n.			71716f4038.mp3
+sharp	B1	adj.			4c2af679a7.mp3
+shatter	C1	v.			f0940786fe.mp3
+she	A1	pron.			8a5001ad0f.mp3
+shed	C1	v.			7da893a158.mp3
+sheep	A1	n.			7ee7ce3eda.mp3
+sheer	C1	adj.			a8ddd24efc.mp3
+sheet	A2	n.			48743de71d.mp3
+shelf	B1	n.			dca9dae9bd.mp3
+shell	B1	n.			9dd20e0e81.mp3
+shelter	B2	n.			69793fa3cb.mp3
+shelter	B2	v.			69793fa3cb.mp3
+shift	B1	n.			d8c06fe473.mp3
+shift	B2	v.			d8c06fe473.mp3
+shine	B1	v.			25ca9441fd.mp3
+shiny	B1	adj.			308b3a13ef.mp3
+ship	A2	n.			f348ddcb05.mp3
+ship	B2	v.			f348ddcb05.mp3
+shipping	C1	n.			746c66ee38.mp3
+shirt	A1	n.			0f0ff02244.mp3
+shock	B2	n.			c18e6f0c4c.mp3
+shock	B2	v.			c18e6f0c4c.mp3
+shocked	B2	adj.			5ae2952b70.mp3
+shocking	B2	adj.			44172eab13.mp3
+shoe	A1	n.			7e6c1422be.mp3
+shoot	B1	v.			6e93d90051.mp3
+shoot	C1	n.			6e93d90051.mp3
+shooting	B2	n.			9f91cfc0d5.mp3
+shop	A1	n.			8a47538092.mp3
+shop	A1	v.			8a47538092.mp3
+shopping	A1	n.			3022b88402.mp3
+shore	B2	n.			8a1d672ce5.mp3
+short	A1	adj.			5852795435.mp3
+short-term	B2	adj.			2eadea68d9.mp3
+shortage	B2	n.			14174bb7b8.mp3
+shortly	B2	adv.			bef678d0e9.mp3
+shot	B2	n.			d02179058e.mp3
+should	A1	modal v.			0a609e5e0b.mp3
+shoulder	A2	n.			ab7a6815d3.mp3
+shout	A2	n.			b9884f90d5.mp3
+shout	A2	v.			b9884f90d5.mp3
+show	A1	n.			5272dd5f30.mp3
+show	A1	v.			5272dd5f30.mp3
+shower	A1	n.			c7c7873576.mp3
+shrink	C1	v.			7c41820b52.mp3
+shrug	C1	v.			01170fab5d.mp3
+shut	A2	adj.			13a71f4b5f.mp3
+shut	A2	v.			13a71f4b5f.mp3
+shy	B1	adj.			58184a6784.mp3
+sibling	B2	n.			cb3586a265.mp3
+sick	A1	adj.			02165fdc8b.mp3
+side	A2	n.			8adce3cf06.mp3
+sidewalk	B2	n.	US		60fcc41833.mp3
+sigh	C1	n.			ccaf943f3e.mp3
+sigh	C1	v.			ccaf943f3e.mp3
+sight	B1	n.			77bd2bf04f.mp3
+sign	A2	n.			4db731126c.mp3
+sign	A2	v.			4db731126c.mp3
+signal	B1	n.			51aee42de3.mp3
+signal	B1	v.			51aee42de3.mp3
+signature	B2	n.			a3a75b111a.mp3
+significance	B2	n.			1788454cb8.mp3
+significant	B2	adj.			d97a3c9796.mp3
+significantly	B2	adv.			473aabe9a8.mp3
+silence	B2	n.			0e9b256040.mp3
+silent	B1	adj.			b981bcf3af.mp3
+silk	B2	n.			292046fca5.mp3
+silly	B1	adj.			7a6b35c4ab.mp3
+silver	A2	adj.			cff9af3f1c.mp3
+silver	A2	n.			cff9af3f1c.mp3
+similar	A1	adj.			940d191bfc.mp3
+similarity	B1	n.			364c326787.mp3
+similarly	B1	adv.			79b697b9bc.mp3
+simple	A2	adj.			470bbff055.mp3
+simply	B1	adv.			a0f571bbec.mp3
+simulate	C1	v.			ead0a68ee7.mp3
+simulation	C1	n.			dd68245a35.mp3
+simultaneously	C1	adv.			6ce606deb7.mp3
+sin	C1	n.			10dd9fed76.mp3
+since	A2	conj.			197cdce6c0.mp3
+since	A2	prep.			197cdce6c0.mp3
+since	B1	adv.			197cdce6c0.mp3
+sincere	B2	adj.			72974b1c7a.mp3
+sing	A1	v.			536e4823a4.mp3
+singer	A1	n.			d5b63d1490.mp3
+singing	A2	n.			5e2ab240e1.mp3
+single	A2	adj.			7f764c633c.mp3
+single	A2	n.			7f764c633c.mp3
+sink	B1	v.			1a8a23727b.mp3
+sir	A2	n.			fdeab115ed.mp3
+sister	A1	n.			6703e1c4af.mp3
+sit	A1	v.			ed038888cb.mp3
+site	A2	n.			7d48e12fc2.mp3
+situated	C1	adj.			6785ff5fb1.mp3
+situation	A1	n.			e81c226c8a.mp3
+six	A1	number			fb8b5c7459.mp3
+sixteen	A1	number			ffdf2c96f8.mp3
+sixty	A1	number			d5ba193c72.mp3
+size	A2	n.			580254b21e.mp3
+skeptical	C1	adj.	US		ab65da40d6.mp3
+sketch	C1	n.			5b95e9e2b2.mp3
+ski	A2	n.			3189dbcb47.mp3
+ski	A2	v.			3189dbcb47.mp3
+skiing	A2	n.			c6784184a3.mp3
+skill	A1	n.			12a875dd70.mp3
+skilled	B2	adj.			d53fa1112c.mp3
+skin	A2	n.			5b65889e3d.mp3
+skip	C1	v.			a127b7bb61.mp3
+skirt	A1	n.			9b880ec95d.mp3
+skull	B2	n.			1b8c2a66af.mp3
+sky	A2	n.			7f73bfebc7.mp3
+slam	C1	v.			3d84ef600a.mp3
+slap	C1	v.			3aedffd70a.mp3
+slash	C1	v.			9c7fd43198.mp3
+slave	B1	n.	US		d45c4115b4.mp3
+slave	B2	n.	UK		d45c4115b4.mp3
+slavery	C1	n.			a51fe6ad04.mp3
+sleep	A1	v.			e7d39b895c.mp3
+sleep	A2	n.			e7d39b895c.mp3
+slice	B1	n.			2e67c52d28.mp3
+slice	B1	v.			2e67c52d28.mp3
+slide	B2	n.			8decce7de6.mp3
+slide	B2	v.			8decce7de6.mp3
+slight	B2	adj.			70ee8c9dc1.mp3
+slightly	B1	adv.			635a69e0a3.mp3
+slip	B2	v.			f1e4461107.mp3
+slogan	B2	n.			d9ea7cd010.mp3
+slope	B2	n.			29af4d9193.mp3
+slope	B2	v.			29af4d9193.mp3
+slot	C1	n.			b13b2b570f.mp3
+slow	A1	adj.			c3d39c1297.mp3
+slow	B1	v.			c3d39c1297.mp3
+slowly	A2	adv.			9da30ea02e.mp3
+small	A1	adj.			d7061aa35d.mp3
+smart	A1	adj.	US		1ad514ad0c.mp3
+smart	B1	adj.	UK		1ad514ad0c.mp3
+smartphone	A2	n.			5f2776fd91.mp3
+smash	C1	v.			1d481197e7.mp3
+smell	A2	n.			9abb495789.mp3
+smell	A2	v.			9abb495789.mp3
+smile	A2	n.			277596f82b.mp3
+smile	A2	v.			277596f82b.mp3
+smoke	A2	n.			d8e528592a.mp3
+smoke	A2	v.			d8e528592a.mp3
+smoking	A2	n.			33aa19480d.mp3
+smooth	B1	adj.			23dfc66642.mp3
+snake	A1	n.			9ac9a2afec.mp3
+snap	C1	v.			f2ca0236fa.mp3
+sneaker	A2	n.	US		e5be880b14.mp3
+snow	A1	n.			5e68adfd8a.mp3
+snow	A1	v.			5e68adfd8a.mp3
+so	A1	adv.			3130f7b883.mp3
+so	A1	conj.			3130f7b883.mp3
+so-called	B2	adj.			ddef5924a1.mp3
+soak	C1	v.			76cd382681.mp3
+soap	A2	n.			2641148f20.mp3
+soar	C1	v.			28abc8ac87.mp3
+soccer	A2	n.			66e32203da.mp3
+social	A2	adj.			190a1ed568.mp3
+socialist	C1	adj.			3ad9289e9f.mp3
+society	A2	n.			c8cb37e2ee.mp3
+sock	A2	n.			249b4cefa9.mp3
+soft	A2	adj.			80ac46105a.mp3
+software	B1	n.			817d04c577.mp3
+soil	B1	n.			b5feba049a.mp3
+solar	B2	adj.			81df9d395c.mp3
+soldier	A2	n.			c1a9851d88.mp3
+sole	C1	adj.			69eae18a86.mp3
+solely	C1	adv.			18fe51ada6.mp3
+solicitor	C1	n.	UK		8872bbe236.mp3
+solid	B1	adj.			950948a1ad.mp3
+solid	B1	n.			950948a1ad.mp3
+solidarity	C1	n.			76517d18e4.mp3
+solo	C1	adj.			703c46e1c4.mp3
+solo	C1	n.			703c46e1c4.mp3
+solution	A2	n.			4642f7da65.mp3
+solve	A2	v.			dcce9575d8.mp3
+some	A1	det.			369f91a0d6.mp3
+some	A1	pron.			369f91a0d6.mp3
+somebody	A1	pron.			dc5f20e281.mp3
+somehow	B2	adv.			80fb9bc2c3.mp3
+someone	A1	pron.			4928418387.mp3
+something	A1	pron.			b44a38b509.mp3
+sometime	B2	adv.			38e2e9c1d4.mp3
+sometimes	A1	adv.			444ec39283.mp3
+somewhat	B2	adv.			e3d7215d36.mp3
+somewhere	A2	adv.			6005356a7f.mp3
+somewhere	A2	pron.			6005356a7f.mp3
+son	A1	n.			c7be46177d.mp3
+song	A1	n.			f41e5dd904.mp3
+soon	A1	adv.			4cde8c3330.mp3
+sophisticated	B2	adj.			f2c6f0f71b.mp3
+sophomore	C1	n.	US		501d01b900.mp3
+sorry	A1	adj.			4c1a9760ce.mp3
+sorry	A1	exclam.			4c1a9760ce.mp3
+sort	A2	n.			6be318c0d8.mp3
+sort	B1	v.			6be318c0d8.mp3
+soul	B2	n.			92a16fc73e.mp3
+sound	A1	n.			04e732e71c.mp3
+sound	A1	v.			04e732e71c.mp3
+sound	C1	adj.			04e732e71c.mp3
+soup	A1	n.			c251104cdd.mp3
+source	A2	n.			6ea2adf9f5.mp3
+south	A1	adj.			ae3dd8f846.mp3
+south	A1	adv.			ae3dd8f846.mp3
+south	A1	n.			ae3dd8f846.mp3
+southern	B1	adj.			2f4cd2d81e.mp3
+sovereignty	C1	n.			a677bb60e2.mp3
+space	A1	n.			f3ad6ef25e.mp3
+spam	C1	n.			bf0aafcfde.mp3
+span	C1	n.			2466de819b.mp3
+span	C1	v.			2466de819b.mp3
+spare	B2	adj.			dd98c61419.mp3
+spare	C1	v.			dd98c61419.mp3
+spark	C1	v.			e4c5aa2a6e.mp3
+speak	A1	v.			43f956eefc.mp3
+speaker	A2	n.			6339dc9fba.mp3
+special	A1	adj.			d6bc36d7dc.mp3
+specialist	B2	adj.			50ee921194.mp3
+specialist	B2	n.			50ee921194.mp3
+specialize	B1	v.			c7b1fbf4c1.mp3
+specialized	C1	adj.			d9a53b7416.mp3
+species	B2	n.			5371806ebc.mp3
+specific	A2	adj.			a804456116.mp3
+specifically	B1	adv.			60a029e68d.mp3
+specification	C1	n.			5685074907.mp3
+specify	B2	v.			8b67b9a80b.mp3
+specimen	C1	n.			29361a1878.mp3
+spectacle	C1	n.			774b8150a4.mp3
+spectacular	B2	adj.			0389f6216c.mp3
+spectator	B2	n.			8dfbef0d73.mp3
+spectrum	C1	n.			72128a81bf.mp3
+speculate	B2	v.			38d5a0ec7c.mp3
+speculation	B2	n.			2b96ac3368.mp3
+speech	A2	n.			4171fc45fd.mp3
+speed	A2	n.			b145669b6d.mp3
+speed	B2	v.			b145669b6d.mp3
+spell	A1	v.			491439bfd9.mp3
+spell	C1	n.			491439bfd9.mp3
+spelling	A1	n.			3a8e587f53.mp3
+spend	A1	v.			d1c3df072b.mp3
+spending	B1	n.			b48ceadf79.mp3
+sphere	C1	n.			1394567a98.mp3
+spice	B2	n.			7922f8c97b.mp3
+spicy	B1	adj.			9a8d53db9c.mp3
+spider	A2	n.			c98cbca420.mp3
+spill	B2	v.			a8114d6b9c.mp3
+spin	C1	n.			39d52738d8.mp3
+spin	C1	v.			39d52738d8.mp3
+spine	C1	n.			9fc66342a4.mp3
+spirit	B1	n.			6fae767df1.mp3
+spiritual	B2	adj.			b39548a09b.mp3
+spite	B2	n.			95acb96f66.mp3
+split	B2	n.			ca4c786071.mp3
+split	B2	v.			ca4c786071.mp3
+spoil	B2	v.			ca353f0273.mp3
+spoken	B1	adj.			06cd04ca48.mp3
+spokesman	B2	n.			875ffbcdc7.mp3
+spokesperson	B2	n.			18f86a1bdb.mp3
+spokeswoman	B2	n.			c53c9ff986.mp3
+sponsor	B2	n.			da950a6937.mp3
+sponsor	B2	v.			da950a6937.mp3
+sponsorship	B2	n.			e21ce8870e.mp3
+spoon	A2	n.			41ae093199.mp3
+sport	A1	n.			e965a78dc3.mp3
+sporting	B2	adj.	UK		492a5e52e8.mp3
+spot	B1	n.			c7c491766d.mp3
+spot	B2	v.			c7c491766d.mp3
+spotlight	C1	n.			c221af195b.mp3
+spouse	C1	n.			c30f1ba192.mp3
+spread	B1	v.			39934a6b2e.mp3
+spread	B2	n.			39934a6b2e.mp3
+spring	A1	n.			a1e5f81e38.mp3
+spring	B1	v.			a1e5f81e38.mp3
+spy	C1	n.			4b594a6347.mp3
+spy	C1	v.			4b594a6347.mp3
+squad	C1	n.			6b7b93e373.mp3
+square	A2	adj.			dfee95a3ad.mp3
+square	A2	n.			dfee95a3ad.mp3
+squeeze	C1	v.			7b3d9e61b3.mp3
+stab	C1	v.			28aa0e79d2.mp3
+stability	C1	n.			04be894dfc.mp3
+stabilize	C1	v.			cd9fe77e96.mp3
+stable	B2	adj.			bf6cfeb5e6.mp3
+stadium	B1	n.			dd2e0631ff.mp3
+staff	B1	n.			6069d2e6a2.mp3
+stage	A2	n.			d862716c7b.mp3
+stage	B2	v.			d862716c7b.mp3
+stair	A2	n.			4024e0e176.mp3
+stake	C1	n.			a02952c66f.mp3
+stall	B2	n.			486bbed4fd.mp3
+stamp	A2	n.			f2c86ed2cd.mp3
+stance	B2	n.			10302b7e92.mp3
+stand	A1	v.			af033436e9.mp3
+stand	B2	n.			af033436e9.mp3
+standard	B1	adj.			25cda6d55b.mp3
+standard	B1	n.			25cda6d55b.mp3
+standing	C1	adj.			ed7cfe6183.mp3
+star	A1	n.			54fa48f649.mp3
+star	A2	v.			54fa48f649.mp3
+stare	B2	v.			72d89bfde7.mp3
+stark	C1	adj.			bbfc12ecc3.mp3
+start	A1	v.			dbc72bbf12.mp3
+start	A2	n.			dbc72bbf12.mp3
+starve	B2	v.			28aff207a0.mp3
+state	A2	n.			688385e137.mp3
+state	B1	adj.			688385e137.mp3
+state	B1	v.			688385e137.mp3
+statement	A1	n.			4f1193ac77.mp3
+station	A1	n.			eae8e94e0f.mp3
+statistic	B1	n.			b201808856.mp3
+statistical	C1	adj.			3c0f619c3c.mp3
+statue	B1	n.			548f422149.mp3
+status	B2	n.			814abf8ad7.mp3
+stay	A1	v.			c8c5300240.mp3
+stay	A2	n.			c8c5300240.mp3
+steadily	B2	adv.			cc5d43759c.mp3
+steady	B2	adj.			321385c293.mp3
+steal	A2	v.			413c11ed45.mp3
+steam	B2	n.			43b09df714.mp3
+steel	B2	n.			1db5841923.mp3
+steep	B2	adj.			109183cc7e.mp3
+steer	C1	v.			c7b1453806.mp3
+stem	C1	n.			353541226c.mp3
+stem	C1	v.			353541226c.mp3
+step	A2	n.			75c73fdf5e.mp3
+step	B2	v.			75c73fdf5e.mp3
+stereotype	C1	n.			88c4826083.mp3
+stick	B1	n.		piece of wood	a5a08f3570.mp3
+stick	B1	v.		push into/attach	a5a08f3570.mp3
+sticky	B2	adj.			f3c4617a15.mp3
+stiff	B2	adj.			6468c6241c.mp3
+still	A1	adv.			9ecb9064ad.mp3
+still	B1	adj.			9ecb9064ad.mp3
+stimulate	B2	v.			cca569c6ba.mp3
+stimulus	C1	n.			83b631e789.mp3
+stir	C1	v.			c16f59ed41.mp3
+stock	B2	n.			2233f70a35.mp3
+stomach	A2	n.			4315932e84.mp3
+stone	A2	n.			22763ee6c4.mp3
+stop	A1	n.			c45a54ab77.mp3
+stop	A1	v.			c45a54ab77.mp3
+storage	C1	n.			7c8772d612.mp3
+store	A1	n.	US		a732cabdb1.mp3
+store	A2	n.	UK		a732cabdb1.mp3
+store	B1	v.	UK		a732cabdb1.mp3
+store	B1	v.	US		a732cabdb1.mp3
+storm	A2	n.			da6504fd9b.mp3
+story	A1	n.			da68247fb1.mp3
+stove	A2	n.	US		d8382f25f3.mp3
+straight	A2	adj.			4e16ccf226.mp3
+straight	A2	adv.			4e16ccf226.mp3
+straightforward	C1	adj.			9c83f33053.mp3
+strain	C1	n.			af0fd7ef09.mp3
+strand	C1	n.			3435bf003e.mp3
+strange	A2	adj.			9378eb41b5.mp3
+stranger	B1	n.			8fdb60c40e.mp3
+strategic	C1	adj.			07a4c1fd9a.mp3
+strategy	A2	n.			837db288b4.mp3
+stream	B2	n.			d48f78ea85.mp3
+street	A1	n.			7c6fca766b.mp3
+strength	B1	n.			287c844c01.mp3
+strengthen	B2	v.			ea03a5c2fa.mp3
+stress	A2	n.			2fb72babb4.mp3
+stress	A2	v.			2fb72babb4.mp3
+stretch	B2	n.			3fd1ecc04a.mp3
+stretch	B2	v.			3fd1ecc04a.mp3
+strict	B2	adj.			625b080449.mp3
+strictly	B2	adv.			41332c817a.mp3
+strike	B2	n.			8fa7f82e29.mp3
+strike	B2	v.			8fa7f82e29.mp3
+striking	B2	adj.			db209b3821.mp3
+string	B1	n.			26704f5d1d.mp3
+strip	C1	n.		long narrow piece	0669977aa9.mp3
+strip	C1	v.		remove clothes/a layer	0669977aa9.mp3
+strive	C1	v.			7c990ecad0.mp3
+stroke	B2	n.			71ffe539ba.mp3
+strong	A1	adj.			2ee1f22874.mp3
+strongly	B1	adv.			ff10e4ded4.mp3
+structural	C1	adj.			1e78140dd4.mp3
+structure	A2	n.			f6501ba4d3.mp3
+structure	B2	v.			f6501ba4d3.mp3
+struggle	B2	n.			c7e54d456d.mp3
+struggle	B2	v.			c7e54d456d.mp3
+student	A1	n.			19800b321a.mp3
+studio	B1	n.			326c9ec268.mp3
+study	A1	n.			0359314d37.mp3
+study	A1	v.			0359314d37.mp3
+stuff	B1	n.			15ec206d6e.mp3
+stuff	B2	v.			15ec206d6e.mp3
+stumble	C1	v.			fb039860d7.mp3
+stun	C1	v.			2a13c84177.mp3
+stunning	B2	adj.			04c6690054.mp3
+stupid	A2	adj.			b0a144fb44.mp3
+style	A1	n.			120bf16038.mp3
+subject	A1	n.			e749a67f9a.mp3
+subject	B2	adj.			e749a67f9a.mp3
+submission	C1	n.			189d7f229e.mp3
+submit	B2	v.			5089f12cf2.mp3
+subscriber	C1	n.			d00191b802.mp3
+subscription	C1	n.			f46de2ed30.mp3
+subsequent	B2	adj.			35bf9d651d.mp3
+subsequently	B2	adv.			580c00e545.mp3
+subsidy	C1	n.			d29100f417.mp3
+substance	B1	n.			d00bd8ea18.mp3
+substantial	C1	adj.			d5a73dfdc2.mp3
+substantially	C1	adv.			72fd7bde43.mp3
+substitute	C1	n.			1139e4c6d6.mp3
+substitute	C1	v.			1139e4c6d6.mp3
+substitution	C1	n.			5d04aca6d3.mp3
+subtle	C1	adj.			d1245af0ac.mp3
+suburb	B2	n.			5432d52277.mp3
+suburban	C1	adj.			c9c5af36da.mp3
+subway	A2	n.	US		4b65230ba2.mp3
+succeed	A2	v.			e978a3e905.mp3
+success	A1	n.			8cb155e7e7.mp3
+successful	A2	adj.			9f88a4be69.mp3
+successfully	B1	adv.			19b7d5e680.mp3
+succession	C1	n.			c104d13fb2.mp3
+successive	C1	adj.			d07b208d01.mp3
+successor	C1	n.			f88d4f8fd8.mp3
+such	A2	det.			47d23302c6.mp3
+such	A2	pron.			47d23302c6.mp3
+suck	C1	v.			98b73efb20.mp3
+sudden	B1	adj.			8c6b0defb1.mp3
+suddenly	A2	adv.			a3dc47ca8e.mp3
+sue	C1	v.			0a392c4609.mp3
+suffer	B1	v.			799b2dae1c.mp3
+suffering	B2	n.			1857db4d2e.mp3
+sufficient	B2	adj.			3321b4367f.mp3
+sufficiently	B2	adv.			6ae86022aa.mp3
+sugar	A1	n.			f6294e82b6.mp3
+suggest	A2	v.			92bd4b1ba8.mp3
+suggestion	A2	n.			487c9b66eb.mp3
+suicide	C1	n.			e8e76162ff.mp3
+suit	A2	n.			162e6e8219.mp3
+suit	B1	v.			162e6e8219.mp3
+suitable	B1	adj.			0bb30eef18.mp3
+suite	C1	n.			6447c69878.mp3
+sum	B2	n.			ab9f050bdf.mp3
+sum	B2	v.			ab9f050bdf.mp3
+summarize	B1	v.			eaad955cf3.mp3
+summary	B1	n.			17bf6ba407.mp3
+summer	A1	n.			bb410bc378.mp3
+summit	C1	n.			8c75537e2e.mp3
+sun	A1	n.			f527595ff3.mp3
+super	B2	adj.			aaf7de3952.mp3
+superb	C1	adj.			a8cf98bcf6.mp3
+superintendent	C1	n.	US		bca1036608.mp3
+superior	C1	adj.			bacc9c6d92.mp3
+supermarket	A1	n.			ec313a95b7.mp3
+supervise	C1	v.			18abd24c97.mp3
+supervision	C1	n.			7d95e4c5da.mp3
+supervisor	C1	n.			7b0efa30a0.mp3
+supplement	C1	n.			35e18f187e.mp3
+supplement	C1	v.			35e18f187e.mp3
+supply	B1	n.			a0f9d1ac46.mp3
+supply	B1	v.			a0f9d1ac46.mp3
+support	A2	n.			02f6cc4eab.mp3
+support	A2	v.			02f6cc4eab.mp3
+supporter	B1	n.			1ba71f8c9a.mp3
+supportive	C1	adj.			c78630a4e2.mp3
+suppose	A2	v.			e716832d05.mp3
+supposedly	C1	adv.			aa8b31f147.mp3
+suppress	C1	v.			6a0d13e6ca.mp3
+supreme	C1	adj.			d7ed1aea5f.mp3
+sure	A1	adj.			1f1f122141.mp3
+sure	A2	adv.			1f1f122141.mp3
+surely	B1	adv.			2eda3293e5.mp3
+surface	B1	n.			5df524fba4.mp3
+surge	C1	n.			e159896eab.mp3
+surge	C1	v.			e159896eab.mp3
+surgeon	B2	n.			3fd8844f1e.mp3
+surgery	B2	n.			1189ffca3c.mp3
+surgical	C1	adj.			1b23fb4fb0.mp3
+surplus	C1	n.			4a65abf412.mp3
+surprise	A2	n.			c2c3825ba1.mp3
+surprise	A2	v.			c2c3825ba1.mp3
+surprised	A2	adj.			a9e4d6e05f.mp3
+surprising	A2	adj.			875ea113a2.mp3
+surrender	C1	v.			a6493f7cf9.mp3
+surround	B2	v.			fa43c3a14c.mp3
+surrounding	B2	adj.			d8b163ab92.mp3
+surveillance	C1	n.			80f27d5469.mp3
+survey	A2	n.			c8f5672318.mp3
+survey	B2	v.			c8f5672318.mp3
+survival	B2	n.			1dd9e43d86.mp3
+survive	B1	v.			fee7950c1f.mp3
+survivor	B2	n.			935bc4c824.mp3
+suspect	B2	n.			19189a4ec0.mp3
+suspect	B2	v.			19189a4ec0.mp3
+suspend	B2	v.			a8a14b0ac1.mp3
+suspension	C1	n.			2b7d6a984e.mp3
+suspicion	C1	n.			0bc94339d4.mp3
+suspicious	C1	adj.			308cda10df.mp3
+sustain	C1	v.			247045e1a3.mp3
+sustainable	B2	adj.			7e9074f787.mp3
+swallow	B2	v.			acf7db4754.mp3
+swear	B2	v.			bc83a35aae.mp3
+sweater	A1	n.			26cd24be4f.mp3
+sweep	B2	v.			ade470b2c7.mp3
+sweet	A2	adj.	UK		66f999c7ef.mp3
+sweet	A2	adj.	US		66f999c7ef.mp3
+sweet	A2	n.	UK		66f999c7ef.mp3
+swim	A1	v.			f5730d0bc6.mp3
+swim	B1	n.			f5730d0bc6.mp3
+swimming	A1	n.			062f83024f.mp3
+swing	C1	n.			d7b2e9f1d6.mp3
+swing	C1	v.			d7b2e9f1d6.mp3
+switch	B1	v.			a58f805b60.mp3
+switch	B2	n.			a58f805b60.mp3
+sword	C1	n.			002780e55a.mp3
+symbol	A2	n.			9da0d10c32.mp3
+symbolic	C1	adj.			3c60e61126.mp3
+sympathetic	B2	adj.			5625a45aa6.mp3
+sympathy	B2	n.			f318ec6332.mp3
+symptom	B1	n.			18b86f4243.mp3
+syndrome	C1	n.			b37e626789.mp3
+synthesis	C1	n.			9f898073f4.mp3
+system	A2	n.			48f9e61fff.mp3
+systematic	C1	adj.			41ba62aa57.mp3
+table	A1	n.			3299ea5dfd.mp3
+tablet	A2	n.			b3e4619a17.mp3
+tackle	B2	v.			962abf3a46.mp3
+tackle	C1	n.			962abf3a46.mp3
+tactic	C1	n.			2c5694dfdf.mp3
+tactical	C1	adj.			3f4744620f.mp3
+tag	B2	n.			a7ae5f269a.mp3
+tag	B2	v.			a7ae5f269a.mp3
+tail	B1	n.			eedcbb2ff9.mp3
+take	A1	v.			6796b919e4.mp3
+tale	B2	n.			0a26c23918.mp3
+talent	B1	n.			812ef54c4e.mp3
+talented	B1	adj.			0e332d67b2.mp3
+talk	A1	v.			ac77a5f436.mp3
+talk	A2	n.			ac77a5f436.mp3
+tall	A1	adj.			cd728b2af8.mp3
+tank	B2	n.			c081d0acbb.mp3
+tap	B2	n.			888fe951bf.mp3
+tap	B2	v.			888fe951bf.mp3
+tape	B1	n.			0145d79739.mp3
+target	A2	n.			be56a6cb30.mp3
+target	B2	v.			be56a6cb30.mp3
+task	A2	n.			190148ce49.mp3
+taste	A2	n.			1308f068c2.mp3
+taste	A2	v.			1308f068c2.mp3
+tax	B1	n.			4ebcaab397.mp3
+tax	B1	v.			4ebcaab397.mp3
+taxi	A1	n.			d2d6bd76a4.mp3
+taxpayer	C1	n.			98b17ac482.mp3
+tea	A1	n.			bc029345b5.mp3
+teach	A1	v.			421a749d74.mp3
+teacher	A1	n.			10389f674c.mp3
+teaching	A2	n.			22e0b992bb.mp3
+team	A1	n.			30b1c7d1a5.mp3
+tear	B2	n.			a8df1cd69a.mp3
+tear	B2	v.			a8df1cd69a.mp3
+technical	B1	adj.			76a63daa43.mp3
+technique	B1	n.			43424f13da.mp3
+technological	B2	adj.			d7a585cc75.mp3
+technology	A2	n.			e936e16571.mp3
+teen	B2	adj.	US		4e7f3b7db9.mp3
+teen	B2	n.	US		4e7f3b7db9.mp3
+teenage	A2	adj.			2ff3c9cfbd.mp3
+teenager	A1	n.			768adae635.mp3
+teens	B2	n.	UK		3adf9e3f25.mp3
+telephone	A1	n.			8c8e155b97.mp3
+telephone	A1	v.			8c8e155b97.mp3
+television	A1	n.			e3d784e9b7.mp3
+tell	A1	v.			7ae8604b39.mp3
+temperature	A2	n.			a103be6e94.mp3
+temple	B2	n.			67d3e9715b.mp3
+temporarily	B2	adv.			4ec4c87077.mp3
+temporary	B2	adj.			e4b13003d7.mp3
+tempt	C1	v.			2767f98240.mp3
+ten	A1	number			3d4b0754d0.mp3
+tenant	C1	n.			72a389a7c2.mp3
+tend	B1	v.			4cf4199210.mp3
+tendency	B2	n.			8aca26972d.mp3
+tender	C1	adj.			4d3bbccd9c.mp3
+tennis	A1	n.			3cc7c5fe0a.mp3
+tension	B2	n.			6ff6fd37a5.mp3
+tent	B1	n.			b479d936da.mp3
+tenure	C1	n.			9a23cf27ee.mp3
+term	A2	n.			4a115a77d5.mp3
+term	B2	v.			4a115a77d5.mp3
+terminal	B2	n.			fc30ed4942.mp3
+terminal	C1	adj.			fc30ed4942.mp3
+terminate	C1	v.			c8e175d7be.mp3
+terms	B2	n.			01373347cf.mp3
+terrain	C1	n.			143efe76b1.mp3
+terrible	A1	adj.			9750dd2e48.mp3
+terribly	B2	adv.			ea46f3726c.mp3
+terrific	C1	adj.			2e63266c2e.mp3
+terrify	B2	v.			196235b7f8.mp3
+territory	B2	n.			049f7dc594.mp3
+terror	B2	n.			60117c9506.mp3
+terrorism	B2	n.			480f086b52.mp3
+terrorist	B2	n.			edae4a6bff.mp3
+test	A1	n.			bc89079a01.mp3
+test	A1	v.			bc89079a01.mp3
+testify	C1	v.			0bbf67ca54.mp3
+testimony	C1	n.			5c91febb0a.mp3
+testing	B2	n.			bfec687e3c.mp3
+text	A1	n.			d7eafd4b69.mp3
+text	A2	v.			d7eafd4b69.mp3
+textbook	B2	n.			670dfceb5e.mp3
+texture	C1	n.			0be8446bc7.mp3
+than	A1	conj.			7c145f6858.mp3
+thank	A1	v.			69d982f9ac.mp3
+thankfully	C1	adv.			5e6b9c593f.mp3
+thanks	A1	exclam.			11d1851be0.mp3
+thanks	A1	n.			11d1851be0.mp3
+that	A1	conj.			d6808e5d57.mp3
+that	A1	det.			d6808e5d57.mp3
+that	A1	pron.			d6808e5d57.mp3
+that	B1	adv.			d6808e5d57.mp3
+the	A1	definite article			3449ba0801.mp3
+theater	A1	n.	US		154bb2deba.mp3
+theatre	A1	n.	UK		5c750e5f01.mp3
+theatrical	C1	adj.			e6f1f0aede.mp3
+theft	B2	n.			54c1e6dfd5.mp3
+their	A1	det.			8002f9259e.mp3
+theirs	B1	pron.			0079f052f1.mp3
+them	A1	pron.			d7c1bfce15.mp3
+theme	B1	n.			ac3846aece.mp3
+themselves	A2	pron.			50c5f40f15.mp3
+then	A1	adv.			4f912db233.mp3
+theology	C1	n.			314bead302.mp3
+theoretical	C1	adj.			d7b0ed30ff.mp3
+theory	B1	n.			fa5e4d206b.mp3
+therapist	B2	n.			0af8b0fd0c.mp3
+therapy	B2	n.			cd346c05ac.mp3
+there	A1	adv.			b37e8fbbe6.mp3
+thereafter	C1	adv.			4075bc000b.mp3
+thereby	C1	adv.			0777168445.mp3
+therefore	B1	adv.			40a37af350.mp3
+thesis	B2	n.			beb64e36d4.mp3
+they	A1	pron.			e87943c2c5.mp3
+thick	A2	adj.			113c0d7186.mp3
+thief	A2	n.			438ccb55eb.mp3
+thin	A2	adj.			e761a4fbc2.mp3
+thing	A1	n.			a1b3137c01.mp3
+think	A1	v.			09c784ed6d.mp3
+thinking	A2	n.			6ba8f8b3a0.mp3
+third	A1	number			ebcbbca22a.mp3
+third	A2	n.			ebcbbca22a.mp3
+thirsty	A1	adj.			4c5615cf0c.mp3
+thirteen	A1	number			16578b6d08.mp3
+thirty	A1	number			a50816fcb3.mp3
+this	A1	det.			f3b4400843.mp3
+this	A1	pron.			f3b4400843.mp3
+this	B1	adv.			f3b4400843.mp3
+thorough	B2	adj.			11a75047aa.mp3
+thoroughly	B2	adv.			4ca072aa63.mp3
+though	B1	adv.			e9076bfdc1.mp3
+though	B1	conj.			e9076bfdc1.mp3
+thought	A2	n.			54592322ea.mp3
+thought-provoking	C1	adj.			1ddd4f0369.mp3
+thoughtful	C1	adj.			935fd24d97.mp3
+thousand	A1	number			037188a96c.mp3
+thread	C1	n.			9dafcd4c39.mp3
+threat	B2	n.			e7d24fa9c5.mp3
+threaten	B2	v.			6ca90a59c5.mp3
+three	A1	number			d45897f2e1.mp3
+threshold	C1	n.			35510d4f2a.mp3
+thrilled	C1	adj.			c1a12fc51f.mp3
+thrive	C1	v.			c134a1b215.mp3
+throat	B1	n.			d13e9f48d3.mp3
+through	A1	adv.			49b8881b1b.mp3
+through	A1	prep.			49b8881b1b.mp3
+throughout	B1	adv.			bffaf66396.mp3
+throughout	B1	prep.			bffaf66396.mp3
+throw	A2	v.			029166729c.mp3
+thumb	B2	n.			8e24013586.mp3
+thus	B2	adv.			beee4c6bf1.mp3
+ticket	A1	n.			1c498b265c.mp3
+tide	C1	n.			64cbd24392.mp3
+tidy	A2	adj.	UK		42d7607f9d.mp3
+tidy	A2	v.	UK		42d7607f9d.mp3
+tie	A2	n.			d7a3d55960.mp3
+tie	A2	v.			d7a3d55960.mp3
+tight	B1	adj.			0c6e1db3d6.mp3
+tighten	C1	v.			5a9d4deeee.mp3
+till	B1	conj.			94c3b49e2f.mp3
+till	B1	prep.			94c3b49e2f.mp3
+timber	C1	n.			4f5d8f246d.mp3
+time	A1	n.			8dc0b7a0a9.mp3
+time	B2	v.			8dc0b7a0a9.mp3
+timely	C1	adj.			245877e219.mp3
+timing	B2	n.			e5c742eb2d.mp3
+tin	B1	n.	UK		fc4e84958b.mp3
+tiny	B1	adj.			f9a81a0cd6.mp3
+tip	A2	n.			d2494f77cf.mp3
+tip	B1	v.			d2494f77cf.mp3
+tire	B1	n.	US		e13bb60a95.mp3
+tired	A1	adj.			ec5a5c92df.mp3
+tissue	B2	n.			9e83f83b87.mp3
+title	A1	n.			00b9a44e29.mp3
+title	B2	v.			00b9a44e29.mp3
+to	A1	infinitive marker			7c508f6fd1.mp3
+to	A1	prep.			7c508f6fd1.mp3
+tobacco	C1	n.			955bf9acea.mp3
+today	A1	adv.			53c0d0deee.mp3
+today	A1	n.			53c0d0deee.mp3
+toe	B1	n.			f2e005692b.mp3
+together	A1	adv.			5b473584e0.mp3
+toilet	A1	n.			0b695713f2.mp3
+tolerance	C1	n.			3630a6b9de.mp3
+tolerate	C1	v.			4c18f7e57c.mp3
+toll	C1	n.			d3a214a611.mp3
+tomato	A1	n.			e7b6446114.mp3
+tomorrow	A1	adv.			3efe8cedcd.mp3
+tomorrow	A1	n.			3efe8cedcd.mp3
+ton	B1	n.	US		f8503374db.mp3
+ton	B2	n.	UK		f8503374db.mp3
+tone	B2	n.			317ae73e75.mp3
+tongue	B1	n.			27c52d2032.mp3
+tonight	A1	adv.			d0f064a2c5.mp3
+tonight	A1	n.			d0f064a2c5.mp3
+tonne	B2	n.	UK		f9f063b99a.mp3
+too	A1	adv.			22deb563d1.mp3
+tool	A2	n.			b860fe1d8c.mp3
+tooth	A1	n.			b355428002.mp3
+top	A2	adj.			ee9315831b.mp3
+top	A2	n.			ee9315831b.mp3
+top	C1	v.			ee9315831b.mp3
+topic	A1	n.			d615986c9f.mp3
+torture	C1	n.			a688c16d3c.mp3
+torture	C1	v.			a688c16d3c.mp3
+toss	C1	v.			525fecbfa2.mp3
+total	B1	adj.			1db92da646.mp3
+total	B1	n.			1db92da646.mp3
+total	C1	v.			1db92da646.mp3
+totally	B1	adv.			fe531ef45a.mp3
+touch	A2	v.			6cb89da239.mp3
+touch	B1	n.			6cb89da239.mp3
+tough	B2	adj.			f9d91bea7b.mp3
+tour	A2	n.			2da34d917b.mp3
+tour	B1	v.			2da34d917b.mp3
+tourism	A2	n.			89667d542a.mp3
+tourist	A1	n.			24a003bfc3.mp3
+tournament	B2	n.			bf55949aa9.mp3
+toward	A2	prep.	US		bf804218f1.mp3
+towards	A2	prep.	UK		0277a65a8a.mp3
+towel	A2	n.			2bc98967eb.mp3
+tower	A2	n.			878b0cfdf4.mp3
+town	A1	n.			454ceb7134.mp3
+toxic	C1	adj.			a088c56c3e.mp3
+toy	A2	adj.			ee100e1303.mp3
+toy	A2	n.			ee100e1303.mp3
+trace	B2	v.			09fd6f7285.mp3
+trace	C1	n.			09fd6f7285.mp3
+track	A2	n.			7efe5fc173.mp3
+track	B2	v.			7efe5fc173.mp3
+trade	B1	n.			151df158c3.mp3
+trade	B1	v.			151df158c3.mp3
+trademark	C1	n.			1ada8c300e.mp3
+trading	B2	n.			ba277e017c.mp3
+tradition	A2	n.			97c59a2759.mp3
+traditional	A2	adj.			14f197589c.mp3
+traffic	A1	n.			d23e443a9d.mp3
+tragedy	B2	n.			35caeffe80.mp3
+tragic	B2	adj.			c4c1bba0e4.mp3
+trail	C1	n.			ccd1844425.mp3
+trail	C1	v.			ccd1844425.mp3
+trailer	C1	n.			de504adba0.mp3
+train	A1	n.			dd4269f4f5.mp3
+train	A2	v.			dd4269f4f5.mp3
+trainer	A2	n.	UK		2dbca049c2.mp3
+trainer	B1	n.	US		2dbca049c2.mp3
+training	A2	n.			ff2527f76f.mp3
+trait	B2	n.			04fd34a103.mp3
+transaction	C1	n.			ce60c8970d.mp3
+transcript	C1	n.			c080387205.mp3
+transfer	B2	n.			95918c3627.mp3
+transfer	B2	v.			95918c3627.mp3
+transform	B2	v.			5f9942b846.mp3
+transformation	C1	n.			8c1754ccc8.mp3
+transit	C1	n.			160fa04b49.mp3
+transition	B2	n.			056511ad72.mp3
+translate	B1	v.			997c643087.mp3
+translation	B1	n.			6529a281f9.mp3
+transmission	C1	n.			6a2f083502.mp3
+transmit	B2	v.			ccf5c824d3.mp3
+transparency	C1	n.			45738533dd.mp3
+transparent	C1	adj.			b19e9c1c70.mp3
+transport	A2	n.	UK		964bdd1534.mp3
+transport	B1	v.	UK		964bdd1534.mp3
+transport	B1	v.	US		964bdd1534.mp3
+transportation	A2	n.	US		529c08ed36.mp3
+transportation	B2	n.	UK		529c08ed36.mp3
+trap	B2	n.			757eca4053.mp3
+trap	B2	v.			757eca4053.mp3
+trash	A2	n.	US		7333265ea2.mp3
+trauma	C1	n.			b8bc52fe15.mp3
+travel	A1	n.			291c496445.mp3
+travel	A1	v.			291c496445.mp3
+traveler	A2	n.	US		ed29bc2f91.mp3
+traveller	A2	n.	UK		51dc99534f.mp3
+treasure	B2	n.			64a1e15687.mp3
+treat	B1	v.			00fbf5387e.mp3
+treatment	B1	n.			bac375761a.mp3
+treaty	C1	n.			730291992f.mp3
+tree	A1	n.			66d66f16b1.mp3
+tremendous	C1	adj.			eaae62306c.mp3
+trend	B1	n.			d71fe3295e.mp3
+trial	B2	n.			394d2c1345.mp3
+tribal	C1	adj.			af6e4526f6.mp3
+tribe	B2	n.			1a4a373c12.mp3
+tribunal	C1	n.	UK		3655651f59.mp3
+tribute	C1	n.			f348cf0451.mp3
+trick	B1	n.			f12a08d19b.mp3
+trick	B1	v.			f12a08d19b.mp3
+trigger	B2	v.			c1aca73cc7.mp3
+trigger	C1	n.			c1aca73cc7.mp3
+trillion	B2	number			fb84a2a842.mp3
+trio	C1	n.			c01e942e47.mp3
+trip	A1	n.			378da076a7.mp3
+trip	B2	v.			378da076a7.mp3
+triumph	C1	n.			25a641d233.mp3
+troop	B2	n.			81d32b139b.mp3
+trophy	C1	n.			ebd93484de.mp3
+tropical	B2	adj.			f97e0bcd3a.mp3
+trouble	A2	n.			ececa05779.mp3
+trouble	B2	v.			ececa05779.mp3
+troubled	C1	adj.			c2a8c2b789.mp3
+trousers	A1	n.	UK		ebf27b6f84.mp3
+truck	A1	n.	US		37435dd0bb.mp3
+truck	A2	n.	UK		37435dd0bb.mp3
+true	A1	adj.			6423c6f6bf.mp3
+truly	B2	adv.			0f88e8bd91.mp3
+trust	B2	n.			79b56c838a.mp3
+trust	B2	v.			79b56c838a.mp3
+trustee	C1	n.			df19d31d44.mp3
+truth	B1	n.			11b138a03c.mp3
+try	A1	v.			6d071b4f60.mp3
+try	B2	n.			6d071b4f60.mp3
+tsunami	B2	n.			63f50addec.mp3
+tube	B1	n.			fea9090f85.mp3
+tuition	C1	n.			d9a4a0ca06.mp3
+tumor	C1	n.	US		0ffd0d8ed8.mp3
+tune	B2	n.			855a5bdfa1.mp3
+tunnel	B2	n.			89f3420f2e.mp3
+turn	A1	n.			dde4ee8820.mp3
+turn	A1	v.			dde4ee8820.mp3
+turnout	C1	n.			ae96b5b213.mp3
+turnover	C1	n.			68bb15393f.mp3
+twelve	A1	number			cc93e0b3a5.mp3
+twenty	A1	number			19eca93be2.mp3
+twice	A1	adv.			22cc1e776f.mp3
+twin	A2	adj.			7e860a36ea.mp3
+twin	A2	n.			7e860a36ea.mp3
+twist	C1	n.			31c1e6fbaa.mp3
+twist	C1	v.			31c1e6fbaa.mp3
+two	A1	number			a6cf6983b6.mp3
+type	A1	n.			784dc95670.mp3
+type	B1	v.			784dc95670.mp3
+typical	A2	adj.			1b78faa4ce.mp3
+typically	B1	adv.			3d7bb277a6.mp3
+tyre	B1	n.	UK		a4cbba53ce.mp3
+ugly	B1	adj.			2a42895c10.mp3
+ultimate	B2	adj.			309145290a.mp3
+ultimately	B2	adv.			9a86077528.mp3
+umbrella	A1	n.			844888f4dc.mp3
+unable	B1	adj.			e097d95f50.mp3
+unacceptable	B2	adj.			568cff1baa.mp3
+uncertainty	B2	n.			a976162ca3.mp3
+uncle	A1	n.			cf8c620699.mp3
+uncomfortable	B1	adj.			0e7422c051.mp3
+unconscious	B2	adj.			48fcbde417.mp3
+unconstitutional	C1	adj.	US		6bd9387e20.mp3
+under	A1	adv.			8b76d84063.mp3
+under	A1	prep.			8b76d84063.mp3
+undergo	B2	v.			6acdcf7c12.mp3
+undergraduate	C1	n.			4a628e6d1c.mp3
+underground	A2	adj.			7725609ce3.mp3
+underground	A2	adv.			7725609ce3.mp3
+underlying	C1	adj.			84a597f294.mp3
+undermine	C1	v.			91f103523d.mp3
+understand	A1	v.			d415476673.mp3
+understanding	A2	n.			80a6f1fcc5.mp3
+undertake	B2	v.			d01f2f7085.mp3
+underwear	B1	n.			5c8cf1b540.mp3
+undoubtedly	C1	adv.			bb29ab59fe.mp3
+unemployed	B1	adj.			aef13e5cb6.mp3
+unemployment	B1	n.			3aa43bffc0.mp3
+unexpected	B2	adj.			c7de51193e.mp3
+unfair	B1	adj.			6479e80121.mp3
+unfold	B2	v.			2b7d22770d.mp3
+unfortunate	B2	adj.			ba0e8a661b.mp3
+unfortunately	A2	adv.			8a6bc45379.mp3
+unhappy	A2	adj.			18c8b76b19.mp3
+uniform	A2	n.			00c249b857.mp3
+unify	C1	v.			d66f22b6f4.mp3
+union	B1	n.			b3c97595be.mp3
+unique	B2	adj.			298bed2cd8.mp3
+unit	A2	n.			6ced0c83fa.mp3
+unite	B2	v.			e0614cbb15.mp3
+united	A2	adj.			8c0ce843cb.mp3
+unity	B2	n.			bb1cdc4d3e.mp3
+universal	B2	adj.			6aea6e07bc.mp3
+universe	B2	n.			119177fcf1.mp3
+university	A1	n.			c090eeb367.mp3
+unknown	B2	adj.			6a00f4470f.mp3
+unless	B1	conj.			5ba5d2161f.mp3
+unlike	B1	prep.			c0f9a81ae0.mp3
+unlikely	B1	adj.			98ca036ec8.mp3
+unnecessary	B1	adj.			9e4a6e99a5.mp3
+unpleasant	B1	adj.			d50c0c646d.mp3
+unprecedented	C1	adj.			f09deb610d.mp3
+until	A1	conj.			9d2a2eeee1.mp3
+until	A1	prep.			9d2a2eeee1.mp3
+unusual	A2	adj.			a30e0d003c.mp3
+unveil	C1	v.			46dfa9d543.mp3
+up	A1	adv.			26f01110e3.mp3
+up	A1	prep.			26f01110e3.mp3
+upcoming	C1	adj.			b8aa768c66.mp3
+update	B1	n.			85a6a06f5d.mp3
+update	B1	v.			85a6a06f5d.mp3
+upgrade	C1	n.			7be02465f1.mp3
+upgrade	C1	v.			7be02465f1.mp3
+uphold	C1	v.			87babb9dab.mp3
+upon	B1	prep.			a860edd2f0.mp3
+upper	B2	adj.			5074c564fd.mp3
+upset	B1	adj.			318c1b0fe2.mp3
+upset	B1	v.			318c1b0fe2.mp3
+upstairs	A1	adv.			b7c5296af6.mp3
+upstairs	A2	adj.			b7c5296af6.mp3
+upward	B2	adv.	US		15badefd25.mp3
+upwards	B2	adv.	UK		f83c1aa89c.mp3
+urban	B2	adj.			4e2643075c.mp3
+urge	B2	v.			76c09098f4.mp3
+urgent	B2	adj.			30d555c3ba.mp3
+us	A1	pron.			e669095d13.mp3
+usage	B2	n.			29a6c1801f.mp3
+use	A1	v.			44f52bc6e2.mp3
+use	A2	n.			44f52bc6e2.mp3
+used	B1	adj.			eaaae940cd.mp3
+used to	A2	modal v.			9fca52f267.mp3
+useful	A1	adj.			d14116fb95.mp3
+useless	B2	adj.			952066ee58.mp3
+user	A2	n.			a77d735a38.mp3
+usual	A2	adj.			d9c037b077.mp3
+usually	A1	adv.			f7438d2219.mp3
+utility	C1	n.			9143d87d89.mp3
+utilize	C1	v.			4618068ad6.mp3
+utterly	C1	adv.			981bfd47fd.mp3
+vacation	A1	n.			b73bec0bc4.mp3
+vacuum	C1	n.			accbc02f58.mp3
+vague	C1	adj.			4f1b8d11a9.mp3
+valid	B2	adj.			3c1b9cd8d5.mp3
+validity	C1	n.			54ac290e1d.mp3
+valley	A2	n.			180af45810.mp3
+valuable	B1	adj.			6315263df4.mp3
+value	B1	n.			9d4b49e467.mp3
+value	B2	v.			9d4b49e467.mp3
+van	A2	n.	UK		727e1af26e.mp3
+van	B2	n.	US		727e1af26e.mp3
+vanish	C1	v.			922f999655.mp3
+variable	C1	adj.			27de577cfa.mp3
+variable	C1	n.			27de577cfa.mp3
+variation	B2	n.			90ae704f74.mp3
+varied	C1	adj.			e350f051f1.mp3
+variety	A2	n.			3c5b38d08d.mp3
+various	B1	adj.			f820514770.mp3
+vary	B2	v.			fa91e9529e.mp3
+vast	B2	adj.			59d78ed0f2.mp3
+vegetable	A1	n.			2a148002e1.mp3
+vehicle	A2	n.			8cc91c6eff.mp3
+vein	C1	n.			0e14fdf2ba.mp3
+venture	C1	n.			591e4a71eb.mp3
+venture	C1	v.			591e4a71eb.mp3
+venue	B2	n.			8bd806e923.mp3
+verbal	C1	adj.			d500beae07.mp3
+verdict	C1	n.			f385aed68f.mp3
+verify	C1	v.			634b580f20.mp3
+verse	C1	n.			bd75564a4b.mp3
+version	B1	n.			e92bf46c9d.mp3
+versus	C1	conj.	US		2694008a99.mp3
+versus	C1	prep.	UK		2694008a99.mp3
+vertical	B2	adj.			e9ea517a92.mp3
+very	A1	adv.			d18bc35489.mp3
+very	B2	adj.			d18bc35489.mp3
+vessel	C1	n.			e0006502a3.mp3
+veteran	C1	n.			8a1bdbc07c.mp3
+via	B2	prep.			647f3df249.mp3
+viable	C1	adj.			e9e69aa97e.mp3
+vibrant	C1	adj.			c4723d4024.mp3
+vice	C1	n.			44b20570e3.mp3
+vicious	C1	adj.			d0ad12c3ef.mp3
+victim	B1	n.			afd5a6fcd7.mp3
+victory	B2	n.			00cec545ae.mp3
+video	A1	n.			bc56a47049.mp3
+view	A2	n.			9578ceaf38.mp3
+view	B1	v.			9578ceaf38.mp3
+viewer	B1	n.			c070b9ba6c.mp3
+viewpoint	B2	n.			6dd7e79fa1.mp3
+village	A1	n.	UK		f67fa230c6.mp3
+village	A2	n.	US		f67fa230c6.mp3
+villager	C1	n.	UK		41cbf791d5.mp3
+violate	C1	v.			308a93d5a4.mp3
+violation	C1	n.			c274ffa3b2.mp3
+violence	B2	n.			be66c6ce82.mp3
+violent	B1	adj.			e8f5e5c06b.mp3
+virtual	B2	adj.			784241050c.mp3
+virtue	C1	n.			cb3df4440f.mp3
+virus	A2	n.			b22b959e05.mp3
+visa	B2	n.			b434745447.mp3
+visible	B2	adj.			a31d4d0e15.mp3
+vision	B2	n.			fcb2165927.mp3
+visit	A1	n.			895da6c1e2.mp3
+visit	A1	v.			895da6c1e2.mp3
+visitor	A1	n.			7dcf34c3bf.mp3
+visual	B2	adj.			a4f335646f.mp3
+vital	B2	adj.			89a71c10e9.mp3
+vitamin	B2	n.			033d7cf25e.mp3
+vocal	C1	adj.			86c4c0359c.mp3
+voice	A2	n.			e876219bb2.mp3
+volume	B2	n.			3ca56ed8f1.mp3
+voluntary	B2	adj.			340eef486b.mp3
+volunteer	B1	n.			1028b94bd9.mp3
+volunteer	B1	v.			1028b94bd9.mp3
+vote	B1	n.			c0e9fcc182.mp3
+vote	B1	v.			c0e9fcc182.mp3
+voting	B2	n.			c210a32f74.mp3
+vow	C1	v.			ed95c218c6.mp3
+vulnerability	C1	n.			634c601a05.mp3
+vulnerable	C1	adj.			394c86cd7c.mp3
+wage	B2	n.			fb24d0ecc7.mp3
+wait	A1	v.			6442ba4bd8.mp3
+wait	A2	n.			6442ba4bd8.mp3
+waiter	A1	n.			93773411c6.mp3
+wake	A1	v.			8f4c18a99d.mp3
+walk	A1	n.			c926943a5b.mp3
+walk	A1	v.			c926943a5b.mp3
+wall	A1	n.			9757a1bf3c.mp3
+wander	B2	v.			2a11760a77.mp3
+want	A1	v.			ce70d27b4d.mp3
+war	A2	n.			b7d0431a3b.mp3
+ward	C1	n.			26c828dbea.mp3
+warehouse	C1	n.			f405f0630b.mp3
+warfare	C1	n.			07b26ba7d3.mp3
+warm	A1	adj.			0d0b94ad9f.mp3
+warm	B1	v.			0d0b94ad9f.mp3
+warming	B2	n.			f3cfa137fa.mp3
+warn	B1	v.			48a6ce5e62.mp3
+warning	B1	n.			ce8cd02282.mp3
+warrant	C1	n.			a129523b65.mp3
+warrant	C1	v.			a129523b65.mp3
+warrior	C1	n.			854dd8613b.mp3
+wash	A1	v.			2fdf6f6ff0.mp3
+wash	A2	n.			2fdf6f6ff0.mp3
+washing	A2	n.			069f42f34d.mp3
+waste	B1	adj.			23c961f0b5.mp3
+waste	B1	n.			23c961f0b5.mp3
+waste	B1	v.			23c961f0b5.mp3
+watch	A1	n.			e26382582a.mp3
+watch	A1	v.			e26382582a.mp3
+water	A1	n.			5856e45c21.mp3
+water	B1	v.			5856e45c21.mp3
+wave	A2	n.			2080196001.mp3
+wave	B1	v.			2080196001.mp3
+way	A1	n.			687e6d542f.mp3
+way	B2	adv.			687e6d542f.mp3
+we	A1	pron.			1643fbebb2.mp3
+weak	A2	adj.			02ba62ae10.mp3
+weaken	C1	v.			07ab451bd2.mp3
+weakness	B2	n.			69b3e2fe12.mp3
+wealth	B2	n.			3bfbfb0ba6.mp3
+wealthy	B2	adj.			dbe326bcab.mp3
+weapon	B1	n.			bf6b26e104.mp3
+wear	A1	v.			ab47cde9a5.mp3
+weather	A1	n.			027a600eec.mp3
+weave	C1	v.			5dcfd20354.mp3
+web	A2	n.			83b47bd19d.mp3
+website	A1	n.			27ca012551.mp3
+wedding	A2	n.			fc16a510dd.mp3
+weed	C1	n.			a133ca0a11.mp3
+week	A1	n.			21ffd72f84.mp3
+weekend	A1	n.			6a14e256c2.mp3
+weekly	B2	adj.			12a1e38770.mp3
+weigh	B1	v.			660e03b6b8.mp3
+weight	A2	n.			a2763ddf2b.mp3
+weird	B2	adj.			29e5ffaa16.mp3
+welcome	A1	adj.			5bc090c191.mp3
+welcome	A1	exclam.			5bc090c191.mp3
+welcome	A1	v.			5bc090c191.mp3
+welcome	A2	n.			5bc090c191.mp3
+welfare	B2	n.			6b325912d4.mp3
+well	A1	adj.			f4f9c00b56.mp3
+well	A1	adv.			f4f9c00b56.mp3
+well	A1	exclam.			f4f9c00b56.mp3
+well	C1	n.			f4f9c00b56.mp3
+well-being	C1	n.			dd3321170f.mp3
+west	A1	adj.			9b8676d5ac.mp3
+west	A1	adv.			9b8676d5ac.mp3
+west	A1	n.			9b8676d5ac.mp3
+western	B1	adj.			d337adc9e2.mp3
+wet	A2	adj.			648f216ada.mp3
+what	A1	det.			a71812761e.mp3
+what	A1	pron.			a71812761e.mp3
+whatever	B1	det.			8811f6b851.mp3
+whatever	B1	pron.			8811f6b851.mp3
+whatsoever	C1	adv.			f4c9b1833e.mp3
+wheat	B2	n.			18bd5c7a55.mp3
+wheel	A2	n.			22ea67ea9f.mp3
+when	A1	adv.			375a1fe434.mp3
+when	A1	conj.			375a1fe434.mp3
+when	A1	pron.			375a1fe434.mp3
+whenever	B1	conj.			ed7e2e62d4.mp3
+where	A1	adv.			167cb655a4.mp3
+where	A1	conj.			167cb655a4.mp3
+whereas	B2	conj.			2aa382ad1d.mp3
+whereby	C1	adv.			6e5e15e68e.mp3
+wherever	B2	conj.			5573e7a681.mp3
+whether	B1	conj.			eea2dcd6c5.mp3
+which	A1	det.			99543dd161.mp3
+which	A1	pron.			99543dd161.mp3
+while	A2	conj.			a802f3bdd3.mp3
+while	B1	n.			a802f3bdd3.mp3
+whilst	C1	conj.	UK		7dfbf30936.mp3
+whip	C1	v.			46e90476fb.mp3
+whisper	B2	n.			538b47ae28.mp3
+whisper	B2	v.			538b47ae28.mp3
+white	A1	adj.			134a2ccbcd.mp3
+white	A1	n.			134a2ccbcd.mp3
+who	A1	pron.			b6a90045d4.mp3
+whoever	B2	pron.			b3c2854253.mp3
+whole	A2	adj.			82a6feef75.mp3
+whole	B1	n.			82a6feef75.mp3
+wholly	C1	adv.			e4b6878363.mp3
+whom	B2	pron.			12a857ddcd.mp3
+whose	A2	det.			1710dabfc0.mp3
+whose	A2	pron.			1710dabfc0.mp3
+why	A1	adv.			ee618b896d.mp3
+wide	A2	adj.			5309adaf2f.mp3
+widely	B2	adv.			9e563c229f.mp3
+widen	C1	v.			d313556d45.mp3
+widespread	B2	adj.			275494c0fd.mp3
+widow	C1	n.			3e57abddcc.mp3
+width	C1	n.			8ecb141ddc.mp3
+wife	A1	n.			193c7a8587.mp3
+wild	A2	adj.			59a11e644d.mp3
+wildlife	B2	n.			ac04af2eef.mp3
+will	A1	modal v.			7aae25aa53.mp3
+will	B1	n.			7aae25aa53.mp3
+willing	B2	adj.			0743060b26.mp3
+willingness	C1	n.			574c0249e7.mp3
+win	A1	v.			4f639649f9.mp3
+win	B1	n.			4f639649f9.mp3
+wind	A2	n.			b0c9920619.mp3
+wind	B2	v.			b0c9920619.mp3
+window	A1	n.			1dc5bde29d.mp3
+wine	A1	n.			2735f55071.mp3
+wing	B1	n.			53ac367bfa.mp3
+winner	A2	n.			d9f21b1842.mp3
+winter	A1	n.			9f4d5d398c.mp3
+wipe	C1	v.			3c95b0b20e.mp3
+wire	B2	n.			147eb406f1.mp3
+wisdom	B2	n.			e3712de332.mp3
+wise	B2	adj.			aedeb1c9b1.mp3
+wish	A2	n.			87e2ad30b5.mp3
+wish	A2	v.			87e2ad30b5.mp3
+wit	C1	n.			df116e15d8.mp3
+with	A1	prep.			8eccd6b759.mp3
+withdraw	B2	v.			4aba087d51.mp3
+withdrawal	C1	n.			2b8f206bde.mp3
+within	B1	prep.			0b108fb561.mp3
+without	A1	prep.			ed3ed06d3f.mp3
+witness	B2	n.			3c5d998397.mp3
+witness	B2	v.			3c5d998397.mp3
+wolf	B2	n.	US		db1af0e920.mp3
+woman	A1	n.			e9e1214504.mp3
+wonder	B1	n.			fda9f69972.mp3
+wonder	B1	v.			fda9f69972.mp3
+wonderful	A1	adj.			5d14fd3de4.mp3
+wood	A2	n.			242f5c8cd1.mp3
+wooden	A2	adj.			dcb8cc3290.mp3
+wool	B1	n.			d0e4b2cdf1.mp3
+word	A1	n.			b6ca8108fa.mp3
+work	A1	n.			2c8262b292.mp3
+work	A1	v.			2c8262b292.mp3
+worker	A1	n.			bb424f8781.mp3
+workforce	B2	n.			4ae3840e08.mp3
+working	A2	adj.			e7481257f7.mp3
+workout	C1	n.			e72011c548.mp3
+workplace	B2	n.			7e3d01bba1.mp3
+workshop	B2	n.			cc06ab348d.mp3
+world	A1	n.			ea0dd727a2.mp3
+worldwide	B1	adj.			0524eb2992.mp3
+worldwide	B1	adv.			0524eb2992.mp3
+worm	B2	n.			e62edddccb.mp3
+worried	A2	adj.			4817f69803.mp3
+worry	A2	v.			14f250d73e.mp3
+worry	B1	n.			14f250d73e.mp3
+worse	A2	adj.			3433c144c8.mp3
+worse	B1	adv.			3433c144c8.mp3
+worse	B2	n.			3433c144c8.mp3
+worship	C1	n.			470eb996bf.mp3
+worship	C1	v.			470eb996bf.mp3
+worst	A2	adj.			1b55a4cd8b.mp3
+worst	B1	adv.			1b55a4cd8b.mp3
+worst	B2	n.			1b55a4cd8b.mp3
+worth	B1	adj.			6a8020ef54.mp3
+worth	B2	n.			6a8020ef54.mp3
+worthwhile	C1	adj.			a7ae9fe9f7.mp3
+worthy	C1	adj.			e74fa0fcde.mp3
+would	A1	modal v.			54f4900243.mp3
+wound	B2	n.			57a4513c0e.mp3
+wound	B2	v.			57a4513c0e.mp3
+wow	A2	exclam.			6f3f3e4070.mp3
+wrap	B2	v.			03b555e293.mp3
+wrist	B2	n.			515b8fc7b3.mp3
+write	A1	v.			6dcd8f3c9d.mp3
+writer	A1	n.			e3ceaba435.mp3
+writing	A1	n.			369ffab9f6.mp3
+written	B1	adj.			322cc22b17.mp3
+wrong	A1	adj.			3ce4c4f798.mp3
+wrong	B1	adv.			3ce4c4f798.mp3
+wrong	B2	n.			3ce4c4f798.mp3
+yard	A1	n.	US		c783286fbf.mp3
+yard	B1	n.	UK		c783286fbf.mp3
+yeah	A1	exclam.			af77a24880.mp3
+year	A1	n.			7375132a65.mp3
+yell	C1	v.			4e28a3d4ad.mp3
+yellow	A1	adj.			d5b3cb9e0a.mp3
+yellow	A1	n.			d5b3cb9e0a.mp3
+yes	A1	exclam.			ea27138ef5.mp3
+yesterday	A1	adv.			a44cc10ba1.mp3
+yesterday	A1	n.			a44cc10ba1.mp3
+yet	A2	adv.			664bdf0fdc.mp3
+yet	B2	conj.			664bdf0fdc.mp3
+yield	C1	n.			20a8c52650.mp3
+yield	C1	v.			20a8c52650.mp3
+you	A1	pron.			167bd5b6fb.mp3
+young	A1	adj.			f24ee6247b.mp3
+young	B1	n.			f24ee6247b.mp3
+youngster	C1	n.	UK		e4ef8c5d0c.mp3
+your	A1	det.			58bcfbcf9f.mp3
+yours	A2	pron.			05029d5d74.mp3
+yourself	A1	pron.			85c9f2679b.mp3
+youth	B1	n.			100aa5ffc8.mp3
+zero	A2	number			da06822fc9.mp3
+zone	B2	n.			c200e1f70d.mp3
 \.
 
 
@@ -73059,5 +73060,5 @@ ALTER TABLE ONLY public.words
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 6RG9K0tRZVJ86OyTqf1My8RnSbU1bcUdmrZfKjGMUPjz5l9GkJsjtH6X7Na1pta
+\unrestrict 2YjNMmPmehpexhgpdqVYnBaRaMNih0nqX8m88C74TK4TWCEtuHd0xmyVcw5KeGt
 
