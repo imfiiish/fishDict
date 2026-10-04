@@ -7,6 +7,8 @@ const app = new Hono()
 const DEFAULT_LIMIT = 30
 const MAX_LIMIT = 100
 
+type Sense = { en: string[] }
+
 /** Escape LIKE wildcards so user input is matched literally. */
 function escapeLike(value: string): string {
   return value.replace(/[\\%_]/g, (ch) => `\\${ch}`)
@@ -47,20 +49,28 @@ app.get('/api/search', async (c) => {
     lang: string
     word: string
     categories: string[]
+    senses: Sense[] | null
+    classifiers: string[] | null
     total: string
   }>(
-    `SELECT lang, word, categories, count(*) OVER () AS total
-       FROM words
-      WHERE ($1::text IS NULL OR lang = $1)
-        AND word ILIKE $2 ESCAPE '\\'
+    `SELECT w.lang, w.word, w.categories, h.senses, h.classifiers,
+            count(*) OVER () AS total
+       FROM words w
+       LEFT JOIN LATERAL (
+         SELECT senses, classifiers FROM hsk
+          WHERE w.lang = 'zh' AND hsk.word = w.word
+          LIMIT 1
+       ) h ON true
+      WHERE ($1::text IS NULL OR w.lang = $1)
+        AND w.word ILIKE $2 ESCAPE '\\'
       ORDER BY
         CASE
-          WHEN lower(word) = lower($3) THEN 0
-          WHEN word ILIKE $4 ESCAPE '\\' THEN 1
+          WHEN lower(w.word) = lower($3) THEN 0
+          WHEN w.word ILIKE $4 ESCAPE '\\' THEN 1
           ELSE 2
         END,
-        length(word),
-        word
+        length(w.word),
+        w.word
       LIMIT $5`,
     [lang, `%${escaped}%`, q, `${escaped}%`, limit],
   )
@@ -73,6 +83,8 @@ app.get('/api/search', async (c) => {
       lang: r.lang,
       word: r.word,
       categories: r.categories,
+      senses: r.senses,
+      classifiers: r.classifiers ?? [],
     })),
   })
 })

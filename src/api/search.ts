@@ -1,8 +1,20 @@
+export type Sense = {
+  en: string[]
+}
+
+export type SearchItem = {
+  lang: string
+  word: string
+  categories: string[]
+  senses: Sense[] | null
+  classifiers: string[]
+}
+
 export type SearchResponse = {
   lang: string | null
   q: string
   total: number
-  items: { lang: string; word: string; categories: string[] }[]
+  items: SearchItem[]
 }
 
 export async function searchWords({

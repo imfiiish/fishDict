@@ -111,11 +111,14 @@ body {
 }
 
 .result {
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.result__head {
   display: flex;
   align-items: baseline;
   gap: 0.6rem;
-  padding: 0.6rem 0.9rem;
-  border-bottom: 1px solid var(--border);
 }
 
 .result__lang {
@@ -141,6 +144,49 @@ body {
 
 .result__word {
   font-size: 1.05rem;
+}
+
+.result__cats {
+  margin-left: auto;
+  flex: none;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+
+.senses {
+  margin: 0.35rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.sense {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.sense__pinyin {
+  flex: none;
+  min-width: 3.5rem;
+  color: var(--accent);
+}
+
+.sense__defs {
+  color: var(--text);
+}
+
+.sense__cls {
+  flex: none;
+  align-self: baseline;
+  color: var(--muted);
+  font-size: 0.78rem;
+  white-space: nowrap;
 }
 
 .hl {
