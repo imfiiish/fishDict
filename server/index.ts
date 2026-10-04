@@ -46,9 +46,10 @@ app.get('/api/search', async (c) => {
   const { rows } = await pool.query<{
     lang: string
     word: string
+    categories: string[]
     total: string
   }>(
-    `SELECT lang, word, count(*) OVER () AS total
+    `SELECT lang, word, categories, count(*) OVER () AS total
        FROM words
       WHERE ($1::text IS NULL OR lang = $1)
         AND word ILIKE $2 ESCAPE '\\'
@@ -68,7 +69,11 @@ app.get('/api/search', async (c) => {
     lang,
     q,
     total: rows.length > 0 ? Number(rows[0].total) : 0,
-    items: rows.map((r) => ({ lang: r.lang, word: r.word })),
+    items: rows.map((r) => ({
+      lang: r.lang,
+      word: r.word,
+      categories: r.categories,
+    })),
   })
 })
 

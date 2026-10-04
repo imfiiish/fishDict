@@ -2,7 +2,7 @@ export type SearchResponse = {
   lang: string | null
   q: string
   total: number
-  items: { lang: string; word: string }[]
+  items: { lang: string; word: string; categories: string[] }[]
 }
 
 export async function searchWords({
