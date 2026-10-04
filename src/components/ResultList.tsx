@@ -49,6 +49,9 @@ export function ResultList({
               <span className="result__word">
                 <Word text={item.word} query={query} />
               </span>
+              {korean?.romanization && (
+                <span className="result__rom">{korean.romanization}</span>
+              )}
               {korean?.origin && (
                 <span className="result__origin">{korean.origin}</span>
               )}

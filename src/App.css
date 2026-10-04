@@ -146,6 +146,13 @@ body {
   font-size: 1.05rem;
 }
 
+.result__rom {
+  flex: none;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
 .result__cats {
   margin-left: auto;
   flex: none;

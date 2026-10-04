@@ -93,13 +93,14 @@ app.get('/api/search', async (c) => {
     categories: string[]
     senses: Sense[] | null
     classifiers: string[] | null
+    romanization: string | null
     origin: string | null
     sound: string | null
     ko_senses: KoreanSense[] | null
     total: string
   }>(
     `SELECT w.lang, w.word, w.categories, h.senses, h.classifiers,
-            k.origin, k.sound, k.senses AS ko_senses,
+            k.romanization, k.origin, k.sound, k.senses AS ko_senses,
             count(*) OVER () AS total
        FROM words w
        LEFT JOIN LATERAL (
@@ -108,7 +109,7 @@ app.get('/api/search', async (c) => {
           LIMIT 1
        ) h ON true
        LEFT JOIN LATERAL (
-         SELECT origin, sound, senses FROM korean
+         SELECT romanization, origin, sound, senses FROM korean
           WHERE w.lang = 'ko' AND korean.word = w.word
           LIMIT 1
        ) k ON true
@@ -137,7 +138,12 @@ app.get('/api/search', async (c) => {
       senses: r.senses,
       classifiers: r.classifiers ?? [],
       korean: r.ko_senses
-        ? { origin: r.origin, sound: r.sound, senses: r.ko_senses }
+        ? {
+            romanization: r.romanization,
+            origin: r.origin,
+            sound: r.sound,
+            senses: r.ko_senses,
+          }
         : null,
     })),
   })

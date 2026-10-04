@@ -11,6 +11,7 @@ export type KoreanSense = {
 }
 
 export type KoreanEntry = {
+  romanization: string | null
   origin: string | null
   sound: string | null
   senses: KoreanSense[]
