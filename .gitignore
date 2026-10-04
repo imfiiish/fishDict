@@ -13,6 +13,8 @@ dist
 # Downloaded dictionary source files
 db/cedict.txt
 db/cedict.txt.gz
+db/ipa_en_US.txt
+db/ipa_en_UK.txt
 dist-ssr
 *.local
 

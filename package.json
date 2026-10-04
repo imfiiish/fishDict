@@ -16,6 +16,7 @@
     "db:psql": "docker compose exec db psql -U fishdict -d fishdict",
     "db:web": "docker compose up -d pgweb",
     "db:cedict": "node db/import-cedict.mjs | docker compose exec -T db psql -U fishdict -d fishdict -v ON_ERROR_STOP=1",
+    "db:english": "node db/import-english.mjs | docker compose exec -T db psql -U fishdict -d fishdict -v ON_ERROR_STOP=1",
     "db:dump": "docker compose exec -T db pg_dump -U fishdict -d fishdict --clean --if-exists --no-owner --no-privileges > db/dump.sql",
     "db:restore": "docker compose exec -T db psql -U fishdict -d fishdict -v ON_ERROR_STOP=1 < db/dump.sql",
     "db:logs": "docker compose logs -f db"

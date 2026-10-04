@@ -17,6 +17,11 @@ export type KoreanEntry = {
   senses: KoreanSense[]
 }
 
+export type Ipa = {
+  us?: string
+  uk?: string
+}
+
 export type SearchItem = {
   lang: string
   word: string
@@ -24,6 +29,7 @@ export type SearchItem = {
   senses: Sense[] | null
   classifiers: string[]
   sound: string | null
+  ipa: Ipa | null
   korean: KoreanEntry | null
 }
 
