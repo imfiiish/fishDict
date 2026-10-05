@@ -15,6 +15,7 @@ db/cedict.txt
 db/cedict.txt.gz
 db/ipa_en_US.txt
 db/ipa_en_UK.txt
+db/ecdict.csv
 dist-ssr
 *.local
 

@@ -30,6 +30,7 @@ export type SearchItem = {
   classifiers: string[]
   sound: string | null
   ipa: Ipa | null
+  zh: string | null
   korean: KoreanEntry | null
 }
 

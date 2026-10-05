@@ -98,6 +98,7 @@ app.get('/api/search', async (c) => {
     ko_sound: string | null
     sound: string | null
     ipa: Record<string, string> | null
+    zh: string | null
     ko_senses: KoreanSense[] | null
     total: string
   }>(
@@ -105,6 +106,7 @@ app.get('/api/search', async (c) => {
             k.romanization, k.origin, k.sound AS ko_sound, k.senses AS ko_senses,
             COALESCE(h.sound, en.sound, j.sound, k.sound) AS sound,
             en.ipa AS ipa,
+            en.zh AS zh,
             count(*) OVER () AS total
        FROM words w
        LEFT JOIN LATERAL (
@@ -113,7 +115,7 @@ app.get('/api/search', async (c) => {
           LIMIT 1
        ) h ON true
        LEFT JOIN LATERAL (
-         SELECT sound, ipa FROM english
+         SELECT sound, ipa, zh FROM english
           WHERE w.lang = 'en' AND english.word = w.word
           LIMIT 1
        ) en ON true
@@ -153,6 +155,7 @@ app.get('/api/search', async (c) => {
       classifiers: r.classifiers ?? [],
       sound: r.sound,
       ipa: r.ipa,
+      zh: r.zh,
       korean: r.ko_senses
         ? {
             romanization: r.romanization,
