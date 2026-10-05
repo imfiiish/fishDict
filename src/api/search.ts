@@ -1,5 +1,8 @@
 export type Sense = {
-  en: string[]
+  en?: string[]
+  zh?: string[]
+  pos?: string
+  domain?: string
 }
 
 export type KoreanSense = {
@@ -30,7 +33,6 @@ export type SearchItem = {
   classifiers: string[]
   sound: string | null
   ipa: Ipa | null
-  zh: string | null
   korean: KoreanEntry | null
 }
 

@@ -7,8 +7,8 @@
 // The table holds one row per English word:
 //   word  text primary key
 //   ipa   jsonb  { "us": "/ˈbæŋk/", "uk": "/bˈæŋk/" }  (keys omitted when absent)
+//   senses jsonb  [{ "pos": "n.", "zh": ["银行", "堤", "岸"] }, ...]
 //   sound text   audio filename, sha1('en:' + word)[:10] + '.mp3'
-//   zh    text   ECDICT Chinese translation (verbatim, literal \n decoded)
 //
 // Pronunciations come from ipa-dict (MIT) and are stored verbatim; the US file
 // marks stress at the syllable onset, the UK file marks it before the vowel.
@@ -120,7 +120,9 @@ function parseEcdict(path) {
     if (!line) continue
     const cells = parseCsvLine(line)
     const word = cells[0]
-    const translation = cells[3]?.replace(/\\n/g, '\n').trim()
+    const translation = cells[3]
+      ?.replace(/\\r\\n|\\n|\\r/g, '\n')
+      .trim()
     if (!word || !translation) continue
     exact.set(word, translation)
     if (!lower.has(word.toLowerCase())) lower.set(word.toLowerCase(), translation)
@@ -152,6 +154,92 @@ function lookupZh(word) {
   return ecdict.exact.get(word) ?? ecdict.lower.get(word.toLowerCase()) ?? null
 }
 
+/**
+ * ECDICT uses its own POS tags (vt./vi./a.); normalize them to the same set
+ * Oxford uses so both can be shown the same way. Bracketed tags such as [医]
+ * are subject domains, not parts of speech, so they move to `domain`.
+ */
+const POS_MAP = {
+  'n.': 'n.',
+  'v.': 'v.',
+  'vt.': 'v.',
+  'vi.': 'v.',
+  'a.': 'adj.',
+  'adj.': 'adj.',
+  'adv.': 'adv.',
+  'pron.': 'pron.',
+  'prep.': 'prep.',
+  'conj.': 'conj.',
+  'num.': 'number',
+  'interj.': 'exclam.',
+  'aux.': 'auxiliary v.',
+  'art.': 'det.',
+  'pl.': 'n.',
+  'abbr.': 'abbr.',
+  'pref.': 'pref.',
+}
+
+/** Split on commas, but ignore commas nested inside brackets, e.g.
+ * "依赖(如对药物的依赖, 即瘾或癖)" stays one gloss. */
+function splitGlosses(body) {
+  const OPEN = '(（[〔【｛{'
+  const CLOSE = ')）]〕】｝}'
+  const out = []
+  let depth = 0
+  let current = ''
+  for (const ch of body) {
+    if (OPEN.includes(ch)) depth++
+    else if (CLOSE.includes(ch)) depth = Math.max(0, depth - 1)
+    if ((ch === ',' || ch === '，') && depth === 0) {
+      out.push(current.trim())
+      current = ''
+      continue
+    }
+    current += ch
+  }
+  out.push(current.trim())
+  return out.filter(Boolean)
+}
+
+// ECDICT subject tags (bracketed). Only these are split out as `domain`;
+// a bracketed character inside a gloss (e.g. 疾[病], 适应[作用]) stays text.
+const DOMAINS = new Set(['计', '医', '法', '经', '化', '机', '电', '建'])
+
+/**
+ * Turn an ECDICT translation into structured senses, one per line. A line is
+ * `[pos]? [domain]? glosses`:
+ *   "n. 银行, 堤, 岸"   -> { pos: "n.", zh: ["银行", "堤", "岸"] }
+ *   "[医] 库"          -> { domain: "[医]", zh: ["库"] }
+ *   "art. [计] 累加器"  -> { pos: "det.", domain: "[计]", zh: ["累加器"] }
+ */
+function parseSenses(translation) {
+  const senses = []
+  for (const line of translation.split('\n')) {
+    let body = line.trim()
+    if (!body) continue
+    let pos
+    let domain
+    const posMatch = /^([a-z]+\.)\s*/.exec(body)
+    if (posMatch) {
+      pos = POS_MAP[posMatch[1]] ?? posMatch[1]
+      body = body.slice(posMatch[0].length)
+    }
+    const domainMatch = /^\[([^\]]+)\]\s*/.exec(body)
+    if (domainMatch && DOMAINS.has(domainMatch[1])) {
+      domain = `[${domainMatch[1]}]`
+      body = body.slice(domainMatch[0].length)
+    }
+    const zh = splitGlosses(body)
+    if (zh.length === 0) continue
+    const sense = {}
+    if (pos) sense.pos = pos
+    if (domain) sense.domain = domain
+    sense.zh = zh
+    senses.push(sense)
+  }
+  return senses
+}
+
 const words = [...new Set(readEnglishWords(readFileSync(dumpPath, 'utf8')))]
 const rows = words.map((word) => {
   const entry = {}
@@ -164,16 +252,17 @@ const rows = words.map((word) => {
     if (OVERRIDES[word].uk) entry.uk = OVERRIDES[word].uk
   }
   const zh = OVERRIDES[word]?.zh ?? lookupZh(word)
+  const senses = zh ? parseSenses(zh) : []
   return {
     word,
     ipa: Object.keys(entry).length > 0 ? JSON.stringify(entry) : null,
+    senses: senses.length > 0 ? JSON.stringify(senses) : null,
     sound: sound(word),
-    zh,
   }
 })
 
 const noIpa = rows.filter((r) => !r.ipa).length
-const noZh = rows.filter((r) => !r.zh).length
+const noSenses = rows.filter((r) => !r.senses).length
 
 const escapeCopy = (value) =>
   value
@@ -183,7 +272,8 @@ const escapeCopy = (value) =>
     .replace(/\r/g, '\\r')
 
 process.stderr.write(
-  `english words: ${words.length}; without ipa: ${noIpa}; without zh: ${noZh}\n`,
+  `english words: ${words.length}; without ipa: ${noIpa}; ` +
+    `without senses: ${noSenses}\n`,
 )
 
 const out = []
@@ -191,7 +281,7 @@ out.push('BEGIN;')
 out.push('DROP TABLE IF EXISTS public.english;')
 out.push(
   'CREATE TABLE public.english (' +
-    'word text PRIMARY KEY, ipa jsonb, zh text, sound text);',
+    'word text PRIMARY KEY, ipa jsonb, senses jsonb, sound text);',
 )
 // The per-word audio filename now lives in public.english only.
 out.push('ALTER TABLE public.cet DROP COLUMN IF EXISTS sound;')
@@ -202,22 +292,22 @@ out.push(
     'DROP COLUMN IF EXISTS ipa_uk;',
 )
 out.push(
-  'CREATE TEMP TABLE _english (word text, ipa jsonb, zh text, sound text) ' +
+  'CREATE TEMP TABLE _english (word text, ipa jsonb, senses jsonb, sound text) ' +
     'ON COMMIT DROP;',
 )
-out.push('COPY _english (word, ipa, zh, sound) FROM stdin;')
-for (const { word, ipa: json, zh, sound: snd } of rows) {
+out.push('COPY _english (word, ipa, senses, sound) FROM stdin;')
+for (const { word, ipa: json, senses, sound: snd } of rows) {
   out.push(
     `${escapeCopy(word)}\t${json ? escapeCopy(json) : '\\N'}\t` +
-      `${zh ? escapeCopy(zh) : '\\N'}\t${snd}`,
+      `${senses ? escapeCopy(senses) : '\\N'}\t${snd}`,
   )
 }
 out.push('\\.')
 out.push(
-  'INSERT INTO public.english (word, ipa, zh, sound) ' +
-    'SELECT word, ipa, zh, sound FROM _english e ' +
+  'INSERT INTO public.english (word, ipa, senses, sound) ' +
+    'SELECT word, ipa, senses, sound FROM _english e ' +
     'ON CONFLICT (word) DO UPDATE SET ipa = EXCLUDED.ipa, ' +
-    'zh = EXCLUDED.zh, sound = EXCLUDED.sound;',
+    'senses = EXCLUDED.senses, sound = EXCLUDED.sound;',
 )
 out.push(
   "COMMENT ON COLUMN public.english.ipa IS " +
@@ -228,8 +318,8 @@ out.push(
     "'Audio filename: sha1(''en:'' || word)[:10] || ''.mp3''';",
 )
 out.push(
-  "COMMENT ON COLUMN public.english.zh IS " +
-    "'Chinese translation from ECDICT (MIT), stored verbatim';",
+  "COMMENT ON COLUMN public.english.senses IS " +
+    "'Senses from ECDICT translations (MIT): [{ pos, zh: [...] }]';",
 )
 out.push('COMMIT;')
 

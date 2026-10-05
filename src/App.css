@@ -217,6 +217,13 @@ body {
   color: var(--accent);
 }
 
+.sense__pos {
+  flex: none;
+  min-width: 2.5rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
 .sense__defs {
   color: var(--text);
 }

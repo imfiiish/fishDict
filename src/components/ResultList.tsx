@@ -87,7 +87,14 @@ export function ResultList({
               <ul className="senses">
                 {senses.map((sense, senseIndex) => (
                   <li className="sense" key={senseIndex}>
-                    <span className="sense__defs">{sense.en.join('; ')}</span>
+                    {(sense.pos || sense.domain) && (
+                      <span className="sense__pos">
+                        {sense.pos ?? sense.domain}
+                      </span>
+                    )}
+                    <span className="sense__defs">
+                      {(sense.zh ?? sense.en ?? []).join('; ')}
+                    </span>
                   </li>
                 ))}
                 {classifiers.length > 0 && (
